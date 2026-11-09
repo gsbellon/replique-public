@@ -1,0 +1,148 @@
+# commande : ssh sd-92569 cat work/z23637733/pkg/replication_package/replication/README.md work/z23637733/pkg/replication_package/replication/requirements-lock.txt
+# début    : 2026-11-07T20:00:43Z
+# ----
+# Recomputing the audit from frozen records
+
+The prototype audit (3,444 task instances) and the prototype part of the
+reconciliation check were produced by `simulation/run_prototype_evidence.py` and
+`simulation/run_reconciliation_check.py` against the audited allocation prototype.
+The prototype's code is not part of this package. Its outputs are shipped frozen in
+`results/`:
+
+- `prototype_evidence_detail.csv`, `prototype_evidence_summary.csv` — the audit records;
+- `reconciliation_prototype.csv` — the prototype run with its plan frozen.
+
+The public-record study reads two pseudonymized snapshots, with accounts
+replaced by truncated SHA-256 hashes, bots flagged and no comment text:
+
+- `results/public_prs_copilot_agent.json` — every pull request written by
+  GitHub's Copilot coding agent and merged into the dotnet, microsoft and Azure
+  organizations between 1 July and 14 September 2026, with each pull request's
+  commits (author account hashed, merge commits flagged) and the result of the
+  checks run on its last commit;
+- `results/public_prs_cpython.json` — every pull request merged into
+  python/cpython between 1 and 14 September 2026.
+
+`simulation/fetch_public_prs.py` retrieves them again through the `gh` CLI;
+`simulation/run_public_pr_check.py` evaluates them and draws the sample of 100
+agent approvals that was coded by hand (`results/agent_pr_coding_sample.csv`).
+The codes are in `results/agent_pr_codes.csv`, and the agreement and the
+clauses' precision and recall against them, with two ablations, in
+`results/agent_pr_coding_agreement.csv`. The four claims asked of each agent
+pull request are in `results/agent_pr_claims.csv` and
+`results/agent_pr_claims_summary.csv`. The coding sheets themselves, which
+contain the approvers' account names, are not distributed.
+
+The merge-commit remedy (manuscript Section 4.5) is in
+`simulation/run_merge_remedy.py`. For the 260 agent pull requests whose only
+commits by people merge the base branch, it checks through the GitHub API that
+every file of each merge equals its version in one of the two parents, stores a
+snapshot without account names or content (`results/agent_pr_merge_remedy.json`),
+and evaluates the narrower claim EC-AG-02m
+(`simulation/clauses/agent_pr_merge_check.json`) with the unchanged interpreter
+(`results/agent_pr_merge_remedy_summary.csv`). It also writes the readiness
+report by organization (`results/agent_pr_readiness_by_org.csv`).
+
+Everything the manuscript reports can be recomputed from these files and the
+other scripts, none of which needs the prototype:
+
+```bash
+pip install -r replication/requirements-lock.txt
+python3 simulation/contract_interpreter.py --records results/prototype_evidence_detail.csv --check --strict
+python3 simulation/run_public_pr_check.py
+python3 simulation/run_public_pr_check.py --snapshot results/public_prs_copilot_agent.json --prefix agent_pr --coding-sample 100 --codes results/agent_pr_codes.csv --claims simulation/clauses/agent_pr_claims.json --out results
+python3 simulation/run_merge_remedy.py   # offline; add --fetch to query the forge again
+python3 simulation/make_figures.py
+python3 simulation/make_specifier_mockup.py   # mockup of an earlier draft, not used in the manuscript
+python3 -m pytest simulation/ -q
+shasum -a 256 -c replication/SHA256SUMS
+```
+
+- `requirements-lock.txt` — exact versions of the third-party packages and the Python version used.
+- `SHA256SUMS` — checksums of the article's scripts, clauses, the public-record snapshots and every result file the manuscript reports.
+- `results/*_run_manifest.json` — the lineage of each forge run: the version and checksum of each clause file, a checksum of its bindings, the checksums of the adapter scripts, of the interpreter and of the record snapshots, and the window of the records. Its `run_id` is a checksum of the manifest itself, and every row of the verdict files (`public_pr_verdicts.csv`, `agent_pr_verdicts.csv`, `agent_pr_claims.csv`, `agent_pr_merge_remedy_summary.csv`) carries it. The same inputs always give the same `run_id`.
+
+## Additional checks (Sections 4.1, 4.4, 4.5 and 4.7, added for the IST version)
+
+Three checks on the same pull-request records, none of which needs new coders:
+
+- `simulation/run_baselines.py` compares the review clauses with simpler rules computed from
+  the same records, scored against the manual consensus (`results/baseline_rules.csv`).
+- `results_holdout/` holds the later window of the same agent and organizations, merged between
+  15 September and 20 October 2026 (`public_prs_copilot_agent_holdout.json`, retrieved with
+  `simulation/fetch_public_prs.py` in its four stages) and its verdicts in `results_holdout/out/`,
+  produced by the unchanged clauses. `simulation/run_holdout_comparison.py` writes
+  `results/holdout_comparison.csv`.
+- `simulation/run_contradiction_audit.py` rereads, through the `gh` CLI, a seeded random sample of
+  100 of the 773 contradicted pull requests with commits by a person and counts the lines changed by
+  each kind of account (`results/contradiction_audit.csv`, `contradiction_audit_summary.csv`). The
+  shipped file is the result of that run; rerunning it needs network access and may differ if
+  repositories have changed.
+- Held-out coded sample: `results_holdout/out/agent_pr_coding_sample.csv` is a seeded draw of 150 approvals from the
+  later window (at most three per repository, none from the first coded sample; `run_public_pr_check.py --coding-sample 150
+  --seed 20261022`). Two coders, independent instances of an AI model, applied the written criterion in
+  `results_holdout/coding_instructions_ai.txt` to a text file per pull request built by `simulation/prepare_case_files.py`
+  (public comment text, not distributed, no verdicts); their codes are in `results_holdout/out/heldout_codes_ai.csv`
+  (the justifications they wrote are not distributed). `simulation/run_heldout_eval.py` scores the frozen clauses and the
+  simpler rules against them (`results_holdout/heldout_eval.csv`). The two coders agreed on all 150 cases; they share a model
+  and the criterion, so the sample is not an independent human reference.
+- `results_devin/` holds a time-stratified sample of 886 merged pull requests of a second agent (Devin),
+  25 per day chosen at random among those merged at 12:00 UTC between 15 September and 20 October 2026
+  (`fetch_public_prs.py --author app/devin-ai-integration --sample-per-day 25`, seed 20261021, then the
+  `--augment`, `--merge-flags` and `--checks` stages). The frozen clauses were run on it unchanged
+  (`results_devin/out/`), and `simulation/run_second_agent_comparison.py` writes
+  `results_devin/second_agent_comparison.csv` with the comparison and three sensitivity analyses.
+  There are no manual codes for this agent.
+- `simulation/run_cluster_bootstrap.py` gives the later-window differences with intervals from resampling
+  whole repositories (`results/holdout_cluster_bootstrap.csv`).
+- `simulation/run_instrumentation_asymmetry.py` counts, per pull request, operations by the agent's account
+  and by people (`results/instrumentation_asymmetry_*.csv`); it is descriptive.
+- `simulation/test_semantic_properties.py` checks, by exhaustive enumeration over small event universes, four
+  properties of the verdict rule: independence of event order, invariance to insufficient events, monotonicity of
+  supported verdicts for the existential operators, and precedence of declared contradictions.
+- `simulation/run_lumping_analysis.py` counts which different cases of the contract a two-output rule (allow or
+  deny) would put in one bucket (`results/lumping_analysis.csv`); it reads existing results.
+- `simulation/run_stress_breakeven.py` derives the break-even cost ratio of the stress test from
+  `results/domain_stress_test_summary.csv` (`results/stress_breakeven.csv`).
+- `simulation/run_outcome_association.py` relates documented review to the result of the checks at
+  merge and to commits after the last approval. It is exploratory, the measures are not quality
+  outcomes, and the article does not report it.
+
+```bash
+python3 simulation/run_baselines.py
+python3 simulation/run_public_pr_check.py --snapshot results_holdout/public_prs_copilot_agent_holdout.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_holdout/out
+python3 simulation/run_holdout_comparison.py
+python3 simulation/run_heldout_eval.py
+python3 simulation/run_cluster_bootstrap.py
+python3 simulation/run_instrumentation_asymmetry.py
+python3 simulation/run_stress_breakeven.py
+python3 simulation/run_public_pr_check.py --snapshot results_devin/public_prs_devin.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_devin/out
+python3 simulation/run_second_agent_comparison.py
+python3 simulation/run_outcome_association.py
+python3 simulation/run_contradiction_audit.py    # needs network access and the gh CLI
+```
+
+`fetch_public_prs.py --checks` now returns "none" for a pull request whose last commit cannot be
+read, instead of stopping; results published before this change are unaffected.
+# Dependencias importadas por la auditoría del prototipo (versiones exactas usadas)
+# Python 3.14.5
+annotated-types==0.7.0
+defusedxml==0.7.1
+numpy==2.2.1
+pandas==2.3.3
+pillow==12.1.1
+pyarrow==23.0.1
+pydantic==2.12.5
+pydantic_core==2.41.5
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
+pytz==2026.1.post1
+reportlab==4.4.10
+six==1.17.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+scipy==1.17.0
+pytest==9.0.2
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,60 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && sh lance_ecarts.sh
+# début    : 2026-10-26T21:27:22Z
+# ----
+fichier                                                       forme  texte nb_cell_num      max_abs      max_rel
+audit/categorical_monotonicity.csv                              oui    oui        162            0            0
+audit/interference_directed_other.csv                           oui    oui        315        3e-15     7.38e-15
+audit/interference_directed.csv                                 oui    oui        270        2e-15     4.91e-15
+audit/interference_random.csv                                   oui    oui         90            0            0
+audit/monotonicity.csv                                          oui    oui       1200            0            0
+audit/solver_check.csv                                          oui    oui       6000        2e-15     7.99e-15
+audit/subgroup_consistency.csv                                  oui    oui          6        2e-15     8.09e-15
+base_2010_counts.csv                                            oui    oui         81            0            0
+base_2022_counts.csv                                            oui    oui        108            0            0
+inputs_sha256.csv                                               oui    oui         30            0            0
+municipal/configuration.csv                                     oui    oui          5            0            0
+municipal/frontier_profile.csv                                  oui    oui          6            0            0
+municipal/frontiers_by_level.csv                                oui    oui         36            0            0
+municipal/screened_households.csv                               oui    oui          0            0            0
+municipal/spearman_IDHM.csv                                     oui    oui          2            0            0
+municipal/super_efficiency_final_frontiers.csv                  oui    oui       1488     2.04e-13     2.04e-13
+municipal/table1_descriptives.csv                               oui    oui         56     2.98e-14     1.01e-14
+municipal/table2_municipalities.csv                             oui    oui         80     4.09e-14     1.09e-14
+national/age_suppression_sensitivity.csv                        oui    oui        108     6.51e-15     9.19e-14
+national/brazil.csv                                             oui    oui         12        6e-13     1.89e-13
+national/configuration.csv                                      oui    oui          8            0            0
+national/descriptives_brazil.csv                                oui    oui         10      5.9e-10      3.6e-13
+national/dominance.csv                                          oui    oui         81     7.55e-14            1
+national/frontier_profile.csv                                   oui    oui          6            0            0
+national/frontiers_by_level.csv                                 oui    oui         26            0            0
+national/regions.csv                                            oui    oui         60      1.2e-12     1.04e-13
+national/screened_households.csv                                oui    oui          0            0            0
+national/super_efficiency_final_frontiers.csv                   oui    oui        456     1.02e-14     7.75e-15
+national/ufs.csv                                                oui    oui        378        7e-13     9.04e-14
+numerical_example/example_data.csv                              oui    oui         32            0            0
+numerical_example/example_scores.csv                            oui    oui         20            0            0
+numerical_example/example_shock_D.csv                           oui    oui         12            0            0
+numerical_example/example_summary.csv                           oui    oui         10            0            0
+outputs_sha256.csv                                              NON
+parameters.csv                                                  oui    oui          8            0            0
+robustness/alpha_grid_summary.csv                               oui    oui         21            0            0
+robustness/alpha_grid.csv                                       oui    oui        168        3e-15     1.61e-14
+robustness/alternative_references_brazil.csv                    oui    oui         54        1e-12     2.22e-13
+robustness/alternative_references_dominance.csv                 oui    oui         81            0            0
+robustness/alternative_references_municipalities_summary.csv    oui    oui         24            0            0
+robustness/alternative_references_municipalities.csv            oui    oui        288     4.09e-14     1.01e-14
+robustness/alternative_references_ufs.csv                       oui    oui       1134     8.99e-13     9.04e-14
+robustness/bootstrap_change_ufs.csv                             oui    oui        108     1.18e-11     8.15e-13
+robustness/bootstrap_differences_municipalities.csv             oui    oui         84      3.7e-15     1.06e-10
+robustness/bootstrap_municipalities.csv                         oui    oui         24        2e-15      7.8e-15
+robustness/delta_grid_summary.csv                               oui    oui          6            0            0
+robustness/delta_grid.csv                                       oui    oui        144     2.05e-15     7.94e-15
+robustness/excluded_variables.csv                               oui    oui          4            0            0
+robustness/half_sample_draws.csv                                oui    oui        320        3e-15     1.24e-14
+robustness/pairwise_dominance_ufs_2022.csv                      oui    oui        702            0            0
+robustness/zero_constant.csv                                    oui    oui         48        2e-15     7.72e-15
+
+GLOBAL : 51 fichiers CSV ; fichiers à forme ou texte différents : 1 ; max_abs = 5.9e-10 ; max_rel = 1
+# ----
+# code de sortie : 0
+# durée (s)      : 1

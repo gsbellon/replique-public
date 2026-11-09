@@ -1,0 +1,8 @@
+# commande : ssh sd-92569 podman images
+# début    : 2026-10-25T20:00:16Z
+# ----
+REPOSITORY                TAG         IMAGE ID      CREATED      SIZE
+docker.io/library/python  3.12-slim   df18428df8a0  2 weeks ago  124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 0

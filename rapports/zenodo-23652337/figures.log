@@ -1,0 +1,25 @@
+# commande : ssh sd-92569 cd ~/work/z23652337 && sh lance_figures.sh
+# début    : 2026-11-06T20:14:24Z
+# ----
+2026-11-06T20:14:24Z
+theta_hat (vendor)  = 46.18   [closed form 2*P*M/(1-A0)^2 = 46.18]
+theta_s (planner)   = 65.09
+lambda* (A=0.9)     = 0.485
+figures written to /work/figures
+code make_figures : 0
+durée (s) : 17
+total 696
+-rw-rw-r-- 1 replab replab 118164 Nov  6 21:14 fig1_adoption_set.png
+-rw-rw-r-- 1 replab replab 151545 Nov  6 21:14 fig2_profit_kink.png
+-rw-rw-r-- 1 replab replab 152674 Nov  6 21:14 fig3_reach_choice.png
+-rw-rw-r-- 1 replab replab 120047 Nov  6 21:14 fig4_stakes_scaling.png
+-rw-rw-r-- 1 replab replab 156817 Nov  6 21:14 fig5_public_evidence.png
+-rw-r--r-- 1 replab replab   2100 Nov  6 21:14 fig_cache.npz
+tableaux livré : ['As', 'Pi', 'Rho'] recalculé : ['As', 'Pi', 'Rho']
+As formes (57,) (57,) écart abs max 0.000e+00 relatif max 0.000e+00 identique
+Pi formes (57,) (57,) écart abs max 1.388e-17 relatif max 4.921e-16 différent
+Rho formes (57,) (57,) écart abs max 0.000e+00 relatif max 0.000e+00 identique
+code compare_cache : 0
+# ----
+# code de sortie : 0
+# durée (s)      : 17

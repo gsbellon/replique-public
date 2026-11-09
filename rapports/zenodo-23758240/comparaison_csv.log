@@ -1,0 +1,83 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh lance_compare_csv.sh
+# début    : 2026-10-31T20:04:01Z
+# ----
+== overall_means_bursty.csv : lignes 5 / 5 ; en-têtes identiques : True
+   cellules : 36 ; textes/NaN différents : 0 ; numériques différentes (octets) : 11
+   écart relatif > 0 : 11
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif > 0.01 : 0
+   écart relatif > 0.1 : 0
+   écart relatif max : 6.265e-16
+   exemple ligne 1 colonne sla_viol_rate : fourni=0.1960323344084865 regénéré=0.19603233440848652
+   exemple ligne 1 colonne burst_viol_rate : fourni=0.3351554919777598 regénéré=0.33515549197775985
+   exemple ligne 1 colonne utilisation : fourni=0.42905571789526 regénéré=0.42905571789526004
+   exemple ligne 1 colonne drop_rate : fourni=0.06770404646879366 regénéré=0.06770404646879369
+   exemple ligne 2 colonne sla_viol_rate : fourni=0.22062154806572098 regénéré=0.220621548065721
+== overall_means_control.csv : lignes 5 / 5 ; en-têtes identiques : True
+   cellules : 36 ; textes/NaN différents : 0 ; numériques différentes (octets) : 9
+   écart relatif > 0 : 9
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif > 0.01 : 0
+   écart relatif > 0.1 : 0
+   écart relatif max : 1.169e-14
+   exemple ligne 1 colonne sla_viol_rate : fourni=0.0035291660064192387 regénéré=0.0035291660064192755
+   exemple ligne 1 colonne drop_rate : fourni=0.000825765250597859 regénéré=0.0008257652505978686
+   exemple ligne 2 colonne sla_viol_rate : fourni=0.00408941017223709 regénéré=0.004089410172237131
+   exemple ligne 2 colonne drop_rate : fourni=0.000825765250597859 regénéré=0.0008257652505978686
+   exemple ligne 3 colonne sla_viol_rate : fourni=0.0045500894806819285 regénéré=0.0045500894806819675
+== paired_vs_reactive.csv : lignes 286 / 286 ; en-têtes identiques : True
+   cellules : 3135 ; textes/NaN différents : 0 ; numériques différentes (octets) : 801
+   écart relatif > 0 : 801
+   écart relatif > 1e-12 : 3
+   écart relatif > 1e-09 : 2
+   écart relatif > 1e-06 : 2
+   écart relatif > 0.001 : 2
+   écart relatif > 0.01 : 2
+   écart relatif > 0.1 : 1
+   écart relatif max : 1.667e-01
+   exemple ligne 1 colonne d_viol_median : fourni=0.00021121235894035 regénéré=0.0002112123589403174
+   exemple ligne 1 colonne d_viol_mean : fourni=0.000334622827597265 regénéré=0.00033462282759726516
+   exemple ligne 1 colonne rel_viol_change : fourni=0.334688897839902 regénéré=0.3346888978398884
+   exemple ligne 1 colonne d_overprov_median : fourni=-0.14136363636363647 regénéré=-0.14136363636363636
+   exemple ligne 2 colonne d_viol_median : fourni=0.00042951672226825005 regénéré=0.0004295167222682363
+   ÉCART > 1e-9 ligne 76 (2,600,10,0,pred_holt,-0.00047294375139895) colonne wins_minus_losses : fourni=0.25 regénéré=0.3 relatif=1.667e-01
+   ÉCART > 1e-9 ligne 76 (2,600,10,0,pred_holt,-0.00047294375139895) colonne p_value : fourni=0.15063055879143034 regénéré=0.15364646911621094 relatif=1.963e-02
+== raw_results.csv : lignes 7601 / 7601 ; en-têtes identiques : True
+   cellules : 121600 ; textes/NaN différents : 0 ; numériques différentes (octets) : 566
+   écart relatif > 0 : 566
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif > 0.01 : 0
+   écart relatif > 0.1 : 0
+   écart relatif max : 1.310e-15
+   exemple ligne 7 colonne forecast_mae : fourni=6.05499249331753 regénéré=6.054992493317528
+   exemple ligne 11 colonne forecast_mae : fourni=5.950088782656489 regénéré=5.950088782656487
+   exemple ligne 15 colonne forecast_mae : fourni=7.549316016864951 regénéré=7.549316016864947
+   exemple ligne 19 colonne forecast_mae : fourni=6.131843127905503 regénéré=6.131843127905504
+   exemple ligne 23 colonne forecast_mae : fourni=5.692385263851017 regénéré=5.6923852638510155
+== summary_medians.csv : lignes 381 / 381 ; en-têtes identiques : True
+   cellules : 4940 ; textes/NaN différents : 0 ; numériques différentes (octets) : 957
+   écart relatif > 0 : 957
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif > 0.01 : 0
+   écart relatif > 0.1 : 0
+   écart relatif max : 4.722e-13
+   exemple ligne 1 colonne sla_viol_rate : fourni=0.0004829727811631 regénéré=0.0004829727811631902
+   exemple ligne 1 colonne mean_replicas : fourni=15.134696969696972 regénéré=15.13469696969697
+   exemple ligne 2 colonne sla_viol_rate : fourni=0.00114333915917045 regénéré=0.001143339159170482
+   exemple ligne 2 colonne mean_replicas : fourni=14.986515151515153 regénéré=14.986515151515151
+   exemple ligne 3 colonne sla_viol_rate : fourni=0.00157418459968385 regénéré=0.0015741845996838917
+# ----
+# code de sortie : 0
+# durée (s)      : 0

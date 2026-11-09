@@ -1,0 +1,332 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && sh lance_compare.sh run_full
+# début    : 2026-11-06T20:01:10Z
+# ----
+IDENTIQUE   : af/missing_income.csv
+DIFFÉRENT   : af/profiles.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 972 ; textes/NaN différents 0 ; numériques différentes (octets) 805
+   écart relatif > 0 : 805
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 6.398e-14
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne H : fourni=0.567265376021919 regénéré=0.567265376021917
+   exemple ligne 1 colonne A : fourni=0.43866260958392 regénéré=0.438662609583919
+DIFFÉRENT   : af/profiles_2022_without_suppressed_age.csv
+   lignes 28 / 28 ; en-têtes identiques : True
+   cellules 486 ; textes/NaN différents 0 ; numériques différentes (octets) 404
+   écart relatif > 0 : 404
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 6.632e-14
+   exemple ligne 1 colonne N : fourni=1570442.60912613 regénéré=1570442.60912612
+   exemple ligne 1 colonne H : fourni=0.245660323652921 regénéré=0.245660323652923
+   exemple ligne 1 colonne A : fourni=0.385282228363553 regénéré=0.385282228363552
+DIFFÉRENT   : af/profiles_brazil_regions.csv
+   lignes 13 / 13 ; en-têtes identiques : True
+   cellules 216 ; textes/NaN différents 0 ; numériques différentes (octets) 181
+   écart relatif > 0 : 181
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 2.893e-13
+   exemple ligne 1 colonne N : fourni=189797859.49795 regénéré=189797859.497992
+   exemple ligne 1 colonne H : fourni=0.346000776967954 regénéré=0.346000776967883
+   exemple ligne 1 colonne A : fourni=0.449442542644444 regénéré=0.449442542644456
+DIFFÉRENT   : af/profiles_delay_harmonized.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 972 ; textes/NaN différents 0 ; numériques différentes (octets) 795
+   écart relatif > 0 : 795
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 6.429e-14
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne H : fourni=0.546256072773751 regénéré=0.546256072773747
+   exemple ligne 1 colonne A : fourni=0.434176277174343 regénéré=0.434176277174344
+DIFFÉRENT   : af/profiles_dimensions.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 432 ; textes/NaN différents 0 ; numériques différentes (octets) 300
+   écart relatif > 0 : 300
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 5.891e-14
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne M0 : fourni=0.248838110172379 regénéré=0.248838110172377
+   exemple ligne 1 colonne saneamento : fourni=0.294549739932207 regénéré=0.294549739932205
+IDENTIQUE   : af/profiles_income_mw.csv
+DIFFÉRENT   : af/profiles_income_real.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 972 ; textes/NaN différents 0 ; numériques différentes (octets) 808
+   écart relatif > 0 : 808
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 6.421e-14
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne H : fourni=0.567265376021919 regénéré=0.567265376021917
+   exemple ligne 1 colonne A : fourni=0.43866260958392 regénéré=0.438662609583919
+DIFFÉRENT   : af/profiles_without_child_labour.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 918 ; textes/NaN différents 0 ; numériques différentes (octets) 756
+   écart relatif > 0 : 756
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 6.407e-14
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne H : fourni=0.563148379452232 regénéré=0.563148379452229
+   exemple ligne 1 colonne A : fourni=0.473632211947492 regénéré=0.473632211947494
+IDENTIQUE   : audit/AF3_conference.csv
+IDENTIQUE   : audit/AF3_headcounts_conference.csv
+IDENTIQUE   : audit/input_series_sha256.csv
+DIFFÉRENT   : audit/interference.csv
+   lignes 109 / 109 ; en-têtes identiques : True
+   cellules 1188 ; textes/NaN différents 0 ; numériques différentes (octets) 236
+   écart relatif > 0 : 236
+   écart relatif > 1e-12 : 24
+   écart relatif > 1e-09 : 18
+   écart relatif > 1e-06 : 18
+   écart relatif > 0.001 : 18
+   écart relatif max : 1.000e+00
+   exemple ligne 1 colonne J_change_moving : fourni=-0.000230871092943064 regénéré=-0.000230871092942953
+   exemple ligne 2 colonne J_change_fixed : fourni=-0.00144980852145227 regénéré=-0.00144980852145238
+   exemple ligne 2 colonne J_change_moving : fourni=-0.00144980852145227 regénéré=-0.00144980852145238
+DIFFÉRENT   : audit/monotonicity_person.csv
+   lignes 4001 / 4001 ; en-têtes identiques : True
+   cellules 24000 ; textes/NaN différents 0 ; numériques différentes (octets) 700
+   écart relatif > 0 : 700
+   écart relatif > 1e-12 : 700
+   écart relatif > 1e-09 : 214
+   écart relatif > 1e-06 : 111
+   écart relatif > 0.001 : 111
+   écart relatif max : 2.000e+00
+   exemple ligne 1 colonne change : fourni=0 regénéré=-1.11022302462516e-16
+   exemple ligne 2 colonne change : fourni=1.73954964766132e-06 regénéré=1.7395496475503e-06
+   exemple ligne 7 colonne change : fourni=0 regénéré=1.11022302462516e-16
+DIFFÉRENT   : audit/monotonicity_profile.csv
+   lignes 1297 / 1297 ; en-têtes identiques : True
+   cellules 7776 ; textes/NaN différents 0 ; numériques différentes (octets) 517
+   écart relatif > 0 : 517
+   écart relatif > 1e-12 : 91
+   écart relatif > 1e-09 : 67
+   écart relatif > 1e-06 : 67
+   écart relatif > 0.001 : 67
+   écart relatif max : 2.000e+00
+   exemple ligne 1 colonne change : fourni=1.11022302462516e-16 regénéré=-2.22044604925031e-16
+   exemple ligne 2 colonne change : fourni=0.00715539633555251 regénéré=0.0071553963355524
+   exemple ligne 3 colonne change : fourni=1.11022302462516e-16 regénéré=0
+IDENTIQUE   : audit/population_standardization.csv
+IDENTIQUE   : audit/saved_scores_recomputed.csv
+IDENTIQUE   : audit/scope_subgroup_counterexample.csv
+DIFFÉRENT   : audit/solver_check.csv
+   lignes 325 / 325 ; en-têtes identiques : True
+   cellules 1944 ; textes/NaN différents 0 ; numériques différentes (octets) 373
+   écart relatif > 0 : 373
+   écart relatif > 1e-12 : 1
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.026e-12
+   exemple ligne 1 colonne glpk : fourni=0.888340837923947 regénéré=0.888340837923918
+   exemple ligne 4 colonne glpk : fourni=0.901973086645145 regénéré=0.901973086645143
+   exemple ligne 7 colonne glpk : fourni=0.805598496932336 regénéré=0.805598496932325
+DIFFÉRENT   : audit/subgroup_consistency.csv
+   lignes 3 / 3 ; en-têtes identiques : True
+   cellules 14 ; textes/NaN différents 0 ; numériques différentes (octets) 5
+   écart relatif > 0 : 5
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 3.002e-14
+   exemple ligne 1 colonne J_before : fourni=0.266242854610234 regénéré=0.266242854610242
+   exemple ligne 1 colonne J_after : fourni=0.268268947060664 regénéré=0.268268947060672
+   exemple ligne 2 colonne score_BA_after : fourni=0.483213025456345 regénéré=0.483213025456344
+IDENTIQUE   : audit/territorial_subgroup_decomposition.csv
+IDENTIQUE   : audit/testes_v4.log
+IDENTIQUE   : base_2010_counts.csv
+IDENTIQUE   : base_2022_counts.csv
+DIFFÉRENT   : figure/Figura_1.png
+IDENTIQUE   : inputs_sha256.csv
+IDENTIQUE   : numerical_example/example.csv
+DIFFÉRENT   : outputs_sha256.csv
+   lignes 49 / 49 ; en-têtes identiques : True
+   cellules 96 ; textes/NaN différents 26 ; numériques différentes (octets) 0
+   écart relatif > 0 : 0
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 0.000e+00
+   exemple ligne 2 colonne sha256 : fourni=452d6c2c716306d3961614befc12f41c4fc3792fdd61ce33adcd09287ea28842 regénéré=f102a7746a1294935dd673e6f859e07405d9b94634063dca5df30400b78c2f76
+   exemple ligne 3 colonne sha256 : fourni=b8b22f36a2c15550b6bea2db9c1733cb0a3370198e10540a3c252f9eddc66a9f regénéré=5ca897f71f24017b29752a7ec648d1578bcb58edc239e8ddd1f799c9e830d445
+   exemple ligne 4 colonne sha256 : fourni=d304bded8669f8183c1c05b16dd3ebf1c2e956ecbdec2178c5cc9637d4cc5221 regénéré=80c9c6319dcc6a93bba3663c67a14df3f329dc922117d1119df68f61af0d4257
+IDENTIQUE   : parameters.csv
+DIFFÉRENT   : robustness/alternative_versions_change.csv
+   lignes 9 / 9 ; en-têtes identiques : True
+   cellules 32 ; textes/NaN différents 0 ; numériques différentes (octets) 6
+   écart relatif > 0 : 6
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 3.844e-13
+   exemple ligne 1 colonne max_fall_pct : fourni=76.9142846026813 regénéré=76.9142846026851
+   exemple ligne 4 colonne max_fall_pct : fourni=77.5942670080245 regénéré=77.5942670080282
+   exemple ligne 5 colonne max_fall_pct : fourni=76.9236164620047 regénéré=76.9236164620085
+DIFFÉRENT   : robustness/alternative_versions_summary.csv
+   lignes 17 / 17 ; en-têtes identiques : True
+   cellules 80 ; textes/NaN différents 0 ; numériques différentes (octets) 25
+   écart relatif > 0 : 25
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.776e-14
+   exemple ligne 1 colonne change_pct : fourni=-50.8092188106629 regénéré=-50.8092188106623
+   exemple ligne 2 colonne J : fourni=0.238953733618145 regénéré=0.238953733618148
+   exemple ligne 2 colonne change_pct : fourni=-50.8092188106629 regénéré=-50.8092188106623
+DIFFÉRENT   : robustness/alternative_versions_uf.csv
+   lignes 433 / 433 ; en-têtes identiques : True
+   cellules 2160 ; textes/NaN différents 0 ; numériques différentes (octets) 480
+   écart relatif > 0 : 480
+   écart relatif > 1e-12 : 2
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.408e-12
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 2 colonne N : fourni=729507.130978216 regénéré=729507.130978211
+   exemple ligne 4 colonne N : fourni=446963.219063475 regénéré=446963.219063477
+IDENTIQUE   : robustness/bootstrap_change_brazil.csv
+DIFFÉRENT   : robustness/bootstrap_change_uf.csv
+   lignes 28 / 28 ; en-têtes identiques : True
+   cellules 81 ; textes/NaN différents 0 ; numériques différentes (octets) 6
+   écart relatif > 0 : 6
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 2.883e-15
+   exemple ligne 1 colonne change_high : fourni=-56.008510042912 regénéré=-56.0085100429119
+   exemple ligne 3 colonne change_high : fourni=-34.5017269477976 regénéré=-34.5017269477975
+   exemple ligne 10 colonne change_high : fourni=-47.5405565279332 regénéré=-47.5405565279333
+DIFFÉRENT   : robustness/bootstrap_replicates.csv
+   lignes 5401 / 5401 ; en-têtes identiques : True
+   cellules 32400 ; textes/NaN différents 0 ; numériques différentes (octets) 1644
+   écart relatif > 0 : 1644
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 4.344e-14
+   exemple ligne 2 colonne score_2022 : fourni=0.516815690326764 regénéré=0.516815690326763
+   exemple ligne 3 colonne score_2010 : fourni=0.985136973318515 regénéré=0.985136973318514
+   exemple ligne 14 colonne score_2010 : fourni=0.847523518561631 regénéré=0.84752351856163
+DIFFÉRENT   : robustness/dominant_indicator.csv
+   lignes 55 / 55 ; en-têtes identiques : True
+   cellules 324 ; textes/NaN différents 0 ; numériques différentes (octets) 81
+   écart relatif > 0 : 81
+   écart relatif > 1e-12 : 2
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 4.194e-12
+   exemple ligne 1 colonne share_min : fourni=0.639909452380247 regénéré=0.639909452380794
+   exemple ligne 2 colonne share_min : fourni=0.0689740480882676 regénéré=0.0689740480882679
+   exemple ligne 2 colonne share_max : fourni=0.228330674302597 regénéré=0.228330674302596
+DIFFÉRENT   : robustness/leave_one_out_reference.csv
+   lignes 28 / 28 ; en-têtes identiques : True
+   cellules 135 ; textes/NaN différents 0 ; numériques différentes (octets) 27
+   écart relatif > 0 : 27
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.956e-14
+   exemple ligne 1 colonne J_change_pct : fourni=-50.7969607920797 regénéré=-50.7969607920788
+   exemple ligne 2 colonne J_change_pct : fourni=-50.8147077036186 regénéré=-50.8147077036177
+   exemple ligne 3 colonne J_change_pct : fourni=-50.7969607920797 regénéré=-50.7969607920788
+IDENTIQUE   : robustness/rank_range_tau.csv
+DIFFÉRENT   : scores/aggregates.csv
+   lignes 73 / 73 ; en-têtes identiques : True
+   cellules 432 ; textes/NaN différents 0 ; numériques différentes (octets) 180
+   écart relatif > 0 : 180
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 3.467e-13
+   exemple ligne 1 colonne J : fourni=0.535710960688083 regénéré=0.535710960688082
+   exemple ligne 1 colonne J_moving : fourni=0.535710960688083 regénéré=0.535710960688082
+   exemple ligne 2 colonne J : fourni=0.266242854610234 regénéré=0.266242854610242
+DIFFÉRENT   : scores/change_uf.csv
+   lignes 163 / 163 ; en-têtes identiques : True
+   cellules 1944 ; textes/NaN différents 0 ; numériques différentes (octets) 647
+   écart relatif > 0 : 647
+   écart relatif > 1e-12 : 1
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.031e-12
+   exemple ligne 1 colonne M0_2010 : fourni=0.248838110172379 regénéré=0.248838110172377
+   exemple ligne 1 colonne M0_2022 : fourni=0.0947495094872446 regénéré=0.0947495094872452
+   exemple ligne 1 colonne change_M0_pct : fourni=-61.9232321682526 regénéré=-61.9232321682521
+DIFFÉRENT   : scores/scores_uf.csv
+   lignes 325 / 325 ; en-têtes identiques : True
+   cellules 3564 ; textes/NaN différents 0 ; numériques différentes (octets) 1313
+   écart relatif > 0 : 1313
+   écart relatif > 1e-12 : 1
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.031e-12
+   exemple ligne 1 colonne N : fourni=1548789.28395052 regénéré=1548789.28395053
+   exemple ligne 1 colonne H : fourni=0.567265376021919 regénéré=0.567265376021917
+   exemple ligne 1 colonne A : fourni=0.43866260958392 regénéré=0.438662609583919
+DIFFÉRENT   : scores/summary_by_tau.csv
+   lignes 13 / 13 ; en-têtes identiques : True
+   cellules 96 ; textes/NaN différents 0 ; numériques différentes (octets) 4
+   écart relatif > 0 : 4
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 1.004e-13
+   exemple ligne 2 colonne max_score : fourni=0.690872783625817 regénéré=0.690872783625816
+   exemple ligne 3 colonne min_score : fourni=0.241985688607385 regénéré=0.241985688607384
+   exemple ligne 7 colonne min_score : fourni=0.185946516545621 regénéré=0.18594651654562
+DIFFÉRENT   : scores/weights_main.csv
+   lignes 649 / 649 ; en-têtes identiques : True
+   cellules 3240 ; textes/NaN différents 0 ; numériques différentes (octets) 685
+   écart relatif > 0 : 685
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 9.077e-14
+   exemple ligne 1 colonne contribution : fourni=0.0151141429356412 regénéré=0.0151141429356411
+   exemple ligne 2 colonne w : fourni=0.118730001495918 regénéré=0.118730001495921
+   exemple ligne 2 colonne contribution : fourni=0.0797512725731622 regénéré=0.0797512725731639
+IDENTIQUE   : series/aggregates_1991_2022.csv
+IDENTIQUE   : series/dominance_consecutive.csv
+IDENTIQUE   : series/profiles_1991_2022.csv
+IDENTIQUE   : series/profiles_brazil_regions_1991_2022.csv
+IDENTIQUE   : series/scores_uf_1991_2022.csv
+DIFFÉRENT   : session_info.txt
+TOTAL fichiers fournis 49 : identiques 22, différents 27, absents 0
+Présents dans B seulement : aucun
+# ----
+# code de sortie : 0
+# durée (s)      : 0

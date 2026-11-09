@@ -1,0 +1,27 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && wc -l pkg/output/outputs_sha256.csv out/outputs_sha256.csv && diff <(cut -d, -f1 pkg/output/outputs_sha256.csv) <(cut -d, -f1 out/outputs_sha256.csv)
+# début    : 2026-10-26T21:27:49Z
+# ----
+   53 pkg/output/outputs_sha256.csv
+   52 out/outputs_sha256.csv
+  105 total
+3d2
+< audit/interference_directed.csv
+4a4
+> audit/interference_directed.csv
+36d35
+< robustness/alpha_grid.csv
+37a37
+> robustness/alpha_grid.csv
+40d39
+< robustness/alternative_references_municipalities.csv
+41a41
+> robustness/alternative_references_municipalities.csv
+46d45
+< robustness/delta_grid.csv
+47a47
+> robustness/delta_grid.csv
+52d51
+< run_log.txt
+# ----
+# code de sortie : 1
+# durée (s)      : 0

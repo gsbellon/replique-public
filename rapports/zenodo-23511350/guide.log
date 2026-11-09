@@ -1,0 +1,155 @@
+# commande : ssh sd-92569 cat ~/work/z23511350/pkg/DFAR_Replication_Package/REPLICATION_GUIDE.txt
+# début    : 2026-10-26T20:01:03Z
+# ----
+DFAR Full Replication and Verification Package
+
+Purpose
+-------
+This package supports independent examination of Decision-Free Algebraic Rejection (DFAR) as instantiated and evaluated for ML-KEM. It contains the source-level pure-DFAR/HMAC x86 campaign, earlier C instrumentation and Go implementations, native ARM64 source-level validation, raw measurements, compiled software-fault evidence, theorem-check scripts, and analysis code used to verify the reported numerical results.
+
+Supplementary material
+----------------------
+The three-page journal supplement provides the principal proofs, implementation
+boundaries, and evaluation summary:
+
+  documentation/supplementary_material/DFAR_TIFS_Supplementary_Material.pdf
+
+The corresponding LaTeX source and bibliography are in the same folder.
+The supplement-to-evidence index is:
+
+  documentation/SUPPLEMENT_AND_ARTIFACT_INDEX.txt
+
+The package includes the source code, raw results, frozen execution protocols,
+environment records, formal checks, and analysis scripts used for the study.
+
+Package organization
+--------------------
+
+source/native_x86_pure_hmac/
+  Source-level pure-DFAR/HMAC x86 implementation, clean build/replay script, functional and differential gates, compiled-fault harness, and 20-round benchmark runner.
+
+source/canonical_c_hmac/
+  Canonical OpenSSL 3.5.5 C/HMAC-SHA-256 benchmark source and reproducible build/run scripts.
+
+source/native_arm64/
+  Native AArch64/mlkem-native source transformation, structural checker, paired-cycle analysis, successful-campaign source diff, and consolidated reproduction runner.
+
+source/mlkem_native_integration/
+  Earlier source-level DFAR integration patches retained for provenance and comparison.
+
+source/mutation_and_diagnostics/
+  Source for controlled software failure models, 100,000-input diagnostics, KMAC sensitivity hooks, and timing checks.
+
+source/go_independent_mlkem768/
+  Independent Go ML-KEM-768 DFAR realization and tests. The included Go license applies to copied Go source.
+
+experiments/raw/
+  Raw numerical and source-produced result files. The native_arm64 directory contains the integrated AArch64 source, functional, environment, and performance evidence. Environment-specific absolute home paths in ARM64 text logs are normalized to neutral placeholders; scientific values and outcomes are unchanged.
+
+analysis/
+  Independent scripts that recompute the primary source-level x86 result, secondary instrumentation and ARM64 metrics, and verify consistency with the reported values.
+
+verification/
+  Structural and theorem-oriented checks, including support-graph, received-ciphertext namespace, incidence-rank, and mutation checks.
+
+environment/
+  Recorded software and hardware context for the canonical x86-64 C benchmark, native ARM64 validation, and independent Go realization.
+
+Primary verification
+--------------------
+Run from the package root:
+
+  python3 run_verification_suite.py
+
+This verifies the primary source-level x86 paired results and compiled-fault outcomes, secondary instrumentation and performance campaigns, controlled mutation outcomes, 300,000-output diagnostic, timing statistics, independent Go result records, native ARM64 source/functional/performance evidence, and fast structural theorem checks.
+
+Primary source-level x86 pure-DFAR/HMAC reproduction
+----------------------------------------------------
+Requirements:
+  - x86-64 Linux
+  - OpenSSL 3.5.5 static libcrypto archive containing libcrypto-lib-ml_kem.o
+  - GCC-compatible compiler, objcopy, taskset
+
+From source/native_x86_pure_hmac/:
+
+  ./run_clean_replay.sh
+
+This rebuilds the pure returned-key path, checks that the pure object has no unresolved CRYPTO_memcmp or ordinary OpenSSL decapsulation reference, replays correctness/differential/fault gates, and verifies the retained 20x5000 raw measurements. To reproduce timing on a compatible host:
+
+  ./build_p1.sh
+  ./run_p1_performance.sh reproduced.csv
+
+Performance measurements are environment-sensitive; historical data and protocol freezes are in experiments/raw/native_x86_pure_hmac/. The fresh-extraction replay record is in audit/CLEAN_ENVIRONMENT_REPLAY_20261018.txt.
+
+Earlier instrumentation C/HMAC reproduction
+-------------------------------------------
+Requirements:
+  - x86-64 Linux
+  - OpenSSL 3.5.5 static libcrypto archive containing libcrypto-lib-ml_kem.o
+  - GCC-compatible C compiler
+  - taskset for CPU pinning
+
+From source/canonical_c_hmac/:
+
+  ./build_canonical_hmac_benchmark.sh
+  ./run_canonical_hmac_benchmark.sh reproduced_canonical_hmac.csv
+
+The canonical historical data are in experiments/raw/canonical_hmac/. Performance measurements are environment-sensitive; reproduced absolute timings are not expected to be bit-identical across machines.
+
+Native ARM64 reproduction
+-------------------------
+The completed native ARM64 campaign used AArch64/ARM Neoverse-V2 and pinned mlkem-native v1.2.0 commit 0ba906cb14b1c241476134d7403a811b382ca498. It validated all three ML-KEM parameter sets before collecting 20 paired cycle measurements per set.
+
+From source/native_arm64/ on a native AArch64 Linux host with an accessible perf-event PMU:
+
+  ./run_native_arm64_validation.sh
+
+The historical raw evidence is in experiments/raw/native_arm64/. The ARM64 SHAKE-based profile is a portability/source-level validation profile; its 42--47 percent cycle overhead is not directly comparable with the primary same-platform x86-64/HMAC result.
+
+Independent Go validation
+-------------------------
+From source/go_independent_mlkem768/:
+
+  ./run_go_validation.sh
+
+The completed historical Go validation and benchmark output are retained under experiments/raw/go_validation/.
+
+Extended formal checks
+----------------------
+verification/run_extended_formal_checks.py invokes the recovered exhaustive checks. Some are intentionally more expensive than the primary verification suite.
+
+Interpretation boundaries
+-------------------------
+The empirical diagnostics do not establish PRF security, IND-CCA security, constant-time behavior, physical fault immunity, or general fault immunity. The formal security claims are those stated in the manuscript and supporting material under their explicit assumptions. Raw performance measurements are prototype measurements on the recorded environments, not production cost bounds.
+
+FIPS boundary
+-------------
+The DFAR research profile preserves honest ML-KEM shared-secret behavior but intentionally changes the malformed-ciphertext rejection output. It is not presented as a bit-for-bit FIPS 203 implementation for inconsistent ciphertexts.
+
+Security and reproducibility review
+-----------------------------------
+The proof, literature, raw-measurement, and fault-semantics review is recorded
+in audit/SECURITY_AND_PRIOR_WORK_REVIEW_20261018.txt.
+
+Paired confidence-interval reproduction
+---------------------------------------
+The P1 protocol froze a deterministic 10,000-resample bootstrap but the
+pre-outcome text did not retain the analysis API/RNG detail. The archived
+intervals are exactly regenerated by:
+  python3 analysis/recompute_p1_native_x86_summary.py
+This uses NumPy default_rng seed 20260922 and a BCa interval for the median of
+the 20 paired per-round overhead percentages. NumPy is required for this exact
+statistical replay. This audit clarification does not change the frozen paired
+estimator or any reported interval.
+
+Combined-fault scope
+--------------------
+The matched P1 fault campaign is an isolated single-fault comparison. It does
+not establish security for an adaptive or combined-fault oracle that returns
+multiple differently faulted outputs for the same key and ciphertext. The
+algebraic D1/D2 composition observation and its scope are recorded in
+  audit/COMBINED_FAULT_SCOPE_ANALYSIS_20261019.txt
+This clarification changes no raw experimental result or formal IND-CCA claim.
+# ----
+# code de sortie : 0
+# durée (s)      : 0

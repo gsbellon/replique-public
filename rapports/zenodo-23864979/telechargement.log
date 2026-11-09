@@ -1,0 +1,17 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-01T20:05:11Z
+# ----
+cost_dispersion_networks_replication_v4.0.zip: OK
+code extraction : 0
+8
+./cost_dispersion_networks_replication_v4.0/B_atlas_search.py
+./cost_dispersion_networks_replication_v4.0/LICENSE
+./cost_dispersion_networks_replication_v4.0/F_policy_transfers.py
+./cost_dispersion_networks_replication_v4.0/D_random_draws.py
+./cost_dispersion_networks_replication_v4.0/C_wheel_example.py
+./cost_dispersion_networks_replication_v4.0/E_curvature_corners_figures.py
+./cost_dispersion_networks_replication_v4.0/README.md
+./cost_dispersion_networks_replication_v4.0/A_closed_forms.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 cd ~/work/z23804087 && diff --strip-trailing-cr pkg/results/scenario.md run/results/scenario.md
+# début    : 2026-11-01T20:01:34Z
+# ----
+17c17
+< Interpreting the two-policy set costs 8.2 us per simulation step (median of 5 runs, each averaged over 240 steps; samples: 8.6, 6.4, 8.4, 8.2, 8.0). The toy simulation step here is almost empty, so a ratio against it is uninformative; in absolute terms this is about 0.82% of a single 1 ms simulation step and negligible for any simulation whose step performs real computation.
+---
+> Interpreting the two-policy set costs 5.5 us per simulation step (median of 5 runs, each averaged over 240 steps; samples: 5.4, 5.6, 5.5, 5.6, 5.5). The toy simulation step here is almost empty, so a ratio against it is uninformative; in absolute terms this is about 0.55% of a single 1 ms simulation step and negligible for any simulation whose step performs real computation.
+# ----
+# code de sortie : 1
+# durée (s)      : 0

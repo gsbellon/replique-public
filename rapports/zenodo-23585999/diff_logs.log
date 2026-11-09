@@ -1,0 +1,60 @@
+# commande : ssh sd-92569 cd ~/work/z23585999/pkg/base_v0008/release_run_logs; for f in analysis__ownership_tail.py.log analysis__v0004_gate__endogenous_tail_checks.py.log analysis__v0004_gate__finite_window_equivalence_checks.py.log analysis__v0004_gate__heterogeneous_beta_region_checks.py.log analysis__v0004_gate__heterogeneous_wealth_checks.py.log finite_state_identification_20261019__finite_state_checks.py.log inverse_region_audit_20261019__independent_inverse_checks.py.log scf_uncertainty__replicate_scf_uncertainty.py.log; do echo "== $f"; diff $f ../../../run/base_v0008/release_run_logs/$f | head -n 6 | cut -c1-200; done
+# début    : 2026-10-29T20:09:53Z
+# ----
+== analysis__ownership_tail.py.log
+11c11
+<       "observed_L_slope": -0.71428571428571,
+---
+>       "observed_L_slope": -0.7142857142857101,
+18c18
+<       "observed_L_slope": -1.0000000000000004,
+== analysis__v0004_gate__endogenous_tail_checks.py.log
+6c6
+<   "max_slope_error": 1.4066968145876046e-08,
+---
+>   "max_slope_error": 1.4066968478942954e-08,
+15c15
+<       "slope": -0.09375000153974754,
+== analysis__v0004_gate__finite_window_equivalence_checks.py.log
+32c32
+<       "numerical_alpha": 0.16666666680940828,
+---
+>       "numerical_alpha": 0.16666666680940823,
+46c46
+<       "numerical_alpha": 0.6000000003084281,
+== analysis__v0004_gate__heterogeneous_beta_region_checks.py.log
+57,58c57,58
+<       "realized_f": 0.14999999999479216,
+<       "realized_R": 1.5649314766073013,
+---
+>       "realized_f": 0.1499999999947922,
+>       "realized_R": 1.564931476607301,
+== analysis__v0004_gate__heterogeneous_wealth_checks.py.log
+25c25
+<       "slope": -0.20000003326844834,
+---
+>       "slope": -0.20000003326844842,
+27c27
+<       "P_L_error": 3.3105849173153956e-09,
+== finite_state_identification_20261019__finite_state_checks.py.log
+114c114
+<       "numerical_log_slope": 0.0909092571766651
+---
+>       "numerical_log_slope": 0.09090925717666506
+124c124
+<       "numerical_log_slope": 0.6666672737587388
+== inverse_region_audit_20261019__independent_inverse_checks.py.log
+20c20
+<     "python": "3.12.14",
+---
+>     "python": "3.12.15",
+== scf_uncertainty__replicate_scf_uncertainty.py.log
+39c39
+<     "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+---
+>     "python": "3.12.15 (main, Oct  6 2026, 02:02:22) [GCC 14.2.0]",
+42c42
+<     "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+# ----
+# code de sortie : 0
+# durée (s)      : 0

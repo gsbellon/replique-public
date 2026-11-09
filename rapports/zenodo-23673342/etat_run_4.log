@@ -1,0 +1,42 @@
+# commande : ssh sd-92569 ls -la ~/work/z23673342; podman ps -a; date -u; tail -c 600 ~/work/z23673342/run_full.log
+# début    : 2026-11-06T20:01:00Z
+# ----
+total 76
+drwxrwxr-x  9 replab replab 4096 Nov  5 21:10 .
+drwxrwxr-x 19 replab replab 4096 Nov  5 21:01 ..
+drwxrwxr-x  2 replab replab 4096 Nov  5 21:02 build
+-rw-rw-r--  1 replab replab 3387 Nov  5 21:05 compare_output.py
+-rw-rw-r--  1 replab replab  720 Nov  5 21:02 Containerfile
+drwxrwxr-x  2 replab replab 4096 Nov  5 21:01 dl
+-rw-rw-r--  1 replab replab 1541 Nov  5 21:04 lance_agg.sh
+-rw-rw-r--  1 replab replab  772 Nov  5 21:02 lance_build.sh
+-rw-rw-r--  1 replab replab  551 Nov  5 21:05 lance_compare.sh
+-rw-rw-r--  1 replab replab 1356 Nov  5 21:05 lance_run.sh
+drwxrwxr-x  6 replab replab 4096 Nov  5 21:01 pkg
+drwxrwxr-x  4 replab replab 4096 Nov  5 21:02 raw
+drwxrwxr-x  7 replab replab 4096 Nov  5 21:04 run_agg1
+drwxrwxr-x  7 replab replab 4096 Nov  5 21:04 run_agg2
+drwxrwxr-x  7 replab replab 4096 Nov  5 21:10 run_full
+-rw-rw-r--  1 replab replab 6652 Nov  5 21:21 run_full.log
+-rw-rw-r--  1 replab replab 1206 Nov  5 21:02 telecharge_ibge.sh
+-rw-rw-r--  1 replab replab 2160 Nov  5 21:10 telechargement_ibge.log
+CONTAINER ID  IMAGE                           COMMAND               CREATED      STATUS                 PORTS       NAMES
+87ad71e2299a  localhost/replab-oilecu:latest  bash run_all.sh       10 days ago  Exited (0) 9 days ago              replab-oilecu-run
+160f803cc324  localhost/replab-oilecu:latest  bash run_all.sh       9 days ago   Exited (0) 8 days ago              replab-oilecu-run2
+81f7b0a9aa53  localhost/replab-ai306:latest   sh -c python3 run...  8 days ago   Exited (0) 8 days ago              replab-ai306-run
+Fri Nov  6 08:01:00 PM UTC 2026
+n level, tau > 0: score rises whenever the household is poor after the change 
+PASS | person level: score unchanged when the household stays non-poor (focus) 
+PASS | within-UF componentwise worsening: national mean rises and no other UF changes 
+PASS | every censored headcount is lower in 2022 than in 2010 in every UF (dominance) 
+PASS | fixed reference, tau > 0: every UF score falls between 2010 and 2022 
+PASS | dominant indicator unique in every UF in 2022 
+PASS | numerical example: fixed-reference mean = 16/15 
+All checks passed.
+code run_all.R : 0
+durée (s) : 638
+2026-11-05T20:21:00Z
+FIN
+# ----
+# code de sortie : 0
+# durée (s)      : 0

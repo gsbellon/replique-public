@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 cd ~/work/z23585999 && python3 -I compare_csv.py pkg run base_v0008/analysis/ownership_tail_paths.csv base_v0008/scf_pilot/equity_threshold_sensitivity.csv base_v0008/scf_pilot/labor_status_by_age_and_ownership.csv base_v0008/scf_pilot/weighted_descriptive_estimates.csv base_v0008/scf_uncertainty/descriptive_estimates_with_standard_errors.csv
+# début    : 2026-10-29T20:09:31Z
+# ----
+base_v0008/analysis/ownership_tail_paths.csv : lignes 815 | cellules 8150 | différentes en texte 22 | différentes en valeur 22 | non numériques différentes 0 | écart relatif max 1.68e-16 | écart absolu max 1.68e+07
+base_v0008/scf_pilot/equity_threshold_sensitivity.csv : lignes 29 | cellules 435 | différentes en texte 78 | différentes en valeur 78 | non numériques différentes 0 | écart relatif max 4.12e-16 | écart absolu max 2.22e-16
+base_v0008/scf_pilot/labor_status_by_age_and_ownership.csv : lignes 33 | cellules 462 | différentes en texte 73 | différentes en valeur 73 | non numériques différentes 0 | écart relatif max 4.36e-16 | écart absolu max 3.33e-16
+base_v0008/scf_pilot/weighted_descriptive_estimates.csv : lignes 101 | cellules 1414 | différentes en texte 317 | différentes en valeur 317 | non numériques différentes 0 | écart relatif max 4.98e-16 | écart absolu max 1.16e-10
+base_v0008/scf_uncertainty/descriptive_estimates_with_standard_errors.csv : lignes 49 | cellules 784 | différentes en texte 332 | différentes en valeur 332 | non numériques différentes 0 | écart relatif max 9.58e-14 | écart absolu max 4.44e-16
+# ----
+# code de sortie : 0
+# durée (s)      : 0

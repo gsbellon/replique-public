@@ -1,0 +1,53 @@
+# commande : ssh sd-92569 cd ~/work/z23595707 && sh lance_executions.sh
+# début    : 2026-10-27T20:01:55Z
+# ----
+Python 3.12.15
+== 0. openssl dans l'image ?
+/usr/bin/openssl
+code: 0
+== 1. python3 scripts/verify_integrity.py (sans --tsr)
+checksums: 759 files listed (every file except provenance/checksums.sha256 itself), 0 problems, 0 unlisted files
+archived files: 549 identical to their source hash, 4 redacted (original SHA-256 and the hash of each removed text in provenance/REDACTIONS.csv)
+license map: 760 files
+derived files: 1 with third-party quotations replaced (original SHA-256 and the hash of each omitted text in provenance/DERIVED_FILES.csv)
+code de sortie 1 : 0
+== 1b. python3 scripts/verify_integrity.py --tsr
+checksums: 759 files listed (every file except provenance/checksums.sha256 itself), 0 problems, 0 unlisted files
+archived files: 549 identical to their source hash, 4 redacted (original SHA-256 and the hash of each removed text in provenance/REDACTIONS.csv)
+license map: 760 files
+derived files: 1 with third-party quotations replaced (original SHA-256 and the hash of each omitted text in provenance/DERIVED_FILES.csv)
+RFC 3161 Freeze A: Verification: OK
+RFC 3161 Freeze B: Verification: OK
+MQT Bench Freeze A manifest: 70 entries, 69 matching, 1 redacted (original SHA-256 in provenance/REDACTIONS.csv equals the timestamped hash), 0 other
+MQT Bench Freeze B manifest: 245 entries, 245 matching, 0 redacted, 0 other
+RFC 3161 Freeze C: Verification: OK
+Freeze C manifest: 3 entries, 3 matching data/observation_change/PLAN.md, data/developer_suites/PLAN.md, data/position/PLAN.md
+RFC 3161 Freeze D: Verification: OK
+Freeze D manifest: 1 entry, 1 matching data/observation_change/POSITION_EXTENSION.md
+code de sortie 1b : 0
+== 2. python3 scripts/reproduce.py --out /out
+manuscript_checks  exit 0
+ledger_checks      exit 0
+protocol_checks    exit 0
+extra_checks       exit 0
+records_checks     exit 0
+
+checks: 399  MATCH: 297  NOT REPRODUCED HERE (analytic tier): 2  PARTIAL: 100
+values printed in the article: MATCH: 119  NOT REPRODUCED HERE (analytic tier): 1  PARTIAL: 19
+MATCH = recomputed from per-case records or logs; PARTIAL = equal, but verified against an archived aggregate,
+protocol record or recorded git history. Full table: /out/results_verification.csv
+code de sortie 2 : 0
+== 3. python3 scripts/run_conformance_tests.py --out /out
+test_minimal_conformance.py    PASS   41/41 checks passed
+test_conformance_789.py        PASS   41/41 checks passed
+test_decision_bound.py         PASS   22/22 checks passed
+code de sortie 3 : 0
+== 4. python3 scripts/reproduce_experiments.py --out /out/experiments
+experiment checks: 84  MATCH: 70  NOT RUN (analytic tier): 8  PARTIAL: 6
+Full table: /out/experiments/experiments_verification.csv
+code de sortie 4 : 0
+== md5
+017477a57e4cab4708d9bd02cf50ba99  QS.zip
+# ----
+# code de sortie : 0
+# durée (s)      : 7

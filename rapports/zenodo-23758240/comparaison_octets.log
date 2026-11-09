@@ -1,0 +1,26 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh compare.sh
+# début    : 2026-10-31T20:03:33Z
+# ----
+IDENTIQUE config_used.json 43ef572fdad5093c
+IDENTIQUE fig5_correlation.json a38c64655a37ce42
+DIFFERENT overall_means_bursty.csv fourni=294cef4f6f654f5b regenere=1d7ebb69d67cdf4e
+DIFFERENT overall_means_control.csv fourni=c54acc45b33ce8d2 regenere=7c8ac43c171089fc
+DIFFERENT paired_vs_reactive.csv fourni=18259994ac5bf7e7 regenere=fa2fcea27ae98108
+DIFFERENT raw_results.csv fourni=f5aeebc50492b64f regenere=7bcd05ba136ac3ce
+DIFFERENT summary_medians.csv fourni=bc99b82593f5ace1 regenere=70e666ca14dd9c3d
+--- fichiers de run/results absents du paquet :
+--- lignes :
+      5 pkg/autoscaling-sensitivity-study/results/overall_means_bursty.csv
+      5 pkg/autoscaling-sensitivity-study/results/overall_means_control.csv
+    286 pkg/autoscaling-sensitivity-study/results/paired_vs_reactive.csv
+   7601 pkg/autoscaling-sensitivity-study/results/raw_results.csv
+    381 pkg/autoscaling-sensitivity-study/results/summary_medians.csv
+      5 run/results/overall_means_bursty.csv
+      5 run/results/overall_means_control.csv
+    286 run/results/paired_vs_reactive.csv
+   7601 run/results/raw_results.csv
+    381 run/results/summary_medians.csv
+  16556 total
+# ----
+# code de sortie : 0
+# durée (s)      : 1

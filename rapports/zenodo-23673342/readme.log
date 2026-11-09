@@ -1,0 +1,130 @@
+# commande : ssh sd-92569 cat work/z23673342/pkg/README.md
+# début    : 2026-11-05T20:01:22Z
+# ----
+# Fixed-reference Benefit-of-the-Doubt index on Alkire-Foster censored headcounts
+
+Reproduction package for the article *Pesos endógenos e referência fixa na mensuração territorial
+da pobreza multidimensional: evidência para o Brasil, 1991 a 2022* (Brandão, Mariano and Rebelatto). Release 1.0.0 accompanies manuscript v4 (26 October 2026). The main application uses the 2010 and 2022 censuses; the historical extension requires the additional 1991 and 2000 SPSS samples described below.
+
+## Method in short
+
+1. **Identification (Alkire-Foster).** Twelve deprivation indicators in four dimensions, equal
+   weights 1/12, poverty cut-off k = 1/3 (IPM-Brasil definitions; income line of one quarter of
+   each year's minimum wage). Person-level indicators (education, work) are
+   assigned to the household when at least one resident is deprived; every resident shares the
+   household profile.
+2. **Profiles.** For each UF and year, the censored headcount of each indicator: the share of
+   persons who are poor and deprived in that indicator. M0 is their mean.
+3. **Score.** Benefit of the Doubt with unit input against a fixed reference B, the 27 UF profiles
+   of 2010: S(h) = max w'h subject to Bw <= 1, w >= 0 and w_j >= (tau/12) sum(w). The restriction
+   does not depend on the evaluated profile, so the admissible set of weights is the same in every
+   evaluation. tau = 0 is the unrestricted model; tau = 1 gives S = M0 / max M0 of the reference.
+   Main specification: tau = 0.5.
+4. **Aggregation.** Population-weighted mean of the UF scores (regions and Brazil).
+
+## Requirements
+
+R 4.2 or later with `data.table`, `lpSolve`, `rDEA` (GLPK, second solver) and `Benchmarking`
+(check of the unrestricted model); the command-line tools `unzip` and `awk`. For the full solver validation install both `rDEA` and `Benchmarking`. The optional historical extension also requires `haven` and `tidyselect`. The validated environment uses R 4.5.3 on macOS; full raw-data reproduction needs substantial memory and disk space. Shell-based extraction requires a Unix-like environment (Linux, macOS or WSL).
+
+## Data
+
+| Census | Source | Files |
+|---|---|---|
+| 2010 | IBGE, Censo Demográfico 2010, Resultados Gerais da Amostra, microdados. <https://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/> | one zip per UF (São Paulo in two parts) and `Documentacao.zip` |
+| 2022 | IBGE, Censo Demográfico 2022, microdados da amostra de acesso público. <https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Microdados_e_Areas_de_Ponderacao/Microdados_de_acesso_Publico/csv/> | `Todas_as_UFs.zip` |
+
+Stage 01 downloads the files that are missing and records their SHA-256 (`output/inputs_sha256.csv`).
+IBGE releases corrections to the microdata; a different release may change the results slightly.
+Paths can be set with `BOD_CENSUS2010_DIR`, `BOD_CENSUS2022_ZIP`, `BOD_WORK_DIR` and `BOD_OUTPUT_DIR`.
+
+## Running
+
+```
+Rscript run_all.R            # all stages and the tests
+Rscript run_all.R 05 06 07   # only the listed stages (list each stage)
+Rscript tests/check_results.R
+```
+
+| Stage | Script | What it does | Main outputs |
+|---|---|---|---|
+| 01 | `01_download.R` | downloads missing files; checksums | `inputs_sha256.csv` |
+| 02 | `02_build_census2010.R` | households of 2010 with the 12 indicators, from the fixed-width files; checks person records against V0401 | `work/households_2010.rds`, `base_2010_counts.csv` |
+| 03 | `03_build_census2022.R` | households of 2022 with the same indicators | `work/households_2022.rds`, `base_2022_counts.csv` |
+| 04 | `04_af_profiles.R` | AF identification; censored headcounts, H, A and M0 by UF, region and Brazil; robustness profiles | `af/` |
+| 05 | `05_scores.R` | scores against the fixed 2010 reference and against each year's own reference, for every tau; aggregates; weights | `scores/` |
+| 06 | `06_audit.R` | independent solvers; interference under moving and fixed references; monotonicity in the profile and at household level; componentwise within-UF worsening | `audit/` |
+| 07 | `07_robustness.R` | real income line, harmonized school delay, four dimensions, eleven indicators, suppressed ages; pooled, normative and leave-one-out references; rank ranges over tau; dominant indicator with its range over optimal solutions; bootstrap | `robustness/` |
+| 08 | `08_numerical_example.R` | numerical example of the article | `numerical_example/` |
+| 09 | `09_series_1991_2022.R` | optional: 1991 and 2000 Census samples (SPSS files given by `BOD_CENSUS1991_SAV` and `BOD_CENSUS2000_SAV`; needs `haven`), same indicators, scores against the fixed 2010 reference and each year's own reference; skipped when the files are not set | `series/` |
+| 10 | `10_figure.R` | Figure 1 of the article | `figure/Figura_1.png` |
+| 11 | `11_manifest.R` | parameters, session information, output checksums | `outputs_sha256.csv` |
+
+Indicator definitions and Census variable codes: `docs/indicators.md`.
+
+## Licence
+
+MIT. See `LICENSE`.
+
+
+
+## Replication paths
+
+Start in the repository root. Install packages from CRAN:
+
+```r
+install.packages(c("data.table", "lpSolve", "rDEA", "Benchmarking", "haven", "tidyselect"))
+```
+
+**Verify the archived aggregate results without downloading microdata:**
+
+```sh
+Rscript tests/check_results.R
+Rscript tests/review_v4.R
+```
+
+The second command checks the scope counterexample, population-standardized change, 108 AF profiles and 1,296 headcounts against archived Article 3 aggregates, 324 re-estimated scores, and territorial subgroup decomposition. It writes its comparison outputs under `output/audit/`. These commands are aggregate-result checks, not a new reconstruction of the census samples.
+
+**Re-estimate the core model from the archived profiles:**
+
+```sh
+Rscript tests/prepare_aggregate_profiles.R
+Rscript run_all.R 05 08 10 11
+```
+
+Stages 05 and 08 reconstruct scores and the analytic example; stage 10 regenerates the figure. Stages 06 and 07 require intermediate household RDS files created by stages 02 and 03; they cannot be run from the aggregate archive alone.
+
+**Rebuild the main application from public census inputs:**
+
+```sh
+Rscript run_all.R
+```
+
+Stage 01 downloads missing 2010/2022 inputs. To use existing files instead, set `BOD_CENSUS2010_DIR` and `BOD_CENSUS2022_ZIP`. `BOD_WORK_DIR` controls household intermediates and `BOD_OUTPUT_DIR` controls results. Leave defaults for the archived test paths. Stages are selected individually: `05 09` runs stages 05 and 09 only. No numeric range is implied.
+
+**Rebuild the historical extension:** obtain the two SPSS samples independently, install `haven` and `tidyselect`, then set:
+
+```sh
+export BOD_CENSUS1991_SAV="/path/to/Censo.1991.brasil.amostra.25porcento.sav"
+export BOD_CENSUS2000_SAV="/path/to/Censo.2000.brasil.amostra.10porcento.sav"
+Rscript run_all.R 09 11
+```
+
+Stage 09 depends on 2010/2022 profiles from stage 04. It skips the historical reconstruction if the files or dependency are unavailable. The released historical results are retained for inspection; a skipped stage does not certify their reconstruction. Input filenames, sizes and SHA-256 identifiers are archived in `output/audit/input_series_sha256.csv`. The historical SPSS files are not downloaded automatically and are not redistributed.
+
+## Interpretation and scope
+
+The reference is a frozen copy of the 27 state profiles in 2010. Changing a currently evaluated state does not change this copy. Re-estimating the reference is a different experiment. A positive coefficient restriction yields strict response to an increase in a censored headcount; it does not imply a response when an additional deprivation leaves a household non-poor. The simulations use common households and deprivation shocks across tau.
+
+Scalar subgroup consistency applies to groups of whole states with fixed population shares. It is not claimed for arbitrary within-state partitions of persons; an executable counterexample is included. The main mean falls by 50.8% with each year's population shares and by 50.3% with 2010 shares held fixed. These are descriptive changes, not causal policy effects.
+
+At tau = 1 the score equals **normalized** M0. The positive restriction concerns coefficients (equivalently a fixed unit profile), not territory-specific virtual contributions. Optimal coefficient contributions describe a conditional diagnostic; they do not identify welfare weights or optimal budgets.
+
+## Release contents and verification
+
+Code, documentation and aggregate results are included. No person-level microdata or household intermediate bases are included. `docs/AF3_*.csv` contains aggregate cross-check inputs only. The release records checks from manuscript v4: 324 scores agree with GLPK within 6.47e-13; unrestricted scores agree with Benchmarking within 2.11e-15. AF comparisons are below 1e-10. Full raw-data processing was not rerun in the v4 review. `manifesto_sha256.json` identifies all release files except itself.
+
+The manuscript is unpublished. Cite this software using `CITATION.cff`; the release does not claim journal acceptance. Repository: https://github.com/moisesluna2026/bod-fixed-mpi
+# ----
+# code de sortie : 0
+# durée (s)      : 0

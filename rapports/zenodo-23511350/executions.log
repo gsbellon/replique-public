@@ -1,0 +1,25 @@
+# commande : ssh sd-92569 cd ~/work/z23511350 && sh lance_executions.sh
+# début    : 2026-10-26T20:01:25Z
+# ----
+== A. commande du guide : python3 run_verification_suite.py (racine du paquet, monté en lecture seule)
+PACKAGE_MANIFEST_VERIFICATION_PASS files=138
+P1_RESULT_VERIFICATION_PASS
+FAIL: NumPy is required for exact P1 BCa regeneration: No module named 'numpy'
+
+### analysis/verify_package_manifest.py ###
+
+### analysis/verify_native_x86_p1_results.py ###
+
+### analysis/recompute_p1_native_x86_summary.py ###
+code de sortie A : 1
+== numpy présent dans l'image ?
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'numpy'
+code de sortie numpy : 1
+Python 3.12.15
+== md5
+bcbdf663c698f3709e974efbad0604c0  DFAR.zip
+# ----
+# code de sortie : 0
+# durée (s)      : 2

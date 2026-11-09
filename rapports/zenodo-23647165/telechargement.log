@@ -1,0 +1,40 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-07T20:11:20Z
+# ----
+Benyahia_EROI_frontier_replication_package.zip: OK
+code extraction : 0
+32
+./replication/LICENSE
+./replication/figures/Figure_S2.pdf
+./replication/figures/Graphical_abstract.pdf
+./replication/figures/Figure_3.pdf
+./replication/figures/Figure_2.pdf
+./replication/figures/Figure_S1.pdf
+./replication/figures/Figure_1.pdf
+./replication/code/build_manuscript.py
+./replication/code/calibrate.py
+./replication/code/LICENSE
+./replication/code/model.py
+./replication/code/graphical_abstract.py
+./replication/code/verify_theory.py
+./replication/code/figures.py
+./replication/code/README.md
+./replication/code/make.sh
+./replication/README.md
+./replication/output/verification.json
+./replication/output/results.json
+./replication/output/numbers_in_text.json
+./replication/output/calibration_log.txt
+./replication/tex/02_model.tex
+./replication/tex/08_end.tex
+./replication/tex/06_discussion.tex
+./replication/tex/03_frontier.tex
+./replication/tex/07_back.tex
+./replication/tex/references.bib
+./replication/tex/04_results.tex
+./replication/tex/S_supplement.tex
+./replication/tex/01_intro.tex
+./replication/tex/00_front.tex
+# ----
+# code de sortie : 0
+# durée (s)      : 1

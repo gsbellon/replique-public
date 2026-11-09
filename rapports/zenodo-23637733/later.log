@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && sh lance_later.sh
+# début    : 2026-11-07T20:04:41Z
+# ----
+pull requests                                                               901
+median operations by the agent account per PR                               2
+median operations by people per PR (commits, comments, review texts)        1
+share of PRs with no operation by a person beyond approval and merge        0.4018
+share of PRs with at least one human approval                               0.8757
+share of PRs with human approval and no other human operation               0.3097
+code de sortie : 0
+identique au livré
+# ----
+# code de sortie : 0
+# durée (s)      : 0

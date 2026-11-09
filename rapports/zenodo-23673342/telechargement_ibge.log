@@ -1,0 +1,74 @@
+# commande : ssh sd-92569 cat ~/work/z23673342/telechargement_ibge.log
+# début    : 2026-11-06T20:01:10Z
+# ----
+2026-11-05T20:02:08Z
+AC code=0
+AL code=0
+AM code=0
+AP code=0
+BA code=0
+CE code=0
+DF code=0
+ES code=0
+GO code=0
+MA code=0
+MG code=0
+MS code=0
+MT code=0
+PA code=0
+PB code=0
+PE code=0
+PI code=0
+PR code=0
+RJ code=0
+RN code=0
+RO code=0
+RR code=0
+RS code=0
+SC code=0
+SE code=0
+SP1 code=0
+SP2_RM code=0
+TO code=0
+Documentacao code=0
+2022 code=0
+raw/census2010:
+total 1096512
+-rw-rw-r-- 1 replab replab   4658447 Nov  5 21:02 AC.zip
+-rw-rw-r-- 1 replab replab  17516491 Nov  5 21:02 AL.zip
+-rw-rw-r-- 1 replab replab  13726905 Nov  5 21:02 AM.zip
+-rw-rw-r-- 1 replab replab   3928569 Nov  5 21:02 AP.zip
+-rw-rw-r-- 1 replab replab  80780230 Nov  5 21:02 BA.zip
+-rw-rw-r-- 1 replab replab  43429710 Nov  5 21:03 CE.zip
+-rw-rw-r-- 1 replab replab   6596190 Nov  5 21:03 DF.zip
+-rw-rw-r-- 1 replab replab  10711779 Nov  5 21:07 Documentacao.zip
+-rw-rw-r-- 1 replab replab  22397547 Nov  5 21:03 ES.zip
+-rw-rw-r-- 1 replab replab  39863795 Nov  5 21:03 GO.zip
+-rw-rw-r-- 1 replab replab  38801333 Nov  5 21:03 MA.zip
+-rw-rw-r-- 1 replab replab 135671809 Nov  5 21:04 MG.zip
+-rw-rw-r-- 1 replab replab  15619815 Nov  5 21:04 MS.zip
+-rw-rw-r-- 1 replab replab  21557136 Nov  5 21:04 MT.zip
+-rw-rw-r-- 1 replab replab  35940236 Nov  5 21:04 PA.zip
+-rw-rw-r-- 1 replab replab  29485515 Nov  5 21:04 PB.zip
+-rw-rw-r-- 1 replab replab  46135891 Nov  5 21:04 PE.zip
+-rw-rw-r-- 1 replab replab  25116143 Nov  5 21:04 PI.zip
+-rw-rw-r-- 1 replab replab  72947073 Nov  5 21:05 PR.zip
+-rw-rw-r-- 1 replab replab  63197059 Nov  5 21:05 RJ.zip
+-rw-rw-r-- 1 replab replab  22151675 Nov  5 21:05 RN.zip
+-rw-rw-r-- 1 replab replab  10840081 Nov  5 21:05 RO.zip
+-rw-rw-r-- 1 replab replab   3163902 Nov  5 21:05 RR.zip
+-rw-rw-r-- 1 replab replab  78635162 Nov  5 21:05 RS.zip
+-rw-rw-r-- 1 replab replab  49409066 Nov  5 21:06 SC.zip
+-rw-rw-r-- 1 replab replab  12744424 Nov  5 21:06 SE.zip
+-rw-rw-r-- 1 replab replab 136561102 Nov  5 21:06 SP1.zip
+-rw-rw-r-- 1 replab replab  66923314 Nov  5 21:07 SP2_RM.zip
+-rw-rw-r-- 1 replab replab  14255084 Nov  5 21:07 TO.zip
+
+raw/census2022:
+total 1062260
+-rw-rw-r-- 1 replab replab 1087747933 Nov  5 21:10 Todas_as_UFs.zip
+2026-11-05T20:10:20Z
+FIN
+# ----
+# code de sortie : 0
+# durée (s)      : 0

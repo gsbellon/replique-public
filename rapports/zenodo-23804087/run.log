@@ -1,0 +1,70 @@
+# commande : ssh sd-92569 cd ~/work/z23804087 && sh lance_run.sh
+# début    : 2026-11-01T20:00:48Z
+# ----
+REPOSITORY                    TAG         IMAGE ID      CREATED       SIZE
+localhost/replab-autoscaling  latest      c4ba91a476fe  24 hours ago  520 MB
+localhost/replab-ai306        latest      9643b511edbd  3 days ago    515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  5 days ago    1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  6 days ago    972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  6 days ago    202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  11 days ago   935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  3 weeks ago   124 MB
+2026-11-01T20:00:48Z
+Python 3.12.15
+Comparative expressiveness over 12 cases:
+  ECA     full  2  partial  6  no  4
+  Stitch  full  2  partial  8  no  2
+  FCC     full  2  partial  1  no  9
+  SPM     full 12  partial  0  no  0
+  third-party (N=10): ECA 2/6/2  Stitch 2/8/0  FCC 2/1/7  SPM 10/0/0   (full/partial/no)
+  scenarios   (N=2): ECA 0/0/2  Stitch 0/0/2  FCC 0/0/2  SPM 2/0/0   (full/partial/no)
+  sensitivity: 58 single-cell edits, 20 change nothing, max 9 verdicts changed by one edit, 0 single upgrades make another formalism complete, max 4 verdicts changed by a single upgrade
+Reports written to /work/results/comparative.md, comparative_rows.tex, and comparative_sensitivity.md
+E-site executable instantiation:
+  always-coarse   compute=240 error=84
+  always-detailed compute=1920 error=0
+  policy-driven   compute=838 error=10 switches=2
+  compute saving vs detailed: 56.4%   error reduction vs coarse: 88.1%
+  policy-eval overhead: 5.5 us/step median (~0.55% of a 1 ms step)
+  sensitivity: 4:1/single-cold-window: save 48%, err -88%; 4:1/double-cold-window: save 41%, err -80%; 8:1/single-cold-window: save 56%, err -88%; 8:1/double-cold-window: save 49%, err -80%; 16:1/single-cold-window: save 61%, err -88%; 16:1/double-cold-window: save 53%, err -80%
+  oscillation: naive=38, cooldown-only=12, full=0 switches
+  self-test: PASS
+Traffic cross-simulator reuse:
+  decision layer reused unmodified: True
+  always-meso  compute=360 error=150
+  always-micro compute=3600 error=0
+  policy-driven compute=1843 error=0 switches=2
+  compute saving vs micro: 48.8%   error reduction vs meso: 100.0%
+  hysteresis stability on boundary hover: 1 switches
+  self-test: PASS
+  cross-check: E-site set well-formed=True, naive set flags WF4=True, traffic set well-formed=True, mesa set well-formed=True
+  ground truth: STABLE=211 SLOW=171 FAST=118
+  E1 fast misses=0  E2 slow misses=0  legacy missed fast/slow=13/21
+  flagged-but-stable (conservatism): 100
+  self-test: PASS
+SKIPPED: SUMO/TraCI not available. This optional study binds the
+decision layer to a third-party simulator; install SUMO
+(pip install eclipse-sumo traci sumolib) and re-run.
+SKIPPED: Mesa not available. This optional study binds the decision
+layer to the third-party ABM framework Mesa; install it
+(pip install mesa) and re-run.
+
+Study 1 (well-formedness validation):  PASS
+Study 2 (policy-set analysis):         PASS
+Study 3 (comparative expressiveness):  PASS
+Study 4 (executable E-site + traffic): PASS
+Study 5 (randomized analysis valid.):  PASS
+Study 6 (SUMO third-party binding):    SKIPPED (optional; requires SUMO)
+Study 7 (Mesa third-party binding):    SKIPPED (optional; requires Mesa)
+Reports in /work/results/
+code run_evaluation : 0
+..........................................
+----------------------------------------------------------------------
+Ran 42 tests in 0.009s
+
+OK
+code unittest : 0
+2026-11-01T20:01:03Z
+# ----
+# code de sortie : 0
+# durée (s)      : 15

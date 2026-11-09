@@ -1,0 +1,31 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && diff pkg/replication_package/results_holdout/out/agent_pr_summary.csv run/results_holdout/out/agent_pr_summary.csv; ls -l pkg/replication_package/results_holdout/out run/results_holdout/out
+# début    : 2026-11-07T20:03:13Z
+# ----
+2c2
+< app/copilot-swe-agent,"dotnet,microsoft,Azure",2026-09-15,2026-10-20,901,713,969,133,93,831,5,88,0.137,0.096,0.858,174,0.18,172,98,577,0.144,0.184,0.099
+---
+> app/copilot-swe-agent,"dotnet,microsoft,Azure",2026-09-15,2026-10-20,901,713,969,133,93,831,5,88,0.137,0.096,0.858,174,0.18,172,98,577,0.144,0.187,0.095
+pkg/replication_package/results_holdout/out:
+total 244
+-rw-rw-r-- 1 replab replab    159 Nov  7 21:00 agent_pr_by_org.csv
+-rw-rw-r-- 1 replab replab 129116 Nov  7 21:00 agent_pr_claims.csv
+-rw-rw-r-- 1 replab replab    774 Nov  7 21:00 agent_pr_claims_summary.csv
+-rw-rw-r-- 1 replab replab   6735 Nov  7 21:00 agent_pr_coding_sample.csv
+-rw-rw-r-- 1 replab replab   1317 Nov  7 21:00 agent_pr_run_manifest.json
+-rw-rw-r-- 1 replab replab    596 Nov  7 21:00 agent_pr_summary.csv
+-rw-rw-r-- 1 replab replab  87466 Nov  7 21:00 agent_pr_verdicts.csv
+-rw-rw-r-- 1 replab replab   3069 Nov  7 21:00 heldout_codes_ai.csv
+
+run/results_holdout/out:
+total 244
+-rw-rw-r-- 1 replab replab    159 Nov  7 21:02 agent_pr_by_org.csv
+-rw-rw-r-- 1 replab replab 129116 Nov  7 21:02 agent_pr_claims.csv
+-rw-rw-r-- 1 replab replab    774 Nov  7 21:02 agent_pr_claims_summary.csv
+-rw-rw-r-- 1 replab replab   6735 Nov  7 21:00 agent_pr_coding_sample.csv
+-rw-rw-r-- 1 replab replab   1317 Nov  7 21:02 agent_pr_run_manifest.json
+-rw-rw-r-- 1 replab replab    596 Nov  7 21:02 agent_pr_summary.csv
+-rw-rw-r-- 1 replab replab  87466 Nov  7 21:02 agent_pr_verdicts.csv
+-rw-rw-r-- 1 replab replab   3069 Nov  7 21:00 heldout_codes_ai.csv
+# ----
+# code de sortie : 0
+# durée (s)      : 0

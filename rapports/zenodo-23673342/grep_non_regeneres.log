@@ -1,0 +1,15 @@
+# commande : ssh sd-92569 cd ~/work/z23673342/pkg && grep -rnE 'AF3_conference|AF3_headcounts|population_standardization|saved_scores_recomputed|scope_subgroup|territorial_subgroup|testes_v4|profiles_income_mw|input_series_sha256|aggregates_1991|scores_uf_1991' --include=*.R --include=*.md .
+# début    : 2026-11-06T20:01:42Z
+# ----
+./tests/review_v4.R:10:fwrite(cs,file.path(O,'audit/scope_subgroup_counterexample.csv'))
+./tests/review_v4.R:20:fwrite(rbindlist(res),file.path(O,'audit/population_standardization.csv'))
+./tests/review_v4.R:28:fwrite(chk[,.(ano,uf,categoria,delta_H,delta_A,delta_M0)],file.path(O,'audit/AF3_conference.csv'))
+./tests/review_v4.R:32:fwrite(ch,file.path(O,'audit/AF3_headcounts_conference.csv'))
+./tests/review_v4.R:40:fwrite(errs,file.path(O,'audit/saved_scores_recomputed.csv'));stopifnot(max(errs$max_error)<1e-10)
+./tests/review_v4.R:45:fwrite(groups,file.path(O,'audit/territorial_subgroup_decomposition.csv'))
+./README.md:110:Stage 09 depends on 2010/2022 profiles from stage 04. It skips the historical reconstruction if the files or dependency are unavailable. The released historical results are retained for inspection; a skipped stage does not certify their reconstruction. Input filenames, sizes and SHA-256 identifiers are archived in `output/audit/input_series_sha256.csv`. The historical SPSS files are not downloaded automatically and are not redistributed.
+./R/09_series_1991_2022.R:104:fwrite(s, file.path(O, "scores_uf_1991_2022.csv"))
+./R/09_series_1991_2022.R:109:fwrite(agg, file.path(O, "aggregates_1991_2022.csv"))
+# ----
+# code de sortie : 0
+# durée (s)      : 0

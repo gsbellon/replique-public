@@ -1,0 +1,96 @@
+# commande : ssh sd-92569 cd ~/work/z23585999 && python3 -I compare_pkg_run.py pkg run 1e-9 1e-12
+# début    : 2026-10-29T20:10:28Z
+# ----
+fichiers livrés : 222 | identiques octet à octet : 183 | absents après exécution : 0
+tolérance relative json : 1e-09
+DIFFERENTS .csv : 5
+    base_v0008/analysis/ownership_tail_paths.csv
+    base_v0008/scf_pilot/equity_threshold_sensitivity.csv
+    base_v0008/scf_pilot/labor_status_by_age_and_ownership.csv
+    base_v0008/scf_pilot/weighted_descriptive_estimates.csv
+    base_v0008/scf_uncertainty/descriptive_estimates_with_standard_errors.csv
+DIFFERENTS .log : 9
+    base_v0008/release_run_logs/analysis__ownership_tail.py.log
+    base_v0008/release_run_logs/analysis__v0004_gate__endogenous_tail_checks.py.log
+    base_v0008/release_run_logs/analysis__v0004_gate__finite_window_equivalence_checks.py.log
+    base_v0008/release_run_logs/analysis__v0004_gate__heterogeneous_beta_region_checks.py.log
+    base_v0008/release_run_logs/analysis__v0004_gate__heterogeneous_wealth_checks.py.log
+    base_v0008/release_run_logs/finite_state_identification_20261019__finite_state_checks.py.log
+    base_v0008/release_run_logs/inverse_region_audit_20261019__independent_inverse_checks.py.log
+    base_v0008/release_run_logs/scf_uncertainty__replicate_scf_uncertainty.py.log
+    joint_information_value/joint_value_independent.stdout.log
+DIFFERENTS .pdf : 3
+    figures/finite_counterfactual_geometry_paths.pdf
+    joint_information_value/flagship_linked_information.pdf
+    joint_information_value/joint_hours_price_value.pdf
+DIFFERENTS .svg : 1
+    joint_information_value/flagship_linked_information.svg
+JSON avec écart numérique/structurel : base_v0008/REPRODUCTION_RECEIPT.json (28 chemins)
+       [0]/seconds (0.876 / 1.072)
+       [1]/log_sha256 ('8df9770179ee20a3277ec05c524f37b7553c1785' / '4315ed5be9ed5bf2a38c2823f67ec34be579b129')
+       [1]/seconds (0.43 / 0.563)
+       [2]/seconds (1.582 / 2.108)
+       [3]/seconds (0.544 / 0.69)
+       [4]/seconds (0.407 / 0.476)
+       [5]/log_sha256 ('05a17775e744350fd7492a8c2f1536318af340fe' / '02bd817b3dc3882e65baabb89c43b9b5e7f5888e')
+       [5]/seconds (0.509 / 0.788)
+       [6]/log_sha256 ('fffddc2c8435eed5573bb9caa7153e350f686342' / '569b8eca927bcf0a2c5cf627feaaf1bd0ea826c9')
+       [6]/seconds (1.648 / 2.206)
+       [7]/log_sha256 ('76696de99c39f8517b021bb55fb2fb706cf57ed9' / '9e931b820f115c527b2ef2650a8fdcb9b46d1119')
+       [7]/seconds (0.511 / 0.646)
+       [8]/log_sha256 ('58acbc50801262aa74e2e76e297d9b8bf6f4ce51' / '064c44ffbb20084e00908e4314d51cc88bccf50e')
+       [8]/seconds (0.422 / 0.485)
+       [9]/seconds (0.028 / 0.036)
+       [10]/seconds (1.146 / 1.663)
+       [11]/log_sha256 ('79216556268d76e2b01a78749ea55a6d7fa09bd2' / '469230a5873f128573f9845348f1bd4ed50f9d47')
+       [11]/seconds (2.716 / 3.799)
+       [12]/seconds (0.411 / 0.466)
+       [13]/log_sha256 ('4f5dd0d15cdd77218b1e6c7a5e233c1b97cdf24e' / '20f5a57953e5571e657af638ff3b0fc65ea17527')
+       [13]/seconds (1.079 / 1.407)
+       [14]/seconds (0.91 / 1.295)
+       [15]/seconds (0.786 / 1.093)
+       [16]/seconds (0.964 / 1.376)
+       [17]/log_sha256 ('f9a09362c24f83279d9b365eeb3ee0d3b9b9d80a' / 'c4571c421ad0a866d7388879ebd8493277e496ac')
+       [17]/seconds (10.902 / 17.486)
+       [18]/seconds (2.748 / 2.994)
+       [19]/seconds (0.832 / 1.233)
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/ownership_tail_results.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0003_gate/ownership_trade_paths.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/endogenous_tail_paths.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/endogenous_tail_results.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/finite_window_equivalence_results.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/heterogeneous_beta_region_paths.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/heterogeneous_beta_region_results.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/heterogeneous_wealth_paths.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/analysis/v0004_gate/heterogeneous_wealth_results.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/finite_counterfactual/finite_counterfactual_curves.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/finite_state_identification_20261019/finite_bias_cases.json
+JSON différent octet à octet mais égal à la tolérance : base_v0008/finite_state_identification_20261019/results.json
+JSON avec écart numérique/structurel : base_v0008/inverse_region_audit_20261019/results.json (1 chemins)
+       /versions/python ('3.12.14' / '3.12.15')
+JSON différent octet à octet mais égal à la tolérance : base_v0008/scf_pilot/official_benchmark_alignment.json
+JSON avec écart numérique/structurel : base_v0008/scf_uncertainty/validation.json (2 chemins)
+       /runtime/platform ('Linux-6.18.55-x86_64-with-glibc2.41' / 'Linux-6.12.111+deb13-amd64-x86_64-with-g')
+       /runtime/python ('3.12.14 (main, Aug 25 2026, 14:00:49) [C' / '3.12.15 (main, Oct  6 2026, 02:02:22) [G')
+JSON avec écart numérique/structurel : joint_information_value/JOINT_VALUE_REPRODUCTION_RECEIPT.json (10 chemins)
+       /environment/platform ('Linux-6.18.55-x86_64-with-glibc2.41' / 'Linux-6.12.111+deb13-amd64-x86_64-with-g')
+       /environment/python ('3.12.14 (main, Aug 25 2026, 14:00:49) [C' / '3.12.15 (main, Oct  6 2026, 02:02:22) [G')
+       /environment/python_executable ('/opt/codex/runtimes/codex-primary-runtim' / '/usr/local/bin/python3')
+       /files/joint_hours_price_value.pdf ('9ea13d0bc3cb79eddcad0309e938a043b6808734' / 'fd1bc3c762b09e31600a3c8ce36fca66b9aaaa1b')
+       /files/joint_value_independent.json ('24e6616ea6562a3bc1a6e55bf40947c08f9e6b89' / 'f8c81f0423342cc62fbb055e11c2f43167a37c9b')
+       /runs[0]/elapsed_seconds (0.4685567480046302 / 0.713732942007482)
+       /runs[1]/elapsed_seconds (1.7978028369980166 / 2.4721841129940003)
+       /runs[1]/stdout_sha256 ('ce165e65e43c4330e602322a77f14891077f6b43' / 'ec397db62803bde011c011f7edcaffa766553502')
+       /runs[2]/elapsed_seconds (0.7506819109985372 / 1.0996100588236004)
+       /utc ('2026-10-23T04:29:15.032203+00:00' / '2026-10-29T20:07:56.686307+00:00')
+JSON différent octet à octet mais égal à la tolérance : joint_information_value/flagship_figure_data.json
+JSON différent octet à octet mais égal à la tolérance : joint_information_value/general_beta_retirement_certificate_challenge.json
+JSON différent octet à octet mais égal à la tolérance : joint_information_value/independent_measurement_challenge.json
+JSON avec écart numérique/structurel : joint_information_value/joint_value_independent.json (3 chemins)
+       /environment/platform ('Linux-6.18.55-x86_64-with-glibc2.41' / 'Linux-6.12.111+deb13-amd64-x86_64-with-g')
+       /environment/python ('3.12.14 (main, Aug 25 2026, 14:00:49) [C' / '3.12.15 (main, Oct  6 2026, 02:02:22) [G')
+       /utility_optimizer_max_spending_difference (1.0145142127365978e-08 / 1.1717342762729288e-08)
+json différents octet à octet : 21 dont avec écart à la tolérance : 5
+# ----
+# code de sortie : 0
+# durée (s)      : 1

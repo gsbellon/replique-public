@@ -1,0 +1,44 @@
+# commande : ssh sd-92569 cd ~/work/z23439616 && sh lance_comparaison.sh
+# début    : 2026-10-18T19:00:23Z
+# ----
+== run results_cnsns_study.json
+champs numériques comparés: 105
+écart relatif max: 0.0
+autres différences: 1
+  /software/python: '3.12.3' -> '3.12.15'
+== run results_cnsns_geometry.json
+champs numériques comparés: 102190
+écart relatif max: 0.0
+autres différences: 0
+== run results_cnsns_graded.json
+champs numériques comparés: 15580
+écart relatif max: 0.0
+autres différences: 0
+== run2 results_cnsns_study.json
+champs numériques comparés: 105
+écart relatif max: 0.0
+autres différences: 1
+  /software/python: '3.12.3' -> '3.12.15'
+== run2 results_cnsns_geometry.json
+champs numériques comparés: 102190
+écart relatif max: 0.0
+autres différences: 0
+== run2 results_cnsns_graded.json
+champs numériques comparés: 15580
+écart relatif max: 0.0
+autres différences: 0
+== sha256
+943f9276b491b9caab2dc2451f6fb2535001718bd9ec29979b2b9681126ac61d  pristine_code/results_cnsns_geometry.json
+6ebec08ed00bf7b3db5e88cf4a7c7b2c4989c1e0c2b3629a44028d0be6c76605  pristine_code/results_cnsns_graded.json
+423841807ac5d4a5ff6dd0e7570e15089aef03c3fcc569914400fe29b4a36887  pristine_code/results_cnsns_study.json
+943f9276b491b9caab2dc2451f6fb2535001718bd9ec29979b2b9681126ac61d  run/code/results_cnsns_geometry.json
+6ebec08ed00bf7b3db5e88cf4a7c7b2c4989c1e0c2b3629a44028d0be6c76605  run/code/results_cnsns_graded.json
+f0df58cca4f75004354b8717a22bd051de1fadbf35b0cfa273d5ec8c788cccc5  run/code/results_cnsns_study.json
+8e8861238235ed7795f8285c39ab5d11b7d06049c3d8b0a6239d0d2fa98d627f  run2/code/results_cnsns_geometry.json
+6ebec08ed00bf7b3db5e88cf4a7c7b2c4989c1e0c2b3629a44028d0be6c76605  run2/code/results_cnsns_graded.json
+f0df58cca4f75004354b8717a22bd051de1fadbf35b0cfa273d5ec8c788cccc5  run2/code/results_cnsns_study.json
+== md5 zip
+f8868393f11a8236b4748f716fb9ee28  pkg.zip
+# ----
+# code de sortie : 0
+# durée (s)      : 1

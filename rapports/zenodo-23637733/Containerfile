@@ -1,0 +1,6 @@
+FROM docker.io/library/python:3.13-slim
+# requirements-lock.txt du paquet, versions exactes de chaque dépendance.
+# Écart avec le paquet : Python 3.13 et non 3.14.5. Avec python:3.14-slim, numpy==2.2.1 n'a pas de roue et sa
+# compilation échoue faute de compilateur (build.log, première tentative, code de sortie build : 1).
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir annotated-types==0.7.0 defusedxml==0.7.1 numpy==2.2.1 pandas==2.3.3 pillow==12.1.1 pyarrow==23.0.1 pydantic==2.12.5 pydantic_core==2.41.5 python-dateutil==2.9.0.post0 python-dotenv==1.2.2 pytz==2026.1.post1 reportlab==4.4.10 six==1.17.0 typing-inspection==0.4.2 typing_extensions==4.15.0 scipy==1.17.0 pytest==9.0.2

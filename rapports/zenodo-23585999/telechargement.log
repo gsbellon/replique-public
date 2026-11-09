@@ -1,0 +1,133 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-10-29T20:03:31Z
+# ----
+306_Replication_v0024_1_scientific.zip: OK
+306_Replication_v0024_2_SCF2022.zip: OK
+306_Replication_v0024_3_SCF2025.zip: OK
+ARTIFACT_HASHES.json: OK
+{
+  "306_Replication_v0024_complete.zip": {
+    "bytes": 56784698,
+    "sha256": "c742de322ca7e60057be996200a204d51abfc66a91141b7717dba2290efe7638",
+    "entries": 222
+  },
+  "306_Replication_v0024_1_scientific.zip": {
+    "bytes": 4250050,
+    "sha256": "e4556b5b75c0732bd858ce8fcfd0408ae7c6b0e3524578934ae02dd29a09b112",
+    "entries": 220
+  },
+  "306_Replication_v0024_2_SCF2022.zip": {
+    "bytes": 26941547,
+    "sha256": "3cc36f1f62d828d918a5a23cc6646c4a5f9ebad50525aab86a706ca33ede6f40",
+    "entries": 1
+  },
+  "306_Replication_v0024_3_SCF2025.zip": {
+    "bytes": 25593145,
+    "sha256": "09c0baf9088fa3f68082b28df3da76cb7f9e35af464cd9e8facc6bde32f7d456",
+    "entries": 1
+  }
+}
+code extraction ../dl/306_Replication_v0024_1_scientific.zip : 0
+code extraction ../dl/306_Replication_v0024_2_SCF2022.zip : 0
+code extraction ../dl/306_Replication_v0024_3_SCF2025.zip : 0
+222
+.
+./participation
+./participation/test_candidate.py
+./participation/test_independent_review.py
+./participation/test_flexible_motives.py
+./participation/test_bounded_tastes.py
+./requirements-lock.txt
+./measurement
+./measurement/validated_measurement_bounds.json
+./measurement/validated_measurement_bounds.py
+./active_owners
+./active_owners/active_owner_parameter_family.py
+./active_owners/validated_general_owner_bounds.py
+./active_owners/active_owner_parameter_family.json
+./active_owners/validated_general_owner_bounds.json
+./sources
+./sources/scf2022rw1s.zip
+./sources/scf2025rw1s.zip
+./sources/codebk2025.txt
+./joint_information_value
+./joint_information_value/independent_measurement_challenge.py
+./joint_information_value/independent_rho_challenge.json
+./joint_information_value/joint_value_certified.stdout.log
+./joint_information_value/plot_flagship_identification.py
+./joint_information_value/flagship_linked_information.pdf
+./joint_information_value/joint_value_independent.stdout.log
+./joint_information_value/joint_value_certified.json
+./joint_information_value/flagship_linked_information.png
+./joint_information_value/measurement_precision_certified.json
+./joint_information_value/independent_information_frontier.json
+./joint_information_value/joint_value_certified.py
+./joint_information_value/JOINT_VALUE_MAIN_TEXT.md
+./joint_information_value/plot_joint_value.stderr.log
+./joint_information_value/information_frontier_certified.json
+./joint_information_value/general_beta_retirement_certificate_challenge.json
+./joint_information_value/flagship_linked_information.svg
+./joint_information_value/joint_value_certified.stderr.log
+./joint_information_value/generic_owner_interval_core.py
+./joint_information_value/joint_hours_price_value.png
+./joint_information_value/technology_sensitivity_certified.json
+./joint_information_value/JOINT_VALUE_REPRODUCTION_RECEIPT.json
+./joint_information_value/flagship_figure_data.json
+./joint_information_value/plot_joint_value.stdout.log
+./joint_information_value/joint_value_independent.json
+./joint_information_value/measurement_precision_certified.py
+./joint_information_value/joint_value_independent.stderr.log
+./joint_information_value/run_joint_example.py
+./joint_information_value/plot_joint_value.py
+./joint_information_value/joint_value_independent.py
+./joint_information_value/frontier_uniform_regime_certificate.json
+./joint_information_value/joint_curve_plot_data.json
+./joint_information_value/JOINT_VALUE_SUPPLEMENT_TEXT.md
+./joint_information_value/independent_information_frontier.py
+./joint_information_value/frontier_uniform_regime_certificate.py
+./joint_information_value/technology_sensitivity_certified.py
+./joint_information_value/general_beta_retirement_certificate_challenge.py
+./joint_information_value/independent_measurement_challenge.json
+./joint_information_value/information_frontier_certified.py
+./joint_information_value/joint_hours_price_value.pdf
+./joint_information_value/independent_rho_challenge.py
+./full_run_logs
+./full_run_logs/20261023T042726810040Z
+./full_run_logs/20261023T042036470066Z
+./verification
+./verification/NUMERICAL_PRESERVATION.json
+./verification/dependency_closure.json
+./verification/RUN_SUMMARY.json
+./verification/environment_20261023.json
+./verification/MANUSCRIPT_SCF_TABLE7_CHECK.json
+./verification/INTEGRITY_AND_NUMERIC_CHECK.json
+./verification/README.md
+./PUBLIC_RELEASE_NOTES.md
+./figures
+./figures/finite_counterfactual_geometry_paths.png
+./figures/finite_counterfactual_geometry_paths.pdf
+./SHA256_MANIFEST.json
+./run_all.py
+./requirements.txt
+./base_v0008
+./base_v0008/analysis
+./base_v0008/306_Two_Date_Independent_Audit_Results_20261019.json
+./base_v0008/REPRODUCTION_RECEIPT.json
+./base_v0008/audit_measurement_20261019
+./base_v0008/sharp_counterfactual
+./base_v0008/inverse_region_audit_20261019
+./base_v0008/run_all.py
+./base_v0008/scf_uncertainty
+./base_v0008/scf_pilot
+./base_v0008/release_run_logs
+./base_v0008/finite_state_identification_20261019
+./base_v0008/finite_state_independent_audit_20261019
+./base_v0008/finite_counterfactual
+./README.md
+./source_hashes.json
+./RIGHTS_AND_PROVENANCE.md
+./environment.json
+./verify_release.py
+# ----
+# code de sortie : 0
+# durée (s)      : 17

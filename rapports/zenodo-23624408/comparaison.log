@@ -1,0 +1,61 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && sh compare.sh
+# début    : 2026-10-26T21:26:47Z
+# ----
+IDENTIQUE ./audit/categorical_monotonicity.csv
+DIFFERENT ./audit/interference_directed.csv
+DIFFERENT ./audit/interference_directed_other.csv
+IDENTIQUE ./audit/interference_random.csv
+IDENTIQUE ./audit/monotonicity.csv
+DIFFERENT ./audit/solver_check.csv
+DIFFERENT ./audit/subgroup_consistency.csv
+IDENTIQUE ./base_2010_counts.csv
+IDENTIQUE ./base_2022_counts.csv
+IDENTIQUE ./inputs_sha256.csv
+IDENTIQUE ./municipal/configuration.csv
+IDENTIQUE ./municipal/frontier_profile.csv
+IDENTIQUE ./municipal/frontiers_by_level.csv
+IDENTIQUE ./municipal/screened_households.csv
+IDENTIQUE ./municipal/spearman_IDHM.csv
+DIFFERENT ./municipal/super_efficiency_final_frontiers.csv
+DIFFERENT ./municipal/table1_descriptives.csv
+DIFFERENT ./municipal/table2_municipalities.csv
+DIFFERENT ./national/age_suppression_sensitivity.csv
+DIFFERENT ./national/brazil.csv
+IDENTIQUE ./national/configuration.csv
+DIFFERENT ./national/descriptives_brazil.csv
+DIFFERENT ./national/dominance.csv
+IDENTIQUE ./national/frontier_profile.csv
+IDENTIQUE ./national/frontiers_by_level.csv
+DIFFERENT ./national/regions.csv
+IDENTIQUE ./national/screened_households.csv
+DIFFERENT ./national/super_efficiency_final_frontiers.csv
+DIFFERENT ./national/ufs.csv
+IDENTIQUE ./numerical_example/example_data.csv
+IDENTIQUE ./numerical_example/example_scores.csv
+IDENTIQUE ./numerical_example/example_shock_D.csv
+IDENTIQUE ./numerical_example/example_summary.csv
+DIFFERENT ./outputs_sha256.csv
+IDENTIQUE ./parameters.csv
+DIFFERENT ./robustness/alpha_grid.csv
+IDENTIQUE ./robustness/alpha_grid_summary.csv
+DIFFERENT ./robustness/alternative_references_brazil.csv
+IDENTIQUE ./robustness/alternative_references_dominance.csv
+DIFFERENT ./robustness/alternative_references_municipalities.csv
+IDENTIQUE ./robustness/alternative_references_municipalities_summary.csv
+DIFFERENT ./robustness/alternative_references_ufs.csv
+DIFFERENT ./robustness/bootstrap_change_ufs.csv
+DIFFERENT ./robustness/bootstrap_differences_municipalities.csv
+DIFFERENT ./robustness/bootstrap_municipalities.csv
+DIFFERENT ./robustness/delta_grid.csv
+IDENTIQUE ./robustness/delta_grid_summary.csv
+IDENTIQUE ./robustness/excluded_variables.csv
+DIFFERENT ./robustness/half_sample_draws.csv
+IDENTIQUE ./robustness/pairwise_dominance_ufs_2022.csv
+DIFFERENT ./robustness/zero_constant.csv
+ABSENT  ./run_log.txt
+DIFFERENT ./session_info.txt
+TOTAL identiques=26 differents=26 absents=1
+fichiers présents seulement dans out :
+# ----
+# code de sortie : 0
+# durée (s)      : 0

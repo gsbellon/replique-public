@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 sleep 45; cd ~/work/z23637733 && tail -n 4 run_detache.out; pgrep -f lance_run.sh
+# début    : 2026-11-07T20:02:20Z
+# ----
+durée totale (s) : 19
+=================== fichiers modifiés dans run/ par rapport à pkg/
+Only in run: .pytest_cache
+Files pkg/replication_package/results_holdout/out/agent_pr_summary.csv and run/results_holdout/out/agent_pr_summary.csv differ
+# ----
+# code de sortie : 1
+# durée (s)      : 45

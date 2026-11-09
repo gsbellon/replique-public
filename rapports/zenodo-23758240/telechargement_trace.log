@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh telecharge_trace.sh
+# début    : 2026-10-31T20:01:21Z
+# ----
+code curl : 0
+-rw-rw-r-- 1 replab replab 1439950 Oct 31 21:01 trace/wiki.csv
+01e5b8d44bb4696bd81ea7c4e857d977b6e498f5d74010fc3e53527666e1bec8  trace/wiki.csv
+360101 trace/wiki.csv
+4
+15
+16
+# ----
+# code de sortie : 0
+# durée (s)      : 0

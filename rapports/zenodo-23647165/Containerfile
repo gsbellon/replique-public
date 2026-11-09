@@ -1,0 +1,6 @@
+FROM docker.io/library/python:3.13-slim
+# Le paquet ne fixe aucune version : il demande « Python 3.10 ou plus avec numpy, scipy et matplotlib » (README).
+# Versions installées = les plus récentes disponibles à la construction ; elles sont relevées par lance_build.sh.
+# matplotlib n'est utilisé que par figures.py et graphical_abstract.py, qui ne sont pas exécutés ici (pdflatex absent).
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir numpy scipy

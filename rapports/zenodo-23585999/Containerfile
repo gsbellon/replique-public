@@ -1,0 +1,6 @@
+FROM docker.io/library/python:3.12-slim
+# Le README du paquet demande Python 3.12.14 et les versions de requirements.txt (numpy 2.3.5, scipy 1.17.0, pandas 2.2.3,
+# matplotlib 3.10.8, mpmath 1.3.0), dépendances transitives comme dans requirements-lock.txt. Réseau nécessaire à la construction
+# seulement (PyPI). Les exécutions restent --network none. Le fichier de dépendances est copié depuis le paquet extrait (données, non exécutées).
+COPY requirements-lock.txt /tmp/requirements-lock.txt
+RUN pip install --no-cache-dir -r /tmp/requirements-lock.txt

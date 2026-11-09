@@ -1,0 +1,33 @@
+# commande : ssh sd-92569 cd ~/work/z23652337 && sh lance_run.sh
+# début    : 2026-11-06T20:13:33Z
+# ----
+2026-11-06T20:13:33Z
+OK       Table 1: f-bar at A=0.5, tau=0                             computed     2.2320   reported     2.2000
+OK       Table 1: f-bar at A=0.8, tau=0                             computed     8.3215   reported     8.3000
+OK       Table 1: f-bar at A=0.9, tau=0                             computed    20.3738   reported    20.4000
+OK       Table 1: f-bar at A=0.95, tau=0                            computed    47.8655   reported    47.9000
+OK       Table 1: f-bar at A=0.99, tau=0                            computed   318.2647   reported   318.3000
+OK       Table 1: f-bar at A=0.9, tau=50                            computed    49.0332   reported    49.0000
+OK       Table 1: f-bar at A=0.99, tau=200                          computed  1379.3687   reported  1379.4000
+OK       Pi*(1) = P*M                                               computed     5.7729   reported     5.7729
+OK       Right derivative B*M = E[ln kappa; kappa>1]/b              computed    13.1953   reported    13.1950
+OK       theta-hat = 2PM/(1-A0)^2                                   computed    46.1834   reported    46.1800
+OK       local lower bound BM/(1-A0)                                computed    26.3905   reported    26.3900
+OK       entry threshold A_e = (c0+k)/B                             computed     0.5625   reported     0.5625
+OK       condition Q: E[ln k | k>1] - (1-(c0+k)/B)  (>0)            computed     1.2131   reported     1.2135
+OK       condition Q': B(1+A0) - 2(c0+k)  (>0)                      computed     0.6000   reported     0.6000
+OK       Pi*(1) from numerical optimization                         computed     5.7729   reported     5.7729
+OK       max of Pi*(A)/c(A) on a grid (=theta-hat)                  computed    46.1834   reported    46.1800
+OK       Profit at A=0.9 (linear price)                             computed     1.0369   reported     1.0370
+OK       Profit at A=1.0 (linear price)                             computed     5.7608   reported     5.7400
+OK       Profit ratio A=1.0 / A=0.9                                 computed     5.5559   reported     5.5000
+OK       Optimal price at A=1.0                                     computed     0.7980   reported     0.8000
+          adoption interval of f at A=0.9, price 0.33: (0.328, 2.834)
+
+20/20 checks passed
+code reproduce_key_numbers : 0
+durée (s) : 16
+=================== fichiers modifiés dans run/ par rapport à pkg/
+# ----
+# code de sortie : 0
+# durée (s)      : 16

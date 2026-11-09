@@ -1,0 +1,41 @@
+# commande : ssh sd-92569 pwd; ls -la ~/work ~/work/z23758240
+# début    : 2026-10-31T20:06:50Z
+# ----
+/home/replab
+/home/replab/work:
+total 60
+drwxrwxr-x 14 replab replab 4096 Oct 31 21:00 .
+drwx------  7 replab replab 4096 Oct 17 19:39 ..
+-rw-rw-r--  1 replab replab 1112 Oct 31 21:00 telecharge_extrait.sh
+drwxrwxr-x  2 replab replab 4096 Oct 17 19:39 z20581409
+drwxrwxr-x  3 replab replab 4096 Oct 17 19:39 z21342547
+drwxrwxr-x  3 replab replab 4096 Oct 17 19:40 z23437544
+drwxrwxr-x  9 replab replab 4096 Oct 18 21:01 z23439616
+drwxrwxr-x  4 replab replab 4096 Oct 26 21:01 z23511350
+drwxrwxr-x  6 replab replab 4096 Oct 28 21:05 z23585246
+drwxrwxr-x  6 replab replab 4096 Oct 29 21:09 z23585999
+drwxrwxr-x  4 replab replab 4096 Oct 27 21:01 z23595707
+drwxrwxr-x  4 replab replab 4096 Oct 24 21:00 z23607297
+drwxrwxr-x  6 replab replab 4096 Oct 26 22:27 z23624408
+drwxrwxr-x  7 replab replab 4096 Oct 31 21:03 z23758240
+drwxrwxr-x  2 replab replab 4096 Oct 17 19:39 zen18592832
+
+/home/replab/work/z23758240:
+total 56
+drwxrwxr-x  7 replab replab 4096 Oct 31 21:03 .
+drwxrwxr-x 14 replab replab 4096 Oct 31 21:00 ..
+drwxrwxr-x  2 replab replab 4096 Oct 31 21:01 build
+-rw-rw-r--  1 replab replab 2607 Oct 31 21:03 compare_csv.py
+-rw-rw-r--  1 replab replab  791 Oct 31 21:03 compare.sh
+-rw-rw-r--  1 replab replab  507 Oct 31 21:01 Containerfile
+drwxrwxr-x  2 replab replab 4096 Oct 31 21:00 dl
+-rw-rw-r--  1 replab replab  898 Oct 31 21:01 lance_build.sh
+-rw-rw-r--  1 replab replab  384 Oct 31 21:03 lance_compare_csv.sh
+-rw-rw-r--  1 replab replab 1235 Oct 31 21:02 lance_run.sh
+drwxrwxr-x  3 replab replab 4096 Oct 31 21:00 pkg
+drwxrwxr-x  6 replab replab 4096 Oct 31 21:00 run
+-rw-rw-r--  1 replab replab  804 Oct 31 21:01 telecharge_trace.sh
+drwxrwxr-x  2 replab replab 4096 Oct 31 21:01 trace
+# ----
+# code de sortie : 0
+# durée (s)      : 0

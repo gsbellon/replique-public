@@ -1,0 +1,6 @@
+FROM docker.io/library/python:3.12-slim
+# requirements.txt du paquet : numpy>=1.24, scipy>=1.10, pandas>=2.0, matplotlib>=3.7 (bornes basses seulement, versions non figées :
+# les versions installées sont relevées dans build.log). Réseau nécessaire à la construction seulement (PyPI).
+# Les exécutions restent --network none. Le fichier est copié depuis le paquet extrait (donnée, non exécutée).
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt

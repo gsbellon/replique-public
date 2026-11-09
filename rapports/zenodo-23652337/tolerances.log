@@ -1,0 +1,22 @@
+# commande : ssh sd-92569 grep -n -E "tol|def check|passed|rtol|atol|cache|savez|savefig" work/z23652337/pkg/replication_package/code/reproduce_key_numbers.py work/z23652337/pkg/replication_package/code/make_figures.py
+# début    : 2026-11-06T20:13:55Z
+# ----
+work/z23652337/pkg/replication_package/code/reproduce_key_numbers.py:16:def check(name, got, want, tol):
+work/z23652337/pkg/replication_package/code/reproduce_key_numbers.py:17:    ok = abs(got - want) <= tol
+work/z23652337/pkg/replication_package/code/reproduce_key_numbers.py:74:print(f"\n{sum(rows)}/{len(rows)} checks passed")
+work/z23652337/pkg/replication_package/code/make_figures.py:1:"""Generate the figures of the manuscript (and cache the continuous-model profit function).
+work/z23652337/pkg/replication_package/code/make_figures.py:3:Run from this directory:  python3 make_figures.py      (about 3-6 minutes; writes ../figures/*.png and fig_cache.npz)
+work/z23652337/pkg/replication_package/code/make_figures.py:20:                     "figure.dpi": 130, "savefig.dpi": 300, "legend.frameon": False})
+work/z23652337/pkg/replication_package/code/make_figures.py:37:fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig1_adoption_set.png")); plt.close(fig)
+work/z23652337/pkg/replication_package/code/make_figures.py:39:# ------------------------------------------------------------------ continuous profit function and cache
+work/z23652337/pkg/replication_package/code/make_figures.py:40:cache = os.path.join(OUT, "fig_cache.npz")
+work/z23652337/pkg/replication_package/code/make_figures.py:43:if os.path.exists(cache):
+work/z23652337/pkg/replication_package/code/make_figures.py:44:    z = np.load(cache); As, Pi, Rho = z["As"], z["Pi"], z["Rho"]
+work/z23652337/pkg/replication_package/code/make_figures.py:48:    np.savez(cache, As=As, Pi=Pi, Rho=Rho)
+work/z23652337/pkg/replication_package/code/make_figures.py:89:fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig2_profit_kink.png")); plt.close(fig)
+work/z23652337/pkg/replication_package/code/make_figures.py:111:fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig3_reach_choice.png")); plt.close(fig)
+work/z23652337/pkg/replication_package/code/make_figures.py:127:fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig4_stakes_scaling.png")); plt.close(fig)
+work/z23652337/pkg/replication_package/code/make_figures.py:150:fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig5_public_evidence.png")); plt.close(fig)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

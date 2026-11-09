@@ -1,0 +1,3 @@
+# Options podman par défaut pour tout code tiers (vérifiées le 2026-10-17, voir journal)
+--network none --cap-drop all --security-opt no-new-privileges --read-only
+# Le réseau n'est ouvert (étape de téléchargement seulement) que vers les dépôts nommés dans le rapport.

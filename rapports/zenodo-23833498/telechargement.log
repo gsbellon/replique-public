@@ -1,0 +1,21 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-02T20:06:12Z
+# ----
+replication_package.zip: OK
+code extraction : 0
+20
+./robustness_analyses.py
+./REPRODUCIBILITY.md
+./archetypes.py
+./extended_analyses.py
+./extended_figures.py
+./verify.py
+./robustness_results.json
+./extended_results.json
+./Makefile
+./requirements.txt
+./archetype_results.json
+./archetype_figures.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

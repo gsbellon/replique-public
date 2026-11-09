@@ -1,0 +1,55 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && TZ=UTC find run_full/output -type f -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\n' | sort
+# début    : 2026-11-06T20:01:29Z
+# ----
+2026-11-05 20:01:16.5208424460 run_full/output/series/aggregates_1991_2022.csv
+2026-11-05 20:01:16.5208424460 run_full/output/series/dominance_consecutive.csv
+2026-11-05 20:01:16.5208424460 run_full/output/series/profiles_1991_2022.csv
+2026-11-05 20:01:16.5208424460 run_full/output/series/profiles_brazil_regions_1991_2022.csv
+2026-11-05 20:01:16.5208424460 run_full/output/series/scores_uf_1991_2022.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/AF3_conference.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/AF3_headcounts_conference.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/input_series_sha256.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/population_standardization.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/saved_scores_recomputed.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/scope_subgroup_counterexample.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/territorial_subgroup_decomposition.csv
+2026-11-05 20:01:16.5248426040 run_full/output/audit/testes_v4.log
+2026-11-05 20:01:16.5288427620 run_full/output/af/profiles_income_mw.csv
+2026-11-05 20:10:28.0426128660 run_full/output/inputs_sha256.csv
+2026-11-05 20:13:10.9970452260 run_full/output/base_2010_counts.csv
+2026-11-05 20:15:07.1016282650 run_full/output/base_2022_counts.csv
+2026-11-05 20:15:13.6458865890 run_full/output/af/profiles.csv
+2026-11-05 20:15:19.0140984900 run_full/output/af/profiles_brazil_regions.csv
+2026-11-05 20:15:20.9861763340 run_full/output/af/profiles_income_real.csv
+2026-11-05 20:15:22.9862552840 run_full/output/af/profiles_delay_harmonized.csv
+2026-11-05 20:15:24.2743061280 run_full/output/af/profiles_2022_without_suppressed_age.csv
+2026-11-05 20:15:26.0343756040 run_full/output/af/profiles_without_child_labour.csv
+2026-11-05 20:15:26.0423759200 run_full/output/af/profiles_dimensions.csv
+2026-11-05 20:15:26.2303833410 run_full/output/af/missing_income.csv
+2026-11-05 20:15:26.5663966050 run_full/output/scores/scores_uf.csv
+2026-11-05 20:15:26.5703967630 run_full/output/scores/aggregates.csv
+2026-11-05 20:15:26.5703967630 run_full/output/scores/change_uf.csv
+2026-11-05 20:15:26.5743969200 run_full/output/scores/summary_by_tau.csv
+2026-11-05 20:15:26.6784010250 run_full/output/scores/weights_main.csv
+2026-11-05 20:15:26.8384073420 run_full/output/audit/solver_check.csv
+2026-11-05 20:15:28.7904843970 run_full/output/audit/interference.csv
+2026-11-05 20:15:30.7585620830 run_full/output/audit/monotonicity_profile.csv
+2026-11-05 20:15:40.6949543060 run_full/output/audit/monotonicity_person.csv
+2026-11-05 20:15:50.4033375290 run_full/output/audit/subgroup_consistency.csv
+2026-11-05 20:15:50.6993492140 run_full/output/robustness/alternative_versions_uf.csv
+2026-11-05 20:15:50.7073495300 run_full/output/robustness/alternative_versions_summary.csv
+2026-11-05 20:15:50.7113496870 run_full/output/robustness/alternative_versions_change.csv
+2026-11-05 20:15:50.7153498450 run_full/output/robustness/rank_range_tau.csv
+2026-11-05 20:15:51.2593713190 run_full/output/robustness/dominant_indicator.csv
+2026-11-05 20:15:52.0474024260 run_full/output/robustness/leave_one_out_reference.csv
+2026-11-05 20:21:00.0635608600 run_full/output/robustness/bootstrap_replicates.csv
+2026-11-05 20:21:00.0795614920 run_full/output/robustness/bootstrap_change_brazil.csv
+2026-11-05 20:21:00.0795614920 run_full/output/robustness/bootstrap_change_uf.csv
+2026-11-05 20:21:00.1395638590 run_full/output/numerical_example/example.csv
+2026-11-05 20:21:00.3995741230 run_full/output/figure/Figura_1.png
+2026-11-05 20:21:00.4475760180 run_full/output/parameters.csv
+2026-11-05 20:21:00.4555763350 run_full/output/session_info.txt
+2026-11-05 20:21:00.5555802820 run_full/output/outputs_sha256.csv
+# ----
+# code de sortie : 0
+# durée (s)      : 0

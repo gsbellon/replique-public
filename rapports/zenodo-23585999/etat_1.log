@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 podman ps -a --filter name=replab-ai306-run; podman logs replab-ai306-run | tail -n 15; ls ~/work/z23585999/run/full_run_logs
+# début    : 2026-10-29T20:05:07Z
+# ----
+CONTAINER ID  IMAGE                          COMMAND               CREATED        STATUS        PORTS       NAMES
+81f7b0a9aa53  localhost/replab-ai306:latest  sh -c python3 run...  6 seconds ago  Up 6 seconds              replab-ai306-run
+20261023T042036470066Z
+20261023T042726810040Z
+20261029T200501545002Z
+# ----
+# code de sortie : 0
+# durée (s)      : 1

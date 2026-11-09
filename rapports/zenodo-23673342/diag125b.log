@@ -1,0 +1,16 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && podman run --rm --network none --cap-drop all --security-opt no-new-privileges --read-only --tmpfs /tmp -v "$PWD/run_agg1:/work:rw" -w /work -e HOME=/tmp localhost/replab-bodmpi timeout 3000 Rscript tests/check_results.R; echo rc=$?; ls run_agg1 | head
+# début    : 2026-11-05T20:04:28Z
+# ----
+rc=125
+CITATION.cff
+docs
+LICENSE
+manifesto_sha256.json
+output
+R
+README.md
+run_all.R
+tests
+# ----
+# code de sortie : 0
+# durée (s)      : 1

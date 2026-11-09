@@ -1,0 +1,83 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-05T20:01:15Z
+# ----
+BOD-fixed-MPI_v1.0.0_artigo_v4.zip: OK
+code extraction : 0
+74
+./run_all.R
+./tests/prepare_aggregate_profiles.R
+./tests/check_results.R
+./tests/review_v4.R
+./docs/indicators.md
+./docs/AF3_indicadores.csv
+./docs/AF3_resultados.csv
+./LICENSE
+./CITATION.cff
+./.gitignore
+./README.md
+./manifesto_sha256.json
+./output/figure/Figura_1.png
+./output/robustness/leave_one_out_reference.csv
+./output/robustness/alternative_versions_change.csv
+./output/robustness/dominant_indicator.csv
+./output/robustness/rank_range_tau.csv
+./output/robustness/bootstrap_change_brazil.csv
+./output/robustness/bootstrap_change_uf.csv
+./output/robustness/alternative_versions_summary.csv
+./output/robustness/alternative_versions_uf.csv
+./output/robustness/bootstrap_replicates.csv
+./output/base_2022_counts.csv
+./output/parameters.csv
+./output/af/profiles_delay_harmonized.csv
+./output/af/missing_income.csv
+./output/af/profiles_income_real.csv
+./output/af/profiles_dimensions.csv
+./output/af/profiles.csv
+./output/af/profiles_brazil_regions.csv
+./output/af/profiles_income_mw.csv
+./output/af/profiles_2022_without_suppressed_age.csv
+./output/af/profiles_without_child_labour.csv
+./output/outputs_sha256.csv
+./output/numerical_example/example.csv
+./output/series/dominance_consecutive.csv
+./output/series/profiles_1991_2022.csv
+./output/series/scores_uf_1991_2022.csv
+./output/series/profiles_brazil_regions_1991_2022.csv
+./output/series/aggregates_1991_2022.csv
+./output/scores/scores_uf.csv
+./output/scores/weights_main.csv
+./output/scores/summary_by_tau.csv
+./output/scores/change_uf.csv
+./output/scores/aggregates.csv
+./output/base_2010_counts.csv
+./output/inputs_sha256.csv
+./output/session_info.txt
+./output/audit/saved_scores_recomputed.csv
+./output/audit/monotonicity_profile.csv
+./output/audit/AF3_conference.csv
+./output/audit/monotonicity_person.csv
+./output/audit/interference.csv
+./output/audit/AF3_headcounts_conference.csv
+./output/audit/territorial_subgroup_decomposition.csv
+./output/audit/scope_subgroup_counterexample.csv
+./output/audit/solver_check.csv
+./output/audit/population_standardization.csv
+./output/audit/testes_v4.log
+./output/audit/subgroup_consistency.csv
+./output/audit/input_series_sha256.csv
+./R/06_audit.R
+./R/config.R
+./R/08_numerical_example.R
+./R/03_build_census2022.R
+./R/functions.R
+./R/11_manifest.R
+./R/02_build_census2010.R
+./R/10_figure.R
+./R/07_robustness.R
+./R/04_af_profiles.R
+./R/09_series_1991_2022.R
+./R/01_download.R
+./R/05_scores.R
+# ----
+# code de sortie : 0
+# durée (s)      : 1

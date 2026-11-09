@@ -1,0 +1,299 @@
+{
+  "software": {
+    "python": "3.12.15",
+    "numpy": "2.5.1",
+    "matplotlib": "3.11.1"
+  },
+  "sphere": {
+    "rate_errors": {
+      "2": 0.4033534984695293,
+      "3": 0.16191741674412197,
+      "5": 0.057952201847776275,
+      "10": 0.01504038146770359,
+      "20": 0.0038871593707117125,
+      "50": 0.0006377442806992928
+    },
+    "amplitude_response": [
+      {
+        "alpha": 0.5,
+        "amplitude_half_time": 0.5914836942557145,
+        "amplitude_T": 0.2553956763105057
+      },
+      {
+        "alpha": 0.75,
+        "amplitude_half_time": 0.6328333247460591,
+        "amplitude_T": 0.13508618076397608
+      },
+      {
+        "alpha": 1.0,
+        "amplitude_half_time": 0.6931471805599472,
+        "amplitude_T": 0.01831563888873418
+      }
+    ]
+  },
+  "volterra": [
+    {
+      "steps": 100,
+      "terminal_multiplier_error": 5.379641171573825e-05,
+      "maximum_state_integral_error": 0.00012895918577950056,
+      "max_discrete_volterra_residual": 7.679948212511533e-17,
+      "max_block_condition": 2.1946229655647067
+    },
+    {
+      "steps": 200,
+      "terminal_multiplier_error": 2.6599806170856383e-05,
+      "maximum_state_integral_error": 6.663032865543315e-05,
+      "max_discrete_volterra_residual": 7.808182874523908e-17,
+      "max_block_condition": 2.21066289990799
+    },
+    {
+      "steps": 400,
+      "terminal_multiplier_error": 1.3185099749421591e-05,
+      "maximum_state_integral_error": 3.422235073456832e-05,
+      "max_discrete_volterra_residual": 5.928593550334434e-17,
+      "max_block_condition": 2.2220942442076232
+    },
+    {
+      "steps": 800,
+      "terminal_multiplier_error": 6.548657901590847e-06,
+      "maximum_state_integral_error": 1.7493591767395916e-05,
+      "max_discrete_volterra_residual": 6.059128614320848e-17,
+      "max_block_condition": 2.230222391251276
+    }
+  ]
+}
+Completed {"alpha": 0.5, "level": 3, "method": "instantaneous", "steps": 100} area drift 0.017343
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "steps": 100} area drift 1.3212e-13
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "steps": 200} area drift 1.5654e-13
+Completed {"alpha": 0.5, "level": 3, "method": "instantaneous", "steps": 200} area drift 0.01731
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "steps": 400} area drift 1.6098e-13
+Completed {"alpha": 0.5, "level": 3, "method": "instantaneous", "steps": 400} area drift 0.017287
+Completed {"alpha": 1.0, "level": 3, "method": "constrained", "steps": 100} area drift 4.2188e-14
+Completed {"alpha": 0.5, "level": 4, "method": "instantaneous", "steps": 200} area drift 0.018366
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "steps": 800} area drift 1.2879e-13
+Completed {"alpha": 1.0, "level": 3, "method": "constrained", "steps": 200} area drift 2.3537e-14
+Completed {"alpha": 0.5, "level": 4, "method": "constrained", "steps": 200} area drift 1.6454e-13
+Completed {"alpha": 1.0, "level": 3, "method": "instantaneous", "steps": 100} area drift 0.0015267
+Completed {"alpha": 1.0, "level": 4, "method": "constrained", "steps": 200} area drift 2.0872e-14
+Completed {"alpha": 0.5, "level": 2, "method": "constrained", "steps": 200} area drift 1.7364e-13
+Completed {"alpha": 1.0, "level": 3, "method": "instantaneous", "steps": 200} area drift 0.00078269
+Completed {"alpha": 1.0, "level": 3, "method": "constrained", "steps": 400} area drift 1.2212e-14
+Completed {"alpha": 0.5, "level": 2, "method": "instantaneous", "steps": 200} area drift 0.013883
+Completed {"alpha": 1.0, "level": 3, "method": "instantaneous", "steps": 400} area drift 0.00039625
+Completed {"alpha": 0.5, "degrees": [0, 2, 4, 6, 8, 10], "level": 3, "method": "instantaneous", "steps": 200} area drift 0.016561
+Completed {"alpha": 0.5, "degrees": [0, 2, 4, 6, 8, 10], "level": 3, "method": "constrained", "steps": 200} area drift 1.1346e-13
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "radial_mobility": 0.5, "steps": 200} area drift 1.4566e-13
+Completed {"alpha": 0.5, "level": 3, "method": "instantaneous", "radial_mobility": 0.5, "steps": 200} area drift 0.017301
+Completed {"alpha": 1.0, "level": 4, "method": "instantaneous", "steps": 200} area drift 0.00090396
+Completed {"alpha": 0.5, "degrees": [0, 2, 4, 6, 8, 10, 12, 14], "level": 3, "method": "constrained", "steps": 200} area drift 1.8052e-13
+Completed {"alpha": 0.5, "level": 3, "method": "constrained", "radial_mobility": 2.0, "steps": 200} area drift 1.3833e-13
+Completed {"alpha": 0.5, "degrees": [0, 2, 4, 6, 8, 10, 12, 14], "level": 3, "method": "instantaneous", "steps": 200} area drift 0.016549
+Completed {"alpha": 1.0, "level": 3, "method": "constrained", "steps": 800} area drift 6.2172e-15
+Completed {"alpha": 0.5, "level": 3, "method": "instantaneous", "radial_mobility": 2.0, "steps": 200} area drift 0.017314
+Completed {"alpha": 0.5, "hessian_step": 1e-05, "level": 3, "method": "constrained", "steps": 200} area drift 1.5654e-13
+{
+  "solver_sha256": "e4e149ec458817f7d04924f2c34207a3d22ebf7a39732d2f681aaacfefd46beb",
+  "temporal_refinement": [
+    {
+      "alpha": 0.5,
+      "steps": 100,
+      "maximum_state_error": 0.022634872100177922,
+      "terminal_state_error": 2.4171148911087765e-05,
+      "instantaneous_area_drift": 0.017342823769936566,
+      "instantaneous_volume_drift": 0.0032181774988542244,
+      "aspect_bias": -7.944645708295539
+    },
+    {
+      "alpha": 0.5,
+      "steps": 200,
+      "maximum_state_error": 0.022075528352442024,
+      "terminal_state_error": 1.0095164235303435e-05,
+      "instantaneous_area_drift": 0.017309698726769907,
+      "instantaneous_volume_drift": 0.0032245894971685285,
+      "aspect_bias": -7.925240870348482
+    },
+    {
+      "alpha": 0.5,
+      "steps": 400,
+      "maximum_state_error": 0.014559558818078711,
+      "terminal_state_error": 3.3164336532241564e-06,
+      "instantaneous_area_drift": 0.017286908919434074,
+      "instantaneous_volume_drift": 0.0032295197732693515,
+      "aspect_bias": -7.91170530504094
+    },
+    {
+      "alpha": 1.0,
+      "steps": 100,
+      "maximum_state_error": 0.0036789907203892535,
+      "terminal_state_error": 0.0001336237302148806,
+      "instantaneous_area_drift": 0.001526745877629132,
+      "instantaneous_volume_drift": 0.0004544096287232291,
+      "aspect_bias": -0.6423175121137992
+    },
+    {
+      "alpha": 1.0,
+      "steps": 200,
+      "maximum_state_error": 0.001612955902180604,
+      "terminal_state_error": 5.707050413215482e-05,
+      "instantaneous_area_drift": 0.0007826942774987744,
+      "instantaneous_volume_drift": 0.0002378720214576413,
+      "aspect_bias": -0.3276305564557602
+    },
+    {
+      "alpha": 1.0,
+      "steps": 400,
+      "maximum_state_error": 0.0005445243830969027,
+      "terminal_state_error": 1.8988267806595227e-05,
+      "instantaneous_area_drift": 0.0003962475369061469,
+      "instantaneous_volume_drift": 0.00012166719879413979,
+      "aspect_bias": -0.16544831328283438
+    }
+  ],
+  "mesh_refinement": [
+    {
+      "level": 2,
+      "vertices": 162,
+      "constrained_energy": 28.57950964855299,
+      "constrained_aspect": 2.028761214157743,
+      "area_drift": 0.013883002818657064,
+      "volume_drift": 0.0013395903691757471,
+      "aspect_bias": -6.734115935598717
+    },
+    {
+      "level": 3,
+      "vertices": 642,
+      "constrained_energy": 30.05993931758771,
+      "constrained_aspect": 2.046583361478459,
+      "area_drift": 0.017309698726769907,
+      "volume_drift": 0.0032245894971685285,
+      "aspect_bias": -7.925240870348482
+    },
+    {
+      "level": 4,
+      "vertices": 2562,
+      "constrained_energy": 30.463938022166218,
+      "constrained_aspect": 2.0521113748100968,
+      "area_drift": 0.018366432079182426,
+      "volume_drift": 0.003813611702062847,
+      "aspect_bias": -8.29544546601656
+    }
+  ],
+  "modal_refinement": [
+    {
+      "coordinates": 4,
+      "maximum_degree": 6,
+      "constrained_energy": 30.05993931758771,
+      "constrained_aspect": 2.046583361478459,
+      "area_drift": 0.017309698726769907,
+      "aspect_bias": -7.925240870348482
+    },
+    {
+      "coordinates": 6,
+      "maximum_degree": 10,
+      "constrained_energy": 30.043653116197163,
+      "constrained_aspect": 2.0295179686295786,
+      "area_drift": 0.016560858989389637,
+      "aspect_bias": -7.3311223738874105
+    },
+    {
+      "coordinates": 8,
+      "maximum_degree": 14,
+      "constrained_energy": 30.043644140888674,
+      "constrained_aspect": 2.029660064564501,
+      "area_drift": 0.016548815327216637,
+      "aspect_bias": -7.33490954426923
+    }
+  ],
+  "sphere_calibration": [
+    {
+      "level": 2,
+      "vertices": 162,
+      "sphere_energy": 24.690392992664947,
+      "sphere_energy_relative_error": 0.017600477083969723,
+      "stiffness_relative_error": [
+        -0.19216469750626874,
+        -0.2897304078342474,
+        -0.4434459511762401
+      ]
+    },
+    {
+      "level": 3,
+      "vertices": 642,
+      "sphere_energy": 25.021152235923665,
+      "sphere_energy_relative_error": 0.004439984949479836,
+      "stiffness_relative_error": [
+        -0.05148303566878232,
+        -0.08200648189835236,
+        -0.13633108161128316
+      ]
+    },
+    {
+      "level": 4,
+      "vertices": 2562,
+      "sphere_energy": 25.10473130067792,
+      "sphere_energy_relative_error": 0.0011144796258205636,
+      "stiffness_relative_error": [
+        -0.01311502970846512,
+        -0.021189916900143158,
+        -0.03600444824383231
+      ]
+    }
+  ],
+  "mobility_sensitivity": [
+    {
+      "radial_mobility_factor": 0.5,
+      "area_drift": 0.01730054191687158,
+      "aspect_bias": -7.92033043896605
+    },
+    {
+      "radial_mobility_factor": 1.0,
+      "area_drift": 0.017309698726769907,
+      "aspect_bias": -7.925240870348482
+    },
+    {
+      "radial_mobility_factor": 2.0,
+      "area_drift": 0.017314383783039067,
+      "aspect_bias": -7.927689893505607
+    }
+  ],
+  "newton_difference_step_sensitivity": 2.1815307650876358e-14
+}
+Completed graded constrained run: 100
+Completed graded constrained run: 200
+Completed graded constrained run: 400
+Completed graded constrained run: 800
+Completed graded constrained run: 1600
+{
+  "refinement": [
+    {
+      "steps": 100,
+      "max_state_error": 0.0021254397665385026,
+      "terminal_state_error": 4.822061208083737e-06,
+      "max_constraint_residual": 1.758593271006248e-13,
+      "observed_rate": null
+    },
+    {
+      "steps": 200,
+      "max_state_error": 0.0007867936832209182,
+      "terminal_state_error": 1.6431031457111132e-06,
+      "max_constraint_residual": 1.745270594710746e-13,
+      "observed_rate": 1.4337040945106683
+    },
+    {
+      "steps": 400,
+      "max_state_error": 0.000265213483627523,
+      "terminal_state_error": 5.295509628963108e-07,
+      "max_constraint_residual": 8.01581023779363e-14,
+      "observed_rate": 1.5688312500972466
+    },
+    {
+      "steps": 800,
+      "max_state_error": 7.091379439871627e-05,
+      "terminal_state_error": 1.379857459628565e-07,
+      "max_constraint_residual": 5.617728504603292e-14,
+      "observed_rate": 1.903015926928091
+    }
+  ],
+  "uniform_reduction_error": 3.885780586188048e-15
+}
+Reproduction complete. Figures and tables: /pkg/article

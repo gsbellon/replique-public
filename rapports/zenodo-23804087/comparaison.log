@@ -1,0 +1,162 @@
+# commande : ssh sd-92569 cd ~/work/z23804087 && sh compare.sh
+# début    : 2026-11-01T20:01:14Z
+# ----
+== diff -rq pkg/results run/results
+Files pkg/results/randomized_metrics.json and run/results/randomized_metrics.json differ
+Files pkg/results/scenario.md and run/results/scenario.md differ
+Files pkg/results/scenario_metrics.json and run/results/scenario_metrics.json differ
+code diff -rq results : 1
+== diff -rq pkg run (tout le paquet)
+Files pkg/results/randomized_metrics.json and run/results/randomized_metrics.json differ
+Files pkg/results/scenario.md and run/results/scenario.md differ
+Files pkg/results/scenario_metrics.json and run/results/scenario_metrics.json differ
+code diff -rq paquet : 1
+== diff -u (fichiers de results/ qui diffèrent)
+--- randomized_metrics.json
+--- pkg/results/randomized_metrics.json	2026-11-01 21:00:34.111399010 +0100
++++ run/results/randomized_metrics.json	2026-11-01 21:01:02.776535846 +0100
+@@ -26,9 +26,9 @@
+     "FAST": 35
+   },
+   "environment": {
+-    "python": "3.10.12",
++    "python": "3.12.15",
+     "implementation": "CPython",
+-    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
++    "platform": "Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41",
+     "note": "deterministic; no timing measurements -- results are machine-independent"
+   }
+ }
+--- scenario.md
+--- pkg/results/scenario.md	2026-11-01 21:00:34.111399010 +0100
++++ run/results/scenario.md	2026-11-01 21:00:49.584012630 +0100
+@@ -1,40 +1,40 @@
+-# Executable instantiation -- E-site scenario
+-
+-Machine simulated for 240 steps of 30 s; 84 steps below freezing.
+-
+-## Q-a  Policy-driven switching vs. static baselines
+-
+-| configuration | compute units | accuracy error | switches |
+-|---|---:|---:|---:|
+-| always coarse (baseline) | 240 | 84 | 0 |
+-| always detailed (baseline) | 1920 | 0 | 0 |
+-| **policy-driven** | 838 | 10 | 2 |
+-
+-Policy-driven switching uses 56.4% less compute than always-detailed while cutting the accuracy error of always-coarse by 88.1% (residual error is the held-for dwell before the first refinement).
+-
+-## Q-b  Runtime overhead of policy interpretation
+-
+-Interpreting the two-policy set costs 8.2 us per simulation step (median of 5 runs, each averaged over 240 steps; samples: 8.6, 6.4, 8.4, 8.2, 8.0). The toy simulation step here is almost empty, so a ratio against it is uninformative; in absolute terms this is about 0.82% of a single 1 ms simulation step and negligible for any simulation whose step performs real computation.
+-
+-## Q-a'  Sensitivity of the headline numbers
+-
+-| cost ratio (detailed:coarse) | trace | compute saving | error reduction | switches |
+-|---:|---|---:|---:|---:|
+-| 4:1 | single-cold-window | 47.7% | 88.1% | 2 |
+-| 4:1 | double-cold-window | 41.0% | 80.4% | 4 |
+-| 8:1 | single-cold-window | 56.4% | 88.1% | 2 |
+-| 8:1 | double-cold-window | 49.3% | 80.4% | 4 |
+-| 16:1 | single-cold-window | 60.7% | 88.1% | 2 |
+-| 16:1 | double-cold-window | 53.4% | 80.4% | 4 |
+-
+-The compute saving grows with the cost ratio (the more expensive the detailed model, the more the policy saves) and the error reduction is trace-shaped (each cold window incurs one held-for dwell); the qualitative result -- policy-driven switching dominates both static baselines -- holds across all variants.
+-
+-## Q-c  Oscillation ablation: what removes the thrashing?
+-
+-| policy set | well-formed? | switches on boundary-hover input |
+-|---|---|---:|
+-| naive (shared boundary, no dwell, no limit) | no (WF4) | 38 |
+-| naive + cooldown only (ablation) | -- | 12 |
+-| E-site (dwell + hysteresis gap + cooldown) | yes | 0 |
+-
++# Executable instantiation -- E-site scenario
++
++Machine simulated for 240 steps of 30 s; 84 steps below freezing.
++
++## Q-a  Policy-driven switching vs. static baselines
++
++| configuration | compute units | accuracy error | switches |
++|---|---:|---:|---:|
++| always coarse (baseline) | 240 | 84 | 0 |
++| always detailed (baseline) | 1920 | 0 | 0 |
++| **policy-driven** | 838 | 10 | 2 |
++
++Policy-driven switching uses 56.4% less compute than always-detailed while cutting the accuracy error of always-coarse by 88.1% (residual error is the held-for dwell before the first refinement).
++
++## Q-b  Runtime overhead of policy interpretation
++
++Interpreting the two-policy set costs 5.5 us per simulation step (median of 5 runs, each averaged over 240 steps; samples: 5.4, 5.6, 5.5, 5.6, 5.5). The toy simulation step here is almost empty, so a ratio against it is uninformative; in absolute terms this is about 0.55% of a single 1 ms simulation step and negligible for any simulation whose step performs real computation.
++
++## Q-a'  Sensitivity of the headline numbers
++
++| cost ratio (detailed:coarse) | trace | compute saving | error reduction | switches |
++|---:|---|---:|---:|---:|
++| 4:1 | single-cold-window | 47.7% | 88.1% | 2 |
++| 4:1 | double-cold-window | 41.0% | 80.4% | 4 |
++| 8:1 | single-cold-window | 56.4% | 88.1% | 2 |
++| 8:1 | double-cold-window | 49.3% | 80.4% | 4 |
++| 16:1 | single-cold-window | 60.7% | 88.1% | 2 |
++| 16:1 | double-cold-window | 53.4% | 80.4% | 4 |
++
++The compute saving grows with the cost ratio (the more expensive the detailed model, the more the policy saves) and the error reduction is trace-shaped (each cold window incurs one held-for dwell); the qualitative result -- policy-driven switching dominates both static baselines -- holds across all variants.
++
++## Q-c  Oscillation ablation: what removes the thrashing?
++
++| policy set | well-formed? | switches on boundary-hover input |
++|---|---|---:|
++| naive (shared boundary, no dwell, no limit) | no (WF4) | 38 |
++| naive + cooldown only (ablation) | -- | 12 |
++| E-site (dwell + hysteresis gap + cooldown) | yes | 0 |
++
+ The naive set -- which the validator rejects for violating WF4 -- thrashes at the boundary. Adding only a cooldown (the minimal Execution.Limit) caps the switching rate but cannot eliminate the alternation, because a cooldown is per policy and the two antagonistic policies take turns; the full well-formed set, whose TemporalCondition dwell and hysteresis gap keep the pair out of the contested band entirely, eliminates switching on this input. The statically detected oscillation risk is thus a real runtime pathology, and rate limiting and hysteretic conditions remove distinct parts of it.
+--- scenario_metrics.json
+--- pkg/results/scenario_metrics.json	2026-11-01 21:00:34.111399010 +0100
++++ run/results/scenario_metrics.json	2026-11-01 21:00:49.584012630 +0100
+@@ -18,15 +18,15 @@
+   },
+   "compute_saving_vs_detailed": 0.564,
+   "error_reduction_vs_coarse": 0.881,
+-  "per_evaluation_microseconds_median": 8.15,
++  "per_evaluation_microseconds_median": 5.51,
+   "per_evaluation_microseconds_samples": [
+-    8.62,
+-    6.42,
+-    8.44,
+-    8.15,
+-    8.02
++    5.44,
++    5.55,
++    5.51,
++    5.64,
++    5.46
+   ],
+-  "share_of_a_1ms_step_percent": 0.815,
++  "share_of_a_1ms_step_percent": 0.551,
+   "sensitivity": [
+     {
+       "cost_ratio": 4.0,
+@@ -72,12 +72,12 @@
+     }
+   ],
+   "environment": {
+-    "python": "3.11.2",
++    "python": "3.12.15",
+     "implementation": "CPython",
+-    "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+-    "os": "Windows 10"
++    "cpu": "Intel(R) Xeon(R) CPU E3-1245 v5 @ 3.50GHz",
++    "os": "Linux 6.12.111+deb13-amd64"
+   },
+   "oscillation_naive_switches": 38,
+   "oscillation_cooldown_only_switches": 12,
+   "oscillation_limited_switches": 0
+-}
++}
+\ No newline at end of file
+== nombre de fichiers : livré / régénéré
+16
+16
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,92 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-01T20:00:33Z
+# ----
+replication-package_JSS.zip: OK
+code extraction : 0
+81
+.
+./recurrence.md
+./mapping_weber2024.md
+./static-domains.md
+./tools
+./tools/policy_model.py
+./tools/test_runtime_semantics.py
+./tools/run_evaluation.py
+./tools/validator.py
+./tools/adaptation_manager.py
+./tools/comparative.py
+./tools/randomized_study.py
+./tools/analyzer.py
+./run_thirdparty_studies.ps1
+./examples
+./examples/policysets
+./examples/policysets/ping-pong-conflict
+./examples/policysets/hysteresis-safe
+./examples/policysets/three-cycle-conflict
+./examples/policysets/three-cycle-safe
+./examples/valid
+./examples/valid/example-weber-boundary.xmi
+./examples/valid/example-huang-heldout.xmi
+./examples/valid/example-esite.xmi
+./examples/esite-scenario
+./examples/esite-scenario/policies
+./examples/esite-scenario/run_scenario.py
+./examples/esite-scenario/policies-naive
+./examples/esite-scenario/esite_simulation.py
+./examples/invalid
+./examples/invalid/invalid-wf2-empty-goal.xmi
+./examples/invalid/invalid-wf4-repeated-without-limit.xmi
+./examples/invalid/invalid-wf5-rank-mismatch.xmi
+./examples/invalid/invalid-wf3b-unary-relation.xmi
+./examples/invalid/expected.json
+./examples/invalid/invalid-wf3a-nonpositive-window.xmi
+./examples/invalid/invalid-wf1-unobservable.xmi
+./examples/sumo-binding
+./examples/sumo-binding/net.net.xml
+./examples/sumo-binding/sumo_adapter.py
+./examples/sumo-binding/plain.nod.xml
+./examples/sumo-binding/routes.rou.xml
+./examples/sumo-binding/mock_traci.py
+./examples/sumo-binding/run_sumo.py
+./examples/sumo-binding/plain.edg.xml
+./examples/mesa-binding
+./examples/mesa-binding/policies
+./examples/mesa-binding/mesa_adapter.py
+./examples/mesa-binding/mock_mesa.py
+./examples/mesa-binding/run_mesa.py
+./examples/traffic-scenario
+./examples/traffic-scenario/policies
+./examples/traffic-scenario/run_traffic.py
+./examples/traffic-scenario/traffic_simulation.py
+./coding
+./coding/requirements.csv
+./coding/coverage.csv
+./coding/capabilities.csv
+./switchingpolicy.ocl
+./dynamic-domains.md
+./heldout_zehe.md
+./condition_examples.md
+./README.md
+./switchingpolicy.ecore
+./reimplementation_availability.md
+./results
+./results/scenario.md
+./results/traffic_metrics.json
+./results/mesa.md
+./results/sumo_metrics.json
+./results/randomized.md
+./results/randomized_metrics.json
+./results/analysis.md
+./results/scenario_metrics.json
+./results/sumo.md
+./results/comparative_rows.tex
+./results/comparative.md
+./results/validation_rows.tex
+./results/comparative_sensitivity.md
+./results/mesa_metrics.json
+./results/validation.md
+./results/traffic.md
+./run_sumo_study.ps1
+# ----
+# code de sortie : 0
+# durée (s)      : 1

@@ -1,0 +1,56 @@
+# commande : ssh sd-92569 df -h /home; free -m; nproc; podman images; sudo nft list ruleset | head -40
+# début    : 2026-10-26T20:05:51Z
+# ----
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/md1        928G  2.8G  878G   1% /
+               total        used        free      shared  buff/cache   available
+Mem:           64094        1249       59702           4        3825       62845
+Swap:          12578           0       12578
+8
+REPOSITORY                   TAG         IMAGE ID      CREATED        SIZE
+localhost/replab-dfar-numpy  latest      39357d37a54e  4 minutes ago  202 MB
+docker.io/library/python     3.12-slim   df18428df8a0  2 weeks ago    124 MB
+# Warning: table ip filter is managed by iptables-nft, do not touch!
+table ip filter {
+	chain ufw-before-logging-input {
+	}
+
+	chain ufw-before-logging-output {
+	}
+
+	chain ufw-before-logging-forward {
+	}
+
+	chain ufw-before-input {
+		iifname "lo" counter packets 34 bytes 8761 accept
+		ct state related,established counter packets 573910 bytes 334969099 accept
+		ct state invalid counter packets 810 bytes 38616 jump ufw-logging-deny
+		ct state invalid counter packets 810 bytes 38616 drop
+		ip protocol icmp icmp type destination-unreachable counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type time-exceeded counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type parameter-problem counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type echo-request counter packets 3988 bytes 199996 accept
+		udp sport 67 udp dport 68 counter packets 33800 bytes 11153940 accept
+		counter packets 3947793 bytes 251115128 jump ufw-not-local
+		ip daddr 224.0.0.251 udp dport 5353 counter packets 0 bytes 0 accept
+		ip daddr 239.255.255.250 udp dport 1900 counter packets 0 bytes 0 accept
+		counter packets 3947793 bytes 251115128 jump ufw-user-input
+	}
+
+	chain ufw-before-output {
+		oifname "lo" counter packets 34 bytes 8761 accept
+		ct state related,established counter packets 497445 bytes 119307037 accept
+		counter packets 10218 bytes 787400 jump ufw-user-output
+	}
+
+	chain ufw-before-forward {
+		ct state related,established counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type destination-unreachable counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type time-exceeded counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type parameter-problem counter packets 0 bytes 0 accept
+		ip protocol icmp icmp type echo-request counter packets 0 bytes 0 accept
+		counter packets 0 bytes 0 jump ufw-user-forward
+	}
+# ----
+# code de sortie : 0
+# durée (s)      : 1

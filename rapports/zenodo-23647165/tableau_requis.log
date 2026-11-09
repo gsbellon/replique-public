@@ -1,0 +1,15 @@
+# commande : ssh sd-92569 cd ~/work/z23647165 && sed -n 1,9p run/output/calibration_log.txt
+# début    : 2026-11-07T20:13:16Z
+# ----
+U_H = 3.4783  final 8.469  primary 27.54
+eta_H = 0.6201  eta_E = 0.7994  eq(0) published 4.5755 formula 4.5755
+static equivalent 1971-2020: {'min': 4.479868063259691, 'max': 5.052815785647675, 'argmin': '2010', 'argmax': '1979', '1971': 4.915984246079822, '2020': 4.575459256707357}
+heat pumps: implied eta_E = 2.382
+
+Dynamic EROI equivalent, economy-wide
+scenario            -3%     -2%     -1%     +0%     +1%     +2%     +3%
+baseline           3.40    3.76    4.16    4.58    5.02    5.48    5.97
+L25                3.14    3.58    4.06    4.58    5.13    5.73    6.36
+# ----
+# code de sortie : 0
+# durée (s)      : 0

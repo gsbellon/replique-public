@@ -1,0 +1,49 @@
+# commande : ssh sd-92569 ls -R ~/work/z23758240/pkg | head -50
+# début    : 2026-10-31T20:06:48Z
+# ----
+/home/replab/work/z23758240/pkg:
+autoscaling-sensitivity-study
+
+/home/replab/work/z23758240/pkg/autoscaling-sensitivity-study:
+data
+figures
+LICENSE
+README.md
+requirements.txt
+results
+src
+
+/home/replab/work/z23758240/pkg/autoscaling-sensitivity-study/data:
+
+/home/replab/work/z23758240/pkg/autoscaling-sensitivity-study/figures:
+fig1_methodology.pdf
+fig1_methodology.png
+fig2_heatmap.pdf
+fig2_heatmap.png
+fig3_delay_lines.pdf
+fig3_delay_lines.png
+fig4_tradeoff.pdf
+fig4_tradeoff.png
+fig5_forecast_error.pdf
+fig5_forecast_error.png
+fig6_timeseries.pdf
+fig6_timeseries.png
+
+/home/replab/work/z23758240/pkg/autoscaling-sensitivity-study/results:
+config_used.json
+fig5_correlation.json
+overall_means_bursty.csv
+overall_means_control.csv
+paired_vs_reactive.csv
+raw_results.csv
+summary_medians.csv
+
+/home/replab/work/z23758240/pkg/autoscaling-sensitivity-study/src:
+analyse.py
+figures.py
+run_experiments.py
+sim.py
+workload.py
+# ----
+# code de sortie : 0
+# durée (s)      : 0

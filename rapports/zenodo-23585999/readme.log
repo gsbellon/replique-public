@@ -1,0 +1,80 @@
+# commande : ssh sd-92569 cat work/z23585999/pkg/README.md work/z23585999/pkg/requirements.txt work/z23585999/pkg/requirements-lock.txt
+# début    : 2026-10-29T20:03:53Z
+# ----
+# Project 306 — v0024 replication
+
+**AI Income Rights and the Identification of Declining Work — Craig Steven Wright**
+
+This is the complete offline scientific replication for manuscript v0024, including the flagship linked-information figure. It contains all data used by the supplied analyses, not the entire SCF variable universe. The theory examples are synthetic; the SCF exercise is descriptive, not a calibration or estimate of AI's effect on employment.
+
+## Quick start
+
+Use a writable working copy. Python 3.12.14 with the exact package versions in `requirements.txt` was verified on 23 October 2026; `environment.json` records the environment. `requirements-lock.txt` additionally records the installed transitive dependency closure for this Python/Linux environment. No credentials, network access, proprietary software, or user-computer files are needed to run the calculations.
+
+```bash
+# If needed, install the pinned packages in your own Python environment:
+python -m pip install -r requirements.txt
+# Verify every distributed byte before running:
+python verify_release.py --manifest
+# Regenerate all scientific results and the flagship figure:
+python run_all.py
+# Check the inputs and key displayed numbers after regeneration:
+python verify_release.py
+```
+
+The offline fail-fast runner executes **39 programs**: 20 retained baseline programs; 7 owner/measurement/participation extensions; 3 joint-information programs; 2 technology-sensitivity checks; 3 information-frontier programs; 3 retirement-aware precision checks; and 1 flagship-figure program. It writes timestamped logs/receipts under `full_run_logs/`. The baseline runner and joint-example runner also retain their own detailed receipts/logs. PDFs and run receipts can change bytewise because of dates and execution timing; scientific numerical output comparisons are documented in `verification/`.
+
+## What is included
+
+- `sources/`: original official 2022/2025 SCF replicate-weight ZIPs and the 2025 codebook.
+- `base_v0008/scf_pilot/`: the complete analyzed 31-column public subset, its codebook, analysis/acquisition scripts and descriptive results. The subset contains 44,775 implicates from 4,595 public families in 2022 and 4,360 in 2025.
+- `base_v0008/scf_uncertainty/`: 999 replicate weights per year plus five-implicate variance calculation, descriptive standard errors and validation.
+- `base_v0008/`: foundational model, finite-state, inverse-region, linked-allocation, finite-counterfactual and sharp-bound calculations, with scientific numerical checks.
+- `active_owners/`, `measurement/`, `participation/`: owner-regime, bounded-record and behavioral calculations.
+- `joint_information_value/`: joint hours–price example, interval certificates, independent numerical challenges, technology/frontier/precision results, the retained original plot, and the new `plot_flagship_identification.py` generator with PDF/SVG/PNG and `flagship_figure_data.json`.
+- `source_hashes.json`: all five input files with official provenance URLs and exact held hashes.
+- `verification/`: current run evidence, program/input inventory and numeric preservation check; no private correspondence or editorial assessments.
+- `SHA256_MANIFEST.json`: the exact final distribution bytes, excluding only the manifest itself.
+
+## Flagship figure and exact interpretation
+
+Run `python joint_information_value/plot_flagship_identification.py` after the certificates exist to regenerate the figure alone. Every displayed number is derived from `joint_value_certified.json` or `measurement_precision_certified.json`; the companion data file records their hashes. Sampled curves are visualization, not numerical certificates.
+
+The initial exact marginal intervals admit a 20% hours decline and an 8% price increase separately; the exact joint set excludes their combination. A new linked observation reveals purchasers comprising 1.4% of the population and excludes the 20% decline at the same target capacity. The final bounded-error row is a **sufficient lower bound from an outer relaxation**, not a sharp noisy-data interval, an error tolerance maximum, or a statistical confidence bound. All ratios use the original observation and target capacity is twice its original value.
+
+## Provenance, historical material and limitations
+
+Current data inventory and uncertainty methods are governed by this README, `source_hashes.json`, `base_v0008/scf_pilot/DATA_PROVENANCE_AND_REUSE.md` and `base_v0008/scf_uncertainty/validation.json`. Retained historical analytical notes may use older theorem numbering or describe the early pilot before replicate weights were acquired. Those statements are superseded, not evidence of missing current inputs. The current manuscript and supplement govern theorem numbering.
+
+All scientific programs from the prior public package are retained unchanged except the top-level runner's addition of the new figure. The new figure does not alter the model or numerical results. Original inputs and the complete prior package have been preserved separately. Private workflow/literature-review metadata, superseded execution receipts and generated caches are not included here.
+
+Numerical tests corroborate calculations; they do not prove empirical validity, general novelty, scientific quality scores or journal acceptance. Independent numerical challenges are not outward interval certificates. The proof, exact-data assumptions, preference/technology restrictions and regimes remain essential. The SCF repeated cross sections do not provide the model's linked entitlement records. Public-data descriptive standard errors are not confidence bounds for the structural identified sets.
+
+## Rights
+
+Read `RIGHTS_AND_PROVENANCE.md`. Federal Reserve materials retain their original public-domain/attribution basis and third-party exceptions. **No additional MIT, Creative Commons or other license is silently granted for author-created code, text or results.** Publication metadata must not invent a license.
+numpy==2.3.5
+scipy==1.17.0
+pandas==2.2.3
+matplotlib==3.10.8
+mpmath==1.3.0
+# Tested dependency closure for Python 3.12.14 on Linux, 2026-10-23.
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.61.1
+kiwisolver==1.4.9
+matplotlib==3.10.8
+mpmath==1.3.0
+numpy==2.3.5
+packaging==26.3
+pandas==2.2.3
+pillow==12.3.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+pytz==2026.5
+scipy==1.17.0
+six==1.17.0
+tzdata==2026.5
+# ----
+# code de sortie : 0
+# durée (s)      : 0

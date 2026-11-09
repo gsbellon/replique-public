@@ -1,0 +1,22 @@
+# commande : ssh sd-92569 grep -rhoE "(library|require|requireNamespace)\([^)]*\)" work/z23673342/pkg --include=*.R
+# début    : 2026-11-05T20:01:44Z
+# ----
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+requireNamespace(pk, quietly = TRUE)
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+library(data.table)
+requireNamespace("haven", quietly = TRUE)
+library(data.table)
+library(data.table)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

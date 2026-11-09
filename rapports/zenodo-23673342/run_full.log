@@ -1,0 +1,150 @@
+# commande : ssh sd-92569 cat ~/work/z23673342/run_full.log
+# début    : 2026-11-06T20:01:10Z
+# ----
+30
+2026-11-05T20:10:22Z
+
+==== stage 01 | R/01_download.R | 2026-11-05 20:10:23 
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+2026-11-05 20:10:28 | stage 01 complete 
+==== stage 01 finished in 0.1 mins 
+
+==== stage 02 | R/02_build_census2010.R | 2026-11-05 20:10:28 
+2026-11-05 20:10:28 | AC.zip 24,036 households 
+2026-11-05 20:10:31 | AL.zip 91,753 households 
+2026-11-05 20:10:33 | AM.zip 63,942 households 
+2026-11-05 20:10:33 | AP.zip 18,047 households 
+2026-11-05 20:10:44 | BA.zip 441,256 households 
+2026-11-05 20:10:50 | CE.zip 233,274 households 
+2026-11-05 20:10:51 | DF.zip 34,975 households 
+2026-11-05 20:10:53 | ES.zip 124,379 households 
+2026-11-05 20:10:58 | GO.zip 224,278 households 
+2026-11-05 20:11:03 | MA.zip 194,179 households 
+2026-11-05 20:11:22 | MG.zip 764,752 households 
+2026-11-05 20:11:23 | MS.zip 85,659 households 
+2026-11-05 20:11:26 | MT.zip 117,004 households 
+2026-11-05 20:11:30 | PA.zip 174,805 households 
+2026-11-05 20:11:35 | PB.zip 161,527 households 
+2026-11-05 20:11:41 | PE.zip 250,781 households 
+2026-11-05 20:11:44 | PI.zip 135,122 households 
+2026-11-05 20:11:53 | PR.zip 404,263 households 
+2026-11-05 20:12:02 | RJ.zip 366,376 households 
+2026-11-05 20:12:05 | RN.zip 119,116 households 
+2026-11-05 20:12:06 | RO.zip 57,385 households 
+2026-11-05 20:12:06 | RR.zip 16,026 households 
+2026-11-05 20:12:16 | RS.zip 463,768 households 
+2026-11-05 20:12:22 | SC.zip 275,924 households 
+2026-11-05 20:12:24 | SE.zip 68,965 households 
+2026-11-05 20:12:40 | SP1.zip 758,101 households 
+2026-11-05 20:12:48 | SP2_RM.zip 367,308 households 
+2026-11-05 20:12:50 | TO.zip 76,886 households 
+2026-11-05 20:13:11 | stage 02 complete: 6,113,887 households, 20,526,018 persons 
+==== stage 02 finished in 2.7 mins 
+
+==== stage 03 | R/03_build_census2022.R | 2026-11-05 20:13:11 
+2026-11-05 20:13:11 | UF 11 59,858 households 
+2026-11-05 20:13:12 | UF 12 35,500 households 
+2026-11-05 20:13:13 | UF 13 97,656 households 
+2026-11-05 20:13:14 | UF 14 23,357 households 
+2026-11-05 20:13:17 | UF 15 248,073 households 
+2026-11-05 20:13:17 | UF 16 18,166 households 
+2026-11-05 20:13:18 | UF 17 92,794 households 
+2026-11-05 20:13:22 | UF 21 243,253 households 
+2026-11-05 20:13:24 | UF 22 165,916 households 
+2026-11-05 20:13:28 | UF 23 302,189 households 
+2026-11-05 20:13:29 | UF 24 151,526 households 
+2026-11-05 20:13:32 | UF 25 201,286 households 
+2026-11-05 20:13:36 | UF 26 317,048 households 
+2026-11-05 20:13:37 | UF 27 113,902 households 
+2026-11-05 20:13:38 | UF 28 91,670 households 
+2026-11-05 20:13:45 | UF 29 571,796 households 
+2026-11-05 20:13:57 | UF 31 944,237 households 
+2026-11-05 20:13:59 | UF 32 155,322 households 
+2026-11-05 20:14:04 | UF 33 427,996 households 
+2026-11-05 20:14:20 | UF 35 1,348,151 households 
+2026-11-05 20:14:26 | UF 41 505,217 households 
+2026-11-05 20:14:30 | UF 42 346,280 households 
+2026-11-05 20:14:37 | UF 43 541,171 households 
+2026-11-05 20:14:38 | UF 50 105,813 households 
+2026-11-05 20:14:40 | UF 51 153,565 households 
+2026-11-05 20:14:43 | UF 52 292,357 households 
+2026-11-05 20:14:44 | UF 53 49,357 households 
+2026-11-05 20:15:07 | stage 03 complete: 7,603,456 households; income line (R$ of July 2022): 262.78 
+==== stage 03 finished in 1.9 mins 
+
+==== stage 04 | R/04_af_profiles.R | 2026-11-05 20:15:07 
+2026-11-05 20:15:26 | stage 04 complete; Brazil M0 2010 = 0.1555 | 2022 = 0.07357 
+==== stage 04 finished in 0.3 mins 
+
+==== stage 05 | R/05_scores.R | 2026-11-05 20:15:26 
+2026-11-05 20:15:26 | stage 05 complete; main tau = 0.5 | Brazil J 2010 = 0.4858 | 2022 = 0.239 
+==== stage 05 finished in 0 mins 
+
+==== stage 06 | R/06_audit.R | 2026-11-05 20:15:26 
+2026-11-05 20:15:26 | solver check: max |lpSolve - GLPK| = 6.24e-13 | max |lpSolve - Benchmarking| (tau = 0) = 1.67e-15 
+2026-11-05 20:15:50 | stage 06 complete 
+==== stage 06 finished in 0.4 mins 
+
+==== stage 07 | R/07_robustness.R | 2026-11-05 20:15:50 
+2026-11-05 20:15:50 | stage 07: alternative versions, normative reference and rank ranges written 
+2026-11-05 20:21:00 | stage 07 complete 
+==== stage 07 finished in 5.2 mins 
+
+==== stage 08 | R/08_numerical_example.R | 2026-11-05 20:21:00 
+   territory h1_before h2_before h2_after score_before score_after_moving
+      <char>     <num>     <num>    <num>        <num>              <num>
+1:         A       0.4       0.1      0.3    1.0000000          1.0000000
+2:         B       0.1       0.4      0.4    1.0000000          1.0000000
+3:         C       0.2       0.2      0.2    0.8000000          0.6153846
+4:      mean        NA        NA       NA    0.9333333          0.8717949
+   score_after_fixed
+               <num>
+1:          1.400000
+2:          1.000000
+3:          0.800000
+4:          1.066667
+2026-11-05 20:21:00 | stage 08 complete 
+==== stage 08 finished in 0 mins 
+
+==== stage 09 | R/09_series_1991_2022.R | 2026-11-05 20:21:00 
+2026-11-05 20:21:00 | stage 09 skipped: set BOD_CENSUS1991_SAV and BOD_CENSUS2000_SAV and install haven 
+==== stage 09 finished in 0 mins 
+
+==== stage 10 | R/10_figure.R | 2026-11-05 20:21:00 
+2026-11-05 20:21:00 | stage 10 complete: Figura_1.png 
+==== stage 10 finished in 0 mins 
+
+==== stage 11 | R/11_manifest.R | 2026-11-05 20:21:00 
+2026-11-05 20:21:00 | stage 11 complete: 48 output files listed 
+==== stage 11 finished in 0 mins 
+PASS | AF identity: M0 = H x A in the 54 profiles 
+PASS | tau = 1 recovers M0 divided by the largest M0 of the reference 
+PASS | lpSolve equals GLPK in every score (max abs diff < 1e-8) 
+PASS | tau = 0: lpSolve equals Benchmarking (max abs diff < 1e-8) 
+PASS | fixed reference: no other UF changes after any shock 
+PASS | fixed reference: own score does not fall after a worsening nor rise after an improvement 
+PASS | fixed reference: national mean does not fall after a worsening 
+PASS | weak monotonicity in the profile: no score falls 
+PASS | strict monotonicity with tau > 0: every score rises 
+PASS | person level: no score falls when a household gains a deprivation 
+PASS | person level, tau > 0: score rises whenever the household is poor after the change 
+PASS | person level: score unchanged when the household stays non-poor (focus) 
+PASS | within-UF componentwise worsening: national mean rises and no other UF changes 
+PASS | every censored headcount is lower in 2022 than in 2010 in every UF (dominance) 
+PASS | fixed reference, tau > 0: every UF score falls between 2010 and 2022 
+PASS | dominant indicator unique in every UF in 2022 
+PASS | numerical example: fixed-reference mean = 16/15 
+All checks passed.
+code run_all.R : 0
+durée (s) : 638
+2026-11-05T20:21:00Z
+FIN
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,44 @@
+# commande : ssh sd-92569 timeout 900 podman wait replab-ai306-run; podman ps -a --filter name=replab-ai306-run; podman logs replab-ai306-run | tail -n 40
+# début    : 2026-10-29T20:05:14Z
+# ----
+0
+CONTAINER ID  IMAGE                          COMMAND               CREATED        STATUS                             PORTS       NAMES
+81f7b0a9aa53  localhost/replab-ai306:latest  sh -c python3 run...  3 minutes ago  Exited (0) Less than a second ago              replab-ai306-run
+base_v0008/run_all.py: exit 0
+active_owners/active_owner_parameter_family.py: exit 0
+active_owners/validated_general_owner_bounds.py: exit 0
+measurement/validated_measurement_bounds.py: exit 0
+participation/test_candidate.py: exit 0
+participation/test_independent_review.py: exit 0
+participation/test_bounded_tastes.py: exit 0
+participation/test_flexible_motives.py: exit 0
+joint_information_value/run_joint_example.py: exit 0
+joint_information_value/technology_sensitivity_certified.py: exit 0
+joint_information_value/independent_rho_challenge.py: exit 0
+joint_information_value/information_frontier_certified.py: exit 0
+joint_information_value/frontier_uniform_regime_certificate.py: exit 0
+joint_information_value/independent_information_frontier.py: exit 0
+joint_information_value/measurement_precision_certified.py: exit 0
+joint_information_value/independent_measurement_challenge.py: exit 0
+joint_information_value/general_beta_retirement_certificate_challenge.py: exit 0
+joint_information_value/plot_flagship_identification.py: exit 0
+All 39 scientific/figure programs passed. Receipt: /work/full_run_logs/20261029T200501545002Z/receipt.json
+code run_all : 0
+{
+  "status": "passed",
+  "input_files_verified": 5,
+  "subset_rows": 44775,
+  "subset_columns": 31,
+  "family_counts": {
+    "2022": 4595,
+    "2025": 4360
+  },
+  "joint_and_new_purchaser_exclusions": "passed",
+  "noisy_sufficient_exclusion": "passed; not a sharp noisy identified interval",
+  "flagship_data_source_hashes": "passed",
+  "manifest_checked": false
+}
+code verify : 0
+# ----
+# code de sortie : 0
+# durée (s)      : 194

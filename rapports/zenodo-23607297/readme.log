@@ -1,0 +1,50 @@
+# commande : ssh sd-92569 cat ~/work/z23607297/pkg/README.md
+# début    : 2026-10-25T20:00:22Z
+# ----
+# Per-model language z-scores on LTBv1 (Chinese-source subset)
+
+Supporting data and replication script for:
+"Accumulating Invisibility: How Platformised AI Translation Converts Cultural
+Discount into a National-Image Externality" (submitted to Global Media and China).
+The deposit is made under an anonymous creator name to preserve the journal's
+double-anonymised review process.
+
+## Contents
+
+- `ltb_per_model_zscores.csv` — per-model within-language z-scores derived from the
+  **Last Translation Benchmark (LTBv1)** Chinese-source items.
+  Rows: 32 total = 31 machine-translation systems (7 China-developed, 24 non-China)
+  plus 1 human baseline row (excluded from the model-level group comparison).
+  Columns: `model`, `origin`, `zho_n` (number of Chinese-source cases scored),
+  `within_model_z` (pass rate standardised within the model).
+- `recompute_from_release.py` — self-contained replication script (standard library only).
+  Reads only this CSV; no network access, no external dependencies.
+
+## Reproduction
+
+    python recompute_from_release.py
+
+Expected output (matches the manuscript's reported values):
+
+    CN-developed  : n=7, mean=1.3841, median=1.1851, positive=7/7
+    Non-CN        : n=24, mean=0.0089, median=-0.1221, positive=9/24
+    observed U    : 156.0
+    exact two-sided p = 1.8710e-04   (two-sided exact Mann-Whitney U, no ties)
+    ALL PASS
+
+The z-score is standardised per model against that model's own pass-rate distribution;
+it is a **capability-consistency diagnostic**, not a measure of ideological stance.
+See manuscript SS4.2 and Proposition 4 (SS5.3).
+
+## Upstream data
+
+This package does **not** redistribute LTBv1. The underlying benchmark is available from:
+
+- Zouhar, V. et al. (2026). The Last Translation Benchmark. arXiv:2609.04173.
+- Dataset: https://huggingface.co/datasets/zouhar/last-translation-benchmark (CC BY 4.0)
+- Code: https://github.com/zouharvi/last-translation-benchmark (MIT)
+
+See `ATTRIBUTION.md`.
+# ----
+# code de sortie : 0
+# durée (s)      : 0

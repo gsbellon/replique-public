@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 sh work/telecharge_donnees.sh
+# début    : 2026-11-07T20:11:42Z
+# ----
+Fossil fuel EROIs/Global/global_erois.csv: OK
+Fossil fuel EROIs/Global/global_erois_by_end_use.csv: OK
+Renewable energy EROIs equivalent/Global/global_erois_equivalent.csv: OK
+Renewable energy EROIs equivalent/Global/global_erois_equivalent_by_end_use.csv: OK
+./Renewable energy EROIs equivalent/Global/global_erois_equivalent_by_end_use.csv
+./Renewable energy EROIs equivalent/Global/global_erois_equivalent.csv
+./Fossil fuel EROIs/Global/global_erois.csv
+./Fossil fuel EROIs/Global/global_erois_by_end_use.csv
+# ----
+# code de sortie : 0
+# durée (s)      : 1

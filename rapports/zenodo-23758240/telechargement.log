@@ -1,0 +1,30 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-10-31T20:00:55Z
+# ----
+zenodo_code_package.zip: OK
+code extraction : 0
+27
+.
+./autoscaling-sensitivity-study
+./autoscaling-sensitivity-study/LICENSE
+./autoscaling-sensitivity-study/figures
+./autoscaling-sensitivity-study/src
+./autoscaling-sensitivity-study/src/run_experiments.py
+./autoscaling-sensitivity-study/src/analyse.py
+./autoscaling-sensitivity-study/src/workload.py
+./autoscaling-sensitivity-study/src/sim.py
+./autoscaling-sensitivity-study/src/figures.py
+./autoscaling-sensitivity-study/data
+./autoscaling-sensitivity-study/requirements.txt
+./autoscaling-sensitivity-study/README.md
+./autoscaling-sensitivity-study/results
+./autoscaling-sensitivity-study/results/overall_means_control.csv
+./autoscaling-sensitivity-study/results/summary_medians.csv
+./autoscaling-sensitivity-study/results/paired_vs_reactive.csv
+./autoscaling-sensitivity-study/results/config_used.json
+./autoscaling-sensitivity-study/results/fig5_correlation.json
+./autoscaling-sensitivity-study/results/overall_means_bursty.csv
+./autoscaling-sensitivity-study/results/raw_results.csv
+# ----
+# code de sortie : 0
+# durée (s)      : 1

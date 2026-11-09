@@ -1,0 +1,6 @@
+# commande : ssh sd-92569 find ~/work/z23437544/x -iname "*feature_vectors*" -o -iname "CSV" -o -size +5M
+# début    : 2026-10-23T19:01:10Z
+# ----
+# ----
+# code de sortie : 0
+# durée (s)      : 0

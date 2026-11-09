@@ -1,0 +1,25 @@
+# commande : ssh sd-92569 cd ~/work/z23595707 && sh extrait.sh
+# début    : 2026-10-27T20:01:20Z
+# ----
+code extraction : 0
+017477a57e4cab4708d9bd02cf50ba99  QS.zip
+760
+pkg
+pkg/qsurvdiag-replication-v1.3.0
+pkg/qsurvdiag-replication-v1.3.0/docs
+pkg/qsurvdiag-replication-v1.3.0/LICENSE
+pkg/qsurvdiag-replication-v1.3.0/LICENSES
+pkg/qsurvdiag-replication-v1.3.0/provenance
+pkg/qsurvdiag-replication-v1.3.0/.github
+pkg/qsurvdiag-replication-v1.3.0/CITATION.cff
+pkg/qsurvdiag-replication-v1.3.0/data
+pkg/qsurvdiag-replication-v1.3.0/expected
+pkg/qsurvdiag-replication-v1.3.0/.gitattributes
+pkg/qsurvdiag-replication-v1.3.0/environment
+pkg/qsurvdiag-replication-v1.3.0/LICENSE-DATA
+pkg/qsurvdiag-replication-v1.3.0/.gitignore
+pkg/qsurvdiag-replication-v1.3.0/scripts
+pkg/qsurvdiag-replication-v1.3.0/README.md
+# ----
+# code de sortie : 0
+# durée (s)      : 0

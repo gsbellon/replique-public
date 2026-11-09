@@ -1,0 +1,12 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && python3 -I compare_abs.py pkg/output run_full/output audit/interference.csv audit/monotonicity_person.csv audit/monotonicity_profile.csv
+# début    : 2026-11-06T20:01:57Z
+# ----
+audit/interference.csv : cellules numériques différentes 236 ; écart absolu max 3.781e-13
+   dont écart relatif > 1e-3 : 18 ; écart absolu max 4.441e-16 ; valeur absolue max des deux cellules 1.221e-15
+audit/monotonicity_person.csv : cellules numériques différentes 700 ; écart absolu max 1.855e-13
+   dont écart relatif > 1e-3 : 111 ; écart absolu max 4.441e-16 ; valeur absolue max des deux cellules 2.220e-16
+audit/monotonicity_profile.csv : cellules numériques différentes 517 ; écart absolu max 2.295e-13
+   dont écart relatif > 1e-3 : 67 ; écart absolu max 4.441e-16 ; valeur absolue max des deux cellules 4.441e-16
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,88 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && sh lance_build.sh
+# début    : 2026-11-07T20:00:55Z
+# ----
+STEP 1/2: FROM docker.io/library/python:3.14-slim
+Trying to pull docker.io/library/python:3.14-slim...
+Getting image source signatures
+Copying blob sha256:ce3c2a9291f81f0f8349de8621c9878a424552bfc64d0e4f20a4ac6006489fe1
+Copying blob sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41
+Copying blob sha256:d6d089a6c0a2543e3dd748a4ffcbfe409ab93f2049d42640588be3a3f67acffe
+Copying blob sha256:0e665593ff40197b851364fab0389fc6f5fa35bc74814ddfad07f96f417fc574
+Copying config sha256:d8f0d5177291a2af21536287c48e3d17fea2d6bff80436c9bd206dd505b29e52
+Writing manifest to image destination
+STEP 2/2: RUN pip install --no-cache-dir annotated-types==0.7.0 defusedxml==0.7.1 numpy==2.2.1 pandas==2.3.3 pillow==12.1.1 pyarrow==23.0.1 pydantic==2.12.5 pydantic_core==2.41.5 python-dateutil==2.9.0.post0 python-dotenv==1.2.2 pytz==2026.1.post1 reportlab==4.4.10 six==1.17.0 typing-inspection==0.4.2 typing_extensions==4.15.0 scipy==1.17.0 pytest==9.0.2
+Collecting annotated-types==0.7.0
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting defusedxml==0.7.1
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting numpy==2.2.1
+  Downloading numpy-2.2.1.tar.gz (20.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.2/20.2 MB 79.5 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      + /usr/local/bin/python3.14 /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe/vendored-meson/meson/meson.py setup /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe/.mesonpy-890pzs6b -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=/tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe/.mesonpy-890pzs6b/meson-python-native-file.ini
+      The Meson build system
+      Version: 1.5.2
+      Source dir: /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe
+      Build dir: /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe/.mesonpy-890pzs6b
+      Build type: native build
+      Project name: NumPy
+      Project version: 2.2.1
+      
+      ../meson.build:1:0: ERROR: Unknown compiler(s): [['cc'], ['gcc'], ['clang'], ['nvc'], ['pgcc'], ['icc'], ['icx']]
+      The following exception(s) were encountered:
+      Running `cc --version` gave "[Errno 2] No such file or directory: 'cc'"
+      Running `gcc --version` gave "[Errno 2] No such file or directory: 'gcc'"
+      Running `clang --version` gave "[Errno 2] No such file or directory: 'clang'"
+      Running `nvc --version` gave "[Errno 2] No such file or directory: 'nvc'"
+      Running `pgcc --version` gave "[Errno 2] No such file or directory: 'pgcc'"
+      Running `icc --version` gave "[Errno 2] No such file or directory: 'icc'"
+      Running `icx --version` gave "[Errno 2] No such file or directory: 'icx'"
+      
+      A full log can be found at /tmp/pip-install-rmr2pmco/numpy_de28662a1f654fea8aa6a2a4b4948ebe/.mesonpy-890pzs6b/meson-logs/meson-log.txt
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> numpy
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+Error: building at STEP "RUN pip install --no-cache-dir annotated-types==0.7.0 defusedxml==0.7.1 numpy==2.2.1 pandas==2.3.3 pillow==12.1.1 pyarrow==23.0.1 pydantic==2.12.5 pydantic_core==2.41.5 python-dateutil==2.9.0.post0 python-dotenv==1.2.2 pytz==2026.1.post1 reportlab==4.4.10 six==1.17.0 typing-inspection==0.4.2 typing_extensions==4.15.0 scipy==1.17.0 pytest==9.0.2": while running runtime: exit status 1
+code de sortie build : 1
+Error: short-name "replab-evid" did not resolve to an alias and no unqualified-search registries are defined in "/etc/containers/registries.conf"
+REPOSITORY                    TAG         IMAGE ID      CREATED       SIZE
+localhost/replab-reach        latest      9e1d30aa4a4f  24 hours ago  765 MB
+localhost/replab-bodmpi       latest      6b6231faa145  2 days ago    989 MB
+docker.io/library/python      3.13-slim   c0e8df938051  2 days ago    123 MB
+docker.io/library/python      3.14-slim   d8f0d5177291  2 days ago    124 MB
+localhost/replab-nowcast      latest      2256e3f2c61d  4 days ago    1.14 GB
+<none>                        <none>      fcf36e51849b  4 days ago    1.13 GB
+localhost/replab-granularity  latest      76f679efc227  5 days ago    439 MB
+localhost/replab-cournot      latest      6380db5196a7  6 days ago    535 MB
+localhost/replab-autoscaling  latest      c4ba91a476fe  7 days ago    520 MB
+localhost/replab-ai306        latest      9643b511edbd  9 days ago    515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  11 days ago   1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  12 days ago   972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  12 days ago   202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  2 weeks ago   935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  4 weeks ago   124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 10

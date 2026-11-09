@@ -1,0 +1,22 @@
+# commande : ssh sd-92569 sudo iptables -S OUTPUT; sudo iptables -S ufw-user-output; sudo iptables -L ufw-user-output -n -v
+# début    : 2026-10-26T20:06:14Z
+# ----
+-P OUTPUT ACCEPT
+-A OUTPUT -j ufw-before-logging-output
+-A OUTPUT -j ufw-before-output
+-A OUTPUT -j ufw-after-output
+-A OUTPUT -j ufw-after-logging-output
+-A OUTPUT -j ufw-reject-output
+-A OUTPUT -j ufw-track-output
+-N ufw-user-output
+-A ufw-user-output -p tcp -m tcp --dport 25 -j DROP
+-A ufw-user-output -p tcp -m tcp --dport 465 -j DROP
+-A ufw-user-output -p tcp -m tcp --dport 587 -j DROP
+Chain ufw-user-output (1 references)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:25
+    0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:465
+    0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:587
+# ----
+# code de sortie : 0
+# durée (s)      : 0

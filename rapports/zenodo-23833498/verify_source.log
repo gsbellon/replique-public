@@ -1,0 +1,105 @@
+# commande : ssh sd-92569 cat ~/work/z23833498/pkg/verify.py
+# début    : 2026-11-02T20:07:36Z
+# ----
+"""Check the regenerated results against the numbers reported in the article.
+
+Run after `make results` (or `make all`). Exits non-zero on any mismatch, so it
+can be used as a CI check on the replication package.
+
+Reference values are the figures printed in:
+  Recio-Roman, A.; Recio-Menendez, M.; Roman-Gonzalez, M.V.
+  "Who Owns Granularity? Brand Data, Decision Rights, and Interdepartmental
+  Conflict in Multinational Consumer Goods Firms." Businesses, 2026.
+"""
+
+import json
+import sys
+
+TOL = 0.006  # absolute tolerance, in the units of each statistic
+
+
+def main() -> int:
+    r = json.load(open("archetype_results.json"))
+
+    checks = [
+        ("Archetype A premium (% of sales)  [Table 2]",
+         r["A"]["premium_pct"], 0.534),
+        ("Archetype B premium (% of sales)  [Table 2]",
+         r["B"]["premium_pct"], 0.524),
+        ("A: share of premium from restoring resolution  [Table 2]",
+         r["A"]["decomposition"]["share_granularity"], 0.91),
+        ("B: share of premium from restoring resolution  [Table 2]",
+         r["B"]["decomposition"]["share_granularity"], 0.93),
+        ("A: optimal governance maturity D*  [Table 2]",
+         r["A"]["D_star_mean"], 0.71),
+        ("B: optimal governance maturity D*  [Table 2]",
+         r["B"]["D_star_mean"], 0.62),
+        ("A: bargaining efficiency q  [Table 2]",
+         r["A"]["spec"]["q"], 0.850),
+        ("B: bargaining efficiency q  [Table 2]",
+         r["B"]["spec"]["q"], 0.566),
+    ]
+
+    # Mechanism ordering (Table 3): M2 < M4 < M3 < M5 at both scales.
+    ordering_ok = True
+    for k in ("A", "B"):
+        m = r[k]["mechanisms"]
+        if not (m["M2 Coasian bargaining"]
+                < m["M4 Business veto"]
+                < m["M3 Shadow-IT chargeback"]
+                < m["M5 Data governance"]):
+            ordering_ok = False
+
+    # Identification of the revenue elasticity (Appendix C, Table A5): the
+    # premium with the resolution-revenue link removed entirely, and the
+    # dominance of centralized governance at every value of beta examined.
+    rb = json.load(open("robustness_results.json"))["beta_identification"]
+    checks += [
+        ("A premium at beta = 0 (% of sales)  [Table A5]",
+         rb["A"][0]["premium_pct"], 0.099),
+        ("B premium at beta = 0 (% of sales)  [Table A5]",
+         rb["B"][0]["premium_pct"], 0.088),
+        ("A maturity component, beta = 0 (% of sales)  [Table A5]",
+         rb["A"][0]["maturity_step_pct"], 0.050),
+        ("B maturity component, beta = 0 (% of sales)  [Table A5]",
+         rb["B"][0]["maturity_step_pct"], 0.039),
+    ]
+    dominance_ok = all(row["governance_dominates"]
+                       for k in ("A", "B") for row in rb[k])
+    maturity_invariant = all(
+        abs(row["maturity_step_pct"] - rb[k][0]["maturity_step_pct"]) < 1e-9
+        for k in ("A", "B") for row in rb[k])
+
+    failures = 0
+    print("Verifying replication against the published figures\n")
+    for name, got, want in checks:
+        ok = abs(got - want) <= TOL
+        failures += (not ok)
+        print(f"  {'OK  ' if ok else 'FAIL'}  {name}\n"
+              f"          got {got:.4f}   article {want:.4f}")
+
+    print(f"\n  {'OK  ' if ordering_ok else 'FAIL'}  "
+          f"Mechanism ordering M2 < M4 < M3 < M5 at both scales  [Table 3]")
+    failures += (not ordering_ok)
+
+    print(f"  {'OK  ' if dominance_ok else 'FAIL'}  "
+          f"Governance dominates at every beta, including zero  [Table A5]")
+    failures += (not dominance_ok)
+
+    print(f"  {'OK  ' if maturity_invariant else 'FAIL'}  "
+          f"Maturity component exactly invariant to beta  [Table A5]")
+    failures += (not maturity_invariant)
+
+    if failures:
+        print(f"\n{failures} check(s) FAILED. The replication does not "
+              f"reproduce the article.")
+        return 1
+    print("\nAll checks passed. The replication reproduces the article.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+# ----
+# code de sortie : 0
+# durée (s)      : 0

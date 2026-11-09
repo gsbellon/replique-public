@@ -1,0 +1,54 @@
+# commande : ssh sd-92569 cd work/z23647165/pkg/replication/code && grep -n -E "^(import|from)|pdflatex|subprocess|requests|urllib|socket" *.py
+# début    : 2026-11-07T20:11:49Z
+# ----
+build_manuscript.py:10:import json
+build_manuscript.py:11:import math
+build_manuscript.py:12:import os
+build_manuscript.py:13:import re
+build_manuscript.py:14:import shutil
+build_manuscript.py:15:import sys
+build_manuscript.py:17:import numpy as np
+build_manuscript.py:20:from model import Regime, critical_growth, eq_dynamic, gamma_of, g_of  # noqa: E402
+calibrate.py:16:import csv
+calibrate.py:17:import json
+calibrate.py:18:import math
+calibrate.py:19:import os
+calibrate.py:20:import sys
+calibrate.py:22:import numpy as np
+calibrate.py:23:from scipy.optimize import brentq
+calibrate.py:26:from model import (Composite, Regime, critical_growth, eq_dynamic, eq_dynamic_devices,  # noqa: E402
+figures.py:10:import glob
+figures.py:11:import json
+figures.py:12:import math
+figures.py:13:import os
+figures.py:14:import sys
+figures.py:16:import matplotlib
+figures.py:18:matplotlib.use("pgf")           # text is typeset by pdflatex with the fonts of the manuscript
+figures.py:19:import matplotlib.pyplot as plt
+figures.py:20:import numpy as np
+figures.py:21:from matplotlib.ticker import FixedLocator, FuncFormatter, NullFormatter
+figures.py:24:from model import Regime, critical_growth, eq_dynamic, gamma_of, g_of  # noqa: E402
+figures.py:28:    "pgf.texsystem": "pdflatex", "pgf.rcfonts": False,
+graphical_abstract.py:10:import json
+graphical_abstract.py:11:import os
+graphical_abstract.py:12:import sys
+graphical_abstract.py:14:import matplotlib
+graphical_abstract.py:17:import matplotlib.pyplot as plt  # noqa: E402
+graphical_abstract.py:18:import numpy as np  # noqa: E402
+graphical_abstract.py:19:from matplotlib.ticker import FixedLocator, FuncFormatter  # noqa: E402
+graphical_abstract.py:22:from model import Regime, eq_dynamic, gamma_of  # noqa: E402
+model.py:27:from __future__ import annotations
+model.py:29:import math
+model.py:30:from dataclasses import dataclass
+model.py:32:import numpy as np
+model.py:33:from scipy.optimize import brentq
+model.py:34:from scipy.special import lambertw
+verify_theory.py:9:import math
+verify_theory.py:10:import sys
+verify_theory.py:12:import numpy as np
+verify_theory.py:13:from scipy import integrate, special
+verify_theory.py:14:from scipy.optimize import brentq
+verify_theory.py:16:from model import (Composite, Regime, critical_growth, eq_dynamic, eq_dynamic_devices, eq_static,
+# ----
+# code de sortie : 0
+# durée (s)      : 0

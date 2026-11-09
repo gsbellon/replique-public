@@ -1,0 +1,25 @@
+# commande : ssh sd-92569 cat ~/work/z23511350/pkg/DFAR_Replication_Package/run_verification_suite.py
+# début    : 2026-10-26T20:01:03Z
+# ----
+#!/usr/bin/env python3
+import subprocess, sys
+from pathlib import Path
+root=Path(__file__).resolve().parent
+steps=[
+ root/'analysis/verify_package_manifest.py',
+ root/'analysis/verify_native_x86_p1_results.py',
+ root/'analysis/recompute_p1_native_x86_summary.py',
+ root/'analysis/verify_reported_results.py',
+ root/'analysis/verify_native_arm64_results.py',
+ root/'verification/quick_support_graph_check.py',
+ root/'verification/received_ciphertext_namespace_check.py',
+ root/'verification/reference_mutation_campaign.py'
+]
+for step in steps:
+    print(f'\n### {step.relative_to(root)} ###')
+    r=subprocess.run([sys.executable,str(step)])
+    if r.returncode: raise SystemExit(r.returncode)
+print('\nDFAR_FULL_VERIFICATION_PASS')
+# ----
+# code de sortie : 0
+# durée (s)      : 1

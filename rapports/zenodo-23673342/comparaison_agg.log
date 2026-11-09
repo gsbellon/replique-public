@@ -1,0 +1,122 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && sh lance_compare.sh run_agg2
+# début    : 2026-11-05T20:05:48Z
+# ----
+IDENTIQUE   : af/missing_income.csv
+IDENTIQUE   : af/profiles.csv
+IDENTIQUE   : af/profiles_2022_without_suppressed_age.csv
+IDENTIQUE   : af/profiles_brazil_regions.csv
+IDENTIQUE   : af/profiles_delay_harmonized.csv
+IDENTIQUE   : af/profiles_dimensions.csv
+IDENTIQUE   : af/profiles_income_mw.csv
+IDENTIQUE   : af/profiles_income_real.csv
+IDENTIQUE   : af/profiles_without_child_labour.csv
+IDENTIQUE   : audit/AF3_conference.csv
+IDENTIQUE   : audit/AF3_headcounts_conference.csv
+IDENTIQUE   : audit/input_series_sha256.csv
+IDENTIQUE   : audit/interference.csv
+IDENTIQUE   : audit/monotonicity_person.csv
+IDENTIQUE   : audit/monotonicity_profile.csv
+IDENTIQUE   : audit/population_standardization.csv
+IDENTIQUE   : audit/saved_scores_recomputed.csv
+IDENTIQUE   : audit/scope_subgroup_counterexample.csv
+IDENTIQUE   : audit/solver_check.csv
+IDENTIQUE   : audit/subgroup_consistency.csv
+IDENTIQUE   : audit/territorial_subgroup_decomposition.csv
+IDENTIQUE   : audit/testes_v4.log
+IDENTIQUE   : base_2010_counts.csv
+IDENTIQUE   : base_2022_counts.csv
+DIFFÉRENT   : figure/Figura_1.png
+IDENTIQUE   : inputs_sha256.csv
+IDENTIQUE   : numerical_example/example.csv
+DIFFÉRENT   : outputs_sha256.csv
+   lignes 49 / 49 ; en-têtes identiques : True
+   cellules 96 ; textes/NaN différents 7 ; numériques différentes (octets) 0
+   écart relatif > 0 : 0
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 0.000e+00
+   exemple ligne 25 colonne sha256 : fourni=cb53eb262cc123612280326f11d7f0e8c7888b1ac501b8b87b65e2e06119c627 regénéré=05baf1c9c2f3b5acd9597c93dbff290f15826132ed0e193994874fd6c46de4c0
+   exemple ligne 38 colonne sha256 : fourni=7e88a89c36ba56f1bf67e985d8dd52d831720283f56896020fa71708940e93db regénéré=eb2a340ef582e32f2b99cbd86a4383251dc39ce0196a077c1cc0ebcc3ddc9b53
+   exemple ligne 39 colonne sha256 : fourni=8d69d3415a9fd428c20900951e67ee19f651e679cdb3e097349cfe4f6ee5ad0b regénéré=691bc30cc6490efaf004db7d0aff6a8d8fe3fa084c760c2c1ee2225a5322d9b6
+IDENTIQUE   : parameters.csv
+IDENTIQUE   : robustness/alternative_versions_change.csv
+IDENTIQUE   : robustness/alternative_versions_summary.csv
+IDENTIQUE   : robustness/alternative_versions_uf.csv
+IDENTIQUE   : robustness/bootstrap_change_brazil.csv
+IDENTIQUE   : robustness/bootstrap_change_uf.csv
+IDENTIQUE   : robustness/bootstrap_replicates.csv
+IDENTIQUE   : robustness/dominant_indicator.csv
+IDENTIQUE   : robustness/leave_one_out_reference.csv
+IDENTIQUE   : robustness/rank_range_tau.csv
+DIFFÉRENT   : scores/aggregates.csv
+   lignes 73 / 73 ; en-têtes identiques : True
+   cellules 432 ; textes/NaN différents 0 ; numériques différentes (octets) 9
+   écart relatif > 0 : 9
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 8.287e-15
+   exemple ligne 1 colonne J : fourni=0.535710960688083 regénéré=0.535710960688082
+   exemple ligne 1 colonne J_moving : fourni=0.535710960688083 regénéré=0.535710960688082
+   exemple ligne 7 colonne J : fourni=0.485769341003966 regénéré=0.485769341003965
+DIFFÉRENT   : scores/change_uf.csv
+   lignes 163 / 163 ; en-têtes identiques : True
+   cellules 1944 ; textes/NaN différents 0 ; numériques différentes (octets) 53
+   écart relatif > 0 : 53
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 5.374e-15
+   exemple ligne 3 colonne score_2022 : fourni=0.690872783625817 regénéré=0.690872783625816
+   exemple ligne 13 colonne change_pct : fourni=-38.1669312322715 regénéré=-38.1669312322714
+   exemple ligne 24 colonne score_2010 : fourni=0.571214692477824 regénéré=0.571214692477825
+DIFFÉRENT   : scores/scores_uf.csv
+   lignes 325 / 325 ; en-têtes identiques : True
+   cellules 3564 ; textes/NaN différents 0 ; numériques différentes (octets) 43
+   écart relatif > 0 : 43
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 5.374e-15
+   exemple ligne 24 colonne score : fourni=0.571214692477824 regénéré=0.571214692477825
+   exemple ligne 24 colonne score_moving : fourni=0.571214692477824 regénéré=0.571214692477825
+   exemple ligne 30 colonne score : fourni=0.690872783625817 regénéré=0.690872783625816
+DIFFÉRENT   : scores/summary_by_tau.csv
+   lignes 13 / 13 ; en-têtes identiques : True
+   cellules 96 ; textes/NaN différents 0 ; numériques différentes (octets) 2
+   écart relatif > 0 : 2
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 5.374e-15
+   exemple ligne 2 colonne max_score : fourni=0.690872783625817 regénéré=0.690872783625816
+   exemple ligne 7 colonne min_score : fourni=0.185946516545621 regénéré=0.18594651654562
+DIFFÉRENT   : scores/weights_main.csv
+   lignes 649 / 649 ; en-têtes identiques : True
+   cellules 3240 ; textes/NaN différents 0 ; numériques différentes (octets) 267
+   écart relatif > 0 : 267
+   écart relatif > 1e-12 : 0
+   écart relatif > 1e-09 : 0
+   écart relatif > 1e-06 : 0
+   écart relatif > 0.001 : 0
+   écart relatif max : 9.322e-14
+   exemple ligne 2 colonne w : fourni=0.118730001495918 regénéré=0.118730001495921
+   exemple ligne 2 colonne contribution : fourni=0.0797512725731622 regénéré=0.0797512725731645
+   exemple ligne 4 colonne w : fourni=0.102263485878293 regénéré=0.102263485878292
+IDENTIQUE   : series/aggregates_1991_2022.csv
+IDENTIQUE   : series/dominance_consecutive.csv
+IDENTIQUE   : series/profiles_1991_2022.csv
+IDENTIQUE   : series/profiles_brazil_regions_1991_2022.csv
+IDENTIQUE   : series/scores_uf_1991_2022.csv
+DIFFÉRENT   : session_info.txt
+TOTAL fichiers fournis 49 : identiques 41, différents 8, absents 0
+Présents dans B seulement : aucun
+# ----
+# code de sortie : 0
+# durée (s)      : 1

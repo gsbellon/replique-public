@@ -1,0 +1,3 @@
+# commande : grep -c "^('G" rapports/zenodo-23864979/run.log
+26
+# code de sortie : 0

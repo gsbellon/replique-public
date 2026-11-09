@@ -1,0 +1,112 @@
+# commande : ssh sd-92569 cd ~/work/z23673342 && sh lance_agg.sh
+# début    : 2026-11-05T20:04:49Z
+# ----
+=================== run_agg1 : Rscript tests/check_results.R
+2026-11-05T20:04:49Z
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+PASS | AF identity: M0 = H x A in the 54 profiles 
+PASS | tau = 1 recovers M0 divided by the largest M0 of the reference 
+PASS | lpSolve equals GLPK in every score (max abs diff < 1e-8) 
+PASS | tau = 0: lpSolve equals Benchmarking (max abs diff < 1e-8) 
+PASS | fixed reference: no other UF changes after any shock 
+PASS | fixed reference: own score does not fall after a worsening nor rise after an improvement 
+PASS | fixed reference: national mean does not fall after a worsening 
+PASS | weak monotonicity in the profile: no score falls 
+PASS | strict monotonicity with tau > 0: every score rises 
+PASS | person level: no score falls when a household gains a deprivation 
+PASS | person level, tau > 0: score rises whenever the household is poor after the change 
+PASS | person level: score unchanged when the household stays non-poor (focus) 
+PASS | within-UF componentwise worsening: national mean rises and no other UF changes 
+PASS | every censored headcount is lower in 2022 than in 2010 in every UF (dominance) 
+PASS | fixed reference, tau > 0: every UF score falls between 2010 and 2022 
+PASS | dominant indicator unique in every UF in 2022 
+PASS | numerical example: fixed-reference mean = 16/15 
+All checks passed.
+code tests/check_results.R : 0
+=================== run_agg1 : Rscript tests/review_v4.R
+2026-11-05T20:04:50Z
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+PASS | Scope counterexample, population decomposition, 108 AF measures, 1296 headcounts, 324 scores and territorial decomposition
+     tau subgroup_before subgroup_after territory_before territory_after
+   <num>           <num>          <num>            <num>           <num>
+1:   0.5           0.625            0.7            0.625          0.4875
+     tau     J2010 J2022_current J2022_fixed_population change_current_pct
+   <num>     <num>         <num>                  <num>              <num>
+1:   0.5 0.4857693     0.2390133               0.241207          -50.79696
+   change_standardized_pct score_effect population_effect
+                     <num>        <num>             <num>
+1:               -50.34537   -0.2445624      -0.002193675
+Key: <ano>
+     ano       max_AF
+   <int>        <num>
+1:  1991 8.493206e-14
+2:  2000 4.202194e-14
+3:  2010 5.598300e-14
+4:  2022 3.200218e-14
+code tests/review_v4.R : 0
+=================== run_agg2 : Rscript tests/prepare_aggregate_profiles.R
+2026-11-05T20:04:51Z
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+Main aggregate profile cache prepared. It contains no household records.
+code tests/prepare_aggregate_profiles.R : 0
+=================== run_agg2 : Rscript run_all.R 05 08 10 11
+2026-11-05T20:04:51Z
+
+==== stage 05 | R/05_scores.R | 2026-11-05 20:04:52 
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+2026-11-05 20:04:52 | stage 05 complete; main tau = 0.5 | Brazil J 2010 = 0.4858 | 2022 = 0.239 
+==== stage 05 finished in 0 mins 
+
+==== stage 08 | R/08_numerical_example.R | 2026-11-05 20:04:52 
+   territory h1_before h2_before h2_after score_before score_after_moving
+      <char>     <num>     <num>    <num>        <num>              <num>
+1:         A       0.4       0.1      0.3    1.0000000          1.0000000
+2:         B       0.1       0.4      0.4    1.0000000          1.0000000
+3:         C       0.2       0.2      0.2    0.8000000          0.6153846
+4:      mean        NA        NA       NA    0.9333333          0.8717949
+   score_after_fixed
+               <num>
+1:          1.400000
+2:          1.000000
+3:          0.800000
+4:          1.066667
+2026-11-05 20:04:52 | stage 08 complete 
+==== stage 08 finished in 0 mins 
+
+==== stage 10 | R/10_figure.R | 2026-11-05 20:04:52 
+2026-11-05 20:04:53 | stage 10 complete: Figura_1.png 
+==== stage 10 finished in 0 mins 
+
+==== stage 11 | R/11_manifest.R | 2026-11-05 20:04:53 
+2026-11-05 20:04:53 | stage 11 complete: 48 output files listed 
+==== stage 11 finished in 0 mins 
+code run_all.R 05 08 10 11 : 0
+2026-11-05T20:04:53Z
+FIN
+# ----
+# code de sortie : 0
+# durée (s)      : 4

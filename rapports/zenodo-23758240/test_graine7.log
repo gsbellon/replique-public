@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh lance_test_graine7.sh
+# début    : 2026-10-31T20:07:28Z
+# ----
+d graine 7 : np.float64(-3.469446951953614e-18)
+tel quel wins_minus_losses = 0.3 p_value = 0.15364646911621094
+graine 7 forcée à 0 wins_minus_losses = 0.25 p_value = 0.15063055879143034
+livré : [{'wins_minus_losses': 0.25, 'p_value': 0.15063055879143034}]
+# ----
+# code de sortie : 0
+# durée (s)      : 2

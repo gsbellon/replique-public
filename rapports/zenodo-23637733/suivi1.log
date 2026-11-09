@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && grep -c ETAPE run_detache.out; tail -n 3 run_detache.out; pgrep -f lance_run.sh
+# début    : 2026-11-07T20:02:14Z
+# ----
+7
+wrote /work/figures/fig_contract_specifier.html
+code de sortie : 0  (durée 0 s)
+=================== ETAPE python3 -m pytest simulation/ -q
+319155
+# ----
+# code de sortie : 0
+# durée (s)      : 0

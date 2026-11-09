@@ -1,0 +1,46 @@
+# commande : ssh sd-92569 cd ~/work/z23595707 && du -sh out && find out -type f | head -30 && cat pkg/qsurvdiag-replication-v1.3.0/environment/setup.sh
+# début    : 2026-10-27T20:02:14Z
+# ----
+3.9M	out
+out/records_checks.log
+out/manuscript_checks.csv
+out/extra_checks.log
+out/ledger_checks.csv
+out/protocol_checks.log
+out/conformance/qsurvdiag_confirmatory.py
+out/conformance/test_minimal_conformance.log
+out/conformance/decision_bound.py
+out/conformance/test_conformance_789.log
+out/conformance/test_conformance_789.py
+out/conformance/test_decision_bound.py
+out/conformance/test_minimal_conformance.py
+out/conformance/test_decision_bound.log
+out/extra_checks.csv
+out/protocol_checks.csv
+out/records_checks.csv
+out/experiments/experiments_verification.csv
+out/experiments/ALLPAIRS_RESULTS.json
+out/experiments/observation_change/X1_NATIVE_RUNS.csv
+out/experiments/observation_change/X1_TRANSITION_SUMMARY.json
+out/experiments/observation_change/X1_TRANSITION.csv
+out/experiments/observation_change/X1_QEDC_BY_WIDTH.json
+out/experiments/observation_change/X1_POSITION_NATIVE_RUNS.csv
+out/experiments/observation_change/X1_SUMMARY.json
+out/experiments/observation_change/X1_POSITION_SUMMARY.json
+out/experiments/cmp_results.json
+out/experiments/IMPACT.csv
+out/experiments/oc_recorded.json
+out/experiments/oc_corrected.json
+out/experiments/developer_suites/X2_Q3_SUMMARY.json
+#!/bin/sh
+# Create the analytic-tier environment outside the package directory.
+# Usage: QUTEST_SRC=<QUTest 0.1.0 source tree> sh environment/setup.sh <env-dir>
+set -e
+ENV="${1:-../qsurvdiag-env}"
+: "${QUTEST_SRC:?set QUTEST_SRC to a QUTest 0.1.0 source tree}"
+python3.12 -m venv "$ENV/analytic"
+"$ENV/analytic/bin/pip" install -r environment/requirements-analytic.txt
+"$ENV/analytic/bin/pip" install "$QUTEST_SRC"
+# ----
+# code de sortie : 0
+# durée (s)      : 0

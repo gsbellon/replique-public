@@ -1,0 +1,383 @@
+# commande : ssh sd-92569 cd ~/work/z23511350 && sh lance_numpy.sh
+# début    : 2026-10-26T20:01:46Z
+# ----
+== construction de l'image replab-dfar-numpy (réseau : PyPI seulement)
+STEP 1/2: FROM docker.io/library/python:3.12-slim
+STEP 2/2: RUN pip install --no-cache-dir --only-binary=:all: numpy
+Collecting numpy
+  Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 106.3 MB/s eta 0:00:00
+Installing collected packages: numpy
+Successfully installed numpy-2.5.4
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-dfar-numpy
+--> 39357d37a54e
+Successfully tagged localhost/replab-dfar-numpy:latest
+39357d37a54e7076032e739aff445b79bd080e5f0f41df0266524e7f444fe891
+code de sortie build : 0
+numpy 2.5.4
+== C. commande du guide avec NumPy : python3 run_verification_suite.py
+PACKAGE_MANIFEST_VERIFICATION_PASS files=138
+P1_RESULT_VERIFICATION_PASS
+PASS: ML-KEM-512 paired_median=-2.783843603541 BCa95=[-5.013920776536,5.069811842241]
+PASS: ML-KEM-768 paired_median=-1.423039527423 BCa95=[-3.218758124351,-0.221563967808]
+PASS: ML-KEM-1024 paired_median=-1.263996896824 BCa95=[-2.403945233400,-0.956372543043]
+P1_BCA_REGENERATION_PASS seed=20260922 resamples=10000
+PASS: canonical ML-KEM-512 rounds = 20
+PASS: canonical ML-KEM-512 baseline median = 36942.2645
+PASS: canonical ML-KEM-512 DFAR median = 40788.1670
+PASS: canonical ML-KEM-512 paired added time = 3035.0630
+PASS: canonical ML-KEM-512 paired overhead = 8.32105765
+PASS: canonical ML-KEM-512 cycle overhead = 8.31320320
+PASS: canonical ML-KEM-768 rounds = 20
+PASS: canonical ML-KEM-768 baseline median = 50887.1680
+PASS: canonical ML-KEM-768 DFAR median = 53478.2960
+PASS: canonical ML-KEM-768 paired added time = 1881.3450
+PASS: canonical ML-KEM-768 paired overhead = 3.55938632
+PASS: canonical ML-KEM-768 cycle overhead = 3.55904408
+PASS: canonical ML-KEM-1024 rounds = 20
+PASS: canonical ML-KEM-1024 baseline median = 69186.6535
+PASS: canonical ML-KEM-1024 DFAR median = 71905.2430
+PASS: canonical ML-KEM-1024 paired added time = 3519.7215
+PASS: canonical ML-KEM-1024 paired overhead = 5.22546794
+PASS: canonical ML-KEM-1024 cycle overhead = 5.21805422
+PASS: bootstrap 512 lower = 6.639075429758434
+PASS: bootstrap 512 upper = 11.307948707972493
+PASS: bootstrap 768 lower = 0.7634263085539161
+PASS: bootstrap 768 upper = 8.675003932096981
+PASS: bootstrap 1024 lower = 1.3711341538319988
+PASS: bootstrap 1024 upper = 9.877253312599787
+PASS: earlier HMAC ML-KEM-512 = 8.99630634
+PASS: earlier HMAC ML-KEM-768 = 7.43899923
+PASS: earlier HMAC ML-KEM-1024 = 7.32771594
+PASS: kmac ML-KEM-512 = 27.93354005
+PASS: kmac ML-KEM-768 = 26.08235277
+PASS: kmac ML-KEM-1024 = 26.90346280
+PASS: kmac ML-KEM-512 = 21.11310457
+PASS: kmac ML-KEM-768 = 19.57714542
+PASS: kmac ML-KEM-1024 = 19.87062399
+PASS: compiler gcc ML-KEM-512 = 18.53722730
+PASS: compiler gcc ML-KEM-768 = 19.45950083
+PASS: compiler gcc ML-KEM-1024 = 20.38508085
+PASS: compiler clang ML-KEM-512 = 18.25547490
+PASS: compiler clang ML-KEM-768 = 16.86036442
+PASS: compiler clang ML-KEM-1024 = 20.26336677
+PASS: mutation 512 valid_std = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 valid_dfar = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 tail_case = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 std_is_failure = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 candidate_is_honest = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 M1_candidate = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 M2_candidate = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 DFAR_det = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 DFAR_masks = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 M4_candidate = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 512 M5_candidate = ML-KEM-512 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=736 bit=0 diffs=1 first=736 last=736 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 valid_std = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 valid_dfar = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 tail_case = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 std_is_failure = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 candidate_is_honest = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 M1_candidate = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 M2_candidate = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 DFAR_det = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 DFAR_masks = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 M4_candidate = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 768 M5_candidate = ML-KEM-768 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1056 bit=0 diffs=1 first=1056 last=1056 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 valid_std = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 valid_dfar = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 tail_case = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 std_is_failure = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 candidate_is_honest = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 M1_candidate = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 M2_candidate = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 DFAR_det = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 DFAR_masks = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 M4_candidate = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: mutation 1024 M5_candidate = ML-KEM-1024 valid_std=1 valid_dfar=1 tail_case=1 mut_pos=1536 bit=1 diffs=1 first=1536 last=1536 std_is_failure=1 candidate_is_honest=1 M1_candidate=1 M2_candidate=1 DFAR_det=1 DFAR_masks=1 M4_candidate=1 M5_candidate=1
+PASS: distribution 512 sample count = ML-KEM-512 samples=100000 unique=100000 bit_mean=0.500013 bit_min=0.494480 bit_max=0.506000
+PASS: distribution 512 uniqueness = ML-KEM-512 samples=100000 unique=100000 bit_mean=0.500013 bit_min=0.494480 bit_max=0.506000
+PASS: distribution 512 bit mean = ML-KEM-512 samples=100000 unique=100000 bit_mean=0.500013 bit_min=0.494480 bit_max=0.506000
+PASS: distribution 768 sample count = ML-KEM-768 samples=100000 unique=100000 bit_mean=0.500156 bit_min=0.495870 bit_max=0.504280
+PASS: distribution 768 uniqueness = ML-KEM-768 samples=100000 unique=100000 bit_mean=0.500156 bit_min=0.495870 bit_max=0.504280
+PASS: distribution 768 bit mean = ML-KEM-768 samples=100000 unique=100000 bit_mean=0.500156 bit_min=0.495870 bit_max=0.504280
+PASS: distribution 1024 sample count = ML-KEM-1024 samples=100000 unique=100000 bit_mean=0.499902 bit_min=0.495190 bit_max=0.504850
+PASS: distribution 1024 uniqueness = ML-KEM-1024 samples=100000 unique=100000 bit_mean=0.499902 bit_min=0.495190 bit_max=0.504850
+PASS: distribution 1024 bit mean = ML-KEM-1024 samples=100000 unique=100000 bit_mean=0.499902 bit_min=0.495190 bit_max=0.504850
+PASS: correctness 512 = ML-KEM-512 trials=2000 valid_ok=2000 invalid_deterministic=2000 invalid_diff_honest=2000
+PASS: correctness 768 = ML-KEM-768 trials=2000 valid_ok=2000 invalid_deterministic=2000 invalid_diff_honest=2000
+PASS: correctness 1024 = ML-KEM-1024 trials=2000 valid_ok=2000 invalid_deterministic=2000 invalid_diff_honest=2000
+PASS: timing Welch t 0.852 = 0.852
+PASS: timing Welch t -0.750 = -0.750
+PASS: timing Welch t 0.739 = 0.739
+PASS: timing Welch t 0.322 = 0.322
+PASS: timing Welch t 0.955 = 0.955
+PASS: timing Welch t -0.425 = -0.425
+PASS: Go differential trials = === RUN   TestDFARDifferentialCampaign
+    dfar_test.go:70: trials=5000 unique=5000 one_fraction=0.499979
+--- PASS: TestDFARDifferentialCampaign (2.83s)
+PASS
+ok  	dfarcert/mlkem768	2.831s
+PASS: Go differential uniqueness = === RUN   TestDFARDifferentialCampaign
+    dfar_test.go:70: trials=5000 unique=5000 one_fraction=0.499979
+--- PASS: TestDFARDifferentialCampaign (2.83s)
+PASS
+ok  	dfarcert/mlkem768	2.831s
+PASS: Go differential bit fraction = === RUN   TestDFARDifferentialCampaign
+    dfar_test.go:70: trials=5000 unique=5000 one_fraction=0.499979
+--- PASS: TestDFARDifferentialCampaign (2.83s)
+PASS
+ok  	dfarcert/mlkem768	2.831s
+PASS: Go benchmark standard count = [97266, 90595, 88672, 85409, 96198]
+PASS: Go benchmark DFAR count = [114866, 122207, 118720, 118793, 136116]
+PASS: Go standard range = (85409, 97266)
+PASS: Go DFAR range = (114866, 136116)
+
+TOTAL=97 PASS=97 FAIL=0
+PASS: ARM64 artifact hash VALIDATION_STATUS.txt = 7adf971afef6a2c22af2f9983029982c31921b63fc86a0e5e8e0ecb03754bb9b
+PASS: ARM64 artifact hash arm64_paired_decapsulation_cycles.csv = c3ee79c2e3f26f97d5fde11bad88a43b0e8fd7772ea990f7928f46cf95fc4625
+PASS: ARM64 artifact hash arm64_performance_summary.txt = d255f6f3758df505918e4f366faba4c14643f9b03b2f421ce72b00d57c0c3f9b
+PASS: ARM64 artifact hash baseline_functional_tests.txt = 9a4392491b48900bcc03f70a323560b4843d00c0a1acb05496fe9536330162f7
+PASS: ARM64 artifact hash baseline_host_info.txt = f562f2806cb4a12df49fdb45b8b877ed08f9154ba23501fd90f6e5db7c610c1e
+PASS: ARM64 artifact hash cpuinfo.txt = 55a912332200dbab42c06a504d64452c1ccfb6b268e7c77ffe9e3e08318a77d4
+PASS: ARM64 artifact hash dfar_functional_tests.txt = d89ae9cf664ee67ed03135a6420d31cf5bf1a0fe1fa958067e602eb9ce3079dc
+PASS: ARM64 artifact hash dfar_host_info.txt = 10b4dbba2cf83f39344810f08a8e42298e665be1ecda0a9f17c92bf81d6286ea
+PASS: ARM64 artifact hash dfar_source_change.patch = 336ecb9f4e594c5b9766bb95f44341aed5f560bd5bbdfa10f9ae830addc343db
+PASS: ARM64 artifact hash dfar_source_change_sha256.txt = c2870f70266aee321d728ccc4b0bf65736fa6c8c34561e5146fd19b2f28366e1
+PASS: ARM64 artifact hash driver.log = 9368166dab0c368a0955840b6debceae3f256fc9f78be93c18d620c61b434038
+PASS: ARM64 artifact hash environment_summary.txt = 6c0e7707710ec575baa5f4ca123ef40cacb335189524900473b521bfe9cb2d9d
+PASS: ARM64 artifact hash lscpu.txt = 5f9e4573dd666e1d8c8c91dd0e8c48867c9fdba1202d156afa3e42221bb636f6
+PASS: ARM64 artifact hash mlkem_native_commit.txt = 66688548892b10b2546f501ddec7547b1009e9d199db19cb473e01b49b3306e0
+PASS: ARM64 artifact hash native_arm64_validation_record.txt = d83d4bead36fb0fcefb2badcc6d26c61faa68a2b1095cc5c691ddf04a023772e
+PASS: ARM64 artifact hash native_dfar_tail_check.txt = f52a6f4d991763992c8a55cc19ba4f8025a836d335a300451d3ecd8d907a0e89
+PASS: ARM64 artifact hash os-release.txt = 87458b3b1f1ca0e5c693ade771de7007c3783bdc692fa6b39eb6414bf2af2763
+PASS: ARM64 artifact hash raw_benchmark_1024.log = 6caa52f5363f62899ce3ca8b1201dc2295a416f1fa21143dbfa48016a21e5d24
+PASS: ARM64 artifact hash raw_benchmark_512.log = 18a829599869d3e980fe3709291eeae159b0ebcfcf3ada88232a75ac644b8ced
+PASS: ARM64 artifact hash raw_benchmark_768.log = 11ecb1c5197302b2a35e20c7825c431b79e0799971137520b3fb9e766c78a033
+PASS: ARM64 source change digest = 336ecb9f4e594c5b9766bb95f44341aed5f560bd5bbdfa10f9ae830addc343db
+PASS: ARM64 architecture
+PASS: ARM64 compiler
+PASS: ARM64 processor
+PASS: ARM64 pinned mlkem-native commit = 0ba906cb14b1c241476134d7403a811b382ca498
+PASS: ARM64 native host platform
+PASS: ARM64 SHA3 host/compiler support
+PASS: ARM64 tail no_ciphertext_comparison
+PASS: ARM64 tail no_conditional_cmov
+PASS: ARM64 tail no_validity_variable
+PASS: ARM64 tail dfar_first_mask_present
+PASS: ARM64 tail dfar_second_mask_present
+PASS: ARM64 tail unconditional_xor_present
+PASS: ARM64 baseline functional ML-KEM-512
+PASS: ARM64 baseline ciphertext size ML-KEM-512
+PASS: ARM64 baseline functional ML-KEM-768
+PASS: ARM64 baseline ciphertext size ML-KEM-768
+PASS: ARM64 baseline functional ML-KEM-1024
+PASS: ARM64 baseline ciphertext size ML-KEM-1024
+PASS: ARM64 dfar functional ML-KEM-512
+PASS: ARM64 dfar ciphertext size ML-KEM-512
+PASS: ARM64 dfar functional ML-KEM-768
+PASS: ARM64 dfar ciphertext size ML-KEM-768
+PASS: ARM64 dfar functional ML-KEM-1024
+PASS: ARM64 dfar ciphertext size ML-KEM-1024
+PASS: ARM64 ML-KEM-512 paired rounds = 20
+PASS: ARM64 ML-KEM-512 alternating order
+PASS: ARM64 ML-KEM-512 baseline median = 26129.5
+PASS: ARM64 ML-KEM-512 DFAR median = 38523.0
+PASS: ARM64 ML-KEM-512 paired median overhead = 47.407109
+PASS: ARM64 ML-KEM-512 bootstrap lower = 47.132816
+PASS: ARM64 ML-KEM-512 bootstrap upper = 47.662356
+PASS: ARM64 ML-KEM-512 raw benchmark count = 40
+PASS: ARM64 ML-KEM-512 raw/CSV sequence
+PASS: ARM64 ML-KEM-768 paired rounds = 20
+PASS: ARM64 ML-KEM-768 alternating order
+PASS: ARM64 ML-KEM-768 baseline median = 40373.5
+PASS: ARM64 ML-KEM-768 DFAR median = 57627.5
+PASS: ARM64 ML-KEM-768 paired median overhead = 42.718615
+PASS: ARM64 ML-KEM-768 bootstrap lower = 42.565097
+PASS: ARM64 ML-KEM-768 bootstrap upper = 42.752214
+PASS: ARM64 ML-KEM-768 raw benchmark count = 40
+PASS: ARM64 ML-KEM-768 raw/CSV sequence
+PASS: ARM64 ML-KEM-1024 paired rounds = 20
+PASS: ARM64 ML-KEM-1024 alternating order
+PASS: ARM64 ML-KEM-1024 baseline median = 58806.0
+PASS: ARM64 ML-KEM-1024 DFAR median = 83586.0
+PASS: ARM64 ML-KEM-1024 paired median overhead = 42.124337
+PASS: ARM64 ML-KEM-1024 bootstrap lower = 42.104725
+PASS: ARM64 ML-KEM-1024 bootstrap upper = 42.216698
+PASS: ARM64 ML-KEM-1024 raw benchmark count = 40
+PASS: ARM64 ML-KEM-1024 raw/CSV sequence
+
+ARM64_TOTAL=72 PASS=72 FAIL=0
+graphs_tested=1099 support_graph_rank_and_forest_characterization=PASS
+n=2 maps=4 anchored_bad=0 unanchored_dependent_maps=1 unanchored_dependent_fraction=0.250000 first_dependency=(1, 0) rows=[3, 3]
+n=3 maps=27 anchored_bad=0 unanchored_dependent_maps=11 unanchored_dependent_fraction=0.407407 first_dependency=(0, 2, 1) rows=[6, 6]
+n=4 maps=256 anchored_bad=0 unanchored_dependent_maps=131 unanchored_dependent_fraction=0.511719 first_dependency=(0, 0, 3, 2) rows=[3, 12, 12]
+n=5 maps=3125 anchored_bad=0 unanchored_dependent_maps=1829 unanchored_dependent_fraction=0.585280 first_dependency=(0, 0, 0, 4, 3) rows=[3, 5, 24, 24]
+n=6 maps=46656 anchored_bad=0 unanchored_dependent_maps=29849 unanchored_dependent_fraction=0.639768 first_dependency=(0, 0, 0, 0, 5, 4) rows=[3, 5, 9, 48, 48]
+{
+  "trials_per_parameter": 10000,
+  "rows": [
+    {
+      "ct_len": 768,
+      "mutation": "DFAR-compressed",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 768,
+      "mutation": "DFAR-full",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 768,
+      "mutation": "DFAR-truncated-discrepancy-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 768,
+      "mutation": "FO-correct",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 768,
+      "mutation": "FO-fail-open-selection",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 768,
+      "mutation": "FO-partial-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "DFAR-compressed",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "DFAR-full",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "DFAR-truncated-discrepancy-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "FO-correct",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "FO-fail-open-selection",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1088,
+      "mutation": "FO-partial-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "DFAR-compressed",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "DFAR-full",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "DFAR-truncated-discrepancy-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "FO-correct",
+      "trials": 10000,
+      "candidate_returned": 0,
+      "deformed_or_rejected": 10000
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "FO-fail-open-selection",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    },
+    {
+      "ct_len": 1568,
+      "mutation": "FO-partial-last32-omitted",
+      "trials": 10000,
+      "candidate_returned": 10000,
+      "deformed_or_rejected": 0
+    }
+  ],
+  "cycle_counterexample": {
+    "unanchored_cycle_masks_equal": true,
+    "anchored_cycle_masks_equal": false,
+    "unanchored_mask_hex": "46183c8a07efd76017edeb098a2aeb322fe4bee8aa70d46f2a60a003b200fea9",
+    "anchored_mask1_hex": "33d772c41643a0d8349a1ec850640950961910dfdcdb87bdcc116f25ebf2a6d3",
+    "anchored_mask2_hex": "a0f2aaa956fb0b872d5215f0ea0cad0b791fd7157ea1279248571c671053163b"
+  }
+}
+
+### analysis/verify_package_manifest.py ###
+
+### analysis/verify_native_x86_p1_results.py ###
+
+### analysis/recompute_p1_native_x86_summary.py ###
+
+### analysis/verify_reported_results.py ###
+
+### analysis/verify_native_arm64_results.py ###
+
+### verification/quick_support_graph_check.py ###
+
+### verification/received_ciphertext_namespace_check.py ###
+
+### verification/reference_mutation_campaign.py ###
+
+DFAR_FULL_VERIFICATION_PASS
+code de sortie C : 0
+REPOSITORY                   TAG         IMAGE ID      CREATED         SIZE
+localhost/replab-dfar-numpy  latest      39357d37a54e  13 seconds ago  202 MB
+docker.io/library/python     3.12-slim   df18428df8a0  2 weeks ago     124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 17

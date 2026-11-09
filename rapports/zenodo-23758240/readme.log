@@ -1,0 +1,55 @@
+# commande : ssh sd-92569 cat work/z23758240/pkg/autoscaling-sensitivity-study/README.md work/z23758240/pkg/autoscaling-sensitivity-study/requirements.txt
+# début    : 2026-10-31T20:01:01Z
+# ----
+# When Does Prediction Pay Off? Replication package
+
+Code, configuration and results for the paper "When Does Prediction Pay Off? A Sensitivity Analysis of Predictive versus Reactive Autoscaling under Controlled Burst Intensity and Provisioning Delay".
+
+## Contents
+
+```
+src/sim.py              discrete time autoscaling simulator (policies, queue model, metrics)
+src/workload.py         trace loading, calibration/test split, burst injection
+src/run_experiments.py  full factorial sweep (7,600 runs) and forecaster calibration
+src/analyse.py          medians, paired Wilcoxon tests, summary tables
+src/figures.py          every figure in the paper
+results/                raw per run results and summary tables (CSV, JSON)
+figures/                figures as PDF and PNG
+requirements.txt        Python dependencies
+```
+
+## Data
+
+The workload is the Wikipedia per second request trace distributed with the RAS simulator by Quattrocchi et al. (IEEE TSC 2024, doi:10.1109/TSC.2024.3354062). It is **not redistributed here**. Download it with:
+
+```
+git clone --depth 1 https://github.com/deib-polimi/RAS.git
+cp RAS/generators/wiki.1190153705.csv data/wiki.csv
+```
+
+## Reproduce
+
+```
+pip install -r requirements.txt
+mkdir -p results figures
+python src/run_experiments.py data/wiki.csv results     # about 1 minute on 2 cores
+python src/analyse.py results
+python src/figures.py results figures data/wiki.csv
+```
+
+All runs are deterministic: seeds fix both the test segment and the burst positions.
+
+## Key settings
+
+Run length 3,600 s (first 300 s warm up), replica capacity 20 req/s, SLA 250 ms, client timeout 10 s, control period 15 s, metric window 30 s, target utilization 0.7, tolerance 0.1, scale down stabilization 300 s, scale up limit max(4, n). Factors: burst magnitude {1, 2, 4, 8}, duration {30, 120, 600} s, onset {10, 120} s, provisioning delay {0, 30, 60, 120, 300} s, 20 seeds. Forecaster parameters are tuned on the first 20 h of the trace only (see results/config_used.json).
+
+## License
+
+Code: MIT License (see LICENSE). Results and figures: CC BY 4.0.
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+# ----
+# code de sortie : 0
+# durée (s)      : 0

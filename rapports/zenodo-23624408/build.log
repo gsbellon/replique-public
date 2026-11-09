@@ -1,0 +1,428 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && sh lance_build.sh
+# début    : 2026-10-26T20:07:12Z
+# ----
+STEP 1/3: FROM docker.io/library/r-base:latest
+Trying to pull docker.io/library/r-base:latest...
+Getting image source signatures
+Copying blob sha256:5adeb020b96fcc09bc888da80abf695cabc5dc78db64531b6b2ee9de1714eb03
+Copying blob sha256:cd04df105d2115df479e793c224c32379504239eb5403a78b35d0bb7a1d27a06
+Copying blob sha256:9f0100d900b2eb0bc63f24e2159affd2dea6ffa11f9ebaa3a89dd7cd835e95e6
+Copying blob sha256:513ebef5adef77699d08074de9d462a11fe0f62a0187085e2657d56faa7c7e55
+Copying blob sha256:01f4af150f35cf8c0660aa106c98e4ada817b99a2d56c58d15242daddd3f56cf
+Copying blob sha256:8ec9370487029f2179fcc166c03982b6204cc7b6a4289f2841086320609948cd
+Copying config sha256:0811f9b7a3d8293c1cc7ac14bb24ddb9651887301a56ce8a27758c63721c664b
+Writing manifest to image destination
+STEP 2/3: RUN apt-get update && apt-get install -y --no-install-recommends unzip gawk libglpk-dev r-cran-data.table r-cran-lpsolve && rm -rf /var/lib/apt/lists/*
+Get:1 http://deb.debian.org/debian sid InRelease [193 kB]
+Get:2 http://deb.debian.org/debian testing InRelease [151 kB]
+Get:3 http://deb.debian.org/debian testing-updates InRelease [45.1 kB]
+Get:4 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+Get:5 http://deb.debian.org/debian sid/main amd64 Packages [10.8 MB]
+Get:6 http://deb.debian.org/debian testing/main amd64 Packages [10.1 MB]
+Fetched 21.3 MB in 2s (11.8 MB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+unzip is already the newest version (6.0-31).
+unzip set to manually installed.
+Solving dependencies...
+The following additional packages will be installed:
+  libamd3 libbtf2 libcamd3 libccolamd3 libcholmod5 libcolamd3 libcxsparse4
+  libglpk40 libgmp-dev libgmpxx4ldbl libklu2 libldl3 libltdl7 libparu1
+  librbio4 libspex3 libspqr4 libsuitesparse-dev libsuitesparse-mongoose3
+  libsuitesparseconfig7 libumfpack6
+Suggested packages:
+  gawk-doc libiodbc2-dev libmariadb-dev-compat gmp-doc libgmp10-doc
+  libmpfr-dev
+Recommended packages:
+  libgraphblas-dev
+The following NEW packages will be installed:
+  gawk libamd3 libbtf2 libcamd3 libccolamd3 libcholmod5 libcolamd3
+  libcxsparse4 libglpk-dev libglpk40 libgmp-dev libgmpxx4ldbl libklu2 libldl3
+  libltdl7 libparu1 librbio4 libspex3 libspqr4 libsuitesparse-dev
+  libsuitesparse-mongoose3 libsuitesparseconfig7 libumfpack6 r-cran-data.table
+  r-cran-lpsolve
+0 upgraded, 25 newly installed, 0 to remove and 15 not upgraded.
+Need to get 9,217 kB of archives.
+After this operation, 28.7 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian sid/main amd64 gawk amd64 1:5.3.2-1 [772 kB]
+Get:2 http://deb.debian.org/debian sid/main amd64 libsuitesparseconfig7 amd64 1:7.14.1+dfsg-1 [32.8 kB]
+Get:3 http://deb.debian.org/debian sid/main amd64 libamd3 amd64 1:7.14.1+dfsg-1 [49.9 kB]
+Get:4 http://deb.debian.org/debian sid/main amd64 libbtf2 amd64 1:7.14.1+dfsg-1 [33.7 kB]
+Get:5 http://deb.debian.org/debian sid/main amd64 libcamd3 amd64 1:7.14.1+dfsg-1 [46.9 kB]
+Get:6 http://deb.debian.org/debian sid/main amd64 libccolamd3 amd64 1:7.14.1+dfsg-1 [49.2 kB]
+Get:7 http://deb.debian.org/debian sid/main amd64 libcolamd3 amd64 1:7.14.1+dfsg-1 [41.9 kB]
+Get:8 http://deb.debian.org/debian sid/main amd64 libcholmod5 amd64 1:7.14.1+dfsg-1 [713 kB]
+Get:9 http://deb.debian.org/debian sid/main amd64 libcxsparse4 amd64 1:7.14.1+dfsg-1 [97.7 kB]
+Get:10 http://deb.debian.org/debian sid/main amd64 libltdl7 amd64 2.6.2-3 [427 kB]
+Get:11 http://deb.debian.org/debian sid/main amd64 libglpk40 amd64 5.0-3 [392 kB]
+Get:12 http://deb.debian.org/debian sid/main amd64 libgmpxx4ldbl amd64 2:6.3.0+dfsg-5+b2 [328 kB]
+Get:13 http://deb.debian.org/debian sid/main amd64 libgmp-dev amd64 2:6.3.0+dfsg-5+b2 [641 kB]
+Get:14 http://deb.debian.org/debian sid/main amd64 libklu2 amd64 1:7.14.1+dfsg-1 [105 kB]
+Get:15 http://deb.debian.org/debian sid/main amd64 libldl3 amd64 1:7.14.1+dfsg-1 [33.7 kB]
+Get:16 http://deb.debian.org/debian sid/main amd64 libsuitesparse-mongoose3 amd64 1:7.14.1+dfsg-1 [57.4 kB]
+Get:17 http://deb.debian.org/debian sid/main amd64 libumfpack6 amd64 1:7.14.1+dfsg-1 [299 kB]
+Get:18 http://deb.debian.org/debian sid/main amd64 librbio4 amd64 1:7.14.1+dfsg-1 [49.4 kB]
+Get:19 http://deb.debian.org/debian sid/main amd64 libspqr4 amd64 1:7.14.1+dfsg-1 [160 kB]
+Get:20 http://deb.debian.org/debian sid/main amd64 libspex3 amd64 1:7.14.1+dfsg-1 [70.5 kB]
+Get:21 http://deb.debian.org/debian sid/main amd64 libparu1 amd64 1:7.14.1+dfsg-1 [76.4 kB]
+Get:22 http://deb.debian.org/debian sid/main amd64 libsuitesparse-dev amd64 1:7.14.1+dfsg-1 [1,593 kB]
+Get:23 http://deb.debian.org/debian sid/main amd64 libglpk-dev amd64 5.0-3 [468 kB]
+Get:24 http://deb.debian.org/debian sid/main amd64 r-cran-data.table amd64 1.18.6.1+dfsg-1 [2,351 kB]
+Get:25 http://deb.debian.org/debian sid/main amd64 r-cran-lpsolve amd64 5.6.23-1 [326 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Fetched 9,217 kB in 0s (31.5 MB/s)
+Selecting previously unselected package gawk.
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 19683 files and directories currently installed.)
+Preparing to unpack …/00-gawk_1%3a5.3.2-1_amd64.deb…
+Unpacking gawk (1:5.3.2-1)…
+Selecting previously unselected package libsuitesparseconfig7:amd64.
+Preparing to unpack …/01-libsuitesparseconfig7_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libsuitesparseconfig7:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libamd3:amd64.
+Preparing to unpack …/02-libamd3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libamd3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libbtf2:amd64.
+Preparing to unpack …/03-libbtf2_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libbtf2:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libcamd3:amd64.
+Preparing to unpack …/04-libcamd3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libcamd3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libccolamd3:amd64.
+Preparing to unpack …/05-libccolamd3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libccolamd3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libcolamd3:amd64.
+Preparing to unpack …/06-libcolamd3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libcolamd3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libcholmod5:amd64.
+Preparing to unpack …/07-libcholmod5_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libcholmod5:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libcxsparse4:amd64.
+Preparing to unpack …/08-libcxsparse4_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libcxsparse4:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack …/09-libltdl7_2.6.2-3_amd64.deb…
+Unpacking libltdl7:amd64 (2.6.2-3)…
+Selecting previously unselected package libglpk40:amd64.
+Preparing to unpack …/10-libglpk40_5.0-3_amd64.deb…
+Unpacking libglpk40:amd64 (5.0-3)…
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+Preparing to unpack …/11-libgmpxx4ldbl_2%3a6.3.0+dfsg-5+b2_amd64.deb…
+Unpacking libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-5+b2)…
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack …/12-libgmp-dev_2%3a6.3.0+dfsg-5+b2_amd64.deb…
+Unpacking libgmp-dev:amd64 (2:6.3.0+dfsg-5+b2)…
+Selecting previously unselected package libklu2:amd64.
+Preparing to unpack …/13-libklu2_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libklu2:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libldl3:amd64.
+Preparing to unpack …/14-libldl3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libldl3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libsuitesparse-mongoose3:amd64.
+Preparing to unpack …/15-libsuitesparse-mongoose3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libsuitesparse-mongoose3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libumfpack6:amd64.
+Preparing to unpack …/16-libumfpack6_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libumfpack6:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package librbio4:amd64.
+Preparing to unpack …/17-librbio4_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking librbio4:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libspqr4:amd64.
+Preparing to unpack …/18-libspqr4_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libspqr4:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libspex3:amd64.
+Preparing to unpack …/19-libspex3_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libspex3:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libparu1:amd64.
+Preparing to unpack …/20-libparu1_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libparu1:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libsuitesparse-dev:amd64.
+Preparing to unpack …/21-libsuitesparse-dev_1%3a7.14.1+dfsg-1_amd64.deb…
+Unpacking libsuitesparse-dev:amd64 (1:7.14.1+dfsg-1)…
+Selecting previously unselected package libglpk-dev:amd64.
+Preparing to unpack …/22-libglpk-dev_5.0-3_amd64.deb…
+Unpacking libglpk-dev:amd64 (5.0-3)…
+Selecting previously unselected package r-cran-data.table.
+Preparing to unpack …/23-r-cran-data.table_1.18.6.1+dfsg-1_amd64.deb…
+Unpacking r-cran-data.table (1.18.6.1+dfsg-1)…
+Selecting previously unselected package r-cran-lpsolve.
+Preparing to unpack …/24-r-cran-lpsolve_5.6.23-1_amd64.deb…
+Unpacking r-cran-lpsolve (5.6.23-1)…
+Setting up gawk (1:5.3.2-1)…
+Setting up libldl3:amd64 (1:7.14.1+dfsg-1)…
+Setting up r-cran-data.table (1.18.6.1+dfsg-1)…
+Setting up libbtf2:amd64 (1:7.14.1+dfsg-1)…
+Setting up libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-5+b2)…
+Setting up libltdl7:amd64 (2.6.2-3)…
+Setting up libsuitesparseconfig7:amd64 (1:7.14.1+dfsg-1)…
+Setting up r-cran-lpsolve (5.6.23-1)…
+Setting up libgmp-dev:amd64 (2:6.3.0+dfsg-5+b2)…
+Setting up libamd3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libcolamd3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libspex3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libsuitesparse-mongoose3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libcxsparse4:amd64 (1:7.14.1+dfsg-1)…
+Setting up libcamd3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libglpk40:amd64 (5.0-3)…
+Setting up librbio4:amd64 (1:7.14.1+dfsg-1)…
+Setting up libccolamd3:amd64 (1:7.14.1+dfsg-1)…
+Setting up libcholmod5:amd64 (1:7.14.1+dfsg-1)…
+Setting up libspqr4:amd64 (1:7.14.1+dfsg-1)…
+Setting up libklu2:amd64 (1:7.14.1+dfsg-1)…
+Setting up libumfpack6:amd64 (1:7.14.1+dfsg-1)…
+Setting up libparu1:amd64 (1:7.14.1+dfsg-1)…
+Setting up libsuitesparse-dev:amd64 (1:7.14.1+dfsg-1)…
+Setting up libglpk-dev:amd64 (5.0-3)…
+Processing triggers for libc-bin (2.43-7)…
+--> 2cf95da13799
+STEP 3/3: RUN Rscript -e 'install.packages("rDEA", repos="https://cloud.r-project.org"); stopifnot(requireNamespace("rDEA"))'
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘digest’, ‘zoo’, ‘miscTools’, ‘sandwich’, ‘generics’, ‘slam’, ‘truncreg’, ‘truncnorm’, ‘maxLik’
+
+trying URL 'https://cloud.r-project.org/src/contrib/digest_0.6.39.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/zoo_1.9-1.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/miscTools_0.6-30.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/sandwich_3.1-3.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/generics_0.1.4.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/slam_0.1-56.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/truncreg_0.2-5.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/truncnorm_1.0-9.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/maxLik_1.6-10.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/rDEA_1.2-8.tar.gz'
+* installing *source* package ‘digest’ ...
+** this is package ‘digest’ version ‘0.6.39’
+** package ‘digest’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘x86_64-linux-gnu-gcc (Debian 16.2.0-3) 16.2.0’
+using C++ compiler: ‘x86_64-linux-gnu-g++ (Debian 16.2.0-3) 16.2.0’
+x86_64-linux-gnu-g++ -std=gnu++20 -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c SpookyV2.cpp -o SpookyV2.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c aes.c -o aes.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c blake3.c -o blake3.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c blake3_dispatch.c -o blake3_dispatch.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c blake3_portable.c -o blake3_portable.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c crc32.c -o crc32.o
+x86_64-linux-gnu-g++ -std=gnu++20 -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c crc32c.cpp -o crc32c.o
+x86_64-linux-gnu-g++ -std=gnu++20 -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c crc32c_portable.cpp -o crc32c_portable.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c digest.c -o digest.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c digest2int.c -o digest2int.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c md5.c -o md5.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c pmurhash.c -o pmurhash.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c raes.c -o raes.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c sha1.c -o sha1.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c sha2.c -o sha2.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c sha256.c -o sha256.o
+x86_64-linux-gnu-g++ -std=gnu++20 -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2   -c spooky_serialize.cpp -o spooky_serialize.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I.      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c xxhash.c -o xxhash.o
+x86_64-linux-gnu-g++ -std=gnu++20 -shared -L/usr/lib/R/lib -Wl,-z,relro -o digest.so SpookyV2.o aes.o blake3.o blake3_dispatch.o blake3_portable.o crc32.o crc32c.o crc32c_portable.o digest.o digest2int.o init.o md5.o pmurhash.o raes.o sha1.o sha2.o sha256.o spooky_serialize.o xxhash.o -L/usr/lib/R/lib -lR
+installing to /usr/local/lib/R/site-library/00LOCK-digest/00new/digest/libs
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (digest)
+* installing *source* package ‘zoo’ ...
+** this is package ‘zoo’ version ‘1.9-1’
+** package ‘zoo’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘x86_64-linux-gnu-gcc (Debian 16.2.0-3) 16.2.0’
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I../inst/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c coredata.c -o coredata.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I../inst/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG -I../inst/include      -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c lag.c -o lag.o
+x86_64-linux-gnu-gcc -shared -L/usr/lib/R/lib -Wl,-z,relro -o zoo.so coredata.o init.o lag.o -L/usr/lib/R/lib -lR
+installing to /usr/local/lib/R/site-library/00LOCK-zoo/00new/zoo/libs
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (zoo)
+* installing *source* package ‘generics’ ...
+** this is package ‘generics’ version ‘0.1.4’
+** package ‘generics’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (generics)
+* installing *source* package ‘slam’ ...
+** this is package ‘slam’ version ‘0.1-56’
+** package ‘slam’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘x86_64-linux-gnu-gcc (Debian 16.2.0-3) 16.2.0’
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c apply.c -o apply.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c dll.c -o dll.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c grouped.c -o grouped.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c sparse.c -o sparse.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c util.c -o util.o
+x86_64-linux-gnu-gcc -shared -L/usr/lib/R/lib -Wl,-z,relro -o slam.so apply.o dll.o grouped.o sparse.o util.o -lblas -lgfortran -lm -latomic_asneeded -lquadmath -L/usr/lib/R/lib -lR
+installing to /usr/local/lib/R/site-library/00LOCK-slam/00new/slam/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (slam)
+* installing *source* package ‘truncnorm’ ...
+** this is package ‘truncnorm’ version ‘1.0-9’
+** package ‘truncnorm’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘x86_64-linux-gnu-gcc (Debian 16.2.0-3) 16.2.0’
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c exports.c -o exports.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c rtruncnorm.c -o rtruncnorm.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c truncnorm.c -o truncnorm.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c zeroin.c -o zeroin.o
+x86_64-linux-gnu-gcc -shared -L/usr/lib/R/lib -Wl,-z,relro -o truncnorm.so exports.o rtruncnorm.o truncnorm.o zeroin.o -L/usr/lib/R/lib -lR
+installing to /usr/local/lib/R/site-library/00LOCK-truncnorm/00new/truncnorm/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (truncnorm)
+* installing *source* package ‘miscTools’ ...
+** this is package ‘miscTools’ version ‘0.6-30’
+** package ‘miscTools’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (miscTools)
+* installing *source* package ‘sandwich’ ...
+** this is package ‘sandwich’ version ‘3.1-3’
+** package ‘sandwich’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (sandwich)
+* installing *source* package ‘maxLik’ ...
+** this is package ‘maxLik’ version ‘1.6-10’
+** package ‘maxLik’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (maxLik)
+* installing *source* package ‘truncreg’ ...
+** this is package ‘truncreg’ version ‘0.2-5’
+** package ‘truncreg’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (truncreg)
+* installing *source* package ‘rDEA’ ...
+** this is package ‘rDEA’ version ‘1.2-8’
+** package ‘rDEA’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: ‘x86_64-linux-gnu-gcc (Debian 16.2.0-3) 16.2.0’
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c multi_glp_solve.c -o multi_glp_solve.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c rDEA_init.c -o rDEA_init.o
+x86_64-linux-gnu-gcc -I"/usr/share/R/include" -DNDEBUG       -fpic  -g -O2 -ffile-prefix-map=/build/reproducible-path/r-base-4.6.1=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -Wdate-time -D_FORTIFY_SOURCE=2  -c rDEA_initialize.c -o rDEA_initialize.o
+x86_64-linux-gnu-gcc -shared -L/usr/lib/R/lib -Wl,-z,relro -o rDEA.so multi_glp_solve.o rDEA_init.o rDEA_initialize.o -lglpk -L/usr/lib/R/lib -lR
+installing to /usr/local/lib/R/site-library/00LOCK-rDEA/00new/rDEA/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rDEA)
+
+The downloaded source packages are in
+	‘/tmp/RtmpIyHuGJ/downloaded_packages’
+Loading required namespace: rDEA
+COMMIT replab-deamph
+--> 9b5c45084ba9
+Successfully tagged localhost/replab-deamph:latest
+9b5c45084ba933729f50264ede041496ea207a960bc07fc62a5646793948ec28
+code de sortie build : 0
+R version 4.6.1 (2026-06-24) 
+data.table 1.18.6.1 
+rDEA 1.2.8 
+lpSolve 5.6.23 
+REPOSITORY                   TAG         IMAGE ID      CREATED        SIZE
+localhost/replab-deamph      latest      9b5c45084ba9  1 second ago   972 MB
+localhost/replab-dfar-numpy  latest      39357d37a54e  6 minutes ago  202 MB
+docker.io/library/r-base     latest      0811f9b7a3d8  5 days ago     935 MB
+docker.io/library/python     3.12-slim   df18428df8a0  2 weeks ago    124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 51

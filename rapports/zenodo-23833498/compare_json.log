@@ -1,0 +1,47 @@
+# commande : ssh sd-92569 cd ~/work/z23833498 && sh compare_json.sh
+# début    : 2026-11-02T20:12:36Z
+# ----
+=== archetype_results.json
+feuilles livrées : 643 | régénérées : 643 | chemins seulement d'un côté : 0
+feuilles différentes : 2
+   /scale_curve[0]/territories 22.385531266661733 22.385531266661737
+   /scale_curve[0]/complexity 314.37613824450665 314.3761382445067
+écart absolu max : 5.684341886080802e-14
+écart relatif max : 1.8081340135490162e-16
+=== extended_results.json
+feuilles livrées : 10560 | régénérées : 10560 | chemins seulement d'un côté : 0
+feuilles différentes : 114
+   /corner_A/critical_c_share[13] nan nan
+   /corner_A/critical_c_share[14] nan nan
+   /corner_A/critical_c_share[15] nan nan
+   /corner_A/critical_c_share[16] nan nan
+   /corner_A/critical_c_share[17] nan nan
+   /corner_A/critical_c_share[18] nan nan
+   /corner_A/critical_c_share[19] nan nan
+   /corner_A/critical_c_share[20] nan nan
+   /corner_A/critical_c_share[21] nan nan
+   /corner_A/critical_c_share[22] nan nan
+   /corner_A/critical_c_share[23] nan nan
+   /corner_A/critical_c_share[24] nan nan
+   /corner_A/critical_c_share[25] nan nan
+   /corner_A/critical_c_share[26] nan nan
+   /corner_A/critical_c_share[27] nan nan
+écart absolu max : 0.0
+écart relatif max : 0.0
+=== robustness_results.json
+feuilles livrées : 510 | régénérées : 510 | chemins seulement d'un côté : 0
+feuilles différentes : 9
+   /joint_sensitivity/A/premium_pct[0][2] 0.8896870217413493 0.8896870217413265
+   /joint_sensitivity/A/premium_pct[0][7] 2.1135507090139414 2.1135507090139187
+   /joint_sensitivity/A/premium_pct[2][6] 1.503351871577479 1.5033518715775016
+   /joint_sensitivity/A/joint_max 2.1135507090139414 2.1135507090139187
+   /joint_sensitivity/B/premium_pct[0][7] 2.1027667497424085 2.1027667497423925
+   /joint_sensitivity/B/premium_pct[2][6] 1.492567912305951 1.4925679123059672
+   /joint_sensitivity/B/premium_pct[3][1] 0.45957213735390623 0.4595721373538901
+   /joint_sensitivity/B/premium_pct[11][0] 0.06404335133642437 0.06404335133640819
+   /joint_sensitivity/B/joint_max 2.1027667497424085 2.1027667497423925
+écart absolu max : 2.275957200481571e-14
+écart relatif max : 2.5266480042415423e-13
+# ----
+# code de sortie : 0
+# durée (s)      : 0

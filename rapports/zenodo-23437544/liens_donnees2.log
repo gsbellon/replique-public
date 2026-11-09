@@ -1,0 +1,26 @@
+# commande : ssh sd-92569 curl -sS -L --max-time 30 https://www.unb.ca/cic/datasets/maldroid-2020.html | grep -i -E "dataset|download|CICMalDroid|http" | grep -i -E "href" | head -60
+# début    : 2026-10-22T19:00:59Z
+# ----
+<li><a href="https://phonebook.unb.ca">UNB Phone Directory</a></li>
+<li><a href="https://apply.unb.ca/" title="Start your application"><strong>Apply</strong></a></li>
+    <a class="homelink mobile-home-logo  hidden-desktop" href="https://www.unb.ca" style="display:none;">
+              <li><a href="//www.unb.ca/cic/datasets/android-validation.html">Honeynet Project</a></li>
+            <a class="main-nav datasets" href="//www.unb.ca/cic/datasets/index.html" thesection="datasets">Datasets</a>
+            <a class="main-nav datasets" href="//www.unb.ca/cic/about/contact.html" thesection="contact">Contact Us</a>
+        <li> <a class="main-nav" href="https://apply.unb.ca/">Apply</a> </li>
+            <a class="main-nav datasets" href="//www.unb.ca/cic/datasets/index.html" thesection="datasets">Datasets</a>
+            <a class="main-nav datasets" href="//www.unb.ca/cic/about/contact.html" thesection="contact">Contact Us</a>
+                                                                                <li class="currentfolder"><a class="sub on parentfolder" href="index.html">Datasets <span class="fa fa-chevron-down menuicon"></span></a>
+                                                                                <li class="currentfolder"><a class="sub on parentfolder" href="index.html">Datasets <span class="fa fa-chevron-down menuicon"></span></a>
+<p><a href="http://cicresearch.ca/CICDataset/MalDroid-2020/">Download the dataset</a></p>
+<li><a href="http://es.unb.ca/apps/map/index.cgi">Campus Maps</a></li>
+<li><a href="https://www.facebook.com/uofnb" rel="noopener" target="_blank" title="Follow us on Facebook"><span class="fa fa-facebook">&#160;</span></a></li>
+<li><a href="https://twitter.com/UNB" rel="noopener" target="_blank" title="Follow us on Twitter"><span class="fa fa-twitter">&#160;</span></a></li>
+<li><a href="https://ca.linkedin.com/school/university-of-new-brunswick/" rel="noopener" target="_blank" title="Follow us on Linked In"><span class="fa fa-linkedin">&#160;</span></a></li>
+<li><a href="https://www.facebook.com/uofnb" rel="noopener" target="_blank" title="Follow us on Facebook"><span class="fa fa-facebook">&#160;</span></a></li>
+<li><a href="https://twitter.com/UNB" rel="noopener" target="_blank" title="Follow us on Twitter"><span class="fa fa-twitter">&#160;</span></a></li>
+<li><a href="https://ca.linkedin.com/school/university-of-new-brunswick/" rel="noopener" target="_blank" title="Follow us on Linked In"><span class="fa fa-linkedin">&#160;</span></a></li>
+<li><a href="http://es.unb.ca/apps/map/index.cgi">Campus Maps</a></li>
+# ----
+# code de sortie : 0
+# durée (s)      : 1

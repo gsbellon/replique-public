@@ -1,0 +1,57 @@
+# commande : ssh sd-92569 cd ~/work/z23585999/run; find . -type f -newermt "2026-10-29 20:05:00 UTC" -not -path "./full_run_logs/20261029*" -exec test -e ../pkg/{} \; -print | wc -l; find . -type f -newermt "2026-10-29 20:05:00 UTC" -not -path "./full_run_logs/20261029*" -exec test -e ../pkg/{} \; -exec cmp -s {} ../pkg/{} \; -print
+# début    : 2026-10-29T20:10:58Z
+# ----
+89
+./measurement/validated_measurement_bounds.json
+./active_owners/active_owner_parameter_family.json
+./active_owners/validated_general_owner_bounds.json
+./joint_information_value/independent_rho_challenge.json
+./joint_information_value/joint_value_certified.stdout.log
+./joint_information_value/joint_value_certified.json
+./joint_information_value/flagship_linked_information.png
+./joint_information_value/measurement_precision_certified.json
+./joint_information_value/independent_information_frontier.json
+./joint_information_value/plot_joint_value.stderr.log
+./joint_information_value/information_frontier_certified.json
+./joint_information_value/joint_value_certified.stderr.log
+./joint_information_value/joint_hours_price_value.png
+./joint_information_value/technology_sensitivity_certified.json
+./joint_information_value/plot_joint_value.stdout.log
+./joint_information_value/joint_value_independent.stderr.log
+./joint_information_value/frontier_uniform_regime_certificate.json
+./joint_information_value/joint_curve_plot_data.json
+./figures/finite_counterfactual_geometry_paths.png
+./base_v0008/analysis/model_results.json
+./base_v0008/analysis/v0003_gate/ownership_trade_results.json
+./base_v0008/analysis/ownership_hours_wages.png
+./base_v0008/analysis/demand_sensitivity.csv
+./base_v0008/analysis/bounded_window_equivalence.png
+./base_v0008/analysis/v0004_gate/observable_bound_checks.json
+./base_v0008/306_Two_Date_Independent_Audit_Results_20261019.json
+./base_v0008/audit_measurement_20261019/independent_results.json
+./base_v0008/sharp_counterfactual/validated_sharp_bounds.json
+./base_v0008/inverse_region_audit_20261019/inverse_cases.json
+./base_v0008/inverse_region_audit_20261019/equilibrium_cases.json
+./base_v0008/inverse_region_audit_20261019/linked_allocation_results.json
+./base_v0008/scf_pilot/validation_and_method.json
+./base_v0008/scf_pilot/independent_numeric_checks.json
+./base_v0008/release_run_logs/audit_measurement_20261019__independent_checks.py.log
+./base_v0008/release_run_logs/finite_counterfactual__finite_counterfactual_checks.py.log
+./base_v0008/release_run_logs/analysis__v0003_gate__ownership_trade_checks.py.log
+./base_v0008/release_run_logs/analysis__reproduce_model.py.log
+./base_v0008/release_run_logs/scf_pilot__analyze_scf_pilot.py.log
+./base_v0008/release_run_logs/inverse_region_audit_20261019__independent_linked_allocation_checks.py.log
+./base_v0008/release_run_logs/analysis__v0003_gate__independent_trade_audit.py.log
+./base_v0008/release_run_logs/analysis__plot_ownership_tail.py.log
+./base_v0008/release_run_logs/finite_state_independent_audit_20261019__independent_finite_state_checks.py.log
+./base_v0008/release_run_logs/scf_pilot__verify_scf_pilot.py.log
+./base_v0008/release_run_logs/analysis__v0004_gate__observable_bound_checks.py.log
+./base_v0008/release_run_logs/sharp_counterfactual__validated_sharp_bounds.py.log
+./base_v0008/finite_state_identification_20261019/kernel_cases.json
+./base_v0008/finite_state_identification_20261019/envelope_cases.json
+./base_v0008/finite_state_independent_audit_20261019/non_power_cases.json
+./base_v0008/finite_state_independent_audit_20261019/finite_state_results.json
+./base_v0008/finite_counterfactual/finite_counterfactual_test_results.json
+# ----
+# code de sortie : 0
+# durée (s)      : 1

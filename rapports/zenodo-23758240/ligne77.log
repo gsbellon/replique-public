@@ -1,0 +1,8 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sed -n 77p pkg/autoscaling-sensitivity-study/results/paired_vs_reactive.csv && sed -n 77p run/results/paired_vs_reactive.csv
+# début    : 2026-10-31T20:04:18Z
+# ----
+2,600,10,0,pred_holt,-0.00047294375139895,-0.0010138556588542298,-0.051123634041028675,0.9766666666666666,0.25,0.15063055879143034
+2,600,10,0,pred_holt,-0.0004729437513989812,-0.0010138556588542322,-0.05112363404102867,0.9766666666666666,0.3,0.15364646911621094
+# ----
+# code de sortie : 0
+# durée (s)      : 0

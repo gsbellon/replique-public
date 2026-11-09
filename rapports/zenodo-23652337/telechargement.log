@@ -1,0 +1,46 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-06T20:12:20Z
+# ----
+replication_package.zip: OK
+code extraction : 0
+38
+./replication_package/LICENSE
+./replication_package/figures/fig_cache.npz
+./replication_package/figures/fig1_adoption_set.png
+./replication_package/figures/fig4_stakes_scaling.png
+./replication_package/figures/fig3_reach_choice.png
+./replication_package/figures/fig2_profit_kink.png
+./replication_package/figures/fig5_public_evidence.png
+./replication_package/data/sensitivity_results.csv
+./replication_package/data/pilot_pass_repos.csv
+./replication_package/data/coverage_results.csv
+./replication_package/data/issue_labels_final.csv
+./replication_package/data/swe_beta_results.csv
+./replication_package/requirements.txt
+./replication_package/code/reproduce_key_numbers.py
+./replication_package/code/vendor_signaling.py
+./replication_package/code/vendor_dynamics.py
+./replication_package/code/pilot_cursor_package.py
+./replication_package/code/vendor_investment_policy.py
+./replication_package/code/cursor_adoption_by_popularity.py
+./replication_package/code/vendor_menu.py
+./replication_package/code/swe_agent_curve.py
+./replication_package/code/kink_asymptotics.py
+./replication_package/code/vendor_strategic.py
+./replication_package/code/vendor_menu_det.py
+./replication_package/code/coverage_check.py
+./replication_package/code/vendor_signaling_complexity.py
+./replication_package/code/make_figures.py
+./replication_package/code/vendor_model.py
+./replication_package/code/sensitivity.py
+./replication_package/code/swe_beta_model.py
+./replication_package/code/vendor_investment.py
+./replication_package/code/collect_issue_labels_gql.py
+./replication_package/code/jira_extract_bugs.py
+./replication_package/code/nhpp_llm_econ.py
+./replication_package/code/jira_nhpp.py
+./replication_package/README.md
+./replication_package/download_data.sh
+# ----
+# code de sortie : 0
+# durée (s)      : 1

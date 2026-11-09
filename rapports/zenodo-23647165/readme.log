@@ -1,0 +1,236 @@
+# commande : ssh sd-92569 cat work/z23647165/pkg/replication/README.md work/z23647165/pkg/replication/code/README.md work/z23647165/pkg/replication/code/make.sh
+# début    : 2026-11-07T20:11:24Z
+# ----
+# Replication package
+
+"A parity frontier between fully renewable electrified and hydrocarbon energy systems: the required EROI
+under changing final energy demand"
+
+Georges Ali Benyahia (Mohammed VI Polytechnic University, UM6P; Université de Pau et des Pays
+de l’Adour, UPPA) and Tareq Ait Hsain (Mohammed VI Polytechnic University, UM6P).
+Licence: MIT (file `LICENSE`).
+
+Cite as: Benyahia, G.A., Ait Hsain, T., 2026. Replication package for “A parity frontier between
+fully renewable electrified and hydrocarbon energy systems: the required EROI under changing final
+energy demand”
+(version 1.0). Zenodo. https://doi.org/10.5281/zenodo.23647165
+
+This package reproduces every number, table and figure of the manuscript and of its
+supplementary material, and verifies the analytical results numerically.
+
+## Contents
+
+| File | Purpose |
+|---|---|
+| `model.py` | Core functions: anticipation factor, investment multiplier, power return, decomposition into operation, replacement and expansion, required EROI at the supply boundary, parity growth rate, payback time and viability limit, composite supply system, required EROI at the end-use boundary |
+| `verify_theory.py` | Numerical verification of Lemma 1, Propositions 1 to 3, the bound on lifetime distributions, the bound with respect to fossil capital goods, the scope of Proposition S1 (restrained paths of demand, and a demand spike that satisfies the budget but cannot be served), the composite multiplier, the reinvestment share of a build-out at a constant rate, the payback criterion and the storage and network budget of Section 4.5, the end-use equipment formula and Proposition S1 against independent computations (quadrature, cohort accounting, random draws, programme simulation) |
+| `calibrate.py` | Reads the dataset, identifies the parameters and writes `results.json` |
+| `figures.py` | Figures 1 to 3 of the manuscript and Figures S1 and S2 of the supplementary material (vector PDF, one graph per file, text typeset by pdflatex) |
+| `graphical_abstract.py` | Graphical abstract, 13 × 5.2 cm (vector PDF and TIFF of 2656 × 1062 pixels), plotted from `results.json` |
+| `build_manuscript.py` | Inserts the calibrated numbers and the tables into the LaTeX sources (`../tex`) and writes `manuscript.tex`, `supplement.tex` and `highlights.md` |
+| `make.sh` | Runs the whole chain and compiles both documents |
+
+## Data
+
+The calibration uses the global files of
+
+Aramendia, E., et al., 2024. Final- and useful-stage energy returns on investment (EROI) of
+fossil fuels, and final-stage EROI equivalent of renewable energy. Figshare.
+https://doi.org/10.6084/m9.figshare.25311358
+
+Download and unzip the archive. The scripts need the four files
+
+    Fossil fuel EROIs/Global/global_erois.csv
+    Fossil fuel EROIs/Global/global_erois_by_end_use.csv
+    Renewable energy EROIs equivalent/Global/global_erois_equivalent.csv
+    Renewable energy EROIs equivalent/Global/global_erois_equivalent_by_end_use.csv
+
+The dataset is not redistributed here.
+
+## Requirements
+
+Python 3.10 or later with numpy, scipy and matplotlib; a LaTeX distribution with pdflatex,
+bibtex, the `elsarticle` class, the Latin Modern fonts (`lmodern`) and the `xr-hyper` and
+`float` packages.
+
+## Usage
+
+    sh make.sh "/path/to/unzipped/dataset"
+
+or step by step:
+
+    python verify_theory.py ../output
+    python calibrate.py "/path/to/unzipped/dataset" ../output
+    python figures.py ../output/results.json ../figures
+    python graphical_abstract.py ../output/results.json ../figures
+    python build_manuscript.py ../output/results.json ../tex ../manuscript
+
+`../output/results.json` holds all results; `../output/verification.json` summarises the
+numerical checks; `../output/numbers_in_text.json` lists the numbers inserted in the text,
+with the key under which each appears in the LaTeX sources (`\N{key}`).
+
+The supplementary material cites equations and propositions of the manuscript by number.
+`make.sh` compiles the manuscript first and passes its labels to the supplement
+(`paper_labels.aux`).
+
+## Technology parameters
+
+Up-front shares of life-cycle energy investment and lifetimes are taken from King and van den
+Bergh (2018, Table 2): 0.900 (solar photovoltaics), 0.977 (wind), 0.019 (oil and gas),
+0.086 (coal); 25, 20, 35 and 45 years. Baseline: kappa_E = 0.94, L_E = 20 years, fixed
+lifetimes, and kappa_H = 0. The hydrocarbon data exclude the energy embodied in capital goods,
+and the investment they count is therefore proportional to output; kappa_H = 0 is the value
+consistent with that perimeter. The variants `capital_oilgas`, `capital` and `capital_coal` count fossil
+capital goods (0.019 over 35 years, 0.04 over 40 years, 0.086 over 45 years) and multiply the
+useful-stage EROI of hydrocarbons by 1 - kappa_H (`U_life` in `calibrate.py`); the required
+EROI is then lower at every growth rate, and the baseline is therefore an upper bound with respect
+to fossil capital goods (Section 4.1 of the manuscript; checked in `verify_theory.py`). The
+intermediate case also illustrates the mechanism (Section 2.3, Figure 2 and Supplementary Figure S1). For given up-front
+shares, the baseline is a lower bound on the required EROI under growth and an upper bound under
+contraction over all distributions of lifetimes of system E with a mean of at least 20 years
+(Supplementary Material, Section S1.3; checked in `verify_theory.py`). The sensitivity scenarios are defined in
+`calibrate.py` (`SCENARIOS`). These timing parameters are those of generating plant; they stand for the complete
+supply system, storage and networks included, as an approximation. The ranges across scenarios
+are conditional results, not intervals of uncertainty.
+
+## Boundaries
+
+All headline thresholds are computed at the supply boundary: energy invested in generation,
+storage and networks, up to the delivery of final energy. The thresholds at the end-use
+boundary (`eq_dynamic_devices`, Supplementary Material, Section S4) add the energy embodied in
+end-use equipment; the values of `d_E` and `d_H` used in `calibrate.py` are hypothetical and
+serve only to measure sensitivity. The storage and network budget of Section 4.5
+(`storage_budget` in `results.json`) uses the median plant EROIs of the literature, whose
+boundaries differ, and illustrative losses of 10%.
+The shares and lifetimes of the composite supply system (`Composite`) are hypothetical as well.
+# Replication package
+
+"A parity frontier between fully renewable electrified and hydrocarbon energy systems: the required EROI
+under changing final energy demand"
+
+Georges Ali Benyahia (Mohammed VI Polytechnic University, UM6P; Université de Pau et des Pays
+de l’Adour, UPPA) and Tareq Ait Hsain (Mohammed VI Polytechnic University, UM6P).
+Licence: MIT (file `LICENSE`).
+
+Cite as: Benyahia, G.A., Ait Hsain, T., 2026. Replication package for “A parity frontier between
+fully renewable electrified and hydrocarbon energy systems: the required EROI under changing final
+energy demand”
+(version 1.0). Zenodo. https://doi.org/10.5281/zenodo.23647165
+
+This package reproduces every number, table and figure of the manuscript and of its
+supplementary material, and verifies the analytical results numerically.
+
+## Contents
+
+| File | Purpose |
+|---|---|
+| `model.py` | Core functions: anticipation factor, investment multiplier, power return, decomposition into operation, replacement and expansion, required EROI at the supply boundary, parity growth rate, payback time and viability limit, composite supply system, required EROI at the end-use boundary |
+| `verify_theory.py` | Numerical verification of Lemma 1, Propositions 1 to 3, the bound on lifetime distributions, the bound with respect to fossil capital goods, the scope of Proposition S1 (restrained paths of demand, and a demand spike that satisfies the budget but cannot be served), the composite multiplier, the reinvestment share of a build-out at a constant rate, the payback criterion and the storage and network budget of Section 4.5, the end-use equipment formula and Proposition S1 against independent computations (quadrature, cohort accounting, random draws, programme simulation) |
+| `calibrate.py` | Reads the dataset, identifies the parameters and writes `results.json` |
+| `figures.py` | Figures 1 to 3 of the manuscript and Figures S1 and S2 of the supplementary material (vector PDF, one graph per file, text typeset by pdflatex) |
+| `graphical_abstract.py` | Graphical abstract, 13 × 5.2 cm (vector PDF and TIFF of 2656 × 1062 pixels), plotted from `results.json` |
+| `build_manuscript.py` | Inserts the calibrated numbers and the tables into the LaTeX sources (`../tex`) and writes `manuscript.tex`, `supplement.tex` and `highlights.md` |
+| `make.sh` | Runs the whole chain and compiles both documents |
+
+## Data
+
+The calibration uses the global files of
+
+Aramendia, E., et al., 2024. Final- and useful-stage energy returns on investment (EROI) of
+fossil fuels, and final-stage EROI equivalent of renewable energy. Figshare.
+https://doi.org/10.6084/m9.figshare.25311358
+
+Download and unzip the archive. The scripts need the four files
+
+    Fossil fuel EROIs/Global/global_erois.csv
+    Fossil fuel EROIs/Global/global_erois_by_end_use.csv
+    Renewable energy EROIs equivalent/Global/global_erois_equivalent.csv
+    Renewable energy EROIs equivalent/Global/global_erois_equivalent_by_end_use.csv
+
+The dataset is not redistributed here.
+
+## Requirements
+
+Python 3.10 or later with numpy, scipy and matplotlib; a LaTeX distribution with pdflatex,
+bibtex, the `elsarticle` class, the Latin Modern fonts (`lmodern`) and the `xr-hyper` and
+`float` packages.
+
+## Usage
+
+    sh make.sh "/path/to/unzipped/dataset"
+
+or step by step:
+
+    python verify_theory.py ../output
+    python calibrate.py "/path/to/unzipped/dataset" ../output
+    python figures.py ../output/results.json ../figures
+    python graphical_abstract.py ../output/results.json ../figures
+    python build_manuscript.py ../output/results.json ../tex ../manuscript
+
+`../output/results.json` holds all results; `../output/verification.json` summarises the
+numerical checks; `../output/numbers_in_text.json` lists the numbers inserted in the text,
+with the key under which each appears in the LaTeX sources (`\N{key}`).
+
+The supplementary material cites equations and propositions of the manuscript by number.
+`make.sh` compiles the manuscript first and passes its labels to the supplement
+(`paper_labels.aux`).
+
+## Technology parameters
+
+Up-front shares of life-cycle energy investment and lifetimes are taken from King and van den
+Bergh (2018, Table 2): 0.900 (solar photovoltaics), 0.977 (wind), 0.019 (oil and gas),
+0.086 (coal); 25, 20, 35 and 45 years. Baseline: kappa_E = 0.94, L_E = 20 years, fixed
+lifetimes, and kappa_H = 0. The hydrocarbon data exclude the energy embodied in capital goods,
+and the investment they count is therefore proportional to output; kappa_H = 0 is the value
+consistent with that perimeter. The variants `capital_oilgas`, `capital` and `capital_coal` count fossil
+capital goods (0.019 over 35 years, 0.04 over 40 years, 0.086 over 45 years) and multiply the
+useful-stage EROI of hydrocarbons by 1 - kappa_H (`U_life` in `calibrate.py`); the required
+EROI is then lower at every growth rate, and the baseline is therefore an upper bound with respect
+to fossil capital goods (Section 4.1 of the manuscript; checked in `verify_theory.py`). The
+intermediate case also illustrates the mechanism (Section 2.3, Figure 2 and Supplementary Figure S1). For given up-front
+shares, the baseline is a lower bound on the required EROI under growth and an upper bound under
+contraction over all distributions of lifetimes of system E with a mean of at least 20 years
+(Supplementary Material, Section S1.3; checked in `verify_theory.py`). The sensitivity scenarios are defined in
+`calibrate.py` (`SCENARIOS`). These timing parameters are those of generating plant; they stand for the complete
+supply system, storage and networks included, as an approximation. The ranges across scenarios
+are conditional results, not intervals of uncertainty.
+
+## Boundaries
+
+All headline thresholds are computed at the supply boundary: energy invested in generation,
+storage and networks, up to the delivery of final energy. The thresholds at the end-use
+boundary (`eq_dynamic_devices`, Supplementary Material, Section S4) add the energy embodied in
+end-use equipment; the values of `d_E` and `d_H` used in `calibrate.py` are hypothetical and
+serve only to measure sensitivity. The storage and network budget of Section 4.5
+(`storage_budget` in `results.json`) uses the median plant EROIs of the literature, whose
+boundaries differ, and illustrative losses of 10%.
+The shares and lifetimes of the composite supply system (`Composite`) are hypothetical as well.
+#!/bin/sh
+# Rebuild everything: verification, calibration, figures, manuscript and supplementary material.
+# Usage: sh make.sh <path to the unzipped dataset>
+set -e
+HERE="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(dirname "$HERE")"
+DATA="$1"
+python3 "$HERE/verify_theory.py" "$ROOT/output"
+python3 -I "$HERE/calibrate.py" "$DATA" "$ROOT/output" > "$ROOT/output/calibration_log.txt"
+python3 "$HERE/figures.py" "$ROOT/output/results.json" "$ROOT/figures"
+python3 "$HERE/graphical_abstract.py" "$ROOT/output/results.json" "$ROOT/figures"
+python3 "$HERE/build_manuscript.py" "$ROOT/output/results.json" "$ROOT/tex" "$ROOT/manuscript"
+cp "$ROOT"/figures/Figure_*.pdf "$ROOT/manuscript/"
+cd "$ROOT/manuscript"
+pdflatex -interaction=nonstopmode manuscript.tex > /dev/null
+bibtex manuscript > /dev/null
+pdflatex -interaction=nonstopmode manuscript.tex > /dev/null
+pdflatex -interaction=nonstopmode manuscript.tex > /dev/null
+pdflatex -interaction=nonstopmode manuscript.tex > /dev/null
+# the supplementary material reads the cross-references of the manuscript
+grep '^\\newlabel' manuscript.aux > paper_labels.aux
+pdflatex -interaction=nonstopmode supplement.tex > /dev/null
+bibtex supplement > /dev/null
+pdflatex -interaction=nonstopmode supplement.tex > /dev/null
+pdflatex -interaction=nonstopmode supplement.tex > /dev/null
+echo "built: $ROOT/manuscript/manuscript.pdf and $ROOT/manuscript/supplement.pdf"
+# ----
+# code de sortie : 0
+# durée (s)      : 1

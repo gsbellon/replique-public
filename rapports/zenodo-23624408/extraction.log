@@ -1,0 +1,81 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && sh extrait.sh
+# début    : 2026-10-26T20:05:35Z
+# ----
+code extraction : 0
+f9755f3b9de2fa4fc2346ebeb3257be1  pkg.zip
+72
+  2365540      4 -rw-rw-r--   1 replab   replab       1612 Oct 26 21:05 pkg/run_all.R
+  2365542      4 -rw-rw-r--   1 replab   replab       3278 Oct 26 21:05 pkg/tests/check_results.R
+  2365479      8 -rw-rw-r--   1 replab   replab       4460 Oct 26 21:05 pkg/docs/variables.md
+  2365463      4 -rw-rw-r--   1 replab   replab       1145 Oct 26 21:05 pkg/LICENSE
+  2365462      4 -rw-rw-r--   1 replab   replab        889 Oct 26 21:05 pkg/CITATION.cff
+  2365461      4 -rw-rw-r--   1 replab   replab         31 Oct 26 21:05 pkg/.gitignore
+  2365477     12 -rw-rw-r--   1 replab   replab      12196 Oct 26 21:05 pkg/README.md
+  2365480      8 -rw-rw-r--   1 replab   replab       7555 Oct 26 21:05 pkg/manifesto_sha256.json
+  2365530      4 -rw-rw-r--   1 replab   replab       2367 Oct 26 21:05 pkg/output/robustness/bootstrap_differences_municipalities.csv
+  2365531      4 -rw-rw-r--   1 replab   replab        552 Oct 26 21:05 pkg/output/robustness/bootstrap_municipalities.csv
+  2365527      4 -rw-rw-r--   1 replab   replab        376 Oct 26 21:05 pkg/output/robustness/alternative_references_municipalities_summary.csv
+  2365525      4 -rw-rw-r--   1 replab   replab       2336 Oct 26 21:05 pkg/output/robustness/alternative_references_dominance.csv
+  2365524      4 -rw-rw-r--   1 replab   replab        728 Oct 26 21:05 pkg/output/robustness/alternative_references_brazil.csv
+  2365534      4 -rw-rw-r--   1 replab   replab        241 Oct 26 21:05 pkg/output/robustness/excluded_variables.csv
+  2365526      8 -rw-rw-r--   1 replab   replab       4865 Oct 26 21:05 pkg/output/robustness/alternative_references_municipalities.csv
+  2365528     16 -rw-rw-r--   1 replab   replab      12904 Oct 26 21:05 pkg/output/robustness/alternative_references_ufs.csv
+  2365536      8 -rw-rw-r--   1 replab   replab       6314 Oct 26 21:05 pkg/output/robustness/pairwise_dominance_ufs_2022.csv
+  2365532      4 -rw-rw-r--   1 replab   replab       1152 Oct 26 21:05 pkg/output/robustness/delta_grid.csv
+  2365537      4 -rw-rw-r--   1 replab   replab        879 Oct 26 21:05 pkg/output/robustness/zero_constant.csv
+  2365523      4 -rw-rw-r--   1 replab   replab        314 Oct 26 21:05 pkg/output/robustness/alpha_grid_summary.csv
+  2365529      4 -rw-rw-r--   1 replab   replab       1553 Oct 26 21:05 pkg/output/robustness/bootstrap_change_ufs.csv
+  2365522      4 -rw-rw-r--   1 replab   replab       2115 Oct 26 21:05 pkg/output/robustness/alpha_grid.csv
+  2365535      8 -rw-rw-r--   1 replab   replab       5708 Oct 26 21:05 pkg/output/robustness/half_sample_draws.csv
+  2365533      4 -rw-rw-r--   1 replab   replab         88 Oct 26 21:05 pkg/output/robustness/delta_grid_summary.csv
+  2365538     44 -rw-rw-r--   1 replab   replab      42166 Oct 26 21:05 pkg/output/run_log.txt
+  2365491      4 -rw-rw-r--   1 replab   replab        669 Oct 26 21:05 pkg/output/base_2022_counts.csv
+  2365520      4 -rw-rw-r--   1 replab   replab        127 Oct 26 21:05 pkg/output/parameters.csv
+  2365509      4 -rw-rw-r--   1 replab   replab         94 Oct 26 21:05 pkg/output/national/frontiers_by_level.csv
+  2365505      4 -rw-rw-r--   1 replab   replab        237 Oct 26 21:05 pkg/output/national/configuration.csv
+  2365510      4 -rw-rw-r--   1 replab   replab        801 Oct 26 21:05 pkg/output/national/regions.csv
+  2365508      4 -rw-rw-r--   1 replab   replab         80 Oct 26 21:05 pkg/output/national/frontier_profile.csv
+  2365507      4 -rw-rw-r--   1 replab   replab       1484 Oct 26 21:05 pkg/output/national/dominance.csv
+  2365504      4 -rw-rw-r--   1 replab   replab        172 Oct 26 21:05 pkg/output/national/brazil.csv
+  2365513      4 -rw-rw-r--   1 replab   replab       3786 Oct 26 21:05 pkg/output/national/ufs.csv
+  2365506      4 -rw-rw-r--   1 replab   replab        214 Oct 26 21:05 pkg/output/national/descriptives_brazil.csv
+  2365511      4 -rw-rw-r--   1 replab   replab        201 Oct 26 21:05 pkg/output/national/screened_households.csv
+  2365503      4 -rw-rw-r--   1 replab   replab       1609 Oct 26 21:05 pkg/output/national/age_suppression_sensitivity.csv
+  2365512      4 -rw-rw-r--   1 replab   replab       3544 Oct 26 21:05 pkg/output/national/super_efficiency_final_frontiers.csv
+  2365519      8 -rw-rw-r--   1 replab   replab       5139 Oct 26 21:05 pkg/output/outputs_sha256.csv
+  2365516      4 -rw-rw-r--   1 replab   replab        213 Oct 26 21:05 pkg/output/numerical_example/example_scores.csv
+  2365518      4 -rw-rw-r--   1 replab   replab        165 Oct 26 21:05 pkg/output/numerical_example/example_summary.csv
+  2365515      4 -rw-rw-r--   1 replab   replab        147 Oct 26 21:05 pkg/output/numerical_example/example_data.csv
+  2365517      4 -rw-rw-r--   1 replab   replab        121 Oct 26 21:05 pkg/output/numerical_example/example_shock_D.csv
+  2365498      4 -rw-rw-r--   1 replab   replab         87 Oct 26 21:05 pkg/output/municipal/spearman_IDHM.csv
+  2365496      4 -rw-rw-r--   1 replab   replab        161 Oct 26 21:05 pkg/output/municipal/frontiers_by_level.csv
+  2365494      4 -rw-rw-r--   1 replab   replab        151 Oct 26 21:05 pkg/output/municipal/configuration.csv
+  2365495      4 -rw-rw-r--   1 replab   replab        118 Oct 26 21:05 pkg/output/municipal/frontier_profile.csv
+  2365501      4 -rw-rw-r--   1 replab   replab       1126 Oct 26 21:05 pkg/output/municipal/table2_municipalities.csv
+  2365500      4 -rw-rw-r--   1 replab   replab       1037 Oct 26 21:05 pkg/output/municipal/table1_descriptives.csv
+  2365497      4 -rw-rw-r--   1 replab   replab        193 Oct 26 21:05 pkg/output/municipal/screened_households.csv
+  2365499     12 -rw-rw-r--   1 replab   replab       9935 Oct 26 21:05 pkg/output/municipal/super_efficiency_final_frontiers.csv
+  2365490      4 -rw-rw-r--   1 replab   replab        464 Oct 26 21:05 pkg/output/base_2010_counts.csv
+  2365492      4 -rw-rw-r--   1 replab   replab       2473 Oct 26 21:05 pkg/output/inputs_sha256.csv
+  2365539      4 -rw-rw-r--   1 replab   replab        924 Oct 26 21:05 pkg/output/session_info.txt
+  2365484      4 -rw-rw-r--   1 replab   replab       3089 Oct 26 21:05 pkg/output/audit/interference_directed.csv
+  2365487     24 -rw-rw-r--   1 replab   replab      22710 Oct 26 21:05 pkg/output/audit/monotonicity.csv
+  2365485      4 -rw-rw-r--   1 replab   replab       3975 Oct 26 21:05 pkg/output/audit/interference_directed_other.csv
+  2365483      4 -rw-rw-r--   1 replab   replab       1220 Oct 26 21:05 pkg/output/audit/categorical_monotonicity.csv
+  2365486      4 -rw-rw-r--   1 replab   replab        852 Oct 26 21:05 pkg/output/audit/interference_random.csv
+  2365488     84 -rw-rw-r--   1 replab   replab      83015 Oct 26 21:05 pkg/output/audit/solver_check.csv
+  2365489      4 -rw-rw-r--   1 replab   replab        227 Oct 26 21:05 pkg/output/audit/subgroup_consistency.csv
+  2365475      4 -rw-rw-r--   1 replab   replab       3145 Oct 26 21:05 pkg/R/config.R
+  2365468      8 -rw-rw-r--   1 replab   replab       5265 Oct 26 21:05 pkg/R/03_build_census2022.R
+  2365476     20 -rw-rw-r--   1 replab   replab      18186 Oct 26 21:05 pkg/R/functions.R
+  2365471      8 -rw-rw-r--   1 replab   replab       4602 Oct 26 21:05 pkg/R/06_national.R
+  2365467      8 -rw-rw-r--   1 replab   replab       5799 Oct 26 21:05 pkg/R/02_build_census2010.R
+  2365469      8 -rw-rw-r--   1 replab   replab       5110 Oct 26 21:05 pkg/R/04_numerical_example.R
+  2365470      4 -rw-rw-r--   1 replab   replab       4007 Oct 26 21:05 pkg/R/05_municipal.R
+  2365472     12 -rw-rw-r--   1 replab   replab       8536 Oct 26 21:05 pkg/R/07_audit.R
+  2365474      4 -rw-rw-r--   1 replab   replab        911 Oct 26 21:05 pkg/R/09_manifest.R
+  2365465      4 -rw-rw-r--   1 replab   replab       1617 Oct 26 21:05 pkg/R/01_download.R
+  2365473     12 -rw-rw-r--   1 replab   replab      11990 Oct 26 21:05 pkg/R/08_robustness.R
+# ----
+# code de sortie : 0
+# durée (s)      : 1

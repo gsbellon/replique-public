@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 podman images
+# début    : 2026-11-01T20:05:19Z
+# ----
+REPOSITORY                    TAG         IMAGE ID      CREATED       SIZE
+localhost/replab-autoscaling  latest      c4ba91a476fe  24 hours ago  520 MB
+localhost/replab-ai306        latest      9643b511edbd  3 days ago    515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  5 days ago    1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  6 days ago    972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  6 days ago    202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  11 days ago   935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  3 weeks ago   124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 mkdir -p ~/work/z23624408 && curl -s -m 120 -o ~/work/z23624408/pkg.zip 'https://zenodo.org/api/records/23624408/files/DEA-MP-H_v1.1.0_artigo_v11.zip/content' ; md5sum ~/work/z23624408/pkg.zip
+# début    : 2026-10-26T20:05:21Z
+# ----
+f9755f3b9de2fa4fc2346ebeb3257be1  /home/replab/work/z23624408/pkg.zip
+# ----
+# code de sortie : 0
+# durée (s)      : 1

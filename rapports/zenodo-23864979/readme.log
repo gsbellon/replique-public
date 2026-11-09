@@ -1,0 +1,56 @@
+# commande : ssh sd-92569 cat work/z23864979/pkg/cost_dispersion_networks_replication_v4.0/README.md
+# début    : 2026-11-01T20:05:15Z
+# ----
+# Replication package
+
+**Cost dispersion in networked Cournot oligopoly: neutrality and welfare hold if and only if
+the graph is regular**
+
+Abdelmohsen A. Nassani
+Department of Management, College of Business Administration, King Saud University,
+Riyadh, Saudi Arabia — nassani@ksu.edu.sa
+
+This package reproduces every analytical identity, inequality and reported number in the
+manuscript. No empirical data are used: all inputs are generated inside the scripts.
+
+## Contents
+
+| File | What it produces |
+|---|---|
+| `A_closed_forms.py` | Symbolic derivation on the star `K_{1,3}` with free `a`, `b`, `gamma`, `c_i`: the potential function, the equilibrium `q = Ru`, the aggregate `Q = w'u`, the four first-order sensitivities and the second derivative of welfare, each checked against the closed forms stated in the paper. |
+| `B_atlas_search.py` | The closed form of `Rw` on `K_n`, and an exhaustive search over the connected graphs of the NetworkX atlas for non-regular graphs in the admissible region at which consumer surplus is first-order neutral. |
+| `C_wheel_example.py` | The exact wheel example `W_4` at `gamma = 1/2`: spectrum, admissibility, `w`, `w - Rw` and `w + Rw`. |
+| `D_random_draws.py` | 12,000 random instances (connected graphs with at most ten nodes; admissible `gamma`; random mean-preserving directions) testing every identity and inequality in the results section, including the regularity equivalence, the sign of `W''`, and the welfare loss along `d*` on non-regular graphs. |
+| `E_curvature_corners_figures.py` | The curvature trials under the transformed consumer utility for `E` in {0, 0.5, 1, 2}, the corner (interiority) checks, and the two figures of the paper. |
+| `F_policy_transfers.py` | The targeted-cost-policy section: optimal zero-sum and revenue-neutral transfers on `K_{1,3}`, `W_4` and `P_5`, their values, the marginal revenue raised, and the comparison of the two decision rules over the connected non-regular graphs with at most seven nodes. |
+
+## Requirements
+
+Python 3.10 or later, with:
+
+```
+sympy numpy scipy networkx matplotlib
+```
+
+## Running
+
+Each script is independent and writes its results to standard output:
+
+```
+python3 A_closed_forms.py
+python3 B_atlas_search.py
+python3 C_wheel_example.py
+python3 D_random_draws.py
+python3 E_curvature_corners_figures.py
+python3 F_policy_transfers.py
+```
+
+`D_random_draws.py` uses a fixed seed, so its counts are reproducible exactly.
+`E_curvature_corners_figures.py` writes the two figure files to the working directory.
+
+## License
+
+The code is released under the MIT License (see `LICENSE`).
+# ----
+# code de sortie : 0
+# durée (s)      : 0

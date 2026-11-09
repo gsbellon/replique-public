@@ -1,0 +1,351 @@
+# commande : ssh sd-92569 cd ~/work/z23624408 && sh lance_run.sh
+# début    : 2026-10-26T20:17:05Z
+# ----
+
+==== stage 01 | R/01_download.R | 2026-10-26 20:17:06 
+
+Attaching package: ‘data.table’
+
+The following object is masked from ‘package:base’:
+
+    %notin%
+
+2026-10-26 20:17:11 | stage 01 complete 
+==== stage 01 finished in 0.1 mins 
+
+==== stage 02 | R/02_build_census2010.R | 2026-10-26 20:17:11 
+2026-10-26 20:17:12 | AC.zip 24,036 households 
+2026-10-26 20:17:14 | AL.zip 91,753 households 
+2026-10-26 20:17:16 | AM.zip 63,942 households 
+2026-10-26 20:17:17 | AP.zip 18,047 households 
+2026-10-26 20:17:29 | BA.zip 441,256 households 
+2026-10-26 20:17:35 | CE.zip 233,274 households 
+2026-10-26 20:17:36 | DF.zip 34,975 households 
+2026-10-26 20:17:39 | ES.zip 124,379 households 
+2026-10-26 20:17:45 | GO.zip 224,278 households 
+2026-10-26 20:17:51 | MA.zip 194,179 households 
+2026-10-26 20:18:10 | MG.zip 764,752 households 
+2026-10-26 20:18:13 | MS.zip 85,659 households 
+2026-10-26 20:18:16 | MT.zip 117,004 households 
+2026-10-26 20:18:21 | PA.zip 174,805 households 
+2026-10-26 20:18:26 | PB.zip 161,527 households 
+2026-10-26 20:18:32 | PE.zip 250,781 households 
+2026-10-26 20:18:36 | PI.zip 135,122 households 
+2026-10-26 20:18:46 | PR.zip 404,263 households 
+2026-10-26 20:18:55 | RJ.zip 366,376 households 
+2026-10-26 20:18:58 | RN.zip 119,116 households 
+2026-10-26 20:19:00 | RO.zip 57,385 households 
+2026-10-26 20:19:00 | RR.zip 16,026 households 
+2026-10-26 20:19:11 | RS.zip 463,768 households 
+2026-10-26 20:19:18 | SC.zip 275,924 households 
+2026-10-26 20:19:21 | SE.zip 68,965 households 
+2026-10-26 20:19:39 | SP1.zip 758,101 households 
+2026-10-26 20:19:49 | SP2_RM.zip 367,308 households 
+2026-10-26 20:19:51 | TO.zip 76,886 households 
+2026-10-26 20:20:28 | stage 02 complete: 6,113,887 households, 6,111,832 eligible 
+==== stage 02 finished in 3.3 mins 
+
+==== stage 03 | R/03_build_census2022.R | 2026-10-26 20:20:28 
+2026-10-26 20:20:29 | UF 11 59,858 households 
+2026-10-26 20:20:30 | UF 12 35,500 households 
+2026-10-26 20:20:32 | UF 13 97,656 households 
+2026-10-26 20:20:32 | UF 14 23,357 households 
+2026-10-26 20:20:36 | UF 15 248,073 households 
+2026-10-26 20:20:37 | UF 16 18,166 households 
+2026-10-26 20:20:38 | UF 17 92,794 households 
+2026-10-26 20:20:42 | UF 21 243,253 households 
+2026-10-26 20:20:45 | UF 22 165,916 households 
+2026-10-26 20:20:49 | UF 23 302,189 households 
+2026-10-26 20:20:52 | UF 24 151,526 households 
+2026-10-26 20:20:55 | UF 25 201,286 households 
+2026-10-26 20:21:00 | UF 26 317,048 households 
+2026-10-26 20:21:02 | UF 27 113,902 households 
+2026-10-26 20:21:03 | UF 28 91,670 households 
+2026-10-26 20:21:12 | UF 29 571,796 households 
+2026-10-26 20:21:26 | UF 31 944,237 households 
+2026-10-26 20:21:29 | UF 32 155,322 households 
+2026-10-26 20:21:35 | UF 33 427,996 households 
+2026-10-26 20:21:56 | UF 35 1,348,151 households 
+2026-10-26 20:22:04 | UF 41 505,217 households 
+2026-10-26 20:22:09 | UF 42 346,280 households 
+2026-10-26 20:22:17 | UF 43 541,171 households 
+2026-10-26 20:22:19 | UF 50 105,813 households 
+2026-10-26 20:22:22 | UF 51 153,565 households 
+2026-10-26 20:22:26 | UF 52 292,357 households 
+2026-10-26 20:22:27 | UF 53 49,357 households 
+2026-10-26 20:23:06 | stage 03 complete: 7,602,162 eligible households with known ages 
+==== stage 03 finished in 2.6 mins 
+
+==== stage 04 | R/04_numerical_example.R | 2026-10-26 20:23:06 
+   household     S level      group frontier theta_no_floor theta_floor      h
+      <char> <num> <num>     <char>   <char>          <num>       <num>  <num>
+1:         A   0.0   0.0 A, B, C, D  B, C, D            0.5      0.4625 0.4625
+2:         B   0.5   0.5    B, C, D  B, C, D            1.0      0.9250 0.9250
+3:         C   1.0   1.0       C, D     C, D            1.0      0.9500 0.9500
+4:         D   1.5   1.0       C, D     C, D            1.0      1.0000 1.0000
+   household before fixed_reference local_frontier
+      <char>  <num>           <num>          <num>
+1:         A 0.4625          0.4625        0.45625
+2:         B 0.9250          0.9250        0.91250
+3:         C 0.9500          0.9500        0.92500
+4:         D 1.0000          1.9000        1.00000
+          M    m0        T    H1    H2 theta_A_after M_after_A
+      <num> <num>    <num> <num> <num>         <num>     <num>
+1: 0.834375 0.925 0.902027  0.75     0         0.475    0.8375
+   theta_D_after_fixed M_after_D_fixed M_after_D_local
+                 <num>           <num>           <num>
+1:                 1.9        0.834375       0.8234375
+2026-10-26 20:23:06 | stage 04 complete 
+==== stage 04 finished in 0 mins 
+
+==== stage 05 | R/05_municipal.R | 2026-10-26 20:23:06 
+2026-10-26 20:23:09 | eight municipalities: 79410 households 
+2026-10-26 20:23:22 | frontiers built; final frontier has 62 households; 0 households screened out 
+2026-10-26 20:23:27 | scores, alpha = 0 
+2026-10-26 20:23:33 | scores, alpha = 0.05 
+2026-10-26 20:23:38 | scores, alpha = 0.1 
+2026-10-26 20:23:39 | local frontier Mossoro-RN 
+2026-10-26 20:23:39 | local frontier Paulista-PE 
+2026-10-26 20:23:39 | local frontier Itabuna-BA 
+2026-10-26 20:23:40 | local frontier Olinda-PE 
+2026-10-26 20:23:41 | local frontier Campina Grande-PB 
+2026-10-26 20:23:42 | local frontier Blumenau-SC 
+2026-10-26 20:23:42 | local frontier Maringa-PR 
+2026-10-26 20:23:43 | local frontier Caxias do Sul-RS 
+2026-10-26 20:23:44 | stage 05 complete; m0 = 0.215668 
+==== stage 05 finished in 0.6 mins 
+
+==== stage 06 | R/06_national.R | 2026-10-26 20:23:44 
+2026-10-26 20:23:51 | eligible households: 2010 6111832 | 2022 7602162 | 2022 with suppressed ages 1294 
+2026-10-26 20:23:52 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 20:23:52 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 20:23:52 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 20:23:53 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 20:23:57 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 20:24:02 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 20:24:12 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 20:24:24 |   level 2.5 | candidates 349990 | frontier 12 
+2026-10-26 20:24:40 |   level 2 | candidates 493386 | frontier 13 
+2026-10-26 20:25:07 |   level 1.5 | candidates 789538 | frontier 15 
+2026-10-26 20:26:01 |   level 1 | candidates 1443667 | frontier 16 
+2026-10-26 20:26:29 |   level 0.5 | candidates 1358619 | frontier 16 
+2026-10-26 20:26:51 |   level 0 | candidates 1085668 | frontier 16 
+2026-10-26 20:27:03 |   screening round 1 | removed 0 
+2026-10-26 20:27:03 | national frontiers built; final frontier has 16 households; 0 households screened out 
+2026-10-26 20:29:18 | 2010 scored 
+2026-10-26 20:32:04 | 2022 scored 
+2026-10-26 20:32:30 | stage 06 complete; m0 = 0.076201 
+==== stage 06 finished in 8.8 mins 
+
+==== stage 07 | R/07_audit.R | 2026-10-26 20:32:30 
+2026-10-26 20:32:31 | solver check: max abs difference 5.96e-14 
+   alpha increased unchanged decreased       minimum
+   <num>     <int>     <int>     <int>         <num>
+1:  0.00       126        74         0 -9.188753e-10
+2:  0.05       200         0         0  5.259573e-07
+3:  0.10       200         0         0  1.051915e-06
+2026-10-26 20:32:33 | directed interference 1 of 30 
+2026-10-26 20:32:33 | directed interference 3 of 30 
+2026-10-26 20:32:33 | directed interference 2 of 30 
+2026-10-26 20:32:33 | directed interference 4 of 30 
+2026-10-26 20:32:34 | directed interference 5 of 30 
+2026-10-26 20:32:35 | directed interference 6 of 30 
+2026-10-26 20:32:35 | directed interference 7 of 30 
+2026-10-26 20:32:35 | directed interference 8 of 30 
+2026-10-26 20:32:36 | directed interference 9 of 30 
+2026-10-26 20:32:36 | directed interference 10 of 30 
+2026-10-26 20:32:36 | directed interference 11 of 30 
+2026-10-26 20:32:37 | directed interference 12 of 30 
+2026-10-26 20:32:38 | directed interference 13 of 30 
+2026-10-26 20:32:38 | directed interference 14 of 30 
+2026-10-26 20:32:38 | directed interference 15 of 30 
+2026-10-26 20:32:38 | directed interference 16 of 30 
+2026-10-26 20:32:40 | directed interference 17 of 30 
+2026-10-26 20:32:40 | directed interference 18 of 30 
+2026-10-26 20:32:40 | directed interference 20 of 30 
+2026-10-26 20:32:40 | directed interference 19 of 30 
+2026-10-26 20:32:41 | directed interference 21 of 30 
+2026-10-26 20:32:41 | directed interference 22 of 30 
+2026-10-26 20:32:42 | directed interference 23 of 30 
+2026-10-26 20:32:42 | directed interference 24 of 30 
+2026-10-26 20:32:43 | directed interference 25 of 30 
+2026-10-26 20:32:43 | directed interference 26 of 30 
+2026-10-26 20:32:43 | directed interference 27 of 30 
+2026-10-26 20:32:43 | directed interference 28 of 30 
+2026-10-26 20:32:45 | directed interference 29 of 30 
+2026-10-26 20:32:45 | directed interference 30 of 30 
+2026-10-26 20:32:59 | random interference done 
+2026-10-26 20:33:21 | directed worsening in other dimensions done 
+2026-10-26 20:33:46 |   screening round 1 | removed 5 
+2026-10-26 20:34:53 | categorical monotonicity done 
+2026-10-26 20:34:53 | stage 07 complete 
+==== stage 07 finished in 2.4 mins 
+
+==== stage 08 | R/08_robustness.R | 2026-10-26 20:34:53 
+2026-10-26 20:34:56 | municipal bootstrap done 
+2026-10-26 20:35:17 | zero constant 0.1 
+2026-10-26 20:35:17 | zero constant 0.01 
+2026-10-26 20:35:17 | zero constant 0.001 
+2026-10-26 20:35:17 | municipal reference main 
+2026-10-26 20:35:33 |   screening round 1 | removed 5 
+2026-10-26 20:35:39 | municipal reference no_screen 
+2026-10-26 20:35:40 | municipal reference screen_4 
+2026-10-26 20:36:09 | municipal reference screen_2 
+2026-10-26 20:36:13 | municipal reference V2_up_to_10_residents 
+2026-10-26 20:36:16 |   screening round 1 | removed 2 
+2026-10-26 20:37:28 | municipal reference V1_without_frontier 
+2026-10-26 20:37:35 |   screening round 1 | removed 2 
+2026-10-26 20:37:35 |   screening round 1 | removed 1 
+2026-10-26 20:37:35 |   screening round 1 | removed 1 
+2026-10-26 20:37:36 |   screening round 1 | removed 3 
+2026-10-26 20:37:41 |   screening round 2 | removed 2 
+2026-10-26 20:37:42 |   screening round 2 | removed 1 
+2026-10-26 20:37:44 | half-sample draw 2030 
+2026-10-26 20:37:46 |   screening round 2 | removed 1 
+2026-10-26 20:37:48 |   screening round 3 | removed 2 
+2026-10-26 20:37:51 | half-sample draw 2032 
+2026-10-26 20:37:56 | half-sample draw 2031 
+2026-10-26 20:38:00 | half-sample draw 2033 
+2026-10-26 20:38:00 |   screening round 1 | removed 3 
+2026-10-26 20:38:01 | half-sample draw 2029 
+2026-10-26 20:38:02 |   screening round 1 | removed 2 
+2026-10-26 20:38:07 |   screening round 2 | removed 2 
+2026-10-26 20:38:07 |   screening round 1 | removed 2 
+2026-10-26 20:38:08 |   screening round 2 | removed 1 
+2026-10-26 20:38:12 |   screening round 3 | removed 1 
+2026-10-26 20:38:13 |   screening round 1 | removed 1 
+2026-10-26 20:38:18 |   screening round 2 | removed 3 
+2026-10-26 20:38:19 | half-sample draw 2035 
+2026-10-26 20:38:19 | half-sample draw 2034 
+2026-10-26 20:38:23 |   screening round 2 | removed 2 
+2026-10-26 20:38:27 |   screening round 1 | removed 1 
+2026-10-26 20:38:27 |   screening round 3 | removed 2 
+2026-10-26 20:38:28 |   screening round 1 | removed 3 
+2026-10-26 20:38:32 |   screening round 3 | removed 1 
+2026-10-26 20:38:36 | half-sample draw 2039 
+2026-10-26 20:38:41 | half-sample draw 2036 
+2026-10-26 20:38:42 |   screening round 4 | removed 1 
+2026-10-26 20:38:43 |   screening round 2 | removed 1 
+2026-10-26 20:38:43 |   screening round 1 | removed 1 
+2026-10-26 20:38:52 | half-sample draw 2041 
+2026-10-26 20:38:53 | half-sample draw 2040 
+2026-10-26 20:38:55 | half-sample draw 2037 
+2026-10-26 20:39:02 | half-sample draw 2038 
+2026-10-26 20:39:04 | half-sample draw 2042 
+2026-10-26 20:39:06 | half-sample draw 2043 
+2026-10-26 20:39:06 | half-sample draw 2044 
+2026-10-26 20:39:07 |   screening round 1 | removed 3 
+2026-10-26 20:39:11 |   screening round 1 | removed 1 
+2026-10-26 20:39:13 |   screening round 2 | removed 4 
+2026-10-26 20:39:14 |   screening round 1 | removed 1 
+2026-10-26 20:39:15 |   screening round 2 | removed 3 
+2026-10-26 20:39:16 |   screening round 1 | removed 1 
+2026-10-26 20:39:22 | half-sample draw 2045 
+2026-10-26 20:39:22 |   screening round 2 | removed 2 
+2026-10-26 20:39:23 | half-sample draw 2048 
+2026-10-26 20:39:27 |   screening round 2 | removed 1 
+2026-10-26 20:39:28 |   screening round 3 | removed 2 
+2026-10-26 20:39:35 |   screening round 4 | removed 1 
+2026-10-26 20:39:38 |   screening round 3 | removed 1 
+2026-10-26 20:39:44 | half-sample draw 2047 
+2026-10-26 20:39:52 | half-sample draw 2046 
+2026-10-26 20:40:31 | alpha grid done 
+2026-10-26 20:40:44 |   screening round 1 | removed 2 
+2026-10-26 20:40:52 | delta 0.5 
+2026-10-26 20:40:53 | delta 1 
+2026-10-26 20:40:57 |   screening round 2 | removed 2 
+2026-10-26 20:41:14 | delta 0.25 
+2026-10-26 20:41:30 | excluded variables check done 
+2026-10-26 20:41:43 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 20:41:44 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 20:41:44 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 20:41:45 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 20:41:48 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 20:41:53 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 20:42:03 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 20:42:15 |   level 2.5 | candidates 349990 | frontier 12 
+2026-10-26 20:42:30 |   level 2 | candidates 493386 | frontier 13 
+2026-10-26 20:42:57 |   level 1.5 | candidates 789538 | frontier 15 
+2026-10-26 20:43:50 |   level 1 | candidates 1443667 | frontier 16 
+2026-10-26 20:44:20 |   level 0.5 | candidates 1358619 | frontier 16 
+2026-10-26 20:44:44 |   level 0 | candidates 1085668 | frontier 16 
+2026-10-26 20:49:50 | national reference no_screen | frontier 16 | screened 0 | dominance full 3 restricted 27 
+2026-10-26 20:49:51 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 20:49:51 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 20:49:51 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 20:49:52 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 20:49:56 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 20:50:00 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 20:50:10 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 20:50:24 |   level 2.5 | candidates 349990 | frontier 12 
+2026-10-26 20:50:39 |   level 2 | candidates 493386 | frontier 13 
+2026-10-26 20:51:06 |   level 1.5 | candidates 789538 | frontier 15 
+2026-10-26 20:51:59 |   level 1 | candidates 1443667 | frontier 16 
+2026-10-26 20:52:28 |   level 0.5 | candidates 1358619 | frontier 16 
+2026-10-26 20:52:51 |   level 0 | candidates 1085668 | frontier 16 
+2026-10-26 20:53:03 |   screening round 1 | removed 3 
+2026-10-26 20:53:03 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 20:53:03 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 20:53:03 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 20:53:04 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 20:53:08 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 20:53:12 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 20:53:22 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 20:53:37 |   level 2.5 | candidates 349988 | frontier 14 
+2026-10-26 20:54:03 |   level 2 | candidates 493388 | frontier 16 
+2026-10-26 20:54:49 |   level 1.5 | candidates 789541 | frontier 17 
+2026-10-26 20:56:05 |   level 1 | candidates 1443668 | frontier 21 
+2026-10-26 20:57:16 |   level 0.5 | candidates 1358624 | frontier 21 
+2026-10-26 20:58:11 |   level 0 | candidates 1085673 | frontier 22 
+2026-10-26 20:58:24 |   screening round 2 | removed 1 
+2026-10-26 20:58:24 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 20:58:24 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 20:58:25 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 20:58:25 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 20:58:29 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 20:58:34 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 20:58:43 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 20:58:59 |   level 2.5 | candidates 349988 | frontier 14 
+2026-10-26 20:59:25 |   level 2 | candidates 493387 | frontier 15 
+2026-10-26 21:00:11 |   level 1.5 | candidates 789540 | frontier 16 
+2026-10-26 21:01:25 |   level 1 | candidates 1443667 | frontier 21 
+2026-10-26 21:02:36 |   level 0.5 | candidates 1358624 | frontier 22 
+2026-10-26 21:03:34 |   level 0 | candidates 1085674 | frontier 23 
+2026-10-26 21:03:48 |   screening round 3 | removed 0 
+2026-10-26 21:09:17 | national reference screen_2 | frontier 23 | screened 4 | dominance full 3 restricted 27 
+2026-10-26 21:09:18 |   level 6 | candidates 451 | frontier 4 
+2026-10-26 21:09:18 |   level 5.5 | candidates 2514 | frontier 5 
+2026-10-26 21:09:18 |   level 5 | candidates 12334 | frontier 10 
+2026-10-26 21:09:19 |   level 4.5 | candidates 28207 | frontier 15 
+2026-10-26 21:09:23 |   level 4 | candidates 101403 | frontier 8 
+2026-10-26 21:09:27 |   level 3.5 | candidates 155320 | frontier 10 
+2026-10-26 21:09:37 |   level 3 | candidates 290871 | frontier 12 
+2026-10-26 21:09:50 |   level 2.5 | candidates 349990 | frontier 12 
+2026-10-26 21:10:04 |   level 2 | candidates 493386 | frontier 13 
+2026-10-26 21:10:31 |   level 1.5 | candidates 789538 | frontier 15 
+2026-10-26 21:11:25 |   level 1 | candidates 1443667 | frontier 16 
+2026-10-26 21:11:54 |   level 0.5 | candidates 1358619 | frontier 16 
+2026-10-26 21:12:16 |   level 0 | candidates 1085668 | frontier 16 
+2026-10-26 21:12:27 |   screening round 1 | removed 0 
+2026-10-26 21:17:33 | national reference screen_4 | frontier 16 | screened 0 | dominance full 3 restricted 27 
+2026-10-26 21:22:33 | stage 08 complete 
+==== stage 08 finished in 47.7 mins 
+
+==== stage 09 | R/09_manifest.R | 2026-10-26 21:22:33 
+2026-10-26 21:22:33 | stage 09 complete: 51 output files listed 
+==== stage 09 finished in 0 mins 
+PASS | batch GLPK equals lpSolve in the original multiplier form (max abs diff < 1e-8) 
+PASS | weak monotonicity: no score falls when a resource is halved 
+PASS | strict monotonicity with alpha > 0: every score rises 
+PASS | fixed reference: own score moves in the direction of the change 
+PASS | fixed reference: own score does not fall after losing a bathroom or formal job or gaining a resident 
+PASS | subgroup consistency under the fixed reference 
+PASS | categorical monotonicity: no score falls when the household moves to a more restricted group (main, cut-offs 2 and 4) 
+PASS | municipal: final frontiers contain no household removed by the screening 
+PASS | national: final frontiers contain no household removed by the screening 
+PASS | numerical example: M = 0.834375 
+All checks passed.
+code de sortie run_all : 0
+# ----
+# code de sortie : 0
+# durée (s)      : 3928

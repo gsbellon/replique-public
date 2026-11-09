@@ -1,0 +1,21 @@
+# commande : ssh sd-92569 curl -sS -L -I --max-time 30 https://www.unb.ca/cic/datasets/maldroid-2020.html
+# début    : 2026-10-22T19:00:42Z
+# ----
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-credentials: true
+content-type: text/html; charset=UTF-8
+date: Thu, 22 Oct 2026 19:00:43 GMT
+etag: "118a0-64ddc388149ff"
+last-modified: Wed, 25 Mar 2026 17:01:36 GMT
+referrer-policy: strict-origin-when-cross-origin
+server: Apache
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-xss-protection: 1; mode=block
+content-length: 71840
+
+# ----
+# code de sortie : 0
+# durée (s)      : 1

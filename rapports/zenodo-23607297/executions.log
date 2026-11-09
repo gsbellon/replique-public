@@ -1,0 +1,47 @@
+# commande : ssh sd-92569 cd ~/work/z23607297 && sh lance_executions.sh
+# début    : 2026-10-24T19:00:51Z
+# ----
+== A. script tel que livré, python recompute_from_release.py, répertoire = paquet
+Traceback (most recent call last):
+  File "/pkg/recompute_from_release.py", line 10, in <module>
+    rows = list(csv.DictReader(open(CSV, encoding='utf-8-sig')))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:/我的论文项目/平台化AI翻译文化折扣_2026/04_语料与数据/ltb_tableA1_extracted_20261023.csv'
+code de sortie A : 1
+== chemin attendu par le script
+8:CSV = r'D:/我的论文项目/平台化AI翻译文化折扣_2026/04_语料与数据/ltb_tableA1_extracted_20261023.csv'
+== B. copie modifiée : seule la ligne CSV = ... remplacée par /pkg/ltb_per_model_zscores.csv
+8c8
+< CSV = r'D:/我的论文项目/平台化AI翻译文化折扣_2026/04_语料与数据/ltb_tableA1_extracted_20261023.csv'
+---
+> CSV = r'/pkg/ltb_per_model_zscores.csv'
+=== 描述统计（从 CSV 独立计算） ===
+CN-developed  : n=7, mean=1.3841, median=1.1851, positive=7/7
+Non-CN        : n=24, mean=0.0089, median=-0.1221, positive=9/24
+ties present  : False
+observed U    : 156.0
+=== 精确检验（two-sided exact Mann–Whitney U） ===
+info: combinations counted=2629575 (expect C(31,7)=2629575)
+exact two-sided p = 1.8710e-04
+=== 与稿件声称值比对 ===
+PASS cn_n: recomputed=7, claimed=7
+PASS noncn_n: recomputed=24, claimed=24
+PASS cn_mean: recomputed=1.3840857142857141, claimed=1.3841
+PASS cn_median: recomputed=1.1851, claimed=1.1851
+PASS cn_positive: recomputed=7, claimed=7
+PASS noncn_mean: recomputed=0.008879166666666665, claimed=0.0089
+PASS noncn_median: recomputed=-0.12215, claimed=-0.1221
+PASS noncn_positive: recomputed=9, claimed=9
+PASS U: recomputed=156.0, claimed=156.0
+PASS p_two_sided: recomputed=0.00018710247853740623, claimed=0.000187
+ALL PASS
+code de sortie B : 0
+== md5
+9d488016fe58bc71ea2e32e2d32fee13  pkg/ATTRIBUTION.md
+ac0aae2699ac7b0ee894428ad11ecea2  pkg/README.md
+f8136fae24f386bb7bd619e79ca3623b  pkg/ltb_per_model_zscores.csv
+d5b73c3ddec49226af754c17fb5e6aed  pkg/recompute_from_release.py
+95aad473be3d6eae5f307b9460b423a6  patch/recompute_patched.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

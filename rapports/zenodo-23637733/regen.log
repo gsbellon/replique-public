@@ -1,0 +1,40 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && sh lance_regen.sh
+# début    : 2026-11-07T20:04:11Z
+# ----
+=================== ETAPE python3 simulation/run_public_pr_check.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_public_pr_check.py --snapshot results/public_prs_copilot_agent.json --prefix agent_pr --coding-sample 100 --codes results/agent_pr_codes.csv --claims simulation/clauses/agent_pr_claims.json --out results
+code de sortie : 0
+=================== ETAPE python3 simulation/run_merge_remedy.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_baselines.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_public_pr_check.py --snapshot results_holdout/public_prs_copilot_agent_holdout.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_holdout/out --coding-sample 150 --seed 20261022
+code de sortie : 0
+=================== ETAPE python3 simulation/run_holdout_comparison.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_heldout_eval.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_cluster_bootstrap.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_instrumentation_asymmetry.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_stress_breakeven.py
+code de sortie : 0
+=================== ETAPE python3 simulation/run_public_pr_check.py --snapshot results_devin/public_prs_devin.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_devin/out
+code de sortie : 0
+=================== ETAPE python3 simulation/run_second_agent_comparison.py
+code de sortie : 0
+=================== SHA256SUMS après régénération
+sha256sum: results/agent_pr_coding_design.csv: No such file or directory
+results/agent_pr_coding_design.csv: FAILED open or read
+results/instrumentation_asymmetry_copilot_later_window.csv: FAILED open or read
+sha256sum: results/instrumentation_asymmetry_copilot_later_window.csv: No such file or directory
+sha256sum: WARNING: 2 listed files could not be read
+lignes OK : 93 sur 95
+=================== fichiers absents ou différents de pkg/
+Only in pkg/replication_package/results: agent_pr_coding_design.csv
+Only in pkg/replication_package/results: instrumentation_asymmetry_copilot_later_window.csv
+# ----
+# code de sortie : 1
+# durée (s)      : 14

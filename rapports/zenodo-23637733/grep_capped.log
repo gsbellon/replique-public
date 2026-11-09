@@ -1,0 +1,21 @@
+# commande : ssh sd-92569 cd ~/work/z23637733/pkg/replication_package && grep -n -i "capped\|seed\|random\|shuffle\|sample(" simulation/run_public_pr_check.py
+# début    : 2026-11-07T20:03:20Z
+# ----
+27:import random
+78:    ap.add_argument("--seed", type=int, default=20260930)
+143:        rng = random.Random(args.seed)
+147:        capped = [x for rs in grouped.values() for x in rng.sample(rs, min(10, len(rs)))]
+148:        summary["approvals_capped10"] = len(capped)
+150:            summary[f"share_{c.replace('-', '_')}_capped10"] = round(
+151:                sum(x[c] == "admitted" for x in capped) / len(capped), 3)
+170:        taken = draw_sample(rows, args.coding_sample, args.per_repo, random.Random(args.seed))
+183:                         args.per_repo, args.design_reps, args.seed)
+303:def draw_sample(rows: list[dict], n: int, per_repo: int, rng: random.Random) -> list[dict]:
+307:    rng.shuffle(pool)
+318:def design_check(rows: list[dict], codes_path: Path, out: Path, per_repo: int, reps: int, seed: int) -> None:
+336:    rng = random.Random(seed + 1)
+339:        hits.update(key(r) for r in draw_sample(rows, len(codes), per_repo, rng))
+356:    boot = random.Random(seed + 2)
+# ----
+# code de sortie : 0
+# durée (s)      : 1

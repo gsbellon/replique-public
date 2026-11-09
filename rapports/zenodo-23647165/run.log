@@ -1,0 +1,62 @@
+# commande : ssh sd-92569 cd ~/work/z23647165 && sh lance_run.sh
+# début    : 2026-11-07T20:12:28Z
+# ----
+2026-11-07T20:12:29Z
+=================== ETAPE python3 verify_theory.py ../output
+[ok] phi closed forms = L / Laplace[survival] max rel. err 4.51e-15
+[ok] mean age of output, gamma lifetimes k=1 20.00000 vs 20.00000
+[ok] mean age of output, gamma lifetimes k=2 15.00000 vs 15.00000
+[ok] mean age of output, gamma lifetimes k=4 12.50000 vs 12.50000
+[ok] mean age of output, gamma lifetimes k=50 10.20000 vs 10.20000
+[ok] Lemma 1 (vintage simulation, fixed lifetime, lead, end-of-life) max rel. err 2.84e-05
+[ok] Lemma 1(ii): d ln eps/d gamma = -(mean age of output - mean age of input) max abs. err 2.35e-06
+[ok] Lemma 1(i): eps(0) equals the life-cycle EROI 6.000000
+[ok] Prop. 1(i): eps*(0) = static equivalent 4.5751
+[ok] Prop. 1(ii): d ln eps*/d gamma = Delta_E - w Delta_H max err 9.55e-11
+[ok] Prop. 2: eps* increasing in gamma under the sufficient condition (20,000 draws) violations: 0
+[ok] Prop. 2: closed forms of the parity growth rate (Lambert W; linear) = numerical root max abs. err 1.43e-15
+[ok] Prop. 3: viability limit, phi(rho) = L/T (fixed: Lambert W; exponential: 1/T - 1/L) max abs. err 2.78e-16
+[ok] Prop. S1: PV(N) <= V0 necessary and sufficient, nondecreasing demand (48 programmes) identity error 2.1e-03
+[ok] Prop. 1 by cohort accounting: Lambda_E = Lambda_H at eps* max rel. err 1.90e-04
+[ok] Prop. S1(iv), exponential lifetimes: N0 <= (rho - gamma) V(0) is sharp 
+[ok] Two burdens: F/eps = operation + S r(gamma) + S gamma (cohort sums) max rel. err 1.45e-07
+[ok] Fixed lifetime: r(gamma) = gamma / (exp(gamma L) - 1) 
+[ok] Exponential lifetimes: r(gamma) = 1/L 
+[ok] Prop. 3: discounted service life = payback time at rho; net output > 0 iff gamma < rho 
+[ok] Prop. 3: eps*(gamma) >= F_E(gamma) whenever U_H/F_H >= eta_H (20,000 draws) violations: 0
+[ok] End-use equipment: threshold equals parity by cohort accounting max rel. err 3.27e-09
+[ok] End-use equipment: no equipment -> Proposition 1 
+[ok] End-use equipment: identical equipment cancels out when invested energy is valued alike 
+[ok] Section S1.3: fixed lifetime is a bound on the anticipation factor (20,000 draws) violations: 0; smallest signed margin 1.72e-03
+[ok] Section S1.3: baseline required EROI is a lower bound under growth, an upper bound under contraction 
+[ok] Section S1.2: composite supply system, F = sum of s_i F_i (cohort sums) max rel. err 9.23e-09
+[ok] Section 2.4: build-out at a constant rate, reinvestment share above F/eps before the first retirements, equal to it afterwards max rel. err 2.47e-09
+[ok] Section 4.5: payback time = kappa L/(eps - 1 + kappa); parity iff payback <= T* (400 draws) max rel. err 2.42e-05
+[ok] Section 4.5: storage and network budget x* gives parity (cohort accounting, own lifetimes) max rel. err 7.08e-10
+[ok] Section 4.1: without up-front investment, flow ratio = life-cycle ratio; fossil capital goods counted lower the hydrocarbon flow ratio and the required EROI at every rate (20,000 draws) max rel. err 2.22e-16, violations: 0
+[ok] Prop. S1, scope: restrained paths of Eq. (S8) served iff the budget holds (12 programmes); a decreasing spike within the budget is not served 
+
+ALL CHECKS PASSED
+code de sortie : 0  (durée 20 s)
+=================== ETAPE sh -c python3 -I calibrate.py /data ../output > ../output/calibration_log.txt
+code de sortie : 0  (durée 2 s)
+=================== sorties régénérées
+total 100
+-rw-r--r-- 1 replab replab 13678 Nov  7 21:12 calibration_log.txt
+-rw-r--r-- 1 replab replab 81413 Nov  7 21:12 results.json
+-rw-r--r-- 1 replab replab    80 Nov  7 21:12 verification.json
+=================== diff livré / régénéré (sortie vide = identique)
+--- verification.json
+code cmp : 0
+--- results.json
+pkg/replication/output/results.json run/output/results.json differ: byte 1015, line 34
+code cmp : 1
+--- numbers_in_text.json
+cmp: run/output/numbers_in_text.json: No such file or directory
+code cmp : 2
+--- calibration_log.txt
+pkg/replication/output/calibration_log.txt run/output/calibration_log.txt differ: byte 11847, line 141
+code cmp : 1
+# ----
+# code de sortie : 0
+# durée (s)      : 23

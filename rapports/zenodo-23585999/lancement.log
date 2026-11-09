@@ -1,0 +1,28 @@
+# commande : ssh sd-92569 cd ~/work/z23585999 && sh lance_run.sh
+# début    : 2026-10-29T20:04:59Z
+# ----
+2026-10-29T20:04:59Z
+{
+  "status": "passed",
+  "input_files_verified": 5,
+  "subset_rows": 44775,
+  "subset_columns": 31,
+  "family_counts": {
+    "2022": 4595,
+    "2025": 4360
+  },
+  "joint_and_new_purchaser_exclusions": "passed",
+  "noisy_sufficient_exclusion": "passed; not a sharp noisy identified interval",
+  "flagship_data_source_hashes": "passed",
+  "manifest_checked": true
+}
+code verify --manifest : 0
+81f7b0a9aa532adf9c057e34cd0a62a0e63afdce2882e278fac9702774287395
+2026-10-29T20:05:01Z
+CONTAINER ID  IMAGE                           COMMAND               CREATED                 STATUS                   PORTS       NAMES
+87ad71e2299a  localhost/replab-oilecu:latest  bash run_all.sh       2 days ago              Exited (0) 47 hours ago              replab-oilecu-run
+160f803cc324  localhost/replab-oilecu:latest  bash run_all.sh       24 hours ago            Exited (0) 23 hours ago              replab-oilecu-run2
+81f7b0a9aa53  localhost/replab-ai306:latest   sh -c python3 run...  Less than a second ago  Up Less than a second                replab-ai306-run
+# ----
+# code de sortie : 0
+# durée (s)      : 2

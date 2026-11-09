@@ -1,0 +1,116 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && sh lance_build.sh
+# début    : 2026-11-07T20:01:24Z
+# ----
+STEP 1/2: FROM docker.io/library/python:3.13-slim
+STEP 2/2: RUN pip install --no-cache-dir annotated-types==0.7.0 defusedxml==0.7.1 numpy==2.2.1 pandas==2.3.3 pillow==12.1.1 pyarrow==23.0.1 pydantic==2.12.5 pydantic_core==2.41.5 python-dateutil==2.9.0.post0 python-dotenv==1.2.2 pytz==2026.1.post1 reportlab==4.4.10 six==1.17.0 typing-inspection==0.4.2 typing_extensions==4.15.0 scipy==1.17.0 pytest==9.0.2
+Collecting annotated-types==0.7.0
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting defusedxml==0.7.1
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting numpy==2.2.1
+  Downloading numpy-2.2.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting pandas==2.3.3
+  Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+Collecting pillow==12.1.1
+  Downloading pillow-12.1.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting pyarrow==23.0.1
+  Downloading pyarrow-23.0.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (3.1 kB)
+Collecting pydantic==2.12.5
+  Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting pydantic_core==2.41.5
+  Downloading pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting python-dateutil==2.9.0.post0
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting python-dotenv==1.2.2
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting pytz==2026.1.post1
+  Downloading pytz-2026.1.post1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting reportlab==4.4.10
+  Downloading reportlab-4.4.10-py3-none-any.whl.metadata (1.7 kB)
+Collecting six==1.17.0
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting typing-inspection==0.4.2
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting typing_extensions==4.15.0
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting scipy==1.17.0
+  Downloading scipy-1.17.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pytest==9.0.2
+  Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+Collecting tzdata>=2022.7 (from pandas==2.3.3)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting charset-normalizer (from reportlab==4.4.10)
+  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting iniconfig>=1.0.1 (from pytest==9.0.2)
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting packaging>=22 (from pytest==9.0.2)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest==9.0.2)
+  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting pygments>=2.7.2 (from pytest==9.0.2)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading numpy-2.2.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 99.4 MB/s  0:00:00
+Downloading pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 87.8 MB/s  0:00:00
+Downloading pillow-12.1.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 55.9 MB/s  0:00:00
+Downloading pyarrow-23.0.1-cp313-cp313-manylinux_2_28_x86_64.whl (47.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 101.1 MB/s  0:00:00
+Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
+Downloading pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 136.9 MB/s  0:00:00
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pytz-2026.1.post1-py2.py3-none-any.whl (510 kB)
+Downloading reportlab-4.4.10-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 116.3 MB/s  0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading scipy-1.17.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.0/35.0 MB 42.8 MB/s  0:00:00
+Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 120.7 MB/s  0:00:00
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+Installing collected packages: pytz, tzdata, typing_extensions, six, python-dotenv, pygments, pyarrow, pluggy, pillow, packaging, numpy, iniconfig, defusedxml, charset-normalizer, annotated-types, typing-inspection, scipy, reportlab, python-dateutil, pytest, pydantic_core, pydantic, pandas
+
+Successfully installed annotated-types-0.7.0 charset-normalizer-3.5.2 defusedxml-0.7.1 iniconfig-2.3.1 numpy-2.2.1 packaging-26.3 pandas-2.3.3 pillow-12.1.1 pluggy-1.7.0 pyarrow-23.0.1 pydantic-2.12.5 pydantic_core-2.41.5 pygments-2.21.0 pytest-9.0.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 pytz-2026.1.post1 reportlab-4.4.10 scipy-1.17.0 six-1.17.0 typing-inspection-0.4.2 typing_extensions-4.15.0 tzdata-2026.6
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-evid
+--> 8def55924bcc
+Successfully tagged localhost/replab-evid:latest
+8def55924bcc2e3da4c33f2b4762b378192eeb5b9bd8e36b8a49485cfe3dd6b8
+code de sortie build : 0
+3.13.18 (main, Nov  5 2026, 07:59:38) [GCC 14.2.0]
+2.2.1 1.17.0 2.3.3 23.0.1 9.0.2
+REPOSITORY                    TAG         IMAGE ID      CREATED        SIZE
+localhost/replab-evid         latest      8def55924bcc  9 seconds ago  625 MB
+localhost/replab-reach        latest      9e1d30aa4a4f  24 hours ago   765 MB
+localhost/replab-bodmpi       latest      6b6231faa145  2 days ago     989 MB
+docker.io/library/python      3.13-slim   c0e8df938051  2 days ago     123 MB
+docker.io/library/python      3.14-slim   d8f0d5177291  2 days ago     124 MB
+localhost/replab-nowcast      latest      2256e3f2c61d  4 days ago     1.14 GB
+<none>                        <none>      fcf36e51849b  4 days ago     1.13 GB
+localhost/replab-granularity  latest      76f679efc227  5 days ago     439 MB
+localhost/replab-cournot      latest      6380db5196a7  6 days ago     535 MB
+localhost/replab-autoscaling  latest      c4ba91a476fe  7 days ago     520 MB
+localhost/replab-ai306        latest      9643b511edbd  9 days ago     515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  11 days ago    1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  12 days ago    972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  12 days ago    202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  2 weeks ago    935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  4 weeks ago    124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 28

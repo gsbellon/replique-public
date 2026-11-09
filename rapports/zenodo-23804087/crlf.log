@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 cd ~/work/z23804087 && grep -c -P "\r$" pkg/results/scenario.md run/results/scenario.md pkg/results/scenario_metrics.json run/results/scenario_metrics.json
+# début    : 2026-11-01T20:01:21Z
+# ----
+pkg/results/scenario.md:39
+run/results/scenario.md:0
+pkg/results/scenario_metrics.json:0
+run/results/scenario_metrics.json:0
+# ----
+# code de sortie : 0
+# durée (s)      : 1

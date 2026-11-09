@@ -1,0 +1,28 @@
+# commande : ssh sd-92569 curl -sI -m 30 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/AC.zip; curl -sI -m 30 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Microdados_e_Areas_de_Ponderacao/Microdados_de_acesso_Publico/csv/Todas_as_UFs.zip
+# début    : 2026-10-26T20:06:15Z
+# ----
+HTTP/1.1 200 OK
+Date: Mon, 26 Oct 2026 20:06:15 GMT
+Server: Apache/2.4.37 (centos) OpenSSL/1.1.1k
+Last-Modified: Wed, 17 Aug 2016 14:06:30 GMT
+ETag: "47150f-53a44f8ce31e2"
+Accept-Ranges: bytes
+Content-Length: 4658447
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET
+Content-Type: application/zip
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Oct 2026 20:06:16 GMT
+Server: Apache/2.4.37 (centos) OpenSSL/1.1.1k
+Last-Modified: Mon, 14 Sep 2026 16:21:58 GMT
+ETag: "40d5b75d-65b73d5499580"
+Accept-Ranges: bytes
+Content-Length: 1087747933
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET
+Content-Type: application/zip
+
+# ----
+# code de sortie : 0
+# durée (s)      : 1

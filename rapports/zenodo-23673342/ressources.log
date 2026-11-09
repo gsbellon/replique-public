@@ -1,0 +1,24 @@
+# commande : ssh sd-92569 free -m; df -h /home; nproc; podman images
+# début    : 2026-11-05T20:01:34Z
+# ----
+               total        used        free      shared  buff/cache   available
+Mem:           64094        1408       50360           4       13042       62685
+Swap:          12578           0       12578
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/md1        928G   12G  870G   2% /
+8
+REPOSITORY                    TAG         IMAGE ID      CREATED      SIZE
+localhost/replab-nowcast      latest      2256e3f2c61d  2 days ago   1.14 GB
+<none>                        <none>      fcf36e51849b  2 days ago   1.13 GB
+localhost/replab-granularity  latest      76f679efc227  3 days ago   439 MB
+localhost/replab-cournot      latest      6380db5196a7  4 days ago   535 MB
+localhost/replab-autoscaling  latest      c4ba91a476fe  5 days ago   520 MB
+localhost/replab-ai306        latest      9643b511edbd  7 days ago   515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  9 days ago   1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  10 days ago  972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  10 days ago  202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  2 weeks ago  935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  4 weeks ago  124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 0

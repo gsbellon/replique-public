@@ -1,0 +1,8 @@
+# commande : ssh sd-92569 mkdir -p ~/work/z23511350/zip && cd ~/work/z23511350/zip && curl -s -m 120 -O 'https://zenodo.org/api/records/23511350/files/DFAR_Replication_Package_Final_Zenodo.zip/content' -o DFAR.zip ; curl -s -m 120 -o ~/work/z23511350/DFAR.zip 'https://zenodo.org/api/records/23511350/files/DFAR_Replication_Package_Final_Zenodo.zip/content' ; md5sum ~/work/z23511350/DFAR.zip ; unzip -l ~/work/z23511350/DFAR.zip
+# début    : 2026-10-26T20:00:39Z
+# ----
+bcbdf663c698f3709e974efbad0604c0  /home/replab/work/z23511350/DFAR.zip
+bash: line 1: unzip: command not found
+# ----
+# code de sortie : 127
+# durée (s)      : 1

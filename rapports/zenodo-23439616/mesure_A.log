@@ -1,0 +1,70 @@
+# commande : ssh sd-92569 cd ~/work/z23439616 && bash mesure_A.sh
+# début    : 2026-10-18T19:00:44Z
+# ----
+== arbre extrait
+run3/reproduce_results_cnsns.py
+
+run3:
+code
+reproduce_results_cnsns.py
+
+run3/code:
+cnsns_geometry.py
+mesh_cnsns.py
+results_cnsns_geometry.json
+results_cnsns_graded.json
+results_cnsns_study.json
+run_cnsns_geometric_study.py
+run_cnsns_graded_study.py
+run_cnsns_study.py
+== digest image
+docker.io/library/python:3.12-slim sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+== python dans l'image
+Python 3.12.15
+== exécution A (durée par le builtin time)
+répertoire du paquet : run3
+code retour A : 0
+== comparaison run3 / pristine_code
+-- study
+real 7.189 s  user 0.075 s  sys 0.030 s
+champs numériques comparés: 105
+écart relatif max: 0.0
+autres différences: 1
+  /software/python: '3.12.3' -> '3.12.15'
+-- geometry
+champs numériques comparés: 102190
+écart relatif max: 0.0
+autres différences: 0
+-- graded
+champs numériques comparés: 15580
+écart relatif max: 0.0
+autres différences: 0
+== sha256 run3
+943f9276b491b9caab2dc2451f6fb2535001718bd9ec29979b2b9681126ac61d  run3/code/results_cnsns_geometry.json
+6ebec08ed00bf7b3db5e88cf4a7c7b2c4989c1e0c2b3629a44028d0be6c76605  run3/code/results_cnsns_graded.json
+f0df58cca4f75004354b8717a22bd051de1fadbf35b0cfa273d5ec8c788cccc5  run3/code/results_cnsns_study.json
+== figures et tables
+run3/article:
+cnsns_geometric_results.tex
+cnsns_graded_results.tex
+cnsns_results.tex
+figures
+
+run3/article/figures:
+fig_cnsns_geometric_dynamics.pdf
+fig_cnsns_geometric_refinement.pdf
+fig_cnsns_geometric_shapes.pdf
+fig_cnsns_graded_convergence.pdf
+fig_cnsns_hydrodynamics.pdf
+fig_cnsns_volterra.pdf
+== nombre de trajectoires dans les JSON fournis (clés de premier niveau)
+study dict ['software', 'scope', 'sphere', 'moving']
+geometry dict ['solver_sha256', 'runs', 'main', 'temporal_refinement', 'mesh_refinement', 'modal_refinement', 'sphere_calibration', 'mobility_sensitivity', 'newton_difference_step_sensitivity']
+graded dict ['solver_sha256', 'runs', 'uniform_reduction_error', 'refinement']
+== JSON triés identiques (geometry, B vs fourni)
+dumps trié identique: True
+dumps non trié identique: False
+ordre des clés identique: True
+# ----
+# code de sortie : 0
+# durée (s)      : 9

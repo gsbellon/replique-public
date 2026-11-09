@@ -1,0 +1,16 @@
+# commande : ssh sd-92569 curl -s -m 60 https://zenodo.org/api/records/23585999/files/DOWNLOAD_AND_EXTRACT.txt/content
+# début    : 2026-10-29T20:03:03Z
+# ----
+Project 306 — v0024 complete offline replication
+
+Option A: extract 306_Replication_v0024_complete.zip.
+Option B: download and extract all three numbered ZIP files into the SAME empty folder:
+  306_Replication_v0024_1_scientific.zip
+  306_Replication_v0024_2_SCF2022.zip
+  306_Replication_v0024_3_SCF2025.zip
+The numbered files are ordinary ZIPs, not multipart fragments. Together they produce the exact same 2026-10-23 distribution as Option A. Both data archives are required for the complete runner. Do not extract each numbered ZIP into a separate subfolder.
+
+Read README.md. Before regeneration run python verify_release.py --manifest; then python run_all.py; then python verify_release.py. See RIGHTS_AND_PROVENANCE.md; no new author code/content license is implied.
+# ----
+# code de sortie : 0
+# durée (s)      : 0

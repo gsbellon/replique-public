@@ -1,0 +1,48 @@
+# commande : ssh sd-92569 cd ~/work/z23647165 && sh lance_build.sh
+# début    : 2026-11-07T20:12:01Z
+# ----
+STEP 1/2: FROM docker.io/library/python:3.13-slim
+STEP 2/2: RUN pip install --no-cache-dir numpy scipy
+Collecting numpy
+  Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting scipy
+  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 53.5 MB/s  0:00:00
+Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 53.7 MB/s  0:00:00
+Installing collected packages: numpy, scipy
+
+Successfully installed numpy-2.5.4 scipy-1.18.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-eroi
+--> d366f8f56536
+Successfully tagged localhost/replab-eroi:latest
+d366f8f5653639b44359a1d0efb0a4f5fdc22c82e7587d759542581eae58cde0
+code de sortie build : 0
+3.13.18 (main, Nov  5 2026, 07:59:38) [GCC 14.2.0]
+2.5.4 1.18.1
+REPOSITORY                    TAG         IMAGE ID      CREATED         SIZE
+localhost/replab-eroi         latest      d366f8f56536  4 seconds ago   341 MB
+localhost/replab-evid         latest      8def55924bcc  10 minutes ago  625 MB
+localhost/replab-reach        latest      9e1d30aa4a4f  24 hours ago    765 MB
+localhost/replab-bodmpi       latest      6b6231faa145  2 days ago      989 MB
+docker.io/library/python      3.13-slim   c0e8df938051  2 days ago      123 MB
+docker.io/library/python      3.14-slim   d8f0d5177291  2 days ago      124 MB
+localhost/replab-nowcast      latest      2256e3f2c61d  4 days ago      1.14 GB
+<none>                        <none>      fcf36e51849b  4 days ago      1.13 GB
+localhost/replab-granularity  latest      76f679efc227  5 days ago      439 MB
+localhost/replab-cournot      latest      6380db5196a7  6 days ago      535 MB
+localhost/replab-autoscaling  latest      c4ba91a476fe  7 days ago      520 MB
+localhost/replab-ai306        latest      9643b511edbd  9 days ago      515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  11 days ago     1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  12 days ago     972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  12 days ago     202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  2 weeks ago     935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  4 weeks ago     124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 13

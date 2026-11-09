@@ -1,0 +1,63 @@
+# commande : ssh sd-92569 cd ~/work/z23439616 && ls -la . run/code run2/code pristine_code
+# début    : 2026-10-18T19:00:16Z
+# ----
+.:
+total 1012
+drwxrwxr-x  7 replab replab   4096 Oct 17 21:00 .
+drwxrwxr-x  7 replab replab   4096 Oct 17 19:40 ..
+-rw-rw-r--  1 replab replab   1675 Oct 17 21:00 compare.py
+drwxrwxr-x 29 replab replab   4096 Oct 17 19:40 deps
+-rw-rw-r--  1 replab replab    688 Oct 17 21:00 lance_comparaison.sh
+-rw-rw-r--  1 replab replab    277 Oct 17 19:40 new.sha256
+-rw-rw-r--  1 replab replab 968148 Oct 17 19:40 pkg.zip
+drwxrwxr-x  2 replab replab   4096 Oct 17 19:40 pristine_code
+-rw-rw-r--  1 replab replab    277 Oct 17 19:40 pristine.sha256
+drwxrwxr-x  4 replab replab   4096 Oct 17 19:40 run
+drwxrwxr-x  4 replab replab   4096 Oct 17 19:40 run2
+-rw-rw-r--  1 replab replab  11196 Oct 17 19:54 run2.log
+-rw-rw-r--  1 replab replab   7894 Oct 17 19:40 run.log
+drwxrwxr-x  3 replab replab   4096 Oct 17 19:40 x
+
+pristine_code:
+total 3716
+drwxrwxr-x 2 replab replab    4096 Oct 17 19:40 .
+drwxrwxr-x 7 replab replab    4096 Oct 17 21:00 ..
+-rw-rw-r-- 1 replab replab   11817 Oct 17 19:40 cnsns_geometry.py
+-rw-rw-r-- 1 replab replab    1607 Oct 17 19:40 mesh_cnsns.py
+-rw-rw-r-- 1 replab replab 3186897 Oct 17 19:40 results_cnsns_geometry.json
+-rw-rw-r-- 1 replab replab  540902 Oct 17 19:40 results_cnsns_graded.json
+-rw-rw-r-- 1 replab replab    5210 Oct 17 19:40 results_cnsns_study.json
+-rw-rw-r-- 1 replab replab   13424 Oct 17 19:40 run_cnsns_geometric_study.py
+-rw-rw-r-- 1 replab replab    5849 Oct 17 19:40 run_cnsns_graded_study.py
+-rw-rw-r-- 1 replab replab   10210 Oct 17 19:40 run_cnsns_study.py
+
+run2/code:
+total 3720
+drwxrwxr-x 3 replab replab    4096 Oct 17 19:40 .
+drwxrwxr-x 4 replab replab    4096 Oct 17 19:40 ..
+-rw-rw-r-- 1 replab replab   11817 Oct 17 19:40 cnsns_geometry.py
+-rw-rw-r-- 1 replab replab    1607 Oct 17 19:40 mesh_cnsns.py
+drwxr-xr-x 2 replab replab    4096 Oct 17 19:40 __pycache__
+-rw-rw-r-- 1 replab replab 3186897 Oct 17 19:47 results_cnsns_geometry.json
+-rw-rw-r-- 1 replab replab  540902 Oct 17 19:54 results_cnsns_graded.json
+-rw-rw-r-- 1 replab replab    5211 Oct 17 19:40 results_cnsns_study.json
+-rw-rw-r-- 1 replab replab   13424 Oct 17 19:40 run_cnsns_geometric_study.py
+-rw-rw-r-- 1 replab replab    5849 Oct 17 19:40 run_cnsns_graded_study.py
+-rw-rw-r-- 1 replab replab   10210 Oct 17 19:40 run_cnsns_study.py
+
+run/code:
+total 3720
+drwxrwxr-x 3 replab replab    4096 Oct 17 19:40 .
+drwxrwxr-x 4 replab replab    4096 Oct 17 19:40 ..
+-rw-rw-r-- 1 replab replab   11817 Oct 17 19:40 cnsns_geometry.py
+-rw-rw-r-- 1 replab replab    1607 Oct 17 19:40 mesh_cnsns.py
+drwxr-xr-x 2 replab replab    4096 Oct 17 19:40 __pycache__
+-rw-rw-r-- 1 replab replab 3186897 Oct 17 19:40 results_cnsns_geometry.json
+-rw-rw-r-- 1 replab replab  540902 Oct 17 19:40 results_cnsns_graded.json
+-rw-rw-r-- 1 replab replab    5211 Oct 17 19:40 results_cnsns_study.json
+-rw-rw-r-- 1 replab replab   13424 Oct 17 19:40 run_cnsns_geometric_study.py
+-rw-rw-r-- 1 replab replab    5849 Oct 17 19:40 run_cnsns_graded_study.py
+-rw-rw-r-- 1 replab replab   10210 Oct 17 19:40 run_cnsns_study.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

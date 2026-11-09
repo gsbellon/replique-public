@@ -1,0 +1,49 @@
+# commande : ssh sd-92569 cd ~/work && ls -R z23437544 | head -40; grep -ril "download\|dataset" z23437544 | head
+# début    : 2026-10-23T19:00:57Z
+# ----
+z23437544:
+pkg.zip
+x
+
+z23437544/x:
+fig
+hasil
+mal_fig3.py
+mal_figs.py
+mal_figs_q1.py
+mal_rq1_7030.py
+mal_rq1.py
+mal_rq2_smote.py
+mal_rq3_shap.py
+mal_rq4_robust.py
+mal_rq5_xgb.py
+naskah
+
+z23437544/x/fig:
+fig_perclass_f1.pdf
+fig_perclass_f1.png
+fig_robustness.pdf
+fig_robustness.png
+fig_smote_leakage.pdf
+fig_smote_leakage.png
+
+z23437544/x/hasil:
+rq1_detection_7030.csv
+rq1_detection.csv
+rq2_smote_leakage.csv
+rq3_shap_perclass.csv
+rq4_robustness.csv
+rq5_smote_xgb.csv
+rq5_xgb_detection.csv
+split_test_idx.txt
+split_train_idx.txt
+
+z23437544/x/naskah:
+cover_letter_mal.txt
+highlights_mal.txt
+z23437544/x/naskah/references_mal.bib
+z23437544/x/naskah/README_reproduce.txt
+z23437544/x/naskah/manuscript_mal.tex
+# ----
+# code de sortie : 0
+# durée (s)      : 1

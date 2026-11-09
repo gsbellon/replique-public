@@ -1,0 +1,216 @@
+# commande : ssh sd-92569 cat work/z23804087/pkg/README.md
+# début    : 2026-11-01T20:00:37Z
+# ----
+# Replication Package — Switching Policy Specification
+
+Companion artifacts for the paper *"Cross-domain Specification of Switching Policies
+in Multi-level Simulation"* (submitted to the Journal of Systems and Software).
+
+Archived version: https://doi.org/10.5281/zenodo.23804087
+
+## Quick start
+
+```
+python3 tools/run_evaluation.py
+```
+
+That is the entire setup. Requirements: **Python >= 3.9, standard library only** —
+no packages to install, no environment variables, no paths to configure (all paths
+are resolved relative to the scripts). The command reproduces the tool-supported
+part of the paper's evaluation (Section *Evaluation*) and exits non-zero if any
+documented expectation is not met, so it doubles as a self-test of the package.
+
+It runs seven studies and writes reports to `results/`. Studies 1--5 are the
+mandatory, stdlib-only part; Studies 6--7 are the optional third-party
+bindings (skipped without failing the suite if SUMO/Mesa are not installed).
+They realize the paper's four evaluation methods as follows: method 1
+(expressiveness/coverage mapping) is analytical and lives in the paper plus
+`coding/coverage.csv`; method 2 (comparative expressiveness) = Study 3;
+method 3 (tool-supported analyzability) = Studies 1--2 and 5; method 4
+(executable instantiations) = Study 4 (E-site + traffic) and the optional
+Studies 6 (SUMO) and 7 (Mesa):
+
+1. **Well-formedness validation** (paper: Table "Tool-supported well-formedness
+   validation"): validates three well-formed example policies and six policies
+   with seeded violations against the constraints WF1, WF2, WF3a, WF3b, WF4,
+   WF5. Expected outcome: all valid instances pass; every seeded violation is
+   detected with exactly the expected constraint.
+2. **Policy-set analysis** (paper: paragraph "Static conflict, oscillation,
+   and rotation analysis"): analyzes a constructed conflicting set
+   (`ping-pong-conflict`) and its repaired counterpart (`hysteresis-safe`),
+   plus the n-policy rotation sets: `three-cycle-conflict` is well-formed in
+   isolation (limits and priorities present, pairwise analyses silent) and
+   must be flagged ONLY by the rotation analysis A3; `three-cycle-safe`
+   (pairwise-disjoint activation bands) must be clean.
+3. **Comparative expressiveness** (paper: Table "Comparative expressiveness"):
+   mechanically derives, from the machine-readable coding matrices, whether
+   each analyzed case is fully/partially/not expressible in ECA rules, Stitch,
+   the FCC framework, and the proposed metamodel. Additionally reports the
+   verdicts split into third-party sources vs. author-constructed scenarios
+   and runs a **one-cell sensitivity analysis** (every capability cell moved
+   one level up/down, all verdicts re-derived; `results/comparative_sensitivity.md`).
+4. **Executable instantiations** (paper: Section "Executable Instantiation"):
+   (a) *E-site*: the reference adaptation manager interprets the E-site policy
+   set and drives switching in a two-level simulation. Expected outcome:
+   policy-driven switching is cheaper than the always-detailed baseline and more
+   accurate than the always-coarse baseline; the decision-layer overhead is
+   measured (median over repeated runs, measurement environment recorded in
+   `results/scenario_metrics.json`); a **sensitivity section** re-derives the
+   headline numbers across cost ratios 4:1/8:1/16:1 and a second temperature
+   trace; and the oscillation ablation shows naive > cooldown-only > full
+   policy set in switch counts on a boundary-hover input. All decision
+   parameters (including the Execution.Limit cooldown and hysteresis and the
+   phenomena that the DeclarativeTarget's goal predicate requires) are read
+   from the policy XMI files, not from the harness.
+   (b) *Traffic (cross-simulator reuse)*: the **unmodified** adaptation manager
+   and policy parser interpret structurally identical policy XMI against a
+   second, independently implemented simulator (`examples/traffic-scenario/`)
+   through a second translation-layer adapter that shares no code with the
+   E-site adapter. Expected outcome: exactly two switches on the
+   approach–follow–recede input, cheaper than always-micro at zero relevance
+   error, stable on a boundary-hover input, and the import-identity check
+   confirming the decision layer is reused byte-for-byte.
+5. **Randomized differential validation** (paper: paragraph "Randomized
+   differential validation"): 500 seeded random threshold-structured policy
+   sets are executed with the unmodified adaptation manager on adversarial
+   boundary-hover input batteries; the observed runtime behavior (stable /
+   rate-bounded / fast alternation) is checked against the combined verdict
+   of validator and static analyses. Expected outcome: no fast-alternating
+   set escapes both validator and analyzer (E1); no alternating set goes
+   entirely unreported (E2); all three behavior classes occur (E3); and the
+   pre-refinement analyzer's misses are reproduced (E4) -- this study
+   discovered the pairwise-handover blind spot (now analysis A4), the
+   unsound all-temporal downgrade of the rotation analysis A3, and the
+   rate-bounded (rather than safe) nature of Limit/TemporalCondition
+   mitigation at a shared boundary (now an explicit A2 NOTE).
+
+## Contents
+
+| Path | Description |
+| --- | --- |
+| `switchingpolicy.ecore` | The metamodel as an EMF/Ecore model (normative structure): `SwitchingPolicy` with six aspects (`Condition`, `Evaluation`, `Target`, `Execution`, `Scope`, `Priority`), context layers, enumerations. |
+| `switchingpolicy.ocl` | The well-formedness constraints (WF1, WF2, WF3a, WF3b, WF4, WF5) as OCL invariants (normative constraints), plus three structural invariants without a WF number (see below). |
+| `tools/policy_model.py` | XMI parser / in-memory model for policy instances (stdlib only). |
+| `tools/validator.py` | Executable reference implementation of WF1–WF5 (with WF3 split into WF3a/WF3b), plus the structural invariants `OperandArity`, `RangeBounds`, `SwitchWindowNeedsBudget` (`check_structure`, reported separately, not part of the WF table). Also usable standalone: `python3 tools/validator.py <file-or-dir>`. |
+| `tools/analyzer.py` | Static policy-set analysis: A1 unresolved conflicts, A2 ping-pong/oscillation risks (antagonistic thresholds; rate-bounded mitigation reported as NOTE), A3 n-policy rotation risks (jointly satisfiable activation regions across >= 3 imperative targets), and A4 pairwise handover risks (the n = 2 rotation case, which declared Priorities do not prevent). Standalone: `python3 tools/analyzer.py <policyset-dir>`. |
+| `tools/comparative.py` | Derives the comparative-expressiveness verdicts from `coding/*.csv` with a fixed monotone rule (full/partial/no). |
+| `tools/adaptation_manager.py` | Reference adaptation manager: interprets policy instances (conditions incl. IN_RANGE, NOT, and the temporal operators HELD_FOR/WITHIN_WINDOW/SINCE_EVENT at any nesting depth; phase gating; the scope's temporal extent; prerequisites; declarative-target reasoning from the goal predicate over validity frames; per-policy limits: cooldown, switch budget incl. ONCE and `switchWindow`, hysteresis re-arm) and arbitrates policy sets by priority (ties by policy name, counted as conflicts). Semantics: section *Runtime semantics* below. |
+| `tools/test_runtime_semantics.py` | Unit tests of these runtime semantics, the parser additions, the structural checks, and the analyzer's handling of IN_RANGE/NOT. Not part of `run_evaluation.py`; run `python3 -m unittest discover -s tools -p "test_*.py"`. |
+| `tools/randomized_study.py` | Randomized differential validation of the static analyses against runtime ground truth (Study 5; deterministic, seed recorded in `results/randomized_metrics.json`). |
+| `tools/run_evaluation.py` | One-command driver + regression self-test; writes `results/`. |
+| `examples/esite-scenario/` | Executable two-level E-site simulation (`esite_simulation.py`), its policy sets (`policies/` well-formed, `policies-naive/` deliberately ill-formed), and the scenario driver `run_scenario.py` (incl. sensitivity analysis). |
+| `examples/traffic-scenario/` | Second executable two-level simulation (`traffic_simulation.py`, an independent translation-layer adapter in the traffic domain), its well-formed policy set (`policies/`), and the reuse driver `run_traffic.py`. |
+| `examples/sumo-binding/` | OPTIONAL third-party binding (microscopic traffic): TraCI-based translation layer (`sumo_adapter.py`) plus scenario files and driver (`run_sumo.py`) that drive SUMO with the SAME policy XMI files as the toy traffic scenario. Requires SUMO (`pip install eclipse-sumo traci sumolib`); reported as SKIPPED otherwise. `--mock` = wiring test only. |
+| `examples/mesa-binding/` | OPTIONAL third-party binding (agent-based paradigm): translation layer (`mesa_adapter.py`) + driver (`run_mesa.py`) that drive a Mesa ABM, realizing the View/Zoom multi-level patterns (per-agent level-of-detail by distance to a focus). Policies structurally identical to the traffic scenario's. Requires Mesa (`pip install mesa`); SKIPPED otherwise. `--mock` = wiring test only. |
+| `run_thirdparty_studies.ps1`, `run_sumo_study.ps1` | Windows helpers: create an isolated venv next to the script, install SUMO+Mesa (or SUMO only) into it, run the third-party stud(ies) and then the full suite. In the project repository they live in `../env/`; in this archive they sit at the root and auto-detect the layout. |
+| `examples/valid/` | Well-formed policy instances: E-site battery switch, Weber et al. time-boundary switch, Huang & Vittal held-out mode switch. |
+| `examples/invalid/` | Six seeded-violation instances (one per WF constraint variant) + `expected.json` (expected detections). |
+| `examples/policysets/` | `ping-pong-conflict/` + `hysteresis-safe/` (pairwise A1/A2 cases) and `three-cycle-conflict/` + `three-cycle-safe/` (n-policy rotation cases for A3). |
+| `static-domains.md` | Per-domain account of static (between-run) level selection, supplementing the synthesized static forms in Section 5.1 of the paper. |
+| `dynamic-domains.md` | Per-domain account of dynamic (within-run) switching, supplementing the synthesized dynamic forms in Section 5.1 of the paper. |
+| `recurrence.md` | Full pattern-recurrence grouping (five patterns × independent domains × shared policy shape), summarized in the paper's coverage-mapping section. |
+| `heldout_zehe.md` | Full aspect-by-aspect mapping of the second held-out case (zehe2015traffic), summarized in the paper. |
+| `mapping_weber2024.md` | Full aspect-by-aspect version of the two Weber2024 scenario mappings (time-based and component-based switch), summarized in the paper. |
+| `condition_examples.md` | Condition-type examples (Threshold/Relation) per context layer, summarized in the paper's Condition subsection. |
+| `reimplementation_availability.md` | Full availability assessment of the surveyed dynamic approaches (why external reimplementation was infeasible), summarized in the paper's executable-instantiation section. |
+| `coding/coverage.csv` | Coding sheet of the coverage analysis: 13 cases × 6 aspects, coded Explicit/Implicit/absent, with per-case rationale. |
+| `coding/requirements.csv` | Per case: the features it explicitly requires (derived from the explicit codings), with rationale. |
+| `coding/capabilities.csv` | Per formalism (ECA, Stitch, FCC, SPM) and feature: full/partial/none, with a written rationale per cell. **To challenge a verdict in the paper, edit the relevant cell and re-run.** |
+| `results/` | Generated reports (`validation.md`, `analysis.md`, `comparative.md`, `comparative_sensitivity.md`, `scenario.md`, `traffic.md`, `randomized.md`) and LaTeX rows for the paper tables. |
+
+## Relation between OCL and Python
+
+`switchingpolicy.ocl` is the normative formulation of the constraints;
+`tools/validator.py` is an executable reference implementation of the same
+invariants (correspondence: OCL `ObservablesReachableFromScope` ↔ WF1,
+`GoalPredicatePresent`/`UtilityFunctionPresent` ↔ WF2, `PositiveWindow`/
+`AtLeastTwoProperties` ↔ WF3a/WF3b, `OscillationSafety` ↔ WF4, `RankConsistency` ↔ WF5).
+The OCL file additionally states three structural invariants without a WF
+number, `OperandArity` (AND/OR ≥ 2 operands, NOT exactly 1), `RangeBounds`
+(`upperBound` set exactly for IN_RANGE, and not below `bound`), and
+`SwitchWindowNeedsBudget` (`switchWindow` needs `maxSwitches` and is > 0);
+`validator.check_structure` implements them and keeps them out of the WF
+validation table.
+The Python implementation exists so that the package runs anywhere without an
+Eclipse/EMF installation; users with EMF tooling can equivalently load the
+`.ecore` + `.ocl` pair and validate the XMI instances there.
+
+## Runtime semantics of the reference adaptation manager
+
+`tools/adaptation_manager.py` fixes one executable reading of the policy
+aspects; it is the reading the executable studies use.
+
+* **Evaluation points.** A call of `propose()` at which the policy's PhaseKind
+  is admissible, `now` lies in the closed interval of `Scope.temporalExtent`
+  (a missing bound is unbounded), and all evaluation prerequisites hold is an
+  evaluation point. Only there is the condition evaluated and can a policy be
+  re-armed.
+* **Conditions.** `IN_RANGE` reads the closed band `[bound, upperBound]`; NOT
+  negates its single operand; all operands are always evaluated. Temporal
+  operators are read over the samples at evaluation points, with state per
+  structurally equal TemporalCondition (also when nested; see *Shared temporal
+  state*), window w (0 if absent):
+  `HELD_FOR` holds once its inner condition has been true at every sample for
+  at least w; `WITHIN_WINDOW` holds if the inner condition was true at a sample
+  at most w ago (so the inner condition implies it); `SINCE_EVENT` holds once
+  at least w has passed since the last event, an event being a sample at which
+  the inner condition is true and was false at the previous sample (or no
+  previous sample exists).
+* **Shared temporal state.** Temporal conditions that are structurally equal
+  (operator, window, and inner tree incl. observables, operators, and bounds)
+  share one sample state, and within a `PolicySetManager` all policies share
+  it: equal temporal conditions of several policies are one variable, as in
+  the T01 encoding (one auxiliary variable), updated from the union of the
+  samples any of these policies takes. Policies with different evaluation
+  points (phase, temporal extent, evaluation prerequisites) therefore read the
+  same value whenever they evaluate at the same time. Sampling a node again in
+  the same round (one `step()` at one `now`) returns its first value and
+  updates nothing, so SINCE_EVENT sees each edge once. A stand-alone
+  `AdaptationManager` (e.g. one per agent in the Mesa binding) keeps its own
+  state.
+* **Targets.** An ImperativeTarget is applied directly. A DeclarativeTarget's
+  goal predicate is split at ` and ` into the clauses
+  `model.validityFrame covers currentOperatingPoint` and
+  `model.resolves(p1, ...)`; a bare comma list of phenomena is short for both
+  clauses. A predicate with any other clause is still accepted by the parser,
+  because the metamodel leaves the semantics of goal predicates to the
+  reasoning component (the reason is kept in `Policy.goal_error`); the default
+  reasoner raises `ValueError` when it has to evaluate such a predicate, and an
+  empty predicate remains a WF2 violation. The default
+  reasoner picks the cheapest library model satisfying all clauses (ties: first
+  in library order). It does not prefer the current model: if a cheaper model
+  also qualifies, the policy proposes a switch even when the current model is
+  valid. A UtilityTarget's function is not interpreted; the reasoner then
+  picks the cheapest model that covers the operating point and resolves the
+  phenomena an adapter may list under `required_phenomena`.
+* **Execution.** After a true condition and a target different from the
+  active model, a switch is blocked, in this order, by the policy's cooldown
+  (time since its *own* last switch), by its switch budget (`maxSwitches`;
+  pattern ONCE caps it at 1; counted over the whole run, or over the last
+  `switchWindow` time units), and, with `hysteresis`, until it is re-armed. A
+  policy starts armed, its own switch disarms it, and every evaluation point
+  with a false condition re-arms it, regardless of cooldown, budget,
+  satisfaction, or precedence. Execution prerequisites are checked last.
+* **Priority.** `PolicySetManager` lets the policy with the lowest explicit
+  rank switch (unranked policies yield to ranked ones). Among proposals of
+  equal minimal rank the policy with the smallest name wins, and if they want
+  different targets the round is counted in `conflicts` and logged with time
+  and policy names in `conflict_log`.
+
+## Scope
+
+The metamodel is intentionally confined to the *decision* layer. Model
+conversion, state transfer, and consistency maintenance are out of scope by
+design and are expected to be provided by a complementary conversion layer and
+simulator-specific adapters (the *Translation Layer* in the paper).
+
+The reference adaptation manager and the E-site scenario are intentionally
+minimal: they demonstrate that policies specified in the metamodel are
+operational and measure the decision-layer overhead, not the performance of a
+production simulator. Integrating the manager into a full-scale simulator is
+the natural next step; the `SimulationAdapter` protocol in
+`tools/adaptation_manager.py` is the single surface such an integration must
+implement.
+# ----
+# code de sortie : 0
+# durée (s)      : 1

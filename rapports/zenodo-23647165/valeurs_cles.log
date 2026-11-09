@@ -1,0 +1,30 @@
+# commande : ssh sd-92569 cd ~/work/z23647165 && cat run/output/verification.json && grep -n -i -E "baseline|5\.4[0-9]|5\.5" run/output/calibration_log.txt | head -20
+# début    : 2026-11-07T20:13:09Z
+# ----
+{
+ "n_checks": 32,
+ "all_passed": true,
+ "max_rel_error": 0.002092182882983267
+}8:baseline           3.40    3.76    4.16    4.58    5.02    5.48    5.97
+12:exponential        1.96    2.84    3.71    4.58    5.43    6.28    7.12
+15:kappa90            3.45    3.80    4.18    4.58    5.00    5.44    5.91
+16:kappa98            3.35    3.73    4.14    4.58    5.04    5.52    6.03
+18:capital            3.33    3.67    4.03    4.40    4.79    5.19    5.59
+20:polar              3.32    3.71    4.13    4.58    5.05    5.54    6.06
+22:baseline           1.63    1.81    2.00    2.20    2.41    2.64    2.87
+30:baseline        Delta_E   9.40  Delta_H  0.00  w 0.951  slope   9.40
+54:baseline        -10.16  -8.64  -7.75  -4.48  -4.17  -2.71  -1.39   0.06   0.96   2.65   3.06   6.79  10.16  12.39  17.92  30.99
+57:gamma4           -7.02  -6.12  -5.57  -3.38  -3.16  -2.10  -1.10   0.05   0.78   2.19   2.53   5.84   8.98  11.14  16.61  29.90
+60:lead2            -8.88  -7.51  -6.71  -3.83  -3.56  -2.30  -1.17   0.05   0.80   2.18   2.50   5.40   7.88   9.44  13.02  20.10
+68:baseline         -3.81  -2.06  -1.00   3.12   3.53   5.50   7.34   9.45  10.80  13.43  14.08  20.39  26.68  31.16  43.22  76.37
+70:exponential25    -1.34  -0.77  -0.39   1.36   1.56   2.55   3.54   4.75   5.57   7.21   7.63  11.87  16.28  19.48  28.09  51.27
+73:Viability (baseline)
+76:eps     2  T  9.69 yr  g_max    8.76%  self-cons 0% 0.500 2% 0.599  stock yrs 0%  18.80 2%  23.45  value yrs 2%  15.59
+79:eps   3.5  T  5.47 yr  g_max   19.45%  self-cons 0% 0.286 2% 0.342  stock yrs 0%   7.52 2%   8.17  value yrs 2%   6.33
+81:eps   4.6  T  4.14 yr  g_max   27.06%  self-cons 0% 0.217 2% 0.261  stock yrs 0%   5.22 2%   5.53  value yrs 2%   4.55
+114:Two burdens (baseline): stock S (years of gross output), shares of gross output
+141:ranges: {'-0.02': {'min': 2.403197647854752, 'max': 3.7649101002907397}, '+0.02': {'min': 5.483229796506422, 'max': 6.704702944388989}} {'-0.02': {'min': 3.402959939382395, 'max': 3.7649101002907397}, '+0.02': {'min': 5.483229796506422, 'max': 5.978761467324666}}
+143:baseline as a bound: {'scenarios': ['L25', 'L30', 'gamma4', 'exponential', 'exponential25', 'lead2'], 'min_signed_margin': 0.0772745856586079, 'holds': True}
+# ----
+# code de sortie : 0
+# durée (s)      : 0

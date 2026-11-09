@@ -1,0 +1,21 @@
+# commande : ssh sd-92569 cd ~/work/z23637733/pkg/replication_package && grep -n "later_window\|first_window\|argv\|add_argument\|coding_design\|design_reps" simulation/run_instrumentation_asymmetry.py simulation/run_public_pr_check.py
+# début    : 2026-11-07T20:04:29Z
+# ----
+simulation/run_instrumentation_asymmetry.py:15:snap = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "results/public_prs_copilot_agent.json")
+simulation/run_instrumentation_asymmetry.py:16:tag = sys.argv[2] if len(sys.argv) > 2 else "copilot_first_window"
+simulation/run_public_pr_check.py:72:    ap.add_argument("--snapshot", type=Path, default=here.parent / "results" / "public_prs_cpython.json")
+simulation/run_public_pr_check.py:73:    ap.add_argument("--clauses", type=Path, default=here / "clauses" / "public_review.json")
+simulation/run_public_pr_check.py:74:    ap.add_argument("--out", type=Path, default=here.parent / "results")
+simulation/run_public_pr_check.py:75:    ap.add_argument("--prefix", default="public_pr")
+simulation/run_public_pr_check.py:76:    ap.add_argument("--coding-sample", type=int, default=0)
+simulation/run_public_pr_check.py:77:    ap.add_argument("--per-repo", type=int, default=3)
+simulation/run_public_pr_check.py:78:    ap.add_argument("--seed", type=int, default=20260930)
+simulation/run_public_pr_check.py:79:    ap.add_argument("--codes", type=Path, help="CSV con los códigos de los dos codificadores")
+simulation/run_public_pr_check.py:80:    ap.add_argument("--claims", type=Path, help="cláusulas por PR (clauses/agent_pr_claims.json)")
+simulation/run_public_pr_check.py:81:    ap.add_argument("--design-reps", type=int, default=0,
+simulation/run_public_pr_check.py:181:        if args.design_reps:
+simulation/run_public_pr_check.py:182:            design_check(rows, args.codes, args.out / f"{args.prefix}_coding_design.csv",
+simulation/run_public_pr_check.py:183:                         args.per_repo, args.design_reps, args.seed)
+# ----
+# code de sortie : 0
+# durée (s)      : 1

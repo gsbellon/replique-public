@@ -1,0 +1,28 @@
+# commande : ssh sd-92569 cd ~/work/z23439616 && bash mesure_B.sh
+# début    : 2026-10-18T19:01:07Z
+# ----
+== CPU de l'hôte
+8
+code retour B : 0
+== comparaison run4 / pristine_code
+-- study
+real 858.176 s  user 0.560 s  sys 0.468 s
+champs numériques comparés: 105
+écart relatif max: 0.0
+autres différences: 1
+  /software/python: '3.12.3' -> '3.12.15'
+-- geometry
+champs numériques comparés: 102190
+écart relatif max: 0.0
+autres différences: 0
+-- graded
+champs numériques comparés: 15580
+écart relatif max: 0.0
+autres différences: 0
+== sha256 run4
+f357b22d7084567e653a4ebec578c8f10ddf030847f31c705fc5ce4d2d90ed06  run4/code/results_cnsns_geometry.json
+6ebec08ed00bf7b3db5e88cf4a7c7b2c4989c1e0c2b3629a44028d0be6c76605  run4/code/results_cnsns_graded.json
+f0df58cca4f75004354b8717a22bd051de1fadbf35b0cfa273d5ec8c788cccc5  run4/code/results_cnsns_study.json
+# ----
+# code de sortie : 0
+# durée (s)      : 858

@@ -1,0 +1,5 @@
+FROM docker.io/library/python:3.13-slim
+# requirements.txt du paquet, sans pymc/arviz/pymongo (réservés par le README à nhpp_llm_econ.py, coverage_check.py,
+# sensitivity.py et jira_extract_bugs.py, hors de la vérification rapide). Versions installées relevées dans build.log.
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir "numpy>=1.26" "scipy>=1.11" "pandas>=2.1" "matplotlib>=3.8" "pyarrow>=15" "statsmodels>=0.14"

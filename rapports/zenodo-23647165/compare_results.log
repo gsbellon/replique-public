@@ -1,0 +1,23 @@
+# commande : ssh sd-92569 cd ~/work/z23647165 && python3 -I compare_json.py pkg/replication/output/results.json run/output/results.json
+# début    : 2026-11-07T20:13:04Z
+# ----
+feuilles livré: 2077 régénéré: 2077
+seulement dans le livré: 0 []
+seulement dans le régénéré: 0 []
+feuilles identiques: 1912
+feuilles non numériques différentes: 0 []
+feuilles numériques différentes: 165
+écart relatif max: 8.8e-12 | écart absolu max: 8.53e-14
+  rel 8.8e-12 abs 4.01e-15 /g_star/gamma4/4.6 livré=0.00045605788220989184 régénéré=0.00045605788221390485
+  rel 8.91e-15 abs 4.77e-18 /g_star/polar/4.6 livré=0.0005355436903517712 régénéré=0.0005355436903517664
+  rel 2.63e-15 abs 2.43e-17 /g_star/kappa98/5 livré=0.009229167791078682 régénéré=0.009229167791078657
+  rel 2.15e-15 abs 4.51e-17 /g_star/gamma4/3.5 livré=-0.02096329424917336 régénéré=-0.020963294249173314
+  rel 1.9e-15 abs 1.91e-17 /g_star/kappa90/5 livré=0.010027908621290098 régénéré=0.010027908621290079
+  rel 1.78e-15 abs 4.51e-17 /g_star/capital_coal/5 livré=0.025305522129489617 régénéré=0.025305522129489572
+  rel 1.63e-15 abs 1.91e-17 /g_star/lead2/4 livré=-0.011708196789751157 régénéré=-0.011708196789751176
+  rel 1.58e-15 abs 1.91e-17 /g_star/capital_oilgas/5 livré=0.012082573077196705 régénéré=0.012082573077196724
+  rel 1.37e-15 abs 8.67e-18 /g_star/capital_coal/4 livré=-0.006334270959075351 régénéré=-0.006334270959075359
+  rel 1.15e-15 abs 2.43e-17 /end_uses/High temperature heating/g_star/11.4 livré=0.02108754371513978 régénéré=0.021087543715139757
+# ----
+# code de sortie : 0
+# durée (s)      : 0

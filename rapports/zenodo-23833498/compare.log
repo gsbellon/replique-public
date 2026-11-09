@@ -1,0 +1,41 @@
+# commande : ssh sd-92569 cd ~/work/z23833498 && sh compare.sh
+# début    : 2026-11-02T20:12:15Z
+# ----
+DIFFERENT  archetype_results.json
+IDENTIQUE extended_results.json
+DIFFERENT  robustness_results.json
+DIFFERENT  figures/Figure_1.png
+DIFFERENT  figures/Figure_2.png
+DIFFERENT  figures/Figure_3.png
+DIFFERENT  figures/Figure_4.png
+DIFFERENT  figures/Figure_5.png
+DIFFERENT  figures/Figure_6.png
+DIFFERENT  figures/Figure_7.png
+DIFFERENT  figures/Figure_8.png
+--- sha256 livrés
+6e6045d6140f5dcf2b142c39b0a160a98a9be29806ed0e752121a6e823c79775  pkg/archetype_results.json
+7ca5b4ec9c946db4c4d4f799b13fc2c2699cb4fd4cc4b1a1a701504f65559a39  pkg/extended_results.json
+00fc49b2b534c0fc045ee57c2164101b9224efdbdde3e8b6ce5eb2e05ceb8fe9  pkg/robustness_results.json
+a9788a706c5c0486576e8c1ddc0d0963f45df9c158a5a8ecc1cb8df7f2e4d016  pkg/figures/Figure_1.png
+fd429c4d3dafb0ab86c7f3008a1ba54946a60220bb66e96d37fc7ff90c0c122f  pkg/figures/Figure_2.png
+6fff63a151c23ca28503636d3fcac6766c0d49a3bbd80afa5030d4846608f8f1  pkg/figures/Figure_3.png
+185cba61f4f379f14a670842a910cb28b0abc8a139cafa58a20c3cffd2c60b69  pkg/figures/Figure_4.png
+6646aeb338fcde72b17f3d38a900b7a047146665e79f75f534495e810a0c67bb  pkg/figures/Figure_5.png
+c61ec075a47033a9d2337497ed7f442fa0735ea7b6cc2535871899d8b055219b  pkg/figures/Figure_6.png
+9a86e1b07a682417f1d05bd6dc3d582ba26cbda353ba6aa23c1375ddb788e0fc  pkg/figures/Figure_7.png
+a400b69c03fa564f74c514179c08c192b3f7a5251c863028a4fa047c945007d2  pkg/figures/Figure_8.png
+--- sha256 régénérés
+a10e4188d753c731eb49e2644e1c16427ec1264f246c6d14d19e69112524d629  run/archetype_results.json
+7ca5b4ec9c946db4c4d4f799b13fc2c2699cb4fd4cc4b1a1a701504f65559a39  run/extended_results.json
+b2d6788cedba671ebb4b30a8573e2305c8791e04be6cbce80447964612fca45c  run/robustness_results.json
+e9344402e7e7cc23f1daffa52743029eb70c925ec340888b02f815ac76c26138  run/figures/Figure_1.png
+64bbe39f7501eb3f98074947c60512693119d161b940d2278e1f2055380494dd  run/figures/Figure_2.png
+134cfa672b13023334982523905635be9d1c921c521babc9814a523c84c37050  run/figures/Figure_3.png
+1efec71e2cd19b7b2d3451f827a02d4f68d5b312125b90a2bd75c018f99a81cb  run/figures/Figure_4.png
+11b6439afb5560c133c97cc0beab65cc96045c4dafdb5b8a6df6afc34971576b  run/figures/Figure_5.png
+3fd992b0c47a3e7e6d706f3b234e88ecd8b406d52a45f3f9b3c2bbc0ec387292  run/figures/Figure_6.png
+7184d11e8af6114d25fa715fd1a320cb06b7c3ae759a46fe896dd378db46bccf  run/figures/Figure_7.png
+b8f8f940b6f56ebf45e597546eaa204eb0442d4d9de50fdb2560c8204713e793  run/figures/Figure_8.png
+# ----
+# code de sortie : 0
+# durée (s)      : 0

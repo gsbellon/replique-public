@@ -1,0 +1,21 @@
+# commande : ssh sd-92569 cd work/z23607297/pkg && ls -la && rm -f content && for f in README.md ltb_per_model_zscores.csv recompute_from_release.py ATTRIBUTION.md; do curl -s -m 30 -o $f https://zenodo.org/api/records/23607297/files/$f/content; done; ls -la; md5sum *
+# début    : 2026-10-24T19:00:31Z
+# ----
+total 12
+drwxrwxr-x 2 replab replab 4096 Oct 24 21:00 .
+drwxrwxr-x 3 replab replab 4096 Oct 24 21:00 ..
+-rw-rw-r-- 1 replab replab  902 Oct 24 21:00 content
+total 28
+drwxrwxr-x 2 replab replab 4096 Oct 24 21:00 .
+drwxrwxr-x 3 replab replab 4096 Oct 24 21:00 ..
+-rw-rw-r-- 1 replab replab  902 Oct 24 21:00 ATTRIBUTION.md
+-rw-rw-r-- 1 replab replab 1102 Oct 24 21:00 ltb_per_model_zscores.csv
+-rw-rw-r-- 1 replab replab 2011 Oct 24 21:00 README.md
+-rw-rw-r-- 1 replab replab 4544 Oct 24 21:00 recompute_from_release.py
+9d488016fe58bc71ea2e32e2d32fee13  ATTRIBUTION.md
+f8136fae24f386bb7bd619e79ca3623b  ltb_per_model_zscores.csv
+ac0aae2699ac7b0ee894428ad11ecea2  README.md
+d5b73c3ddec49226af754c17fb5e6aed  recompute_from_release.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

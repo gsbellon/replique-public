@@ -1,0 +1,16 @@
+# commande : ssh sd-92569 cd ~/work/z23637733/pkg/replication_package && ls results_devin/out | wc -l; ls results_devin/out; find . -type f | wc -l; find results_holdout/out -type f | wc -l; grep -c "results/\|results_holdout/\|results_devin/" replication/SHA256SUMS
+# début    : 2026-11-07T20:05:33Z
+# ----
+6
+agent_pr_by_org.csv
+agent_pr_claims.csv
+agent_pr_claims_summary.csv
+agent_pr_run_manifest.json
+agent_pr_summary.csv
+agent_pr_verdicts.csv
+101
+8
+57
+# ----
+# code de sortie : 0
+# durée (s)      : 0

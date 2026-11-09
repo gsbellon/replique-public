@@ -1,0 +1,19 @@
+# commande : ssh sd-92569 sudo nft list table inet replab; sudo nft list chain ip filter ufw-user-output
+# début    : 2026-11-05T20:01:47Z
+# ----
+table inet replab {
+	chain out {
+		type filter hook output priority filter + 10; policy accept;
+		meta skuid 1001 ct state new limit rate 20/second burst 5 packets log prefix "replab-out "
+	}
+}
+table ip filter {
+	chain ufw-user-output {
+		tcp dport 25 counter packets 0 bytes 0 drop
+		tcp dport 465 counter packets 0 bytes 0 drop
+		tcp dport 587 counter packets 0 bytes 0 drop
+	}
+}
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,232 @@
+# commande : ssh sd-92569 cd ~/work/z23864979 && sh lance_run.sh
+# début    : 2026-11-01T20:06:41Z
+# ----
+=================== A_closed_forms.py
+2026-11-01T20:06:41Z
+=== SCRIPT 1: core closed forms on the star K_{1,3} with symbolic a,b,gamma,c_i ===
+FOC_i == dP/dq_i for all i: True
+SOC d2pi_i/dq_i^2 = -2*b
+FOC at q=Ru all zero: True
+w = R1 = [(3*gamma - 2)/(3*gamma**2 - 4), (gamma - 2)/(3*gamma**2 - 4), (gamma - 2)/(3*gamma**2 - 4), (gamma - 2)/(3*gamma**2 - 4)]
+Q - w^T u = 0: True
+dQ/dc_i = [(2 - 3*gamma)/(b*(3*gamma**2 - 4)), (2 - gamma)/(b*(3*gamma**2 - 4)), (2 - gamma)/(b*(3*gamma**2 - 4)), (2 - gamma)/(b*(3*gamma**2 - 4))]
+(I+gA)R == I-R: True
+Pi = b q'q at equilibrium: True
+CS = U - p'q = (b/2) q'(I+gA)q: True
+dQ/dt at t=0 minus predicted =  0
+dPi/dt at t=0 minus predicted =  0
+dCS/dt at t=0 minus predicted =  0
+dW/dt at t=0 minus predicted =  0
+W'' - (1/b) d'R(3I+gA)Rd = 0
+f_W(x) derivative: gamma*(-gamma*x - 4)/(gamma*x + 2)**3
+f_CS'(x) = -gamma**2*x/(gamma*x + 2)**3
+f_Pi'(x) = -4*gamma/(gamma*x + 2)**3
+f_Q'(x) = -gamma/(gamma*x + 2)**2
+
+=== SCRIPT 2: K_n reduction, n=2..6 symbolic ===
+2 w entries all equal 1/(2-g+g n): True | Rw entries all equal 1/(2-g+g n)^2: True
+3 w entries all equal 1/(2-g+g n): True | Rw entries all equal 1/(2-g+g n)^2: True
+4 w entries all equal 1/(2-g+g n): True | Rw entries all equal 1/(2-g+g n)^2: True
+5 w entries all equal 1/(2-g+g n): True | Rw entries all equal 1/(2-g+g n)^2: True
+6 w entries all equal 1/(2-g+g n): True | Rw entries all equal 1/(2-g+g n)^2: True
+K_n, gamma=1: Q = (n a - sum c)/((n+1) b)  [w=1/(n+1)]
+code A_closed_forms : 0
+durée A_closed_forms (s) : 7
+=================== B_atlas_search.py
+2026-11-01T20:06:48Z
+=== SCRIPT 2b: K_n, Rw = 1/(2-g+g n)^2 * 1 ===
+2 True
+3 True
+4 True
+5 True
+6 True
+
+=== SCRIPT 3: search for non-regular connected graphs in Theta with f_CS(A)1 proportional to 1 (CS first-order neutral) ===
+non-regular connected graphs n<=7 checked: 980
+CS-neutral non-regular cases found (name,n,degrees,lam1,lam2,gamma,w-Rw,interior w>0):
+('G17', 4, [2, 2, 3, 3], np.float64(2.5616), np.float64(-1.5616), 0.25, array([0.235294, 0.235294, 0.235294, 0.235294]), np.True_)
+('G42', 5, [2, 2, 2, 2, 4], np.float64(2.5616), np.float64(-1.5616), 0.25, array([0.235294, 0.235294, 0.235294, 0.235294, 0.235294]), np.True_)
+('G46', 5, [2, 2, 2, 4, 4], np.float64(3.0), np.float64(-2.0), 0.166667, array([0.24, 0.24, 0.24, 0.24, 0.24]), np.True_)
+('G51', 5, [3, 3, 4, 4, 4], np.float64(3.6458), np.float64(-1.6458), 0.333333, array([0.214286, 0.214286, 0.214286, 0.214286, 0.214286]), np.True_)
+('G79', 6, [1, 1, 1, 1, 3, 3], np.float64(2.0), np.float64(-1.0), 0.5, array([0.222222, 0.222222, 0.222222, 0.222222, 0.222222, 0.222222]), np.True_)
+('G161', 6, [2, 2, 2, 2, 5, 5], np.float64(3.3723), np.float64(-2.3723), 0.125, array([0.242424, 0.242424, 0.242424, 0.242424, 0.242424, 0.242424]), np.True_)
+('G163', 6, [2, 2, 2, 4, 4, 4], np.float64(3.2361), np.float64(-1.2361), 0.5, array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2]), np.True_)
+('G187', 6, [3, 3, 3, 3, 3, 5], np.float64(3.4495), np.float64(-1.4495), 0.4, array([0.208333, 0.208333, 0.208333, 0.208333, 0.208333, 0.208333]), np.True_)
+('G190', 6, [3, 3, 3, 3, 4, 4], np.float64(3.3723), np.float64(-2.3723), 0.125, array([0.242424, 0.242424, 0.242424, 0.242424, 0.242424, 0.242424]), np.True_)
+('G195', 6, [3, 3, 3, 3, 5, 5], np.float64(3.8284), np.float64(-1.8284), 0.285714, array([0.21875, 0.21875, 0.21875, 0.21875, 0.21875, 0.21875]), np.True_)
+('G201', 6, [3, 3, 3, 5, 5, 5], np.float64(4.1623), np.float64(-2.1623), 0.222222, array([0.225, 0.225, 0.225, 0.225, 0.225, 0.225]), np.True_)
+('G207', 6, [4, 4, 5, 5, 5, 5], np.float64(4.7016), np.float64(-1.7016), 0.375, array([0.195122, 0.195122, 0.195122, 0.195122, 0.195122, 0.195122]), np.True_)
+('G551', 7, [2, 2, 2, 2, 2, 2, 6], np.float64(3.0), np.float64(-2.0), 0.166667, array([0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24]), np.True_)
+('G790', 7, [2, 2, 2, 2, 2, 6, 6], np.float64(3.7016), np.float64(-2.7016), 0.1, array([0.243902, 0.243902, 0.243902, 0.243902, 0.243902, 0.243902,
+       0.243902]), np.True_)
+('G870', 7, [2, 3, 3, 3, 3, 4, 4], np.float64(3.2361), np.float64(-1.2361), 0.5, array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]), np.True_)
+('G1008', 7, [3, 3, 3, 3, 3, 3, 6], np.float64(3.6458), np.float64(-1.6458), 0.333333, array([0.214286, 0.214286, 0.214286, 0.214286, 0.214286, 0.214286,
+       0.214286]), np.True_)
+('G1009', 7, [3, 3, 3, 3, 3, 3, 6], np.float64(3.6458), np.float64(-1.6458), 0.333333, array([0.214286, 0.214286, 0.214286, 0.214286, 0.214286, 0.214286,
+       0.214286]), np.True_)
+('G1184', 7, [3, 3, 3, 3, 6, 6, 6], np.float64(4.6056), np.float64(-2.6056), 0.166667, array([0.230769, 0.230769, 0.230769, 0.230769, 0.230769, 0.230769,
+       0.230769]), np.True_)
+('G1205', 7, [3, 4, 4, 4, 5, 5, 5], np.float64(4.3723), np.float64(-1.3723), 0.5, array([0.181818, 0.181818, 0.181818, 0.181818, 0.181818, 0.181818,
+       0.181818]), np.True_)
+('G1212', 7, [4, 4, 4, 4, 4, 5, 5], np.float64(4.3166), np.float64(-2.3166), 0.2, array([0.227273, 0.227273, 0.227273, 0.227273, 0.227273, 0.227273,
+       0.227273]), np.True_)
+('G1227', 7, [4, 4, 4, 4, 4, 6, 6], np.float64(4.7016), np.float64(-1.7016), 0.375, array([0.195122, 0.195122, 0.195122, 0.195122, 0.195122, 0.195122,
+       0.195122]), np.True_)
+('G1233', 7, [4, 4, 4, 5, 5, 5, 5], np.float64(4.6056), np.float64(-2.6056), 0.166667, array([0.230769, 0.230769, 0.230769, 0.230769, 0.230769, 0.230769,
+       0.230769]), np.True_)
+('G1238', 7, [4, 4, 4, 4, 6, 6, 6], np.float64(5.0), np.float64(-2.0), 0.3, array([0.204082, 0.204082, 0.204082, 0.204082, 0.204082, 0.204082,
+       0.204082]), np.True_)
+('G1245', 7, [4, 4, 4, 6, 6, 6, 6], np.float64(5.2749), np.float64(-2.2749), 0.25, array([0.210526, 0.210526, 0.210526, 0.210526, 0.210526, 0.210526,
+       0.210526]), np.True_)
+('G1250', 7, [5, 5, 5, 5, 6, 6, 6], np.float64(5.4641), np.float64(-1.4641), 0.5, array([0.166667, 0.166667, 0.166667, 0.166667, 0.166667, 0.166667,
+       0.166667]), np.True_)
+('G1251', 7, [5, 5, 6, 6, 6, 6, 6], np.float64(5.7417), np.float64(-1.7417), 0.4, array([0.178571, 0.178571, 0.178571, 0.178571, 0.178571, 0.178571,
+       0.178571]), np.True_)
+code B_atlas_search : 0
+durée B_atlas_search (s) : 2
+=================== C_wheel_example.py
+2026-11-01T20:06:50Z
+=== SCRIPT 4 (corrected): wheel W_4 (hub 0 + 4-cycle 1-2-3-4), gamma = 1/2, exact ===
+eigenvalues of A: {-2: 1, 1 - sqrt(5): 1, 1 + sqrt(5): 1, 0: 2}
+gamma*lam_min = -1 = -1.0  >= -1: True
+degrees: [4, 3, 3, 3, 3]
+w      = [1/5, 3/10, 3/10, 3/10, 3/10]  w>0: True
+w - Rw = [1/5, 1/5, 1/5, 1/5, 1/5]  constant: True
+w + Rw = [1/5, 2/5, 2/5, 2/5, 2/5]  constant: False
+Rw     = [0, 1/10, 1/10, 1/10, 1/10]  constant: False
+h(1+sqrt5) == h(1-sqrt5): True = 1/5
+code C_wheel_example : 0
+durée C_wheel_example (s) : 1
+=================== D_random_draws.py
+2026-11-01T20:06:51Z
+DRAW COUNTS: {'draws': 12000, 'regular': 3297, 'nonregular': 8703, 'Kn': 2447, 'A4_resamples': 11}
+VIOLATION COUNTS: {'fd_Q': 0, 'fd_Pi': 0, 'fd_CS': 0, 'fd_W': 0, 'Wpp_pos': 0, 'CSpp_nonneg': 0, 'regular_all_zero': 0, 'nonreg_wRw_nonconst': 0, 'nonreg_dstar_lowers_W': 0, 'thmA_grad_const_iff_reg': 0, 'prop2_sign': 0, 'prop3_Kn': 0, 'KKT_at_Ru': 0, 'fd_Wpp': 0}
+TOTAL VIOLATIONS: 0
+code D_random_draws : 0
+durée D_random_draws (s) : 6
+=================== E_curvature_corners_figures.py
+2026-11-01T20:06:57Z
+=== [NUMERICAL] 1: curvature E in {0,0.5,1,2}; symmetric costs; first-order welfare effect of spreads ===
+E=0.0: regular graphs with W'(0)=0: 154/154; non-regular sign(W'(0)) agrees with linear rule -(w+Rw)'d: 246/246; d* lowers W (t=1e-3): 246/246; solver failures skipped: 0
+E=0.5: regular graphs with W'(0)=0: 153/153; non-regular sign(W'(0)) agrees with linear rule -(w+Rw)'d: 246/247; d* lowers W (t=1e-3): 247/247; solver failures skipped: 0
+E=1.0: regular graphs with W'(0)=0: 159/159; non-regular sign(W'(0)) agrees with linear rule -(w+Rw)'d: 241/241; d* lowers W (t=1e-3): 241/241; solver failures skipped: 0
+E=2.0: regular graphs with W'(0)=0: 155/155; non-regular sign(W'(0)) agrees with linear rule -(w+Rw)'d: 239/240; d* lowers W (t=1e-3): 240/240; solver failures skipped: 5
+
+=== [NUMERICAL] 2: spread past the A4 boundary (linear model, K_{1,3}, gamma=1/2, a=10,b=1,cbar=2) ===
+d* = [-0.86603  0.28868  0.28868  0.28868]  (positive entries = firms receiving cost)
+W(0)=70.43787; min W=63.28098 at t=3.020; first exit from interior at t=None; W at t=8: 82.95046
+  $K_4$ (regular): interior up to t=4.8400
+  $K_{1,3}$ (star): interior up to t=7.0000 (whole range)
+  $W_4$ (wheel): interior up to t=7.0000 (whole range)
+figures written
+code E_curvature_corners_figures : 0
+durée E_curvature_corners_figures (s) : 5
+=================== F_policy_transfers.py
+2026-11-01T20:07:02Z
+=== Corollary 8: optimal zero-sum transfer ===
+
+--- star K_{1,3} (gamma=0.5) ---
+  w       = [0.153846 0.461538 0.461538 0.461538]
+  w+Rw    = [0.035503 0.721893 0.721893 0.721893]
+  ||P_perp(w+Rw)||          = 0.594432
+  d_opt                     = [ 0.866025 -0.288675 -0.288675 -0.288675]
+  max W'(0) = ubar*||.||    = 4.755453
+  marginal revenue at d_opt, sum_i d_i q_i(0) = -2.131755
+  ||Pi_[1,w](w+Rw)||        = 0.000000   (= 0: w+Rw lies in span{1,w})
+
+--- wheel W_4 (gamma=0.5) ---
+  w       = [0.2 0.3 0.3 0.3 0.3]
+  w+Rw    = [0.2 0.4 0.4 0.4 0.4]
+  ||P_perp(w+Rw)||          = 0.178885
+  d_opt                     = [ 0.894427 -0.223607 -0.223607 -0.223607 -0.223607]
+  max W'(0) = ubar*||.||    = 1.431084
+  marginal revenue at d_opt, sum_i d_i q_i(0) = -0.715542
+  ||Pi_[1,w](w+Rw)||        = 0.000000   (= 0: w+Rw lies in span{1,w})
+
+--- complete K_4 (regular) (gamma=0.5) ---
+  w       = [0.285714 0.285714 0.285714 0.285714]
+  w+Rw    = [0.367347 0.367347 0.367347 0.367347]
+  regular graph: P_perp(w+Rw) = 0, every zero-sum direction gives W'(0)=0
+
+--- path P_5 (gamma=0.5) ---
+  w       = [0.423077 0.307692 0.346154 0.307692 0.423077]
+  w+Rw    = [0.616864 0.378698 0.483728 0.378698 0.616864]
+  ||P_perp(w+Rw)||          = 0.238497
+  d_opt                     = [-0.51109   0.48752   0.047139  0.48752  -0.51109 ]
+  max W'(0) = ubar*||.||    = 1.907977
+  marginal revenue at d_opt, sum_i d_i q_i(0) = -0.929046
+  ||Pi_[1,w](w+Rw)||        = 0.022683
+  revenue-neutral d_opt     = [ 0.147442  0.294884 -0.884652  0.294884  0.147442]
+    1'd = +6.1e-14, w'd = +2.3e-14, ||d|| = 1.000000
+  max W'(0) subject to revenue neutrality = 0.181467
+
+=== Corollary 9: exact span{1,w} membership on the two examples ===
+
+  K_{1,3}, gamma=1/2: w = [2/13, 6/13, 6/13, 6/13]
+     w+Rw = [6/169, 122/169, 122/169, 122/169]
+     w+Rw = a*1 + b*w with [{a: -4/13, b: 29/13}]
+
+  W_4, gamma=1/2: w = [1/5, 3/10, 3/10, 3/10, 3/10]
+     w+Rw = [1/5, 2/5, 2/5, 2/5, 2/5]
+     w+Rw = a*1 + b*w with [{a: -1/5, b: 2}]
+
+=== size of the transfer on the star: welfare and the hub's exit ===
+  W(0) = 70.4379; hub exits at t = 1.8475; W(t)-W(0) there = 11.4821 (16.30% of W(0))
+
+=== Corollary 10: receipts counted in social surplus ===
+
+--- star K_{1,3} (gamma=0.5) ---
+  W'(0) at d_opt(Cor 8)            = 4.755453
+  marginal receipts sum d_i q_i(0) = -2.131755
+  W_soc'(0) = sum of the two       = 2.623698
+  identity check  -ubar*(Rw)'d     = 2.623698
+  fiscal optimum ||P_perp(Rw)||    = 0.327962   max W_soc'(0) = 2.623698
+  same direction as Corollary 8?   True
+
+--- wheel W_4 (gamma=0.5) ---
+  W'(0) at d_opt(Cor 8)            = 1.431084
+  marginal receipts sum d_i q_i(0) = -0.715542
+  W_soc'(0) = sum of the two       = 0.715542
+  identity check  -ubar*(Rw)'d     = 0.715542
+  fiscal optimum ||P_perp(Rw)||    = 0.089443   max W_soc'(0) = 0.715542
+  same direction as Corollary 8?   True
+
+--- path P_5 (gamma=0.5) ---
+  W'(0) at d_opt(Cor 8)            = 1.907977
+  marginal receipts sum d_i q_i(0) = -0.929046
+  W_soc'(0) = sum of the two       = 0.978931
+  identity check  -ubar*(Rw)'d     = 0.978931
+  fiscal optimum ||P_perp(Rw)||    = 0.122868   max W_soc'(0) = 0.982947
+  same direction as Corollary 8?   False
+
+--- complete K_4 (regular) (gamma=0.5) ---
+  regular: ||P_perp(w+Rw)|| = 2.2e-16, ||P_perp(Rw)|| = 9.1e-17; both effects vanish
+
+=== exhaustive comparison of the two decision rules ===
+
+  connected non-regular graphs with n<=7 tested: 980
+  connected regular graphs skipped (both criteria vanish): 14
+  largest shortfall from the Corollary-8 direction: 1.311%
+  attained at n=7, degree sequence [2, 2, 4, 4, 4, 4, 4], gamma=0.5000
+code F_policy_transfers : 0
+durée F_policy_transfers (s) : 2
+=================== fichiers produits dans run/
+total 324
+-rw-rw-r-- 1 replab replab  2822 Nov  1 21:05 A_closed_forms.py
+-rw-rw-r-- 1 replab replab  1931 Nov  1 21:05 B_atlas_search.py
+-rw-rw-r-- 1 replab replab   929 Nov  1 21:05 C_wheel_example.py
+-rw-rw-r-- 1 replab replab  3825 Nov  1 21:05 D_random_draws.py
+-rw-rw-r-- 1 replab replab  7151 Nov  1 21:05 E_curvature_corners_figures.py
+-rw-r--r-- 1 replab replab 19188 Nov  1 21:07 fig1_welfare_paths.pdf
+-rw-r--r-- 1 replab replab 81796 Nov  1 21:07 fig1_welfare_paths.png
+-rw-r--r-- 1 replab replab 38494 Nov  1 21:07 fig1_welfare_paths.svg
+-rw-r--r-- 1 replab replab 20760 Nov  1 21:07 fig2_star_centrality.pdf
+-rw-r--r-- 1 replab replab 70022 Nov  1 21:07 fig2_star_centrality.png
+-rw-r--r-- 1 replab replab 36062 Nov  1 21:07 fig2_star_centrality.svg
+-rw-rw-r-- 1 replab replab  7563 Nov  1 21:05 F_policy_transfers.py
+-rw-rw-r-- 1 replab replab  1079 Nov  1 21:05 LICENSE
+-rw-rw-r-- 1 replab replab  2595 Nov  1 21:05 README.md
+-rw-r--r-- 1 replab replab  9752 Nov  1 21:07 star_W_path.npy
+# ----
+# code de sortie : 0
+# durée (s)      : 23

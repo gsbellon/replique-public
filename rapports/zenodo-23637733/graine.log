@@ -1,0 +1,44 @@
+# commande : ssh sd-92569 cd ~/work/z23637733 && sh lance_graine.sh
+# début    : 2026-11-07T20:03:34Z
+# ----
+=================== CAS a1 : python3 simulation/run_public_pr_check.py --snapshot results_holdout/public_prs_copilot_agent_holdout.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_holdout/out
+{'author': 'app/copilot-swe-agent', 'orgs': 'dotnet,microsoft,Azure', 'since': '2026-09-15', 'until': '2026-10-20', 'pull_requests': 901, 'pull_requests_with_human_approval': 713, 'approvals': 969, 'admitted_EC_SW_01': 133, 'admitted_EC_SW_01c': 93, 'approval_without_any_comment': 831, 'comments_only_after_approval': 5, 'withheld_with_approval_note': 88, 'share_admitted': 0.137, 'share_consequential': 0.096, 'share_approval_only': 0.858, 'admitted_EC_SW_01b': 174, 'share_admitted_with_conversation': 0.18, 'repositories': 172, 'max_approvals_one_repo': 98, 'approvals_capped10': 577, 'share_EC_SW_01_capped10': 0.144, 'share_EC_SW_01b_capped10': 0.187, 'share_EC_SW_01c_capped10': 0.095}
+{'pull_requests': 901, 'check_result_admitted': 813, 'ci_pass': 645, 'ci_fail': 168, 'ci_incomplete': 63, 'ci_none': 25, 'agent_attributed_admitted': 492, 'agent_attributed_contradicted': 350, 'agent_withheld_person_commits': 263, 'agent_withheld_only_person_merges': 85, 'agent_withheld_other_bot_commits': 1, 'agent_withheld_unattributed_commits': 6, 'agent_withheld_no_check_result': 54, 'prs_with_requester_commits': 225, 'prs_with_other_human_commits': 51, 'prs_with_requester_and_other_commits': 13, 'review_admitted': 163, 'review_withheld': 550, 'review_not_applicable': 188, 'capability_admitted': 0, 'check_result_state_evidence-missing': 88, 'agent_attributed_state_evidence-missing': 53, 'agent_attributed_state_evidenced-divergent': 350, 'agent_attributed_state_identity-unresolved': 6, 'review_state_partial': 550, 'capability_state_unobservable-by-design': 901}
+code de sortie : 0
+pkg/replication_package/results_holdout/out/agent_pr_summary.csv run2/results_holdout/out/agent_pr_summary.csv differ: byte 588, line 2
+agent_pr_by_org.csv identique au livré
+agent_pr_claims.csv identique au livré
+agent_pr_claims_summary.csv identique au livré
+agent_pr_coding_sample.csv identique au livré
+agent_pr_run_manifest.json identique au livré
+agent_pr_verdicts.csv identique au livré
+results_holdout/out/agent_pr_summary.csv: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+=================== CAS a2 : python3 simulation/run_public_pr_check.py --snapshot results_holdout/public_prs_copilot_agent_holdout.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_holdout/out
+{'author': 'app/copilot-swe-agent', 'orgs': 'dotnet,microsoft,Azure', 'since': '2026-09-15', 'until': '2026-10-20', 'pull_requests': 901, 'pull_requests_with_human_approval': 713, 'approvals': 969, 'admitted_EC_SW_01': 133, 'admitted_EC_SW_01c': 93, 'approval_without_any_comment': 831, 'comments_only_after_approval': 5, 'withheld_with_approval_note': 88, 'share_admitted': 0.137, 'share_consequential': 0.096, 'share_approval_only': 0.858, 'admitted_EC_SW_01b': 174, 'share_admitted_with_conversation': 0.18, 'repositories': 172, 'max_approvals_one_repo': 98, 'approvals_capped10': 577, 'share_EC_SW_01_capped10': 0.144, 'share_EC_SW_01b_capped10': 0.187, 'share_EC_SW_01c_capped10': 0.095}
+{'pull_requests': 901, 'check_result_admitted': 813, 'ci_pass': 645, 'ci_fail': 168, 'ci_incomplete': 63, 'ci_none': 25, 'agent_attributed_admitted': 492, 'agent_attributed_contradicted': 350, 'agent_withheld_person_commits': 263, 'agent_withheld_only_person_merges': 85, 'agent_withheld_other_bot_commits': 1, 'agent_withheld_unattributed_commits': 6, 'agent_withheld_no_check_result': 54, 'prs_with_requester_commits': 225, 'prs_with_other_human_commits': 51, 'prs_with_requester_and_other_commits': 13, 'review_admitted': 163, 'review_withheld': 550, 'review_not_applicable': 188, 'capability_admitted': 0, 'check_result_state_evidence-missing': 88, 'agent_attributed_state_evidence-missing': 53, 'agent_attributed_state_evidenced-divergent': 350, 'agent_attributed_state_identity-unresolved': 6, 'review_state_partial': 550, 'capability_state_unobservable-by-design': 901}
+code de sortie : 0
+pkg/replication_package/results_holdout/out/agent_pr_summary.csv run2/results_holdout/out/agent_pr_summary.csv differ: byte 588, line 2
+agent_pr_by_org.csv identique au livré
+agent_pr_claims.csv identique au livré
+agent_pr_claims_summary.csv identique au livré
+agent_pr_coding_sample.csv identique au livré
+agent_pr_run_manifest.json identique au livré
+agent_pr_verdicts.csv identique au livré
+results_holdout/out/agent_pr_summary.csv: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+=================== CAS b : python3 simulation/run_public_pr_check.py --snapshot results_holdout/public_prs_copilot_agent_holdout.json --prefix agent_pr --claims simulation/clauses/agent_pr_claims.json --out results_holdout/out --coding-sample 150 --seed 20261022
+{'author': 'app/copilot-swe-agent', 'orgs': 'dotnet,microsoft,Azure', 'since': '2026-09-15', 'until': '2026-10-20', 'pull_requests': 901, 'pull_requests_with_human_approval': 713, 'approvals': 969, 'admitted_EC_SW_01': 133, 'admitted_EC_SW_01c': 93, 'approval_without_any_comment': 831, 'comments_only_after_approval': 5, 'withheld_with_approval_note': 88, 'share_admitted': 0.137, 'share_consequential': 0.096, 'share_approval_only': 0.858, 'admitted_EC_SW_01b': 174, 'share_admitted_with_conversation': 0.18, 'repositories': 172, 'max_approvals_one_repo': 98, 'approvals_capped10': 577, 'share_EC_SW_01_capped10': 0.144, 'share_EC_SW_01b_capped10': 0.184, 'share_EC_SW_01c_capped10': 0.099}
+coding sample: 150 approvals from 90 repositories
+{'pull_requests': 901, 'check_result_admitted': 813, 'ci_pass': 645, 'ci_fail': 168, 'ci_incomplete': 63, 'ci_none': 25, 'agent_attributed_admitted': 492, 'agent_attributed_contradicted': 350, 'agent_withheld_person_commits': 263, 'agent_withheld_only_person_merges': 85, 'agent_withheld_other_bot_commits': 1, 'agent_withheld_unattributed_commits': 6, 'agent_withheld_no_check_result': 54, 'prs_with_requester_commits': 225, 'prs_with_other_human_commits': 51, 'prs_with_requester_and_other_commits': 13, 'review_admitted': 163, 'review_withheld': 550, 'review_not_applicable': 188, 'capability_admitted': 0, 'check_result_state_evidence-missing': 88, 'agent_attributed_state_evidence-missing': 53, 'agent_attributed_state_evidenced-divergent': 350, 'agent_attributed_state_identity-unresolved': 6, 'review_state_partial': 550, 'capability_state_unobservable-by-design': 901}
+code de sortie : 0
+agent_pr_summary.csv identique au livré
+agent_pr_by_org.csv identique au livré
+agent_pr_claims.csv identique au livré
+agent_pr_claims_summary.csv identique au livré
+agent_pr_coding_sample.csv identique au livré
+agent_pr_run_manifest.json identique au livré
+agent_pr_verdicts.csv identique au livré
+# ----
+# code de sortie : 1
+# durée (s)      : 2

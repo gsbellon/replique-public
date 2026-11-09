@@ -1,0 +1,82 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh lance_build.sh
+# début    : 2026-10-31T20:01:34Z
+# ----
+STEP 1/3: FROM docker.io/library/python:3.12-slim
+STEP 2/3: COPY requirements.txt /tmp/requirements.txt
+--> 03836131876d
+STEP 3/3: RUN pip install --no-cache-dir -r /tmp/requirements.txt
+Collecting numpy>=1.24 (from -r /tmp/requirements.txt (line 1))
+  Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting scipy>=1.10 (from -r /tmp/requirements.txt (line 2))
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pandas>=2.0 (from -r /tmp/requirements.txt (line 3))
+  Downloading pandas-3.1.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+Collecting matplotlib>=3.7 (from -r /tmp/requirements.txt (line 4))
+  Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting python-dateutil>=2.9.0 (from pandas>=2.0->-r /tmp/requirements.txt (line 3))
+  Downloading python_dateutil-3.0.0-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting contourpy>=1.0.1 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib>=3.7->-r /tmp/requirements.txt (line 4))
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting six>=1.6 (from python-dateutil>=2.9.0->pandas>=2.0->-r /tmp/requirements.txt (line 3))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting tzdata (from python-dateutil>=2.9.0->pandas>=2.0->-r /tmp/requirements.txt (line 3))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 108.3 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 98.6 MB/s eta 0:00:00
+Downloading pandas-3.1.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 117.7 MB/s eta 0:00:00
+Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 104.8 MB/s eta 0:00:00
+Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 118.4 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 120.1 MB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 117.4 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-3.0.0-py2.py3-none-any.whl (94 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, python-dateutil, contourpy, pandas, matplotlib
+Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.4 packaging-26.3 pandas-3.1.0 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-3.0.0 scipy-1.18.1 six-1.17.0 tzdata-2026.6
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-autoscaling
+--> c4ba91a476fe
+Successfully tagged localhost/replab-autoscaling:latest
+c4ba91a476fe5f76e45172edb863ec5f3bfa4d7fca12ba3bd06f7ff1676032c7
+code de sortie build : 0
+mkdir -p failed for path /root/.config/matplotlib: [Errno 30] Read-only file system: '/root/.config'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-c54gir1m because there was an issue with the default path (/root/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+3.12.15 (main, Oct  6 2026, 02:02:22) [GCC 14.2.0]
+2.5.4 1.18.1 3.1.0 3.11.2
+REPOSITORY                    TAG         IMAGE ID      CREATED        SIZE
+localhost/replab-autoscaling  latest      c4ba91a476fe  7 seconds ago  520 MB
+localhost/replab-ai306        latest      9643b511edbd  2 days ago     515 MB
+localhost/replab-oilecu       latest      06bad8fb8d13  4 days ago     1.42 GB
+localhost/replab-deamph       latest      9b5c45084ba9  5 days ago     972 MB
+localhost/replab-dfar-numpy   latest      39357d37a54e  5 days ago     202 MB
+docker.io/library/r-base      latest      0811f9b7a3d8  10 days ago    935 MB
+docker.io/library/python      3.12-slim   df18428df8a0  3 weeks ago    124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 24

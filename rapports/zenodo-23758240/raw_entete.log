@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 head -3 ~/work/z23758240/run/results/raw_results.csv; cat ~/work/z23758240/lance_compare_csv.sh
+# début    : 2026-10-31T20:06:58Z
+# ----
+magnitude,duration,ramp,delta,seed,policy,sla_viol_rate,mean_replicas,over_prov,under_prov,utilisation,p95_rt,drop_rate,actions,forecast_mae,burst_viol_rate
+1,120,10,0,0,hybrid,0.0013680583704904744,15.50030303030303,1.4163636363636363,0.6187878787878788,0.642208853828514,0.057443348888393746,0.0,4,5.312531411105789,
+1,120,10,0,0,pred_holt,0.002675314146736928,14.945757575757575,1.0787878787878789,0.8357575757575758,0.6660372880148886,0.05962132230022789,0.0,5,5.312531411105789,
+#!/bin/sh
+# Ligne d'appel (depuis le pilote, à la racine du dépôt) :
+#   scp rapports/zenodo-23758240/compare_csv.py rapports/zenodo-23758240/lance_compare_csv.sh sd-92569:work/z23758240/
+#   bin/capture.sh rapports/zenodo-23758240/comparaison_csv.log 'cd ~/work/z23758240 && sh lance_compare_csv.sh'
+python3 -I compare_csv.py pkg/autoscaling-sensitivity-study/results run/results
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,41 @@
+# commande : ssh sd-92569 cat ~/work/z23437544/x/naskah/README_reproduce.txt
+# début    : 2026-10-23T19:01:01Z
+# ----
+Reproduction package - "How Valid Are Reported Android Malware Detection
+Scores?" (CICMalDroid2020 validity study)
+Zenodo: https://doi.org/10.5281/zenodo.23437544
+
+CONTENTS
+  mal_rq1.py / mal_rq1_7030.py  - honest detection baseline (RF), 70/30
+  mal_rq2_smote.py              - SMOTE-before-split leakage (RF, 3 protocols)
+  mal_rq3_shap.py               - per-category SHAP drivers
+  mal_rq4_robust.py             - add-only feature-space evasion + defense
+  mal_rq5_xgb.py                - XGBoost replication + imbalance confirm
+  mal_figs.py / mal_fig3.py     - figures
+  hasil/                        - all result CSVs + split indices
+  fig/                          - figures (pdf/png)
+  naskah/                       - manuscript (LaTeX), references (.bib)
+
+DATA
+  CICMalDroid2020 dynamic features:
+  feature_vectors_syscallsbinders_frequency_5_Cat.csv
+  (11,598 x 471; 470 frequency features + Class in {1..5}).
+  Class map (verified against CIC docs): 1=Adware, 2=Banking, 3=SMS,
+  4=Riskware, 5=Benign. Obtain from the Canadian Institute for
+  Cybersecurity (UNB): https://www.unb.ca/cic/datasets/maldroid-2020.html
+
+ENVIRONMENT
+  Python 3.11; scikit-learn, xgboost, imbalanced-learn, shap, pandas,
+  numpy, matplotlib. Fixed seed = 42 throughout.
+
+EXACT SPLIT
+  hasil/split_train_idx.txt / split_test_idx.txt give the stratified
+  70/30 row indices (seed 42) used for all headline numbers.
+
+RUN
+  Place the CSV under CSV/ then: python mal_rq1_7030.py ; python
+  mal_rq2_smote.py ; python mal_rq5_xgb.py ; python mal_rq3_shap.py ;
+  python mal_rq4_robust.py ; python mal_figs.py ; python mal_fig3.py
+# ----
+# code de sortie : 0
+# durée (s)      : 0

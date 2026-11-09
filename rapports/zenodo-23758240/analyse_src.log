@@ -1,0 +1,47 @@
+# commande : ssh sd-92569 cat ~/work/z23758240/pkg/autoscaling-sensitivity-study/src/analyse.py
+# début    : 2026-10-31T20:06:46Z
+# ----
+"""Summary statistics: per cell medians and paired tests against the reactive baseline."""
+import sys
+import numpy as np
+import pandas as pd
+from scipy.stats import wilcoxon
+
+out = sys.argv[1]
+df = pd.read_csv(f"{out}/raw_results.csv")
+keys = ["magnitude", "duration", "ramp", "delta"]
+metrics = ["sla_viol_rate", "burst_viol_rate", "over_prov", "mean_replicas",
+           "utilisation", "actions", "drop_rate", "forecast_mae"]
+
+med = df.groupby(keys + ["policy"])[metrics].median().reset_index()
+med.to_csv(f"{out}/summary_medians.csv", index=False)
+
+rows = []
+for cell, g in df.groupby(keys):
+    r = g[g.policy == "reactive"].set_index("seed")
+    for pol in ["pred_holt", "pred_lr", "hybrid"]:
+        p = g[g.policy == pol].set_index("seed")
+        d = (p["sla_viol_rate"] - r["sla_viol_rate"]).dropna()
+        dov = (p["over_prov"] - r["over_prov"]).dropna()
+        try:
+            pv = wilcoxon(d, zero_method="zsplit").pvalue if np.any(d != 0) else 1.0
+        except ValueError:
+            pv = 1.0
+        # rank biserial style effect: share of seeds where predictive wins minus loses
+        eff = (np.sum(d < 0) - np.sum(d > 0)) / len(d)
+        rows.append(dict(zip(keys, cell), policy=pol,
+                         d_viol_median=float(d.median()), d_viol_mean=float(d.mean()),
+                         rel_viol_change=float(d.sum() / max(r["sla_viol_rate"].sum(), 1e-12)),
+                         d_overprov_median=float(dov.median()),
+                         wins_minus_losses=float(eff), p_value=float(pv)))
+pd.DataFrame(rows).to_csv(f"{out}/paired_vs_reactive.csv", index=False)
+
+# overall table by policy
+ov = df[df.magnitude > 1].groupby("policy")[metrics].mean()
+ov.to_csv(f"{out}/overall_means_bursty.csv")
+ctrl = df[df.magnitude == 1].groupby("policy")[metrics].mean()
+ctrl.to_csv(f"{out}/overall_means_control.csv")
+print(ov.round(4)); print(ctrl.round(4))
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 tail -n 6 work/z23673342/telechargement_ibge.log; tail -n 5 work/z23673342/run_full.log; du -sh work/z23673342/raw
+# début    : 2026-11-05T20:05:49Z
+# ----
+PI code=0
+PR code=0
+RJ code=0
+RN code=0
+RO code=0
+RR code=0
+768M	work/z23673342/raw
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,4 @@
+FROM docker.io/library/python:3.12-slim
+# Seul ajout : NumPy, exigé par REPLICATION_GUIDE.txt ("NumPy is required for this exact statistical replay").
+# Réseau nécessaire à la construction seulement : PyPI (pypi.org, files.pythonhosted.org). Les exécutions restent --network none.
+RUN pip install --no-cache-dir --only-binary=:all: numpy

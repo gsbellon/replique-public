@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 mkdir -p ~/work/z23595707 && curl -s -m 180 -o ~/work/z23595707/QS.zip https://zenodo.org/api/records/23595707/files/qsurvdiag-replication-v1.3.0.zip/content ; md5sum ~/work/z23595707/QS.zip
+# début    : 2026-10-27T20:01:07Z
+# ----
+017477a57e4cab4708d9bd02cf50ba99  /home/replab/work/z23595707/QS.zip
+# ----
+# code de sortie : 0
+# durée (s)      : 4

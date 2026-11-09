@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 curl -sS -L --max-time 30 https://www.unb.ca/cic/datasets/maldroid-2020.html | grep -o -i -E "href=\"[^\"]*(download|drive|zip|csv|request|form)[^\"]*\"" | sort -u
+# début    : 2026-10-22T19:00:55Z
+# ----
+href="//es.unb.ca/forms/web-feedback/"
+# ----
+# code de sortie : 0
+# durée (s)      : 1

@@ -1,0 +1,30 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && sh lance_run.sh
+# début    : 2026-10-31T20:02:09Z
+# ----
+2026-10-31T20:02:10Z
+calibration {'holt_mae': 7.069797943256886, 'holt_alpha': 0.2, 'holt_beta': 0.1, 'lr_mae': 6.709772932847484, 'lr_window': 40}
+7600 runs in 66s
+code run_experiments : 0
+           sla_viol_rate  burst_viol_rate  ...  drop_rate  forecast_mae
+policy                                     ...                         
+hybrid            0.1960           0.3352  ...     0.0677      217.4194
+pred_holt         0.2206           0.3473  ...     0.0792      217.4194
+pred_lr           0.2034           0.3357  ...     0.0665      243.8701
+reactive          0.2013           0.3447  ...     0.0725           NaN
+
+[4 rows x 8 columns]
+           sla_viol_rate  burst_viol_rate  ...  drop_rate  forecast_mae
+policy                                     ...                         
+hybrid            0.0035              NaN  ...     0.0008        9.4176
+pred_holt         0.0041              NaN  ...     0.0008        9.4176
+pred_lr           0.0046              NaN  ...     0.0008        7.1770
+reactive          0.0039              NaN  ...     0.0008           NaN
+
+[4 rows x 8 columns]
+code analyse : 0
+figures done
+code figures : 0
+2026-10-31T20:03:22Z
+# ----
+# code de sortie : 0
+# durée (s)      : 73
