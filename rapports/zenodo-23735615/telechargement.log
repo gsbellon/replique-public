@@ -1,0 +1,26 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-08T20:11:41Z
+# ----
+pkg.zip: OK
+code extraction : 0
+1344
+.
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/PACKAGE_CONTENTS.md
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/REPLICATION.md
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/tests
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/LICENSE
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/prompts
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/CITATION.cff
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/src
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/data
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/DEV_README.md
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/.gitattributes
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/.gitignore
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/scripts
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/README.md
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/results
+./shiguangzhe666-llm-test-generation-quarantine-754f4c8/configs
+# ----
+# code de sortie : 0
+# durée (s)      : 1

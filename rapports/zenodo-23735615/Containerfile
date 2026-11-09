@@ -1,0 +1,7 @@
+FROM docker.io/library/python:3.11-slim
+# REPLICATION.md demande Python 3.11 (recommandé 3.11.9) et : pytest pytest-xdist datasets matplotlib numpy scipy ; Git 2.30+.
+# `datasets` n'est pas installé : il ne sert qu'au téléchargement de SWE-bench (explore_swebench.py), non rejoué ici (hors réseau).
+# Versions non fixées par le paquet : les plus récentes à la construction, relevées par lance_build.sh.
+# Réseau nécessaire à la construction seulement (apt, PyPI) ; les exécutions restent --network none.
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir pytest pytest-xdist matplotlib numpy scipy

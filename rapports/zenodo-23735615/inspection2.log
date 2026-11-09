@@ -1,0 +1,20 @@
+# commande : ssh sd-92569 cd work/z23735615/pkg/*/ && grep -n "F:\|ROOT\|BASE\|sys.path\|results/runs\|paper" scripts/generate_paper_artifacts.py | head -50; grep -rln "F:" scripts src | head -20
+# début    : 2026-11-08T20:14:41Z
+# ----
+15:PROJECT_ROOT = Path(r"F:\论文\llm-test-stability")
+16:sys.path.insert(0, str(PROJECT_ROOT))
+20:parser = argparse.ArgumentParser(description="Generate paper artifacts from run results.")
+25:    RESULTS_DIR = PROJECT_ROOT / "results" / "runs" / args.run_id
+27:    runs = sorted((PROJECT_ROOT / "results" / "runs").iterdir(), key=lambda p: p.stat().st_mtime, reverse=True)
+29:    RESULTS_DIR = valid_runs[0] if valid_runs else (PROJECT_ROOT / "results" / "runs" / "run_phase4_expanded_20260922_120000")
+32:PAPER_DIR = PROJECT_ROOT / "paper"
+299:print("\nAll paper artifacts successfully regenerated in paper/ and emse_submission/!")
+scripts/_verify_snapshot.py
+scripts/generate_paper_artifacts.py
+scripts/_create_supplement_snapshot.py
+scripts/_audit_repos_state.py
+scripts/generate_expanded_tests.py
+scripts/_fix_pytest_extract.py
+# ----
+# code de sortie : 0
+# durée (s)      : 1

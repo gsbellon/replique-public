@@ -1,0 +1,54 @@
+# commande : ssh sd-92569 cd work/z23735615/run2 && find paper -type f && cat paper/emse_submission/tables/tab_strategy_comparison.tex paper/emse_submission/tables/tab_hypothesis_tests.tex
+# début    : 2026-11-08T20:15:25Z
+# ----
+paper/tab_hypothesis_tests.tex
+paper/figures/fig_pareto_frontier.png
+paper/figures/fig_triage_breakdown.pdf
+paper/figures/fig_pareto_frontier.pdf
+paper/figures/fig_triage_breakdown.png
+paper/tab_strategy_comparison.tex
+paper/emse_submission/figures/fig_pareto_frontier.png
+paper/emse_submission/figures/fig_triage_breakdown.pdf
+paper/emse_submission/figures/fig_pareto_frontier.pdf
+paper/emse_submission/figures/fig_triage_breakdown.png
+paper/emse_submission/tables/tab_hypothesis_tests.tex
+paper/emse_submission/tables/tab_strategy_comparison.tex
+paper/emse_submission/tables/tab_benchmark_matrix.tex
+paper/tab_benchmark_matrix.tex
+\begin{table*}[t]
+\centering
+\caption{Empirical Comparison of Test Selection Strategies Across 13 SWE-bench Verified Instances (Mean $\pm$ Clustered Standard Error)}
+\label{tab:strategy_comparison}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Strategy} & \textbf{Exec. Ret. (\%)} & \textbf{Quarantine (\%)} & \textbf{CI Determ. (\%)} & \textbf{Bug Ret. (\%)} & \textbf{Defect Tests Ret. (\%)} & \textbf{Mut. Score (\%)} \\
+\midrule
+Keep-All & $100.0 \pm 0.0$ & $0.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $7.7 \pm 3.2$ \\
+Discard-All-Flaky & $100.0 \pm 0.0$ & $0.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $7.7 \pm 3.2$ \\
+Random-Filtering & $77.5 \pm 18.2$ & $0.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $7.7 \pm 3.2$ \\
+Static-Only & $77.5 \pm 18.2$ & $0.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $7.7 \pm 3.2$ \\
+\textbf{Risk-Aware-Triage (Ours)} & $77.5 \pm 18.2$ & $19.5 \pm 15.8$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $100.0 \pm 0.0$ & $7.7 \pm 3.2$ \\
+\bottomrule
+\end{tabular}
+\end{table*}\begin{table}[htbp]
+\centering
+\caption{Non-Parametric Hypothesis Testing (Wilcoxon Signed-Rank) and Effect Sizes (Vargha-Delaney $\hat{A}_{12}$): Risk-Aware-Triage vs. Baselines}
+\label{tab:hypothesis_tests}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Hypothesis Comparison} & \textbf{Wilcoxon $W$} & \textbf{$p$-value} & \textbf{$\hat{A}_{12}$} & \textbf{Effect Size} \\
+\midrule
+\multicolumn{5}{l}{\textit{\textbf{Defect Retention Rate Comparisons (Ceiling / Equivalence)}}} \\
+vs. Discard-All-Flaky (Defect Ret.) & 0.0 & 1.0000 & 0.50 & Negligible \\
+vs. Random-Filtering (Defect Ret.) & 0.0 & 1.0000 & 0.50 & Negligible \\
+vs. Static-Only (Defect Ret.) & 0.0 & 1.0000 & 0.50 & Negligible \\
+vs. Keep-All (Defect Ret.) & 0.0 & 1.0000 & 0.50 & Negligible \\
+\midrule
+\multicolumn{5}{l}{\textit{\textbf{Non-Degenerate Strategy Discriminability Comparisons}}} \\
+Discard-All-Flaky Quarantine Rate & 0.0 & 0.0591 & 0.69 & \textbf{Medium} \\
+Static-Only Executable Retention & 0.0 & 1.0000 & 0.50 & \textbf{Negligible} \\
+\bottomrule
+\end{tabular}
+\end{table}# ----
+# code de sortie : 0
+# durée (s)      : 1

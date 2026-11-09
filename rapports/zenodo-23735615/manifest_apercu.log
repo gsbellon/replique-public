@@ -1,0 +1,28 @@
+# commande : ssh sd-92569 cd work/z23735615/pkg/*/results/runs/run_phase4_rerun_20260926_090500 && head -c 700 manifest.json && ls
+# début    : 2026-11-08T20:12:40Z
+# ----
+{
+  "run_id": "run_phase4_rerun_20260926_090500",
+  "files_count": 363,
+  "timestamp_utc": "2026-09-26T01:44:10.950293",
+  "files": {
+    "commands.jsonl": "4d465bf4c0c3d0481fef4da4034c542fbbb8de2fb965ac624c15fab83e602209",
+    "instance_results_incremental.json": "3db8dbaa7de69222ce2be4fd7784bd55d7b0a8ed7a35e2248b7be6e0eb96c570",
+    "phase4_full_study_results.json": "afbdb8e317c1bc942fdef6002e6f76a71f1eb60e52a61f271613c224dff18087",
+    "phase4_study_report.md": "7c979b47f267ca38e45b214aefb6de45ed875660129f5e6b823e45c0f5c81d14",
+    "post_run_repos_audit.json": "67832d1f31b0d2692181648f7596b433a8c4f5ce83f2124a2cbd138aaf6c33d9",
+    "pre_run_repos_audit.json": "7f300c88bc3c9972ff38d1a517365commands.jsonl
+evidence_audit.json
+evidence_audit.md
+instance_results_incremental.json
+logs
+manifest.json
+phase4_full_study_results.json
+phase4_study_report.md
+post_run_repos_audit.json
+pre_run_repos_audit.json
+strategy_pools
+tab_strategy_comparison.tex
+# ----
+# code de sortie : 0
+# durée (s)      : 0

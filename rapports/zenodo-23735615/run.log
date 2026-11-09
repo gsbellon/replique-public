@@ -1,0 +1,566 @@
+# commande : ssh sd-92569 cd ~/work/z23735615 && sh lance_run.sh
+# début    : 2026-11-08T20:13:47Z
+# ----
+=================== ETAPE python3 -I /verifie_manifeste.py /work/results/runs/run_phase4_rerun_20260926_090500
+DIFFERENT (concorde avec fins de ligne CRLF) commands.jsonl
+DIFFERENT (concorde avec fins de ligne CRLF) instance_results_incremental.json
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pallets__flask-5014_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Risk-Aware-Triage_quar_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1724_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Risk-Aware-Triage_quar_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1766_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Risk-Aware-Triage_quar_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-1921_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Risk-Aware-Triage_quar_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-2317_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Risk-Aware-Triage_quar_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/psf__requests-6028_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4075_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4356_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-4966_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6744_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6992_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pydata__xarray-6992_exclusion_traceback.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pytest-dev__pytest-7521_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/pytest-dev__pytest-7521_exclusion_traceback.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-15809_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17139_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17139_exclusion_traceback.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-17630_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_02_mode_in_order.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_02_mode_isolated.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_02_mode_random_rep.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_03_buggy_defect_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_04_mutation_eval.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Discard-All-Flaky_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Discard-All-Flaky_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Keep-All_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Keep-All_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Random-Filtering_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Random-Filtering_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Risk-Aware-Triage_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Risk-Aware-Triage_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Static-Only_main_buggy.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-21930_06_Static-Only_main_fixed.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-22080_01_discovery.log
+DIFFERENT (concorde avec fins de ligne CRLF) logs/sympy__sympy-22080_exclusion_traceback.log
+DIFFERENT (concorde avec fins de ligne CRLF) phase4_full_study_results.json
+DIFFERENT (concorde avec fins de ligne CRLF) phase4_study_report.md
+DIFFERENT (concorde avec fins de ligne CRLF) post_run_repos_audit.json
+DIFFERENT (concorde avec fins de ligne CRLF) pre_run_repos_audit.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pallets__flask-5014/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Risk-Aware-Triage_quar_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1724/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Risk-Aware-Triage_quar_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1766/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Risk-Aware-Triage_quar_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-1921/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Risk-Aware-Triage_quar_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-2317/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Risk-Aware-Triage_quar_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/psf__requests-6028/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4075/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4356/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-4966/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/pydata__xarray-6744/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-15809/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-17630/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Discard-All-Flaky_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Discard-All-Flaky_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Keep-All_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Keep-All_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Random-Filtering_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Random-Filtering_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Risk-Aware-Triage_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Risk-Aware-Triage_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Static-Only_main_buggy.json
+DIFFERENT (concorde avec fins de ligne CRLF) strategy_pools/sympy__sympy-21930/Static-Only_main_fixed.json
+DIFFERENT (concorde avec fins de ligne CRLF) tab_strategy_comparison.tex
+files_count déclaré : 363 | entrées : 363
+OK 0 DIFFERENT 363 dont concordant en CRLF 363 ABSENT 0
+fichiers présents hors manifeste : 2
+  hors manifeste evidence_audit.json
+  hors manifeste evidence_audit.md
+code de sortie : 0  (durée 0 s)
+=================== ETAPE python3 -m pytest tests/ -v -p no:cacheprovider
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0 -- /usr/local/bin/python3
+rootdir: /work
+plugins: xdist-3.8.0
+collecting ... collected 53 items
+
+tests/test_control_cases.py::test_control_known_killable_and_surviving_mutants PASSED [  1%]
+tests/test_control_cases.py::test_control_baseline_failing_prevented_from_false_kill PASSED [  3%]
+tests/test_control_cases.py::test_control_runtime_exception_vs_assertion_failure PASSED [  5%]
+tests/test_control_cases.py::test_control_baseline_flakiness_disqualification PASSED [  7%]
+tests/test_control_cases.py::test_control_byte_level_restoration_verification PASSED [  9%]
+tests/test_control_cases.py::test_control_module_import_origin PASSED    [ 11%]
+tests/test_evidence_audit.py::test_audit_has_expected_record_shape PASSED [ 13%]
+tests/test_evidence_audit.py::test_unavailable_fields_are_explicit PASSED [ 15%]
+tests/test_evidence_audit.py::test_observed_nodeids_come_from_strategy_pool PASSED [ 16%]
+tests/test_evidence_audit.py::test_no_short_name_fallback_is_claimed PASSED [ 18%]
+tests/test_evidence_audit.py::test_generated_collected_mismatch_is_reported PASSED [ 20%]
+tests/test_execution_modes.py::test_three_execution_modes PASSED         [ 22%]
+tests/test_execution_modes.py::test_repeated_executor_structured_integration PASSED [ 24%]
+tests/test_execution_modes.py::test_control_skipped_plus_passed_not_stable_pass PASSED [ 26%]
+tests/test_execution_modes.py::test_control_missing_round_and_unexecuted_distinguished PASSED [ 28%]
+tests/test_hermetic_ci.py::test_hermetic_ci_socket_blocking PASSED       [ 30%]
+tests/test_hermetic_ci.py::test_mocked_request_succeeds_in_hermetic_mode FAILED [ 32%]
+tests/test_loader_isolation.py::test_isolated_worktree_cleanliness_and_removal SKIPPED [ 33%]
+tests/test_loader_isolation.py::test_explicit_patch_failure_no_silent_fallback SKIPPED [ 35%]
+tests/test_loader_isolation.py::test_explicit_test_patch_failure SKIPPED [ 37%]
+tests/test_loader_isolation.py::test_verify_instance_reproducibility_rejects_non_assertion_failures PASSED [ 39%]
+tests/test_mutation_eval_baseline.py::test_baseline_precheck_blocks_false_kills PASSED [ 41%]
+tests/test_mutation_eval_baseline.py::test_mutation_score_zero_denominator PASSED [ 43%]
+tests/test_mutation_eval_baseline.py::test_shared_repo_mutation_blocked_by_guard SKIPPED [ 45%]
+tests/test_nodeid_matching.py::test_canonical_nodeid_and_split PASSED    [ 47%]
+tests/test_nodeid_matching.py::test_get_base_test_name PASSED            [ 49%]
+tests/test_nodeid_matching.py::test_match_nodeids_exact_and_suffix PASSED [ 50%]
+tests/test_nodeid_matching.py::test_match_nodeids_parameterized PASSED   [ 52%]
+tests/test_nodeid_matching.py::test_match_nodeids_ambiguous_and_no_cross_scope_fallback PASSED [ 54%]
+tests/test_nodeid_matching.py::test_find_test_in_report_data PASSED      [ 56%]
+tests/test_pareto_analysis.py::test_vargha_delaney_a12_known_properties PASSED [ 58%]
+tests/test_pareto_analysis.py::test_wilcoxon_signed_rank PASSED          [ 60%]
+tests/test_pareto_analysis.py::test_clustered_standard_error PASSED      [ 62%]
+tests/test_pareto_analysis.py::test_wilson_confidence_interval PASSED    [ 64%]
+tests/test_pareto_analysis.py::test_pareto_frontier_logic PASSED         [ 66%]
+tests/test_pareto_analysis.py::test_evaluate_strategies_on_suite PASSED  [ 67%]
+tests/test_pareto_analysis.py::test_generate_latex_table PASSED          [ 69%]
+tests/test_rerun_evidence_chain.py::test_incomplete_flakiness_not_defaulted_to_zero PASSED [ 71%]
+tests/test_rerun_evidence_chain.py::test_fixed_outcome_requires_stable_pass PASSED [ 73%]
+tests/test_rerun_evidence_chain.py::test_physical_defect_retention_requires_buggy_failure_and_nonzero_exit PASSED [ 75%]
+tests/test_rerun_evidence_chain.py::test_paired_hypothesis_test_filters_none PASSED [ 77%]
+tests/test_risk_triage_metrics.py::test_triage_action_no_unearned_repair PASSED [ 79%]
+tests/test_risk_triage_metrics.py::test_triage_undefined_metrics_handling PASSED [ 81%]
+tests/test_risk_triage_metrics.py::test_cold_start_flakiness_reporting PASSED [ 83%]
+tests/test_risk_triage_metrics.py::test_nodeid_routing_canonical_and_collision PASSED [ 84%]
+tests/test_risk_triage_metrics.py::test_observed_flakiness_routes_to_quarantine_or_discard PASSED [ 86%]
+tests/test_risk_triage_metrics.py::test_exception_and_method_assertion_detection PASSED [ 88%]
+tests/test_risk_triage_metrics.py::test_external_url_fragility_detection PASSED [ 90%]
+tests/test_structured_reporting.py::test_nodeid_preservation_and_outcome_classification PASSED [ 92%]
+tests/test_structured_reporting.py::test_collection_and_import_error_reporting PASSED [ 94%]
+tests/test_structured_reporting.py::test_aborted_suite_distinguishes_completed_from_unexecuted PASSED [ 96%]
+tests/test_structured_reporting.py::test_missing_observation_when_nodeid_unobserved_with_exit_code_zero PASSED [ 98%]
+tests/test_structured_reporting.py::test_same_name_tests_across_classes_and_functions PASSED [100%]
+
+=================================== FAILURES ===================================
+________________ test_mocked_request_succeeds_in_hermetic_mode _________________
+
+    def test_mocked_request_succeeds_in_hermetic_mode():
+        """Verify that hermetic execution permits mocked HTTP calls without socket I/O."""
+>       import requests
+E       ModuleNotFoundError: No module named 'requests'
+
+tests/test_hermetic_ci.py:37: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_hermetic_ci.py::test_mocked_request_succeeds_in_hermetic_mode
+=================== 1 failed, 48 passed, 4 skipped in 17.70s ===================
+code de sortie : 1  (durée 19 s)
+=================== ETAPE python3 scripts/run_sensitivity_analysis.py
+Total matched evaluated tests: 308
+
+===========================================================================
+THRESHOLD SENSITIVITY ANALYSIS: Defect Threshold Sweep (Risk Threshold = 0.30)
+===========================================================================
+S_defect   | Tier 1 (Keep)  | Tier 2 (Quar)  | Tier 3 (Low)   | Tier 4 (Disc)  | Total 
+---------------------------------------------------------------------------
+0.20                 | 231 (75.0%)     | 77  (25.0%)     | 0   ( 0.0%)    | 0   ( 0.0%)    | 308   
+0.30                 | 219 (71.1%)     | 77  (25.0%)     | 12  ( 3.9%)    | 0   ( 0.0%)    | 308   
+0.40                 | 219 (71.1%)     | 77  (25.0%)     | 12  ( 3.9%)    | 0   ( 0.0%)    | 308   
+0.50       (Default) | 182 (59.1%)     | 62  (20.1%)     | 49  (15.9%)    | 15  ( 4.9%)    | 308   
+0.60                 | 172 (55.8%)     | 59  (19.2%)     | 59  (19.2%)    | 18  ( 5.8%)    | 308   
+0.70                 | 165 (53.6%)     | 59  (19.2%)     | 66  (21.4%)    | 18  ( 5.8%)    | 308   
+0.80                 | 15  ( 4.9%)     | 8   ( 2.6%)     | 216 (70.1%)    | 69  (22.4%)    | 308   
+
+===========================================================================
+THRESHOLD SENSITIVITY ANALYSIS: Risk Threshold Sweep (Defect Threshold = 0.50)
+===========================================================================
+Risk_th    | Tier 1 (Keep)  | Tier 2 (Quar)  | Tier 3 (Low)   | Tier 4 (Disc)  | Total 
+---------------------------------------------------------------------------
+0.10                 | 182 (59.1%)     | 62  (20.1%)     | 49  (15.9%)    | 15  ( 4.9%)    | 308   
+0.20                 | 182 (59.1%)     | 62  (20.1%)     | 49  (15.9%)    | 15  ( 4.9%)    | 308   
+0.30       (Default) | 182 (59.1%)     | 62  (20.1%)     | 49  (15.9%)    | 15  ( 4.9%)    | 308   
+0.40                 | 182 (59.1%)     | 62  (20.1%)     | 49  (15.9%)    | 15  ( 4.9%)    | 308   
+0.50                 | 236 (76.6%)     | 8   ( 2.6%)     | 62  (20.1%)    | 2   ( 0.6%)    | 308   
+code de sortie : 0  (durée 0 s)
+=================== ETAPE python3 scripts/analyze_quarantine_remediation.py
+============================================================
+ANALYSIS OF TIER 2 (QUARANTINE) TESTS ACROSS ALL INSTANCES
+============================================================
+
+Total Instances with Quarantine Tests: 5
+
+[psf__requests-1921] - Total Quarantined: 3
+  Fragility signatures: {'UNMOCKED_NETWORK_URL': 8}
+  Example test: test_merge_setting_with_merging_lists in test_gen_02.py
+    Defect potential: 0.7333, Risk score: 0.6
+    Sample assertions: ['result == expected']
+
+[psf__requests-1724] - Total Quarantined: 13
+  Fragility signatures: {'UNMOCKED_NETWORK_URL': 13}
+  Example test: test_request_with_unicode_method in test_gen_00.py
+    Defect potential: 0.7333, Risk score: 0.45
+    Sample assertions: ['response.status_code == 200']
+
+[psf__requests-2317] - Total Quarantined: 22
+  Fragility signatures: {'UNMOCKED_NETWORK_URL': 22}
+  Example test: test_session_request_with_utf8_encoding in test_gen_00.py
+    Defect potential: 0.7333, Risk score: 0.45
+    Sample assertions: ['response.status_code == 200']
+
+[psf__requests-1766] - Total Quarantined: 20
+  Fragility signatures: {'UNMOCKED_NETWORK_URL': 20}
+  Example test: test_http_basic_auth in test_gen_01.py
+    Defect potential: 0.7333, Risk score: 0.45
+    Sample assertions: ["res.headers['Authorization'] == 'Basic dXNlcjpwYXNz'"]
+
+[psf__requests-6028] - Total Quarantined: 10
+  Fragility signatures: {'UNMOCKED_NETWORK_URL': 40}
+  Example test: TestUnquoteUnreserved::test_unquote_unreserved in test_gen_00.py
+    Defect potential: 1.0, Risk score: 0.6
+    Sample assertions: ["self.assertEqual(unquote_unreserved('http%3A%2F%2Fexample.com'), 'http://example.com')", "self.assertEqual(unquote_unreserved('http%3A%2F%2Fexample.com%3Fquery%3D1'), 'http://example.com?query=1')", "self.assertEqual(unquote_unreserved('http%3A%2F%2Fexample.com%252520'), 'http://example.com%2520')"]
+
+============================================================
+OVERALL QUARANTINE ROOT-CAUSE DISTRIBUTION
+============================================================
+  UNMOCKED_NETWORK_URL          : 103 occurrences
+code de sortie : 0  (durée 1 s)
+=================== ETAPE python3 -c from scripts._audit_repos_state import audit_all_repos; import json; print(json.dumps(audit_all_repos(), indent=2))
+Audit completed (All Clean: False): F:\论文\llm-test-stability\data\repos_state_audit.json
+  psf__requests          HEAD:  | Clean: False | Branch: None
+  pallets__flask         HEAD:  | Clean: False | Branch: None
+  pytest-dev__pytest     HEAD:  | Clean: False | Branch: None
+  sympy__sympy           HEAD:  | Clean: False | Branch: None
+  pydata__xarray         HEAD:  | Clean: False | Branch: None
+{
+  "audit_timestamp": "2026-11-08T20:14:07.201720",
+  "all_repos_clean": false,
+  "repos": {
+    "psf__requests": {
+      "exists": false,
+      "is_clean": false,
+      "error": "Directory does not exist"
+    },
+    "pallets__flask": {
+      "exists": false,
+      "is_clean": false,
+      "error": "Directory does not exist"
+    },
+    "pytest-dev__pytest": {
+      "exists": false,
+      "is_clean": false,
+      "error": "Directory does not exist"
+    },
+    "sympy__sympy": {
+      "exists": false,
+      "is_clean": false,
+      "error": "Directory does not exist"
+    },
+    "pydata__xarray": {
+      "exists": false,
+      "is_clean": false,
+      "error": "Directory does not exist"
+    }
+  }
+}
+code de sortie : 0  (durée 0 s)
+=================== ETAPE python3 scripts/generate_paper_artifacts.py --run-id run_phase4_rerun_20260926_090500
+Traceback (most recent call last):
+  File "/work/scripts/generate_paper_artifacts.py", line 18, in <module>
+    from scripts.run_phase4_study import INSTANCE_CONFIGS
+ModuleNotFoundError: No module named 'scripts'
+code de sortie : 1  (durée 1 s)
+=================== fichiers modifiés ou créés par rapport au livré
+Only in run/: F:\论文\llm-test-stability\data\repos_state_audit.json
+# ----
+# code de sortie : 1
+# durée (s)      : 21

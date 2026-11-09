@@ -1,0 +1,90 @@
+# commande : ssh sd-92569 cd work/z23735615/pkg/*/ && grep -rn "^import\|^from" scripts/generate_paper_artifacts.py scripts/run_sensitivity_analysis.py scripts/analyze_quarantine_remediation.py scripts/_audit_repos_state.py && ls tests results/runs && ls results/runs/*/ | head -30 && ls paper
+# début    : 2026-11-08T20:11:51Z
+# ----
+scripts/generate_paper_artifacts.py:5:import argparse
+scripts/generate_paper_artifacts.py:6:import sys
+scripts/generate_paper_artifacts.py:7:import json
+scripts/generate_paper_artifacts.py:8:import shutil
+scripts/generate_paper_artifacts.py:9:from pathlib import Path
+scripts/generate_paper_artifacts.py:10:import matplotlib
+scripts/generate_paper_artifacts.py:12:import matplotlib.pyplot as plt
+scripts/generate_paper_artifacts.py:13:import numpy as np
+scripts/generate_paper_artifacts.py:18:from scripts.run_phase4_study import INSTANCE_CONFIGS
+scripts/run_sensitivity_analysis.py:1:import json
+scripts/run_sensitivity_analysis.py:2:from pathlib import Path
+scripts/run_sensitivity_analysis.py:3:import sys
+scripts/run_sensitivity_analysis.py:4:from dataclasses import asdict
+scripts/run_sensitivity_analysis.py:9:from src.triage.risk_triage import triage_suite
+scripts/run_sensitivity_analysis.py:10:from src.execution.nodeid_matching import canonical_nodeid
+scripts/run_sensitivity_analysis.py:11:from scripts.run_phase4_rerun import INSTANCE_CONFIGS
+scripts/analyze_quarantine_remediation.py:1:import ast
+scripts/analyze_quarantine_remediation.py:2:import json
+scripts/analyze_quarantine_remediation.py:3:from pathlib import Path
+scripts/analyze_quarantine_remediation.py:4:import sys
+scripts/analyze_quarantine_remediation.py:9:from src.triage.risk_triage import extract_static_features_from_file, triage_test
+scripts/analyze_quarantine_remediation.py:10:from scripts.run_phase4_rerun import INSTANCE_CONFIGS
+scripts/_audit_repos_state.py:8:import datetime
+scripts/_audit_repos_state.py:9:import json
+scripts/_audit_repos_state.py:10:import subprocess
+scripts/_audit_repos_state.py:11:import sys
+scripts/_audit_repos_state.py:12:from pathlib import Path
+scripts/_audit_repos_state.py:13:from typing import Dict, Any
+results/runs:
+run_phase2_closure_20260920
+run_phase2_reaudit_20260921_011520
+run_phase3_pilot_20260921_081700
+run_phase4_expanded_20260922_120000
+run_phase4_refined_20260921_193000
+run_phase4_rerun_20260923_211103
+run_phase4_rerun_20260924_001649
+run_phase4_rerun_20260926_090500
+run_phase4_study_20260921_100000
+
+tests:
+conftest.py
+README.md
+test_control_cases.py
+test_evidence_audit.py
+test_execution_modes.py
+test_hermetic_ci.py
+test_loader_isolation.py
+test_mutation_eval_baseline.py
+test_nodeid_matching.py
+test_pareto_analysis.py
+test_rerun_evidence_chain.py
+test_risk_triage_metrics.py
+test_structured_reporting.py
+results/runs/run_phase2_closure_20260920/:
+environment_metadata.json
+execution_modes_evidence.json
+manifest.json
+mutation_eval_evidence.json
+post_run_repos_audit.json
+pre_run_repos_audit.json
+reproduction_evidence.json
+triage_benchmark_results.json
+
+results/runs/run_phase2_reaudit_20260921_011520/:
+commands.jsonl
+environment.json
+environment_metadata.json
+execution_modes_evidence.json
+logs
+manifest.json
+mutation_eval_evidence.json
+post_run_repos_audit.json
+pre_run_repos_audit.json
+reproduction_evidence.json
+triage_benchmark_results.json
+
+results/runs/run_phase3_pilot_20260921_081700/:
+commands.jsonl
+discrepancy_accounting.json
+environment_metadata.json
+feasibility_pilot_results.json
+logs
+manifest.json
+ls: cannot access 'paper': No such file or directory
+# ----
+# code de sortie : 2
+# durée (s)      : 0

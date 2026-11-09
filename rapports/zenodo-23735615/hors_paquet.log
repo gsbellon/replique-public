@@ -1,0 +1,93 @@
+# commande : ssh sd-92569 cd ~/work/z23735615 && sh lance_hors_paquet.sh
+# début    : 2026-11-08T20:14:57Z
+# ----
+STEP 1/2: FROM localhost/replab-quarantine
+STEP 2/2: RUN pip install --no-cache-dir requests
+--> Using cache 18e77e9c5837c04c4ea54949e7a38c832b7402d354d688b427be5bbbcbcbeb76
+COMMIT replab-quarantine-req
+--> 18e77e9c5837
+Successfully tagged localhost/replab-quarantine-req:latest
+18e77e9c5837c04c4ea54949e7a38c832b7402d354d688b427be5bbbcbcbeb76
+code de sortie build : 0
+2.34.2
+=================== ETAPE python3 -m pytest tests/ -v -p no:cacheprovider
+============================= test session starts ==============================
+platform linux -- Python 3.11.18, pytest-9.2.0, pluggy-1.7.0 -- /usr/local/bin/python3
+rootdir: /work
+plugins: xdist-3.8.0
+collecting ... collected 53 items
+
+tests/test_control_cases.py::test_control_known_killable_and_surviving_mutants PASSED [  1%]
+tests/test_control_cases.py::test_control_baseline_failing_prevented_from_false_kill PASSED [  3%]
+tests/test_control_cases.py::test_control_runtime_exception_vs_assertion_failure PASSED [  5%]
+tests/test_control_cases.py::test_control_baseline_flakiness_disqualification PASSED [  7%]
+tests/test_control_cases.py::test_control_byte_level_restoration_verification PASSED [  9%]
+tests/test_control_cases.py::test_control_module_import_origin PASSED    [ 11%]
+tests/test_evidence_audit.py::test_audit_has_expected_record_shape PASSED [ 13%]
+tests/test_evidence_audit.py::test_unavailable_fields_are_explicit PASSED [ 15%]
+tests/test_evidence_audit.py::test_observed_nodeids_come_from_strategy_pool PASSED [ 16%]
+tests/test_evidence_audit.py::test_no_short_name_fallback_is_claimed PASSED [ 18%]
+tests/test_evidence_audit.py::test_generated_collected_mismatch_is_reported PASSED [ 20%]
+tests/test_execution_modes.py::test_three_execution_modes PASSED         [ 22%]
+tests/test_execution_modes.py::test_repeated_executor_structured_integration PASSED [ 24%]
+tests/test_execution_modes.py::test_control_skipped_plus_passed_not_stable_pass PASSED [ 26%]
+tests/test_execution_modes.py::test_control_missing_round_and_unexecuted_distinguished PASSED [ 28%]
+tests/test_hermetic_ci.py::test_hermetic_ci_socket_blocking PASSED       [ 30%]
+tests/test_hermetic_ci.py::test_mocked_request_succeeds_in_hermetic_mode PASSED [ 32%]
+tests/test_loader_isolation.py::test_isolated_worktree_cleanliness_and_removal SKIPPED [ 33%]
+tests/test_loader_isolation.py::test_explicit_patch_failure_no_silent_fallback SKIPPED [ 35%]
+tests/test_loader_isolation.py::test_explicit_test_patch_failure SKIPPED [ 37%]
+tests/test_loader_isolation.py::test_verify_instance_reproducibility_rejects_non_assertion_failures PASSED [ 39%]
+tests/test_mutation_eval_baseline.py::test_baseline_precheck_blocks_false_kills PASSED [ 41%]
+tests/test_mutation_eval_baseline.py::test_mutation_score_zero_denominator PASSED [ 43%]
+tests/test_mutation_eval_baseline.py::test_shared_repo_mutation_blocked_by_guard SKIPPED [ 45%]
+tests/test_nodeid_matching.py::test_canonical_nodeid_and_split PASSED    [ 47%]
+tests/test_nodeid_matching.py::test_get_base_test_name PASSED            [ 49%]
+tests/test_nodeid_matching.py::test_match_nodeids_exact_and_suffix PASSED [ 50%]
+tests/test_nodeid_matching.py::test_match_nodeids_parameterized PASSED   [ 52%]
+tests/test_nodeid_matching.py::test_match_nodeids_ambiguous_and_no_cross_scope_fallback PASSED [ 54%]
+tests/test_nodeid_matching.py::test_find_test_in_report_data PASSED      [ 56%]
+tests/test_pareto_analysis.py::test_vargha_delaney_a12_known_properties PASSED [ 58%]
+tests/test_pareto_analysis.py::test_wilcoxon_signed_rank PASSED          [ 60%]
+tests/test_pareto_analysis.py::test_clustered_standard_error PASSED      [ 62%]
+tests/test_pareto_analysis.py::test_wilson_confidence_interval PASSED    [ 64%]
+tests/test_pareto_analysis.py::test_pareto_frontier_logic PASSED         [ 66%]
+tests/test_pareto_analysis.py::test_evaluate_strategies_on_suite PASSED  [ 67%]
+tests/test_pareto_analysis.py::test_generate_latex_table PASSED          [ 69%]
+tests/test_rerun_evidence_chain.py::test_incomplete_flakiness_not_defaulted_to_zero PASSED [ 71%]
+tests/test_rerun_evidence_chain.py::test_fixed_outcome_requires_stable_pass PASSED [ 73%]
+tests/test_rerun_evidence_chain.py::test_physical_defect_retention_requires_buggy_failure_and_nonzero_exit PASSED [ 75%]
+tests/test_rerun_evidence_chain.py::test_paired_hypothesis_test_filters_none PASSED [ 77%]
+tests/test_risk_triage_metrics.py::test_triage_action_no_unearned_repair PASSED [ 79%]
+tests/test_risk_triage_metrics.py::test_triage_undefined_metrics_handling PASSED [ 81%]
+tests/test_risk_triage_metrics.py::test_cold_start_flakiness_reporting PASSED [ 83%]
+tests/test_risk_triage_metrics.py::test_nodeid_routing_canonical_and_collision PASSED [ 84%]
+tests/test_risk_triage_metrics.py::test_observed_flakiness_routes_to_quarantine_or_discard PASSED [ 86%]
+tests/test_risk_triage_metrics.py::test_exception_and_method_assertion_detection PASSED [ 88%]
+tests/test_risk_triage_metrics.py::test_external_url_fragility_detection PASSED [ 90%]
+tests/test_structured_reporting.py::test_nodeid_preservation_and_outcome_classification PASSED [ 92%]
+tests/test_structured_reporting.py::test_collection_and_import_error_reporting PASSED [ 94%]
+tests/test_structured_reporting.py::test_aborted_suite_distinguishes_completed_from_unexecuted PASSED [ 96%]
+tests/test_structured_reporting.py::test_missing_observation_when_nodeid_unobserved_with_exit_code_zero PASSED [ 98%]
+tests/test_structured_reporting.py::test_same_name_tests_across_classes_and_functions PASSED [100%]
+
+======================== 49 passed, 4 skipped in 17.75s ========================
+code de sortie : 0  (durée 18 s)
+lrwxrwxrwx  1 replab replab     1 Nov  8 21:15 F:\论文\llm-test-stability -> .
+=================== ETAPE python3 scripts/generate_paper_artifacts.py --run-id run_phase4_rerun_20260926_090500
+Generating artifacts from: run_phase4_rerun_20260926_090500
+Loaded 13 valid instances, 4 excluded instances.
+  Generated tab_benchmark_matrix.tex
+  Generated tab_strategy_comparison.tex
+  Generated tab_hypothesis_tests.tex
+  Generated fig_pareto_frontier.pdf / png (zero-jitter honest trade-off)
+  Generated fig_triage_breakdown.pdf / png
+
+All paper artifacts successfully regenerated in paper/ and emse_submission/!
+code de sortie : 0  (durée 3 s)
+=================== fichiers modifiés ou créés par rapport au livré
+Only in run2/: F:\论文\llm-test-stability
+Only in run2/: paper
+# ----
+# code de sortie : 1
+# durée (s)      : 22

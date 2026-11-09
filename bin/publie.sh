@@ -15,7 +15,7 @@ cp -r bin prompts registre "$PUB/"; cp journal/USAGE.tsv "$PUB/journal/" 2>/dev/
 python3 - "$PUB/journal/JOURNAL.md" <<'PY'
 import re,sys,datetime
 out=sys.argv[1]; s=open('journal/JOURNAL.md').read(); head,sep,rest=s.partition('\n---\n')
-limite=(datetime.datetime.utcnow()-datetime.timedelta(days=14)).strftime('%Y-%m-%d')
+limite=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(days=14)).strftime('%Y-%m-%d')
 garde=[b for b in rest.split('\n---\n') if (m:=re.search(r'^## (\d{4}-\d{2}-\d{2})',b.strip(),re.M)) and m.group(1)<=limite]
 open(out,'w').write(head+'\n\n> Journal publié avec quatorze jours de retard (article 6 quater) ; le journal complet est dans le dépôt de travail, privé.\n'+sep+'\n---\n'.join(garde))
 PY
