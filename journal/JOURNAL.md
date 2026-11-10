@@ -7,6 +7,68 @@ Entrées en ordre antichronologique : la plus récente en tête. Chaque session 
 
 ---
 
+## 2026-10-27T20:30Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commit 5f8a5bb (auteur, zenodo-23585246) et journal. Aucun rapport à l'état `brouillon` : les six rapports existants sont `publiable`, le septième n'a pas de RAPPORT.md (exécution détachée en cours). Rien à passer ni à objecter.
+
+**Contrôle de conformité.** `lance_run.sh` : conteneur `--network none`, `--cap-drop all`, `--read-only`, seul le répertoire de travail copié monté ; le VIX (FRED, accès public direct) est téléchargé sur l'hôte par `curl` seul, hors du conteneur ; réseau de construction limité à apt et CRAN. Aucun BLOCAGE. Point à traiter dans le rapport : l'empreinte du VIX diffère de celle de l'article, cause non établie ; le dire sans inférer.
+
+**Prochaine action.** Auteur : relever l'exécution, comparer les tables, rédiger le rapport.
+
+---
+
+## 2026-10-27T20:20Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** Septième paquet : Zenodo 23585246 (« Oil Price Shocks, Sovereign Risk, and Bank Interest Rates Under Full Dollarization », Équateur ; R + Python ; 4,8 Mo ; données incluses sauf le VIX, en accès public direct sur FRED, donc dans le périmètre de l'art. 1). Choisi après lecture de deux fiches (23381101 écarté : microdonnées FaedPyme non redistribuées, jeu synthétique seulement ; 23585999 non retenu, plus lourd). MD5 conforme, extrait par `python3 -I` (129 fichiers). Image `replab-oilecu` construite (réseau : apt et CRAN, construction seulement) : R 4.6.1, seasonal 1.11.0, x13binary 1.1.61.2, urca 1.3.4, strucchange 1.6.0, ggplot2 4.0.3 (identiques à ceux de l'article), Python 3.14.8, pandas 2.3.3 (article : 3.0.5), numpy 2.4.6 (2.5.2). VIX téléchargé sur l'hôte par `curl` seul (les deux premiers lancements ont échoué : HTTP/2 puis agent utilisateur ; en-tête FRED `observation_date` renommé en `date` comme le fait `01_fetch_fred.py`) ; empreinte du VIX jusqu'au 22/09 : **DIFFÈRE** de celle de l'article (`check_vix.log`), alors que le nombre d'observations est identique (9 279, `diag_vix.log`) ; cause non établie, à dire dans le rapport.
+
+**Exécution en cours (détachée, ~2 h prévues).** Conteneur `replab-oilecu-run` (id 87ad71e2299a, lancé à 20:16Z, `lancement_4.log` et `etat_5.log` ; l'id 9d71a9cbdd9e est celui du 3ᵉ lancement, échoué à l'étape 02 ; le 2ᵉ script de lancement, `lancement_2.log`, s'est arrêté seul en code 1 sans toucher au conteneur) sur sd-92569, sans réseau, `bash run_all.sh` avec `SKIP_DOWNLOAD=1 PY=python3`. Répertoire : `~/work/z23585246/run/` (copie inscriptible du paquet). Relever : `podman ps -a`, `podman logs replab-oilecu-run > …` via `bin/capture.sh`, `podman wait`/`podman inspect` pour le code de sortie. À comparer ensuite : `run/output/tables/*.csv` contre `pkg/…/output/tables/*.csv` fournis (copie intacte dans `pkg/`). Les logs `etat_*.log` du dossier sont des relevés intermédiaires.
+
+**Pas de rapport encore** : aucun résultat n'a été produit. Dossier non inscrit au registre (fichiers encore à venir) ; le prochain cycle inscrit tout par `bin/inscrit_dossier.sh`. Dossier `rapports/zenodo-23381101/` : fiche seule (non retenu).
+
+**Incidents.** Deux lancements ratés (curl HTTP/2 ; en-tête VIX), conteneur du 1er lancement supprimé (`arret_1.log`) ; un `cp` refusé (remplacé par un fichier écrit à la main, `extrait.sh`) ; un `curl` en arrière-plan a tourné quelques minutes (délai de 120 s × reprises), sans effet.
+
+**Prochaine action.** Auteur (cycle suivant) : relever le résultat, comparer les tables, rédiger le rapport (portée *paquet*, mention des écarts de versions Python et du VIX), inscrire le dossier.
+
+---
+
+## 2026-10-27T20:10Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commits 90b05e7 et 10cceb6 (session auteur du 27/10 soir) : `rapports/zenodo-23595707/RAPPORT.md` (brouillon), contrôlé contre `executions.log`, `readme.log`, `results_verification.csv`, logs `tc` et `nft`. Tous les nombres concordent avec leurs logs ; verdict *reproduit*/*paquet* justifié et borné dans les Limites ; aucun mot interdit ni intention prêtée.
+
+**Verdict de relecture.** Conforme, `brouillon` → `publiable`. Correction de forme : deux comptages de lignes de CSV sans log retirés, aucun nombre de résultat touché. Détail : `RELECTURE.md`. Registre 82 (`correction`), 83 (relecture) ; `verifie` OK. Réserve : la journalisation nft est limitée à 20 connexions/s ; `bin/liste_zenodo.py` inutilisé reste à retirer par entrée nouvelle.
+
+**Blocages.** Aucun BLOCAGE. Le constat de procédure du 26/10 est bien levé par les relevés `tc` et `nft`. Rien exécuté, aucune connexion à sd-92569.
+
+**Prochaine action.** Auteur : paquet suivant.
+
+---
+
+## 2026-10-27T20:10Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** (1) Politique de sortie de sd-92569 relevée sous `sudo` (`sudo tc qdisc show`, `sudo nft list ruleset`) : `tbf 200Mbit` sur enp1s0f0, table nft `inet replab` qui journalise les nouvelles connexions de l'uid 1001, ports 25/465/587 refusés (logs `rapports/zenodo-recherche-20261027-{tc,nft}.log`) ; le constat de procédure du 26/10 est levé. (2) Sixième paquet : Zenodo 23595707 (QSurvDiag, Python bibliothèque standard, 10,9 Mo, données incluses) choisi dans la page 2 de la recherche « replication package » ; MD5 conforme, extrait par `python3 -I`. Les quatre commandes du README exécutées en conteneur `python:3.12-slim` sans réseau, paquet en lecture seule : intégrité + RFC 3161 OK, `reproduce` 399 contrôles (MATCH 297, PARTIAL 100, analytique non exécuté 2), conformité 41/41, 41/41, 22/22, `reproduce_experiments` 84 (MATCH 70, PARTIAL 6, analytique non exécuté 8), tous codes 0, 7 s. Rapport `rapports/zenodo-23595707/RAPPORT.md`, `brouillon`, verdict proposé *reproduit*/*paquet*. Registre 76-81 ajouté (le dossier du rapport est inscrit jusqu'à l'entrée 75 ; `verifie` OK, 81 entrées).
+
+**À examiner par le relecteur.** (1) Portée *paquet* alors que le paquet relit des enregistrements archivés (même question que le rapport 4, déjà au dossier de la revue n° 3) ; le rapport le dit. (2) Le niveau analytique (10 contrôles sur 483) n'a pas été exécuté (QUTest, pip, clones GitHub) : le rapport le déclare. (3) Aucune comparaison à l'article.
+
+**Incidents.** Premier appel de `capture.sh` avec `ssh` redoublé (code 255, log conservé et inscrit). `bin/liste_zenodo.py` écrit puis non utilisé (python refusé hors sandbox) ; je n'ai pas pu le supprimer (`rm` refusé), il est inscrit au registre tel quel (entrée 80) : le relecteur peut le retirer par une entrée nouvelle. `rapports/zenodo-23591167/fichiers.json` : fiche d'un autre candidat, non retenu (relief et MDS, dépendances lourdes et DEM non redistribué).
+
+**Prochaine action.** Relecteur : juger le rapport 6. Auteur : paquet suivant ; éventuellement le niveau analytique de 23595707 (réseau vers GitHub et PyPI à nommer).
+
+---
+
+## 2026-10-27T09:30Z — relève par le mainteneur (session interactive) avec le propriétaire
+
+Première nuit à quatre sessions : deux rapports écrits et passés `publiable` le soir même (23511350, 23624408) ; cinq rapports au total ; 2,36 $ estimés pour la nuit, 7,4 $ depuis le début.
+
+**Registre.** `verifie` échouait sur l'entrée 61 (journal inscrit en cours de session, puis modifié par l'entrée du relecteur — même défaut que le 26/10, entrée 22). Correction de conception : le lanceur inscrit `journal/JOURNAL.md` après chaque session qui l'a modifié ; les sessions ne l'inscrivent plus. Entrée `journal` ajoutée ci-après pour rétablir la chaîne ; rien d'ancien modifié.
+
+**Consigne ajoutée (prompt auteur).** Exécutions de plus d'une heure : détachées sur l'exécuteur, relevées au cycle suivant. Motif : le garde-fou de deux heures tue la session, pas le conteneur (défaut du `timeout` noté le 17/10).
+
+**Au dossier de la revue n° 3** (avec « hors paquet ») : portée *paquet* quand la suite du paquet relit des résultats conservés sans les régénérer (rapport 4, question du relecteur du 26/10 20:45Z).
+
+**Prochaine action.** Auteur : paquet suivant ; outiller l'exécution détachée avant le premier paquet long.
+
+---
+
 ## 2026-10-26T21:35Z — session relecteur (Sonnet 5.5, non interactive)
 
 **Relu.** Commits 4086f9f..HEAD : session auteur du 26/10 soir (cfff8bf) : `rapports/zenodo-23624408/RAPPORT.md` (brouillon), logs, registre 34-61. Nombres contrôlés contre `run_all.log` (code 0, 3 928 s, étapes, dix PASS, ni warning ni error), `comparaison.log` (26/26/1), `ecarts.log` (5,9e-10 ; 7,55e-14 ; 1,06e-10 ; 8,15e-13 hors cellules proches de zéro), `diffs.log` (M, T, H, n). Aucune intention prêtée, aucun mot interdit (recherche par motifs).

@@ -60,3 +60,7 @@ bin/capture.sh rapports/zenodo-23585999/reecrits_identiques.log '<deux find -exe
 - **Contenu non examiné.** Les 39 programmes sont des calculs de modèle et de bornes ; je n'ai pas jugé leur validité scientifique, ni les formules, ni ce que les « certificats » établissent. Le README précise que les exemples de la théorie sont synthétiques et que l'exercice SCF est descriptif.
 - Les sorties de l'exécution restent sur sd-92569 (`~/work/z23585999/run`, `pkg`) ; seuls les logs de comparaison sont copiés ici.
 - Aucun auteur n'est notifié : le verdict n'est pas *divergent* (art. 6).
+
+## Note du 2026-11-10 — rejeu par le comparateur commun (art. 5 bis)
+
+Les cinq CSV qui diffèrent à l'octet ont été comparés de nouveau par `bin/compare_csv.py` (copié sur l'exécuteur sous le nom `compare_csv_commun.py`), avec `--rtol 1e-9 --atol 1e-12`. Résultat : « RESULTAT: identique » pour les cinq, code 0 (`rejeu_commun_1.log` à `rejeu_commun_5.log`). Commande type : `bin/capture.sh rapports/zenodo-23585999/rejeu_commun_1.log 'cd ~/work/z23585999 && python3 -I compare_csv_commun.py --rtol 1e-9 --atol 1e-12 pkg/base_v0008/scf_pilot/equity_threshold_sensitivity.csv run/base_v0008/scf_pilot/equity_threshold_sensitivity.csv'`. Aucun nombre du rapport n'est modifié ; verdict et couverture inchangés.

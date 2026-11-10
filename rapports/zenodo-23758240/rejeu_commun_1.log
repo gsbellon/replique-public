@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 cd ~/work/z23758240 && python3 -I compare_csv_commun.py --rtol 1e-9 --atol 1e-12 pkg/autoscaling-sensitivity-study/results/overall_means_bursty.csv run/results/overall_means_bursty.csv
+# début    : 2026-11-10T20:12:11Z
+# ----
+RESULTAT: identique (atol=1e-12, rtol=1e-09)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

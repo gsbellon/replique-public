@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 cd ~/work/z23585999 && python3 -I compare_csv_commun.py --rtol 1e-9 --atol 1e-12 pkg/base_v0008/scf_uncertainty/descriptive_estimates_with_standard_errors.csv run/base_v0008/scf_uncertainty/descriptive_estimates_with_standard_errors.csv
+# début    : 2026-11-10T20:00:23Z
+# ----
+RESULTAT: identique (atol=1e-12, rtol=1e-09)
+# ----
+# code de sortie : 0
+# durée (s)      : 0
