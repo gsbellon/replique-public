@@ -7,6 +7,54 @@ Entrées en ordre antichronologique : la plus récente en tête. Chaque session 
 
 ---
 
+## 2026-10-28T20:10Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commit c888189 (auteur) : `lance_run2.sh`, `lancement_run2.log`, entrée de journal. Aucun rapport à l'état `brouillon` (sept rapports, tous `publiable`) : rien à passer ni à objecter.
+
+**Verdict de relecture.** Sans objet (aucun brouillon). Conformité : seconde exécution en conteneur `--network none`, `--cap-drop all`, `--read-only`, seul `run2/` monté ; VIX réutilisé (sha256 identique dans le log), aucun téléchargement ; pas de secret. Rien de contraire à CLAUDE.md.
+
+**Blocages.** Aucun BLOCAGE. Rappel : la notification à l'auteur correspondant du rapport 7 (art. 6, 14 jours) n'est pas envoyée ; canal à décider par le propriétaire. Rien exécuté, aucune connexion à sd-92569.
+
+**Prochaine action.** Auteur : relever `replab-oilecu-run2`, section répétabilité ; question du canal de notification à la revue.
+
+---
+
+## 2026-10-28T20:06Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** Rapport 7 (zenodo-23585246) déjà `publiable`. Lancement d'une seconde exécution détachée pour tester la répétabilité (réserve du relecteur) : `rapports/zenodo-23585246/lance_run2.sh`, même image, même paquet, **même fichier VIX que la 1re exécution** (sha256 identique, `lancement_run2.log`), conteneur `replab-oilecu-run2` (id 160f803cc324, lancé 20:05:36Z, ~2 h), résultats dans `~/work/z23585246/run2/` ; `run/` de la 1re exécution intact. Dossier réinscrit (`bin/inscrit_dossier.sh rapports/zenodo-23585246`).
+
+**Non fait / bloqué.** Notification à l'auteur correspondant (art. 6) : non envoyée ; aucun canal d'envoi n'est prévu au dépôt et le mainteneur n'ouvre aucun compte. À décider avec le propriétaire (forme, canal). Aucun BLOCAGE de conformité.
+
+**Prochaine action.** Cycle suivant : relever `replab-oilecu-run2` (`podman wait`, `podman logs` via capture.sh), comparer `run2/output/tables` à `run/output/tables` (`compare_tolerance.py`), ajouter la section répétabilité au rapport (par entrée nouvelle au registre) ; soumettre la question du canal de notification à la revue.
+
+---
+
+## 2026-10-28T20:05Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commit ef126d7 (auteur) : `rapports/zenodo-23585246/RAPPORT.md` (brouillon, *divergent*/*paquet*), contrôlé contre `comparaison_tolerance*.log`, `comparaison_tables.log`, `run_conteneur.log`, `etat_6.log`, `grep_seed.log`, `diag_vix.log`, `lance_run.sh`. Tous les nombres concordent avec leurs logs et commandes ; verdict justifié (écart mesuré, cause déclarée non établie, rien d'inféré) ; aucun mot interdit ni intention prêtée.
+
+**Verdict de relecture.** Conforme, `brouillon` → `publiable`, aucune correction de nombre. Détail : `RELECTURE.md`. Registre 128 (RAPPORT), 129 (RELECTURE). Réserves non bloquantes : `compare_tolerance.py` typé `log` ; répétabilité non testée (une seconde exécution renforcerait le verdict). **À faire avant publication : notification à l'auteur correspondant, délai 14 jours (art. 6) ; rien n'a été envoyé.**
+
+**Blocages.** Aucun BLOCAGE. Journal et commits récents sans action contraire à CLAUDE.md (conteneur sans réseau, VIX téléchargé hors conteneur). Rien exécuté, aucune connexion à sd-92569.
+
+**Prochaine action.** Auteur : préparer la notification (art. 6) pour décision du propriétaire sur la forme ; éventuellement seconde exécution ; paquet suivant.
+
+---
+
+## 2026-10-28T20:00Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** Relevé de l'exécution détachée de zenodo-23585246 : conteneur 87ad71e2299a terminé, code 0 (`etat_6.log`), sortie complète `run_conteneur.log`. Comparaison des 31 tables CSV régénérées à celles du paquet : octet à octet, 31 sur 31 diffèrent (`compare_tables.sh`), mais cette comparaison est trop sévère (x13 : cellules égales, octets différents, cause non relevée). Comparaison par cellule (`compare_tolerance.py`) : 104 628 cellules, 47 958 égales, 12 121 dans 10⁻⁶, 44 549 hors ; 6 381 hors 10⁻², 3 170 hors 10⁻¹. Tables déterministes concordantes (descriptives, racines unitaires, sélection de retards, X-13) ; tables dépendant de tirages divergentes malgré des `set.seed`. Cause non établie (VIX, versions, tirages non départagés). Rapport `rapports/zenodo-23585246/RAPPORT.md`, `brouillon`, verdict proposé **divergent** / portée **paquet**. Dossier inscrit par `bin/inscrit_dossier.sh`.
+
+**À examiner par le relecteur.** (1) Le seuil 10⁻⁶ est mon choix ; trois seuils sont donnés. (2) Verdict *divergent* alors que la cause est inconnue : le rapport le dit et n'infère rien. (3) Si publiable, la notification à l'auteur correspondant (art. 6, 14 jours) est à faire après relecture ; rien n'a été envoyé. (4) `compare_tolerance.py` est inscrit sous le type `log` (l'outil ne type que `.sh`/`.R`) ; à corriger par entrée nouvelle si le relecteur le juge utile.
+
+**Incidents.** Premier appel de `capture.sh` avec `ssh` redoublé (code 255, `etat_6.log` écrasé par la reprise correcte) — même erreur que le 27/10. Un chemin erroné tenté en écriture (`/home/replique`), refusé, sans effet. `registre.sh verifie` signale l'entrée 64 (journal modifié depuis l'inscription) : attendu, le lanceur réinscrit le journal.
+
+**Non fait.** Aucune répétition de l'exécution (2 h) pour tester la répétabilité ni isoler la cause (VIX / versions) ; figures et `paper/_tables` non comparées.
+
+**Prochaine action.** Relecteur : juger le rapport 7. Auteur : éventuellement une seconde exécution détachée (même image, même entrée) pour tester la répétabilité, puis paquet suivant.
+
+---
+
 ## 2026-10-27T20:30Z — session relecteur (Sonnet 5.5, non interactive)
 
 **Relu.** Commit 5f8a5bb (auteur, zenodo-23585246) et journal. Aucun rapport à l'état `brouillon` : les six rapports existants sont `publiable`, le septième n'a pas de RAPPORT.md (exécution détachée en cours). Rien à passer ni à objecter.
