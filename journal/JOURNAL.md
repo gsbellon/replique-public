@@ -7,6 +7,56 @@ Entrées en ordre antichronologique : la plus récente en tête. Chaque session 
 
 ---
 
+## 2026-10-29T20:20Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commit 9e6a793 (auteur) : rapport 8 zenodo-23585999 (`brouillon`) contre `comparaison_*.log`, `reecrits_identiques.log`, `attente_run.log`, `lancement.log`. Décomptes concordants (222/183/39 ; 89 réécrits, 50 identiques ; 11 245 cellules, 822 différentes, 9,58·10⁻¹⁴ ; valeurs 1,0145·10⁻⁸ / 1,1717·10⁻⁸).
+
+**Verdict de relecture.** Reste `brouillon` : une objection sur un nombre. Le rapport dit « 9 s » entre démarrage (20:05:01Z) et début d'attente (20:05:14Z) : c'est 13 s ; la borne d'exécution est donc 3 min 27 s, pas 3 min 21 s. Détail : `rapports/zenodo-23585999/RELECTURE.md`. Le relecteur ne corrige pas les nombres. Dossier réinscrit. Rapport zenodo-23439616 : déjà `publiable` (mention « brouillon » seulement dans l'historique), rien à faire.
+
+**Entrée 64 du registre (journal modifié depuis l'inscription).** Constat reconnu, non traité ici : conséquence de l'inscription du journal par le lanceur ; à porter à la revue.
+
+**Blocages.** Aucun BLOCAGE. Rien de contraire à CLAUDE.md dans les derniers commits. Rien exécuté, aucune connexion à sd-92569. Notification du rapport 7 (art. 6) toujours en attente du canal.
+
+**Prochaine action.** Auteur : corriger la durée au rapport 8, puis relecteur : repasser à `publiable`.
+
+---
+
+## 2026-10-29T20:12Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** Huitième paquet : Zenodo 23585999 (« AI Income Rights and the Identification of Declining Work », v0024 ; Python ; 56 Mo ; données SCF incluses, aucune inscription). Téléchargé (MD5 conformes), extrait par `python3 -I` (222 fichiers), image `replab-ai306` (Python 3.12.15 ; le README dit 3.12.14 ; numpy/scipy/pandas/matplotlib/mpmath identiques au lock). `verify_release.py --manifest` passed ; `run_all.py` : 39 programmes code 0 en moins de 3 min 21 s ; `verify_release.py` passed. Comparaison paquet livré contre régénéré (`compare_pkg_run.py`, `compare_csv.py`) : 89 fichiers réécrits, 50 identiques à l'octet, 39 différents (durées, empreintes, chaînes d'environnement, arrondis ; CSV : écart relatif max 9,58·10⁻¹⁴ ; une valeur de JSON hors tolérance 10⁻⁹/10⁻¹², `utility_optimizer_max_spending_difference` 1,01·10⁻⁸ contre 1,17·10⁻⁸, cause non établie). Rapport 8 `rapports/zenodo-23585999/RAPPORT.md` : *reproduit* / *paquet*, `brouillon`. Dossier inscrit (`bin/inscrit_dossier.sh`).
+
+**Incidents.** `bin/registre.sh verifie` répond « ENTRÉE 64: journal/JOURNAL.md modifié depuis l'inscription » : le journal inscrit par le lanceur change à chaque session, ce qui rend la vérification fautive pour une entrée ancienne ; non traité (le lanceur gère le journal), à porter au relecteur et à la revue. Un `mkdir` via `bash -c` a été refusé (inutile : dossier déjà existant). Première version de `compare_pkg_run.py` limitée à 5 chemins par fichier ; remplacée par une version à tolérance absolue et 60 chemins, tous les logs de comparaison refaits avec la version finale.
+
+**Bloqué.** Notification à l'auteur correspondant (art. 6) sans objet ici (*reproduit*) ; pour le rapport 7 (*divergent*) elle reste non envoyée, canal à décider par le propriétaire. Aucun BLOCAGE de conformité.
+
+**Prochaine action.** Relecteur : relire le rapport 8 (nombres contre `comparaison_*.log`, `reecrits_identiques.log`) et statuer sur l'entrée 64 du registre. Auteur : paquet suivant ; éventuellement seconde exécution du 23585999 pour la répétabilité.
+
+---
+
+## 2026-10-29T20:02Z — session relecteur (Sonnet 5.5, non interactive)
+
+**Relu.** Commit dcbed6c (auteur) : rapport zenodo-23585246 repassé en `brouillon`, nouvelle section « Répétabilité » ; contrôle contre `repet_1e-6.log`, `repet_1e-2.log`, `run2_vs_paquet_1e-6.log`, `lancement_run2.log`, `etat_run2_final.log`, `etat_run2_podman.log`. Tous les nombres concordent (104 628 cellules égales entre les deux exécutions ; mêmes décomptes au paquet ; sha256 VIX identique ; code 0 ; 1 h 15 min 53 s de CPU).
+
+**Verdict de relecture.** Conforme, `brouillon` → `publiable` (divergent / paquet), aucune correction de nombre. Détail : `RELECTURE.md`. Registre 231 (RAPPORT), 232 (RELECTURE). Journal non inscrit (le lanceur s'en charge).
+
+**Blocages.** Aucun BLOCAGE. Rien de contraire à CLAUDE.md dans les derniers commits. Rappel : la notification à l'auteur correspondant (art. 6, 14 jours) n'est toujours pas envoyée ; canal à décider par le propriétaire. Rien exécuté, aucune connexion à sd-92569.
+
+**Prochaine action.** Auteur : paquet suivant ; canal de notification à porter à la revue.
+
+---
+
+## 2026-10-29T20:00Z — session auteur (Sonnet 5.5, non interactive)
+
+**Fait.** Relevé de `replab-oilecu-run2` : terminé, code 0 (`etat_run2_final.log`, `etat_run2_podman.log`). Comparaison par cellule 1re contre 2e exécution : 104 628 cellules sur 104 628 égales, à 10⁻⁶ et 10⁻² (`repet_1e-6.log`, `repet_1e-2.log`) ; 2e exécution contre paquet : mêmes décomptes que la 1re (`run2_vs_paquet_1e-6.log`). Section « Répétabilité » ajoutée au rapport 7, limites corrigées ; le rapport repasse à `brouillon` (contenu modifié après relecture, à relire). Dossier réinscrit. Le verdict *divergent*/*paquet* est inchangé ; la cause reste non établie.
+
+**Incident mineur.** Premier appel de `capture.sh` avec `ssh` redoublé (code 255), comme les 27 et 28/10 ; refait correctement. Les écrans de `capture.sh` n'affichent que les 3 dernières lignes : lire le fichier.
+
+**Bloqué.** Notification à l'auteur correspondant (art. 6) toujours non envoyée : canal à décider par le propriétaire. Aucun BLOCAGE de conformité.
+
+**Prochaine action.** Relecteur : relire la section répétabilité, repasser à `publiable`. Auteur : paquet suivant ; éventuellement isoler la cause (VIX du millésime de l'article indisponible ? autre version de Python) — à juger au coût.
+
+---
+
 ## 2026-10-28T20:10Z — session relecteur (Sonnet 5.5, non interactive)
 
 **Relu.** Commit c888189 (auteur) : `lance_run2.sh`, `lancement_run2.log`, entrée de journal. Aucun rapport à l'état `brouillon` (sept rapports, tous `publiable`) : rien à passer ni à objecter.
