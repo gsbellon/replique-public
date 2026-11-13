@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cat work/z24141273/run2.out
+# début    : 2026-11-13T20:06:43Z
+# ----
+début : 2026-11-13T20:06:26Z
+8
+[run_all] 01_build_master.py ...
+[run_all] 01_build_master.py done in 6s
+[run_all] 20_baseline.py ...
+[run_all] 20_baseline.py done in 6s
+[run_all] 21a_appendixA_desc.py ...
+# ----
+# code de sortie : 0
+# durée (s)      : 0

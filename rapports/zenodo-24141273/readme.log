@@ -1,0 +1,279 @@
+# commande : ssh sd-92569 cd work/z24141273/pkg/replication_package_v1.0.1 && cat README.md requirements.txt run_all.py && find output -type f | head -80 && ls data
+# début    : 2026-11-13T20:01:16Z
+# ----
+# Replication package
+
+**Fiscal Capacity in the Digital Age: What Survives Identification? Evidence from 145 Countries**
+(*Economies*, manuscript economies-4672368)
+
+Package version 1.0.1 (11 November 2026) — master dataset version **16 October 2026** (`v2026-10-16`) — DOI of version 1.0.0: **10.5281/zenodo.23483609** (Zenodo assigns a new DOI to each version; the concept DOI resolves to the latest).
+
+### What is new in version 1.0.1
+
+* New scripts added during the revision of the article: `41b_did_late_adopters.py`, `41c_b2c_share.py`, `52_sample_composition.py`, `53_lag_sensitivity.py`, `54_weak_iv.py`, `55_democracy_resources.py`, `56_did_cohorts.py`, `57_mechanism_trends.py` and `58_osi_validation.py`; `49_heterogeneity.py` now also reports unadjusted p-values. The master dataset and all earlier estimates are unchanged.
+* **Numbering.** In the published article the appendices are *Supplementary Materials S1–S16* (A → S1, B → S2, …, P → S16) and the supplementary tables and figures are numbered consecutively (Tables S1–S85, Figures S1–S19). The output files keep the internal names used by the code (`A1.csv` … `P5.csv`, `Table1.csv` … `Table11.csv`, `Figure1.png` … `Figure4.png`). **`docs/numbering_map.csv` gives, for every published table and figure, the corresponding output file and its caption.** References to appendices, tables and figures in this README and in the code use the internal names. Note that the order of the main-text tables and figures changed in the article: `Table7.csv` → Table 8, `Table8.csv` → Table 9, `Table9.csv` → Table 11, `Table10.csv` → Table 7, `Table11.csv` → Table 10, `Figure1.png` → Figure 2 and `Figure2.png` → Figure 1.
+* Tables S19–S21 (internal A18–A20), S52–S54 (H5–H7), S62–S63 (J5–J6) and S68 (L3) are assembled from the JSON files written by the new scripts in `output/results/`; `docs/numbering_map.csv` names the file and key of each.
+
+This package contains the data, the Python code and the instructions needed to reproduce **every table and figure** of
+the article and of its Supplementary Material. All estimates are computed from **one dated master dataset**
+(`data/panel_master_v2026-10-16.csv`), which is itself built by code from public source extracts and from
+hand-collected data documented below.
+
+---------------------------------------------------------------------------------------------------------------------
+
+## 1. Quick start
+
+```bash
+pip install -r requirements.txt        # Python 3.11 or later (tested with Python 3.13)
+python run_all.py                      # builds the master dataset, then runs every analysis
+```
+
+Outputs:
+
+| Folder | Content |
+|---|---|
+| `output/tables/` | one CSV file per table (`Table1.csv` … `Table11.csv`, `A1.csv` … `P5.csv`), with notes in `*_note.txt` |
+| `output/figures/` | one PNG file per figure (`Figure1.png` … `Figure4.png`, `A1.png` … `P1.png`) |
+| `output/results/` | full estimation results in JSON (coefficients, standard errors, p-values, sample sizes, test statistics) |
+| `output/run_all.log` | log of the complete run |
+
+Run time: about 55 minutes on a 2-core cloud machine, most of it in the nested cross-validation of the
+machine-learning comparison (`31_ml.py`), in the repeated cross-fitting of double machine learning (`33_dml_cf.py`) and in the wild and pairs bootstraps of `47_inference.py` and in the repeated sample splitting of `49_heterogeneity.py`.
+Every random procedure uses a fixed seed, so a complete run reproduces the published numbers exactly (verified by
+two complete runs from an empty output folder).
+
+## 2. Data
+
+### 2.1 Public sources (`data/raw/`)
+
+The raw files are filtered extracts (only the indicators used) of the full downloads made on **29 September 2026**.
+`code/00_extract_raw.py` recreates them from the full downloads (not shipped because of their size; place them in
+`data/source_downloads/` and run `python code/00_extract_raw.py`).
+
+| Extract | Provider and dataset | Indicators | Licence |
+|---|---|---|---|
+| `IMF_WORLD_extract.csv` | IMF World Revenue Longitudinal Data (WoRLD), via World Bank Data360 | tax revenue, total revenue, social contributions, grants and tax components (% of GDP) | CC BY 4.0 |
+| `UNCTAD_DE_extract.csv` | UNCTAD digitally-deliverable services trade, via Data360 | imports and exports, US$ (2010–2023; single vintage) | CC BY 4.0 |
+| `WB_KNOMAD_extract.csv` | World Bank KNOMAD | remittance inflows; bilateral migrant stocks | CC BY 4.0 |
+| `EIU_DI_extract.csv` | EIU Democracy Index, via Data360 | overall index (national values) | as per provider |
+| `RWB_PFI_extract.csv` | Reporters Without Borders, World Press Freedom Index, via Data360 | overall **score** (the rank series is discarded) | as per provider |
+| `ITU_ICT_extract.csv` | ITU ICT Regulatory Tracker, via Data360 | overall score | as per provider |
+| `WB_INFECDB_extract.csv` | World Bank Informal Economy Database | MIMIC, DGE, self-employment, informal employment and other measures | CC BY 4.0 |
+| `PCH_IXP_extract.csv` | Packet Clearing House, via Data360 | number of Internet exchange points | as per provider |
+| `UN_EGDI_extract.csv` | UN E-Government Survey, via Data360 | Online Services Index | as per provider |
+| `WB_GTMI_extract.csv` | World Bank GovTech Maturity Index 2022 | items I-7, I-20, I-21, I-22 (tax administration) | CC BY 4.0 |
+| `WB_ES_extract.csv` | World Bank Enterprise Surveys indicators, via Data360 (dataset WB_ES; downloaded 18 October 2026; built by `code/00c_extract_es.py`) | firm shares by detailed sector (standard surveys 2006–2026) and by firm group (Business Ready surveys 2022–2026): website use, electronic sales, tax visits, registration, e-filing, tax perceptions and firm composition | CC BY 4.0 |
+| `WDI_extract.csv`, `WDI_country_metadata.csv` | World Bank World Development Indicators / Gender Statistics | GDP (current US$), GDP per capita (PPP, constant US$), population, inflation, agricultural and vulnerable/self-employment, urbanisation, Internet users, fixed broadband; regions | CC BY 4.0 |
+
+### 2.2 Hand-collected data (`data/handcollected/`)
+
+| File | Content | Sources |
+|---|---|---|
+| `digital_vat_adoption_dates.csv` | effective date of VAT/GST on business-to-consumer digital services supplied by non-residents, 145 countries, with confidence rating and source URL | tax-authority documents, VATCalc, Avalara, KPMG/EY/PwC alerts, EUR-Lex |
+| `vat_standard_rates.csv` | standard VAT/GST rate, 145 countries × 2005–2020, with notes and source URL | KPMG and PwC tax guides, OECD *Consumption Tax Trends*, national legislation |
+| `submarine_cables.csv` | international submarine cables landing in each coastal country with ready-for-service year | TeleGeography Submarine Cable Map (country data, accessed October 2026) |
+| `eu_vat_compliance_gap.csv` | VAT compliance gap (% of VTTL), EU-27 and UK, 2013–2020, with edition and table of the report used | European Commission VAT gap reports, 2019–2023 editions |
+
+### 2.3 Reference data (`data/reference/`)
+
+| File | Content | Source |
+|---|---|---|
+| `country_coordinates.csv` | latitude and longitude of the capital city of each economy, used for the Conley spatial standard errors | GeoNames, via the `geonamescache` package 3.0.2 (CC BY 4.0); built by `code/00b_coordinates.py` |
+| `original_submission_clusters.csv` | cluster membership reported in the original submission | original submission |
+
+### 2.4 Master dataset
+
+`code/01_build_master.py` merges all sources into `data/panel_master_v2026-10-16.csv` (country-year panel,
+1990–2025, 221 economies; the estimation samples use 2005–2020) and `data/eu_vatgap_v2026-10-16.csv`.
+It also constructs every derived variable (shares of GDP, logarithms, the regional leave-one-out and shift-share
+instruments, the submarine-cable counts, the reform indicators, the VAT efficiency ratio, the interpolated Online
+Services Index and the GovTech tax index). Lags are taken by calendar year. The codebook is `data/codebook.csv`.
+
+## 3. Code and mapping to the paper
+
+| Script | Paper output |
+|---|---|
+| `00c_extract_es.py` | Enterprise Surveys extract (`data/raw/WB_ES_extract.csv`; not run by `run_all.py`) |
+| `00b_coordinates.py` | capital-city coordinates (`data/reference/country_coordinates.csv`; not run by `run_all.py`) |
+| `01_build_master.py` | master dataset |
+| `20_baseline.py` | Table 2; Section 4.1 statistics (variance decomposition, Hausman and Mundlak tests) |
+| `21*_appendixA*.py` | Appendix A (Tables A1–A15, Figures A1–A5) |
+| `22_appendixF.py` | Appendix F (Tables F1–F5, Figures F1–F2) |
+| `33_dml_cf.py` | Appendix Tables C6–C7, Figure C5 (runs after the clustering, whose membership it uses) |
+| `30_clustering.py` | Table 7, Figure 3; Appendix B; Appendix Table F6, Figures F3–F4 |
+| `31_ml.py` | Table 8, Figure 4; Appendix C (C1–C5, Figures C1–C4); Figures F5–F6, Table F7 |
+| `40_granger.py` | Appendix G; Granger rows of Table 4 |
+| `41_did.py` | Table 5, Figure 1; Appendix H |
+| `42_external_iv.py` | Table 3; Appendix I; external-instrument rows of Table 4 and Table A9 |
+| `43_multistage.py` | Table 6; Appendix J |
+| `44_dynamics.py` | Appendix K; Section 4.4 (prediction P5) |
+| `45_sensitivity.py` | Section 4.3 sensitivity analysis; Appendix L |
+| `46_multiverse.py` | Figure 2 (specification curve over 480 specifications); Appendix M (Tables M1–M2); full list in `output/results/multiverse_all.csv` |
+| `47_inference.py` | Appendix N (Tables N1–N5, Figure N1): wild cluster bootstrap, two-way, Driscoll–Kraay and Conley inference for the headline estimates; Kleibergen–Paap / Sanderson–Windmeijer F and Anderson–Rubin sets for every IV estimate; Holm, Benjamini–Hochberg and Romano–Wolf corrections; Section 4.7 |
+| `48_firms.py` | Table 10 and Section 4.8 (Enterprise Survey evidence on observability); Appendix O (Tables O1–O5, Figures O1–O2) |
+| `49_heterogeneity.py` | Table 11 (Section 6): pre-specified heterogeneity of the digital effect (best linear projection, ordered group effects with sup-t bands, power) and generic machine-learning inference (BLP, GATES, CLAN); Appendix P (Tables P1–P5, Figure P1) |
+| `50_composite_tables.py` | Tables 1, 4 and 9 (assembled from the results above) |
+| `51_policy.py` | Appendix E (Tables E1–E3, Figure E1): policy simulations based on the identified reform effect (Tables 5–6), family-wise intervals, difference-in-differences check, welfare value and break-even costs; upper bounds for administrative digitalisation; Section 7 |
+| `41b_did_late_adopters.py` | Robustness of the reform estimates to late (2020) adopters; Table S53 (internal H6) |
+| `41c_b2c_share.py` | Business-to-consumer share of digital imports (Supplementary Material S11) |
+| `52_sample_composition.py` | Tables S17–S19 (internal A16–A18): variable availability, sample coverage and composition tests |
+| `53_lag_sensitivity.py` | Tables S20–S21 (internal A19–A20): lag structure of the internal instruments |
+| `54_weak_iv.py` | LIML and Fuller estimates of Section 4.2 |
+| `55_democracy_resources.py` | Table S68 (internal L3): democracy, non-tax revenue and tax revenue |
+| `56_did_cohorts.py` | Tables S52–S53 (internal H5–H6): adoption cohorts, pre-trends, leave-one-out |
+| `57_mechanism_trends.py` | Table S54 (internal H7): robustness of the imports × reform interaction |
+| `58_osi_validation.py` | Tables S62–S63 (internal J5–J6): validation of the Online Services Index |
+
+`code/config.py` sets the paths and the dataset version; `code/common.py` contains the shared helpers; `code/inference_lib.py` contains the robust-inference routines (also used by `20_baseline.py`, `21a` and `21c` for the weak-instrument rows of Tables 2, A4 and A8).
+
+## 4. Notes
+
+* The difference-in-differences estimator of Callaway and Sant'Anna (2021), the Dumitrescu–Hurlin test with
+  bootstrap p-values, the Anderson–Rubin confidence sets (including the subset test of Guggenberger et al., 2012), the wild
+  bootstraps (WCR, WRE, wild AR), the Driscoll–Kraay, Thompson and Conley estimators, the Romano–Wolf step-down and the
+  Cinelli–Hazlett bounds are implemented directly in the scripts; the Driscoll–Kraay estimator was checked against `linearmodels`; the Cinelli–Hazlett computations were validated against the `sensemakr` package.
+* System GMM uses `pydynpd`; double machine learning and the causal forest use `econml`. Double machine learning is
+  repeated over ten random sample splits and the median estimate is reported (Chernozhukov et al., 2018).
+* Between runs, only the computation times in Table C2 change (they depend on the hardware); all estimates are bit-for-bit reproducible (the causal forest is run single-threaded for this reason).
+* Order matters only once: `33_dml_cf.py` uses the cluster membership produced by `30_clustering.py`; `run_all.py`
+  runs the scripts in numerical order.
+* `data/reference/original_submission_clusters.csv` holds the cluster membership reported in the original submission;
+  it is used only to measure the agreement (adjusted Rand index) between the original and the current typology.
+* The Enterprise Surveys download reached the 1,048,575-row limit of the spreadsheet export, so the total-economy series
+  after `WB_ES_T_REG4` are absent; `48_firms.py` uses the complete sector (`WB_ES_M_*`, `WB_ES_S_*`) and Business Ready
+  (`WB_ES_T_BREADY_*`) series. Individual Enterprise Survey responses are not used (they require registration and cannot be
+  redistributed).
+* The sample of the revenue analyses ends in 2019–2020 because the IMF WoRLD series end there for most countries.
+
+## 5. Citation
+
+Please cite the article and this package (see `CITATION.cff`).
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+statsmodels==0.15.0
+linearmodels==7.0
+pydynpd==0.2.2
+scikit-learn==1.9.1
+shap==0.52.0
+econml==0.17.0
+lightgbm==4.7.0
+matplotlib==3.11.2
+openpyxl
+xlrd
+PySensemakr==0.0.8
+geonamescache==3.0.2   # only for code/00b_coordinates.py (the coordinates file is shipped)
+"""Reproduce every table and figure of the paper and its Supplementary Material.
+
+Usage:  python run_all.py            (from the package root; about 1-2 hours on a laptop)
+        python run_all.py --from 40  (start from a given step)
+
+Steps 00 and 00b (re-extracting the raw files from the full source downloads; capital coordinates) are skipped by default because the
+filtered extracts and the coordinates are shipped in data/raw/ and data/reference/
+"""
+import subprocess, sys, time
+from pathlib import Path
+
+CODE = Path(__file__).resolve().parent / "code"
+STEPS = sorted(p.name for p in CODE.glob("[0-9][0-9]*.py") if not p.name.startswith("00"))
+start = sys.argv[sys.argv.index("--from") + 1] if "--from" in sys.argv else "01"
+log = open(Path(__file__).resolve().parent / "output" / "run_all.log", "w")
+for s in STEPS:
+    if s[:2] < start:
+        continue
+    t = time.time(); print(f"[run_all] {s} ...", flush=True)
+    r = subprocess.run([sys.executable, s], cwd=CODE, capture_output=True, text=True)
+    log.write(f"===== {s} ({time.time() - t:.0f}s, exit {r.returncode})\n{r.stdout}\n{r.stderr}\n"); log.flush()
+    if r.returncode != 0:
+        print(r.stderr[-3000:]); sys.exit(f"[run_all] {s} failed")
+    print(f"[run_all] {s} done in {time.time() - t:.0f}s", flush=True)
+print("[run_all] all steps completed; tables in output/tables, figures in output/figures, results in output/results")
+output/run_all.log
+output/figures/B3.png
+output/figures/A3.png
+output/figures/O1.png
+output/figures/Figure3.png
+output/figures/Figure4.png
+output/figures/F3.png
+output/figures/F2.png
+output/figures/A5.png
+output/figures/B2.png
+output/figures/N1.png
+output/figures/F4.png
+output/figures/C1.png
+output/figures/L1.png
+output/figures/C2.png
+output/figures/A4.png
+output/figures/E1.png
+output/figures/A2.png
+output/figures/C4.png
+output/figures/Figure2.png
+output/figures/O2.png
+output/figures/F5.png
+output/figures/P1.png
+output/figures/B1.png
+output/figures/C5.png
+output/figures/F6.png
+output/figures/C3.png
+output/figures/F1.png
+output/figures/A1.png
+output/figures/Figure1.png
+output/tables/Table8.csv
+output/tables/Table1.csv
+output/tables/P5.csv
+output/tables/A9_note.txt
+output/tables/K1.csv
+output/tables/A16.csv
+output/tables/Table10_note.txt
+output/tables/Table10.csv
+output/tables/I3.csv
+output/tables/Table6.csv
+output/tables/P2_note.txt
+output/tables/F6_note.txt
+output/tables/C4_note.txt
+output/tables/A6.csv
+output/tables/N5_note.txt
+output/tables/F4.csv
+output/tables/B2.csv
+output/tables/A15.csv
+output/tables/M2.csv
+output/tables/B1.csv
+output/tables/A7.csv
+output/tables/O1_note.txt
+output/tables/Table8_note.txt
+output/tables/C4.csv
+output/tables/O3_note.txt
+output/tables/O1.csv
+output/tables/C2_note.txt
+output/tables/Table4.csv
+output/tables/I2.csv
+output/tables/N3_note.txt
+output/tables/B4_note.txt
+output/tables/B7_note.txt
+output/tables/O5.csv
+output/tables/F5.csv
+output/tables/J3.csv
+output/tables/N2_note.txt
+output/tables/C5.csv
+output/tables/C1_note.txt
+output/tables/J4.csv
+output/tables/K2.csv
+output/tables/A12_note.txt
+output/tables/N1_note.txt
+output/tables/F1.csv
+output/tables/B3_note.txt
+output/tables/A8_note.txt
+output/tables/A5.csv
+output/tables/B2_note.txt
+output/tables/B7.csv
+output/tables/G1.csv
+output/tables/Table2.csv
+codebook.csv
+eu_vatgap_v2026-10-16.csv
+handcollected
+panel_master_v2026-10-16.csv
+raw
+reference
+# ----
+# code de sortie : 0
+# durée (s)      : 0

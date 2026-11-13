@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 tail -4 work/z24141273/run2.out
+# début    : 2026-11-13T20:46:41Z
+# ----
+[run_all] 47_inference.py done in 788s
+[run_all] 48_firms.py ...
+[run_all] 48_firms.py done in 16s
+[run_all] 49_heterogeneity.py ...
+# ----
+# code de sortie : 0
+# durée (s)      : 0

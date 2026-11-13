@@ -1,0 +1,7 @@
+FROM docker.io/library/python@sha256:48d884813cf44e927cf64c5529dd630dd3b18338c6dc727991eef9b71e934a20
+# Section « Hors paquet » : identique à Containerfile, sauf numpy==2.3.5 au lieu de 2.5.3 (seule différence).
+# Cause établie dans diagnostic_numpy.log : sous numpy 2.5.3, float(array 1x1) lève TypeError, ce que pydynpd 0.2.2 fait.
+# numpy 2.4.4 a été essayé d'abord (première version de ce fichier, build_corrige.log) : même TypeError.
+RUN pip install --no-cache-dir numpy==2.3.5 pandas==3.0.5 scipy==1.18.1 statsmodels==0.15.0 linearmodels==7.0 \
+    pydynpd==0.2.2 scikit-learn==1.9.1 shap==0.52.0 econml==0.17.0 lightgbm==4.7.0 matplotlib==3.11.2 \
+    openpyxl xlrd PySensemakr==0.0.8

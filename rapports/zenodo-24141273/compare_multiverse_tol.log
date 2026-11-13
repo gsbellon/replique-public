@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 cd ~/work/z24141273 && python3 -I compare_csv.py --rtol 1e-9 pkg/replication_package_v1.0.1/output/results/multiverse_all.csv run2/output/results/multiverse_all.csv
+# début    : 2026-11-13T20:55:11Z
+# ----
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

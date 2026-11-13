@@ -1,0 +1,30 @@
+début : 2026-11-13T20:02:59Z
+8
+[run_all] 01_build_master.py ...
+[run_all] 01_build_master.py done in 4s
+[run_all] 20_baseline.py ...
+Traceback (most recent call last):
+  File "/work/code/20_baseline.py", line 35, in <module>
+    g = gmm(s, X, ENDOG, EXOG)
+  File "/work/code/est_core.py", line 192, in gmm
+    m = regression.abond(cmd, s2[["id", "year", y] + list(X)], ["id", "year"])
+  File "/usr/local/lib/python3.13/site-packages/pydynpd/regression.py", line 36, in __init__
+    self.regular_process(model)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/pydynpd/regression.py", line 82, in regular_process
+    self.perform_test(model, 2)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/pydynpd/regression.py", line 268, in perform_test
+    model.hansen = tests.hansen_overid(_W2_inv, model.N, zs, num_instru, \
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                       Cx.shape[1])
+                                       ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/pydynpd/specification_tests.py", line 16, in hansen_overid
+    hansen_test = hansen_test_info(float(hansen_test), df, float(p_value), crit)
+                                   ~~~~~^^^^^^^^^^^^^
+TypeError: only 0-dimensional arrays can be converted to Python scalars
+
+[run_all] 20_baseline.py failed
+code run_all : 1
+durée run_all (s) : 12
+fin : 2026-11-13T20:03:11Z

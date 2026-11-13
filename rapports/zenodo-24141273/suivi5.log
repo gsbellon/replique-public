@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 tail -4 work/z24141273/run2.out
+# début    : 2026-11-13T20:26:45Z
+# ----
+[run_all] 30_clustering.py done in 61s
+[run_all] 31_ml.py ...
+[run_all] 31_ml.py done in 973s
+[run_all] 33_dml_cf.py ...
+# ----
+# code de sortie : 0
+# durée (s)      : 0

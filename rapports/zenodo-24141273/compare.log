@@ -1,0 +1,267 @@
+# commande : ssh sd-92569 cd ~/work/z24141273 && sh compare.sh
+# début    : 2026-11-13T20:54:51Z
+# ----
+== fichiers livrés seulement / régénérés seulement (diff des listes)
+code diff listes : 0
+== CSV : compare_csv.py
+DIFFERE   ./results/multiverse_all.csv
+ligne 2, colonne se: '0.20266335074901945' -> '0.2026633507490196'
+ligne 2, colonne lo: '0.21653030726073563' -> '0.21653030726073536'
+ligne 2, colonne hi: '1.0109706421968918' -> '1.010970642196892'
+ligne 3, colonne se: '0.22441355933314341' -> '0.22441355933314575'
+ligne 3, colonne p: '0.004600458229819582' -> '0.004600458229820026'
+ligne 3, colonne lo: '0.1971428504162741' -> '0.19714285041626955'
+ligne 3, colonne hi: '1.0768440030021962' -> '1.0768440030022008'
+ligne 4, colonne se: '0.2047398705592639' -> '0.20473987055926476'
+ligne 4, colonne lo: '0.2521763547953646' -> '0.2521763547953629'
+ligne 4, colonne hi: '1.054756647387679' -> '1.0547566473876808'
+ligne 6, colonne b: '0.4615356948346509' -> '0.461535694834651'
+ligne 6, colonne se: '0.43724600581572304' -> '0.4372460058157228'
+DIFFERE   ./tables/A10.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A11.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A12.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A13.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A14.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A15.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A16.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A17.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A6.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A7.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A8.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/A9.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B6.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B7_crosstab.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/B7.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/C1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/C2.csv
+ligne 2, colonne Seconds per fold: '5.8' -> '5.1'
+ligne 6, colonne Seconds per fold: '5.2' -> '4.3'
+ligne 8, colonne Seconds per fold: '6.2' -> '5.5'
+ligne 12, colonne Seconds per fold: '5.1' -> '4.2'
+RESULTAT: differe (4)
+DIFFERE   ./tables/C3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/C4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/C5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/C6.csv
+ligne 3, colonne DML: Random Forest: '0.662 (0.439)' -> '0.661 (0.439)'
+ligne 3, colonne DML: Gradient Boosting: '0.467 (0.523)' -> '0.440 (0.536)'
+RESULTAT: differe (2)
+DIFFERE   ./tables/C7.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/E1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/E2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/E3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F6.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/F7.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/G1.csv
+ligne 9, colonne Bootstrap p: '0.160' -> '0.161'
+RESULTAT: differe (1)
+DIFFERE   ./tables/G2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/H1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/H2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/H3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/H4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/I1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/I2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/I3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/J1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/J2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/J3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/J4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/K1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/K2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/L1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/L2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/M1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/M2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/N1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/N2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/N3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/N4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/N5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/O1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/O2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/O3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/O4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/O5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/P1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/P2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/P3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/P4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/P5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table10.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table11.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table1.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table2.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table3.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table4.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table5.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table6.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table7.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table8.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+DIFFERE   ./tables/Table9.csv
+RESULTAT: identique (atol=0.0, rtol=0.0)
+CSV comparés : 88 ; identiques : 0 ; différents : 88
+== autres fichiers : cmp
+DIFFERE (octets) ./figures/A1.png
+DIFFERE (octets) ./figures/A2.png
+DIFFERE (octets) ./figures/A3.png
+DIFFERE (octets) ./figures/A4.png
+DIFFERE (octets) ./figures/A5.png
+DIFFERE (octets) ./figures/B1.png
+DIFFERE (octets) ./figures/B2.png
+DIFFERE (octets) ./figures/B3.png
+DIFFERE (octets) ./figures/C1.png
+DIFFERE (octets) ./figures/C2.png
+DIFFERE (octets) ./figures/C3.png
+DIFFERE (octets) ./figures/C4.png
+DIFFERE (octets) ./figures/C5.png
+DIFFERE (octets) ./figures/E1.png
+DIFFERE (octets) ./figures/F1.png
+DIFFERE (octets) ./figures/F2.png
+DIFFERE (octets) ./figures/F3.png
+DIFFERE (octets) ./figures/F4.png
+DIFFERE (octets) ./figures/F5.png
+DIFFERE (octets) ./figures/F6.png
+DIFFERE (octets) ./figures/Figure1.png
+DIFFERE (octets) ./figures/Figure2.png
+DIFFERE (octets) ./figures/Figure3.png
+DIFFERE (octets) ./figures/Figure4.png
+DIFFERE (octets) ./figures/L1.png
+DIFFERE (octets) ./figures/N1.png
+DIFFERE (octets) ./figures/O1.png
+DIFFERE (octets) ./figures/O2.png
+DIFFERE (octets) ./figures/P1.png
+DIFFERE (octets) ./results/appA_part1.json
+DIFFERE (octets) ./results/appA_part2.json
+DIFFERE (octets) ./results/appA_part3.json
+DIFFERE (octets) ./results/appA_part4.json
+DIFFERE (octets) ./results/appA_part5.json
+DIFFERE (octets) ./results/appF.json
+DIFFERE (octets) ./results/clustering.json
+DIFFERE (octets) ./results/democracy_resources.json
+DIFFERE (octets) ./results/did_b2c.json
+DIFFERE (octets) ./results/did_cohorts.json
+DIFFERE (octets) ./results/did_late_adopters.json
+DIFFERE (octets) ./results/did_mechanism.json
+DIFFERE (octets) ./results/dml_cf.json
+DIFFERE (octets) ./results/dynamics.json
+DIFFERE (octets) ./results/external_iv.json
+DIFFERE (octets) ./results/firms.json
+DIFFERE (octets) ./results/granger.json
+DIFFERE (octets) ./results/heterogeneity.json
+DIFFERE (octets) ./results/inference.json
+DIFFERE (octets) ./results/lag_sensitivity.json
+DIFFERE (octets) ./results/mechanism_trends.json
+DIFFERE (octets) ./results/ml.json
+DIFFERE (octets) ./results/multistage.json
+DIFFERE (octets) ./results/multiverse.json
+DIFFERE (octets) ./results/osi_validation.json
+DIFFERE (octets) ./results/sample_composition.json
+DIFFERE (octets) ./results/sec41.json
+DIFFERE (octets) ./results/sensitivity.json
+DIFFERE (octets) ./results/simulations.json
+DIFFERE (octets) ./results/table2.json
+DIFFERE (octets) ./results/weak_iv.json
+DIFFERE (octets) ./run_all.log
+autres fichiers comparés : 116 ; identiques : 55 ; différents : 61
+# ----
+# code de sortie : 0
+# durée (s)      : 3

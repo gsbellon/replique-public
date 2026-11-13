@@ -1,0 +1,12 @@
+# commande : ssh sd-92569 podman run --rm --network none --cap-drop all --security-opt no-new-privileges --read-only localhost/replab-fiscal python3 -c "import numpy as np; print(np.__version__); print(float(np.array([[1.0]])))"
+# début    : 2026-11-13T20:03:23Z
+# ----
+Traceback (most recent call last):
+2.5.3
+  File "<string>", line 1, in <module>
+    import numpy as np; print(np.__version__); print(float(np.array([[1.0]])))
+                                                     ~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: only 0-dimensional arrays can be converted to Python scalars
+# ----
+# code de sortie : 1
+# durée (s)      : 1

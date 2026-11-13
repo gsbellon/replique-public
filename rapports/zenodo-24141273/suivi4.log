@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 tail -5 work/z24141273/run2.out
+# début    : 2026-11-13T20:16:39Z
+# ----
+[run_all] 22_appendixF.py ...
+[run_all] 22_appendixF.py done in 4s
+[run_all] 30_clustering.py ...
+[run_all] 30_clustering.py done in 61s
+[run_all] 31_ml.py ...
+# ----
+# code de sortie : 0
+# durée (s)      : 0
