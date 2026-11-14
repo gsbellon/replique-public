@@ -1,0 +1,33 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-14T20:00:38Z
+# ----
+polis_replication_v1.zip: OK
+code extraction : 0
+24
+./resultados/comentarios_todos.csv
+./resultados/cifras_extras.json
+./resultados/tabla1_conversaciones.csv
+./resultados/ablacion.json
+./resultados/tipologia_por_conversacion.csv
+./resultados/replicacion_filas.csv
+./resultados/consensos_polis_tipados.csv
+./resultados/lambda_star.csv
+./resultados/resumen_conversaciones.csv
+./resultados/cifras.json
+./resultados/sensibilidad_paso.json
+./code/build_manuscript.py
+./code/figura1.py
+./code/refs_apa.py
+./code/omml_eq.py
+./code/replicacion_polis.py
+./code/soic_polis.py
+./code/extras_manuscrito.py
+./code/corpus_polis.py
+./code/cifras_manuscrito.py
+./code/derived_i.py
+./code/sensibilidad_paso.py
+./code/ablacion_polis.py
+./README.md
+# ----
+# code de sortie : 0
+# durée (s)      : 1

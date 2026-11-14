@@ -1,0 +1,24 @@
+# commande : ssh sd-92569 cat work/z24218418/pkg/README.md
+# début    : 2026-11-14T20:00:42Z
+# ----
+# Replication package (v1): auditing consensus in Pol.is conversations
+
+Code and results for the manuscript on certifying, with error control, the group-informed consensus
+statements reported by Pol.is in 19 open conversations.
+
+Contents
+- `code/`: corpus construction (`corpus_polis.py`), certification and typing of consensus statements
+  (`soic_polis.py`, `derived_i.py`), sensitivity to "pass" votes, ablation, split-sample replication,
+  and the scripts that compute every figure quoted in the manuscript (`cifras_manuscrito.py`,
+  `extras_manuscrito.py`, `figura1.py`). `build_manuscript.py` assembles the manuscript from the result files.
+- `resultados/`: result files (JSON and CSV). File and variable names are in Spanish.
+
+Data: the raw votes are the public Pol.is open data (https://github.com/compdemocracy/openData, CC BY 4.0)
+and are not redistributed here except as the derived tables in `resultados/`.
+
+Licence: code under MIT; result files under CC BY 4.0.
+
+Archived at Zenodo: DOI 10.5281/zenodo.24218418
+# ----
+# code de sortie : 0
+# durée (s)      : 0

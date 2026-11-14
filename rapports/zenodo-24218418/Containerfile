@@ -1,0 +1,6 @@
+FROM docker.io/library/python@sha256:48d884813cf44e927cf64c5529dd630dd3b18338c6dc727991eef9b71e934a20
+# Image de base : python:3.13-slim, même empreinte que zenodo-24141273 (rapports/zenodo-24141273/base_image.log).
+# Le paquet n'a ni requirements.txt ni version annoncée (readme.log) ; bibliothèques importées par les scripts exécutés :
+# numpy, pandas, scipy, matplotlib. Versions exactes choisies (mêmes que 24141273) ; versions résolues relevées dans freeze.log.
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 matplotlib==3.11.2

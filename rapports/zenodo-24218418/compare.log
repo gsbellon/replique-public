@@ -1,0 +1,156 @@
+# commande : ssh sd-92569 cd ~/work/z24218418 && sh compare.sh
+# début    : 2026-11-14T20:02:07Z
+# ----
+== CSV tabla1_conversaciones.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV tabla1_conversaciones.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV consensos_polis_tipados.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV consensos_polis_tipados.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV lambda_star.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV lambda_star.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV tipologia_por_conversacion.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV tipologia_por_conversacion.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== JSON cifras.json
+pkg/resultados/cifras.json run/resultados/cifras.json differ: byte 2, line 1
+1,170c1,170
+< {
+<  "conversaciones": 19,
+<  "participantes": 25884,
+<  "comentarios": 6411,
+<  "votos": 1662698,
+<  "polis_consensos": 1051,
+<  "tipos": {
+<   "certificado": 485,
+<   "paso": 434,
+<   "muestreo": 128,
+<   "grupo_sin_mayoria": 4
+<  },
+<  "pct_certificados": 46.1,
+<  "pct_cert_o_paso": 87.4,
+<  "polis_con_grupo_en_contra": 1,
+<  "certificado_no_polis": 38,
+<  "consenso_cert_total": 523,
+<  "conflicto_cert_total": 249,
+<  "medias_todos": {
+<   "T": 0.336,
+<   "I": 0.553,
+<   "F": 0.11,
+<   "I_paso": 0.199,
+<   "I_muestreo": 0.355,
+<   "I_cobertura": 0.351,
+<   "T_cob": 0.07,
+<   "I_cob": 0.904,
+<   "F_cob": 0.026
+<  },
+<  "medias_polis": {
+<   "T": 0.681,
+<   "I": 0.281,
+<   "F": 0.038,
+<   "I_paso": 0.2,
+<   "I_muestreo": 0.081,
+<   "I_cobertura": 0.543,
+<   "T_cob": 0.167,
+<   "I_cob": 0.824,
+<   "F_cob": 0.01
+== JSON cifras_extras.json
+pkg/resultados/cifras_extras.json run/resultados/cifras_extras.json differ: byte 2, line 1
+1,163c1,163
+< {
+<  "alpha_0.01": {
+<   "lexicographic": {
+<    "certified": 384,
+<    "sampling": 371,
+<    "pass_dependent": 292,
+<    "no_majority": 4
+<   },
+<   "certified_if_pass_dropped": 888,
+<   "n": 1051
+<  },
+<  "alpha_0.05": {
+<   "lexicographic": {
+<    "certified": 485,
+<    "pass_dependent": 292,
+<    "sampling": 270,
+<    "no_majority": 4
+<   },
+<   "certified_if_pass_dropped": 985,
+<   "n": 1051
+<  },
+<  "alpha_0.1": {
+<   "lexicographic": {
+<    "certified": 544,
+<    "pass_dependent": 292,
+<    "sampling": 211,
+<    "no_majority": 4
+<   },
+<   "certified_if_pass_dropped": 1012,
+<   "n": 1051
+<  },
+<  "cruce_lexi_vs_contrafactual": {
+<   "false": {
+<    "certified": 0,
+<    "no_majority": 4,
+<    "pass_dependent": 25,
+<    "sampling": 37
+<   },
+<   "true": {
+== JSON sensibilidad_paso.json
+pkg/resultados/sensibilidad_paso.json run/resultados/sensibilidad_paso.json differ: byte 2, line 1
+1,25c1,25
+< {
+<  "lambda_0": 485,
+<  "lambda_0.25": 698,
+<  "lambda_0.5": 933,
+<  "lambda_0.75": 1011,
+<  "lambda_1.0": 1018,
+<  "n": 1051,
+<  "lambda0_matches_paper": 485,
+<  "never_certified_even_lambda1": 33,
+<  "lambda_star_paso_median": 0.26,
+<  "lambda_star_paso_q": [
+<   0.14250000000000002,
+<   0.37
+<  ],
+<  "paso_needs_over_half": 4,
+<  "paso_n": 434,
+<  "lambda_star_muestreo_median": 0.55,
+<  "lambda_star_muestreo_q": [
+<   0.52,
+<   0.615
+<  ],
+<  "muestreo_needs_over_half": 81,
+<  "muestreo_n": 128,
+<  "uncert_lambda_star_le_0.25": 213,
+<  "uncert_lambda_star_gt_0.5_or_never": 118
+---
+> {
+>  "lambda_0": 485,
+>  "lambda_0.25": 698,
+>  "lambda_0.5": 933,
+>  "lambda_0.75": 1011,
+>  "lambda_1.0": 1018,
+>  "n": 1051,
+>  "lambda0_matches_paper": 485,
+>  "never_certified_even_lambda1": 33,
+>  "lambda_star_paso_median": 0.26,
+>  "lambda_star_paso_q": [
+>   0.14250000000000002,
+>   0.37
+== fins de ligne (nombre de CR)
+tabla1_conversaciones.csv livré: 20 régénéré: 0 ; octets livré: 1325 régénéré: 1305
+consensos_polis_tipados.csv livré: 1059 régénéré: 7 ; octets livré: 475043 régénéré: 473991
+lambda_star.csv livré: 1052 régénéré: 0 ; octets livré: 55457 régénéré: 54405
+tipologia_por_conversacion.csv livré: 18 régénéré: 0 ; octets livré: 754 régénéré: 736
+cifras.json livré: 170 régénéré: 0 ; octets livré: 2946 régénéré: 2776
+cifras_extras.json livré: 163 régénéré: 0 ; octets livré: 4527 régénéré: 4364
+sensibilidad_paso.json livré: 25 régénéré: 0 ; octets livré: 566 régénéré: 541
+# ----
+# code de sortie : 0
+# durée (s)      : 1

@@ -1,0 +1,115 @@
+# commande : ssh sd-92569 cd ~/work/z24218418 && sh lance_build.sh
+# début    : 2026-11-14T20:01:16Z
+# ----
+STEP 1/2: FROM docker.io/library/python@sha256:48d884813cf44e927cf64c5529dd630dd3b18338c6dc727991eef9b71e934a20
+STEP 2/2: RUN pip install --no-cache-dir numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 matplotlib==3.11.2
+Collecting numpy==2.5.3
+  Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.5
+  Downloading pandas-3.0.5-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting matplotlib==3.11.2
+  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting contourpy>=1.0.1 (from matplotlib==3.11.2)
+  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib==3.11.2)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib==3.11.2)
+  Downloading fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib==3.11.2)
+  Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib==3.11.2)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib==3.11.2)
+  Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib==3.11.2)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 90.5 MB/s  0:00:00
+Downloading pandas-3.0.5-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 109.8 MB/s  0:00:00
+Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 82.5 MB/s  0:00:00
+Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 63.2 MB/s  0:00:00
+Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 98.3 MB/s  0:00:00
+Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 133.5 MB/s  0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 78.2 MB/s  0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, python-dateutil, contourpy, pandas, matplotlib
+
+Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.3 packaging-26.3 pandas-3.0.5 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-4.0.0 scipy-1.18.1 tzdata-2026.6
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-polis
+--> 35c0a2803ce1
+Successfully tagged localhost/replab-polis:latest
+35c0a2803ce1b940df789e9978311b42f8b8180acdbdc91740f4a04cdb1d8898
+code de sortie build : 0
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.68.0
+kiwisolver==1.5.1
+matplotlib==3.11.2
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.5
+pillow==13.0.0
+pyparsing==3.3.3
+python-dateutil==4.0.0
+scipy==1.18.1
+tzdata==2026.6
+Python 3.13.18
+Copying blob sha256:dd57f90311a2567b55ff22eeacff1602fd04ad7566e315957731359eab173b90
+Copying blob sha256:ba2541ec790ab743d0e3ee06e9eb5b3e8343b1fdc09cb65853c7c90803bbff00
+Copying blob sha256:963bbe74d7fd1230e35556a68a082c3c38f483207d18f981eb8a966fa9868b2f
+Copying blob sha256:be42025181029a31b54804a781dadf85528fb4d251f42ad239a3b1219740c2b7
+Copying blob sha256:20ede87dd8b836218a18ec998d05a73d77225fed592edec3c5214a8fadd72718
+Copying config sha256:35c0a2803ce1b940df789e9978311b42f8b8180acdbdc91740f4a04cdb1d8898
+Writing manifest to image destination
+code de sortie save : 0
+b45d1e9d44eff2c93092fe7662fe60542fbfb1f1e41d8b8e49970c54b6db912f  /home/replab/images/zenodo-24218418.tar
+35c0a2803ce1b940df789e9978311b42f8b8180acdbdc91740f4a04cdb1d8898
+REPOSITORY                       TAG         IMAGE ID      CREATED         SIZE
+localhost/replab-polis           latest      35c0a2803ce1  12 seconds ago  509 MB
+localhost/replab-fiscal-corrige  latest      efc81ec0aefe  24 hours ago    1.11 GB
+<none>                           <none>      8c5737c8ae68  24 hours ago    1.11 GB
+localhost/replab-fiscal          latest      bb4e9157fc03  24 hours ago    1.11 GB
+localhost/replab-quarantine-req  latest      18e77e9c5837  6 days ago      576 MB
+localhost/replab-quarantine      latest      60560e41e5fa  6 days ago      572 MB
+localhost/replab-eroi            latest      d366f8f56536  7 days ago      341 MB
+localhost/replab-evid            latest      8def55924bcc  7 days ago      625 MB
+localhost/replab-reach           latest      9e1d30aa4a4f  8 days ago      765 MB
+localhost/replab-bodmpi          latest      6b6231faa145  9 days ago      989 MB
+docker.io/library/python         3.13-slim   c0e8df938051  9 days ago      123 MB
+docker.io/library/python         3.11-slim   896edfbcbf0c  9 days ago      130 MB
+docker.io/library/python         3.14-slim   d8f0d5177291  9 days ago      124 MB
+localhost/replab-nowcast         latest      2256e3f2c61d  11 days ago     1.14 GB
+<none>                           <none>      fcf36e51849b  11 days ago     1.13 GB
+localhost/replab-granularity     latest      76f679efc227  12 days ago     439 MB
+localhost/replab-cournot         latest      6380db5196a7  13 days ago     535 MB
+localhost/replab-autoscaling     latest      c4ba91a476fe  2 weeks ago     520 MB
+localhost/replab-ai306           latest      9643b511edbd  2 weeks ago     515 MB
+localhost/replab-oilecu          latest      06bad8fb8d13  2 weeks ago     1.42 GB
+localhost/replab-deamph          latest      9b5c45084ba9  2 weeks ago     972 MB
+localhost/replab-dfar-numpy      latest      39357d37a54e  2 weeks ago     202 MB
+docker.io/library/r-base         latest      0811f9b7a3d8  3 weeks ago     935 MB
+docker.io/library/python         3.12-slim   df18428df8a0  5 weeks ago     124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 29

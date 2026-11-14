@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cd ~/work/z24218418 && sh compare_crlf.sh
+# début    : 2026-11-14T20:02:17Z
+# ----
+IDENTIQUE apres normalisation des fins de ligne : tabla1_conversaciones.csv (1305 octets)
+IDENTIQUE apres normalisation des fins de ligne : consensos_polis_tipados.csv (473984 octets)
+IDENTIQUE apres normalisation des fins de ligne : lambda_star.csv (54405 octets)
+IDENTIQUE apres normalisation des fins de ligne : tipologia_por_conversacion.csv (736 octets)
+IDENTIQUE apres normalisation des fins de ligne : cifras.json (2776 octets)
+IDENTIQUE apres normalisation des fins de ligne : cifras_extras.json (4364 octets)
+IDENTIQUE apres normalisation des fins de ligne : sensibilidad_paso.json (541 octets)
+# ----
+# code de sortie : 0
+# durée (s)      : 1

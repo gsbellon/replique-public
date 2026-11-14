@@ -1,0 +1,23 @@
+# commande : ssh sd-92569 grep -n -E "http|openData|git |requests|urllib|argv|open\(|read_csv|DATA|path|Path" work/z24218418/pkg/code/corpus_polis.py work/z24218418/pkg/code/soic_polis.py work/z24218418/pkg/code/replicacion_polis.py work/z24218418/pkg/code/cifras_manuscrito.py
+# début    : 2026-11-14T20:00:46Z
+# ----
+work/z24218418/pkg/code/corpus_polis.py:16:sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+work/z24218418/pkg/code/corpus_polis.py:49:    pv = pd.read_csv(f"{folder}/participants-votes.csv")
+work/z24218418/pkg/code/corpus_polis.py:50:    cm = pd.read_csv(f"{folder}/comments.csv").set_index("comment-id")
+work/z24218418/pkg/code/corpus_polis.py:123:    root, outdir = sys.argv[1], sys.argv[2]
+work/z24218418/pkg/code/corpus_polis.py:125:    convs = sorted(c for c in os.listdir(root) if os.path.exists(f"{root}/{c}/participants-votes.csv"))
+work/z24218418/pkg/code/soic_polis.py:3:sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+work/z24218418/pkg/code/soic_polis.py:8:    P = json.load(open(f"{folder}/pca2.json", encoding="utf-8")); C = json.load(open(f"{folder}/comments.json", encoding="utf-8"))
+work/z24218418/pkg/code/soic_polis.py:18:    pv = pd.read_csv(f"{folder}/participants-votes.csv"); cm = pd.read_csv(f"{folder}/comments.csv").set_index("comment-id")
+work/z24218418/pkg/code/soic_polis.py:49:    folder, kind, out = sys.argv[1:4]
+work/z24218418/pkg/code/replicacion_polis.py:45:    pv = pd.read_csv(f"{folder}/participants-votes.csv"); cm = pd.read_csv(f"{folder}/comments.csv").set_index("comment-id")
+work/z24218418/pkg/code/replicacion_polis.py:63:    root, outdir = sys.argv[1], sys.argv[2]; os.makedirs(outdir, exist_ok=True)
+work/z24218418/pkg/code/replicacion_polis.py:64:    convs = sorted(c for c in os.listdir(root) if os.path.exists(f"{root}/{c}/participants-votes.csv"))
+work/z24218418/pkg/code/cifras_manuscrito.py:4:sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+work/z24218418/pkg/code/cifras_manuscrito.py:7:R = sys.argv[1] if len(sys.argv) > 1 else "resultados"
+work/z24218418/pkg/code/cifras_manuscrito.py:8:C = pd.read_csv(f"{R}/comentarios_todos.csv"); S = pd.read_csv(f"{R}/resumen_conversaciones.csv")
+work/z24218418/pkg/code/cifras_manuscrito.py:37:F = pd.read_csv(f"{R}/replicacion_filas.csv"); SEEDS = F.seed.nunique()
+work/z24218418/pkg/code/cifras_manuscrito.py:54:json.dump(out, open(f"{R}/cifras.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False, default=str)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

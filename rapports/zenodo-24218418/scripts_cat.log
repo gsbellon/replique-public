@@ -1,0 +1,169 @@
+# commande : ssh sd-92569 cat work/z24218418/pkg/code/cifras_manuscrito.py work/z24218418/pkg/code/extras_manuscrito.py work/z24218418/pkg/code/figura1.py work/z24218418/pkg/code/sensibilidad_paso.py
+# début    : 2026-11-14T20:00:52Z
+# ----
+"""Cifras del manuscrito a partir de las salidas de corpus_polis.py y replicacion_polis.py.
+Todas las tripletas (T, I, F) se calculan con derived_i.triple_cp (metodo SOIC 4832); nada a mano."""
+import os, sys, json, numpy as np, pandas as pd
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import derived_i as d
+ALPHA = 0.05
+R = sys.argv[1] if len(sys.argv) > 1 else "resultados"
+C = pd.read_csv(f"{R}/comentarios_todos.csv"); S = pd.read_csv(f"{R}/resumen_conversaciones.csv")
+out = {}
+out["conversaciones"] = len(S); out["participantes"] = int(S.participantes.sum()); out["comentarios"] = len(C)
+out["votos"] = int(C.n.sum())
+
+def groups(s): return [tuple(int(x) for x in g.split("/")) for g in s.split(" | ")]
+def tipo(row):
+    G = groups(row.grupos); K = len(G)
+    if row.consenso_cert: return "certificado"
+    T0 = [float(d.triple_cp(a, r, 0, ALPHA / K)["T"]) if a + r > 0 else 0.0 for a, r, u in G]
+    if all(t > 0.5 for t in T0): return "paso"
+    if any((a / (a + r) if a + r else 0) <= 0.5 for a, r, u in G): return "grupo_sin_mayoria"
+    return "muestreo"
+P = C[C.polis_collective].copy(); P["tipo"] = P.apply(tipo, axis=1)
+out["polis_consensos"] = len(P); out["tipos"] = P.tipo.value_counts().to_dict()
+out["pct_certificados"] = round(100 * (P.tipo == "certificado").mean(), 1)
+out["pct_cert_o_paso"] = round(100 * P.tipo.isin(["certificado", "paso"]).mean(), 1)
+out["polis_con_grupo_en_contra"] = int(S.polis_con_grupo_en_contra.sum())
+out["certificado_no_polis"] = int(S.certificado_no_polis.sum())
+out["consenso_cert_total"] = int(S.consenso_cert.sum()); out["conflicto_cert_total"] = int(S.conflicto_cert.sum())
+for nm, df in [("todos", C), ("polis", P)]:
+    out[f"medias_{nm}"] = {k: round(float(df[k].mean()), 3) for k in ["T", "I", "F", "I_paso", "I_muestreo", "I_cobertura", "T_cob", "I_cob", "F_cob"]}
+out["split_conflictos_grupos_polis_vs_reconstruidos"] = [round(float(S.split_conf_in.sum()), 1), round(float(S.split_conf_out.sum()), 1)]
+out["split_consensos_grupos_polis_vs_reconstruidos"] = [round(float(S.split_cons_in.sum()), 1), round(float(S.split_cons_out.sum()), 1)]
+# participacion media por comentario (cobertura)
+out["cobertura_media_n_sobre_N"] = round(float((C.n / C.N).mean()), 3)
+out["paso_medio_polis"] = round(float((P.paso / P.n).mean()), 3)
+
+# --- replicacion
+F = pd.read_csv(f"{R}/replicacion_filas.csv"); SEEDS = F.seed.nunique()
+rep = {"filas": len(F), "conv": int(F.conv.nunique()), "seeds": int(SEEDS)}
+rep["por_cert"] = F.groupby("cert")[["R1", "R2", "R3"]].mean().round(3).to_dict()
+rep["por_tipo"] = F.groupby("tipo")[["R1", "R2", "R3"]].mean().round(3).to_dict()
+rep["n_medio_por_mitad"] = (F.groupby("tipo").size() / SEEDS).round(1).to_dict()
+F["banda"] = pd.cut(F.indice, [0.8, 0.85, 0.9, 0.95, 1.0001], right=False).astype(str)
+B = F.groupby(["banda", "cert"])[["R1", "R2", "R3"]].mean().round(3); B["n_filas"] = F.groupby(["banda", "cert"]).size()
+rep["bandas"] = {f"{b}|{c}": v for (b, c), v in B.to_dict("index").items()}
+g = F.groupby(["conv", "cert"])[["R1", "R2", "R3"]].mean().unstack("cert"); rng = np.random.default_rng(0); macro = {}
+for r in ["R1", "R2", "R3"]:
+    dd = (g[(r, True)] - g[(r, False)]).dropna(); bs = [rng.choice(dd.values, len(dd)).mean() for _ in range(5000)]
+    macro[r] = dict(media=round(float(dd.mean()), 3), conv=len(dd), ic95=[round(float(np.percentile(bs, 2.5)), 3), round(float(np.percentile(bs, 97.5)), 3)], positivas=int((dd > 0).sum()))
+rep["macro"] = macro; out["replicacion"] = rep
+# --- por conversacion (tabla 1)
+T1 = S[["conversacion", "participantes", "grupos", "comentarios", "polis_collective", "polis_y_certificado", "conflicto_cert", "I_paso", "I_muestreo", "I_cobertura"]].round(2)
+T1.to_csv(f"{R}/tabla1_conversaciones.csv", index=False, encoding="utf-8-sig")
+P.to_csv(f"{R}/consensos_polis_tipados.csv", index=False, encoding="utf-8-sig")
+json.dump(out, open(f"{R}/cifras.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False, default=str)
+print(json.dumps(out, indent=1, ensure_ascii=False, default=str))
+"""Cifras complementarias: tipologia lexicografica (identificacion), contrafactual sin 'paso',
+sensibilidad a alpha, por conversacion, ejemplos. Tripletas con derived_i.triple_cp (SOIC 4832)."""
+import os, sys, json, numpy as np, pandas as pd
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import derived_i as d
+R = sys.argv[1] if len(sys.argv) > 1 else "resultados"
+P = pd.read_csv(f"{R}/consensos_polis_tipados.csv")
+G = lambda s: [tuple(int(x) for x in t.split("/")) for t in s.split(" | ")]
+def cert(Gs, alpha, drop_pass=False):
+    K = len(Gs); T = []
+    for a, r, u in Gs:
+        uu = 0 if drop_pass else u
+        T.append(float(d.cp_lower(a, a + r + uu, alpha)) if a + r + uu > 0 else 0.0)  # v0.3: interseccion-union
+    return all(t > 0.5 for t in T)
+def lexi(Gs, alpha):
+    if cert(Gs, alpha): return "certified"
+    if any((a / (a + r) if a + r else 0) <= 0.5 for a, r, u in Gs): return "no_majority"
+    if any(a / (a + r + u) <= 0.5 for a, r, u in Gs): return "pass_dependent"
+    return "sampling"
+out = {}
+for alpha in [0.01, 0.05, 0.10]:
+    lx = P.grupos.map(lambda s: lexi(G(s), alpha)).value_counts().to_dict()
+    cf = int(P.grupos.map(lambda s: cert(G(s), alpha, True)).sum())
+    out[f"alpha_{alpha}"] = dict(lexicographic=lx, certified_if_pass_dropped=cf, n=len(P))
+P["lexi"] = P.grupos.map(lambda s: lexi(G(s), 0.05))
+P["cert_sin_paso"] = P.grupos.map(lambda s: cert(G(s), 0.05, True))
+out["cruce_lexi_vs_contrafactual"] = pd.crosstab(P.lexi, P.cert_sin_paso).to_dict()
+byc = P.groupby("conversacion").lexi.value_counts().unstack(fill_value=0)
+byc.to_csv(f"{R}/tipologia_por_conversacion.csv", encoding="utf-8-sig")
+out["conv_con_consensos"] = int((byc.sum(1) > 0).sum())
+out["share_cert_por_conv"] = (byc.get("certified", 0) / byc.sum(1)).round(2).to_dict()
+# identificacion: ancho del intervalo identificado minimo entre grupos
+P["min_lo"] = P.grupos.map(lambda s: min(a / (a + r + u) for a, r, u in G(s)))
+P["min_hi"] = P.grupos.map(lambda s: min((a + u) / (a + r + u) for a, r, u in G(s)))
+out["mediana_ancho_identificado_grupo_peor"] = round(float((P.min_hi - P.min_lo).median()), 3)
+# ejemplos (texto) de pass_dependent con muchos votos
+ex = P[P.lexi == "pass_dependent"].sort_values("n", ascending=False).head(5)[["conversacion", "tid", "n", "si", "no", "paso", "grupos", "polis_media_grupos", "texto"]]
+out["ejemplos_pass_dependent"] = ex.to_dict("records")
+ex2 = P[P.lexi == "sampling"].sort_values("n", ascending=False).head(3)[["conversacion", "tid", "n", "grupos", "polis_media_grupos", "texto"]]
+out["ejemplos_sampling"] = ex2.to_dict("records")
+# ilustracion hipotetica tipo Konya: 84 % de acuerdo en un lado con n hipoteticos
+hyp = {}
+for n in [20, 40, 70]:
+    a = round(0.84 * n); hyp[n] = dict(a=a, T=round(float(d.cp_lower(a, n, 0.05)), 4))  # v0.3: interseccion-union, una cola por lado
+out["hipotetico_84pct_dos_lados_alpha_0.025"] = hyp
+json.dump(out, open(f"{R}/cifras_extras.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False, default=str)
+print(json.dumps(out, indent=1, ensure_ascii=False, default=str))
+"""Fig. 1: tipologia de los consensos de Pol.is por conversacion (salida de extras_manuscrito.py)."""
+import sys, pandas as pd, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+R = sys.argv[1] if len(sys.argv) > 1 else "resultados"; O = sys.argv[2] if len(sys.argv) > 2 else "figuras"
+T = pd.read_csv(f"{R}/tipologia_por_conversacion.csv", index_col=0)
+cats = [("certified", "Certified", "#2a78d6"), ("pass_dependent", "Pass-dependent", "#eb6834"),
+        ("sampling", "Sampling-limited", "#1baf7a"), ("no_majority", "No majority in a group", "#eda100")]
+for c, _, _ in cats:
+    if c not in T: T[c] = 0
+n = T[[c for c, _, _ in cats]].sum(1); S = T[[c for c, _, _ in cats]].div(n, axis=0)
+S = S.assign(n=n).sort_values(["certified", "n"]); n = S.pop("n")
+plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8})
+fig, ax = plt.subplots(figsize=(6.8, 4.6), dpi=600)
+left = pd.Series(0.0, index=S.index)
+for c, lab, col in cats:
+    ax.barh(range(len(S)), S[c], left=left, color=col, label=lab, height=0.72, edgecolor="#fcfcfb", linewidth=1)
+    left += S[c]
+ax.set_yticks(range(len(S))); ax.set_yticklabels([f"{i}  (n = {int(n[i])})" for i in S.index], fontsize=6.5)
+ax.set_xlim(0, 1); ax.set_xlabel("Share of statements that meet the Pol.is collective-statement criterion")
+ax.xaxis.set_major_formatter(matplotlib.ticker.PercentFormatter(1.0))
+for s in ["top", "right"]: ax.spines[s].set_visible(False)
+ax.grid(axis="x", color="#e4e3df", linewidth=0.5); ax.set_axisbelow(True)
+ax.legend(ncol=4, loc="lower center", bbox_to_anchor=(0.4, 1.0), frameon=False, fontsize=7)
+fig.tight_layout(); fig.savefig(f"{O}/Fig1.tiff", dpi=600, pil_kwargs={"compression": "tiff_lzw"}); fig.savefig(f"{O}/Fig1.png", dpi=300)
+print("ok", len(S))
+"""Sensibilidad (v0.2, respuesta a revision): fraccion lambda de pasos leidos como respaldo.
+lambda=0 -> certificado del paper; lambda* = minima fraccion de pasos favorable que certifica (umbral de quiebre)."""
+import json, sys
+import numpy as np, pandas as pd
+from scipy.stats import beta
+R = sys.argv[1] if len(sys.argv) > 1 else "resultados"
+d = pd.read_csv(f"{R}/consensos_polis_tipados.csv")
+ALPHA = 0.05
+def lower(x, n, g):  # Clopper-Pearson inferior con x real (interpolacion beta)
+    return 0.0 if x <= 0 else beta.ppf(g, x, n - x + 1)
+def cert(groups, lam):
+    K = len(groups)
+    return all(lower(a + lam * u, a + r + u, ALPHA) > 0.5 for a, r, u in groups)
+G = [[tuple(int(v) for v in g.split("/")) for g in s.split(" | ")] for s in d.grupos]
+out = {}
+for lam in (0, 0.25, 0.5, 0.75, 1.0):
+    out[f"lambda_{lam}"] = int(sum(cert(g, lam) for g in G))
+lams = np.linspace(0, 1, 101)
+star = []
+for g in G:
+    s = next((l for l in lams if cert(g, l)), np.nan)
+    star.append(s)
+star = np.array(star)
+d["lambda_star"] = star
+unc = d[d.tipo != "certificado"]
+out["n"] = len(d)
+out["lambda0_matches_paper"] = int((d.tipo == "certificado").sum())
+out["never_certified_even_lambda1"] = int(np.isnan(star).sum())
+for t in ("paso", "muestreo"):
+    s = d.loc[d.tipo == t, "lambda_star"]
+    out[f"lambda_star_{t}_median"] = float(np.nanmedian(s)); out[f"lambda_star_{t}_q"] = [float(np.nanpercentile(s, 25)), float(np.nanpercentile(s, 75))]
+    out[f"{t}_needs_over_half"] = int((s > 0.5).sum()); out[f"{t}_n"] = int(len(s))
+out["uncert_lambda_star_le_0.25"] = int((unc.lambda_star <= 0.25).sum())
+out["uncert_lambda_star_gt_0.5_or_never"] = int(((unc.lambda_star > 0.5) | unc.lambda_star.isna()).sum())
+d[["conversacion", "tid", "tipo", "lambda_star"]].to_csv(f"{R}/lambda_star.csv", index=False)
+json.dump(out, open(f"{R}/sensibilidad_paso.json", "w"), indent=1)
+print(json.dumps(out, indent=1))
+# ----
+# code de sortie : 0
+# durée (s)      : 1

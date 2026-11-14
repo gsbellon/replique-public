@@ -1,0 +1,91 @@
+# commande : ssh sd-92569 cd ~/work/z24218418 && sh lance_run.sh
+# début    : 2026-11-14T20:01:46Z
+# ----
+2026-11-14T20:01:46Z
+=================== étape cifras_manuscrito.py resultados
+code cifras_manuscrito : 0
+durée (s) : 2
+ [
+     0.203,
+     0.427
+    ],
+    "positivas": 16
+   },
+   "R2": {
+    "media": 0.232,
+    "conv": 17,
+    "ic95": [
+     0.153,
+     0.307
+    ],
+    "positivas": 15
+   },
+   "R3": {
+    "media": 0.089,
+    "conv": 17,
+    "ic95": [
+     0.02,
+     0.167
+    ],
+    "positivas": 16
+   }
+  }
+ }
+}
+=================== étape extras_manuscrito.py resultados
+code extras_manuscrito : 0
+durée (s) : 3
+texto": "Temperaturen in Kaufhäusern regulieren! Nicht zu warm im Winter und weniger kalt im Sommer spart Energie."
+  }
+ ],
+ "hipotetico_84pct_dos_lados_alpha_0.025": {
+  "20": {
+   "a": 17,
+   "T": 0.6563
+  },
+  "40": {
+   "a": 34,
+   "T": 0.7253
+  },
+  "70": {
+   "a": 59,
+   "T": 0.7533
+  }
+ }
+}
+=================== étape sensibilidad_paso.py resultados
+code sensibilidad_paso : 0
+durée (s) : 4
+
+  0.14250000000000002,
+  0.37
+ ],
+ "paso_needs_over_half": 4,
+ "paso_n": 434,
+ "lambda_star_muestreo_median": 0.55,
+ "lambda_star_muestreo_q": [
+  0.52,
+  0.615
+ ],
+ "muestreo_needs_over_half": 81,
+ "muestreo_n": 128,
+ "uncert_lambda_star_le_0.25": 213,
+ "uncert_lambda_star_gt_0.5_or_never": 118
+}
+=================== étape figura1.py resultados figuras
+/work/code/figura1.py:9: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  n = T[[c for c, _, _ in cats]].sum(1); S = T[[c for c, _, _ in cats]].div(n, axis=0)
+ok 17
+code figura1 : 0
+=================== fichiers modifiés par rapport à pkg/
+Only in run: figuras
+Files pkg/resultados/cifras_extras.json and run/resultados/cifras_extras.json differ
+Files pkg/resultados/cifras.json and run/resultados/cifras.json differ
+Files pkg/resultados/consensos_polis_tipados.csv and run/resultados/consensos_polis_tipados.csv differ
+Files pkg/resultados/lambda_star.csv and run/resultados/lambda_star.csv differ
+Files pkg/resultados/sensibilidad_paso.json and run/resultados/sensibilidad_paso.json differ
+Files pkg/resultados/tabla1_conversaciones.csv and run/resultados/tabla1_conversaciones.csv differ
+Files pkg/resultados/tipologia_por_conversacion.csv and run/resultados/tipologia_por_conversacion.csv differ
+# ----
+# code de sortie : 1
+# durée (s)      : 11
