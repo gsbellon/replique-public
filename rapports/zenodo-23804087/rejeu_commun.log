@@ -1,0 +1,40 @@
+# commande : ssh sd-92569 cd ~/work/z23804087 && sh rejeu_commun.sh
+# début    : 2026-11-16T20:25:37Z
+# ----
+== analysis.md (cmp) IDENTIQUE
+== comparative.md (cmp) IDENTIQUE
+== comparative_rows.tex (cmp) IDENTIQUE
+== comparative_sensitivity.md (cmp) IDENTIQUE
+== mesa.md (cmp) IDENTIQUE
+== mesa_metrics.json (compare_json.py)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== randomized.md (cmp) IDENTIQUE
+== randomized_metrics.json (compare_json.py)
+$.environment.python: '3.10.12' -> '3.12.15'
+$.environment.platform: 'Linux-6.8.0-124-generic-x86_64-with-glibc2.35' -> 'Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41'
+RESULTAT: differe (2)
+== scenario.md (cmp) DIFFERENT
+== scenario_metrics.json (compare_json.py)
+$.per_evaluation_microseconds_median: 8.15 -> 5.51
+$.per_evaluation_microseconds_samples[0]: 8.62 -> 5.44
+$.per_evaluation_microseconds_samples[1]: 6.42 -> 5.55
+$.per_evaluation_microseconds_samples[2]: 8.44 -> 5.51
+$.per_evaluation_microseconds_samples[3]: 8.15 -> 5.64
+$.per_evaluation_microseconds_samples[4]: 8.02 -> 5.46
+$.share_of_a_1ms_step_percent: 0.815 -> 0.551
+$.environment.python: '3.11.2' -> '3.12.15'
+$.environment.cpu: 'AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD' -> 'Intel(R) Xeon(R) CPU E3-1245 v5 @ 3.50GHz'
+$.environment.os: 'Windows 10' -> 'Linux 6.12.111+deb13-amd64'
+RESULTAT: differe (10)
+== sumo.md (cmp) IDENTIQUE
+== sumo_metrics.json (compare_json.py)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== traffic.md (cmp) IDENTIQUE
+== traffic_metrics.json (compare_json.py)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== validation.md (cmp) IDENTIQUE
+== validation_rows.tex (cmp) IDENTIQUE
+TOTAL identiques=13 differents=3
+# ----
+# code de sortie : 0
+# durée (s)      : 1

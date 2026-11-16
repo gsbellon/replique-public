@@ -35,6 +35,7 @@ Couverture : *régénération* (les sorties livrées sont régénérées et comp
 - **Dépendance à un jeu externe** : le résultat vaut pour les quatre fichiers figshare dont les MD5 sont ceux de la fiche figshare (`telechargement_donnees.log`) ; la fiche indique la version 1, du 2024-05-20 (`figshare_fiche.json`).
 - **`verify_theory.py` vérifie des identités du modèle par calcul** (tirages aléatoires, quadratures) : je constate que les 32 contrôles passent, pas que la théorie est correcte.
 - Une seule exécution complète sur une machine ; pas de répétition.
+- Rejeu du 2026-11-16 par le comparateur commun `bin/compare_json.py` (art. 5 bis ; le `compare_json.py` du dossier, propre à ce rapport, n'est plus la référence). `verification.json` : identique en égalité exacte (atol 0, rtol 0). `results.json` : en égalité exacte, `RESULTAT: differe (165)`, soit les 165 valeurs numériques différentes du point 3 ; à rtol 1e-9 et atol 1e-12, `RESULTAT: identique`. Aucun nombre ni verdict modifié. Commandes : `scp bin/compare_json.py rapports/zenodo-23647165/rejeu_commun.sh sd-92569:work/z23647165/` puis `bin/capture.sh rapports/zenodo-23647165/rejeu_commun.log 'cd ~/work/z23647165 && sh rejeu_commun.sh'` (sortie dans `rejeu_commun.log`).
 
 ## Commandes
 

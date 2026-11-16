@@ -1,0 +1,32 @@
+# commande : ssh sd-92569 cd ~/work/z23833498 && sh rejeu_commun.sh
+# début    : 2026-11-16T20:25:38Z
+# ----
+== archetype_results.json (compare_json.py)
+$.scale_curve[0].territories: 22.385531266661733 -> 22.385531266661737
+$.scale_curve[0].complexity: 314.37613824450665 -> 314.3761382445067
+RESULTAT: differe (2)
+== extended_results.json (compare_json.py)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== robustness_results.json (compare_json.py)
+$.joint_sensitivity.A.premium_pct[0][2]: 0.8896870217413493 -> 0.8896870217413265
+$.joint_sensitivity.A.premium_pct[0][7]: 2.1135507090139414 -> 2.1135507090139187
+$.joint_sensitivity.A.premium_pct[2][6]: 1.503351871577479 -> 1.5033518715775016
+$.joint_sensitivity.A.joint_max: 2.1135507090139414 -> 2.1135507090139187
+$.joint_sensitivity.B.premium_pct[0][7]: 2.1027667497424085 -> 2.1027667497423925
+$.joint_sensitivity.B.premium_pct[2][6]: 1.492567912305951 -> 1.4925679123059672
+$.joint_sensitivity.B.premium_pct[3][1]: 0.45957213735390623 -> 0.4595721373538901
+$.joint_sensitivity.B.premium_pct[11][0]: 0.06404335133642437 -> 0.06404335133640819
+$.joint_sensitivity.B.joint_max: 2.1027667497424085 -> 2.1027667497423925
+RESULTAT: differe (9)
+== figures/Figure_1.png (cmp) DIFFERENT
+== figures/Figure_2.png (cmp) DIFFERENT
+== figures/Figure_3.png (cmp) DIFFERENT
+== figures/Figure_4.png (cmp) DIFFERENT
+== figures/Figure_5.png (cmp) DIFFERENT
+== figures/Figure_6.png (cmp) DIFFERENT
+== figures/Figure_7.png (cmp) DIFFERENT
+== figures/Figure_8.png (cmp) DIFFERENT
+TOTAL identiques=1 differents=10
+# ----
+# code de sortie : 0
+# durée (s)      : 0

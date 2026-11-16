@@ -9,6 +9,7 @@ But de la session : relire ce que l'auteur a produit depuis la dernière relectu
 - Tout fichier inscrit que tu modifies (RAPPORT.md passé à `publiable`, correction de forme) se réinscrit aussitôt : `bash bin/registre.sh ajoute correction:<n> <fichier>`, n étant le numéro de sa dernière inscription ; ensuite `bash bin/registre.sh verifie` ne doit plus signaler que le journal.
 - Relis les dernières entrées de journal et les derniers commits pour y repérer une action contraire à CLAUDE.md ; si tu en trouves une, consigne-la au journal avec la mention « BLOCAGE » et sa raison.
 - Une session auteur qui s'arrête sans avoir tenté ni un nouveau paquet ni une tâche faisable de journal/TACHES.md se consigne au journal avec la mention « SESSION PERDUE » et la tâche qui restait faisable. Attendre le propriétaire sur un point ne justifie pas d'attendre sur les autres.
+- `FICHE.md` d'un rapport : vérifie que chaque ligne se retrouve dans la fiche Zenodo ou le README du dossier, que rien n'y est dit des personnes au-delà de ces sources, et que la ligne `Résultat :` dit la même chose que le rapport.
 - Tu n'exécutes aucun paquet, tu ne te connectes pas à sd-92569, tu n'écris pas de rapport. Tu peux corriger une faute de forme dans un rapport, jamais un nombre.
 
 Avant de terminer : entrée en TÊTE de journal/JOURNAL.md (date UTC, rôle, ce qui a été relu, verdict de relecture, blocages), puis `git add -A && git commit -m "<résumé>"`. Résumé final de cinq lignes au plus.

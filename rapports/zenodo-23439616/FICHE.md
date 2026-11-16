@@ -1,0 +1,5 @@
+Titre : Constraint-history corrections for nonlinear fractional dynamics: a vesicle relaxation study (Zenodo 23439616, `fiche_zenodo.json`)
+Créateurs : Talbi, Mohamed elamine — University of Blida, ORCID 0000-0002-3986-2500 ; Boudjemaa, Redouane — Université Saad Dahlab Blida Faculté des Sciences, ORCID 0000-0003-1621-6060 (`fiche_zenodo.json`)
+Article lié : aucun lien dans la fiche (la fiche n'a ni description ni identifiant lié ; le fichier s'intitule `paper3_cnsns_supplementary.zip`)
+Sujet : Le paquet contient des sources Python et trois fichiers JSON de résultats (études « study », « geometry » et « graded »), sans donnée externe (`RAPPORT.md`, section Paquet). La fiche ne donne pas de question de recherche au-delà du titre : corrections d'historique de contrainte pour une dynamique fractionnaire non linéaire, étude de relaxation d'une vésicule.
+Résultat : reproduit, portée paquet, couverture régénération. Les trois JSON de résultats fournis sont régénérés ; `geometry` et `graded` sont identiques et `study` ne diffère que par la version de Python qu'il note (`rejeu_commun.log`).

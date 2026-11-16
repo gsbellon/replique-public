@@ -1,0 +1,35 @@
+# commande : ssh sd-92569 cd ~/work/z23439616 && sh rejeu_commun.sh
+# début    : 2026-11-16T20:24:28Z
+# ----
+== run results_cnsns_study.json
+$.software.python: '3.12.3' -> '3.12.15'
+RESULTAT: differe (1)
+== run results_cnsns_geometry.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run results_cnsns_graded.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run2 results_cnsns_study.json
+$.software.python: '3.12.3' -> '3.12.15'
+RESULTAT: differe (1)
+== run2 results_cnsns_geometry.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run2 results_cnsns_graded.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run3 results_cnsns_study.json
+$.software.python: '3.12.3' -> '3.12.15'
+RESULTAT: differe (1)
+== run3 results_cnsns_geometry.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run3 results_cnsns_graded.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run4 results_cnsns_study.json
+$.software.python: '3.12.3' -> '3.12.15'
+RESULTAT: differe (1)
+== run4 results_cnsns_geometry.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== run4 results_cnsns_graded.json
+RESULTAT: identique (atol=0.0, rtol=0.0)
+TOTAL identiques=8 differents=4
+# ----
+# code de sortie : 0
+# durée (s)      : 1
