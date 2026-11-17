@@ -27,6 +27,22 @@ cp -r bin prompts registre "$PUB/"; cp journal/USAGE.tsv "$PUB/journal/" 2>/dev/
 EMBARGO=""
 for d in rapports/zenodo-*/; do d="${d%/}"; sous_embargo "$d" && EMBARGO="$EMBARGO ${d##*zenodo-}"; done
 echo "$(date -u +%FT%TZ) dossiers sous embargo :${EMBARGO:- aucun}"
+# Registre publié : les lignes d'un dossier sous embargo sont réduites à leur numéro et à leurs hachages (6 quater, v2.5).
+# En cas d'échec, rien n'est publié : mieux vaut une nuit sans publication qu'un registre en clair.
+if [ -n "$EMBARGO" ]; then
+python3 -I - registre/chaine.tsv "$PUB/registre/chaine.tsv" $EMBARGO <<'PY' || { echo "$(date -u +%FT%TZ) réduction du registre en échec : publication abandonnée"; exit 5; }
+import sys
+src,out,ids=sys.argv[1],sys.argv[2],sys.argv[3:]
+cles=['zenodo-'+x for x in ids]; sortie=[]; n=0
+for l in open(src,encoding='utf-8').read().split('\n'):
+    c=l.split('\t')
+    if len(c)==7 and any(k in c[3] for k in cles): l='\t'.join((c[0],c[5],c[6])); n+=1
+    sortie.append(l)
+if any(k in l for l in sortie for k in cles): sys.exit('identifiant sous embargo encore présent')
+open(out,'w',encoding='utf-8').write('\n'.join(sortie))
+print(f'registre publié : {n} lignes réduites')
+PY
+fi
 python3 - "$PUB/journal/JOURNAL.md" $EMBARGO <<'PY'
 import re,sys,datetime
 out=sys.argv[1]; ids=sys.argv[2:]; s=open('journal/JOURNAL.md').read(); head,sep,rest=s.partition('\n---\n')
