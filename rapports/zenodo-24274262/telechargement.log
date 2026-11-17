@@ -1,0 +1,39 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-16T20:28:20Z
+# ----
+pkg.zip: OK
+code extraction : 0
+27
+.
+./gialmisi-shadow-price-experiments-22691ed
+./gialmisi-shadow-price-experiments-22691ed/experiment_config.yaml
+./gialmisi-shadow-price-experiments-22691ed/LICENSE
+./gialmisi-shadow-price-experiments-22691ed/uv.lock
+./gialmisi-shadow-price-experiments-22691ed/Snakefile
+./gialmisi-shadow-price-experiments-22691ed/pyproject.toml
+./gialmisi-shadow-price-experiments-22691ed/CITATION.cff
+./gialmisi-shadow-price-experiments-22691ed/test_experiment_config.yaml
+./gialmisi-shadow-price-experiments-22691ed/DATA_README.md
+./gialmisi-shadow-price-experiments-22691ed/.gitignore
+./gialmisi-shadow-price-experiments-22691ed/scripts
+./gialmisi-shadow-price-experiments-22691ed/scripts/plot_mode_illustration.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/generate_supplement_tex.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/compute_reference_optima.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/mode_comparison_table.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/utils.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/pooled_front.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/fetch_data.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/plot_hv_schematic.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/plot_summary_figures.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/summary_statistics.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/experiment_1.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/scenario_metrics.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/generate_front.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/compute_thresholds.py
+./gialmisi-shadow-price-experiments-22691ed/scripts/plot_threshold_picker.py
+./gialmisi-shadow-price-experiments-22691ed/data_sources.yaml
+./gialmisi-shadow-price-experiments-22691ed/README.md
+./gialmisi-shadow-price-experiments-22691ed/.python-version
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,51 @@
+# Rapport zenodo-24274262 — état : publiable
+
+Verdict proposé : **inexécutable** — portée : **paquet**. Sur le paquet tel que livré, la commande documentée par son README pour reconstruire les tables et figures à partir des seules données dérivées (`uv run snakemake --cores 8 --config from_summaries=true`), exécutée dans un conteneur sans réseau avec les versions exactes de `uv.lock`, s'arrête avec le code 1 : Snakemake juge « Code has changed since last execution » les règles `compute_reference_optima` (et d'autres), les relance, et la première lit des données brutes absentes en mode `from_summaries` (`FileNotFoundError`). Deux tentatives, même échec (`run.log` ; la première tentative a été écrasée par la seconde, de même structure, code 1 ; seul le log de la seconde est conservé). Une correction minimale et nommée (section « Hors paquet ») — ajouter `--rerun-triggers mtime` à la commande, option que `scripts/fetch_data.py` du paquet emploie lui-même dans son propre contrôle — permet d'aller au bout (code 0, 336 s, 59 tâches) ; les 10 tables de moyennes et de tests régénérées ont alors les mêmes valeurs que les livrées une fois triées (détail ci-dessous), et les tables `.tex` et les 52 PDF diffèrent des livrés. Ces constats hors paquet ne changent pas le verdict, qui porte sur le paquet tel que livré.
+
+Couverture : *régénération*, limitée aux tables et figures dérivées (les données brutes de 17 Go et les fronts de référence n'ont pas été téléchargés, les résumés, références et seuils servent d'entrées) : sur le paquet tel que livré, aucune sortie n'est régénérée.
+
+## Paquet
+
+- Zenodo 24274262, « Experiment code for: Constraint-Relaxation Trade-offs as a By-Product of Evolutionary Black-Box Optimization », version v1.0.1-EJOR, publiée le 2026-11-16, type logiciel, accès ouvert, MIT. Fiche : `fiche_zenodo.json`. Un fichier, `gialmisi/shadow-price-experiments-v1.0.1-EJOR.zip`, 138 769 octets ; MD5 de la fiche concordant (`telechargement.log`, « OK »), 27 fichiers extraits (code 0). Script : `telecharge_extrait.sh`.
+- La fiche lie, par `related_identifiers`, les données (`10.5281/zenodo.23799274`, « compiles ») ; je n'ai téléchargé que `derived.tar.gz` (53 494 282 octets), `SHA256SUMS`, `experiment_config.yaml` et `README.md` de cette fiche (`fichiers_donnees.json`, `telechargement_derived.log` : quatre MD5 « OK », extraction code 0, 2 804 fichiers). Script : `telecharge_derived.sh`. Les sommes de `SHA256SUMS` n'ont pas été recontrôlées sur les fichiers extraits.
+- README du paquet (`readme.log`) : « From the derived data alone (about 50 MB) : `uv run python scripts/fetch_data.py derived`, then `uv run snakemake --cores 8 --config from_summaries=true` rebuilds the tables and figures without the run data and fronts. » Le README des données dit que les tables et figures proviennent de la même chaîne.
+- Le paquet n'a pas d'article lié dans la fiche (README : « submitted to the European Journal of Operational Research ») : portée *article* impossible.
+
+## Environnement
+
+- sd-92569, podman sans root. Image `replab-shadow` (`Containerfile`, `lance_build.sh`, `build.log`) : base `python:3.12-slim` désignée par l'empreinte `sha256:05a994d2344eb364cc186910f4fc8786a38215f39f00d0acc25bff33a08f4177` (`image_base.log`), Python 3.12.16 ; `uv==0.13.9` (`uv_versions.log`) ; `uv sync --frozen` sur le `uv.lock` du paquet (`desdeo==2.9.0`, `snakemake==9.27.0`, `numpy==2.3.5`, `polars==1.44.2`, `pymoo==0.6.2`, `pip freeze` complet dans `build.log`). Image archivée : `~/images/zenodo-24274262.tar`, sha256 `5f2f6e177a26f8ec38d3f1dda32438afedb8e18e84817832a691d58d8b89a4a0`, identifiant d'image `135e1abffa11ac31334e1359ef3fd82567e64a60e9e21b413dd5cd9ee95f88d6` (`build.log`).
+- Archives manipulées sur l'hôte par `curl`, `md5sum` et `python3 -I` (`zipfile`, `tarfile`) seulement ; aucun code du paquet n'a tourné sur l'hôte.
+- Exécution : `--network none --cap-drop all --security-opt no-new-privileges --read-only --tmpfs /tmp`, copie du paquet montée en écriture (`run/`, `run_mtime/`), l'original reste dans `pkg/`. Les données dérivées de la fiche 23799274 sont copiées dans `results/` par `cp -a` (dates de modification conservées), sauf `tables/` et `figures/`, que l'exécution doit régénérer. `uv run` est remplacé par le `PATH` du venv de l'image (`/app/.venv/bin`) ; 4 cœurs au lieu des 8 de la commande documentée.
+- Je n'ai pas lancé `scripts/fetch_data.py` : j'ai reproduit son effet documenté (téléchargement, extraction, dates conservées) par `telecharge_derived.sh` et `cp -a`. Le dossier `.snakemake` (métadonnées de Snakemake) n'existe ni dans l'archive du paquet ni dans les données.
+
+## Résultats
+
+### Paquet tel que livré (`lance_run.sh`, `run.log`)
+
+1. Simulation `snakemake -n --cores 4 --config from_summaries=true` : « Rules with provenance triggered jobs: compute_constraint_thresholds » (`run.log`, ligne 7).
+2. Exécution : code 1, 290 s ; « Error in rule compute_reference_optima » (plusieurs tâches), motif relevé par Snakemake « Code has changed since last execution », trace Python dans `compute_reference_optima.py`, ligne 149, `pl.read_parquet(path, …)` : `FileNotFoundError: No such file or directory`. Quelques tâches indépendantes aboutissent (7 sur 979 à l'arrêt) ; `results/tables/` n'est pas créé. La première tentative a donné la même erreur (code 1) ; son log a été remplacé par celui de la seconde, et ce rapport ne s'appuie que sur celui-ci.
+
+### Hors paquet (`lance_run_mtime.sh`, `run_mtime.log`)
+
+Correction exacte : `snakemake --cores 4 --rerun-triggers mtime --config from_summaries=true` (au lieu de la même commande sans `--rerun-triggers mtime`) ; rien d'autre n'est modifié, ni le code ni les données. La simulation annonce 59 tâches (5 `mode_comparison_table`, 50 `plot_summary_figures`, 2 illustrations, 1 supplément, 1 `all`) et « 920 jobs have missing provenance/metadata » ; l'exécution se termine avec le code 0 (336 s).
+
+3. Comparaison (`compare.sh`, `parquet_vers_csv.py`, `compare.log`) : listes de fichiers de `tables/` livré et régénéré identiques ; figures : le livré contient en plus `threshold_picker` (non régénéré, « by hand » selon le README). Les 10 tables Parquet sont converties en CSV (conversion seule), puis comparées par `bin/compare_csv.py` :
+   - 5 tables de moyennes (`mode_comparison_{best_so_far,hv,joint_gap,single_gap,single_hv}.csv`, 450 lignes) : **identiques**, égalité exacte.
+   - 5 tables de tests (`…_stats.csv`, 900 lignes), comparaison brute : toutes **différentes**. Trois (`best_so_far`, `joint_gap`, `single_gap`) diffèrent par l'ordre des lignes (la ligne 188 est `cantilevered_beam` dans le livré, `townsend` dans le régénéré ; 1 723, 1 685 et 1 703 différences de cellules). Deux (`hv`, `single_hv`) ont dans le régénéré deux colonnes de plus, `p_holm_without_hypervolume` et `significant_without_hypervolume` (11 → 13 colonnes, 3 différences signalées) ; le README des données décrit ces deux colonnes pour ces tables, l'archive livrée ne les contient pas.
+   - Diagnostic séparé, nommé comme tel (lignes triées sur les quatre premières colonnes, deux colonnes supplémentaires retirées ; copie brute conservée plus haut) : les 5 tables de tests sont **identiques**, à l'égalité exacte (`compare.log`).
+4. Fichiers `.tex` (`cmp`) : 10 tables différentes, `supplement_figures.tex` identique. Aperçu (`diag_tex_pdf.log`) : légende de `mode_comparison_best_so_far.tex` complétée d'une phrase sur les problèmes à une contrainte (19 lignes du livré diffèrent) ; `mode_comparison_hv_stats.tex` : colonne supplémentaire et légende modifiée (904 lignes) ; `mode_comparison_best_so_far_stats.tex` : 90 lignes de `Townsend` placées à un autre endroit (192–281) dans le régénéré. Je n'ai pas examiné chacun des 10 fichiers ; seuls ces trois ont un aperçu.
+5. PDF (`cmp`) : 52 régénérés, **52 différents à l'octet**. Pour `branin__best_so_far…pdf` (`diag_tex_pdf.log`) : les en-têtes diffèrent par `CreationDate` (livré `20261103223934+01'00'`, régénéré `20261117200903Z`), même version de Matplotlib (3.11.2), tailles 135 973 et 135 967 octets, 534 octets différents. Je n'ai pas comparé les figures au rendu ; je ne dis rien de leur contenu.
+
+## Limites
+
+- **Portée paquet.** Aucun article n'est lié ; rien ici ne dit que les nombres de l'article sont retrouvés.
+- *Inexécutable* est un fait sur le paquet tel que livré, avec les données dérivées de la fiche liée et dans le conteneur ci-dessus, pas sur la science. Il repose sur une chaîne que j'ai reconstituée sans `fetch_data.py` ni `uv run` ; un utilisateur dont Snakemake aurait déjà des métadonnées pour ce dossier pourrait ne pas rencontrer l'échec. Je ne sais pas si l'auteur l'a rencontré.
+- Les données brutes (`data_*.tar`, `fronts.tar`, 17 Go) n'ont pas été téléchargées : rien n'est dit de la régénération des fichiers `summary/` ni `reference/` ni des exécutions elles-mêmes.
+- Une seule chaîne de comparaison ; deux exécutions de la commande documentée, une de la variante.
+- Les tables `.tex` livrées et les tables de tests Parquet livrées pour `hv` et `single_hv` ne correspondent pas à la version du code de l'archive : je constate l'écart (colonnes, légendes), sans en connaître la cause.
+- Notification : le verdict n'est pas *divergent*, aucune `NOTIFICATION.md`. L'avis aux auteurs des rapports *inexécutables* (6 quater) n'est pas rédigé : sa mise en service est à venir par le mainteneur en session interactive (`journal/TACHES.md`). Adresse : non recherchée dans cette session.
+- Un `Write` accidentel vers un chemin hors dépôt a été refusé par le système (aucun fichier créé) ; sans effet sur le rapport.
+
+## Commandes
+
+Appels exacts en tête de chaque script, depuis la racine du dépôt : `telecharge_extrait.sh` → `telechargement.log` ; `telecharge_derived.sh` → `telechargement_derived.log` ; lectures : `readme.log`, `pyproject.log`, `fiche_zenodo.json`, `fichiers_donnees.json`, `image_base.log`, `uv_versions.log` (`podman run --rm <image> pip index versions uv`) ; `lance_build.sh` + `Containerfile` → `build.log` ; `lance_run.sh` → `run.log` ; `lance_run_mtime.sh` → `run_mtime.log` ; `compare.sh` + `parquet_vers_csv.py` + `bin/compare_csv.py` → `compare.log` ; `diag_tex_pdf.sh` → `diag_tex_pdf.log`.

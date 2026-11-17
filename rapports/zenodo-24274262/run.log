@@ -1,0 +1,68 @@
+# commande : ssh sd-92569 cd ~/work/z24274262 && sh lance_run.sh
+# début    : 2026-11-17T20:15:42Z
+# ----
+2026-11-17T20:15:43Z
+=================== snakemake -n (simulation)
+If you are sure that a change for a certain output file (say, <outfile>) won't change the result (e.g. because you just changed the formatting of a script or environment definition), you can also wipe its metadata to skip such a trigger via 'snakemake --cleanup-metadata <outfile>'. 
+Rules with provenance triggered jobs: compute_constraint_thresholds
+
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+=================== snakemake (exécution)
+code snakemake : 1
+durée (s) : 290
+  File "/app/.venv/lib/python3.12/site-packages/polars/io/parquet/functions.py", line 303, in read_parquet
+    ret = lf._collect_eager()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/polars/lazyframe/frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/polars/lazyframe/engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: No such file or directory (os error 2): 
+RuleException:
+CalledProcessError in file "/work/Snakefile", line 312:
+Command 'set -euo pipefail;  /app/.venv/bin/python /work/.snakemake/scripts/tmpy5_m2hss.compute_reference_optima.py' returned non-zero exit status 1.
+[Tue Nov 17 20:16:05 2026]
+Error in rule compute_reference_optima:
+    message: None
+    jobid: 18
+    input: results/thresholds/g8.yaml
+    output: results/reference/g8.yaml
+    log: results/log/g8_reference.log (check log file(s) for error details)
+RuleException:
+CalledProcessError in file "/work/Snakefile", line 312:
+Command 'set -euo pipefail;  /app/.venv/bin/python /work/.snakemake/scripts/tmphc4d2vqe.compute_reference_optima.py' returned non-zero exit status 1.
+[Tue Nov 17 20:16:06 2026]
+Error in rule compute_reference_optima:
+    message: None
+    jobid: 14
+    input: results/thresholds/pressure_vessel.yaml
+    output: results/reference/pressure_vessel.yaml
+    log: results/log/pressure_vessel_reference.log (check log file(s) for error details)
+wrote results/figures/mode_illustration.pdf
+[Tue Nov 17 20:20:38 2026]
+Finished jobid: 978 (Rule: plot_mode_illustration)
+7 of 979 steps (1%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error messages
+Complete log(s): /work/.snakemake/log/2026-11-17T201551.545907.snakemake.log
+Elapsed time: 0:04:47.065896
+WorkflowError:
+At least one job did not complete successfully.
+=================== règles en erreur et première cause relevée (lignes tronquées à 220 caractères)
+Error in rule compute_reference_optima:
+Error in rule compute_reference_optima:
+Error in rule compute_reference_optima:
+    reason: Code has changed since last execution
+    reason: Code has changed since last execution
+    reason: Code has changed since last execution
+    reason: Missing output files: results/figures/mode_illustration.pdf
+=================== fichiers de results/ après exécution
+16
+0
+ls: cannot access 'run/results/tables': No such file or directory
+1
+# ----
+# code de sortie : 0
+# durée (s)      : 297

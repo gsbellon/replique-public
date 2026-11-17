@@ -1,0 +1,191 @@
+# commande : ssh sd-92569 cd ~/work/z24274262 && sh compare.sh
+# début    : 2026-11-17T20:15:14Z
+# ----
+mode_comparison_best_so_far.parquet: 450 lignes, 5 colonnes
+mode_comparison_best_so_far_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_hv.parquet: 450 lignes, 5 colonnes
+mode_comparison_hv_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_joint_gap.parquet: 450 lignes, 5 colonnes
+mode_comparison_joint_gap_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_single_gap.parquet: 450 lignes, 5 colonnes
+mode_comparison_single_gap_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_single_hv.parquet: 450 lignes, 5 colonnes
+mode_comparison_single_hv_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_best_so_far.parquet: 450 lignes, 5 colonnes
+mode_comparison_best_so_far_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_hv.parquet: 450 lignes, 5 colonnes
+mode_comparison_hv_stats.parquet: 900 lignes, 13 colonnes
+mode_comparison_joint_gap.parquet: 450 lignes, 5 colonnes
+mode_comparison_joint_gap_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_single_gap.parquet: 450 lignes, 5 colonnes
+mode_comparison_single_gap_stats.parquet: 900 lignes, 11 colonnes
+mode_comparison_single_hv.parquet: 450 lignes, 5 colonnes
+mode_comparison_single_hv_stats.parquet: 900 lignes, 13 colonnes
+=== jeux de fichiers (livré seulement / régénéré seulement)
+tables : mêmes fichiers
+48d47
+< threshold_picker
+== CSV mode_comparison_best_so_far.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV mode_comparison_best_so_far.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV mode_comparison_best_so_far_stats.csv : exact
+ligne 188, colonne significant: 'true' -> 'false'
+ligne 188, colonne rank_biserial: '0.9932673267326733' -> '0.08090957165520889'
+ligne 188, colonne n_nonzero: '100' -> '61'
+ligne 188, colonne p_holm: '5.853699868569101e-17' -> '1.0'
+... 1673 autres différences non détaillées
+RESULTAT: differe (1723)
+== CSV mode_comparison_best_so_far_stats.csv : rtol 1e-9
+... 1673 autres différences non détaillées
+RESULTAT: differe (1723)
+== CSV mode_comparison_hv.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV mode_comparison_hv.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV mode_comparison_hv_stats.csv : exact
+colonne en trop dans le nouveau: 'p_holm_without_hypervolume'
+colonne en trop dans le nouveau: 'significant_without_hypervolume'
+nombre de colonnes: 11 -> 13
+RESULTAT: differe (3)
+== CSV mode_comparison_hv_stats.csv : rtol 1e-9
+nombre de colonnes: 11 -> 13
+RESULTAT: differe (3)
+== CSV mode_comparison_joint_gap.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV mode_comparison_joint_gap.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV mode_comparison_joint_gap_stats.csv : exact
+ligne 188, colonne significant: 'true' -> 'false'
+ligne 188, colonne rank_biserial: '0.9679207920792079' -> '0.08196721311475409'
+ligne 188, colonne n_nonzero: '100' -> '61'
+ligne 188, colonne p_holm: '3.0396092433087e-16' -> '1.0'
+... 1635 autres différences non détaillées
+RESULTAT: differe (1685)
+== CSV mode_comparison_joint_gap_stats.csv : rtol 1e-9
+... 1635 autres différences non détaillées
+RESULTAT: differe (1685)
+== CSV mode_comparison_single_gap.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV mode_comparison_single_gap.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV mode_comparison_single_gap_stats.csv : exact
+ligne 188, colonne significant: 'true' -> 'false'
+ligne 188, colonne rank_biserial: '0.9679207920792079' -> '0.07720782654680064'
+ligne 188, colonne n_nonzero: '100' -> '61'
+ligne 188, colonne p_holm: '3.0396092433087e-16' -> '1.0'
+... 1653 autres différences non détaillées
+RESULTAT: differe (1703)
+== CSV mode_comparison_single_gap_stats.csv : rtol 1e-9
+... 1653 autres différences non détaillées
+RESULTAT: differe (1703)
+== CSV mode_comparison_single_hv.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV mode_comparison_single_hv.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV mode_comparison_single_hv_stats.csv : exact
+colonne en trop dans le nouveau: 'p_holm_without_hypervolume'
+colonne en trop dans le nouveau: 'significant_without_hypervolume'
+nombre de colonnes: 11 -> 13
+RESULTAT: differe (3)
+== CSV mode_comparison_single_hv_stats.csv : rtol 1e-9
+nombre de colonnes: 11 -> 13
+RESULTAT: differe (3)
+=== DIAGNOSTIC SÉPARÉ : lignes triées sur les 4 premières colonnes, sans les colonnes p_holm_without_hypervolume et significant_without_hypervolume
+== CSV trié mode_comparison_best_so_far_stats.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV trié mode_comparison_best_so_far_stats.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV trié mode_comparison_hv_stats.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV trié mode_comparison_hv_stats.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV trié mode_comparison_joint_gap_stats.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV trié mode_comparison_joint_gap_stats.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV trié mode_comparison_single_gap_stats.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV trié mode_comparison_single_gap_stats.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+== CSV trié mode_comparison_single_hv_stats.csv : exact
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== CSV trié mode_comparison_single_hv_stats.csv : rtol 1e-9
+RESULTAT: identique (atol=0.0, rtol=1e-09)
+data/derived/tables/mode_comparison_best_so_far_stats.tex run_mtime/results/tables/mode_comparison_best_so_far_stats.tex differ: byte 15561, line 192
+== TEX mode_comparison_best_so_far_stats.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_best_so_far.tex run_mtime/results/tables/mode_comparison_best_so_far.tex differ: byte 615, line 4
+== TEX mode_comparison_best_so_far.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_hv_stats.tex run_mtime/results/tables/mode_comparison_hv_stats.tex differ: byte 92, line 2
+== TEX mode_comparison_hv_stats.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_hv.tex run_mtime/results/tables/mode_comparison_hv.tex differ: byte 739, line 4
+== TEX mode_comparison_hv.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_joint_gap_stats.tex run_mtime/results/tables/mode_comparison_joint_gap_stats.tex differ: byte 610, line 12
+== TEX mode_comparison_joint_gap_stats.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_joint_gap.tex run_mtime/results/tables/mode_comparison_joint_gap.tex differ: byte 712, line 4
+== TEX mode_comparison_joint_gap.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_single_gap_stats.tex run_mtime/results/tables/mode_comparison_single_gap_stats.tex differ: byte 15445, line 192
+== TEX mode_comparison_single_gap_stats.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_single_gap.tex run_mtime/results/tables/mode_comparison_single_gap.tex differ: byte 755, line 4
+== TEX mode_comparison_single_gap.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_single_hv_stats.tex run_mtime/results/tables/mode_comparison_single_hv_stats.tex differ: byte 92, line 2
+== TEX mode_comparison_single_hv_stats.tex : DIFFERE (cmp)
+data/derived/tables/mode_comparison_single_hv.tex run_mtime/results/tables/mode_comparison_single_hv.tex differ: byte 840, line 4
+== TEX mode_comparison_single_hv.tex : DIFFERE (cmp)
+== TEX supplement_figures.tex : identique (cmp)
+PDF différent (cmp) : branin__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : branin__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : branin__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : branin__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : branin__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : cantilevered_beam__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : cantilevered_beam__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : cantilevered_beam__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : cantilevered_beam__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : cantilevered_beam__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g24__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g24__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g24__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g24__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g24__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g2__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g2__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g2__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g2__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g2__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g6__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g6__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g6__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g6__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g6__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g8__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g8__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g8__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g8__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g8__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g9__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g9__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g9__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g9__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : g9__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : hv_illustration.pdf
+PDF différent (cmp) : mode_illustration.pdf
+PDF différent (cmp) : mystery__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : mystery__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : mystery__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : mystery__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : mystery__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : pressure_vessel__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : pressure_vessel__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : pressure_vessel__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : pressure_vessel__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : pressure_vessel__single_hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : townsend__best_so_far_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : townsend__hv_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : townsend__joint_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : townsend__single_gap_gen200_runs100_psizes12-36-60.pdf
+PDF différent (cmp) : townsend__single_hv_gen200_runs100_psizes12-36-60.pdf
+== PDF régénérés : 52 ; différents à l'octet : 52
+# ----
+# code de sortie : 0
+# durée (s)      : 2

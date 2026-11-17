@@ -1,0 +1,151 @@
+# commande : ssh sd-92569 cd ~/work/z24274262 && sh lance_build.sh
+# début    : 2026-11-17T20:02:17Z
+# ----
+STEP 1/6: FROM docker.io/library/python@sha256:05a994d2344eb364cc186910f4fc8786a38215f39f00d0acc25bff33a08f4177
+STEP 2/6: RUN pip install --no-cache-dir uv==0.13.9
+--> Using cache 38435183edede7b0f2390d46d6bf23bcdaeffb58b7c800d5e2b963146d09fce7
+--> 38435183eded
+STEP 3/6: WORKDIR /app
+--> Using cache f059b05b8105e9242cbb34af20868cca766a8d437fc5855aec4f37ce6ef550a1
+--> f059b05b8105
+STEP 4/6: COPY pyproject.toml uv.lock .python-version ./
+--> Using cache c6dd9f1b494ee17483ee066758a437265288a6ff5d3e365978c335822b11881b
+--> c6dd9f1b494e
+STEP 5/6: ENV UV_PYTHON_PREFERENCE=only-system UV_PYTHON_DOWNLOADS=never UV_PROJECT_ENVIRONMENT=/app/.venv
+--> Using cache 1e5821aad253156f6020a45c9a4b004a2ba746dbcb846eaa2590e1f47501b6f1
+--> 1e5821aad253
+STEP 6/6: RUN uv sync --frozen --no-install-project
+--> Using cache 135e1abffa11ac31334e1359ef3fd82567e64a60e9e21b413dd5cd9ee95f88d6
+COMMIT replab-shadow
+--> 135e1abffa11
+Successfully tagged localhost/replab-shadow:latest
+135e1abffa11ac31334e1359ef3fd82567e64a60e9e21b413dd5cd9ee95f88d6
+code de sortie build : 0
+Python 3.12.16
+about-time==4.2.1
+alive-progress==3.3.0
+annotated-types==0.8.0
+argparse-dataclass==2.0.0
+attrs==26.1.0
+autograd==1.9.1
+bayesian-optimization==1.4.0
+certifi==2026.10.23
+cffi==2.1.1
+charset-normalizer==3.5.2
+clarabel==0.11.1
+cloudpickle==3.1.2
+cma==4.5.0
+coco-experiment==2.8.3
+conda-inject==1.3.2
+configargparse==1.9.0
+connection-pool==0.0.3
+contourpy==1.4.0
+cvxpy==1.8.2
+cycler==0.12.1
+deprecated==3.0.1
+desdeo==2.9.0
+directsearch==1.1
+docutils==0.22.4
+dpath==2.2.0
+fastjsonschema==2.22.2
+fonttools==4.68.0
+gitdb==4.0.12
+gitpython==3.2.1
+graphemeu==0.7.2
+greenlet==3.5.6
+gurobipy==13.0.3
+highspy==1.15.1
+humanfriendly==10.0
+idna==3.20
+immutables==0.21
+imodels==3.0.4
+jinja2==3.1.6
+joblib==1.6.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+jupyter-core==5.9.1
+kiwisolver==1.5.1
+llvmlite==0.50.0
+markupsafe==3.0.4
+matplotlib==3.11.2
+mlxtend==0.25.0
+moocore==0.3.2
+mpmath==1.3.0
+narwhals==2.28.0
+nbformat==5.11.1
+nevergrad==1.0.12
+numba==0.68.1
+numpy==2.3.5
+osqp==1.1.3
+packaging==25.0
+pandas==3.1.0
+pillow==13.0.0
+platformdirs==4.14.0
+plotly==7.1.0
+polars==1.44.2
+polars-runtime-32==1.44.2
+psutil==7.2.2
+pulp==3.3.2
+pyarrow==26.0.0
+pycparser==3.12
+pydantic==2.14.2
+pydantic-core==2.50.2
+pydantic-settings==2.16.2
+pymoo==0.6.2
+pyomo==6.10.1
+pyparsing==3.3.3
+pyscipopt==6.3.0
+python-dateutil==3.0.0
+python-dotenv==1.2.4
+pyyaml==6.0.3
+referencing==0.37.0
+requests==2.34.2
+rpds-py==2026.9.1
+scikit-learn==1.9.1
+scipy==1.18.1
+scs==3.3.1
+setuptools==84.2.1
+shap==0.54.1
+six==1.17.0
+slicer==0.0.8
+smart-open==7.7.1
+smmap==5.0.3
+snakemake==9.27.0
+snakemake-interface-common==1.23.0
+snakemake-interface-executor-plugins==9.4.0
+snakemake-interface-logger-plugins==2.1.0
+snakemake-interface-report-plugins==1.3.0
+snakemake-interface-scheduler-plugins==2.0.2
+snakemake-interface-storage-plugins==4.4.1
+sqlalchemy==2.0.55
+sqlmodel==0.0.37
+sympy==1.14.0
+tabulate==0.10.0
+tenacity==9.2.1
+threadpoolctl==3.7.0
+throttler==1.2.3
+tqdm==4.70.1
+traitlets==5.16.1
+tsp-solver==0.1
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+tzdata==2026.6
+urllib3==2.8.0
+websockets==17.3
+wrapt==2.5.2
+yte==1.9.4
+Copying blob sha256:dd57f90311a2567b55ff22eeacff1602fd04ad7566e315957731359eab173b90
+Copying blob sha256:3dc3efdf011007403514ffd3b699da9deef847535ae30a3639ef3fee93c1375e
+Copying blob sha256:96a69f98ae076bdff5264720ee922820291d658c6a2df97f7c4899864ceb7ea8
+Copying blob sha256:340931a1d98607a7f1319082179f82ba477f1a1de6e3ecf2ea11f4cc0fe454c3
+Copying blob sha256:384560bc599f50601c35e517b2382daf0791aa9c53c2aaec322fdfc22530f687
+Copying blob sha256:7abf4f17abdd253cf9e97f039dd15cd6e0a4c81368013aed6943e2d338334cd2
+Copying blob sha256:7692d5bf57095e0dc93b6e503f1b5321484f1710b526bfdde4c8c3c78ec9889f
+Copying config sha256:135e1abffa11ac31334e1359ef3fd82567e64a60e9e21b413dd5cd9ee95f88d6
+Writing manifest to image destination
+code de sortie save : 0
+5f2f6e177a26f8ec38d3f1dda32438afedb8e18e84817832a691d58d8b89a4a0  /home/replab/images/zenodo-24274262.tar
+135e1abffa11ac31334e1359ef3fd82567e64a60e9e21b413dd5cd9ee95f88d6
+# ----
+# code de sortie : 0
+# durée (s)      : 15

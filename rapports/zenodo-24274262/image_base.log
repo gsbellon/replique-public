@@ -1,0 +1,16 @@
+# commande : ssh sd-92569 podman pull docker.io/library/python:3.12-slim && podman image inspect --format "{{.Digest}} {{.Id}}" docker.io/library/python:3.12-slim
+# début    : 2026-11-16T20:28:41Z
+# ----
+Trying to pull docker.io/library/python:3.12-slim...
+Getting image source signatures
+Copying blob sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b
+Copying blob sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9
+Copying blob sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41
+Copying blob sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085
+Copying config sha256:78976a69c067520ef8be34cde307ef9f6fea6dcefa50edb57039773d241ca0db
+Writing manifest to image destination
+78976a69c067520ef8be34cde307ef9f6fea6dcefa50edb57039773d241ca0db
+sha256:05a994d2344eb364cc186910f4fc8786a38215f39f00d0acc25bff33a08f4177 78976a69c067520ef8be34cde307ef9f6fea6dcefa50edb57039773d241ca0db
+# ----
+# code de sortie : 0
+# durée (s)      : 2

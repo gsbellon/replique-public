@@ -1,0 +1,156 @@
+# commande : ssh sd-92569 cd ~/work/z24274262/pkg/gialmisi-shadow-price-experiments-22691ed && cat .python-version pyproject.toml Snakefile | head -150
+# début    : 2026-11-16T20:28:46Z
+# ----
+3.12
+[project]
+name = "shadow-price-experiments"
+version = "1.0.1"
+description = "Experiments for constraint-relaxation trade-offs as a by-product of evolutionary black-box optimization"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+dependencies = [
+  "desdeo==2.9.0",
+  "snakemake==9.27.0",
+  "numpy>=2.2",
+  "polars>=1.41,<2",  # DESDEO 2.8 is tested against polars 1.x
+  "scipy>=1.11.4",
+  "moocore>=0.3.2",
+  "matplotlib>=3.10",
+  "plotly>=6.0",
+  "pyyaml>=6.0",
+]
+
+[tool.uv]
+package = false
+
+configfile: "experiment_config.yaml"
+
+import os
+
+RESULTS_DIR = config["results_dir"]
+DATA_GEN_SCRIPT = config["data_gen_script"]
+FRONT_GEN_SCRIPT = config["front_gen_script"]
+SUMMARY_PROBLEMS = config["summary_problems"]
+SUMMARY_STATS_SCRIPT = config["summary_stats_script"]
+THRESHOLDS_SCRIPT = config["thresholds_script"]
+EXT = config["result_extension"]
+PLOT_SCRIPT = config["plot_script"]
+MODE_TABLE_SCRIPT = config["mode_table_script"]
+
+SCENARIO_SCRIPT = config["scenario_script"]
+REFERENCE_SCRIPT = config["reference_script"]
+SUPPLEMENT_SCRIPT = config["supplement_script"]
+POOLED_FRONT_SCRIPT = config["pooled_front_script"]
+# Rebuild tables and figures from the derived data (thresholds, references, summaries) alone,
+# without the run data and fronts: snakemake --config from_summaries=true
+FROM_SUMMARIES = bool(config["from_summaries"])
+
+# Metrics computed by summary_statistics.py (per-generation summary + per-run final values)
+SUMMARY_METRIC_KEYS = ["best_so_far", "hv", "shadow_gen_best", "shadow_best_so_far", "shadow_price_diff"]
+# Metrics computed by scenario_metrics.py (the other three cells of the 2x2 scenario grid)
+SCENARIO_METRIC_KEYS = ["joint_gap", "single_gap", "single_hv"]
+# Metrics with figures and comparison tables (one per cell of the scenario grid + optimizer performance)
+METRIC_KEYS = ["best_so_far", "hv"] + SCENARIO_METRIC_KEYS
+# Figures collected in the supplementary material, in order
+SUPPLEMENT_METRIC_KEYS = ["best_so_far", "single_gap", "single_hv", "joint_gap", "hv"]
+PROBLEM_BY_NAME = {p["name"]: p for p in config["problems"]}
+CT_LEVELS = ["low", "med", "high"]
+
+wildcard_constraints:
+    problem_name="(" + "|".join(SUMMARY_PROBLEMS) + ")",
+    metric_key="(" + "|".join(METRIC_KEYS) + ")",
+    mode="(" + "|".join(config["modes"]) + ")",
+    ctlevel="(" + "|".join(CT_LEVELS) + ")",
+    psize="[0-9]+",
+    n_generations="[0-9]+",
+    n_runs="[0-9]+"
+
+
+def thresholds_for_level(prob: dict, level: str) -> dict:
+    key = f"constraint_thresholds_{level}"
+    try:
+        return prob[key]
+    except KeyError as err:
+        raise KeyError(f"Problem '{prob.get('name', '<unknown>')}' missing key {key}") from err
+
+
+def param_combinations():
+    """Cartesian sum of the wanted parameters."""
+    for prob in config["problems"]:
+        pname = prob["name"]
+        for mode in config["modes"]:
+            for level in CT_LEVELS:
+                    for pop_size in config["population_sizes"]:
+                        yield {
+                            "problem_name": pname,
+                            "mode": mode,
+                            "ct_level": level,
+                            "population_size": pop_size,
+                        }
+
+
+def run_data_files(problem_name: str) -> list[str]:
+    """The run files of one problem: every mode, threshold level and population size."""
+    return [
+        os.path.join(
+            RESULTS_DIR,
+            "data",
+            f"{problem_name}_{mode}_gen{config['n_generations']}_runs{config['n_runs']}_ct{ct}_psize{psize}.{EXT}",
+        )
+        for mode in config["modes"]
+        for ct in CT_LEVELS
+        for psize in config["population_sizes"]
+    ]
+
+
+def summary_stem(problem_name: str, mode: str, ct: str, psize) -> str:
+    return os.path.join(
+        RESULTS_DIR,
+        "summary",
+        f"{problem_name}_{mode}_gen{config['n_generations']}_runs{config['n_runs']}_ct{ct}_psize{psize}",
+    )
+
+
+def metric_files(problem_name: str, mode: str, ct: str, psize, metric_key: str) -> tuple[str, str]:
+    """(per-generation summary, per-run final values) holding `metric_key`."""
+    stem = summary_stem(problem_name, mode, ct, psize)
+    if metric_key in SCENARIO_METRIC_KEYS:
+        return f"{stem}_scenario_summary.{EXT}", f"{stem}_scenario_per_run.{EXT}"
+    return f"{stem}_summary.{EXT}", f"{stem}_per_run.{EXT}"
+
+
+def summary_inputs_and_meta(problem_name: str, metric_key: str):
+    meta = []
+    paths = []
+    for psize in config["population_sizes"]:
+        for ct in CT_LEVELS:
+            for mode in config["modes"]:
+                path, _ = metric_files(problem_name, mode, ct, psize, metric_key)
+                paths.append(path)
+                meta.append({"path": path, "psize": psize, "ctlevel": ct, "mode": mode})
+    return paths, meta
+
+
+def all_summary_inputs_and_meta(metric_key: str):
+    """All summary paths and metadata across all problems (for mode comparison tables)."""
+    paths, meta = [], []
+    for pname in SUMMARY_PROBLEMS:
+        for psize in config["population_sizes"]:
+            for ct in CT_LEVELS:
+                for mode in config["modes"]:
+                    summary_path, per_run_path = metric_files(pname, mode, ct, psize, metric_key)
+                    paths.extend([summary_path, per_run_path])
+                    meta.append({
+                        "path": summary_path,
+                        "per_run_path": per_run_path,
+                        "problem": pname,
+                        "psize": psize,
+                        "ctlevel": ct,
+                        "mode": mode,
+                    })
+    return paths, meta
+
+
+# ----
+# code de sortie : 0
+# durée (s)      : 1

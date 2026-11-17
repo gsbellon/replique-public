@@ -1,0 +1,74 @@
+# commande : ssh sd-92569 cd ~/work/z24274262 && sh lance_run_mtime.sh
+# début    : 2026-11-17T20:08:42Z
+# ----
+2026-11-17T20:08:43Z
+=================== snakemake -n --rerun-triggers mtime (simulation)
+Config file experiment_config.yaml is extended by additional config specified via the command line.
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-11-17 20:08:45
+  Workflow ID: 391324d8-26aa-4bdd-a71d-f744be42427d
+  Platform: Linux-6.12.111+deb13-amd64-x86_64-with-glibc2.41
+  Host: e16924436c2b
+  User: root
+  Snakemake version: 9.27.0
+  Python version: 3.12.16 (main, Nov  5 2026, 07:58:20) [GCC 14.2.0]
+  Command: /app/.venv/bin/snakemake -n --quiet rules --cores 4 --rerun-triggers mtime --config from_summaries=true
+  Snakefile: /work/Snakefile
+  Base directory: /work
+  Run directory: /work
+  Working directory: /work
+  Config file(s): ['experiment_config.yaml']
+  Config MD5: 61d1ac0cec804168baed0b29b4abf84e
+
+Building DAG of jobs...
+Job stats:
+job                       count
+----------------------  -------
+mode_comparison_table         5
+plot_hv_illustration          1
+plot_mode_illustration        1
+plot_summary_figures         50
+generate_supplement           1
+all                           1
+total                        59
+
+Job stats:
+job                       count
+----------------------  -------
+mode_comparison_table         5
+plot_hv_illustration          1
+plot_mode_illustration        1
+plot_summary_figures         50
+generate_supplement           1
+all                           1
+total                        59
+
+Reasons:
+    (check individual jobs above for details)
+    input files updated by another job:
+        all, generate_supplement
+    output files have to be generated:
+        generate_supplement, mode_comparison_table, plot_hv_illustration, plot_mode_illustration, plot_summary_figures
+920 jobs have missing provenance/metadata so that it in part cannot be used to trigger re-runs.
+Rules with missing metadata: compute_constraint_thresholds compute_reference_optima scenario_metrics summary_statistics
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+=================== snakemake --rerun-triggers mtime (exécution)
+code snakemake : 0
+durée (s) : 336
+    jobid: 0
+    reason: Input files updated by another job: results/figures/g8__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/tables/mode_comparison_single_gap.tex, results/figures/g9__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/branin__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/townsend__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/townsend__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/cantilevered_beam__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/pressure_vessel__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/tables/mode_comparison_joint_gap.tex, results/figures/g24__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/pressure_vessel__single_hv_gen200_runs100_psizes12-36-60.pdf, results/tables/supplement_figures.tex, results/figures/g6__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/townsend__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g8__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g9__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/cantilevered_beam__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g9__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g2__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g8__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/pressure_vessel__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g9__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/branin__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g24__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/g24__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g24__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/hv_illustration.pdf, results/tables/mode_comparison_best_so_far.tex, results/figures/g6__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/mystery__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/townsend__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/branin__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/mystery__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/branin__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g2__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/cantilevered_beam__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g6__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/mystery__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g24__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/mode_illustration.pdf, results/figures/g2__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/cantilevered_beam__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/mystery__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/branin__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/pressure_vessel__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g6__single_hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g9__best_so_far_gen200_runs100_psizes12-36-60.pdf, results/figures/pressure_vessel__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/mystery__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g2__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/tables/mode_comparison_single_hv.tex, results/figures/g8__joint_gap_gen200_runs100_psizes12-36-60.pdf, results/tables/mode_comparison_hv.tex, results/figures/g8__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/g2__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/g6__single_gap_gen200_runs100_psizes12-36-60.pdf, results/figures/townsend__hv_gen200_runs100_psizes12-36-60.pdf, results/figures/cantilevered_beam__best_so_far_gen200_runs100_psizes12-36-60.pdf
+    resources: tmpdir=/tmp
+[Tue Nov 17 20:14:21 2026]
+Finished jobid: 0 (Rule: all)
+59 of 59 steps (100%) done
+Complete log(s): /work/.snakemake/log/2026-11-17T200849.858351.snakemake.log
+Elapsed time: 0:05:31.946960
+=================== fichiers régénérés
+21
+52
+# ----
+# code de sortie : 0
+# durée (s)      : 341

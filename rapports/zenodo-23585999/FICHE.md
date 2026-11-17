@@ -1,0 +1,5 @@
+Titre : Replication package: AI Income Rights and the Identification of Declining Work (Zenodo 23585999, `fiche_zenodo.json`)
+Créateurs : Wright, Craig Steven — University of Exeter, ORCID 0000-0001-9374-0507 (`fiche_zenodo.json`)
+Article lié : aucun lien dans la fiche (la description cite le manuscrit « AI Income Rights and the Identification of Declining Work », v0024, sans DOI)
+Sujet : Le paquet réunit 39 programmes, des expériences de modèle construites, des certificats d'intervalle, des contrôles numériques, des figures et des données publiques de la Survey of Consumer Finances 2022/2025 (poids de réplication). Selon la fiche, les expériences construites ne sont pas une calibration empirique et les résultats SCF n'estiment pas d'effet de l'IA.
+Résultat : reproduit, portée paquet, couverture régénération. Les trois commandes du README s'exécutent en code 0 et sur 89 fichiers de résultats réécrits, 50 sont identiques à l'octet ; les 39 autres ne diffèrent que par des durées, empreintes, chaînes d'environnement et arrondis flottants, sauf une valeur JSON signalée au rapport (`RAPPORT.md`).

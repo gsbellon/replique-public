@@ -1,0 +1,52 @@
+# commande : ssh sd-92569 cd ~/work/z24274262 && sh diag_tex_pdf.sh
+# début    : 2026-11-17T20:15:28Z
+# ----
+== diff mode_comparison_best_so_far.tex : lignes différentes (diff | grep -c '^<')
+19
+== diff mode_comparison_best_so_far.tex : début
+4c4
+< \caption{Final-generation mean best-so-far feasible objective by mode (Bs = Baseline, Rx = Relaxed, Jt = Joint, Rk = Ranking, Hv = Hypervolume).  \textbf{Bold}: the winning mode(s), i.e. the modes that no other mode is significantly better than, provided that some mode is significantly better than another; no mark when no mode is (paired two-sided Wilcoxon signed-rank tests, $\alpha=0.05$, Holm-corrected over the mode pairs). Lower is better. The Wins row counts the configurations each mode wins, ties included; more wins are better.}
+---
+> \caption{Final-generation mean best-so-far feasible objective by mode (Bs = Baseline, Rx = Relaxed, Jt = Joint, Rk = Ranking, Hv = Hypervolume).  \textbf{Bold}: the winning mode(s), i.e. the modes that no other mode is significantly better than, provided that some mode is significantly better than another; no mark when no mode is (paired two-sided Wilcoxon signed-rank tests, $\alpha=0.05$, Holm-corrected over the mode pairs). Lower is better. The Wins row counts the configurations each mode wins, ties included; more wins are better. On the single-constraint problems (Branin, Mystery, Townsend) the relaxed and joint modes coincide, so a single value spans their two columns; the Wins row counts it for both.}
+14,20c14,24
+< \multirow{3}{*}{\rotatebox{90}{\shortstack[c]{\small Branin \\ \scriptsize $(\times 10^{2})$}}} & 12 & -2.52 & \textbf{-2.66} & \textbf{-2.66} & \textbf{-2.64} & -2.65 & -2.52 & -2.67 & -2.67 & -2.68 & -2.69 & -2.52 & -2.56 & -2.56 & \textbf{-2.69} & -2.69 \\
+<  & 36 & \textbf{-2.69} & \textbf{-2.69} & \textbf{-2.69} & \textbf{-2.69} & -2.69 & \textbf{-2.69} & \textbf{-2.69} & \textbf{-2.69} & -2.69 & -2.69 & \textbf{-2.69} & \textbf{-2.68} & \textbf{-2.68} & -2.69 & -2.69 \\
+<  & 60 & \textbf{-2.68} & \textbf{-2.69} & \textbf{-2.69} & \textbf{-2.69} & -2.69 & \textbf{-2.68} & \textbf{-2.69} & \textbf{-2.69} & -2.69 & -2.69 & \textbf{-2.68} & \textbf{-2.69} & \textbf{-2.69} & -2.69 & -2.69 \\
+== diff mode_comparison_hv_stats.tex : lignes différentes (diff | grep -c '^<')
+904
+== diff mode_comparison_hv_stats.tex : début
+2,3c2,3
+< \begin{longtable}{llllrrrrll}
+< \caption{Wilcoxon signed-rank test results: all pairwise mode comparisons ($\alpha=0.05$, Holm-corrected over the mode pairs of each configuration; $p_{\mathrm{Holm}}$ is the adjusted $p$-value, significant if below $\alpha$). Direction names the better mode.}\\
+---
+> \begin{longtable}{llllrrrrrll}
+> \caption{Wilcoxon signed-rank test results: all pairwise mode comparisons ($\alpha=0.05$, Holm-corrected over the mode pairs of each configuration; $p_{\mathrm{Holm}}$ is the adjusted $p$-value, significant if below $\alpha$). Direction names the better mode. $p_{\mathrm{Holm}}^{-\mathrm{Hv}}$: adjusted over the pairs without the hypervolume mode, as if it had not been run (the underline of the main table).}\\
+5c5
+< Problem & $n$ & $th$ & Comparison & $W$ & $p$ & $p_{\mathrm{Holm}}$ & $r$ & Sig. & Direction \\
+== diff mode_comparison_best_so_far_stats.tex : lignes différentes (diff | grep -c '^<')
+90
+== diff mode_comparison_best_so_far_stats.tex : début
+191a192,281
+> Townsend & 12 & low & Rx vs Bs & 40 & 0.0483 & 0.4345 & 0.532 & No & Rx better \\
+> Townsend & 12 & low & Jt vs Bs & 40 & 0.0483 & 0.4345 & 0.532 & No & Jt better \\
+> Townsend & 12 & low & Rk vs Bs & 45 & 0.0814 & 0.5700 & 0.474 & No & Rk better \\
+> Townsend & 12 & low & Hv vs Bs & 861 & 0.2307 & 1.0000 & 0.172 & No & Hv better \\
+> Townsend & 12 & low & Jt vs Rx & -- & -- & -- & -- & No & insufficient data \\
+> Townsend & 12 & low & Rk vs Rx & 30 & 0.5186 & 1.0000 & -0.231 & No & Rx better \\
+> Townsend & 12 & low & Hv vs Rx & 869 & 0.5822 & 1.0000 & 0.081 & No & Hv better \\
+== PDF : en-têtes de métadonnées (strings | grep Date) de branin__best_so_far, livré puis régénéré
+<< /Creator (Matplotlib v3.11.2, https://matplotlib.org)
+/Producer (Matplotlib pdf backend v3.11.2)
+/CreationDate (D:20261103223934+01'00') >>
+<< /Creator (Matplotlib v3.11.2, https://matplotlib.org)
+/Producer (Matplotlib pdf backend v3.11.2)
+/CreationDate (D:20261117200903Z) >>
+== PDF : octets livré / régénéré, nombre d'octets différents (cmp -l | wc -l)
+135973 data/derived/figures/branin__best_so_far_gen200_runs100_psizes12-36-60.pdf
+135967 run_mtime/results/figures/branin__best_so_far_gen200_runs100_psizes12-36-60.pdf
+271940 total
+cmp: EOF on run_mtime/results/figures/branin__best_so_far_gen200_runs100_psizes12-36-60.pdf after byte 135967
+534
+# ----
+# code de sortie : 0
+# durée (s)      : 0

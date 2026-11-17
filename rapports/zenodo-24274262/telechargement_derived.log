@@ -1,0 +1,53 @@
+# commande : ssh sd-92569 sh work/telecharge_derived.sh
+# début    : 2026-11-17T20:00:39Z
+# ----
+derived.tar.gz: OK
+SHA256SUMS: OK
+experiment_config.yaml: OK
+README.md: OK
+code extraction : 0
+2804
+.
+./summary
+./summary/pressure_vessel_joint_gen200_runs100_ctlow_psize12_summary_meta.yaml
+./summary/branin_relaxed_gen200_runs100_cthigh_psize60_summary.parquet
+./summary/mystery_joint_gen200_runs100_cthigh_psize60_per_run.parquet
+./summary/branin_hypervolume_gen200_runs100_ctlow_psize12_scenario_per_run.parquet
+./summary/g24_joint_gen200_runs100_ctlow_psize36_per_run.parquet
+./summary/mystery_ranking_gen200_runs100_ctmed_psize36_per_run.parquet
+./summary/townsend_ranking_gen200_runs100_cthigh_psize12_scenario_per_run.parquet
+./summary/g8_relaxed_gen200_runs100_ctmed_psize12_scenario_summary.parquet
+./summary/g9_hypervolume_gen200_runs100_ctlow_psize12_per_run.parquet
+./summary/townsend_joint_gen200_runs100_ctlow_psize12_per_run.parquet
+./summary/g6_hypervolume_gen200_runs100_ctmed_psize60_per_run.parquet
+./summary/g9_joint_gen200_runs100_ctmed_psize60_summary_meta.yaml
+./summary/g24_hypervolume_gen200_runs100_ctmed_psize12_scenario_meta.yaml
+./summary/branin_baseline_gen200_runs100_cthigh_psize12_summary.parquet
+./summary/pressure_vessel_joint_gen200_runs100_cthigh_psize36_scenario_meta.yaml
+./summary/townsend_relaxed_gen200_runs100_ctlow_psize12_summary.parquet
+./summary/g9_joint_gen200_runs100_ctmed_psize60_scenario_meta.yaml
+./summary/g2_joint_gen200_runs100_ctmed_psize12_scenario_per_run.parquet
+./summary/pressure_vessel_joint_gen200_runs100_ctmed_psize36_per_run.parquet
+./summary/branin_baseline_gen200_runs100_cthigh_psize12_scenario_per_run.parquet
+./summary/branin_ranking_gen200_runs100_ctmed_psize60_scenario_meta.yaml
+./summary/townsend_hypervolume_gen200_runs100_ctmed_psize12_scenario_per_run.parquet
+./summary/g2_relaxed_gen200_runs100_cthigh_psize12_summary.parquet
+./summary/mystery_ranking_gen200_runs100_ctlow_psize36_scenario_per_run.parquet
+./summary/mystery_hypervolume_gen200_runs100_cthigh_psize12_per_run.parquet
+./summary/branin_joint_gen200_runs100_ctlow_psize60_scenario_meta.yaml
+./summary/mystery_baseline_gen200_runs100_ctmed_psize36_scenario_summary.parquet
+./summary/townsend_baseline_gen200_runs100_cthigh_psize36_scenario_per_run.parquet
+./summary/g9_baseline_gen200_runs100_ctmed_psize36_scenario_meta.yaml
+./summary/pressure_vessel_hypervolume_gen200_runs100_cthigh_psize60_scenario_summary.parquet
+./summary/branin_baseline_gen200_runs100_ctlow_psize36_summary_meta.yaml
+./summary/townsend_ranking_gen200_runs100_cthigh_psize60_summary.parquet
+./summary/g2_baseline_gen200_runs100_cthigh_psize36_scenario_summary.parquet
+./summary/mystery_joint_gen200_runs100_cthigh_psize12_scenario_meta.yaml
+./summary/g9_relaxed_gen200_runs100_cthigh_psize36_scenario_meta.yaml
+./summary/g24_relaxed_gen200_runs100_cthigh_psize12_summary_meta.yaml
+./summary/g8_relaxed_gen200_runs100_cthigh_psize12_summary_meta.yaml
+./summary/townsend_hypervolume_gen200_runs100_ctmed_psize60_scenario_meta.yaml
+80M	.
+# ----
+# code de sortie : 0
+# durée (s)      : 15

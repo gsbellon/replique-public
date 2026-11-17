@@ -1,0 +1,5 @@
+Titre : QSurvDiag replication package (Zenodo 23595707, `fiche_zenodo.json`)
+Créateurs : Ye, Boshuai — affiliation non indiquée dans la fiche, ORCID 0009-0000-3480-1234 (`fiche_zenodo.json`)
+Article lié : aucun lien dans la fiche (la description cite l'article « Why Quantum Mutants Survive: Separating Observation Limitations from Suite Omissions » sans DOI)
+Sujet : Le paquet archive des exécutions natives de QUTest et QuCheck (non rejouées) et fournit des scripts qui recalculent chaque valeur vérifiée à partir de ces enregistrements, avec la bibliothèque standard de Python. Question de l'article, d'après son titre : pourquoi des mutants quantiques survivent, limites d'observation ou omissions de la suite de tests.
+Résultat : reproduit, portée paquet, couverture contrôles internes. Les quatre commandes de vérification du README s'exécutent en code 0 et donnent les décomptes annoncés ; les exécutions natives ne sont pas relancées et le niveau analytique (10 contrôles sur 483) n'a pas été exécuté (`RAPPORT.md`).
