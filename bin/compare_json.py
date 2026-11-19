@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Comparateur commun de fichiers JSON (CLAUDE.md art. 5 bis).
 
-    python3 -I bin/compare_json.py [--atol A] [--rtol R] REFERENCE NOUVEAU
+    python3 -I bin/compare_json.py [--atol A] [--rtol R] [--max-detail N] REFERENCE NOUVEAU
 
 Compare NOUVEAU (réexécution) à REFERENCE (sortie livrée par le paquet), valeur par valeur.
 Deux nombres sont égaux si |a-b| <= atol + rtol*|ref| (défaut : 0 et 0, égalité exacte).
@@ -13,7 +13,7 @@ Toute différence est une différence : fichier manquant ou illisible, clé manq
 longueur de liste, type, valeur. L'ordre des clés d'un objet ne compte pas ; l'ordre d'une liste compte.
 Rien n'est ignoré : un champ qui change par nature (date, durée, chemin) sort comme différence,
 et c'est le rapport qui l'explique.
-Code de sortie : 0 identiques (aux tolérances), 1 différences (listées, au plus 50 détaillées),
+Code de sortie : 0 identiques (aux tolérances), 1 différences (listées, au plus 50 détaillées ; --max-detail N change la limite, 0 = toutes),
 2 erreur d'usage. Dernière ligne de sortie : « RESULTAT: identique » ou « RESULTAT: differe (n) ».
 """
 import argparse
@@ -96,6 +96,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--atol", type=float, default=0.0)
     p.add_argument("--rtol", type=float, default=0.0)
+    p.add_argument("--max-detail", type=int, default=MAX_DETAIL,
+                   help="différences détaillées au plus (défaut 50 ; 0 = toutes)")
     p.add_argument("reference")
     p.add_argument("nouveau")
     a = p.parse_args()
@@ -110,10 +112,11 @@ def main():
             compare(ref, new, a.atol, a.rtol, "$", diffs)
         except RecursionError:
             diffs.append("structure trop profonde pour être comparée")
-    for d in diffs[:MAX_DETAIL]:
+    limite = len(diffs) if a.max_detail == 0 else a.max_detail
+    for d in diffs[:limite]:
         print(d)
-    if len(diffs) > MAX_DETAIL:
-        print(f"... {len(diffs) - MAX_DETAIL} autres différences non détaillées")
+    if len(diffs) > limite:
+        print(f"... {len(diffs) - limite} autres différences non détaillées")
     if diffs:
         print(f"RESULTAT: differe ({len(diffs)})")
         return 1

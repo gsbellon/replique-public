@@ -104,5 +104,13 @@ cas "BOM, même contenu" 0 un bom
 # tolérance invalide : erreur d'usage (code 2)
 cas "tolérance négative" 2 ref meme --atol -1
 
+# limite de détail : 60 différences, 50 détaillées par défaut, toutes avec --max-detail 0
+python3 -I -c 'import json;print(json.dumps({"k%d"%i:0 for i in range(60)}))' > "$tmp/l_ref"
+python3 -I -c 'import json;print(json.dumps({"k%d"%i:1 for i in range(60)}))' > "$tmp/l_new"
+python3 -I "$src/compare_json.py" "$tmp/l_ref" "$tmp/l_new" > "$tmp/out" 2>&1
+if [ "$(grep -c -- '->' "$tmp/out")" = 50 ] && grep -q '10 autres différences' "$tmp/out" && tail -n 1 "$tmp/out" | grep -q 'differe (60)'; then echo "PASSE  limite de détail par défaut (50 sur 60)"; else echo "ECHEC  limite de détail par défaut"; ko=1; fi
+python3 -I "$src/compare_json.py" --max-detail 0 "$tmp/l_ref" "$tmp/l_new" > "$tmp/out" 2>&1
+if [ "$(grep -c -- '->' "$tmp/out")" = 60 ] && ! grep -q 'autres différences' "$tmp/out" && tail -n 1 "$tmp/out" | grep -q 'differe (60)'; then echo "PASSE  --max-detail 0 : toutes les différences (60)"; else echo "ECHEC  --max-detail 0"; ko=1; fi
+
 [ $ko = 0 ] && echo "TOUT PASSE" || echo "AU MOINS UN ECHEC"
 exit $ko
