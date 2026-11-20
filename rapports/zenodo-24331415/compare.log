@@ -1,0 +1,55 @@
+# commande : ssh sd-92569 cd ~/work/z24331415 && sh compare.sh
+# début    : 2026-11-20T20:13:42Z
+# ----
+=== MD5 annoncés par le README : fcdc7cefe0ecb4006db2972f70b03e32 gen_results.tex ; b13be5402c056f03b5b263aaa5f69892 gen_supp.tex
+fcdc7cefe0ecb4006db2972f70b03e32  pkg/lyapunov-maxplus-certification-v1.0.0/paper/gen_results.tex
+fcdc7cefe0ecb4006db2972f70b03e32  run/paper/gen_results.tex
+b13be5402c056f03b5b263aaa5f69892  pkg/lyapunov-maxplus-certification-v1.0.0/paper/gen_supp.tex
+b13be5402c056f03b5b263aaa5f69892  run/paper/gen_supp.tex
+== paper/gen_results.tex : identique (cmp)
+== paper/gen_supp.tex : identique (cmp)
+== notes/numbers_provenance.md : identique (cmp)
+== notes/numbers_provenance_supp.md : identique (cmp)
+f36a0fe8db7ab8c9855335b8d98011eaa1cfd175b3049145753f5e81f3a735d5  pkg/lyapunov-maxplus-certification-v1.0.0/paper/gen_results.tex
+f36a0fe8db7ab8c9855335b8d98011eaa1cfd175b3049145753f5e81f3a735d5  run/paper/gen_results.tex
+f08832a961bebcce99c17baf7c0d4ffaa09c7171d7adc8b27c39c993160a3518  pkg/lyapunov-maxplus-certification-v1.0.0/paper/gen_supp.tex
+f08832a961bebcce99c17baf7c0d4ffaa09c7171d7adc8b27c39c993160a3518  run/paper/gen_supp.tex
+3e57093912a4782d8445955cf9e43c9ff83d8ef29cf32732e549e0a9c38e9568  pkg/lyapunov-maxplus-certification-v1.0.0/notes/numbers_provenance.md
+3e57093912a4782d8445955cf9e43c9ff83d8ef29cf32732e549e0a9c38e9568  run/notes/numbers_provenance.md
+1974aa3b959e2ca423e51c4db4111e8bbacd2ba1134d5dacb946a4198cf24f7b  pkg/lyapunov-maxplus-certification-v1.0.0/notes/numbers_provenance_supp.md
+1974aa3b959e2ca423e51c4db4111e8bbacd2ba1134d5dacb946a4198cf24f7b  run/notes/numbers_provenance_supp.md
+=== fichiers produits dans run/fd (hors .dss/.DSS copiés)
+total 464
+-rw-rw-r-- 1 replab replab  17096 Nov 20 21:13 123Bus_IEEE123Master.dss
+-rw-rw-r-- 1 replab replab   1861 Nov 20 21:13 123Bus_IEEE123Regulators.DSS
+-rw-rw-r-- 1 replab replab 389011 Nov 20 21:13 8500-Node_Lines.dss
+-rw-rw-r-- 1 replab replab   3033 Nov 20 21:13 8500-Node_Regulators.dss
+-rw-rw-r-- 1 replab replab   1607 Nov 20 21:13 8500-Node_Transformers.dss
+-rw-r--r-- 1 replab replab   2205 Nov 20 21:13 ieee123_mesh.json
+-rw-r--r-- 1 replab replab   2367 Nov 20 21:13 ieee123_tree.json
+-rw-r--r-- 1 replab replab  44786 Nov 20 21:13 ieee8500_tree.json
+=== feeders : JSON livrés
+123Bus_IEEE123Master.dss
+123Bus_IEEE123Regulators.DSS
+8500-Node_Lines.dss
+8500-Node_Regulators.dss
+8500-Node_Transformers.dss
+ieee123_mesh.json
+ieee123_tree.json
+ieee39_mesh.json
+ieee8500_tree.json
+License_electricdss-tst.txt
+== JSON ieee123_mesh.json : compare_json.py (exact)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== ieee123_mesh.json : identique (cmp)
+== JSON ieee123_tree.json : compare_json.py (exact)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== ieee123_tree.json : identique (cmp)
+== JSON ieee8500_tree.json : compare_json.py (exact)
+RESULTAT: identique (atol=0.0, rtol=0.0)
+== ieee8500_tree.json : identique (cmp)
+=== fichiers de feeders/ modifiés par l'exécution (run contre pkg)
+=== fichiers de code/, paper/, notes/, results/ différents entre pkg et run (find -newer run.log non nécessaire : diff -rq)
+# ----
+# code de sortie : 1
+# durée (s)      : 1

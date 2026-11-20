@@ -1,0 +1,41 @@
+# commande : ssh sd-92569 cd ~/work/z24331415 && sh lance_build.sh
+# début    : 2026-11-20T20:12:54Z
+# ----
+STEP 1/2: FROM docker.io/library/python@sha256:b701198cb708b68d9413ca67d6311bd97c9389a2c5fe4da0511fc652642366cd
+STEP 2/2: RUN pip install --no-cache-dir numpy==2.1.1 scipy==1.13.1
+Collecting numpy==2.1.1
+  Downloading numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 kB 21.9 MB/s eta 0:00:00
+Collecting scipy==1.13.1
+  Downloading scipy-1.13.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.6/60.6 kB 222.9 MB/s eta 0:00:00
+Downloading numpy-2.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.3/16.3 MB 109.5 MB/s eta 0:00:00
+Downloading scipy-1.13.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 104.7 MB/s eta 0:00:00
+Installing collected packages: numpy, scipy
+Successfully installed numpy-2.1.1 scipy-1.13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+COMMIT replab-lyap
+--> 34f265cd616b
+Successfully tagged localhost/replab-lyap:latest
+34f265cd616b16b822edb383b9c1203dc17e8ccf0c941be567571c4ec691598b
+code de sortie build : 0
+3.11.18 (main, Nov  5 2026, 07:57:53) [GCC 14.2.0]
+numpy 2.1.1 scipy 1.13.1
+Copying blob sha256:dd57f90311a2567b55ff22eeacff1602fd04ad7566e315957731359eab173b90
+Copying blob sha256:cd9a29aa43e014bda7a7815521ab51a3ababf2bceb4de66302701ac217ff26fb
+Copying blob sha256:961adfab8c074ba37b3fa0c54bb96911f8648a1788176a864bfb0750cfdef155
+Copying blob sha256:688ef2053b5da5e0048efd435dace328a25d5d4c8cb5e2cd1a7a92c697c586d5
+Copying blob sha256:d99198dfd679da2d68f8e23d5c802bc217698ea5ab00474c42db2ccdaa9cba2b
+Copying config sha256:34f265cd616b16b822edb383b9c1203dc17e8ccf0c941be567571c4ec691598b
+Writing manifest to image destination
+code de sortie save : 0
+711cabb8884904c26fd422cf01ff4982523ca73f43b546e8668ad26461b8ef5a  /home/replab/images/zenodo-24331415.tar
+34f265cd616b16b822edb383b9c1203dc17e8ccf0c941be567571c4ec691598b
+# ----
+# code de sortie : 0
+# durée (s)      : 14

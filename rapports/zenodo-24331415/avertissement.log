@@ -1,0 +1,18 @@
+# commande : ssh sd-92569 cd ~/work/z24331415/pkg/lyapunov-maxplus-certification-v1.0.0 && grep -n -B8 -A3 "re-verification not passed" code/paper_numbers.py
+# début    : 2026-11-20T20:13:49Z
+# ----
+846-        continue
+847-    pth = os.path.join(RES, f + '.reverify.json')
+848-    if not os.path.exists(pth):
+849-        RV_MISS.append(f)
+850-        continue
+851-    d = load(f + '.reverify.json')
+852-    (RV if rv_ok(d) else RV_FAIL).append(rv_entry(lab, d))
+853-    if not rv_ok(d):
+854:        print('WARNING re-verification not passed:', f)
+855-put('ReverifyList', '; '.join(RV), '*.reverify.json (passed), in the order of RVLAB')
+856-# compact list for the paper (names only; boxes and times: Supplementary Table S4)
+857-PASS = set()
+# ----
+# code de sortie : 0
+# durée (s)      : 0

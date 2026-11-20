@@ -1,0 +1,6 @@
+FROM docker.io/library/python@sha256:b701198cb708b68d9413ca67d6311bd97c9389a2c5fe4da0511fc652642366cd
+# Image de base : python:3.11-slim (image_base.log). Le README du paquet donne les versions des résultats :
+# Python 3.11, numpy 2.1.1, scipy 1.13.1 (requirements.txt). matplotlib et mpmath ne servent qu'aux figures et au
+# test du noyau C, hors de la portée de ce rapport (nombres, graphes de feeders, auto-test d'arithmétique d'intervalles).
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir numpy==2.1.1 scipy==1.13.1

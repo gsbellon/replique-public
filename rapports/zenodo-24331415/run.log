@@ -1,0 +1,30 @@
+# commande : ssh sd-92569 cd ~/work/z24331415 && sh lance_run.sh
+# début    : 2026-11-20T20:13:23Z
+# ----
+2026-11-20T20:13:24Z
+=================== python3 paper_numbers.py
+WARNING re-verification not passed: cert_mesh_ieee123_mesh_o1
+384 macros written to /work/code/../paper/gen_results.tex
+closing checks of certified records: 79 failed: []
+missing: []
+code : 0
+=================== python3 supp_numbers.py
+80 macros written to /work/code/../paper/gen_supp.tex; certified records: 83
+missing: []
+code : 0
+=================== python3 test_ival.py
+trig enclosure ok
+enclosure violations: 0
+point width max: 3.3861802251067274e-15 value err 5.551115123125783e-17
+code : 0
+=================== python3 tools/feeder_parse.py /work/fd
+{'name': 'ieee123', 'N': 118, 'lines_used': 118, 'reached': 119, 'children_of_root': 1, 'max_children': 3, 'hist_children': [41, 43, 28, 6], 'max_depth': 18, 'len_km_median': 0.08382, 'len_km_min': 0.030480000000000004, 'len_km_max': 0.3048}
+{'name': 'ieee8500', 'N': 2440, 'lines_used': 2440, 'reached': 2441, 'children_of_root': 1, 'max_children': 4, 'hist_children': [559, 1412, 390, 69, 10], 'max_depth': 250, 'len_km_median': 0.060718737999999994, 'len_km_min': 0.002504284, 'len_km_max': 0.96912738}
+code : 0
+=================== python3 tools/feeder_mesh.py /work/fd
+{'N': 116, 'chords': 2, 'reached': 117} [(78, 81), (98, 91)]
+code : 0
+2026-11-20T20:13:31Z
+# ----
+# code de sortie : 0
+# durée (s)      : 8

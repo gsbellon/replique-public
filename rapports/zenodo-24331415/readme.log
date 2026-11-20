@@ -1,0 +1,241 @@
+# commande : ssh sd-92569 cat work/z24331415/pkg/lyapunov-maxplus-certification-v1.0.0/README.md
+# début    : 2026-11-20T20:12:35Z
+# ----
+# Code and data for "Lyapunov Certification as Max-Plus Inference"
+
+**Version 1.0.0.** This package contains the software, the run settings and every result file behind the numbers, tables and figures of the following paper:
+
+> Y. Shen, "Lyapunov Certification as Max-Plus Inference: Exact Decomposition, Scalable Synthesis, and
+> Rigorous Region-of-Attraction Certificates for Large Nonlinear Networks," submitted to *IEEE
+> Transactions on Automatic Control*, 2026.
+
+The Zenodo page of this archive links to the paper under "Related works".
+
+The method writes the Lyapunov inequalities of a network as local inequalities that are coupled by max-plus messages on a junction tree. It works in four steps:
+
+1. A sparse LP inside a counterexample-guided loop synthesizes the certificate.
+2. An outward-rounded interval Taylor branch-and-bound (with a C kernel) verifies it bag by bag.
+3. A Krawczyk enclosure of the equilibrium closes the argument (Theorem 3).
+4. An independent pure-Python implementation re-verifies the certificate.
+
+## Contents
+
+```
+code/                   Python modules and the C interval kernel (tikernel.c)
+code/tools/             one script per experiment; rerun_round2.sh is the driver that produced results/round2
+feeders/                IEEE 123-bus and 8500-node feeder files (OpenDSS) and the network graphs used by the scripts
+results/round2/         every result file of the paper and the Supplementary Material (227 files, 47 MB)
+paper/                  gen_results.tex, gen_supp.tex: LaTeX macros holding every number of the paper (generated)
+notes/                  numbers_provenance*.md: the result file and field behind every macro (generated)
+requirements.txt        Python packages
+LICENSE                 MIT License (code)
+LICENSE-DATA.md         CC BY 4.0 (result files and generated files)
+THIRD_PARTY_NOTICES.md  sources and licenses of the feeder data and test networks
+CITATION.cff            citation metadata
+```
+
+## Requirements
+
+- **System.** Linux on x86-64 (the only platform tested), with GCC.
+  - `code/tik.py` compiles the interval kernel `code/tikernel.c` on first use, with `gcc -O2 -frounding-math -fno-fast-math -shared -fPIC ... -lm`.
+  - The kernel uses C99 `fesetround` for directed rounding.
+- **Python.** Version 3.10 to 3.12 for the pinned versions in `requirements.txt`. On Python 3.13 or later, install current versions instead (see the comment in that file).
+
+  ```
+  python3 -m pip install -r requirements.txt
+  ```
+
+  - The results were computed with Python 3.11.18, NumPy 2.1.1, SciPy 1.13.1 (OpenBLAS 0.3.27) and mpmath 1.4.1.
+  - The number and figure scripts were also run with Python 3.10, NumPy 2.2.6 and Matplotlib 3.10.9.
+- **Tools for a full re-run.** `lscpu` and `taskset` (util-linux), `timeout` (coreutils), and `objdump` (binutils; used by the kernel test only).
+- **Machine used for the results.**
+  - Hardware: 1× AMD EPYC 7B12 (64 cores, 128 threads) with 251 GB RAM.
+  - Software: Debian 12, GCC 12.2 and glibc 2.36. `results/round2/ENV.txt` has the full record.
+  - Duration: 12.5 h of wall time from the start to the last job.
+    - The driver itself reports 9.6 h.
+    - The independent re-verification of the looped IEEE 123-bus certificate (3.3 h) started near the end of the driver and finished 3 h after it.
+  - Memory: the largest single run (N = 3·10⁴) needs 22.4 GB.
+
+## Quick checks (a few minutes in total)
+
+**1. Regenerate every number of the paper from the shipped results.**
+
+```
+cd code
+python3 paper_numbers.py     # -> ../paper/gen_results.tex, ../notes/numbers_provenance.md
+python3 supp_numbers.py      # -> ../paper/gen_supp.tex,    ../notes/numbers_provenance_supp.md
+md5sum ../paper/gen_results.tex ../paper/gen_supp.tex
+#   fcdc7cefe0ecb4006db2972f70b03e32  ../paper/gen_results.tex   (identical to the shipped files)
+#   b13be5402c056f03b5b263aaa5f69892  ../paper/gen_supp.tex
+RES=../results/round2 python3 paper_figures.py   # -> ../figures/ (Figs. 2, 3 and 4)
+```
+
+- Both number scripts use assertions to check every statement in the text that depends on the data. Examples: a run is certified in a given round; a re-verification passes.
+- `notes/numbers_provenance*.md` gives the result file and the field behind every macro.
+
+**2. Run the self-tests** (from `code/`):
+
+```
+python3 test_ival.py                       # interval arithmetic
+python3 rigor.py                           # outward rounding, eigenvalue bounds, Krawczyk test
+python3 tools/test_tik.py                  # C kernel vs. Python reference
+python3 tools/test_sat.py                  # saturated (current-limited) kernel
+python3 tools/test_trig_kernel.py 20000    # libm calls between the rounding-mode switches; enclosures vs. 50-digit arithmetic
+python3 tools/test_split.py ../results/round2/cert_chain_N10_o1_L0.5_lim0.0.json 1000000000 200 4   # shared frontier = sequential B&B
+```
+
+The driver ran these with `test_trig_kernel.py 200000`. Their outputs are in `results/round2/selftests.txt` and `selftests_trig_order.txt`.
+
+**3. Re-verify an exported certificate independently.** The re-verification scripts write `<cert>.reverify.json` next to the certificate, so copy the certificate first:
+
+```
+mkdir -p /tmp/rv && cp ../results/round2/cert_chain_N10_o1_L0.5_lim0.0.json /tmp/rv/
+TAC_PROCS=4 python3 tools/reverify_json.py /tmp/rv/cert_chain_N10_o1_L0.5_lim0.0.json
+```
+
+- The result should match `results/round2/reverify_N10_o1.txt`: 20/20 local inequalities, 29392 boxes, closing check OK.
+- For certificates of meshed networks, use `tools/reverify_mesh.py`.
+- For large certificates, add `SPLIT_AT=50000` (shared frontier).
+
+**4. Synthesize a small certificate and re-verify it** (about a minute):
+
+```
+TAC_PROCS=2 EXPORT_ONLY=1 GAMMAS=0.25 python3 -u tools/reverify2.py 10 1 0.5   # -> ../results/cert_chain_N10_o1_L0.5_lim0.0.json
+TAC_PROCS=2 python3 tools/reverify_json.py ../results/cert_chain_N10_o1_L0.5_lim0.0.json
+```
+
+- The new certificate agrees with `results/round2/cert_chain_N10_o1_L0.5_lim0.0.json` up to rounding in the last digits (relative difference below 10⁻¹³ in our tests).
+- It verifies with the same 29392 boxes.
+
+**5. Regenerate the feeder graphs from the OpenDSS files.** The scripts write into the given folder, so use a copy:
+
+```
+mkdir -p /tmp/fd && cp ../feeders/*.dss ../feeders/*.DSS /tmp/fd/
+python3 tools/feeder_parse.py /tmp/fd && python3 tools/feeder_mesh.py /tmp/fd
+cmp /tmp/fd/ieee123_tree.json ../feeders/ieee123_tree.json   # likewise ieee8500_tree.json, ieee123_mesh.json: identical
+```
+
+**Tested environments.** Checks 1–5 were run on a fresh copy of this package with two setups, and gave the stated md5 sums and results with both:
+- Python 3.11.18 with `requirements.txt` as pinned;
+- Python 3.13, NumPy 2.5.3, SciPy 1.18.1, Matplotlib 3.11.2 and GCC 13.3.
+
+## Full re-run
+
+The driver assumes the layout `/root/TAC/{code,feeders,results}`, as on the server. Either unpack the package to `/root/TAC`, or link it there with `ln -s "$PWD" /root/TAC`. Then start the driver:
+
+```
+cd /root/TAC/code && setsid nohup bash tools/rerun_round2.sh > /root/TAC/results/driver.log 2>&1 < /dev/null &
+```
+
+**Output.**
+- Every job writes `<name>.txt` and its JSON into `/root/TAC/results`.
+- Every job appends `HH:MM:SS <name> exit=<code>` to `DONE.log`.
+- When the driver finishes, run the number scripts on that directory: `python3 paper_numbers.py /root/TAC/results` and `python3 supp_numbers.py /root/TAC/results`.
+
+**Settings.**
+- The exact setting of every run is in its line in `rerun_round2.sh` (environment variables and arguments). Everything else uses the defaults in the scripts.
+- A single run can be repeated by its line. For example, the PF row of Table IV for N = 30:
+
+  ```
+  cd /root/TAC/code && TAC_PROCS=24 FLOOR=pf ILS=1 GAMMAS=0.25,0.05 ROUNDS=30 TAG=_pf python3 -u tools/test_o2.py 30 0.5
+  ```
+
+  This writes `results/o2_N30_pf.json` and the certificate `results/cert_o2_N30_pf.json`.
+- Most scripts write into `results/` next to `round2/`. `test_feeder.py` and `test_mesh.py` write to `/root/TAC/results`, and `test_feeder.py` reads `/root/TAC/feeders` (override with `FEEDERS`).
+
+The main environment variables:
+
+| variable | meaning |
+|---|---|
+| `GAMMAS` | robustness floors of the homotopy, e.g. `0.25,0.05` |
+| `ROUNDS`, `STAGE_ROUNDS` | cap on the CEGIS rounds, in total and per homotopy stage |
+| `FLOOR=pf` | proportionally fair floors (otherwise max-min) |
+| `ILS=1` | incumbent line search |
+| `TAC_PROCS` | worker processes |
+| `L` (or the box argument), `LD`, `LW` | half-widths of the certified box: angles (`LD` in `test_tree.py`), frequencies |
+| `ELL` | width of the flow gate |
+| `LIMIT`, `LIMIT_MODE=rating` | current limit: identical ratings (otherwise relative to each operating point) |
+| `ELIM=bfs` | elimination by BFS depth for meshed networks (default: min-fill) |
+| `SPLIT_AT` | shared-frontier branch-and-bound in the re-verification |
+| `EXPORT=1` | `scale_run.py`: export the certificate as JSON after the timings |
+| `EXPORT_ONLY=1` | `reverify2.py`: export the certificate and skip the built-in independent check |
+| `TAG` | suffix of the output file names |
+
+**Timing and reproducibility.**
+- Timings depend on the machine and on the concurrent jobs. The exception is the scaling series, which runs first and alone on 32 physical cores.
+- The LP solutions can differ in the last digits between BLAS builds and thread counts. This can change the number of CEGIS rounds, but not the validity of a certificate, because every certificate is verified rigorously on its own.
+
+**Steps run by hand on the server.** These were not run by the driver; both commands are recorded in the driver:
+- The swing ratio of the domain-shape paragraph (`tools/swing_ratio.py`).
+- The call-order test of the kernel (`selftests_trig_order.txt`), together with the kernel binary and its disassembly (`tikernel_server.so`, `tikernel_server.dis`).
+
+**Change during the run.** While the driver was running, the deadline of the last re-verification (looped IEEE 123-bus feeder) was raised from 18 h to 38 h after the start, as the driver notes.
+
+## Where each table and figure comes from
+
+`<job>` is a job name in `rerun_round2.sh`; its log is `results/round2/<job>.txt`.
+
+| Paper | Jobs | Result files (`results/round2/`) |
+|---|---|---|
+| Table I, Fig. 2 (first order) | `scale_N*` (first, alone, 32 cores) | `scale_N{100,300,1000,3000,10000,30000}.json/.txt`, exported certificates `cert_chain_N*_o1_L0.5_lim0.0.json` |
+| Remark 4 (Krawczyk test in O(N)) | `krawczyk` | `krawczyk.txt`, `krawczyk_sparse.json` |
+| Table II (tie strength) | `sens_shunt_N{30,100,300}` | `sens_shunt_N{30,100,300}.json/.txt` |
+| Random seeds, N = 1000 (text) | `seeds_N1000` | `sens_shunt_N1000_seeds.json`, `seeds_N1000.txt` |
+| Table III (message class) | `abl_*` | `ablation_msgdeg_*.json`, `abl_*.txt` |
+| Table IV, Fig. 2 (second order); max-min floors (Sec. V-B) | `o2pf_N*`, `o2mm_N*` | `o2_N{30,100,300,1000}_pf.json`, `o2_N{30,100}_mm.json`, `o2pf_*.txt`, `o2mm_*.txt` |
+| IEEE 33-bus, second order (text) | `tree_ieee33_o2` | `tree_ieee33_o2.json/.txt` |
+| Feeder topologies (text) | `feeder123_o1`, `feeder123_o2`, `feeder8500_o1` | `feeder_ieee123_o{1,2}.json`, `feeder_ieee8500_o1.json`, `feeder*.txt` |
+| Table V (meshed networks), elimination orders, IEEE 39, IEEE 123 with two loops | `mesh_*`, `jtree_stats` | `mesh_*.json/.txt`, `jtree_stats.json/.txt`; IEEE 33 with all five ties: `mesh_ieee33t_all_o1.txt` (stopped after 90 min, no JSON) |
+| Monolithic vs. decomposed verification (text) | `global_verify` | `global_verify.json/.txt` |
+| HiGHS comparison (text) | `highs_compare` | `highs_compare.json/.txt` |
+| Table VI, Fig. 3 (domain shape, flow gates) | `gate_s*`, `oproa`, `slices`, `o2gate_N100`, `corner_check` | `gate_N10_o2_s*.json`, `gate_s*.txt`, `cert_gate_*.npz`, `oproa_N10.*`, `slices_N10.npz/.txt`, `o2_N100_gate.json`, `o2gate_N100.txt`, `corner_check*`, `swing_ratio_N10.*` |
+| Table VII (R/X and loading) | `rx_check`, `sweep_load` | `rx_check.txt`, `rx_operating_points.json`, `sweep_load_N30_l0.6.json`, `sweep_load.txt` |
+| Fig. 4 (rays) | `roa_rays` | `roa_N30_rx1.0_L1.0_g0.01.npz`, `cert_chain_N30_rx1.0_L1.0_g0.01.json`, `roa_rays.txt` |
+| Table VIII (robustness floor) | `roa_gamma` | `roa_gamma_N30_rx1.0_L1.0.json`, `roa_gamma.txt` |
+| Table IX (current limits) | `limit_*`, `gate_r1*`, `o2lim_N*`, `sat_distance` | `current_limit_*.json`, `limit_*.txt`, `gate_N10_o2_r1*.json`, `gate_r1*.txt`, `o2_N{100,300}_lim1.2r.json`, `o2lim_*.txt`, `sat_distance.json/.txt` |
+| Independent re-verification (text; Supplementary Table S4, Section S6) | `export_*`, `reverify_*` | certificates `cert_*.json` (`cert_mesh_*.npy`), `*.reverify.json`, `export_*.txt`, `reverify_*.txt` |
+| Supplementary Tables S1–S3 | all certified runs | all run JSON files (read by `supp_numbers.py`) |
+| Environment, exits, self-tests | — | `ENV.txt`, `DONE.log`, `driver.log`, `.cpus`, `selftests.txt`, `selftests_trig_order.txt`, `tikernel_server.{so,dis}` |
+
+`linear_structure.txt` is a diagnostic that the paper does not use.
+
+## Configuration and random seeds
+
+All random numbers come from `numpy.random.default_rng` with seeds fixed in the code. The settings of every run are in `rerun_round2.sh`.
+
+- **Network data.**
+  - The scripts build every chain, tree and meshed network with `seed=1`. The one exception is the study with five random seeds at N = 1000, which uses seeds 1–5 (`sens_shunt.py 1000 0.2 1,2,3,4,5`).
+  - Inside the network classes, `network.py` draws from `default_rng(seed)`, `tree.py` from `seed + 101`, and `mesh.py` (chord reactances) from `seed + 303`.
+  - The shunts of the feeder networks (`test_feeder.py`, and `test_mesh.py` with a JSON graph) come from `default_rng(7)`.
+- **Model data.**
+  - IEEE 33-bus graph: `tree.ieee33_parent` (Baran and Wu, 1989).
+  - IEEE 39-bus graph: `feeders/ieee39_mesh.json`.
+  - IEEE 123-bus and 8500-node feeders: `feeders/` (see `THIRD_PARTY_NOTICES.md`).
+- **Sampling in the CEGIS loop.** `cfg.seed = 0`:
+  - initial samples from `default_rng(cfg.seed)` (`certificate.py`, `mesh.py`);
+  - further samples with offsets +7 (`run.py`) and +11 (`certificate.py`).
+- **Simulation checks** (ray directions, sample points).
+  - `default_rng(1)`: `test_gate.py`, `sweep_load.py`, `oproa.py`, `current_limit.py`, `roa_same_dirs.py`.
+  - `default_rng(0)`: `roa_gamma.py`, `corner_check.py`.
+  - `test_mesh.py` uses `default_rng(0)`, `default_rng(3)` and `default_rng(5)`.
+- **Self-tests.**
+  - `test_ival.py`: 1; `rigor.py`: 0; `tools/test_tik.py`: 3; `tools/test_sat.py`: 0; `tools/test_trig_kernel.py`: 20261116.
+  - `test_tree.py` checks the tree model against the chain model on six buses, with `seed=3` and `default_rng(0)`.
+
+## Licenses
+
+- **Code** (`code/`): MIT License (`LICENSE`).
+- **Results and generated files** (`results/`, `paper/gen_*.tex`, `notes/`): Creative Commons Attribution 4.0 International (`LICENSE-DATA.md`).
+- **Feeder data** (`feeders/`): third-party data under their own terms. The OpenDSS feeder files, and the graphs derived from them, are under the BSD 3-Clause License of EPRI and the DSS-Extensions contributors. See `THIRD_PARTY_NOTICES.md`.
+- **Python packages** are not included; they keep their own licenses.
+
+## Use of AI
+
+The AI system Claude (Anthropic), including the models Claude Fable 5.2 and Claude Opus 5.5, generated the software and the documentation in this package and revised them in later rounds. The author directed the work and takes full responsibility for it.
+
+## Citation
+
+See `CITATION.cff`. Please cite the paper above and this archive (Zenodo DOI).
+# ----
+# code de sortie : 0
+# durée (s)      : 1

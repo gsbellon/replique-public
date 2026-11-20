@@ -1,0 +1,5 @@
+Titre : Replication package: Reach, not speed, limits who benefits from AI testing tools and where vendors invest (Zenodo 23652337, `fiche_zenodo.json`)
+Créateurs : lee, ook — Hanyang University, ORCID 0000-0003-4361-7927 (`fiche_zenodo.json`)
+Article lié : aucun lien dans la fiche (la description nomme l'article, « Reach, not speed, limits who benefits from AI testing tools and where vendors invest », sans DOI)
+Sujet : Le paquet contient les scripts Python de l'article, des CSV de données dérivées, des figures et un script `reproduce_key_numbers.py` qui, selon la description, confirme les nombres critiques de l'article. La question de recherche, d'après le titre : ce qui, de la portée ou de la vitesse, limite les bénéficiaires des outils de test par IA et l'investissement des éditeurs.
+Résultat : reproduit, portée paquet, couverture contrôles internes (régénération pour un seul fichier, `fig_cache.npz`). `reproduce_key_numbers.py` affiche 20/20 contrôles passés, dans les tolérances de l'auteur ; le cache de figures est recalculé à 4,9e-16 relatif près ; analyses de données brutes non exécutées (`RAPPORT.md`).

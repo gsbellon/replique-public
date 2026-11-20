@@ -1,0 +1,12 @@
+# commande : ssh sd-92569 cat work/z24331415/pkg/lyapunov-maxplus-certification-v1.0.0/requirements.txt
+# début    : 2026-11-20T20:12:39Z
+# ----
+# Versions used for the results (results/round2/ENV.txt); SciPy 1.13.1 needs Python 3.10-3.12.
+# On Python >= 3.13, install current versions instead:  pip install numpy scipy mpmath matplotlib
+numpy==2.1.1
+scipy==1.13.1
+mpmath==1.4.1        # tools/test_trig_kernel.py only
+matplotlib>=3.8      # paper_figures.py only
+# ----
+# code de sortie : 0
+# durée (s)      : 0

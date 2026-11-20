@@ -1,0 +1,46 @@
+# commande : ssh sd-92569 sh work/telecharge_extrait.sh
+# début    : 2026-11-20T20:12:27Z
+# ----
+pkg.zip: OK
+code extraction : 0
+300
+.
+./lyapunov-maxplus-certification-v1.0.0
+./lyapunov-maxplus-certification-v1.0.0/THIRD_PARTY_NOTICES.md
+./lyapunov-maxplus-certification-v1.0.0/LICENSE
+./lyapunov-maxplus-certification-v1.0.0/feeders
+./lyapunov-maxplus-certification-v1.0.0/paper
+./lyapunov-maxplus-certification-v1.0.0/paper/gen_supp.tex
+./lyapunov-maxplus-certification-v1.0.0/paper/gen_results.tex
+./lyapunov-maxplus-certification-v1.0.0/LICENSE-DATA.md
+./lyapunov-maxplus-certification-v1.0.0/notes
+./lyapunov-maxplus-certification-v1.0.0/notes/numbers_provenance_supp.md
+./lyapunov-maxplus-certification-v1.0.0/notes/numbers_provenance.md
+./lyapunov-maxplus-certification-v1.0.0/CITATION.cff
+./lyapunov-maxplus-certification-v1.0.0/requirements.txt
+./lyapunov-maxplus-certification-v1.0.0/code
+./lyapunov-maxplus-certification-v1.0.0/code/mesh.py
+./lyapunov-maxplus-certification-v1.0.0/code/ival.py
+./lyapunov-maxplus-certification-v1.0.0/code/supp_numbers.py
+./lyapunov-maxplus-certification-v1.0.0/code/tikernel.c
+./lyapunov-maxplus-certification-v1.0.0/code/batched.py
+./lyapunov-maxplus-certification-v1.0.0/code/tools
+./lyapunov-maxplus-certification-v1.0.0/code/verify.py
+./lyapunov-maxplus-certification-v1.0.0/code/run.py
+./lyapunov-maxplus-certification-v1.0.0/code/roa.py
+./lyapunov-maxplus-certification-v1.0.0/code/tik.py
+./lyapunov-maxplus-certification-v1.0.0/code/closing.py
+./lyapunov-maxplus-certification-v1.0.0/code/paper_figures.py
+./lyapunov-maxplus-certification-v1.0.0/code/rigor.py
+./lyapunov-maxplus-certification-v1.0.0/code/indep_verify.py
+./lyapunov-maxplus-certification-v1.0.0/code/barrier.py
+./lyapunov-maxplus-certification-v1.0.0/code/test_ival.py
+./lyapunov-maxplus-certification-v1.0.0/code/network.py
+./lyapunov-maxplus-certification-v1.0.0/code/certificate.py
+./lyapunov-maxplus-certification-v1.0.0/code/paper_numbers.py
+./lyapunov-maxplus-certification-v1.0.0/code/tree.py
+./lyapunov-maxplus-certification-v1.0.0/README.md
+./lyapunov-maxplus-certification-v1.0.0/results
+# ----
+# code de sortie : 0
+# durée (s)      : 6
