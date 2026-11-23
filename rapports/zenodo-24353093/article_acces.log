@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 curl -sS -m 60 -L -o /dev/null -w "%{http_code} %{content_type} %{url_effective}\n" -H "Accept: application/pdf" https://doi.org/10.1016/j.ecolmodel.2023.110345
+# début    : 2026-11-23T20:04:09Z
+# ----
+200 text/html;charset=UTF-8 https://linkinghub.elsevier.com/retrieve/pii/S030438002300073X
+# ----
+# code de sortie : 0
+# durée (s)      : 1

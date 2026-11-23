@@ -3,6 +3,16 @@
 # Le relecteur tourne de préférence sur la station (copie fraîche du témoin GitHub, article 4) ;
 # si aucune relecture n'arrive dans l'heure, le pilote relit lui-même. Aucune session après 8 h 30.
 cd "$HOME/replique" || exit 2
+# Le journal modifié par un script (relève, notification) s'inscrit au registre ici, par comparaison à la chaîne, comme dans bin/session.sh.
+inscrit_journal() { [ "$(awk -F'\t' '$4=="journal/JOURNAL.md"{h=$5} END{print h}' registre/chaine.tsv)" = "$(sha256sum journal/JOURNAL.md | cut -d' ' -f1)" ] || bash bin/registre.sh ajoute journal journal/JOURNAL.md >/dev/null 2>&1; }
+pousse() { if [ -n "$(git status --porcelain)" ]; then git add -A; git commit -qm "nuit $(date -u +%F) : $1"; git push -q origin main; fi; }
+# Courrier (article 4), puis veto (article 3) : la relève passe d'abord, pour qu'un STOP reçu dans la journée arrête cette nuit.
+git pull -q --ff-only origin main 2>/dev/null
+bash bin/releve.sh >> journal/releve.log 2>&1
+if [ -f journal/STOP ]; then
+  inscrit_journal; pousse "sessions suspendues (journal/STOP)"
+  echo "$(date -u +%FT%TZ) nuit : sessions suspendues (journal/STOP), rien lancé"; exit 0
+fi
 ATTENTE=3600
 fenetre_ouverte() { local h=$((10#$(date +%H%M))); [ "$h" -lt 830 ] || [ "$h" -ge 2100 ]; }
 attend_relecture() {
@@ -29,6 +39,6 @@ for cycle in 1 2; do
 done
 # Notifications (6 quater) : conditions vérifiées par le script, une par nuit, copie au propriétaire
 bin/notifie.sh >> journal/notifications.log 2>&1
-if ! git diff --quiet || [ -n "$(git status --porcelain)" ]; then git add -A; git commit -qm "nuit $(date -u +%F) : passage de bin/notifie.sh"; git push -q origin main; fi
+inscrit_journal; pousse "passage de bin/notifie.sh"
 bin/publie.sh >> journal/publication.log 2>&1
 echo "$(date -u +%FT%TZ) nuit : terminée"

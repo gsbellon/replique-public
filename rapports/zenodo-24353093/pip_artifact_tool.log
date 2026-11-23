@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 podman run --rm docker.io/library/python@sha256:b701198cb708b68d9413ca67d6311bd97c9389a2c5fe4da0511fc652642366cd pip download --no-deps -d /tmp/x artifact_tool
+# début    : 2026-11-23T20:01:16Z
+# ----
+ERROR: Could not find a version that satisfies the requirement artifact_tool (from versions: none)
+ERROR: No matching distribution found for artifact_tool
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+# ----
+# code de sortie : 1
+# durée (s)      : 2

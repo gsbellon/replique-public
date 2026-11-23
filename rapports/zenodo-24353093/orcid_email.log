@@ -1,0 +1,6 @@
+# commande : ssh sd-92569 curl -sS -m 30 -H "Accept: application/json" https://pub.orcid.org/v3.0/0000-0002-1652-2642/email
+# début    : 2026-11-23T20:04:06Z
+# ----
+{"last-modified-date":null,"email":[],"path":"/0000-0002-1652-2642/email"}# ----
+# code de sortie : 0
+# durée (s)      : 1

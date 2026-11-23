@@ -1,0 +1,277 @@
+# commande : ssh sd-92569 cat work/z24353093/lecture/run_wchn.py
+# début    : 2026-11-23T20:01:09Z
+# ----
+#!/usr/bin/env python3
+"""Reproduce the corrected WCHN five-property PCAs and partial correlations.
+
+Input files (in the script directory):
+    PCA_Caatinga_24_input.csv
+    PCA_Cerrado_75_corrected_input.csv
+
+Outputs: two XLSX workbooks, 6 biplot images, machine-readable JSON.
+Method: PCA of sample correlation matrix on untransformed observations; PCA of
+correlation matrix of OLS residuals from ln(property) ~ 1 + ln(SigmaNO).
+The percent variance for the second PCA is residual STANDARDIZED variance.
+This is a statistical exploration of observational networks, not a hydraulic test.
+
+Requires Python 3 with numpy, scipy, matplotlib, artifact_tool.
+This file is independent of the separately deposited reconstruction toolkit.
+"""
+from __future__ import annotations
+import csv, json, math, os
+from pathlib import Path
+import numpy as np
+from scipy import stats
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from artifact_tool import Workbook,SpreadsheetFile
+
+BASE=Path(__file__).resolve().parent
+DOI='10.5281/zenodo.24353093'
+NAMES=['NAV','VUL','LAT','BAS','PTP']
+PAIRS=[('NAV','BAS'),('NAV','PTP'),('NAV','VUL'),('BAS','PTP'),('BAS','VUL'),('PTP','VUL')]
+FIELDS=['Vegetation','Source','Species','Code','Individual','Size_class','PG','SigmaNO','NAV','VUL','LAT','BAS','PTP','Corrected_among_20']
+
+def read_csv(file):
+    with (BASE/file).open(encoding='utf-8-sig',newline='') as f:
+        data=list(csv.DictReader(f))
+    for row in data:
+        for key in ['SigmaNO']+NAMES:
+            row[key]=float(row[key]) if row[key] not in ('','NA','nan','None',None) else np.nan
+        row['Corrected_among_20']=int(row.get('Corrected_among_20') or 0)
+    return data
+
+def numerical(rows):
+    rows=[r for r in rows if np.all(np.isfinite([r[k] for k in ['SigmaNO']+NAMES]))]
+    X=np.array([[r[k] for k in NAMES] for r in rows],dtype=float)
+    sizes=np.array([r['SigmaNO'] for r in rows],float)
+    if not np.all(X>0) or not np.all(sizes>0):
+        raise ValueError('Log analysis requires positive property values and SigmaNO')
+    return rows,X,sizes
+
+def pca(M, orient=True):
+    z=(M-M.mean(axis=0))/M.std(axis=0,ddof=1)
+    cor=np.corrcoef(z,rowvar=False)
+    values,vectors=np.linalg.eigh(cor)
+    ix=np.argsort(values)[::-1];values=values[ix];vectors=vectors[:,ix]
+    if orient:
+        if vectors[NAMES.index('NAV'),0]<0: vectors[:,0]*=-1
+        if vectors[NAMES.index('LAT'),1]<0: vectors[:,1]*=-1
+    scores=z@vectors
+    return dict(eigenvalues=values,variance=values/values.sum(),vectors=vectors,scores=scores,correlation=cor,standardized=z)
+
+def residual_matrix(X,sizes):
+    y=np.log(X)
+    D=np.column_stack([np.ones(len(sizes)),np.log(sizes)])
+    coefs=np.linalg.lstsq(D,y,rcond=None)[0]
+    residuals=y-D@coefs
+    standardized=(residuals-residuals.mean(axis=0))/residuals.std(axis=0,ddof=1)
+    return residuals,standardized,coefs
+
+def holm(pvals):
+    p=np.array(pvals,float);order=np.argsort(p);adjusted=np.zeros(len(p));top=0.0;m=len(p)
+    for rank,ix in enumerate(order):
+        top=max(top, min(1.0,(m-rank)*p[ix]));adjusted[ix]=top
+    return adjusted
+
+def correlations(resid):
+    n=len(resid);recs=[]
+    for left,right in PAIRS:
+        a,b=NAMES.index(left),NAMES.index(right)
+        r=float(np.corrcoef(resid[:,a],resid[:,b])[0,1])
+        # Pearson partial correlation with one control variable; t df=n-3.
+        t=abs(r)*math.sqrt((n-3)/max(1e-30,1-r*r))
+        p=float(2*stats.t.sf(t,df=n-3))
+        z=np.arctanh(np.clip(r,-0.999999999999,0.999999999999))
+        se=1/math.sqrt(n-4)
+        lo,hi=np.tanh([z-1.96*se,z+1.96*se])
+        recs.append(dict(pair=left+'–'+right,r=r,p=p,ci_low=float(lo),ci_high=float(hi),n=n))
+    adj=holm([v['p'] for v in recs])
+    for v,h in zip(recs,adj):v['holm_p']=float(h)
+    return recs
+
+def analyze(all_rows,biome):
+    rows,X,sizes=numerical(all_rows)
+    raw=pca(X)
+    residuals,stdres,coefs=residual_matrix(X,sizes)
+    adjusted=pca(stdres)
+    return dict(name=biome,rows=rows,input_count=len(all_rows),excluded=len(all_rows)-len(rows),X=X,sizes=sizes,raw=raw,residuals=residuals,standardized_residuals=stdres,coefficients=coefs,adjusted=adjusted,partial=correlations(residuals))
+
+def excel_safe(v):
+    if isinstance(v,(np.integer,int)):return int(v)
+    if isinstance(v,(np.floating,float)):return float(v) if np.isfinite(v) else None
+    if isinstance(v,np.bool_):return bool(v)
+    return v
+
+def fill(sheet, rows, widths=None, header_row=1):
+    if rows:
+        width=max(len(row) for row in rows)
+        matrix=[[excel_safe(v) for v in row]+[None]*(width-len(row)) for row in rows]
+        # A single bulk write minimizes calculation overhead.
+        sheet.get_range_by_indexes(0,0,len(matrix),len(matrix[0])).values=matrix
+        if len(matrix)>1:
+            sheet.freeze_panes.freeze_rows(header_row)
+        sheet.get_range_by_indexes(header_row-1,0,1,len(matrix[0])).format={
+            'fill':'#17324D','font':{'bold':True,'color':'#FFFFFF'},
+            'row_height':24,'wrap_text':True}
+        for j,wd in enumerate(widths or []):
+            sheet.get_range_by_indexes(0,j,len(matrix),1).format.column_width=wd
+
+def add_rows(wb,name,rows,widths=None):
+    s=wb.worksheets.add(name)
+    fill(s,rows,widths)
+    return s
+
+def input_rows(an):
+    out=[['Vegetation','Source','Species','Code','Individual','Size_class','PG','SigmaNO','NAV','VUL','LAT','BAS','PTP','Corrected_20','PC1','PC2','PC3','PC4','PC5']]
+    for r,score in zip(an['rows'],an['raw']['scores']):
+        out.append([r.get(k) if k!='Corrected_among_20' else r.get(k) for k in FIELDS]+list(score))
+    return out
+
+def results_rows(an,kind):
+    p=an[kind];v=p['vectors'];e=p['eigenvalues'];var=p['variance']
+    rows=[['Component','Eigenvalue','Explained variance (%)','Cumulative (%)']]
+    for k in range(5):rows.append([f'PC{k+1}',e[k],var[k]*100, sum(var[:k+1])*100])
+    rows += [['','','',''],['Property','PC1','PC2','PC3','PC4','PC5']]
+    for i,n in enumerate(NAMES):rows.append([n]+list(v[i,:]))
+    rows += [['','','',''],['Correlation matrix']+NAMES]
+    for i,n in enumerate(NAMES): rows.append([n]+list(p['correlation'][i]))
+    return rows
+
+def write_reduced(analyses):
+    wb=Workbook.create();summary=[['Biome','Networks included','PC1 (%)','PC2 (%)','PC1+PC2 (%)','Excluded (BAS undefined)','DOI']]
+    for an in analyses:
+        p=an['raw']['variance'];summary.append([an['name'],len(an['rows']),p[0]*100,p[1]*100,sum(p[:2])*100,an['excluded'],DOI])
+    add_rows(wb,'Summary',summary,[19,19,17,17,21,25,31])
+    for an in analyses:
+        add_rows(wb,an['name']+' Results',results_rows(an,'raw'),[26,22,24,24,20,20])
+        add_rows(wb,an['name']+' Data',input_rows(an),[17,25,39,12,14,15,12,14,15,15,15,15,15,18,17,17,17,17,17])
+    add_rows(wb,'Method',[
+        ['Item','Details'],['DOI',DOI],['PCA method','Eigenanalysis of sample correlation matrix; five raw untransformed WCHN properties'],
+        ['Properties',', '.join(NAMES)],['Cerrado corrections','20 corrected observations incorporated, 55 other stored records unchanged'],
+        ['Excluded Cerrado network','Aspidosperma tomentosum: BAS undefined (not imputed in primary analysis)'],
+        ['Caatinga','24 historical observations; no redigitization of Caatinga networks'],
+        ['Variance percentage','Eigenvalue / 5 × 100; rounded to one decimal in manuscript'],
+        ['Orientation','PC1 oriented toward higher NAV; PC2 oriented toward higher LAT'],
+        ['Input','PCA_Caatinga_24_input.csv; PCA_Cerrado_75_corrected_input.csv'],
+        ['Independent checks','Re-run python run_wchn.py from this folder'],
+        ['Caveat','Stored values may be rounded; WCHNs within species are not necessarily independent']
+    ],[28,105])
+    # Sensitivity using mean substitution of BAS only (excluded network retained separately)
+    cerr=[a for a in analyses if a['name']=='Cerrado'][0]
+    allc=read_csv('PCA_Cerrado_75_corrected_input.csv')
+    missing=[r for r in allc if not np.isfinite(r['BAS'])]
+    if len(missing)==1:
+        data=np.vstack([cerr['X'],np.array([[missing[0][k] if k!='BAS' else np.mean(cerr['X'][:,NAMES.index('BAS')]) for k in NAMES]])])
+        sen=pca(data)
+        add_rows(wb,'Cerrado Sensitivity',[
+          ['Analysis','Networks','PC1 (%)','PC2 (%)','PC1+PC2 (%)'],
+          ['Complete cases (primary)',74,cerr['raw']['variance'][0]*100,cerr['raw']['variance'][1]*100,sum(cerr['raw']['variance'][:2])*100],
+          ['Mean BAS substitution (sensitivity)',75,sen['variance'][0]*100,sen['variance'][1]*100,sum(sen['variance'][:2])*100],
+          ['Imputation note','Mean BAS used in sensitivity only; primary inference excludes that record',None,None,None]
+        ],[41,19,18,18,22])
+    SpreadsheetFile.export_xlsx(wb).save(str(BASE/'Reduced_PCA_WCHN_Caatinga_Cerrado.xlsx'))
+
+def write_adjusted(analyses):
+    wb=Workbook.create()
+    add_rows(wb,'Summary', [['Biome','n','PC1 adjusted (%)','PC2 adjusted (%)','PC1+PC2 adjusted (%)','Method','DOI']]+[
+        [a['name'],len(a['rows']),a['adjusted']['variance'][0]*100,a['adjusted']['variance'][1]*100,sum(a['adjusted']['variance'][:2])*100,'ln(property) ~ 1 + ln(SigmaNO)',DOI] for a in analyses],[22,10,21,21,27,39,31])
+    for a in analyses:
+        nm=a['name'];add_rows(wb,nm+' Log PCA',results_rows(a,'adjusted'),[26,22,24,24,20,20])
+        add_rows(wb,nm+' Partial Corr',[
+          ['Pair','r','Two-sided p','Holm-adjusted p','95% CI low','95% CI high','n']]+[
+          [d[k] for k in ['pair','r','p','holm_p','ci_low','ci_high','n']] for d in a['partial']
+        ],[20,17,19,22,18,18,12])
+        add_rows(wb,nm+' Residual Scores',[
+           ['Species','Code','Individual','SigmaNO','PC1','PC2','PC3','PC4','PC5','ln NAV residual','ln VUL residual','ln LAT residual','ln BAS residual','ln PTP residual']]+[
+             [r['Species'],r['Code'],r.get('Individual'),r['SigmaNO']]+list(a['adjusted']['scores'][j])+list(a['residuals'][j]) for j,r in enumerate(a['rows'])
+           ],[38,12,14,15,17,17,17,17,17,23,23,23,23,23])
+        add_rows(wb,nm+' OLS',[
+            ['Property','Intercept','Slope ln(SigmaNO)','Residual SD (ddof=1)']]+[
+                [p,a['coefficients'][0,j],a['coefficients'][1,j],a['residuals'][:,j].std(ddof=1)] for j,p in enumerate(NAMES)
+            ],[24,20,24,27])
+    cp=next(a for a in analyses if a['name']=='Caatinga')
+    subset=[r for r in cp['rows'] if 'pyramidale' in r['Species'].lower()]
+    ar=analyze(subset,'C. pyramidale')
+    allr=ar['partial'];nvv=next(r for r in allr if r['pair']=='NAV–VUL')
+    add_rows(wb,'Cenostigma 14',[
+         ['Subset','n','NAV–VUL partial r','Two-sided p','Size covariate'],
+         ['Cenostigma pyramidale',len(subset),nvv['r'],nvv['p'],'ln(SigmaNO)']
+    ],[37,12,24,19,21])
+    add_rows(wb,'Method',[
+       ['Item','Specification'],['Dataset DOI',DOI],['Input properties','ln of NAV, VUL, LAT, BAS, PTP'],
+       ['Control variable','ln(SigmaNO) plus intercept, separately in each biome'],
+       ['PCA','Correlation matrix of OLS residuals standardized to sample SD=1'],
+       ['Variance explained','Percentage of residual standardized variance, NOT original raw-data variance'],
+       ['Partial correlations','Pearson r of two log–log OLS residual series, 6 pairs / biome'],
+       ['P-values','Two-sided t statistic using residual df=n-3'],
+       ['Holm','Step-down familywise adjustment across 6 associations, separately per biome'],
+       ['95% confidence limits','Approximate Fisher-z, SE=1/sqrt(n-4)'],
+       ['Sample','n=24 Caatinga; n=74 Cerrado complete cases (one BAS undefined)'],
+       ['Sampling caveat','Species repeated in Cerrado; statistics exploratory, WCHNs not independent biological replicates'],
+       ['Computational caveat','No causal adjustment, hydraulic or safety-height validation implied'],
+       ['Data precision','Original 55 Cerrado and all Caatinga PCA values reflect stored rounded precision']
+    ],[32,112])
+    SpreadsheetFile.export_xlsx(wb).save(str(BASE/'WCHN_correlacoes_parciais_PCAs_ajustadas.xlsx'))
+
+def plot_biplot(an,kind,filename):
+    p=an[kind];scores=p['scores'];vec=p['vectors'];variances=p['variance']
+    fig,ax=plt.subplots(figsize=(8.2,6.2),dpi=165)
+    ax.scatter(scores[:,0],scores[:,1],s=22,alpha=.72,color='#4C7892',edgecolors='none')
+    if an['name']=='Cerrado' and kind=='raw':
+        edited=np.array([int(r['Corrected_among_20']) for r in an['rows']],bool)
+        ax.scatter(scores[edited,0],scores[edited,1],s=38,facecolors='none',edgecolors='#B66B3D',linewidths=1.1,label='20 corrected networks')
+        ax.legend(frameon=False,fontsize=8,loc='best')
+    length=1.5 # arrows in standardized score units (for visual orientation only)
+    for j,n in enumerate(NAMES):
+        x,y=vec[j,0]*length,vec[j,1]*length
+        ax.annotate('',xy=(x,y),xytext=(0,0),arrowprops=dict(arrowstyle='-|>',color='#A3413C',lw=1.65))
+        ax.text(x*1.11,y*1.11,n,color='#852A2A',fontsize=10,weight='bold',ha='center',va='center')
+    ax.axhline(0,color='#A8B2BC',lw=.8);ax.axvline(0,color='#A8B2BC',lw=.8)
+    ax.set(xlabel=f'PC1 ({variances[0]*100:.1f}%)',ylabel=f'PC2 ({variances[1]*100:.1f}%)')
+    typ='Size-adjusted log–log PCA' if kind=='adjusted' else 'Reduced PCA (untransformed)'
+    ax.set_title(f'{an["name"]} — {typ} (n={len(an["rows"])})',fontsize=12,weight='bold',pad=12)
+    ax.grid(alpha=.13);fig.tight_layout()
+    fig.savefig(BASE/filename,bbox_inches='tight')
+    plt.close(fig)
+
+def records_for_json(an):
+    def vectors(p):return {'eigenvalues':p['eigenvalues'].tolist(),'explained_variance_percent':(p['variance']*100).tolist(),
+        'eigenvectors':dict(zip(NAMES,p['vectors'].tolist()))}
+    return {'n':len(an['rows']),'excluded':an['excluded'],'reduced_pca':vectors(an['raw']),
+     'size_adjusted_loglog_pca':vectors(an['adjusted']),'size_adjusted_loglog_partial_correlations':an['partial'],
+     'loglog_ols_parameters':dict(zip(NAMES,[{'intercept':float(an['coefficients'][0,j]),'slope':float(an['coefficients'][1,j])} for j in range(5)]))}
+
+def main():
+    ca=read_csv('PCA_Caatinga_24_input.csv')
+    ce=read_csv('PCA_Cerrado_75_corrected_input.csv')
+    assert len(ca)==24 and len(ce)==75
+    assert sum(r['Corrected_among_20'] for r in ce)==20
+    assert sum(not np.isfinite(r['BAS']) for r in ce)==1
+    a=[analyze(ca,'Caatinga'),analyze(ce,'Cerrado')]
+    for d in a:
+        print(d['name'],'n=',len(d['rows']),'reduced PC1+PC2',round(100*sum(d['raw']['variance'][:2]),5),'adjusted',round(100*sum(d['adjusted']['variance'][:2]),5))
+        for r in d['partial']:
+            print(' ',r['pair'],round(r['r'],4),'Holm',round(r['holm_p'],7))
+    write_reduced(a);write_adjusted(a)
+    names={'Caatinga':('Reduced_PCA_Caatinga_24_WCHNs.png','WCHN_Caatinga_PCA_ajustada_SigmaNO'),
+           'Cerrado':('Reduced_PCA_Cerrado_74_WCHNs.png','WCHN_Cerrado_PCA_ajustada_SigmaNO')}
+    for an in a:
+        rawname,base=names[an['name']]
+        plot_biplot(an,'raw',rawname)
+        for fmt in ['png','svg']:plot_biplot(an,'adjusted',f'{base}.{fmt}')
+    cen=[r for r in a[0]['rows'] if 'pyramidale' in r['Species'].lower()]
+    c=analyze(cen,'Cenostigma pyramidale')
+    out={'dataset_doi':DOI,'method':'ln(property) ~ 1 + ln(SigmaNO); PCA of standardized OLS residuals',
+       'input_files':['PCA_Caatinga_24_input.csv','PCA_Cerrado_75_corrected_input.csv'],
+       'biomes':{an['name']:records_for_json(an) for an in a},
+       'Cenostigma_pyramidale_n14_NAV_VUL_partial_r':next(r['r'] for r in c['partial'] if r['pair']=='NAV–VUL'),
+       'limitations':['Historical inputs may be rounded','Species-clustered observations','No physiological validation']}
+    (BASE/'WCHN_partial_correlations_results.json').write_text(json.dumps(out,indent=2,ensure_ascii=False),encoding='utf-8')
+    print('SUCCESS: regenerated 2 workbooks, 6 images, JSON')
+
+if __name__=='__main__':main()
+# ----
+# code de sortie : 0
+# durée (s)      : 0

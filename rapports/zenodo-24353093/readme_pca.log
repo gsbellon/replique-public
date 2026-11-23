@@ -1,0 +1,86 @@
+# commande : ssh sd-92569 cat work/z24353093/pkg/README_Size_Adjusted_PCA_v2.md
+# début    : 2026-11-23T20:01:54Z
+# ----
+# WCHN revised PCA methods and partial correlations
+
+**Version-specific DOI (reserved, unpublished draft):** https://doi.org/10.5281/zenodo.24353093  
+**Concept DOI:** https://doi.org/10.5281/zenodo.22849807  
+**Previous published version:** https://doi.org/10.5281/zenodo.24197048
+
+## Objective and samples
+
+This note documents newly calculated exploratory PCAs and partial correlations using five WCHN properties (NAV, revised VUL, LAT, BAS, PTP). Caatinga: 24 field WCHNs, including 14 *Cenostigma pyramidale* individuals and ten other species. Cerrado: 75 records of 15 species (20 records redigitized and corrected), of which **74** have defined BAS and enter complete-case PCA. The 75th network remains in the canonical input CSV with BAS empty and is **excluded** from the primary analyses; no imputation is used in the primary analysis.
+
+The remaining 55 Cerrado WCHNs and all 24 Caatinga values come from the previously deposited PCA input matrix at its **stored decimal precision**. They were not independently reconstructed or converted to full-precision records in this release. The 20 corrected Cerrado property values are taken from the audited `Corrections_20_WCHNs_deposit.xlsx`. Check source against `PCA_Cerrado_75_corrected_input.csv`, whose `Corrected_among_20` field flags them.
+
+## Reduced, unadjusted PCA
+
+Use the untransformed positive values of NAV, revised VUL, LAT, BAS, and PTP in each biome; standardize to mean zero and unit sample standard deviation. Compute the eigenvalues and eigenvectors of the five-property sample correlation matrix. Orient PC1 toward higher NAV (and opposite VUL), PC2 toward higher LAT; signs are otherwise arbitrary. This is an **exploratory ordination**, not size adjusted.
+
+| Biome | n | PC1 (%) | PC2 (%) | PC1+PC2 (%) | LAT eigenvector PC2 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Caatinga | 24 | 72.68 | 18.37 | **91.05** | approximately 0.94 |
+| Cerrado, corrected complete cases | 74 | 70.67 | 19.16 | **89.83** | approximately 0.93 |
+
+The corrected Cerrado PC1 retains VUL opposed to NAV/BAS/PTP, with LAT associated more strongly with PC2. Some of this covariation is size-associated; NAV–VUL near reciprocity does not constitute independent mechanistic evidence.
+
+### Cerrado BAS sensitivity
+
+One original Cerrado network has undefined BAS. The primary ordination excludes it. The workbook additionally provides a *sensitivity analysis only* that substitutes the column mean for that one BAS value and redoes the 75-case PCA. This is **not** the primary PCA and should not be interpreted as recovering the missing biological property.
+
+## Log–log size adjustment
+
+For each of the five positive properties **individually**, fit ordinary least squares with an intercept:
+
+    ln(property_i) = beta_0 + beta_1 * ln(SigmaNO_i) + error_i
+
+Take the fitted residuals, center and standardize each residual column to sample SD=1, and perform eigenanalysis of their correlation matrix. The PC percentages represent **residual standardized variance** and must not be described as percentages of original variance. Although regression residuals are orthogonal to the included regressor within the fitted model, this does not establish biological or causal independence from network size.
+
+| Biome | n | Log–log adjusted PC1 (%) | PC2 (%) | PC1+PC2 (%) |
+| --- | ---: | ---: | ---: | ---: |
+| Caatinga | 24 | 85.06 | 13.87 | **98.93** |
+| Cerrado corrected | 74 | 75.69 | 21.78 | **97.47** |
+
+Rounded to one decimal, the manuscript reports 98.9% and 97.5%. These are recalculated from the **recorded input precision**. Historical manuscript estimates (99.2% and 97.6%) should not be silently substituted.
+
+## Size-adjusted partial Pearson correlations
+
+For NAV, BAS, PTP, VUL, examine the six unordered pairs: NAV–BAS, NAV–PTP, NAV–VUL, BAS–PTP, BAS–VUL and PTP–VUL. Compute Pearson correlation of each pair of **log–log size-regression residuals**. For each pair, calculate a two-sided *partial correlation* test with t degrees of freedom n−3. Adjust the six p-values within **each biome** using Holm step-down familywise correction. Approximate 95% Fisher-z CIs use standard error 1/sqrt(n−4).
+
+| Association | Caatinga (24) r | Cerrado corrected (74) r |
+| --- | ---: | ---: |
+| NAV–BAS | 0.961 | 0.783 |
+| NAV–PTP | 0.789 | 0.774 |
+| NAV–VUL | **−0.973** | **−0.950** |
+| BAS–PTP | 0.629 | 0.283 |
+| BAS–VUL | **−0.960** | **−0.845** |
+| PTP–VUL | −0.709 | −0.624 |
+
+All six associations are Holm-significant within each biome by this **exploratory** procedure; exact p and adjusted p values are in the workbook/JSON. *C. pyramidale*, considered separately (n=14), shows NAV–VUL approximately −0.98 after log–log size adjustment. Repeated WCHNs within species violate a simple independence assumption; these p-values do not replace clustered or phylogenetically informed inference.
+
+## Historical analyses and why their outputs differ
+
+The preceding version of `run_wchn.py` regressed *untransformed* properties linearly on SigmaNO, and explored an alternate regressor ln(SigmaNO) without log-transforming the properties. Neither is the fully log–log procedure used in the updated manuscript. The earlier primary linear-size residual PC1+PC2 percentages were 85.9% (Caatinga) and 84.8% (Cerrado). Historical outputs are preserved in previous published Zenodo versions and should not be confused with outputs from this script. Changing statistical scales changes covariance and residualized correlations; it is not evidence of a new ecological process.
+
+## Reproduction
+
+Files placed together in the root of this dataset:
+
+- `PCA_Caatinga_24_input.csv`
+- `PCA_Cerrado_75_corrected_input.csv`
+- `run_wchn.py`
+
+Install Python dependencies `numpy`, `scipy`, `matplotlib`, `artifact_tool`, then execute:
+
+    python run_wchn.py
+
+The script generates the two updated PCA workbooks, four adjusted-PCA PNG/SVG files, two reduced-PCA PNG figures, and JSON results. Numerical values in the generated workbook and JSON are machine-readable; plotted arrows are **visual scaled eigenvector directions**, not coordinate-equivalent physical measurements.
+
+## Limitations and proper interpretation
+
+The PCAs quantify statistical covariation in WCHN topological metrics; they do **not** directly measure hydraulic resistance, P₅₀, hydraulic safety margins or attainable height. The VUL–NAV association reflects strong shared mathematical structure (near reciprocal but not exactly identical); VUL–BAS and VUL–PTP are not forced by an equivalent exact identity, but also do not prove independent causal mechanisms. The residual PCAs, partial correlations and their p-values depend on measurement precision, sample composition, transformation, and OLS assumptions. Results from the Caatinga mixture of 14 *C. pyramidale* individuals and ten singly represented species are particularly sensitive to the within-versus-between-species sampling structure.
+
+Additional topological identities: https://doi.org/10.5281/zenodo.24181915 . Network reconstruction toolkit: https://doi.org/10.5281/zenodo.24082506 .
+# ----
+# code de sortie : 0
+# durée (s)      : 0

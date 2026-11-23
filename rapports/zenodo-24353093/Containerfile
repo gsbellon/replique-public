@@ -1,0 +1,6 @@
+FROM docker.io/library/python@sha256:b701198cb708b68d9413ca67d6311bd97c9389a2c5fe4da0511fc652642366cd
+# Image de base : python:3.11-slim (rapports/zenodo-24331415/image_base.log, même empreinte).
+# Le README du paquet demande numpy, scipy, matplotlib, artifact_tool sans version ; versions retenues et nommées ici.
+# artifact_tool n'existe pas sur PyPI (pip_artifact_tool.log) : il n'est pas installé.
+# Réseau nécessaire à la construction seulement (PyPI) ; les exécutions restent --network none.
+RUN pip install --no-cache-dir numpy==2.1.1 scipy==1.13.1 matplotlib==3.9.2

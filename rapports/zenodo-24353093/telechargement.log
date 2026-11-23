@@ -1,0 +1,33 @@
+# commande : ssh sd-92569 sh work/telecharge.sh
+# début    : 2026-11-23T20:01:48Z
+# ----
+README.md: OK
+README_Size_Adjusted_PCA_v2.md: OK
+PCA_UPDATE_CHANGELOG.md: OK
+PCA_Caatinga_24_input.csv: OK
+PCA_Cerrado_75_corrected_input.csv: OK
+run_wchn.py: OK
+WCHN_partial_correlations_results.json: OK
+Reduced_PCA_Cerrado_74_WCHNs.png: OK
+Reduced_PCA_Caatinga_24_WCHNs.png: OK
+WCHN_Cerrado_PCA_ajustada_SigmaNO.png: OK
+WCHN_Cerrado_PCA_ajustada_SigmaNO.svg: OK
+WCHN_Caatinga_PCA_ajustada_SigmaNO.png: OK
+WCHN_Caatinga_PCA_ajustada_SigmaNO.svg: OK
+total 448
+-rw-rw-r-- 1 replab replab  2358 Nov 23 21:01 PCA_Caatinga_24_input.csv
+-rw-rw-r-- 1 replab replab  9703 Nov 23 21:01 PCA_Cerrado_75_corrected_input.csv
+-rw-rw-r-- 1 replab replab  2570 Nov 23 21:01 PCA_UPDATE_CHANGELOG.md
+-rw-rw-r-- 1 replab replab 23023 Nov 23 21:01 README.md
+-rw-rw-r-- 1 replab replab  7115 Nov 23 21:01 README_Size_Adjusted_PCA_v2.md
+-rw-rw-r-- 1 replab replab 58106 Nov 23 21:01 Reduced_PCA_Caatinga_24_WCHNs.png
+-rw-rw-r-- 1 replab replab 83899 Nov 23 21:01 Reduced_PCA_Cerrado_74_WCHNs.png
+-rw-rw-r-- 1 replab replab 15853 Nov 23 21:01 run_wchn.py
+-rw-rw-r-- 1 replab replab 63265 Nov 23 21:01 WCHN_Caatinga_PCA_ajustada_SigmaNO.png
+-rw-rw-r-- 1 replab replab 44122 Nov 23 21:01 WCHN_Caatinga_PCA_ajustada_SigmaNO.svg
+-rw-rw-r-- 1 replab replab 65347 Nov 23 21:01 WCHN_Cerrado_PCA_ajustada_SigmaNO.png
+-rw-rw-r-- 1 replab replab 49634 Nov 23 21:01 WCHN_Cerrado_PCA_ajustada_SigmaNO.svg
+-rw-rw-r-- 1 replab replab 10868 Nov 23 21:01 WCHN_partial_correlations_results.json
+# ----
+# code de sortie : 0
+# durée (s)      : 3

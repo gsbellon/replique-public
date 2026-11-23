@@ -1,0 +1,49 @@
+# commande : ssh sd-92569 cd ~/work/z24353093 && sh compare.sh
+# début    : 2026-11-23T20:03:07Z
+# ----
+=== JSON, critère du 6 ter (rtol 1e-6, atol 1e-9)
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+=== JSON, égalité exacte (information)
+$.biomes.Cerrado.size_adjusted_loglog_partial_correlations[5].holm_p: 7.465056003611498e-09 -> 7.465056003611527e-09
+$.biomes.Cerrado.loglog_ols_parameters.VUL.intercept: 0.19997181410571813 -> 0.19997181410571746
+$.biomes.Cerrado.loglog_ols_parameters.VUL.slope: -0.5754463159165499 -> -0.5754463159165498
+$.Cenostigma_pyramidale_n14_NAV_VUL_partial_r: -0.9791480544631406 -> -0.9791480544631403
+RESULTAT: differe (185)
+=== JSON octet par octet
+pkg/WCHN_partial_correlations_results.json runB/WCHN_partial_correlations_results.json differ: byte 368, line 14
+=== images : cmp et sha256sum (hors verdict)
+pkg/Reduced_PCA_Cerrado_74_WCHNs.png runB/Reduced_PCA_Cerrado_74_WCHNs.png differ: byte 37, line 3
+== Reduced_PCA_Cerrado_74_WCHNs.png : DIFFERE (cmp)
+6084cbac6b616c1ce1054f692c647b48d98c0865c9c31dd71b737ac2cf237458  pkg/Reduced_PCA_Cerrado_74_WCHNs.png
+0f2cdd993a32efa772337254f610069899377e77ac87e030210588b7a9977063  runB/Reduced_PCA_Cerrado_74_WCHNs.png
+pkg/Reduced_PCA_Caatinga_24_WCHNs.png runB/Reduced_PCA_Caatinga_24_WCHNs.png differ: byte 37, line 3
+== Reduced_PCA_Caatinga_24_WCHNs.png : DIFFERE (cmp)
+895dab5d52354f468b2a7d51da15ceb13e1c350fbd92c172a33f83934bc3ec22  pkg/Reduced_PCA_Caatinga_24_WCHNs.png
+6f830759e09db88eb9340a35b448865c17f7696412f6a78d8233f118f448e2ca  runB/Reduced_PCA_Caatinga_24_WCHNs.png
+pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.png runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.png differ: byte 37, line 3
+== WCHN_Cerrado_PCA_ajustada_SigmaNO.png : DIFFERE (cmp)
+59b7540757342a653270ab97219b729d9f45ddf0ba5f074b00d948ad39bdd66d  pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.png
+ea4587ddc386cd11af08d44505317773c22aeb0ebf403641376834d4c671f3d2  runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.png
+pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg differ: byte 603, line 9
+== WCHN_Cerrado_PCA_ajustada_SigmaNO.svg : DIFFERE (cmp)
+7d92df623d79fe48cf9e8839c8d74451f7159b34f8510536f7f00dd8e18cfe3c  pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg
+456dc798b7d7009e50715db6f48fc4f8e74a9dee79bcb29481795c21ac68055b  runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg
+pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.png runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.png differ: byte 37, line 3
+== WCHN_Caatinga_PCA_ajustada_SigmaNO.png : DIFFERE (cmp)
+a08474d656e34ff6b3ba42933555d4346fdb3726a3b47586f8a6e090bb68998a  pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.png
+9f03173d383da935deb8be4b64f4d843c77793af0f48d65d35df981d3c4f86f7  runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.png
+pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg differ: byte 603, line 9
+== WCHN_Caatinga_PCA_ajustada_SigmaNO.svg : DIFFERE (cmp)
+52d9cfebf1f5ea05e2a858254b99ec14c005afa3e7275d23e0ccb8ce7cd9722e  pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg
+6f9d01669321ca6ad33e278400bce0d278c646ad3794a538e8d99fadbd4dd83e  runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg
+=== fichiers différents entre pkg et runB
+Files pkg/Reduced_PCA_Caatinga_24_WCHNs.png and runB/Reduced_PCA_Caatinga_24_WCHNs.png differ
+Files pkg/Reduced_PCA_Cerrado_74_WCHNs.png and runB/Reduced_PCA_Cerrado_74_WCHNs.png differ
+Files pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.png and runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.png differ
+Files pkg/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg and runB/WCHN_Caatinga_PCA_ajustada_SigmaNO.svg differ
+Files pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.png and runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.png differ
+Files pkg/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg and runB/WCHN_Cerrado_PCA_ajustada_SigmaNO.svg differ
+Files pkg/WCHN_partial_correlations_results.json and runB/WCHN_partial_correlations_results.json differ
+# ----
+# code de sortie : 1
+# durée (s)      : 0

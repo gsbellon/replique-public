@@ -1,0 +1,185 @@
+# commande : ssh sd-92569 cat work/z24353093/lecture/README.md
+# début    : 2026-11-23T20:01:07Z
+# ----
+# Woody Crown Hydraulic Network (WCHN): corrected crown networks, ecological reanalyses, and reproducible tools
+
+## Overview and scientific purpose
+
+This Zenodo record is an integrated historical, empirical, and computational resource for the **Woody Crown Hydraulic Network (WCHN)** framework (earlier publications used *woody crown network*, WCN). It connects the original studies and revised property definitions to Cerrado and Caatinga empirical records, recalculated comparisons and newly recomputed principal component analyses (PCAs), and editable networks plus code for reconstruction and independent checking. The full mathematical reference is now maintained as a separate, independently citable Zenodo record: **[Algebraic Relationships and Mathematical Properties of the Woody Crown Hydraulic Network (WCHN)](https://doi.org/10.5281/zenodo.24181915)** (version 1.0.0).
+
+The record is **independent of any particular journal or manuscript**. It is intended to support historical traceability, critical assessment, reproduction of calculations, and further tests on existing or newly constructed networks. The original source data and earlier record versions retain their provenance; corrected files are identified rather than silently substituted for historical material.
+
+The repository is **not** evidence that WCHN topology has been experimentally demonstrated to determine xylem hydraulic safety or attainable tree height. Connector-based distances, expected disconnection after node failure, physical lengths, and hydraulic resistance are distinct quantities.
+
+## Historical development: four foundational publications
+
+The following publications provide a chronological path from the first observed networks to the current framework. Their original equations and interpretations should be distinguished from the revisions documented in this record.
+
+1. **Souza, J. P., Prado, C. H. B. A., Albino, A. L. S., Damascos, M. A., & Souza, G. M. (2011).** Network analysis of tree crowns distinguishes functional groups of Cerrado species. *Plant Ecology*, **212**, 11–19. https://doi.org/10.1007/s11258-010-9797-7  
+   Initial decomposition and network analysis of Cerrado tree crowns, including comparisons among leaf-phenological groups.
+
+2. **Prado, C. H. B. A., Trovão, D. M. B. M., & Souza, J. P. (2020).** A network model for determining decomposition, topology, and properties of the woody crown. *Journal of Theoretical Biology*, **499**, 110318. https://doi.org/10.1016/j.jtbi.2020.110318  
+   Formalization of the crown-network approach and its original four properties: navigability, vulnerability, symmetry, and complexity.
+
+3. **Prado, C. H. B. A., & Trovão, D. M. B. M. (2023).** The woody crown network model incorporates maximum height. *Ecological Modelling*, **481**, 110345. https://doi.org/10.1016/j.ecolmodel.2023.110345  
+   Expansion to eight properties and comparative analysis of Cerrado and Caatinga networks, with proposed relationships to crown architecture and attainable height.
+
+4. **Prado, C. H. B. A. (2024).** Why not be random to build a woody crown network? *Theoretical and Experimental Plant Physiology*. https://doi.org/10.1007/s40626-024-00340-5  
+   Stochastic node-addition approach and comparisons of observed networks with size-matched random expectations.
+
+These publications are linked rather than reproduced as full article PDFs. The present record documents empirical recalculations, corrected observations, and analysis tools that apply revised WCHN definitions; the standalone mathematical record documents the complete definitions, algebraic derivations, and checks. Neither record retroactively changes the published articles.
+
+## WCHN representation and mathematical reference
+
+A WCHN is represented as a rooted, directed, acyclic graph of branching-region **nodes** and woody **connectors**, with a unique path from the initial node (IN) to every physical node. Each final node (FN) identifies an IN–FN woody axis. Distances are counted in connectors rather than measured in physical units. **ΣNO** is the number of distinct physical nodes.
+
+Eight properties are reported: **NAV** (navigability), **VUL** (vulnerability), **SYM** (symmetry), **COM** (complexity), **LAT** (laterality), **BAS** (basitony), **SHA** (node sharing), and **PTP** (potential topological plasticity).
+
+The main mathematical clarifications are:
+
+- Revised **SYM = μ/σ = 1/CV** and **COM = ΣNO × CV**, where μ and σ are the mean and population standard deviation of IN–FN connector distances, and CV = σ/μ. Where σ > 0, **COM × SYM = ΣNO**; this is an identity, not independent ecological evidence.
+- Revised **VUL** averages the disconnected fraction over **all non-IN nodes**, including FNs, as potential points of attack. In a rooted tree with ΣNO ≥ 2, it obeys the exact identity **VUL = Σ_v d(IN,v) / [ΣNO(ΣNO − 1)] = mean node depth / (ΣNO − 1)**, with the mean including the IN at depth zero. It describes *topological disconnection*, not measured embolism risk or hydraulic safety.
+- **SHA** is algebraically determined by NAV, LAT, and ΣNO; **PTP** is partly coupled to LAT, ΣNO, and the number of switch nodes (ΣSN). Removing the two exact redundancies (COM and SHA) yields a six-property reference set (NAV, VUL, SYM, LAT, BAS, and PTP), considered together with ΣNO; this does not by itself prove joint algebraic independence under all restrictions.
+- NAV and VUL share a strong dependence on node-depth organization and are nearly reciprocal in the examined samples. This **empirical** near reciprocity is not an exact algebraic identity or proof of physiological equivalence. Comparisons must attend to network size.
+
+Full definitions, conditions of definition, derivations, mathematical checks, size effects, and interpretive limits are available in the **separate mathematical record**, DOI **[10.5281/zenodo.24181915](https://doi.org/10.5281/zenodo.24181915)**. This record has its own README and PDF/DOCX versions of the mathematical reference.
+
+### Transfer of the mathematical document to an independent record
+
+The earlier dataset version **2.0.0**, DOI **[10.5281/zenodo.23930299](https://doi.org/10.5281/zenodo.23930299)**, included `WCHN_Algebraic_Relationships_and_Mathematical_Properties_Zenodo.docx`. **That file is not included in the present updated version of this dataset.** Its mathematical subject matter is now maintained and versioned separately in *Algebraic Relationships and Mathematical Properties of the Woody Crown Hydraulic Network (WCHN)*, DOI **[10.5281/zenodo.24181915](https://doi.org/10.5281/zenodo.24181915)**. This is a change in the organization of the resources, not a retraction of the historical file or its contents: the earlier Zenodo version retains its archived file list. Cite the mathematical record for current definitions and derivations, and cite the version-specific dataset DOI for the empirical files actually used. The independently deposited mathematical work is not presented as journal peer-reviewed.
+
+## Empirical source datasets and analytical reanalyses
+
+The full comparative collection comprises **99 field WCHNs**: **75 Cerrado** and **24 Caatinga** networks (14 *Cenostigma pyramidale* individuals and 10 networks representing other Caatinga species). The historical source workbooks remain unchanged and are not overwritten by corrected values.
+
+Recalculated comparison tables cover revised SYM, COM, and VUL formulations. The **updated PCAs and partial correlations** incorporate the 20 corrected Cerrado records. There are **74 complete Cerrado WCHNs** for the five-variable PCA; one additional original network has undefined BAS and is excluded from the primary PCA (retained in the 75-row input and assessed separately in sensitivity analysis). All 24 Caatinga WCHNs enter the analyses; their stored PCA input values have not been newly redigitized.
+
+The reduced PCAs use the **correlation matrix of five untransformed properties**: NAV, revised VUL, LAT, BAS, and PTP. The first two axes explain **91.1%** of variance in Caatinga and **89.8%** in the corrected Cerrado data. To examine size-associated covariance, each property is separately log-transformed and regressed on **ln ΣNO** using ordinary least squares (intercept included). The residuals are standardized before correlation-matrix PCA. The first two log–log adjusted components explain **98.9%** (Caatinga) and **97.5%** (Cerrado) of **standardized residual variance**, not original variance.
+
+Partial correlations use the residuals of this same log–log adjustment. Six prespecified associations among NAV, BAS, PTP and VUL are tested separately in each biome, with two-sided partial-correlation tests and Holm familywise correction. All six associations survive Holm adjustment in each biome under this procedure; for example NAV–VUL is approximately −0.97 (Caatinga) and −0.95 (Cerrado), while BAS–VUL is approximately −0.96 and −0.85. The NAV–VUL relationship is largely explained by their near reciprocity and does not provide independent hydraulic evidence. These exploratory tests do not fully account for repeated networks within species.
+
+**Reproducible new inputs**: `PCA_Caatinga_24_input.csv` and `PCA_Cerrado_75_corrected_input.csv`. **Run** `python run_wchn.py` to regenerate both PCA workbooks, all six figures, and machine-readable correlation results. The revised `README_Size_Adjusted_PCA_v2.md` contains the exact statistical methods and comparison to previously deposited analyses. The full mathematics remains independently citable as DOI https://doi.org/10.5281/zenodo.24181915.
+
+## Twenty corrected Cerrado networks: provenance and validation
+
+**`Corrections_20_WCHNs_deposit.xlsx`** documents 20 *corrected records from the original Cerrado sample*, **not 20 new independent observations**. Its worksheets are `README`, `Summary`, `Corrections log`, `Lists`, `Topology`, and `Reanalysis`. They record original-versus-corrected values, reconstruction decisions, parent–child relationships, connector distances, downstream losses, recalculated properties, and comparative tests.
+
+The reconstruction developed in stages:
+
+1. **Six networks were reconstructed manually in editable PowerPoint**. *S. polyphyllum* 1 was the initial **manual reading-and-counting feasibility pilot**; five other networks were reconstructed by the researcher using the same manual procedure.
+2. **Fourteen networks were reconstructed semi-automatically**. *S. camporum* 1 was the **first test of the automatic connector generator**, followed by thirteen further crowns assembled in a single PowerPoint presentation. For these networks, the researcher positioned editable node ellipses over each original skeletonized drawing; deterministic code proposed separate, editable connector objects and highlighted potentially uncertain connections as **solid-red nodes**.
+3. **Human verification was mandatory**. The researcher checked the flagged nodes **and the entire network**, including terminal connectors, against the original underlying drawing in PowerPoint. Individual connectors were corrected where needed before accepting the topology and decomposition.
+
+The accepted material is organized within the toolkit as **six individual manual network presentations**, **one semi-automatic *S. camporum* 1 pilot presentation**, and **one 13-slide semi-automatic presentation**. This distinction refers to how each original corrected network was reconstructed; a later independent semi-automatic validation test on *M. albicans* 5 does not change that network's manual provenance. The editable PowerPoints, intermediate files, intervention records, and accepted topological outputs document the workflow.
+
+### Independent semi-automatic test on *Miconia albicans* 5
+
+*M. albicans* 5 belongs **to the six manually reconstructed networks**, but was later used in a **separate validation exercise** for the semi-automatic connector generator. The validation example preserves (1) node-marked input, (2) connector proposal with highlighted uncertainties, and (3) the author-corrected accepted graph. Following a final visual check of six questioned ellipse locations, the accepted decomposition was **ΣNO = 138, ΣCO = 292, ΣRN = 123, ΣEN = 15, ΣFN = 33, ΣSN = 29**. Its parent–child topology, node depths, and **all eight WCHN properties remained unchanged**. See `wchn_toolkit/docs/FINAL_VALIDATION_M_albicans_5.md` inside the ZIP.
+
+The double calculation of VUL (subtree loss and normalized mean depth) and other algebraic/structural checks test **internal mathematical consistency**. They do not by themselves certify visual fidelity; that requires inspection of the source drawing.
+
+**Audit scope limitation:** the remaining 55 Cerrado networks passed available screening checks but were not all redigitized; the 24 Caatinga networks did not undergo the same visual redigitization. The empirical reanalyses must be interpreted accordingly.
+
+## Complete file inventory
+
+The names below describe the files retained in the updated dataset version (DOI 10.5281/zenodo.24197048). The independently deposited mathematical document is deliberately **excluded** from this inventory. All filenames are case-sensitive; filenames inside the toolkit ZIP have their own internal paths.
+
+### A. New or updated files for this version
+
+| File | Purpose |
+| --- | --- |
+| `README.md` | Current version, full inventory and provenance. |
+| `README_Size_Adjusted_PCA_v2.md` | Revised log–log method, numerical results, Holm tests, and limitations. |
+| `PCA_UPDATE_CHANGELOG.md` | Changes relative to the prior version; statistical and file-provenance notes. |
+| `PCA_Caatinga_24_input.csv` | Reproducible input for the 24 Caatinga networks at stored decimal precision. |
+| `PCA_Cerrado_75_corrected_input.csv` | All 75 Cerrado records, including 20 corrections and one undefined BAS. |
+| `Reduced_PCA_WCHN_Caatinga_Cerrado.xlsx` | Newly calculated reduced PCA workbooks, scores, loads, and sensitivity analysis. |
+| `Reduced_PCA_{Caatinga_24,Cerrado_74}_WCHNs.png` | Updated reduced PCA figures. |
+| `WCHN_correlacoes_parciais_PCAs_ajustadas.xlsx` | Updated log–log adjusted PCA and partial-correlation results. |
+| `WCHN_{Caatinga,Cerrado}_PCA_ajustada_SigmaNO.{png,svg}` | Updated adjusted PCA biplots. |
+| `WCHN_partial_correlations_results.json` | Updated machine-readable statistics and parameters. |
+| `run_wchn.py` | Reproducible script for inputs, adjusted results, figures, and workbooks. |
+| `Corrections_20_WCHNs_deposit.xlsx` | Preserved original-to-corrected audit of 20 WCHNs; no new records. |
+| `WCHN_toolkit_v1.0.3_deposit.zip` | Preserved unchanged reconstruction toolkit and examples. |
+| `WCHN_Toolkit_Practical_Guide_v1.0.3.docx` | Preserved toolkit user guide. |
+
+### B. Earlier source spreadsheets retained unchanged
+
+| File | Contents |
+| --- | --- |
+| `Caatinga_10_species_10_WCHNs.xlsx` | Ten Caatinga networks representing ten species. |
+| `Caatinga_Cenostigma_pyramidale_14_WCHNs.xlsx` | Fourteen *C. pyramidale* networks. |
+| `Cerrado_15_species_75_WCHNs.xlsx` | Original 75 Cerrado networks from 15 species. |
+
+### C. Recalculated tables retained in the new version
+
+| File | Contents |
+| --- | --- |
+| `Table_4_Cenostigma_recalculated.docx` | Fourteen *C. pyramidale* networks and size classes. |
+| `Table_6_Caatinga_10_species_recalculated.docx` | Ten-species Caatinga property table. |
+| `Table_7_Cerrado_species_and_phenological_groups_recalculated.docx` | Cerrado species and deciduous, semideciduous, evergreen groups. |
+| `Table_8_PERMANOVA_Cerrado_groups_recalculated.docx` | Revised phenological-group PERMANOVA comparisons. |
+| `Table_9_Caatinga_Cerrado_comparison_recalculated.docx` | Caatinga–Cerrado comparative results. |
+| `Table_10_Reduced_PERMANOVA_Cerrado_groups_additional.docx` | Additional reduced-set phenological-group PERMANOVA. |
+
+### D. Reduced PCA: recalculated using corrected records
+
+| File | Contents |
+| --- | --- |
+| `Reduced_PCA_WCHN_Caatinga_Cerrado.xlsx` | Recalculated input records, eigenvalues, eigenvectors, scores, correlations, and sensitivity analysis. |
+| `Reduced_PCA_Caatinga_24_WCHNs.png` | Reproduced Caatinga PCA at stored input precision (n=24). |
+| `Reduced_PCA_Cerrado_74_WCHNs.png` | Updated PCA using corrected 20-network subset (n=74 complete). |
+
+### E. Size-adjusted log–log analyses: newly recalculated
+
+| File | Contents |
+| --- | --- |
+| `WCHN_correlacoes_parciais_PCAs_ajustadas.xlsx` | Regression parameters, correlations, six Holm-adjusted tests per biome, residual PCAs, scores, and *Cenostigma* analysis. |
+| `WCHN_Caatinga_PCA_ajustada_SigmaNO.png` | Updated Caatinga size-adjusted PCA raster figure. |
+| `WCHN_Caatinga_PCA_ajustada_SigmaNO.svg` | Updated Caatinga size-adjusted PCA vector figure. |
+| `WCHN_Cerrado_PCA_ajustada_SigmaNO.png` | Updated Cerrado size-adjusted PCA raster figure. |
+| `WCHN_Cerrado_PCA_ajustada_SigmaNO.svg` | Updated Cerrado size-adjusted PCA vector figure. |
+| `WCHN_partial_correlations_results.json` | Machine-readable outputs, methods and numerical values. |
+| `run_wchn.py` | Regenerates both PCA workbooks and figures from two canonical CSV input files. |
+| `PCA_Caatinga_24_input.csv` | The 24 Caatinga observations at recorded source precision. |
+| `PCA_Cerrado_75_corrected_input.csv` | 75 records: 74 complete-case observations and one BAS-undefined case; 20 edited records flagged. |
+| `PCA_UPDATE_CHANGELOG.md` | Documents numerical changes, old vs new methods, and audit limitations. |
+
+## Reproduction routes
+
+**To check mathematical definitions:** consult the separate mathematical reference at **https://doi.org/10.5281/zenodo.24181915** (PDF or editable DOCX). Follow its identity checks, particularly `COM × SYM = ΣNO`, the SHA derivation, and the revised VUL identity. The mathematical DOCX is **not** a file in the present updated dataset version.
+
+**To inspect corrected field networks:** open `Corrections_20_WCHNs_deposit.xlsx`, starting with its `README` and `Summary` sheets; use `Topology`, `Lists`, and `Corrections log` to trace individual values. Match network names to the PowerPoint files listed under `wchn_toolkit/networks/` in the toolkit archive.
+
+**To reproduce network reading and calculation:** extract `WCHN_toolkit_v1.0.3_deposit.zip`, read `wchn_toolkit/README.md` and `wchn_toolkit/docs/PROTOCOL.md`, and use the illustrated instructions in `WCHN_Toolkit_Practical_Guide_v1.0.3.docx`. Install the dependencies specified in the package (`requirements.txt`), then run the provided reader and checking scripts on the accepted editable PowerPoints. The package includes tests and outputs for comparison.
+
+**To try a new semi-automatic reconstruction:** overlay the original drawing with one editable ellipse per physical node; run the connector-proposal routine as documented in the toolkit; visually inspect all red-flagged regions **and the full graph**; repair ambiguous or incorrect edges and terminal connectors in PowerPoint; then run the topology/property reader and compare its structural and algebraic reports. The connector proposal **does not replace expert visual validation**, and success on deposited examples does not guarantee transfer without adjustment to every new drawing.
+
+**To reproduce the updated reduced and size-adjusted statistics:** install Python dependencies (`numpy`, `scipy`, `matplotlib`, `artifact_tool`), put the two `PCA_*_input.csv` files next to `run_wchn.py`, and execute `python run_wchn.py`. This regenerates the two workbooks, reduced and adjusted PCA figures, and JSON outputs. Compare PC1+PC2 to the published values in the specialized README. This procedure is separate from the network-reconstruction toolkit.
+
+## Interpretation, limitations, and reuse
+
+The revised mathematical identities are exact within their stated assumptions; correlations, PCA groupings, and ecological contrasts are empirical and sensitive to sampling, network size, and modeling choices. Particularly, neither revised VUL nor a negative association between VUL and NAV directly measures hydraulic resistance, embolism vulnerability, or tree height. The stochastic comparison and human-verified reconstruction methods offer reproducible topological tests, not physiological validation.
+
+Preserve the distinction between (i) original historical source workbooks, (ii) revised property definitions and recalculated tables, (iii) newly recalculated exploratory PCA/correlation analyses based on stored PCA inputs with the 20 Cerrado corrections, and (iv) the 20-network redigitization and correction exercise. When reusing results, cite the version-specific DOI for the files used and the relevant original publications above. The license shown in Zenodo's record metadata governs reuse of deposited materials, subject to any third-party restrictions noted in individual files.
+
+### Related mathematical and computational deposits
+
+Independent WCHN mathematical reference (definitions, identities, conditions of validity, and worked checks): **https://doi.org/10.5281/zenodo.24181915**.
+
+Stochastic network code, experiments, and replicate data are available separately at: https://doi.org/10.5281/zenodo.21839645 . This is distinct from the PPTX network-reading toolkit in the present record.
+
+## Version history and citation
+
+**Current draft update**: version-specific DOI **[10.5281/zenodo.24353093](https://doi.org/10.5281/zenodo.24353093)** (reserved; not publicly resolvable until the Zenodo version is published). This update recalculates the reduced and log–log size-adjusted PCAs and partial correlations, including the 20 corrected Cerrado records, and supplies a standalone reproducing script, explicit input CSVs, new figures, refreshed workbooks and updated JSON and READMEs. The earlier linear-size adjusted analyses remain traceable in the prior published version and should not be confused with the new log–log approach.
+
+**Preceding published version**: [10.5281/zenodo.24197048](https://doi.org/10.5281/zenodo.24197048). It separated the mathematical DOCX into the independent reference [10.5281/zenodo.24181915](https://doi.org/10.5281/zenodo.24181915), retaining the corrected topologies and previous PCA materials. Older historical versions include [10.5281/zenodo.23930299](https://doi.org/10.5281/zenodo.23930299) and [10.5281/zenodo.23004658](https://doi.org/10.5281/zenodo.23004658).
+
+**Concept DOI**: [10.5281/zenodo.22849807](https://doi.org/10.5281/zenodo.22849807) identifies the dataset across versions. Cite a *specific version DOI* for the exact files used. The Zenodo metadata will determine the final version number upon publication; the DOI above is currently reserved.
+
+---
+
+**Repository perspective:** this dataset offers a traceable route from the four foundational studies through corrected field data and computational procedures, while its mathematical definitions and future algebraic developments are documented in the separately versioned mathematical record.
+# ----
+# code de sortie : 0
+# durée (s)      : 1

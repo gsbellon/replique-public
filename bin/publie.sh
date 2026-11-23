@@ -2,7 +2,7 @@
 # bin/publie.sh — sas de publication (6 quater). Copie dans le dépôt public ce qui peut l'être, et rien d'autre.
 # Publié : contrat, README, prompts, bin, registre, USAGE.tsv, SIGNATURE, journal avec quatorze jours de retard,
 # rapports `publiable` ou `retiré` dont l'embargo est levé (non divergent ; ou divergent avec ENVOI.md de plus de 14 jours, ou REPONSE.md).
-# Jamais publié : NOTIFICATION.md et ENVOI.md (adresses de tiers), journal/sessions, rapports en brouillon ou sous embargo.
+# Jamais publié : NOTIFICATION.md, ENVOI.md, AVIS.md et le courrier reçu (RECU-*, adresses de tiers), journal/sessions, rapports en brouillon ou sous embargo.
 # Le journal publié s'arrête avant la plus ancienne entrée qui nomme un dossier sous embargo : rien d'un rapport
 # divergent ne sort avant la fin du délai de l'article 6, pas même par le journal (correctif du 2026-11-13).
 set -uo pipefail
@@ -58,7 +58,7 @@ for d in rapports/zenodo-*/; do
   d="${d%/}"; r="$d/RAPPORT.md"; [ -f "$r" ] || continue
   grep -q 'état : publiable\|état : retiré' "$r" || continue
   sous_embargo "$d" && continue
-  mkdir -p "$PUB/$d" && cp -r "$d/." "$PUB/$d/" && rm -f "$PUB/$d/NOTIFICATION.md" "$PUB/$d/ENVOI.md"
+  mkdir -p "$PUB/$d" && cp -r "$d/." "$PUB/$d/" && rm -f "$PUB/$d/NOTIFICATION.md" "$PUB/$d/ENVOI.md" "$PUB/$d/AVIS.md" "$PUB/$d/REPONSE.brouillon.md" "$PUB/$d"/RECU-*
 done
 cd "$PUB" && git add -A
 if ! git diff --cached --quiet; then git -c user.name=replab -c user.email=replab@replique-pilote commit -qm "publication $(date -u +%FT%TZ)" && git push -q -u origin main && echo "$(date -u +%FT%TZ) publication poussée"; else echo "$(date -u +%FT%TZ) rien à publier"; fi

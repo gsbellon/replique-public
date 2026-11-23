@@ -1,0 +1,33 @@
+# commande : ssh sd-92569 cd ~/work/z24353093 && sh lance_run.sh
+# début    : 2026-11-23T20:02:49Z
+# ----
+2026-11-23T20:02:49Z
+=================== A : python run_wchn.py (paquet tel que livre)
+Traceback (most recent call last):
+  File "/work/run_wchn.py", line 25, in <module>
+    from artifact_tool import Workbook,SpreadsheetFile
+ModuleNotFoundError: No module named 'artifact_tool'
+code A : 1
+=================== B : python run_wchn.py avec artifact_tool de remplacement (HORS PAQUET)
+Caatinga n= 24 reduced PC1+PC2 91.05163 adjusted 98.92912
+  NAV–BAS 0.9614 Holm 0.0
+  NAV–PTP 0.7891 Holm 2.29e-05
+  NAV–VUL -0.9734 Holm 0.0
+  BAS–PTP 0.6292 Holm 0.0012966
+  BAS–VUL -0.9598 Holm 0.0
+  PTP–VUL -0.709 Holm 0.0003044
+Cerrado n= 74 reduced PC1+PC2 89.83056 adjusted 97.47483
+  NAV–BAS 0.7832 Holm 0.0
+  NAV–PTP 0.7741 Holm 0.0
+  NAV–VUL -0.9501 Holm 0.0
+  BAS–PTP 0.283 Holm 0.0152635
+  BAS–VUL -0.8454 Holm 0.0
+  PTP–VUL -0.6238 Holm 0.0
+artifact_tool (remplacement) : classeur non écrit : /work/Reduced_PCA_WCHN_Caatinga_Cerrado.xlsx
+artifact_tool (remplacement) : classeur non écrit : /work/WCHN_correlacoes_parciais_PCAs_ajustadas.xlsx
+SUCCESS: regenerated 2 workbooks, 6 images, JSON
+code B : 0
+2026-11-23T20:02:53Z
+# ----
+# code de sortie : 0
+# durée (s)      : 4
