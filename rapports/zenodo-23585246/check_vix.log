@@ -1,0 +1,8 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh check_vix.sh
+# début    : 2026-10-27T20:16:06Z
+# ----
+VIX through 2026-09-22 DIFFERS from the vintage used in the paper
+code : 0
+# ----
+# code de sortie : 0
+# durée (s)      : 0

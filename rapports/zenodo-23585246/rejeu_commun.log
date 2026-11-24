@@ -1,0 +1,38 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh rejeu_commun.sh
+# début    : 2026-11-16T20:26:21Z
+# ----
+bvar_hyper_deposit_rate.csv | exact : RESULTAT: differe (20) | rtol 1e-6 : RESULTAT: differe (10)
+bvar_hyper_lending_rate.csv | exact : RESULTAT: differe (20) | rtol 1e-6 : RESULTAT: differe (10)
+cf_diagnostics.csv | exact : RESULTAT: differe (542) | rtol 1e-6 : RESULTAT: differe (342)
+cf_orders.csv | exact : RESULTAT: differe (540) | rtol 1e-6 : RESULTAT: differe (537)
+cf_routes_paths.csv | exact : RESULTAT: differe (17075) | rtol 1e-6 : RESULTAT: differe (17018)
+cf_routes_windows.csv | exact : RESULTAT: differe (1835) | rtol 1e-6 : RESULTAT: differe (1831)
+cf_shapley_inference.csv | exact : RESULTAT: differe (227) | rtol 1e-6 : RESULTAT: differe (225)
+cf_stability.csv | exact : RESULTAT: differe (16) | rtol 1e-6 : RESULTAT: differe (10)
+cf_stable_draws.csv | exact : RESULTAT: differe (216) | rtol 1e-6 : RESULTAT: differe (214)
+common_sample_routes.csv | exact : RESULTAT: differe (960) | rtol 1e-6 : RESULTAT: differe (956)
+descriptives.csv | exact : RESULTAT: differe (4) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+fixed_rate_meta.csv | exact : RESULTAT: differe (1) | rtol 1e-6 : RESULTAT: differe (1)
+fixed_rate_routes.csv | exact : RESULTAT: differe (1280) | rtol 1e-6 : RESULTAT: differe (1277)
+hist_decomp_episodes.csv | exact : RESULTAT: differe (240) | rtol 1e-6 : RESULTAT: differe (238)
+hist_decomp_timeseries.csv | exact : RESULTAT: differe (10176) | rtol 1e-6 : RESULTAT: differe (10127)
+instrument_relevance.csv | exact : RESULTAT: differe (1) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+irf_C0_deposit_rate.csv | exact : RESULTAT: differe (2580) | rtol 1e-6 : RESULTAT: differe (740)
+irf_C0_lending_rate.csv | exact : RESULTAT: differe (2580) | rtol 1e-6 : RESULTAT: differe (741)
+irf_supply_shocks.csv | exact : RESULTAT: differe (8480) | rtol 1e-6 : RESULTAT: differe (4413)
+kpss_breaks.csv | exact : RESULTAT: differe (2) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+lag_selection_deposit_rate.csv | exact : RESULTAT: differe (106) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+lag_selection_lending_rate.csv | exact : RESULTAT: differe (106) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+lp_iv_firststage.csv | exact : RESULTAT: differe (50) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+lp_iv_irfs.csv | exact : RESULTAT: differe (3000) | rtol 1e-6 : RESULTAT: differe (4)
+modesty_posterior.csv | exact : RESULTAT: differe (56) | rtol 1e-6 : RESULTAT: differe (43)
+residual_diagnostics.csv | exact : RESULTAT: differe (64) | rtol 1e-6 : RESULTAT: differe (2)
+robustness_meta.csv | exact : RESULTAT: differe (2) | rtol 1e-6 : RESULTAT: differe (2)
+robustness_routes.csv | exact : RESULTAT: differe (6360) | rtol 1e-6 : RESULTAT: differe (5688)
+unit_roots.csv | exact : RESULTAT: differe (11) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+vix_freeze.csv | exact : RESULTAT: differe (120) | rtol 1e-6 : RESULTAT: differe (120)
+x13_diagnostics.csv | exact : RESULTAT: identique (atol=0.0, rtol=0.0) | rtol 1e-6 : RESULTAT: identique (atol=1e-12, rtol=1e-06)
+TOTAL fichiers=31 identiques_exact=1 identiques_rtol1e-6=8
+# ----
+# code de sortie : 0
+# durée (s)      : 2

@@ -1,0 +1,38 @@
+# commande : ssh sd-92569 ls -R ~/work/z23585246/run/output/tables
+# début    : 2026-10-28T20:00:31Z
+# ----
+/home/replab/work/z23585246/run/output/tables:
+bvar_hyper_deposit_rate.csv
+bvar_hyper_lending_rate.csv
+cf_diagnostics.csv
+cf_orders.csv
+cf_routes_paths.csv
+cf_routes_windows.csv
+cf_shapley_inference.csv
+cf_stability.csv
+cf_stable_draws.csv
+common_sample_routes.csv
+descriptives.csv
+fixed_rate_meta.csv
+fixed_rate_routes.csv
+hist_decomp_episodes.csv
+hist_decomp_timeseries.csv
+instrument_relevance.csv
+irf_C0_deposit_rate.csv
+irf_C0_lending_rate.csv
+irf_supply_shocks.csv
+kpss_breaks.csv
+lag_selection_deposit_rate.csv
+lag_selection_lending_rate.csv
+lp_iv_firststage.csv
+lp_iv_irfs.csv
+modesty_posterior.csv
+residual_diagnostics.csv
+robustness_meta.csv
+robustness_routes.csv
+unit_roots.csv
+vix_freeze.csv
+x13_diagnostics.csv
+# ----
+# code de sortie : 0
+# durée (s)      : 0

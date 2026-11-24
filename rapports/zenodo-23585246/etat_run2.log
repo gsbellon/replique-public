@@ -1,0 +1,9 @@
+# commande : ssh sd-92569 podman ps -a
+# début    : 2026-10-29T20:00:18Z
+# ----
+CONTAINER ID  IMAGE                           COMMAND          CREATED       STATUS                   PORTS       NAMES
+87ad71e2299a  localhost/replab-oilecu:latest  bash run_all.sh  2 days ago    Exited (0) 46 hours ago              replab-oilecu-run
+160f803cc324  localhost/replab-oilecu:latest  bash run_all.sh  24 hours ago  Exited (0) 23 hours ago              replab-oilecu-run2
+# ----
+# code de sortie : 0
+# durée (s)      : 1

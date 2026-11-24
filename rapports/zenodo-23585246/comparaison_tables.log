@@ -1,0 +1,39 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh compare_tables.sh
+# début    : 2026-10-28T20:01:12Z
+# ----
+DIFFERE bvar_hyper_deposit_rate.csv (11 lignes fournies differentes, 11 lignes au total)
+DIFFERE bvar_hyper_lending_rate.csv (11 lignes fournies differentes, 11 lignes au total)
+DIFFERE cf_diagnostics.csv (109 lignes fournies differentes, 109 lignes au total)
+DIFFERE cf_orders.csv (109 lignes fournies differentes, 109 lignes au total)
+DIFFERE cf_routes_paths.csv (3109 lignes fournies differentes, 3109 lignes au total)
+DIFFERE cf_routes_windows.csv (337 lignes fournies differentes, 337 lignes au total)
+DIFFERE cf_shapley_inference.csv (43 lignes fournies differentes, 43 lignes au total)
+DIFFERE cf_stability.csv (7 lignes fournies differentes, 7 lignes au total)
+DIFFERE cf_stable_draws.csv (37 lignes fournies differentes, 37 lignes au total)
+DIFFERE common_sample_routes.csv (193 lignes fournies differentes, 193 lignes au total)
+DIFFERE descriptives.csv (10 lignes fournies differentes, 10 lignes au total)
+DIFFERE fixed_rate_meta.csv (9 lignes fournies differentes, 9 lignes au total)
+DIFFERE fixed_rate_routes.csv (257 lignes fournies differentes, 257 lignes au total)
+DIFFERE hist_decomp_episodes.csv (49 lignes fournies differentes, 49 lignes au total)
+DIFFERE hist_decomp_timeseries.csv (3393 lignes fournies differentes, 3393 lignes au total)
+DIFFERE instrument_relevance.csv (3 lignes fournies differentes, 3 lignes au total)
+DIFFERE irf_C0_deposit_rate.csv (519 lignes fournies differentes, 519 lignes au total)
+DIFFERE irf_C0_lending_rate.csv (519 lignes fournies differentes, 519 lignes au total)
+DIFFERE irf_supply_shocks.csv (1703 lignes fournies differentes, 1703 lignes au total)
+DIFFERE kpss_breaks.csv (3 lignes fournies differentes, 3 lignes au total)
+DIFFERE lag_selection_deposit_rate.csv (19 lignes fournies differentes, 19 lignes au total)
+DIFFERE lag_selection_lending_rate.csv (19 lignes fournies differentes, 19 lignes au total)
+DIFFERE lp_iv_firststage.csv (51 lignes fournies differentes, 51 lignes au total)
+DIFFERE lp_iv_irfs.csv (501 lignes fournies differentes, 501 lignes au total)
+DIFFERE modesty_posterior.csv (9 lignes fournies differentes, 9 lignes au total)
+DIFFERE residual_diagnostics.csv (17 lignes fournies differentes, 17 lignes au total)
+DIFFERE robustness_meta.csv (41 lignes fournies differentes, 41 lignes au total)
+DIFFERE robustness_routes.csv (1273 lignes fournies differentes, 1273 lignes au total)
+DIFFERE unit_roots.csv (9 lignes fournies differentes, 9 lignes au total)
+DIFFERE vix_freeze.csv (25 lignes fournies differentes, 25 lignes au total)
+DIFFERE x13_diagnostics.csv (3 lignes fournies differentes, 3 lignes au total)
+fichiers regeneres absents du paquet :
+total fournis : 31 ; regeneres : 31
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,6 @@
+# commande : ssh sd-92569 curl -s -m 60 https://zenodo.org/api/records/23585246/files
+# début    : 2026-10-27T20:07:18Z
+# ----
+{"enabled": true, "links": {"self": "https://zenodo.org/api/records/23585246/files"}, "entries": [{"created": "2026-10-23T03:17:00.708396+00:00", "updated": "2026-10-23T03:17:00.761901+00:00", "mimetype": "application/zip", "version_id": "85958b7e-328e-445c-86f6-b31c90e43521", "file_id": "1a2057da-3016-436a-8b2d-3bf40fd3a43a", "bucket_id": "b14bc750-5256-4817-bbe5-8d08db9ea87f", "metadata": {"zip_toc_position": 4724195}, "access": {"hidden": false}, "links": {"self": "https://zenodo.org/api/records/23585246/files/OIL_ECU_replication_package_v1.0.0.zip", "content": "https://zenodo.org/api/records/23585246/files/OIL_ECU_replication_package_v1.0.0.zip/content", "container": "https://zenodo.org/api/records/23585246/files/OIL_ECU_replication_package_v1.0.0.zip/container"}, "key": "OIL_ECU_replication_package_v1.0.0.zip", "size": 4789752, "transfer": {"type": "L"}, "status": "completed", "checksum": "md5:bbab97c82ea22e497a82d9967ca924e1", "storage_class": "L"}], "default_preview": null, "order": []}# ----
+# code de sortie : 0
+# durée (s)      : 1

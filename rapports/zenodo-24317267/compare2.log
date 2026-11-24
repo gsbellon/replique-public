@@ -1,0 +1,226 @@
+# commande : ssh sd-92569 cd ~/work/z24317267 && bash compare.sh
+# début    : 2026-11-24T20:17:05Z
+# ----
+=== CSV régénérés, critère du 6 ter
+--- Table_A1_descriptives.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+  (information) égalité exacte :
+RESULTAT: identique (atol=0.0, rtol=0.0)
+pkg/output/data/Table_A1_descriptives.csv runA/output/data/Table_A1_descriptives.csv differ: byte 122, line 1
+  cmp : octets différents
+  sha256 livré / régénéré, et fins de ligne (nombre de CR) :
+cac63be06dd905a07c9a4c7841440f843e4f0afdeab457cf4ea88050c97abe05  pkg/output/data/Table_A1_descriptives.csv
+9c6745679925fbaa40b44f32f56496fc43e0bc689505ca6913817ab5e85aad43  runA/output/data/Table_A1_descriptives.csv
+22
+0
+--- section5_6_validation_counts.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+  (information) égalité exacte :
+RESULTAT: identique (atol=0.0, rtol=0.0)
+pkg/output/data/section5_6_validation_counts.csv runA/output/data/section5_6_validation_counts.csv differ: byte 39, line 1
+  cmp : octets différents
+  sha256 livré / régénéré, et fins de ligne (nombre de CR) :
+76d2c69f65cb8e2d361e9be8bfcd32d4c5c5c049f9a44fb968d8e1b662edd094  pkg/output/data/section5_6_validation_counts.csv
+3c206da3125125367590b225157a1fd7fb25680ede83affdec7f735426269704  runA/output/data/section5_6_validation_counts.csv
+7
+0
+--- unresolved_bound_summary.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+  (information) égalité exacte :
+RESULTAT: identique (atol=0.0, rtol=0.0)
+pkg/output/data/unresolved_bound_summary.csv runA/output/data/unresolved_bound_summary.csv differ: byte 122, line 1
+  cmp : octets différents
+  sha256 livré / régénéré, et fins de ligne (nombre de CR) :
+e0debbff6db8a0f28dec386885a0aa0d28bc704c278ac55461c10e9fd359a46d  pkg/output/data/unresolved_bound_summary.csv
+a8329ef4563d8b474e8bec0d917ced6145ec51adaf52a4c78edc924e9d6bd30e  runA/output/data/unresolved_bound_summary.csv
+4
+0
+=== Rdata régénérés : aplatissement (R, conteneur) puis comparaison
+/in/Table_A1_descriptives.Rdata : 1 objets, 169 lignes
+/in/Table_A1_descriptives.Rdata : 1 objets, 169 lignes
+--- [1] Table_A1_descriptives.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/Table_A1_descriptives.Rdata runA/output/data/Table_A1_descriptives.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 3 objets, 402 lignes
+/in/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 3 objets, 402 lignes
+--- [2] TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata runA/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 2 objets, 494 lignes
+/in/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 2 objets, 494 lignes
+--- [3] TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata runA/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/tuning/Table_A5.Rdata : 1 objets, 41 lignes
+/in/tuning/Table_A5.Rdata : 1 objets, 41 lignes
+--- [4] tuning/Table_A5.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/tuning/Table_A5.Rdata runA/output/data/tuning/Table_A5.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+=== entrées livrées (non régénérées) : cmp, doivent être identiques
+identique : Areas (Both) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : Areas (Earnings) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : Areas (Hours) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : tuning/tuning_n12_s1e-04.Rdata
+identique : tuning/tuning_n16_s1e-04.Rdata
+identique : tuning/tuning_n16_s1e-05.Rdata
+identique : tuning/tuning_n24_s1e-03.Rdata
+identique : tuning/tuning_n24_s1e-04.Rdata
+identique : tuning/tuning_warp.Rdata
+=== images (hors verdict) : cmp et sha256sum
+DIFFERE (cmp) : FigureA14_expectations_differences.bmp
+55aec53333fec96063f9f1e70bfa5ad410318d4df5df451352114350e95897be  pkg/output/pics/FigureA14_expectations_differences.bmp
+c78093848b2e00fc3b9e3c1af7f27c71f4b6e705f24d05defec95722c8efbeef  runA/output/pics/FigureA14_expectations_differences.bmp
+DIFFERE (cmp) : FigureA15_experience_differences.bmp
+dd4c1c0a2b69a3b70f2b916551a2f07806551be5da226769902b3c5c7613a63b  pkg/output/pics/FigureA15_experience_differences.bmp
+5e015ee47aadc5daac03861ef351be1ec8b598825afcf4d0c4ffa7a71ba60aa2  runA/output/pics/FigureA15_experience_differences.bmp
+DIFFERE (cmp) : FigureA3_budget_lines.bmp
+f1bacf78b4c6e971eeda8a74332b6b14a66500e7c04927908bd4b35a1f9c300d  pkg/output/pics/FigureA3_budget_lines.bmp
+9abdaa4084541fd8f01a304a8437ce9298ce67535b1f45603a6c50f3ce2d32e2  runA/output/pics/FigureA3_budget_lines.bmp
+DIFFERE (cmp) : Neoclassical.v.RefDepProximity.dist.bmp
+06a8747be45d40c2ab3e04fe650c5fe7cf5e1e226791bac9a1339e61ad08addf  pkg/output/pics/Neoclassical.v.RefDepProximity.dist.bmp
+28653e98be98f4dde8785309a992e3433096414da170991ae7d378e3e39c15e0  runA/output/pics/Neoclassical.v.RefDepProximity.dist.bmp
+DIFFERE (cmp) : Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+5a75535543e3517c95e2ba7c7e7c9084a2bb1ea8ec1bfad421e973f2281202f0  pkg/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+60ce4ddc5f70cd3946f6ab2094665169efd630242338150b7332d6933a816017  runA/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+DIFFERE (cmp) : ProximityNeoclassical.dist.bmp
+6e92801282c1c16c7fdd320695e1a7a19518061ba523b35948266e539333759b  pkg/output/pics/ProximityNeoclassical.dist.bmp
+3a3cdcca66d4d6c6cb5d6464ff7047cd75a533c3126c0b1df951cdf9c088d3dd  runA/output/pics/ProximityNeoclassical.dist.bmp
+DIFFERE (cmp) : ProximityRadarPlotExpectations_NestedGeneralU.bmp
+fbe845d2c0a4177eadd8f4f2264ead0a72753a61e621f80c50acca445fe51f70  pkg/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp
+d34787f8fd96a96e57e7875b5bae038701d56fbc53aa1d1b56c6ec38d38d550f  runA/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp
+DIFFERE (cmp) : ProximityRadarPlotExperience_NestedGeneralU.bmp
+ec1c633272378949d3f5fc239ac3060a7af83be71e5bcbf35edf0e3c62155697  pkg/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp
+37f3dd22331532e0a52c90cd9ff3dde07525efea9b287bcb6fe2c6340db47792  runA/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp
+DIFFERE (cmp) : ProximityRefDep.dist.bmp
+e2886950b26ea3b440317ea3da0314b6028ad8c856c25ce4b55054db02bf8aab  pkg/output/pics/ProximityRefDep.dist.bmp
+c27b4a319bb323760ff2470e9b01c471989199cd78cba87a2ca223b7ea4c5460  runA/output/pics/ProximityRefDep.dist.bmp
+DIFFERE (cmp) : ProximityRefDepModelForms.dist.bmp
+b999091ec8838340a6f4556845ca1c2c93e2e612df8ac6d8c85501b1398f6d88  pkg/output/pics/ProximityRefDepModelForms.dist.bmp
+47b9b1ac00d8a55a506d4de867a4e56c4fafd1beae439a0fbb8cb63447e29f5c  runA/output/pics/ProximityRefDepModelForms.dist.bmp
+DIFFERE (cmp) : ProximityRefDepModelKinds.dist.bmp
+f69747583eef1c88c5c0b6e5d141801307d426cccd301199d5ff0a8f5d7c5bf7  pkg/output/pics/ProximityRefDepModelKinds.dist.bmp
+3043d8ce38af7b6b4fb08d9b7f3a486d5ff7189d3929ba7be1b8077a04fd0de7  runA/output/pics/ProximityRefDepModelKinds.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresNeoclassical.dist.bmp
+eb77132c4e52a6ee0baded54f4f5de4deda06c867ddc79f779516605caffaafc  pkg/output/pics/SeltenMeasuresNeoclassical.dist.bmp
+09d69f514bf1e02e974a30e58ffc2c5e9e3b7f363204f5b0e132ce0947a594e1  runA/output/pics/SeltenMeasuresNeoclassical.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+9836dae0b856e202162033d4b13b9826edcf99003306897949231073cbe90f3b  pkg/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+092fdee0417817e2a9a188ec8a695fb5bbc9e0342b1d1fe3dd8b2d144bbe9ba8  runA/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+DIFFERE (cmp) : SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+4551597fac8a722b44b4060898654eb8f61ea276b3cc586dd296c927c3ada3d6  pkg/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+154ebeccb5044896b7b8bdac55c31568a580de5069374cad143ff3a6b4d7f05a  runA/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDep.dist.bmp
+567b124cc74ab37c4f6a356c9346d5b18d93a84623e4ecd5531a48c4a19263a7  pkg/output/pics/SeltenMeasuresRefDep.dist.bmp
+bd18c6e540bf1a5bbd4bf977bb51856114169ba9f36adcc6e485d89e7471ce5c  runA/output/pics/SeltenMeasuresRefDep.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDepModelForms.dist.bmp
+acde967ce3148a5dac9a58d2089d31401b2046346041adecdb07a685a0f7de48  pkg/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp
+18cf549e252e0ff86924a1781f728fbc2e543d21f3f97cf4cb3bee8e630cb5c1  runA/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDepModelKinds.dist.bmp
+ea46623f676a96fc5b52695fc30b4e1ba92fb3dc59d7fe506f230da5a59bfe73  pkg/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp
+bd1731172866590573a4bdc649abde9174136fe5f8332f917fe3c83e1794e2e8  runA/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp
+=== journaux (hors verdict) : diff run_all_log.txt
+lignes de diff (livré contre régénéré) :
+748
+lignes d'auto-contrôle (grep) dans le journal livré, puis régénéré :
+32:ALL 168 CELLS MATCH the printed Table A1.
+217:  REVERSALS in reported comparisons:   0
+224:  REVERSALS in reported comparisons:   0
+231:  REVERSALS in reported comparisons:   0
+249:CONCLUSION: Section 5.6 reproduced exactly.
+258:WARP matches the '_final' run on all 21000 draws.
+262:Section 5.6 reproduced exactly.
+263:LP verdicts differ from the '_final' run on 1 of 21000 draws.
+54:ALL 168 CELLS MATCH the printed Table A1.
+299:  REVERSALS in reported comparisons:   0
+306:  REVERSALS in reported comparisons:   0
+313:  REVERSALS in reported comparisons:   0
+331:CONCLUSION: Section 5.6 reproduced exactly.
+340:WARP matches the '_final' run on all 21000 draws.
+344:Section 5.6 reproduced exactly.
+345:LP verdicts differ from the '_final' run on 1 of 21000 draws.
+=== diff sessionInfo.txt
+1,22c1,27
+< R version 4.3.1 (2023-06-16 ucrt)
+< Platform: x86_64-w64-mingw32/x64 (64-bit)
+< Running under: Windows 11 x64 (build 26200)
+< 
+< Matrix products: default
+< 
+< 
+< locale:
+< [1] LC_COLLATE=English_United Kingdom.utf8  LC_CTYPE=English_United Kingdom.utf8    LC_MONETARY=English_United Kingdom.utf8
+< [4] LC_NUMERIC=C                            LC_TIME=English_United Kingdom.utf8    
+< 
+< time zone: Europe/London
+< tzcode source: internal
+< 
+< attached base packages:
+< [1] stats     graphics  grDevices utils     datasets  methods   base     
+< 
+< other attached packages:
+< [1] lpSolve_5.6.19  fmsb_0.7.5      lubridate_1.9.3 foreign_0.8-85 
+< 
+< loaded via a namespace (and not attached):
+< [1] compiler_4.3.1   generics_0.1.3   tools_4.3.1      timechange_0.2.0
+---
+> R version 4.3.1 (2023-06-16)
+> Platform: x86_64-pc-linux-gnu (64-bit)
+> Running under: Debian GNU/Linux trixie/sid
+> 
+> Matrix products: default
+> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.24.so;  LAPACK version 3.11.0
+> 
+> locale:
+>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+>  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+>  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+> 
+> time zone: Etc/UTC
+> tzcode source: system (glibc)
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base     
+> 
+> other attached packages:
+> [1] lpSolve_5.6.19  fmsb_0.7.5      lubridate_1.9.3 foreign_0.8-85 
+> 
+> loaded via a namespace (and not attached):
+> [1] compiler_4.3.1   generics_0.1.3   timechange_0.2.0
+=== fichiers présents d'un côté seulement ou différents (diff -rq, hors code/)
+Files pkg/output/data/section5_6_validation_counts.csv and runA/output/data/section5_6_validation_counts.csv differ
+Files pkg/output/data/Table_A1_descriptives.csv and runA/output/data/Table_A1_descriptives.csv differ
+Files pkg/output/data/Table_A1_descriptives.Rdata and runA/output/data/Table_A1_descriptives.Rdata differ
+Files pkg/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata and runA/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ
+Files pkg/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata and runA/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ
+Files pkg/output/data/tuning/Table_A5.Rdata and runA/output/data/tuning/Table_A5.Rdata differ
+Files pkg/output/data/unresolved_bound_summary.csv and runA/output/data/unresolved_bound_summary.csv differ
+Files pkg/output/pics/FigureA14_expectations_differences.bmp and runA/output/pics/FigureA14_expectations_differences.bmp differ
+Files pkg/output/pics/FigureA15_experience_differences.bmp and runA/output/pics/FigureA15_experience_differences.bmp differ
+Files pkg/output/pics/FigureA3_budget_lines.bmp and runA/output/pics/FigureA3_budget_lines.bmp differ
+Files pkg/output/pics/Neoclassical.v.RefDepProximity.dist.bmp and runA/output/pics/Neoclassical.v.RefDepProximity.dist.bmp differ
+Files pkg/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp and runA/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp differ
+Files pkg/output/pics/ProximityNeoclassical.dist.bmp and runA/output/pics/ProximityNeoclassical.dist.bmp differ
+Files pkg/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp and runA/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp differ
+Files pkg/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp and runA/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp differ
+Files pkg/output/pics/ProximityRefDep.dist.bmp and runA/output/pics/ProximityRefDep.dist.bmp differ
+Files pkg/output/pics/ProximityRefDepModelForms.dist.bmp and runA/output/pics/ProximityRefDepModelForms.dist.bmp differ
+Files pkg/output/pics/ProximityRefDepModelKinds.dist.bmp and runA/output/pics/ProximityRefDepModelKinds.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresNeoclassical.dist.bmp and runA/output/pics/SeltenMeasuresNeoclassical.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp and runA/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp differ
+Files pkg/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp and runA/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDep.dist.bmp and runA/output/pics/SeltenMeasuresRefDep.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp and runA/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp and runA/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp differ
+Files pkg/output/run_all_log.txt and runA/output/run_all_log.txt differ
+Files pkg/output/sessionInfo.txt and runA/output/sessionInfo.txt differ
+# ----
+# code de sortie : 1
+# durée (s)      : 4

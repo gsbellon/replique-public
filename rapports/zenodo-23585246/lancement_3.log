@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh lance_run.sh
+# début    : 2026-10-27T20:15:30Z
+# ----
+curl VIX ok
+4fc75ca601fcbd90ef7f3d8b0e026807c949505430a74e40c4022e048df91e62  run/data/raw/FRED_VIXCLS.csv
+2026-10-23,19.45
+2026-10-26,18.39
+9d71a9cbdd9e67a4a0281f2a50e55838faa159fed5799d6abe69415ae5a9ea6e
+2026-10-27T20:15:30Z
+CONTAINER ID  IMAGE                           COMMAND          CREATED                 STATUS                 PORTS       NAMES
+9d71a9cbdd9e  localhost/replab-oilecu:latest  bash run_all.sh  Less than a second ago  Up Less than a second              replab-oilecu-run
+# ----
+# code de sortie : 0
+# durée (s)      : 0

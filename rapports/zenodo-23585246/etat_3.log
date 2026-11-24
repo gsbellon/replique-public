@@ -1,0 +1,57 @@
+# commande : ssh sd-92569 podman logs replab-oilecu-run; podman ps -a --format "{{.Names}} {{.Status}}"
+# début    : 2026-10-27T20:16:06Z
+# ----
+
+==== 02 Build merged dataset
+CPIAUCSL 2025-10 missing in FRED -> log-linear interpolation = 324.654
+Full file: 2000-01 to 2026-09, 321 rows
+Estimation window: 2007-08 to 2026-06, T = 227
+                    mean       std       min        max
+l_oil_ecu_real    442.07     40.24    290.27     520.23
+effr                1.51      1.82      0.05       5.33
+l_vix             293.00     34.08    231.51     413.79
+reserves         5089.45   2122.85   1990.17   12491.19
+m2              48415.48  24836.03  12776.00  103621.38
+embi               10.64      7.57      3.55      50.78
+deposit_rate        5.57      0.93      4.25       8.45
+lending_rate        8.61      0.93      6.67      11.68
+
+==== 03 X-13 seasonal adjustment
+    series            span transform          arima
+1 reserves 2000-01 2026-07       log (0 1 0)(1 0 1)
+2       m2 2000-01 2026-07      none (1 1 1)(0 1 1)
+                                                                                                                             outliers
+1 LS2011.Feb AO2011.Sep LS2013.Feb LS2014.Jun LS2016.Jun LS2017.Jun AO2017.Sep AO2017.Dec AO2019.Sep AO2020.Mar LS2020.Oct AO2020.Dec
+2                                                                                                    LS2003.Feb AO2015.Dec LS2020.Mar
+  qs_original_p qs_sa_p
+1        0.0338       1
+2        0.0000       1
+Wrote data/processed/oil_channel_monthly.csv: 2007-08 to 2026-06, T = 227
+
+==== 05 Merge external oil supply shocks
+Coverage:
+  bh_supply       1975-02 to 2026-03  n=614
+  bh_activity     1975-02 to 2026-03  n=614
+  bh_consumption  1975-02 to 2026-03  n=614
+  bh_inventory    1975-02 to 2026-03  n=614
+  kz_surprise     1975-01 to 2025-12  n=612
+  kz_news_shock   1975-01 to 2025-12  n=612
+
+Correlation with the monthly change in 100*log real Ecuadorian crude, 2007:08-2026:06 overlap:
+  bh_supply       n=223  corr=-0.684  slope=-4.659  t=-5.91  F=34.9
+  bh_activity     n=223  corr=+0.276  slope=+4.232  t=+2.44  F=6.0
+  bh_consumption  n=223  corr=+0.656  slope=+2.706  t=+9.43  F=88.8
+  bh_inventory    n=223  corr=+0.090  slope=+1.149  t=+1.37  F=1.9
+  kz_surprise     n=220  corr=+0.236  slope=+1.664  t=+2.10  F=4.4
+  kz_news_shock   n=220  corr=+0.628  slope=+11.637  t=+8.09  F=65.5
+
+==== 04 Recursive baseline VAR (C0)
+
+================== deposit_rate ==================
+          AIC            HQ           BIC LR_sequential    alpha_each 
+        2.000         2.000         2.000         4.000         0.003 
+lambda chosen: external 0.20, domestic 0.15
+replab-oilecu-run Up 11 seconds
+# ----
+# code de sortie : 0
+# durée (s)      : 1

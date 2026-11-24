@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 sh work/telecharge_24317267.sh
+# début    : 2026-11-24T20:12:40Z
+# ----
+package.zip: OK
+total 3692
+-rw-rw-r-- 1 replab replab      46 Nov 24 21:12 MD5.txt
+-rw-rw-r-- 1 replab replab 3775945 Nov 24 21:12 package.zip
+work/telecharge_24317267.sh: 13: unzip: not found
+# ----
+# code de sortie : 127
+# durée (s)      : 1

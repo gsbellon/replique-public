@@ -1,0 +1,38 @@
+# commande : ssh sd-92569 podman logs replab-oilecu-run; podman ps -a --format "{{.Names}} {{.Status}}"
+# début    : 2026-10-27T20:15:34Z
+# ----
+
+==== 02 Build merged dataset
+CPIAUCSL 2025-10 missing in FRED -> log-linear interpolation = 324.654
+Traceback (most recent call last):
+  File "/work/src/02_build_dataset.py", line 101, in <module>
+    main()
+    ~~~~^^
+  File "/work/src/02_build_dataset.py", line 63, in main
+    fred = pd.DataFrame({sid: load_fred(sid) for sid in ["CPIAUCSL", "VIXCLS", "POILBREUSDM", "MCOILWTICO", "FEDFUNDS"]})
+                              ~~~~~~~~~^^^^^
+  File "/work/src/02_build_dataset.py", line 34, in load_fred
+    s = pd.read_csv(RAW / f"FRED_{sid}.csv", parse_dates=["date"]).set_index("date")[sid]
+        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/c_parser_wrapper.py", line 161, in __init__
+    self._validate_parse_dates_presence(self.names)  # type: ignore[has-type]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/base_parser.py", line 243, in _validate_parse_dates_presence
+    raise ValueError(
+        f"Missing column provided to 'parse_dates': '{missing_cols}'"
+    )
+ValueError: Missing column provided to 'parse_dates': 'date'
+replab-oilecu-run Exited (1) 4 seconds ago
+# ----
+# code de sortie : 0
+# durée (s)      : 1

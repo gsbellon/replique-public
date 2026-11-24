@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 cp ~/work/z24317267/lance_run.sh /tmp/x_unused 2>/dev/null; echo "premier essai : voir run.log du commit précédent (non versionné) : project_root non remplacé"
+# début    : 2026-11-24T20:16:04Z
+# ----
+premier essai : voir run.log du commit précédent (non versionné) : project_root non remplacé
+# ----
+# code de sortie : 0
+# durée (s)      : 0

@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 curl -sS --http1.1 -m 60 -o /dev/null -w "%{http_code} %{size_download} %{time_total}\n" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS"
+# début    : 2026-10-27T20:15:12Z
+# ----
+200 13959 0.032414
+# ----
+# code de sortie : 0
+# durée (s)      : 0

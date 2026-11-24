@@ -1,0 +1,11 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh diag_vix.sh
+# début    : 2026-10-27T20:16:27Z
+# ----
+lignes <= 2026-09-22 : 9581 ; non manquantes : 9279 (paquet : n=9279)
+première / dernière date non manquante : 1990-01-02 2026-09-22
+dates manquantes (10 premières) : ['1990-02-19', '1990-04-13', '1990-05-28', '1990-07-04', '1990-09-03', '1990-11-22', '1990-12-25', '1991-01-01', '1991-02-18', '1991-03-01']
+sha256 du texte écrit sans dropna : voir check_vix.log ; lignes de fenêtre 2007-08..2026-06 : 4935
+code : 0
+# ----
+# code de sortie : 0
+# durée (s)      : 1

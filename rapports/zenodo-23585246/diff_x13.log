@@ -1,0 +1,14 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && diff pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/output/tables/x13_diagnostics.csv run/output/tables/x13_diagnostics.csv
+# début    : 2026-10-28T20:01:20Z
+# ----
+1,3c1,3
+< "series","span","transform","arima","outliers","qs_original_p","qs_sa_p"
+< "reserves","2000-01 2026-07","log","(0 1 0)(1 0 1)","LS2011.Feb AO2011.Sep LS2013.Feb LS2014.Jun LS2016.Jun LS2017.Jun AO2017.Sep AO2017.Dec AO2019.Sep AO2020.Mar LS2020.Oct AO2020.Dec",0.0338,1
+< "m2","2000-01 2026-07","none","(1 1 1)(0 1 1)","LS2003.Feb AO2015.Dec LS2020.Mar",0,1
+---
+> "series","span","transform","arima","outliers","qs_original_p","qs_sa_p"
+> "reserves","2000-01 2026-07","log","(0 1 0)(1 0 1)","LS2011.Feb AO2011.Sep LS2013.Feb LS2014.Jun LS2016.Jun LS2017.Jun AO2017.Sep AO2017.Dec AO2019.Sep AO2020.Mar LS2020.Oct AO2020.Dec",0.0338,1
+> "m2","2000-01 2026-07","none","(1 1 1)(0 1 1)","LS2003.Feb AO2015.Dec LS2020.Mar",0,1
+# ----
+# code de sortie : 1
+# durée (s)      : 1

@@ -1,0 +1,18 @@
+# commande : ssh sd-92569 podman pull docker.io/library/r-base:4.3.1 && podman image inspect --format "{{.Digest}} {{.Id}}" docker.io/library/r-base:4.3.1
+# début    : 2026-11-24T20:13:14Z
+# ----
+Trying to pull docker.io/library/r-base:4.3.1...
+Getting image source signatures
+Copying blob sha256:027a08c976628a0a366eea2ab6923e995d675b63353914bbb811b55efbf0ea1a
+Copying blob sha256:3a3abc00097ca006fedf22776c231e2545fd41f2432d13fa20630f8066fb1b28
+Copying blob sha256:aefbc40b273a0602aaff7ebf3927d359b4b35b478a0404c6f875c0642e69a632
+Copying blob sha256:4b9e93079e042882107af07d114a4c10a8202361c63fbdce4fc863cd7942e65e
+Copying blob sha256:6de485d51833927eeffeba8297f3c9331260d41e2de8391fc3d0a37699701f3e
+Copying blob sha256:2fe8cc404d321c25adc422d19c121f41aa88609c90df0646e1d50661b0d45f64
+Copying config sha256:e64c713b3583c7003979857f85f2403af438d778f02022cf780e6f380ca1abcf
+Writing manifest to image destination
+e64c713b3583c7003979857f85f2403af438d778f02022cf780e6f380ca1abcf
+sha256:06979524919e444f50cf01c8e37403a90c7d06daf988c206c3236049f75fe3bd e64c713b3583c7003979857f85f2403af438d778f02022cf780e6f380ca1abcf
+# ----
+# code de sortie : 0
+# durée (s)      : 12

@@ -1,0 +1,8 @@
+# commande : ssh sd-92569 curl -sS --http1.1 -m 60 -A research-script -o /dev/null -w "%{http_code} %{size_download} %{time_total}\n" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS"
+# début    : 2026-10-27T20:14:09Z
+# ----
+curl: (28) Operation timed out after 60002 milliseconds with 0 bytes received
+000 0 60.002383
+# ----
+# code de sortie : 28
+# durée (s)      : 60

@@ -1,0 +1,93 @@
+# commande : ssh sd-92569 cd ~/work/z23585246/pkg/oil-shocks-sovereign-risk-ecuador-1.0.0 && cat src/01_fetch_fred.py; cat data/raw/FRED_download_log.txt; ls -la data/raw
+# début    : 2026-10-27T20:07:51Z
+# ----
+"""Download the external series from FRED as CSV (no API key needed).
+
+Writes data/raw/FRED_<ID>.csv and a download log with the retrieval date. Files already present (the vintages used in
+the paper ship with the repository, except the VIX) are kept unless UPDATE_DATA=1.
+Run from the project root: python src/01_fetch_fred.py
+"""
+import datetime as dt
+import hashlib
+import io
+import os
+import urllib.request
+from pathlib import Path
+
+import pandas as pd
+
+RAW = Path("data/raw")
+SERIES = {
+    "CPIAUCSL": "U.S. CPI, all urban consumers, SA, monthly (oil deflator)",
+    "VIXCLS": "CBOE VIX, daily close (global risk)",
+    "POILBREUSDM": "Brent crude, USD/bbl, monthly (robustness)",
+    "MCOILWTICO": "WTI crude, USD/bbl, monthly (robustness)",
+    "FEDFUNDS": "Effective federal funds rate, monthly (cross-check of effr_prom)",
+}
+URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}"
+
+
+def fetch(series_id: str) -> pd.DataFrame:
+    req = urllib.request.Request(URL.format(series_id), headers={"User-Agent": "research-script"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        df = pd.read_csv(io.StringIO(r.read().decode("utf-8")))
+    df.columns = ["date", series_id]
+    df["date"] = pd.to_datetime(df["date"])
+    df[series_id] = pd.to_numeric(df[series_id], errors="coerce")  # FRED marks missing days with "."
+    return df
+
+
+# The VIX is not redistributed. Checksum of the daily values used in the paper (through 2026-09-22), written as
+# by fetch() + to_csv (a later download adds days, so the check covers only the dates used).
+VIX_END, VIX_SHA256 = "2026-09-22", "184db96a98538229db2c72cc6d4428116f233bd4dcea5cb363cdb70bbc6616de"
+
+
+def check_vix(path):
+    d = pd.read_csv(path, parse_dates=["date"])
+    x = d[d["date"] <= VIX_END].to_csv(index=False, date_format="%Y-%m-%d")
+    same = hashlib.sha256(x.encode()).hexdigest() == VIX_SHA256
+    print("VIX through", VIX_END, "matches the vintage used in the paper" if same else "DIFFERS from the vintage used in the paper")
+
+
+def main():
+    RAW.mkdir(parents=True, exist_ok=True)
+    log = [f"Retrieved {dt.date.today().isoformat()} from {URL.format('<ID>')}"]
+    for sid, desc in SERIES.items():
+        path = RAW / f"FRED_{sid}.csv"
+        if path.exists() and os.environ.get("UPDATE_DATA") != "1":
+            print(f"{sid}: using the vintage shipped with the repository")
+            continue
+        df = fetch(sid)
+        df.to_csv(path, index=False)
+        ok = df.dropna()
+        line = f"{sid}: {desc} | {ok['date'].min():%Y-%m-%d} to {ok['date'].max():%Y-%m-%d} | n={len(ok)}"
+        print(line)
+        log.append(line)
+    check_vix(RAW / "FRED_VIXCLS.csv")
+    if len(log) > 1:   # append, so the retrieval dates of the shipped vintages are kept
+        with open(RAW / "FRED_download_log.txt", "a", encoding="utf-8") as f:
+            f.write(chr(10).join(log) + chr(10))
+
+
+if __name__ == "__main__":
+    main()
+Retrieved 2026-09-26 from https://fred.stlouisfed.org/graph/fredgraph.csv?id=<ID>
+CPIAUCSL: U.S. CPI, all urban consumers, SA, monthly (oil deflator) | 1947-01-01 to 2026-08-01 | n=955
+VIXCLS: CBOE VIX, daily close (global risk) | 1990-01-02 to 2026-09-22 | n=9279
+POILBREUSDM: Brent crude, USD/bbl, monthly (robustness) | 1992-01-01 to 2026-07-01 | n=415
+MCOILWTICO: WTI crude, USD/bbl, monthly (robustness) | 1986-01-01 to 2026-08-01 | n=488
+FEDFUNDS: Effective federal funds rate, monthly (cross-check of effr_prom) | 1954-07-01 to 2026-08-01 | n=866
+total 128
+drwxrwxr-x 3 replab replab  4096 Oct 27 21:07 .
+drwxrwxr-x 3 replab replab  4096 Oct 27 21:07 ..
+-rw-rw-r-- 1 replab replab 48761 Oct 27 21:07 BCE_Dataset_Unificado_Mensual_companion.csv
+-rw-rw-r-- 1 replab replab 17448 Oct 27 21:07 FRED_CPIAUCSL.csv
+-rw-rw-r-- 1 replab replab   560 Oct 27 21:07 FRED_download_log.txt
+-rw-rw-r-- 1 replab replab 14687 Oct 27 21:07 FRED_FEDFUNDS.csv
+-rw-rw-r-- 1 replab replab  8781 Oct 27 21:07 FRED_MCOILWTICO.csv
+-rw-rw-r-- 1 replab replab 11702 Oct 27 21:07 FRED_POILBREUSDM.csv
+drwxrwxr-x 2 replab replab  4096 Oct 27 21:07 oil_shocks
+-rw-rw-r-- 1 replab replab   775 Oct 27 21:07 SHA256SUMS.txt
+# ----
+# code de sortie : 0
+# durée (s)      : 0

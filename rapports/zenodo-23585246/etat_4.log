@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 podman ps -a --format "{{.Names}} {{.Status}}"; podman logs --tail 6 replab-oilecu-run
+# début    : 2026-10-27T20:16:37Z
+# ----
+replab-oilecu-run Up 42 seconds
+   OLS p=4 deposit_rate 36 -0.02787  0.01434  0.07720  0.16755  0.260107
+
+================== lending_rate ==================
+          AIC            HQ           BIC LR_sequential    alpha_each 
+        4.000         2.000         2.000         4.000         0.003 
+lambda chosen: external 0.20, domestic 0.10
+# ----
+# code de sortie : 0
+# durée (s)      : 1

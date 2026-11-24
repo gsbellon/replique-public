@@ -1,0 +1,344 @@
+# commande : ssh sd-92569 cd ~/work/z24317267 && bash compare.sh
+# début    : 2026-11-24T20:16:35Z
+# ----
+=== CSV régénérés, critère du 6 ter
+--- Table_A1_descriptives.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+--- section5_6_validation_counts.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+--- unresolved_bound_summary.csv
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+=== Rdata régénérés : aplatissement (R, conteneur) puis comparaison
+Warning message:
+In data.frame(cle = keys, valeur = val) :
+  row names were found from a short variable and have been discarded
+Error in rbind(deparse.level, ...) : 
+  numbers of columns of arguments do not match
+Calls: do.call -> <Anonymous> -> rbind
+Execution halted
+Warning message:
+In data.frame(cle = keys, valeur = val) :
+  row names were found from a short variable and have been discarded
+Error in rbind(deparse.level, ...) : 
+  numbers of columns of arguments do not match
+Calls: do.call -> <Anonymous> -> rbind
+Execution halted
+--- [1] Table_A1_descriptives.Rdata
+flat/pkg/f1.csv: illisible ou manquant (FileNotFoundError: [Errno 2] No such file or directory: 'flat/pkg/f1.csv')
+flat/runA/f1.csv: illisible ou manquant (FileNotFoundError: [Errno 2] No such file or directory: 'flat/runA/f1.csv')
+RESULTAT: differe (2)
+pkg/output/data/Table_A1_descriptives.Rdata runA/output/data/Table_A1_descriptives.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 3 objets, 402 lignes
+/in/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 3 objets, 402 lignes
+--- [2] TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata runA/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 2 objets, 494 lignes
+/in/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata : 2 objets, 494 lignes
+--- [3] TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata runA/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+/in/tuning/Table_A5.Rdata : 1 objets, 41 lignes
+/in/tuning/Table_A5.Rdata : 1 objets, 41 lignes
+--- [4] tuning/Table_A5.Rdata
+RESULTAT: identique (atol=1e-09, rtol=1e-06)
+pkg/output/data/tuning/Table_A5.Rdata runA/output/data/tuning/Table_A5.Rdata differ: byte 10, line 1
+cmp : octets différents (information)
+=== entrées livrées (non régénérées) : cmp, doivent être identiques
+identique : Areas (Both) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : Areas (Earnings) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : Areas (Hours) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+identique : tuning/tuning_n12_s1e-04.Rdata
+identique : tuning/tuning_n16_s1e-04.Rdata
+identique : tuning/tuning_n16_s1e-05.Rdata
+identique : tuning/tuning_n24_s1e-03.Rdata
+identique : tuning/tuning_n24_s1e-04.Rdata
+identique : tuning/tuning_warp.Rdata
+=== images (hors verdict) : cmp et sha256sum
+DIFFERE (cmp) : FigureA14_expectations_differences.bmp
+55aec53333fec96063f9f1e70bfa5ad410318d4df5df451352114350e95897be  pkg/output/pics/FigureA14_expectations_differences.bmp
+c78093848b2e00fc3b9e3c1af7f27c71f4b6e705f24d05defec95722c8efbeef  runA/output/pics/FigureA14_expectations_differences.bmp
+DIFFERE (cmp) : FigureA15_experience_differences.bmp
+dd4c1c0a2b69a3b70f2b916551a2f07806551be5da226769902b3c5c7613a63b  pkg/output/pics/FigureA15_experience_differences.bmp
+5e015ee47aadc5daac03861ef351be1ec8b598825afcf4d0c4ffa7a71ba60aa2  runA/output/pics/FigureA15_experience_differences.bmp
+DIFFERE (cmp) : FigureA3_budget_lines.bmp
+f1bacf78b4c6e971eeda8a74332b6b14a66500e7c04927908bd4b35a1f9c300d  pkg/output/pics/FigureA3_budget_lines.bmp
+9abdaa4084541fd8f01a304a8437ce9298ce67535b1f45603a6c50f3ce2d32e2  runA/output/pics/FigureA3_budget_lines.bmp
+DIFFERE (cmp) : Neoclassical.v.RefDepProximity.dist.bmp
+06a8747be45d40c2ab3e04fe650c5fe7cf5e1e226791bac9a1339e61ad08addf  pkg/output/pics/Neoclassical.v.RefDepProximity.dist.bmp
+28653e98be98f4dde8785309a992e3433096414da170991ae7d378e3e39c15e0  runA/output/pics/Neoclassical.v.RefDepProximity.dist.bmp
+DIFFERE (cmp) : Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+5a75535543e3517c95e2ba7c7e7c9084a2bb1ea8ec1bfad421e973f2281202f0  pkg/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+60ce4ddc5f70cd3946f6ab2094665169efd630242338150b7332d6933a816017  runA/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp
+DIFFERE (cmp) : ProximityNeoclassical.dist.bmp
+6e92801282c1c16c7fdd320695e1a7a19518061ba523b35948266e539333759b  pkg/output/pics/ProximityNeoclassical.dist.bmp
+3a3cdcca66d4d6c6cb5d6464ff7047cd75a533c3126c0b1df951cdf9c088d3dd  runA/output/pics/ProximityNeoclassical.dist.bmp
+DIFFERE (cmp) : ProximityRadarPlotExpectations_NestedGeneralU.bmp
+fbe845d2c0a4177eadd8f4f2264ead0a72753a61e621f80c50acca445fe51f70  pkg/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp
+d34787f8fd96a96e57e7875b5bae038701d56fbc53aa1d1b56c6ec38d38d550f  runA/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp
+DIFFERE (cmp) : ProximityRadarPlotExperience_NestedGeneralU.bmp
+ec1c633272378949d3f5fc239ac3060a7af83be71e5bcbf35edf0e3c62155697  pkg/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp
+37f3dd22331532e0a52c90cd9ff3dde07525efea9b287bcb6fe2c6340db47792  runA/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp
+DIFFERE (cmp) : ProximityRefDep.dist.bmp
+e2886950b26ea3b440317ea3da0314b6028ad8c856c25ce4b55054db02bf8aab  pkg/output/pics/ProximityRefDep.dist.bmp
+c27b4a319bb323760ff2470e9b01c471989199cd78cba87a2ca223b7ea4c5460  runA/output/pics/ProximityRefDep.dist.bmp
+DIFFERE (cmp) : ProximityRefDepModelForms.dist.bmp
+b999091ec8838340a6f4556845ca1c2c93e2e612df8ac6d8c85501b1398f6d88  pkg/output/pics/ProximityRefDepModelForms.dist.bmp
+47b9b1ac00d8a55a506d4de867a4e56c4fafd1beae439a0fbb8cb63447e29f5c  runA/output/pics/ProximityRefDepModelForms.dist.bmp
+DIFFERE (cmp) : ProximityRefDepModelKinds.dist.bmp
+f69747583eef1c88c5c0b6e5d141801307d426cccd301199d5ff0a8f5d7c5bf7  pkg/output/pics/ProximityRefDepModelKinds.dist.bmp
+3043d8ce38af7b6b4fb08d9b7f3a486d5ff7189d3929ba7be1b8077a04fd0de7  runA/output/pics/ProximityRefDepModelKinds.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresNeoclassical.dist.bmp
+eb77132c4e52a6ee0baded54f4f5de4deda06c867ddc79f779516605caffaafc  pkg/output/pics/SeltenMeasuresNeoclassical.dist.bmp
+09d69f514bf1e02e974a30e58ffc2c5e9e3b7f363204f5b0e132ce0947a594e1  runA/output/pics/SeltenMeasuresNeoclassical.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+9836dae0b856e202162033d4b13b9826edcf99003306897949231073cbe90f3b  pkg/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+092fdee0417817e2a9a188ec8a695fb5bbc9e0342b1d1fe3dd8b2d144bbe9ba8  runA/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp
+DIFFERE (cmp) : SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+4551597fac8a722b44b4060898654eb8f61ea276b3cc586dd296c927c3ada3d6  pkg/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+154ebeccb5044896b7b8bdac55c31568a580de5069374cad143ff3a6b4d7f05a  runA/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDep.dist.bmp
+567b124cc74ab37c4f6a356c9346d5b18d93a84623e4ecd5531a48c4a19263a7  pkg/output/pics/SeltenMeasuresRefDep.dist.bmp
+bd18c6e540bf1a5bbd4bf977bb51856114169ba9f36adcc6e485d89e7471ce5c  runA/output/pics/SeltenMeasuresRefDep.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDepModelForms.dist.bmp
+acde967ce3148a5dac9a58d2089d31401b2046346041adecdb07a685a0f7de48  pkg/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp
+18cf549e252e0ff86924a1781f728fbc2e543d21f3f97cf4cb3bee8e630cb5c1  runA/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp
+DIFFERE (cmp) : SeltenMeasuresRefDepModelKinds.dist.bmp
+ea46623f676a96fc5b52695fc30b4e1ba92fb3dc59d7fe506f230da5a59bfe73  pkg/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp
+bd1731172866590573a4bdc649abde9174136fe5f8332f917fe3c83e1794e2e8  runA/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp
+=== journaux (hors verdict) : diff run_all_log.txt
+1,325c1,421
+< Replication run started 2026-10-22 16:30:05 
+< project_root: C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE 
+< RUN_ESTIMATION = FALSE   RUN_TABLE_A5 = TRUE 
+< 
+< ==================== 02_table_A1.R  (started 2026-10-22 16:30:05) ====================
+< 
+< ===== Table A1: descriptive statistics, driver by driver =====
+<            T Working Hours Driving Hours Waiting Hours Break Hours Earnings ($/CPI) Wage ($/hr) Afriat Efficiency
+< Driver 1  39          6.85          4.32          2.53        0.90           153.01       36.41            0.9952
+< Driver 2  14          3.89          2.78          1.11        2.41            95.98       34.68            1.0000
+< Driver 3   6          6.66          4.61          2.05        0.74           160.07       36.19            1.0000
+< Driver 4  40          6.28          4.52          1.76        0.39           145.89       33.02            0.9978
+< Driver 5  23          6.46          3.98          2.48        2.11           144.00       38.12            0.9971
+< Driver 6   6          8.62          6.48          2.14        2.42           202.71       33.49            1.0000
+< Driver 7  24          6.47          4.42          2.05        0.74           159.50       36.69            0.9991
+< Driver 8  37          7.78          5.13          2.64        0.86           170.33       34.23            0.9897
+< Driver 9  19          7.17          5.47          1.70        0.54           158.82       30.61            1.0000
+< Driver 10 45          6.35          3.90          2.45        1.65           129.68       33.83            0.9954
+< Driver 11  6          7.15          5.22          1.93        0.71           182.40       35.50            1.0000
+< Driver 12 13          6.15          4.03          2.13        0.55           155.57       39.44            0.9972
+< Driver 13 10          7.03          4.72          2.31        0.53           153.99       33.26            1.0000
+< Driver 14 17          7.06          4.49          2.57        0.64           157.15       37.37            0.9930
+< Driver 15  8         10.82          7.64          3.17        0.19           217.29       29.92            1.0000
+< Driver 16 70          6.84          4.56          2.28        0.93           163.56       37.72            0.9936
+< Driver 17 10          5.88          3.71          2.17        0.54           137.28       39.10            0.9946
+< Driver 18 72          8.53          5.84          2.69        0.60           194.88       35.07            0.9849
+< Driver 19 33          6.91          4.63          2.29        0.97           155.65       36.01            0.9870
+< Driver 20 46          7.10          4.80          2.30        0.67           148.76       32.73            0.9842
+< Driver 21 46          5.32          3.66          1.66        0.24           123.57       35.62            0.9915
+< 
+< ===== Check against the printed Table A1 =====
+< ALL 168 CELLS MATCH the printed Table A1.
+< 
+< ==================== 03_figures_6_9.R  (started 2026-10-22 16:30:06) ====================
+< Both : read Areas (Both) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+<    drivers with no result: none 
+<    largest gap vs saved area.rate: 0 
+< Earnings : read Areas (Earnings) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+<    drivers with no result: none 
+<    largest gap vs saved area.rate: 0 
+< Hours : read Areas (Hours) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+<    drivers with no result: none 
+<    largest gap vs saved area.rate: 0 
+< 
+< written: C:\Users\lb0041\OneDrive - University of Surrey\RefDep2018\2026\AcceptReports\Final\Replication_QE\output\pics\ProximityRadarPlotExpectations_NestedGeneralU.bmp 
+< written: C:\Users\lb0041\OneDrive - University of Surrey\RefDep2018\2026\AcceptReports\Final\Replication_QE\output\pics\ProximityRadarPlotExperience_NestedGeneralU.bmp 
+< written: C:\Users\lb0041\OneDrive - University of Surrey\RefDep2018\2026\AcceptReports\Final\Replication_QE\output\pics\SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp 
+< written: C:\Users\lb0041\OneDrive - University of Surrey\RefDep2018\2026\AcceptReports\Final\Replication_QE\output\pics\SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp 
+< 
+< Spider pictures in C:\Users\lb0041\OneDrive - University of Surrey\RefDep2018\2026\AcceptReports\Final\Replication_QE\output\pics :
+< [1] "ProximityRadarPlotExpectations_NestedGeneralU.bmp"      "ProximityRadarPlotExperience_NestedGeneralU.bmp"       
+< [3] "SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp" "SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp"  
+< 
+< ==================== 04_figures_A4_A13.R  (started 2026-10-22 16:30:11) ====================
+< figures written to C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE/output/pics 
+<  [1] "FigureA14_expectations_differences.bmp"                 "FigureA15_experience_differences.bmp"                  
+<  [3] "FigureA3_budget_lines.bmp"                              "Neoclassical.v.RefDepProximity.dist.bmp"               
+<  [5] "Neoclassical.v.RefDepSeltenMeasures.dist.bmp"           "ProximityNeoclassical.dist.bmp"                        
+<  [7] "ProximityRadarPlotExpectations_NestedGeneralU.bmp"      "ProximityRadarPlotExperience_NestedGeneralU.bmp"       
+<  [9] "ProximityRefDep.dist.bmp"                               "ProximityRefDepModelForms.dist.bmp"                    
+< [11] "ProximityRefDepModelKinds.dist.bmp"                     "SeltenMeasuresNeoclassical.dist.bmp"                   
+< [13] "SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp" "SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp"  
+< [15] "SeltenMeasuresRefDep.dist.bmp"                          "SeltenMeasuresRefDepModelForms.dist.bmp"               
+< [17] "SeltenMeasuresRefDepModelKinds.dist.bmp"               
+< 
+< ==================== 05_tables_A2_A3.R  (started 2026-10-22 16:30:11) ====================
+< 
+< === TABLE A2: proximities, experience -based (published neoclassical column for comparison) ===
+<     Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone published_neo
+<   Driver 1 39     0.000000      0.000000      0.000000   0.000000      0.000000
+<   Driver 2 14     1.000000      1.000000      1.000000   1.000000      1.000000
+<   Driver 3  6     1.000000      1.000000      1.000000   1.000000      1.000000
+<   Driver 4 40     0.000000      0.000000      0.000000   0.000000      0.000000
+<   Driver 5 23     0.048492      0.051880      0.051880   0.051880      0.048492
+<   Driver 6  6     1.000000      1.000000      1.000000   1.000000      1.000000
+<   Driver 7 24     0.000000      0.000000      0.000000   0.000000      0.000000
+<   Driver 8 37     0.000000      0.000000      0.000000   0.000000      0.000000
+<   Driver 9 19     1.000000      1.000000      1.000000   1.000000      1.000000
+<  Driver 10 45     0.000000      0.000000      0.000000   0.000000      0.000000
+<  Driver 11  6     1.000000      1.000000      1.000000   1.000000      1.000000
+<  Driver 12 13     0.256557      0.142114      0.151227   0.151227      0.256557
+<  Driver 13 10     1.000000      1.000000      1.000000   1.000000      1.000000
+<  Driver 14 17     0.265625      0.227880      0.227880   0.227880      0.265625
+<  Driver 15  8     1.000000      1.000000      1.000000   1.000000      1.000000
+<  Driver 16 70     0.000000      0.000000      0.000000   0.000000      0.000000
+<  Driver 17 10     0.207382      0.380778      0.393223   0.404598      0.207382
+<  Driver 18 72     0.000000      0.000000      0.000000   0.000000      0.000000
+<  Driver 19 33     0.000000      0.000000      0.000000   0.000000      0.000000
+<  Driver 20 46     0.000000      0.000000      0.000000   0.000000      0.000000
+<  Driver 21 46     0.000000      0.000000      0.000000   0.000000      0.000000
+< 
+< === TABLE A3: Selten measures, experience -based ===
+<     Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone
+<   Driver 1 39     0.000000      0.000000      0.000000   0.000000
+<   Driver 2 14     0.942000      0.872000      0.902000   0.900000
+<   Driver 3  6     0.505000      0.215000      0.241000   0.245000
+<   Driver 4 40     0.000000      0.000000      0.000000   0.000000
+<   Driver 5 23     0.047492      0.050880      0.050880   0.050880
+<   Driver 6  6     0.665000      0.220000      0.236000   0.237000
+<   Driver 7 24     0.000000      0.000000      0.000000   0.000000
+<   Driver 8 37     0.000000      0.000000      0.000000   0.000000
+<   Driver 9 19     0.987000      0.977000      0.980000   0.980000
+<  Driver 10 45     0.000000      0.000000      0.000000   0.000000
+<  Driver 11  6     0.421000      0.154000      0.160000   0.160000
+<  Driver 12 13     0.187557     -0.008886      0.026227   0.028227
+<  Driver 13 10     0.832000      0.478000      0.541000   0.567000
+<  Driver 14 17     0.261625      0.216880      0.219880   0.220880
+<  Driver 15  8     0.800000      0.425000      0.456000   0.460000
+<  Driver 16 70     0.000000      0.000000      0.000000   0.000000
+<  Driver 17 10    -0.010618      0.008778      0.083223   0.068598
+<  Driver 18 72     0.000000      0.000000      0.000000   0.000000
+<  Driver 19 33     0.000000      0.000000      0.000000   0.000000
+<  Driver 20 46     0.000000      0.000000      0.000000   0.000000
+<  Driver 21 46     0.000000      0.000000      0.000000   0.000000
+< 
+< === TABLE A2, ADDITIVE ordinary utility, experience -based ===
+<     Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone
+<   Driver 1 39     0.000000      0.000000      0.000000   0.000000
+<   Driver 2 14     0.000000      0.119709      0.146903   0.146903
+<   Driver 3  6     0.554852      1.000000      0.483577   0.482741
+<   Driver 4 40     0.000000      0.000000      0.000000   0.000000
+<   Driver 5 23     0.000000      0.000000      0.000000   0.000000
+<   Driver 6  6     0.645774      0.569727      0.532905   0.619888
+<   Driver 7 24     0.000000      0.000000      0.000000   0.000000
+<   Driver 8 37     0.000000      0.000000      0.000000   0.000000
+<   Driver 9 19     0.000000      0.000000      0.000000   0.000000
+<  Driver 10 45     0.000000      0.000000      0.000000   0.000000
+<  Driver 11  6     0.622890      1.000000      0.468902   1.000000
+<  Driver 12 13     0.000000      0.231014      0.177608   0.196214
+<  Driver 13 10     0.207863      0.274471      0.343139   0.212552
+<  Driver 14 17     0.000000      0.000000      0.000000   0.000000
+<  Driver 15  8     0.396636      0.501467      0.569216   0.478016
+<  Driver 16 70     0.000000      0.000000      0.000000   0.000000
+<  Driver 17 10     0.402524      0.435017      0.129168   0.439314
+<  Driver 18 72     0.000000      0.000000      0.000000   0.000000
+<  Driver 19 33     0.000000      0.000000      0.000000   0.000000
+<  Driver 20 46     0.000000      0.000000      0.000000   0.000000
+<  Driver 21 46     0.000000      0.000000      0.000000   0.000000
+< 
+< saved: TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+< 
+< ==================== 06_table_A4_figures_A14_A15.R  (started 2026-10-22 16:30:11) ====================
+< Loaded: Both, Earnings, Hours 
+< 
+< ===== TABLE A4: all comparisons =====
+< 
+<                                                                               Comparison  N N.zero Mean.diff     SE   CI.lo   CI.hi t.stat p.value Significant
+<                        Both: Expectations-based (unconditional) vs Neoclassical (all 21) 21     13   -0.0715 0.0238 -0.1211 -0.0220 -3.010  0.0069         Yes
+<                 Both: Expectations-based (unconditional) vs Neoclassical (non-zero, n=8)  8      0   -0.1877 0.0334 -0.2668 -0.1087 -5.615  0.0008         Yes
+=== diff sessionInfo.txt
+1,22c1,27
+< R version 4.3.1 (2023-06-16 ucrt)
+< Platform: x86_64-w64-mingw32/x64 (64-bit)
+< Running under: Windows 11 x64 (build 26200)
+< 
+< Matrix products: default
+< 
+< 
+< locale:
+< [1] LC_COLLATE=English_United Kingdom.utf8  LC_CTYPE=English_United Kingdom.utf8    LC_MONETARY=English_United Kingdom.utf8
+< [4] LC_NUMERIC=C                            LC_TIME=English_United Kingdom.utf8    
+< 
+< time zone: Europe/London
+< tzcode source: internal
+< 
+< attached base packages:
+< [1] stats     graphics  grDevices utils     datasets  methods   base     
+< 
+< other attached packages:
+< [1] lpSolve_5.6.19  fmsb_0.7.5      lubridate_1.9.3 foreign_0.8-85 
+< 
+< loaded via a namespace (and not attached):
+< [1] compiler_4.3.1   generics_0.1.3   tools_4.3.1      timechange_0.2.0
+---
+> R version 4.3.1 (2023-06-16)
+> Platform: x86_64-pc-linux-gnu (64-bit)
+> Running under: Debian GNU/Linux trixie/sid
+> 
+> Matrix products: default
+> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.24.so;  LAPACK version 3.11.0
+> 
+> locale:
+>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+>  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+>  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+> 
+> time zone: Etc/UTC
+> tzcode source: system (glibc)
+> 
+> attached base packages:
+> [1] stats     graphics  grDevices utils     datasets  methods   base     
+> 
+> other attached packages:
+> [1] lpSolve_5.6.19  fmsb_0.7.5      lubridate_1.9.3 foreign_0.8-85 
+> 
+> loaded via a namespace (and not attached):
+> [1] compiler_4.3.1   generics_0.1.3   timechange_0.2.0
+=== fichiers présents d'un côté seulement ou différents (diff -rq, hors code/)
+Files pkg/output/data/section5_6_validation_counts.csv and runA/output/data/section5_6_validation_counts.csv differ
+Files pkg/output/data/Table_A1_descriptives.csv and runA/output/data/Table_A1_descriptives.csv differ
+Files pkg/output/data/Table_A1_descriptives.Rdata and runA/output/data/Table_A1_descriptives.Rdata differ
+Files pkg/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata and runA/output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ
+Files pkg/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata and runA/output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata differ
+Files pkg/output/data/tuning/Table_A5.Rdata and runA/output/data/tuning/Table_A5.Rdata differ
+Files pkg/output/data/unresolved_bound_summary.csv and runA/output/data/unresolved_bound_summary.csv differ
+Files pkg/output/pics/FigureA14_expectations_differences.bmp and runA/output/pics/FigureA14_expectations_differences.bmp differ
+Files pkg/output/pics/FigureA15_experience_differences.bmp and runA/output/pics/FigureA15_experience_differences.bmp differ
+Files pkg/output/pics/FigureA3_budget_lines.bmp and runA/output/pics/FigureA3_budget_lines.bmp differ
+Files pkg/output/pics/Neoclassical.v.RefDepProximity.dist.bmp and runA/output/pics/Neoclassical.v.RefDepProximity.dist.bmp differ
+Files pkg/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp and runA/output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp differ
+Files pkg/output/pics/ProximityNeoclassical.dist.bmp and runA/output/pics/ProximityNeoclassical.dist.bmp differ
+Files pkg/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp and runA/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp differ
+Files pkg/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp and runA/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp differ
+Files pkg/output/pics/ProximityRefDep.dist.bmp and runA/output/pics/ProximityRefDep.dist.bmp differ
+Files pkg/output/pics/ProximityRefDepModelForms.dist.bmp and runA/output/pics/ProximityRefDepModelForms.dist.bmp differ
+Files pkg/output/pics/ProximityRefDepModelKinds.dist.bmp and runA/output/pics/ProximityRefDepModelKinds.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresNeoclassical.dist.bmp and runA/output/pics/SeltenMeasuresNeoclassical.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp and runA/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp differ
+Files pkg/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp and runA/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDep.dist.bmp and runA/output/pics/SeltenMeasuresRefDep.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp and runA/output/pics/SeltenMeasuresRefDepModelForms.dist.bmp differ
+Files pkg/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp and runA/output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp differ
+Files pkg/output/run_all_log.txt and runA/output/run_all_log.txt differ
+Files pkg/output/sessionInfo.txt and runA/output/sessionInfo.txt differ
+# ----
+# code de sortie : 1
+# durée (s)      : 4

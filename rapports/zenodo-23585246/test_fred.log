@@ -1,0 +1,24 @@
+# commande : ssh sd-92569 curl -sS -I --http1.1 -m 20 https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS
+# début    : 2026-10-27T20:14:01Z
+# ----
+HTTP/1.1 200 OK
+Last-Modified: Tue, 27 Oct 2026 13:37:37 GMT
+Server: Apache
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+Content-Type: application/csv
+content-disposition: attachment; filename="VIXCLS.csv"
+Content-Length: 161731
+Cache-Control: public, max-age=215
+Expires: Tue, 27 Oct 2026 20:17:36 GMT
+Date: Tue, 27 Oct 2026 20:14:01 GMT
+Connection: keep-alive
+Alt-Svc: h3=":443"; ma=93600
+Strict-Transport-Security: max-age=86400
+X-location: cfs
+Set-Cookie: _abck=A61A38561CB4E119E09CC7C1DF80C652~-1~YAAQEIkUAtp+yHahAQAAlZT/fhB+vKv1vMLy+BUv2RHE5kCBw+hV6msP6D8cWaKGpbXnpqCAP1lOqm8am7emZ3hNqkSZrTJvtkWmutw6va0FEJZdVvy+kovB2Squ5SbPm82olIwQd1NxNYtYAEBqlCiufoNNLzh8efsJ8zr7tzKXjtuKrhcz1u6sGAJbJis0o/mULWelzljAlMPDUv1mb/npBw61pprBL6+Il0wjEbNR6R0nrjpmMbOfMcOp8RoB3H6Ocyv60GnQOvwwA9C7X3SoRbKwx6HUnoZlop4OiJgJngvPWMId9g3j3GjCRWtB2KLKEdMdvKONI/C+CcRVW0dmnDy0mWI/M5nX8J/e/KQ6n+iyls9y7V+wdpqK3AZCnpcPLEhvD3aKakmBQLgYf+kHnhcPLxOXzET3U+WMkM0IF/efadOnH239pXBntyLN0OqfAuGPQJj0~-1~-1~-1~-1~-1; Domain=.stlouisfed.org; Path=/; Expires=Wed, 27 Oct 2027 20:14:01 GMT; Max-Age=31536000; Secure
+Set-Cookie: bm_sz=7D5651A7956DFD1613058AE0BF5E95F8~YAAQEIkUAtt+yHahAQAAlZT/fgE5rjXOZh/HdWMmGi3YR3R8GETmAYdr568xOzciaHAsrDoOjonApV7GiTIAGMBi5V74fh4JHTPpJjYZCBnXzJIhjzwc1JwURkFN6o7V+yFodwlJGyRXEi5HLp2wXIpCraL0SFCTqrozJLlwE9dqNCSAMfmOxXYarmf/9PErmLWKyTn/ii7V+UpBQhpF+eo0pMzULtXOOWJD/mG4JUHe1p9hEVY6cojXeqVixD4CgmjB29TG1Qkk5Q5lr6eI3apXTK4Y7iFs2yUv5g5AuwKy39Wop59cHUIIqlAbbx9exeYPGRm//FTPPcb+MzPv9EsYmlfUXMfJODDIK3X/JIxvSQ==~3617090~3162928; Domain=.stlouisfed.org; Path=/; Expires=Wed, 28 Oct 2026 00:14:01 GMT; Max-Age=14400
+
+# ----
+# code de sortie : 0
+# durée (s)      : 0

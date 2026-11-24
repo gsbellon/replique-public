@@ -1,0 +1,139 @@
+# commande : ssh sd-92569 cd work/z24317267/pkg/code && cat 00_run_all.R
+# début    : 2026-11-24T20:13:26Z
+# ----
+# =============================================================================
+# 00_run_all.R
+#
+# Blow and Crawford, "Nonparametric Analysis of Reference-Dependent
+# Preferences": replication package.
+#
+# THIS IS THE ONLY FILE YOU NEED TO OPEN.
+#   1. Set project_root below to the replication folder (the folder that
+#      contains code/, data_raw/ and output/).
+#   2. Run the whole file (in RStudio: "Source").
+#   It runs every script in code/ in order, and writes a log of everything
+#   printed to output/run_all_log.txt and R's session details to
+#   output/sessionInfo.txt.
+#
+# WHAT EACH SCRIPT PRODUCES (in output/data and output/pics)
+#   01_estimation.R                all estimation results: the three
+#                                  "Areas (<dimension>) ..._final.Rdata" files
+#                                  (only if RUN_ESTIMATION = TRUE, see below)
+#   02_table_A1.R                  Table A1
+#   03_figures_6_9.R               Figures 6-9 (main text)
+#   04_figures_A4_A13.R            Figures A4-A13
+#   05_tables_A2_A3.R              Tables A2 and A3
+#   06_table_A4_figures_A14_A15.R  Table A4, Figures A14 and A15
+#   07_sections_5_5_5_6.R          the figures quoted in Supplemental Appendix
+#                                  Sections 5.5 and 5.6
+#   08_table_A5.R                  Table A5 (only if RUN_TABLE_A5 = TRUE)
+#   09_driver_8.R                  the check behind the explanation of
+#                                  driver 8 in Section 7.5
+#   10_figure_A3.R                 Figure A3 (Supplemental Appendix)
+#   Scripts 02, 07 and 08 check their own results against the printed paper
+#   and report whether they match.
+#
+# RUNTIME (on a laptop with an Intel Core i7-1165G7 and 16 GB of RAM)
+#   With the shipped results (the default): under a minute.
+#   01_estimation.R from scratch: about 37 hours in total (about 20 hours for
+#   Hours & Earnings, about 8 hours each for Earnings and for Hours).
+#   08_table_A5.R from scratch: about 37 hours; with the shipped sweep results
+#   in output/data/tuning, under a minute.
+#
+# Each script can also be run on its own, after setting the path at its top.
+# =============================================================================
+
+
+## ---- PUT YOUR FILE PATH HERE ----------------------------------------------
+## Use forward slashes (/), even on Windows.
+project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+## --------------------------------------------------------------------------
+
+
+## ---- SWITCHES ----------------------------------------------------------------
+## FALSE = use the shipped estimation results in output/data (the default).
+## TRUE  = re-run the estimation from scratch: about 37 hours.
+##         FIRST move the three shipped "Areas (...)" files out of output/data.
+##         The estimation resumes from any results it finds there, so with the
+##         shipped files in place it treats every driver as finished and skips
+##         it. A run that is interrupted can be resumed by running this file
+##         again.
+RUN_ESTIMATION <- FALSE
+
+## TRUE  = build Table A5. With the shipped sweep results (output/data/tuning)
+##         this takes under a minute; without them (move the tuning folder out
+##         of output/data) it re-runs the sweep: about 37 hours.
+RUN_TABLE_A5 <- TRUE
+
+
+## ---- 1. CHECKS BEFORE STARTING --------------------------------------------
+## Stop at once, with a clear message, if the folder or a package is missing,
+## rather than part-way through.
+
+code_dir <- file.path(project_root, "code")
+if (!dir.exists(code_dir))
+  stop("No code/ folder in project_root. Check the path at the top of this file:\n  ",
+       project_root)
+
+needed  <- c("lpSolve", "foreign", "lubridate", "fmsb")
+missing <- needed[!vapply(needed, requireNamespace, logical(1), quietly = TRUE)]
+if (length(missing))
+  stop("Please install the missing R package(s) first, by running:\n  install.packages(c(",
+       paste0('"', missing, '"', collapse = ", "), "))")
+
+scripts <- c(if (RUN_ESTIMATION) "01_estimation.R",
+             "02_table_A1.R",
+             "03_figures_6_9.R",
+             "04_figures_A4_A13.R",
+             "05_tables_A2_A3.R",
+             "06_table_A4_figures_A14_A15.R",
+             "07_sections_5_5_5_6.R",
+             if (RUN_TABLE_A5) "08_table_A5.R",
+             "09_driver_8.R",
+             "10_figure_A3.R")
+absent <- scripts[!file.exists(file.path(code_dir, scripts))]
+if (length(absent)) stop("Missing from code/: ", paste(absent, collapse = ", "))
+
+dir.create(file.path(project_root, "output", "data"), recursive = TRUE, showWarnings = FALSE)
+dir.create(file.path(project_root, "output", "pics"), recursive = TRUE, showWarnings = FALSE)
+
+
+## ---- 2. RUN THE SCRIPTS, LOGGING EVERYTHING -------------------------------
+## Each script runs in its own fresh environment, so nothing one script leaves
+## behind can affect the next. The path set above is visible to all of them.
+## Everything printed goes both to the screen and to the log file.
+
+log_file <- file.path(project_root, "output", "run_all_log.txt")
+log_con  <- file(log_file, open = "wt")
+sink(log_con, split = TRUE)                  # printed output: screen and log
+old_wd   <- getwd()                          # two scripts change it; restored below
+
+run_script <- function(s) {
+  cat("\n==================== ", s, "  (started ", format(Sys.time()),
+      ") ====================\n", sep = "")
+  withCallingHandlers(
+    source(file.path(code_dir, s), local = new.env(), encoding = "UTF-8"),
+    # messages still appear on screen; this also copies them into the log
+    message = function(m) cat(conditionMessage(m), file = log_con))
+}
+
+tryCatch({
+  cat("Replication run started", format(Sys.time()), "\n")
+  cat("project_root:", project_root, "\n")
+  cat("RUN_ESTIMATION =", RUN_ESTIMATION, "  RUN_TABLE_A5 =", RUN_TABLE_A5, "\n")
+  for (s in scripts) run_script(s)
+  cat("\nAll scripts finished", format(Sys.time()), "\n")
+}, error = function(e) {
+  cat("\nSTOPPED with an error in the script above:\n  ", conditionMessage(e), "\n")
+}, finally = {
+  sink()
+  close(log_con)
+  setwd(old_wd)
+  writeLines(capture.output(sessionInfo()),
+             file.path(project_root, "output", "sessionInfo.txt"))
+  message("Log written to:          ", log_file)
+  message("Session details written: ", file.path(project_root, "output", "sessionInfo.txt"))
+})
+# ----
+# code de sortie : 0
+# durée (s)      : 0

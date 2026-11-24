@@ -1,0 +1,5 @@
+Titre : Replication package for: "Nonparametric Analysis of Reference-Dependent Preferences" (Zenodo 24317267, v1, `fiche_zenodo.json`)
+Créateurs : Blow, Laura — University of Surrey, ORCID 0000-0001-5638-0127 ; Crawford, Vincent — University of Oxford, ORCID 0000-0003-0532-0305 (`fiche_zenodo.json`)
+Article lié : aucun lien dans la fiche ; la description de la fiche nomme *Quantitative Economics*, sans DOI
+Sujet : Le paquet (R) recalcule, à partir de données de chauffeurs de taxi new-yorkais et de résultats d'estimation livrés, les tables et figures d'une analyse non paramétrique de préférences dépendantes d'une référence (`readme.log`). La question de recherche est celle du titre : des préférences dépendantes d'une référence, analysées de façon non paramétrique.
+Résultat : reproduit, portée paquet, couverture régénération (limitée : tables A1 à A5 et trois CSV régénérés à valeurs égales ; estimation et balayage de 37 h chacun non refaits ; figures hors verdict). Les auto-contrôles du paquet sortent identiques au journal livré.

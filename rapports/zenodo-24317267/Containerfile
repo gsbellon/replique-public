@@ -1,0 +1,6 @@
+FROM docker.io/library/r-base@sha256:06979524919e444f50cf01c8e37403a90c7d06daf988c206c3236049f75fe3bd
+# Image de base : r-base:4.3.1 (image_base.log : empreinte du manifeste, R 4.3.1 comme le README du paquet).
+# Le README demande lpSolve 5.6.19, foreign 0.8-85, lubridate 1.9.3, fmsb 0.7.5 (README.pdf, p. 3) ; versions exactes
+# prises dans l'archive CRAN. Dépendances de lubridate nommées aussi : generics 0.1.3, timechange 0.2.0, cpp11 0.4.7 (le premier essai, sans cpp11, a échoué : build.log remplacé par le suivant).
+# Réseau nécessaire à la construction seulement (CRAN) ; les exécutions restent --network none.
+RUN Rscript -e 'u <- "https://cran.r-project.org/src/contrib/Archive"; for (p in c("cpp11/cpp11_0.4.7","generics/generics_0.1.3","timechange/timechange_0.2.0","lpSolve/lpSolve_5.6.19","foreign/foreign_0.8-85","lubridate/lubridate_1.9.3","fmsb/fmsb_0.7.5")) install.packages(paste0(u, "/", p, ".tar.gz"), repos = NULL, type = "source", lib = "/usr/local/lib/R/site-library")'

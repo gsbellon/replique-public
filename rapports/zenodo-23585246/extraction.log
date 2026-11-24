@@ -1,0 +1,55 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh extrait.sh
+# début    : 2026-10-27T20:07:33Z
+# ----
+code extraction : 0
+bbab97c82ea22e497a82d9967ca924e1  OIL.zip
+129
+pkg
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/LICENSE
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/.zenodo.json
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/paper
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/paper/_tables
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/CITATION.cff
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/13_tables.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/var_functions.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/12_figures.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/07c_shapley_inference.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/04_var_baseline.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/11b_kpss_breaks.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/09_historical_decomposition.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/11_descriptives.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/07b_stable_draws.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/00_fetch_oil_shocks.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/06_var_oil_supply_shocks.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/05_oil_shocks.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/01_fetch_fred.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/08b_common_sample.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/10_local_projections.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/08c_fixed_rate_period.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/12b_route_schematic.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/03b_plot_data.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/03_seasonal_adjust.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/02_build_dataset.py
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/pipeline_functions.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/07d_model_diagnostics.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/07_counterfactuals.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/src/08_robustness.R
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/data
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/data/README_data.md
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/data/raw
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/.gitattributes
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/.gitignore
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/README.md
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/output
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/output/figures
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/output/tables
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/README_REPLICATION.md
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/literature
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/literature/search_log.md
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/literature/dois.md
+pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/run_all.sh
+# ----
+# code de sortie : 0
+# durée (s)      : 1

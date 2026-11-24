@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh lance_run2.sh
+# début    : 2026-10-28T20:05:36Z
+# ----
+d3c9af05076c1a21c937c6bd1a9c816c98f1b739f5fa7370943fa630890b9299  run/data/raw/FRED_VIXCLS.csv
+d3c9af05076c1a21c937c6bd1a9c816c98f1b739f5fa7370943fa630890b9299  run2/data/raw/FRED_VIXCLS.csv
+160f803cc324c3077c2bb50e89559f3bb62edbb9f22253f58ab148aa225e156e
+2026-10-28T20:05:36Z
+CONTAINER ID  IMAGE                           COMMAND          CREATED                 STATUS                   PORTS       NAMES
+87ad71e2299a  localhost/replab-oilecu:latest  bash run_all.sh  24 hours ago            Exited (0) 23 hours ago              replab-oilecu-run
+160f803cc324  localhost/replab-oilecu:latest  bash run_all.sh  Less than a second ago  Up 1 second                          replab-oilecu-run2
+# ----
+# code de sortie : 0
+# durée (s)      : 1

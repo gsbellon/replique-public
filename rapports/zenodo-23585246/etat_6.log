@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 podman ps -a --format "{{.ID}} {{.Names}} {{.Status}}"
+# début    : 2026-10-28T20:00:25Z
+# ----
+87ad71e2299a replab-oilecu-run Exited (0) 22 hours ago
+# ----
+# code de sortie : 0
+# durée (s)      : 1

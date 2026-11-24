@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh lance_run.sh
+# début    : 2026-10-27T20:10:21Z
+# ----
+curl: (92) HTTP/2 stream 1 was not closed cleanly: INTERNAL_ERROR (err 2)
+code curl VIX : 92
+sha256sum: run/data/raw/FRED_VIXCLS.csv: No such file or directory
+e36c58ea7fccea8840bbe0ae7a338d9ae18bba935b7bd70935958bb809a02d89
+2026-10-27T20:10:22Z
+CONTAINER ID  IMAGE                           COMMAND          CREATED                 STATUS                 PORTS       NAMES
+e36c58ea7fcc  localhost/replab-oilecu:latest  bash run_all.sh  Less than a second ago  Up Less than a second              replab-oilecu-run
+# ----
+# code de sortie : 0
+# durée (s)      : 1

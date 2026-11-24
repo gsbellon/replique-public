@@ -1,0 +1,7 @@
+# commande : ssh sd-92569 curl -sS --http1.1 -m 90 -o /dev/null -w "%{http_code} %{size_download} %{time_total}\n" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS"
+# début    : 2026-10-27T20:15:17Z
+# ----
+200 161731 0.034003
+# ----
+# code de sortie : 0
+# durée (s)      : 0

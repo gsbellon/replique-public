@@ -1,0 +1,38 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && python3 -I compare_tolerance.py run/output/tables run2/output/tables 1e-2
+# début    : 2026-10-29T20:00:43Z
+# ----
+bvar_hyper_deposit_rate.csv CELLULES=33 EXACT=33 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+bvar_hyper_lending_rate.csv CELLULES=33 EXACT=33 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_diagnostics.csv CELLULES=1090 EXACT=1090 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_orders.csv CELLULES=981 EXACT=981 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_routes_paths.csv CELLULES=31090 EXACT=31090 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_routes_windows.csv CELLULES=3370 EXACT=3370 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_shapley_inference.csv CELLULES=387 EXACT=387 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_stability.csv CELLULES=49 EXACT=49 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+cf_stable_draws.csv CELLULES=370 EXACT=370 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+common_sample_routes.csv CELLULES=2316 EXACT=2316 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+descriptives.csv CELLULES=60 EXACT=60 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+fixed_rate_meta.csv CELLULES=81 EXACT=81 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+fixed_rate_routes.csv CELLULES=2313 EXACT=2313 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+hist_decomp_episodes.csv CELLULES=539 EXACT=539 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+hist_decomp_timeseries.csv CELLULES=20358 EXACT=20358 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+instrument_relevance.csv CELLULES=30 EXACT=30 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+irf_C0_deposit_rate.csv CELLULES=4152 EXACT=4152 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+irf_C0_lending_rate.csv CELLULES=4152 EXACT=4152 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+irf_supply_shocks.csv CELLULES=15327 EXACT=15327 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+kpss_breaks.csv CELLULES=18 EXACT=18 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+lag_selection_deposit_rate.csv CELLULES=209 EXACT=209 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+lag_selection_lending_rate.csv CELLULES=209 EXACT=209 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+lp_iv_firststage.csv CELLULES=204 EXACT=204 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+lp_iv_irfs.csv CELLULES=5010 EXACT=5010 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+modesty_posterior.csv CELLULES=99 EXACT=99 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+residual_diagnostics.csv CELLULES=102 EXACT=102 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+robustness_meta.csv CELLULES=287 EXACT=287 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+robustness_routes.csv CELLULES=11457 EXACT=11457 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+unit_roots.csv CELLULES=81 EXACT=81 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+vix_freeze.csv CELLULES=200 EXACT=200 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+x13_diagnostics.csv CELLULES=21 EXACT=21 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+TOTAL CELLULES=104628 EXACT=104628 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0
+# ----
+# code de sortie : 0
+# durée (s)      : 0

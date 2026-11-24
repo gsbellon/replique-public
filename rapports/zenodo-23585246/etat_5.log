@@ -1,0 +1,10 @@
+# commande : ssh sd-92569 podman ps -a --format "{{.ID}} {{.Names}} {{.Status}}"; podman logs --tail 3 replab-oilecu-run
+# début    : 2026-10-27T20:18:46Z
+# ----
+87ad71e2299a replab-oilecu-run Up 2 minutes
+  5.25e-02  0.114252  0.166094
+
+==== 07 Counterfactual decomposition
+# ----
+# code de sortie : 0
+# durée (s)      : 0

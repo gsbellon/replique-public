@@ -1,0 +1,6 @@
+FROM docker.io/library/r-base:latest
+# Ajouts exigés par README_REPLICATION.md du paquet ("Software") : R (seasonal, x13binary, urca, strucchange, ggplot2),
+# Python (pandas, numpy, openpyxl, tabulate, matplotlib). Python-docx et pandoc : étape manuscrit, sautée sans paper/Introduction.md.
+# Réseau nécessaire à la construction seulement : dépôts Debian (apt) et CRAN (cloud.r-project.org). Les exécutions restent --network none.
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pandas python3-numpy python3-openpyxl python3-tabulate python3-matplotlib r-cran-urca r-cran-strucchange r-cran-ggplot2 && rm -rf /var/lib/apt/lists/*
+RUN Rscript -e 'install.packages(c("seasonal","x13binary"), repos="https://cloud.r-project.org"); stopifnot(requireNamespace("seasonal"), requireNamespace("x13binary"))'

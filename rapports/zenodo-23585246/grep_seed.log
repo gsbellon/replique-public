@@ -1,0 +1,17 @@
+# commande : ssh sd-92569 cd ~/work/z23585246/pkg/oil-shocks-sovereign-risk-ecuador-1.0.0 && grep -rniE "set.seed|RNGkind|reproduc|bit-for-bit|tolerance" --include=*.R --include=*.md --include=*.sh --include=*.txt .
+# début    : 2026-10-28T20:01:48Z
+# ----
+./paper/_tables/S8_robustness_deposit.md:48:*Note.* Average response over the window, basis points; posterior median and 90% interval (Monte Carlo interval for the OLS VAR). The baseline row reproduces Table 5 (5,000 draws); the other specifications use 2,000 draws. Estimation samples and prior tightness for each specification are in Table S3. * The 90% interval excludes zero.
+./paper/_tables/S9_robustness_lending.md:48:*Note.* Average response over the window, basis points; posterior median and 90% interval (Monte Carlo interval for the OLS VAR). The baseline row reproduces Table 5 (5,000 draws); the other specifications use 2,000 draws. Estimation samples and prior tightness for each specification are in Table S3. * The 90% interval excludes zero.
+./src/04_var_baseline.R:5:set.seed(20260926)
+./src/09_historical_decomposition.R:9:set.seed(20260929)
+./src/06_var_oil_supply_shocks.R:6:set.seed(20260927)
+./src/08b_common_sample.R:16:    ext <- IDS[[id]]; set.seed(20261015 + k)
+./src/08c_fixed_rate_period.R:36:      set.seed(20261018 + off + j)
+./src/08_robustness.R:41:  set.seed(seed); val <- f(); saveRDS(val, path); cat(key, "done
+./README.md:11:## Reproduce
+./README.md:34:Code: MIT License (see `LICENSE`). Data compiled from the Banco Central del Ecuador are public; third-party series (FRED, Baumeister and Hamilton, 2019; Känzig, 2021) remain the property of their providers and are included, with attribution, only as the vintages needed to reproduce the paper; the VIX (© Cboe) is downloaded, not redistributed.
+./README_REPLICATION.md:27:The Baumeister–Hamilton shock series is revised and extended periodically at its source (the paper uses the vintage ending in 2026:03, retrieved 2026-09-26). To reproduce the paper exactly, the repository ships the vintages used, with attribution to their authors; by default the pipeline downloads only the VIX, whose historical daily values are not revised. `data/raw/SHA256SUMS.txt` records the SHA-256 checksum of every raw file shipped (`cd data/raw && sha256sum -c SHA256SUMS.txt`). The VIX is not redistributed: `src/01_fetch_fred.py` downloads it and reports whether its daily values through 2026-09-22 match those used in the paper.
+# ----
+# code de sortie : 0
+# durée (s)      : 0

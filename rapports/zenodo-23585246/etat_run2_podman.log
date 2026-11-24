@@ -1,0 +1,99 @@
+# commande : ssh sd-92569 podman images ; podman ps -a ; ls -la work/z23585246/run2/output work/z23585246/run2/output/tables ; ls -la work/z23585246/run/output ; sudo journalctl -n 30 --no-pager -u 'user@1001' ; sudo loginctl list-sessions
+# début    : 2026-10-29T20:00:30Z
+# ----
+REPOSITORY                   TAG         IMAGE ID      CREATED      SIZE
+localhost/replab-oilecu      latest      06bad8fb8d13  2 days ago   1.42 GB
+localhost/replab-deamph      latest      9b5c45084ba9  3 days ago   972 MB
+localhost/replab-dfar-numpy  latest      39357d37a54e  3 days ago   202 MB
+docker.io/library/r-base     latest      0811f9b7a3d8  8 days ago   935 MB
+docker.io/library/python     3.12-slim   df18428df8a0  3 weeks ago  124 MB
+CONTAINER ID  IMAGE                           COMMAND          CREATED       STATUS                   PORTS       NAMES
+87ad71e2299a  localhost/replab-oilecu:latest  bash run_all.sh  2 days ago    Exited (0) 46 hours ago              replab-oilecu-run
+160f803cc324  localhost/replab-oilecu:latest  bash run_all.sh  24 hours ago  Exited (0) 23 hours ago              replab-oilecu-run2
+work/z23585246/run2/output:
+total 20
+drwxrwxr-x 5 replab replab 4096 Oct 28 21:05 .
+drwxrwxr-x 7 replab replab 4096 Oct 27 21:07 ..
+drwxrwxr-x 3 replab replab 4096 Oct 27 21:07 figures
+drwxr-xr-x 4 replab replab 4096 Oct 28 22:06 models
+drwxrwxr-x 2 replab replab 4096 Oct 27 21:07 tables
+
+work/z23585246/run2/output/tables:
+total 1584
+drwxrwxr-x 2 replab replab   4096 Oct 27 21:07 .
+drwxrwxr-x 5 replab replab   4096 Oct 28 21:05 ..
+-rw-rw-r-- 1 replab replab    430 Oct 28 21:05 bvar_hyper_deposit_rate.csv
+-rw-rw-r-- 1 replab replab    430 Oct 28 21:06 bvar_hyper_lending_rate.csv
+-rw-rw-r-- 1 replab replab  14654 Oct 28 21:20 cf_diagnostics.csv
+-rw-rw-r-- 1 replab replab  14297 Oct 28 21:20 cf_orders.csv
+-rw-rw-r-- 1 replab replab 439910 Oct 28 21:20 cf_routes_paths.csv
+-rw-rw-r-- 1 replab replab  49378 Oct 28 21:20 cf_routes_windows.csv
+-rw-rw-r-- 1 replab replab   5864 Oct 28 21:26 cf_shapley_inference.csv
+-rw-rw-r-- 1 replab replab    605 Oct 28 21:20 cf_stability.csv
+-rw-rw-r-- 1 replab replab   4668 Oct 28 21:22 cf_stable_draws.csv
+-rw-rw-r-- 1 replab replab  29705 Oct 28 22:12 common_sample_routes.csv
+-rw-rw-r-- 1 replab replab    885 Oct 28 22:20 descriptives.csv
+-rw-rw-r-- 1 replab replab    855 Oct 28 22:18 fixed_rate_meta.csv
+-rw-rw-r-- 1 replab replab  40483 Oct 28 22:18 fixed_rate_routes.csv
+-rw-rw-r-- 1 replab replab   8249 Oct 28 22:20 hist_decomp_episodes.csv
+-rw-rw-r-- 1 replab replab 282181 Oct 28 22:20 hist_decomp_timeseries.csv
+-rw-rw-r-- 1 replab replab    503 Oct 28 22:20 instrument_relevance.csv
+-rw-rw-r-- 1 replab replab  59557 Oct 28 21:06 irf_C0_deposit_rate.csv
+-rw-rw-r-- 1 replab replab  59641 Oct 28 21:06 irf_C0_lending_rate.csv
+-rw-rw-r-- 1 replab replab 248925 Oct 28 21:07 irf_supply_shocks.csv
+-rw-rw-r-- 1 replab replab    219 Oct 28 22:20 kpss_breaks.csv
+-rw-rw-r-- 1 replab replab   2197 Oct 28 21:05 lag_selection_deposit_rate.csv
+-rw-rw-r-- 1 replab replab   2195 Oct 28 21:06 lag_selection_lending_rate.csv
+-rw-rw-r-- 1 replab replab   1996 Oct 28 22:20 lp_iv_firststage.csv
+-rw-rw-r-- 1 replab replab  71938 Oct 28 22:20 lp_iv_irfs.csv
+-rw-rw-r-- 1 replab replab   1344 Oct 28 21:26 modesty_posterior.csv
+-rw-rw-r-- 1 replab replab   1646 Oct 28 21:26 residual_diagnostics.csv
+-rw-rw-r-- 1 replab replab   3123 Oct 28 22:06 robustness_meta.csv
+-rw-rw-r-- 1 replab replab 184909 Oct 28 22:06 robustness_routes.csv
+-rw-rw-r-- 1 replab replab   1099 Oct 28 22:20 unit_roots.csv
+-rw-rw-r-- 1 replab replab   2799 Oct 28 22:06 vix_freeze.csv
+-rw-rw-r-- 1 replab replab    354 Oct 28 21:05 x13_diagnostics.csv
+total 20
+drwxrwxr-x 5 replab replab 4096 Oct 27 21:15 .
+drwxrwxr-x 7 replab replab 4096 Oct 27 21:07 ..
+drwxrwxr-x 3 replab replab 4096 Oct 27 21:07 figures
+drwxr-xr-x 4 replab replab 4096 Oct 27 22:17 models
+drwxrwxr-x 2 replab replab 4096 Oct 27 21:07 tables
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S1_unit_roots
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S2_lag_selection
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S3_samples
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S4_instruments
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S5_irf_all
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S6_routes_alt
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S7_credibility_all
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S8_robustness_deposit
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S9_robustness_lending
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S12_shapley
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S13_orders
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S14_stable_draws
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S15_historical_routes
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S16_route_comparison
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S17_common_sample
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S10_vix
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S11_lp_iv
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S18_interventions
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S19_fixed_rates_crisis
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S20_residuals
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: wrote S21_modesty_posterior
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: 
+Oct 28 22:20:46 sd-92569 replab-oilecu-run2[202458]: Done. Tables: paper/_tables and output/tables; figures: output/figures/paper; manuscript (if its sources are present): paper/submission.
+Oct 28 22:20:46 sd-92569 systemd[9566]: libpod-160f803cc324c3077c2bb50e89559f3bb62edbb9f22253f58ab148aa225e156e.scope: Consumed 1h 15min 53.796s CPU time, 461.9M memory peak.
+Oct 28 22:20:46 sd-92569 podman[203360]: 2026-10-28 22:20:46.236747975 +0100 CET m=+0.021482864 container died 160f803cc324c3077c2bb50e89559f3bb62edbb9f22253f58ab148aa225e156e (image=localhost/replab-oilecu:latest, name=replab-oilecu-run2, org.opencontainers.image.vendor=Rocker Project, io.buildah.version=1.39.3, org.opencontainers.image.authors=Dirk Eddelbuettel <edd@debian.org>, org.opencontainers.image.licenses=GPL-2.0-or-later, org.opencontainers.image.source=https://github.com/rocker-org/rocker)
+Oct 28 22:20:46 sd-92569 podman[203360]: 2026-10-28 22:20:46.287116477 +0100 CET m=+0.071851365 container cleanup 160f803cc324c3077c2bb50e89559f3bb62edbb9f22253f58ab148aa225e156e (image=localhost/replab-oilecu:latest, name=replab-oilecu-run2, io.buildah.version=1.39.3, org.opencontainers.image.authors=Dirk Eddelbuettel <edd@debian.org>, org.opencontainers.image.licenses=GPL-2.0-or-later, org.opencontainers.image.source=https://github.com/rocker-org/rocker, org.opencontainers.image.vendor=Rocker Project)
+Oct 29 21:00:14 sd-92569 systemd[9566]: Started podman-214004.scope.
+Oct 29 21:00:19 sd-92569 systemd[9566]: Started podman-214027.scope.
+Oct 29 21:00:31 sd-92569 systemd[9566]: Started podman-214065.scope.
+Oct 29 21:00:31 sd-92569 systemd[9566]: Started podman-214078.scope.
+SESSION  UID USER   SEAT LEADER CLASS   TTY IDLE SINCE
+     19 1001 replab -    9566   manager -   no   -
+    561 1001 replab -    214055 user    -   no   -
+
+2 sessions listed.
+# ----
+# code de sortie : 0
+# durée (s)      : 1

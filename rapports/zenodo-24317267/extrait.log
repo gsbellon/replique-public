@@ -1,0 +1,12 @@
+# commande : ssh sd-92569 sh work/extrait_24317267.sh
+# début    : 2026-11-24T20:12:54Z
+# ----
+code
+data_raw
+output
+README.pdf
+work/extrait_24317267.sh: 11: pdftotext: not found
+wc: README.txt: No such file or directory
+# ----
+# code de sortie : 1
+# durée (s)      : 0

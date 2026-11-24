@@ -1,0 +1,63 @@
+# commande : ssh sd-92569 python3 -I -m zipfile -l work/z24317267/package.zip
+# début    : 2026-11-24T20:12:46Z
+# ----
+File Name                                             Modified             Size
+data_raw/                                      2026-10-22 16:25:58            0
+data_raw/CPI.NY.NJ.PA.Urban.All.Items.csv      2018-06-18 18:30:22         1330
+data_raw/taxi015.csv                           2026-10-22 16:26:02     11740024
+data_raw/taxi015.dta                           2020-12-21 04:50:00      4495209
+output/                                        2026-10-22 16:30:04            0
+output/data/                                   2026-10-22 16:25:20            0
+output/data/Areas (Both) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 2026-10-17 16:27:44         9950
+output/data/Areas (Earnings) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 2026-10-18 00:16:52         7718
+output/data/Areas (Hours) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 2026-10-18 08:58:38         7782
+output/data/section5_6_validation_counts.csv   2026-10-22 16:30:12          212
+output/data/TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 2026-10-22 16:30:12         2322
+output/data/TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 2026-10-22 16:30:10         1093
+output/data/Table_A1_descriptives.csv          2026-10-22 16:30:06         1235
+output/data/Table_A1_descriptives.Rdata        2026-10-22 16:30:06          914
+output/data/tuning/                            2026-10-22 03:36:22            0
+output/data/tuning/Table_A5.Rdata              2026-10-22 16:30:12          394
+output/data/tuning/tuning_n12_s1e-04.Rdata     2026-10-21 01:26:36         1660
+output/data/tuning/tuning_n16_s1e-04.Rdata     2026-10-21 09:18:18         2026
+output/data/tuning/tuning_n16_s1e-05.Rdata     2026-10-21 04:44:10         2508
+output/data/tuning/tuning_n24_s1e-03.Rdata     2026-10-22 03:36:22         2605
+output/data/tuning/tuning_n24_s1e-04.Rdata     2026-10-20 23:08:52         2627
+output/data/tuning/tuning_warp.Rdata           2026-10-20 14:29:00         3183
+output/data/unresolved_bound_summary.csv       2026-10-22 16:30:12          266
+output/pics/                                   2026-10-22 12:27:52            0
+output/pics/FigureA14_expectations_differences.bmp 2026-10-22 16:30:12       780822
+output/pics/FigureA15_experience_differences.bmp 2026-10-22 16:30:12       780822
+output/pics/FigureA3_budget_lines.bmp          2026-10-22 16:30:16       697078
+output/pics/Neoclassical.v.RefDepProximity.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/Neoclassical.v.RefDepSeltenMeasures.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/ProximityNeoclassical.dist.bmp     2026-10-22 16:30:10       281078
+output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp 2026-10-22 16:30:06      4186542
+output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp 2026-10-22 16:30:08      4186542
+output/pics/ProximityRefDep.dist.bmp           2026-10-22 16:30:10       281078
+output/pics/ProximityRefDepModelForms.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/ProximityRefDepModelKinds.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/SeltenMeasuresNeoclassical.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp 2026-10-22 16:30:10      4186542
+output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp 2026-10-22 16:30:10      4186542
+output/pics/SeltenMeasuresRefDep.dist.bmp      2026-10-22 16:30:10       281078
+output/pics/SeltenMeasuresRefDepModelForms.dist.bmp 2026-10-22 16:30:10       281078
+output/pics/SeltenMeasuresRefDepModelKinds.dist.bmp 2026-10-22 16:30:10       281078
+output/run_all_log.txt                         2026-10-22 16:30:16        24739
+output/sessionInfo.txt                         2026-10-22 16:30:16          745
+README.pdf                                     2026-11-02 16:47:06       333972
+code/                                          2026-10-22 16:22:54            0
+code/00_run_all.R                              2026-10-22 16:30:04         6564
+code/01_estimation.R                           2026-10-22 16:22:54        74208
+code/02_table_A1.R                             2026-10-16 20:04:52         9621
+code/03_figures_6_9.R                          2026-10-16 20:04:58         7021
+code/04_figures_A4_A13.R                       2026-10-16 20:05:02        12331
+code/05_tables_A2_A3.R                         2026-10-16 20:05:06         5057
+code/06_table_A4_figures_A14_A15.R             2026-10-16 20:05:10        11891
+code/07_sections_5_5_5_6.R                     2026-10-16 20:05:14        13504
+code/08_table_A5.R                             2026-10-16 20:05:18        16290
+code/09_driver_8.R                             2026-10-16 20:05:24         9683
+code/10_figure_A3.R                            2026-10-22 12:27:48         5928
+# ----
+# code de sortie : 0
+# durée (s)      : 1

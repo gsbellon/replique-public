@@ -1,0 +1,13 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && head -n 3 run/data/raw/FRED_VIXCLS.csv; head -n 3 run/data/raw/FRED_FEDFUNDS.csv; grep -c ",\.$" run/data/raw/FRED_VIXCLS.csv
+# début    : 2026-10-27T20:15:45Z
+# ----
+observation_date,VIXCLS
+1990-01-02,17.24
+1990-01-03,18.19
+date,FEDFUNDS
+1954-07-01,0.8
+1954-08-01,1.22
+0
+# ----
+# code de sortie : 1
+# durée (s)      : 0

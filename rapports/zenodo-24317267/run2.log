@@ -1,0 +1,464 @@
+# commande : ssh sd-92569 cd ~/work/z24317267 && sh lance_run.sh
+# début    : 2026-11-24T20:16:10Z
+# ----
+2026-11-24T20:16:11Z
+=== modifications faites au code (diff pkg runA)
+diff -r pkg/code/00_run_all.R runA/code/00_run_all.R
+46c46
+< project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+---
+> project_root <- "/work"
+diff -r pkg/code/03_figures_6_9.R runA/code/03_figures_6_9.R
+18c18
+< #  NOTE: the pictures are written with bmp(type = "windows"), so this script
+---
+> #  NOTE: the pictures are written with bmp(type = "cairo"), so this script
+94c94
+<         type = "windows", res = 200)
+---
+>         type = "cairo", res = 200)
+=== Rscript code/00_run_all.R (README : Source de 00_run_all.R)
+Replication run started 2026-11-24 20:16:11 
+project_root: /work 
+RUN_ESTIMATION = FALSE   RUN_TABLE_A5 = TRUE 
+
+==================== 02_table_A1.R  (started 2026-11-24 20:16:11) ====================
+
+===== Table A1: descriptive statistics, driver by driver =====
+           T Working Hours Driving Hours Waiting Hours Break Hours
+Driver 1  39          6.85          4.32          2.53        0.90
+Driver 2  14          3.89          2.78          1.11        2.41
+Driver 3   6          6.66          4.61          2.05        0.74
+Driver 4  40          6.28          4.52          1.76        0.39
+Driver 5  23          6.46          3.98          2.48        2.11
+Driver 6   6          8.62          6.48          2.14        2.42
+Driver 7  24          6.47          4.42          2.05        0.74
+Driver 8  37          7.78          5.13          2.64        0.86
+Driver 9  19          7.17          5.47          1.70        0.54
+Driver 10 45          6.35          3.90          2.45        1.65
+Driver 11  6          7.15          5.22          1.93        0.71
+Driver 12 13          6.15          4.03          2.13        0.55
+Driver 13 10          7.03          4.72          2.31        0.53
+Driver 14 17          7.06          4.49          2.57        0.64
+Driver 15  8         10.82          7.64          3.17        0.19
+Driver 16 70          6.84          4.56          2.28        0.93
+Driver 17 10          5.88          3.71          2.17        0.54
+Driver 18 72          8.53          5.84          2.69        0.60
+Driver 19 33          6.91          4.63          2.29        0.97
+Driver 20 46          7.10          4.80          2.30        0.67
+Driver 21 46          5.32          3.66          1.66        0.24
+          Earnings ($/CPI) Wage ($/hr) Afriat Efficiency
+Driver 1            153.01       36.41            0.9952
+Driver 2             95.98       34.68            1.0000
+Driver 3            160.07       36.19            1.0000
+Driver 4            145.89       33.02            0.9978
+Driver 5            144.00       38.12            0.9971
+Driver 6            202.71       33.49            1.0000
+Driver 7            159.50       36.69            0.9991
+Driver 8            170.33       34.23            0.9897
+Driver 9            158.82       30.61            1.0000
+Driver 10           129.68       33.83            0.9954
+Driver 11           182.40       35.50            1.0000
+Driver 12           155.57       39.44            0.9972
+Driver 13           153.99       33.26            1.0000
+Driver 14           157.15       37.37            0.9930
+Driver 15           217.29       29.92            1.0000
+Driver 16           163.56       37.72            0.9936
+Driver 17           137.28       39.10            0.9946
+Driver 18           194.88       35.07            0.9849
+Driver 19           155.65       36.01            0.9870
+Driver 20           148.76       32.73            0.9842
+Driver 21           123.57       35.62            0.9915
+
+===== Check against the printed Table A1 =====
+ALL 168 CELLS MATCH the printed Table A1.
+
+==================== 03_figures_6_9.R  (started 2026-11-24 20:16:11) ====================
+Both : read Areas (Both) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+   drivers with no result: none 
+   largest gap vs saved area.rate: 0 
+Earnings : read Areas (Earnings) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+   drivers with no result: none 
+   largest gap vs saved area.rate: 0 
+Hours : read Areas (Hours) NestedGeneralU.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+   drivers with no result: none 
+   largest gap vs saved area.rate: 0 
+
+written: /work/output/pics/ProximityRadarPlotExpectations_NestedGeneralU.bmp 
+written: /work/output/pics/ProximityRadarPlotExperience_NestedGeneralU.bmp 
+written: /work/output/pics/SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp 
+written: /work/output/pics/SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp 
+
+Spider pictures in /work/output/pics :
+[1] "ProximityRadarPlotExpectations_NestedGeneralU.bmp"     
+[2] "ProximityRadarPlotExperience_NestedGeneralU.bmp"       
+[3] "SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp"
+[4] "SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp"  
+
+==================== 04_figures_A4_A13.R  (started 2026-11-24 20:16:13) ====================
+figures written to /work/output/pics 
+ [1] "FigureA14_expectations_differences.bmp"                
+ [2] "FigureA15_experience_differences.bmp"                  
+ [3] "FigureA3_budget_lines.bmp"                             
+ [4] "Neoclassical.v.RefDepProximity.dist.bmp"               
+ [5] "Neoclassical.v.RefDepSeltenMeasures.dist.bmp"          
+ [6] "ProximityNeoclassical.dist.bmp"                        
+ [7] "ProximityRadarPlotExpectations_NestedGeneralU.bmp"     
+ [8] "ProximityRadarPlotExperience_NestedGeneralU.bmp"       
+ [9] "ProximityRefDep.dist.bmp"                              
+[10] "ProximityRefDepModelForms.dist.bmp"                    
+[11] "ProximityRefDepModelKinds.dist.bmp"                    
+[12] "SeltenMeasuresNeoclassical.dist.bmp"                   
+[13] "SeltenMeasuresRadarPlotExpectations_NestedGeneralU.bmp"
+[14] "SeltenMeasuresRadarPlotExperience_NestedGeneralU.bmp"  
+[15] "SeltenMeasuresRefDep.dist.bmp"                         
+[16] "SeltenMeasuresRefDepModelForms.dist.bmp"               
+[17] "SeltenMeasuresRefDepModelKinds.dist.bmp"               
+
+==================== 05_tables_A2_A3.R  (started 2026-11-24 20:16:13) ====================
+
+=== TABLE A2: proximities, experience -based (published neoclassical column for comparison) ===
+    Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone published_neo
+  Driver 1 39     0.000000      0.000000      0.000000   0.000000      0.000000
+  Driver 2 14     1.000000      1.000000      1.000000   1.000000      1.000000
+  Driver 3  6     1.000000      1.000000      1.000000   1.000000      1.000000
+  Driver 4 40     0.000000      0.000000      0.000000   0.000000      0.000000
+  Driver 5 23     0.048492      0.051880      0.051880   0.051880      0.048492
+  Driver 6  6     1.000000      1.000000      1.000000   1.000000      1.000000
+  Driver 7 24     0.000000      0.000000      0.000000   0.000000      0.000000
+  Driver 8 37     0.000000      0.000000      0.000000   0.000000      0.000000
+  Driver 9 19     1.000000      1.000000      1.000000   1.000000      1.000000
+ Driver 10 45     0.000000      0.000000      0.000000   0.000000      0.000000
+ Driver 11  6     1.000000      1.000000      1.000000   1.000000      1.000000
+ Driver 12 13     0.256557      0.142114      0.151227   0.151227      0.256557
+ Driver 13 10     1.000000      1.000000      1.000000   1.000000      1.000000
+ Driver 14 17     0.265625      0.227880      0.227880   0.227880      0.265625
+ Driver 15  8     1.000000      1.000000      1.000000   1.000000      1.000000
+ Driver 16 70     0.000000      0.000000      0.000000   0.000000      0.000000
+ Driver 17 10     0.207382      0.380778      0.393223   0.404598      0.207382
+ Driver 18 72     0.000000      0.000000      0.000000   0.000000      0.000000
+ Driver 19 33     0.000000      0.000000      0.000000   0.000000      0.000000
+ Driver 20 46     0.000000      0.000000      0.000000   0.000000      0.000000
+ Driver 21 46     0.000000      0.000000      0.000000   0.000000      0.000000
+
+=== TABLE A3: Selten measures, experience -based ===
+    Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone
+  Driver 1 39     0.000000      0.000000      0.000000   0.000000
+  Driver 2 14     0.942000      0.872000      0.902000   0.900000
+  Driver 3  6     0.505000      0.215000      0.241000   0.245000
+  Driver 4 40     0.000000      0.000000      0.000000   0.000000
+  Driver 5 23     0.047492      0.050880      0.050880   0.050880
+  Driver 6  6     0.665000      0.220000      0.236000   0.237000
+  Driver 7 24     0.000000      0.000000      0.000000   0.000000
+  Driver 8 37     0.000000      0.000000      0.000000   0.000000
+  Driver 9 19     0.987000      0.977000      0.980000   0.980000
+ Driver 10 45     0.000000      0.000000      0.000000   0.000000
+ Driver 11  6     0.421000      0.154000      0.160000   0.160000
+ Driver 12 13     0.187557     -0.008886      0.026227   0.028227
+ Driver 13 10     0.832000      0.478000      0.541000   0.567000
+ Driver 14 17     0.261625      0.216880      0.219880   0.220880
+ Driver 15  8     0.800000      0.425000      0.456000   0.460000
+ Driver 16 70     0.000000      0.000000      0.000000   0.000000
+ Driver 17 10    -0.010618      0.008778      0.083223   0.068598
+ Driver 18 72     0.000000      0.000000      0.000000   0.000000
+ Driver 19 33     0.000000      0.000000      0.000000   0.000000
+ Driver 20 46     0.000000      0.000000      0.000000   0.000000
+ Driver 21 46     0.000000      0.000000      0.000000   0.000000
+
+=== TABLE A2, ADDITIVE ordinary utility, experience -based ===
+    Driver  T Neoclassical HoursEarnings EarningsAlone HoursAlone
+  Driver 1 39     0.000000      0.000000      0.000000   0.000000
+  Driver 2 14     0.000000      0.119709      0.146903   0.146903
+  Driver 3  6     0.554852      1.000000      0.483577   0.482741
+  Driver 4 40     0.000000      0.000000      0.000000   0.000000
+  Driver 5 23     0.000000      0.000000      0.000000   0.000000
+  Driver 6  6     0.645774      0.569727      0.532905   0.619888
+  Driver 7 24     0.000000      0.000000      0.000000   0.000000
+  Driver 8 37     0.000000      0.000000      0.000000   0.000000
+  Driver 9 19     0.000000      0.000000      0.000000   0.000000
+ Driver 10 45     0.000000      0.000000      0.000000   0.000000
+ Driver 11  6     0.622890      1.000000      0.468902   1.000000
+ Driver 12 13     0.000000      0.231014      0.177608   0.196214
+ Driver 13 10     0.207863      0.274471      0.343139   0.212552
+ Driver 14 17     0.000000      0.000000      0.000000   0.000000
+ Driver 15  8     0.396636      0.501467      0.569216   0.478016
+ Driver 16 70     0.000000      0.000000      0.000000   0.000000
+ Driver 17 10     0.402524      0.435017      0.129168   0.439314
+ Driver 18 72     0.000000      0.000000      0.000000   0.000000
+ Driver 19 33     0.000000      0.000000      0.000000   0.000000
+ Driver 20 46     0.000000      0.000000      0.000000   0.000000
+ Driver 21 46     0.000000      0.000000      0.000000   0.000000
+
+saved: TablesA2_A3_experience.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata 
+
+==================== 06_table_A4_figures_A14_A15.R  (started 2026-11-24 20:16:13) ====================
+Loaded: Both, Earnings, Hours 
+
+===== TABLE A4: all comparisons =====
+
+                                                                              Comparison
+                       Both: Expectations-based (unconditional) vs Neoclassical (all 21)
+                Both: Expectations-based (unconditional) vs Neoclassical (non-zero, n=8)
+              Both: Expectations-based (conditional on weather) vs Neoclassical (all 21)
+       Both: Expectations-based (conditional on weather) vs Neoclassical (non-zero, n=9)
+            Both: Expectations-based (conditional on day/night) vs Neoclassical (all 21)
+     Both: Expectations-based (conditional on day/night) vs Neoclassical (non-zero, n=9)
+                         Both: Experience-based (unconditional) vs Neoclassical (all 21)
+                 Both: Experience-based (unconditional) vs Neoclassical (non-zero, n=11)
+                Both: Experience-based (conditional on weather) vs Neoclassical (all 21)
+        Both: Experience-based (conditional on weather) vs Neoclassical (non-zero, n=13)
+              Both: Experience-based (conditional on day/night) vs Neoclassical (all 21)
+      Both: Experience-based (conditional on day/night) vs Neoclassical (non-zero, n=11)
+                   Earnings: Expectations-based (unconditional) vs Neoclassical (all 21)
+            Earnings: Expectations-based (unconditional) vs Neoclassical (non-zero, n=8)
+          Earnings: Expectations-based (conditional on weather) vs Neoclassical (all 21)
+   Earnings: Expectations-based (conditional on weather) vs Neoclassical (non-zero, n=9)
+        Earnings: Expectations-based (conditional on day/night) vs Neoclassical (all 21)
+ Earnings: Expectations-based (conditional on day/night) vs Neoclassical (non-zero, n=9)
+                     Earnings: Experience-based (unconditional) vs Neoclassical (all 21)
+             Earnings: Experience-based (unconditional) vs Neoclassical (non-zero, n=11)
+            Earnings: Experience-based (conditional on weather) vs Neoclassical (all 21)
+    Earnings: Experience-based (conditional on weather) vs Neoclassical (non-zero, n=13)
+          Earnings: Experience-based (conditional on day/night) vs Neoclassical (all 21)
+  Earnings: Experience-based (conditional on day/night) vs Neoclassical (non-zero, n=11)
+                      Hours: Expectations-based (unconditional) vs Neoclassical (all 21)
+               Hours: Expectations-based (unconditional) vs Neoclassical (non-zero, n=8)
+             Hours: Expectations-based (conditional on weather) vs Neoclassical (all 21)
+      Hours: Expectations-based (conditional on weather) vs Neoclassical (non-zero, n=8)
+           Hours: Expectations-based (conditional on day/night) vs Neoclassical (all 21)
+   Hours: Expectations-based (conditional on day/night) vs Neoclassical (non-zero, n=10)
+                        Hours: Experience-based (unconditional) vs Neoclassical (all 21)
+                Hours: Experience-based (unconditional) vs Neoclassical (non-zero, n=11)
+               Hours: Experience-based (conditional on weather) vs Neoclassical (all 21)
+       Hours: Experience-based (conditional on weather) vs Neoclassical (non-zero, n=13)
+             Hours: Experience-based (conditional on day/night) vs Neoclassical (all 21)
+     Hours: Experience-based (conditional on day/night) vs Neoclassical (non-zero, n=11)
+  N N.zero Mean.diff     SE   CI.lo   CI.hi t.stat p.value Significant
+ 21     13   -0.0715 0.0238 -0.1211 -0.0220 -3.010  0.0069         Yes
+  8      0   -0.1877 0.0334 -0.2668 -0.1087 -5.615  0.0008         Yes
+ 21     12   -0.0899 0.0303 -0.1531 -0.0267 -2.968  0.0076         Yes
+  9      0   -0.2098 0.0470 -0.3181 -0.1014 -4.462  0.0021         Yes
+ 21     12   -0.0708 0.0240 -0.1208 -0.0207 -2.948  0.0079         Yes
+  9      0   -0.1651 0.0376 -0.2517 -0.0784 -4.393  0.0023         Yes
+ 21     10   -0.0966 0.0334 -0.1664 -0.0269 -2.891  0.0090         Yes
+ 11      0   -0.1845 0.0514 -0.2991 -0.0699 -3.587  0.0050         Yes
+ 21      8   -0.0795 0.0694 -0.2243  0.0652 -1.146  0.2653          No
+ 13      0   -0.1285 0.1115 -0.3715  0.1146 -1.152  0.2718          No
+ 21     10   -0.0953 0.0340 -0.1663 -0.0243 -2.801  0.0110         Yes
+ 11      0   -0.1819 0.0533 -0.3007 -0.0631 -3.412  0.0066         Yes
+ 21     13   -0.0548 0.0203 -0.0971 -0.0125 -2.700  0.0138         Yes
+  8      0   -0.1438 0.0355 -0.2277 -0.0599 -4.052  0.0049         Yes
+ 21     12   -0.0713 0.0279 -0.1295 -0.0131 -2.558  0.0188         Yes
+  9      0   -0.1664 0.0506 -0.2830 -0.0498 -3.290  0.0110         Yes
+ 21     12   -0.0538 0.0205 -0.0965 -0.0110 -2.623  0.0163         Yes
+  9      0   -0.1255 0.0364 -0.2095 -0.0414 -3.443  0.0088         Yes
+ 21     10   -0.0829 0.0316 -0.1488 -0.0171 -2.627  0.0161         Yes
+ 11      0   -0.1583 0.0511 -0.2722 -0.0445 -3.099  0.0113         Yes
+ 21      8   -0.0609 0.0674 -0.2015  0.0797 -0.904  0.3769          No
+ 13      0   -0.0984 0.1092 -0.3363  0.1395 -0.901  0.3853          No
+ 21     10   -0.0802 0.0322 -0.1474 -0.0129 -2.488  0.0218         Yes
+ 11      0   -0.1530 0.0534 -0.2719 -0.0341 -2.867  0.0167         Yes
+ 21     13   -0.0573 0.0215 -0.1022 -0.0124 -2.659  0.0151         Yes
+  8      0   -0.1504 0.0385 -0.2414 -0.0594 -3.908  0.0058         Yes
+ 21     13   -0.0724 0.0282 -0.1313 -0.0136 -2.569  0.0183         Yes
+  8      0   -0.1902 0.0526 -0.3146 -0.0658 -3.615  0.0086         Yes
+ 21     11   -0.0561 0.0218 -0.1015 -0.0107 -2.579  0.0179         Yes
+ 10      0   -0.1178 0.0374 -0.2025 -0.0331 -3.148  0.0118         Yes
+ 21     10   -0.0819 0.0308 -0.1462 -0.0176 -2.658  0.0151         Yes
+ 11      0   -0.1564 0.0496 -0.2670 -0.0459 -3.152  0.0103         Yes
+ 21      8   -0.0639 0.0676 -0.2049  0.0770 -0.946  0.3552          No
+ 13      0   -0.1033 0.1093 -0.3415  0.1349 -0.945  0.3634          No
+ 21     10   -0.0776 0.0320 -0.1444 -0.0108 -2.422  0.0251         Yes
+ 11      0   -0.1481 0.0536 -0.2675 -0.0287 -2.763  0.0200         Yes
+
+===== TABLE A4: reported form =====
+
+             Comparison        Sample  N Mean.diff     SE   CI.lo   CI.hi
+     Both, Expectations        All 21 21   -0.0715 0.0238 -0.1211 -0.0220
+     Both, Expectations  Non-zero (8)  8   -0.1877 0.0334 -0.2668 -0.1087
+       Both, Experience        All 21 21   -0.0966 0.0334 -0.1664 -0.0269
+       Both, Experience Non-zero (11) 11   -0.1845 0.0514 -0.2991 -0.0699
+ Earnings, Expectations        All 21 21   -0.0548 0.0203 -0.0971 -0.0125
+ Earnings, Expectations  Non-zero (8)  8   -0.1438 0.0355 -0.2277 -0.0599
+   Earnings, Experience        All 21 21   -0.0829 0.0316 -0.1488 -0.0171
+   Earnings, Experience Non-zero (11) 11   -0.1583 0.0511 -0.2722 -0.0445
+    Hours, Expectations        All 21 21   -0.0573 0.0215 -0.1022 -0.0124
+    Hours, Expectations  Non-zero (8)  8   -0.1504 0.0385 -0.2414 -0.0594
+      Hours, Experience        All 21 21   -0.0819 0.0308 -0.1462 -0.0176
+      Hours, Experience Non-zero (11) 11   -0.1564 0.0496 -0.2670 -0.0459
+ p.value
+  0.0069
+  0.0008
+  0.0090
+  0.0050
+  0.0138
+  0.0049
+  0.0161
+  0.0113
+  0.0151
+  0.0058
+  0.0151
+  0.0103
+
+saved: TableA4_paired_tests.intervals_24_D1000_LPt20_scaled_slope1e-04_final.Rdata
+written: FigureA14_expectations_differences.bmp 
+written: FigureA15_experience_differences.bmp 
+
+Done. Figures A14, A15 written to:
+   /work/output/pics 
+
+==================== 07_sections_5_5_5_6.R  (started 2026-11-24 20:16:13) ====================
+
+=== PART A (Section 5.5): unresolved LP cases, worst-case bound ===
+Run tag: intervals_24_D1000_LPt20_scaled_slope1e-04_final 
+
+Mode: Both 
+  unresolved model-draws (models 2-7): 375 of 126,000
+  min observations after truncation:   4  (>= 2: none are data conditions)
+  worst-case area rate understatement: 2.90 pp
+  REVERSALS in reported comparisons:   0
+  exact ties moving off zero:          7 (largest 0.0060, typical comparison 0.000)
+
+Mode: Earnings 
+  unresolved model-draws (models 2-7): 214 of 126,000
+  min observations after truncation:   4  (>= 2: none are data conditions)
+  worst-case area rate understatement: 1.20 pp
+  REVERSALS in reported comparisons:   0
+  exact ties moving off zero:          3 (largest 0.0020, typical comparison 0.000)
+
+Mode: Hours 
+  unresolved model-draws (models 2-7): 213 of 126,000
+  min observations after truncation:   4  (>= 2: none are data conditions)
+  worst-case area rate understatement: 1.00 pp
+  REVERSALS in reported comparisons:   0
+  exact ties moving off zero:          3 (largest 0.0030, typical comparison 0.000)
+
+CONCLUSION: no reported comparison reverses under the worst-case bound.
+
+Written: /work/output/data/unresolved_bound_summary.csv 
+
+=== PART B (Section 5.6): LP vs WARP, neoclassical model, Both run ===
+
+           count this_run printed matches
+           draws    21000   21000     yes
+ warp_consistent     2140    2140     yes
+       certified     1138    1138     yes
+          missed      987     987     yes
+      no_verdict       15      15     yes
+ false_positives       11      11     yes
+
+Proportion recovered: 1138 / 2140 = 0.532
+CONCLUSION: Section 5.6 reproduced exactly.
+
+Written: /work/output/data/section5_6_validation_counts.csv 
+
+==================== 08_table_A5.R  (started 2026-11-24 20:16:14) ====================
+driver order: 3 6 11 15 13 17 12 2 14 9 5 7 19 8 1 4 10 20 21 16 18 
+observations: 6 6 6 8 10 10 13 14 17 19 23 24 33 37 39 40 45 46 46 70 72 
+WARP verdicts loaded from /work/output/data/tuning/tuning_warp.Rdata
+WARP verdicts loaded from /work/output/data/tuning/tuning_warp.Rdata
+WARP-consistent draws: 2140
+WARP-consistent draws: 2140
+WARP matches the '_final' run on all 21000 draws.
+WARP matches the '_final' run on all 21000 draws.
+
+=== Setting 1 of 5: 24 intervals, slope bound 1e-04  (0 drivers to do) ===
+
+=== Setting 1 of 5: 24 intervals, slope bound 1e-04  (0 drivers to do) ===
+Reported setting: warp = 2140, certified = 1138, rejected = 987, no_verdict = 15, false_pos = 11
+Reported setting: warp = 2140, certified = 1138, rejected = 987, no_verdict = 15, false_pos = 11
+Section 5.6 reproduced exactly.
+Section 5.6 reproduced exactly.
+LP verdicts differ from the '_final' run on 1 of 21000 draws.
+LP verdicts differ from the '_final' run on 1 of 21000 draws.
+
+=== Setting 2 of 5: 12 intervals, slope bound 1e-04  (0 drivers to do) ===
+
+=== Setting 2 of 5: 12 intervals, slope bound 1e-04  (0 drivers to do) ===
+
+=== Setting 3 of 5: 16 intervals, slope bound 1e-05  (0 drivers to do) ===
+
+=== Setting 3 of 5: 16 intervals, slope bound 1e-05  (0 drivers to do) ===
+
+=== Setting 4 of 5: 16 intervals, slope bound 1e-04  (0 drivers to do) ===
+
+=== Setting 4 of 5: 16 intervals, slope bound 1e-04  (0 drivers to do) ===
+
+=== Setting 5 of 5: 24 intervals, slope bound 1e-03  (0 drivers to do) ===
+
+=== Setting 5 of 5: 24 intervals, slope bound 1e-03  (0 drivers to do) ===
+
+=== Table A5 ===
+  intervals slope_bound LP_certifies_WARP_rejects LP_rejects_WARP_certifies
+1        12       1e-04                         5                      1686
+2        16       1e-05                        49                      1239
+3        16       1e-04                         1                      1450
+4        24       1e-04                        11                       987
+5        24       1e-03                         9                      1014
+  no_verdict certified WARP_consistent proportion_recovered
+1         17       437            2140                0.204
+2         37       864            2140                0.404
+3          9       681            2140                0.318
+4         15      1138            2140                0.532
+5          5      1121            2140                0.524
+
+Saved: /work/output/data/tuning/Table_A5.Rdata 
+
+==================== 09_driver_8.R  (started 2026-11-24 20:16:14) ====================
+
+==================== Driver 8 ( 37 days ) ====================
+Weather (1 = wet) : 0 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 
+Shift (1 = night) : 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 
+
+    model days.dropped days.tested WARP.on.tested.days reported.Both
+    1 Neo         none          37                fail             -
+  2 Exp.U         none          37                fail             -
+  3 Exp.W         none          37                fail             -
+ 4 Exp.DN         none          37                fail             -
+   5 Xp.U            1          36                fail             -
+   6 Xp.W          1,5          35                PASS          fits
+  7 Xp.DN         1,20          35                fail             -
+ reported.Earnings reported.Hours
+                 -              -
+                 -              -
+                 -              -
+                 -              -
+                 -              -
+              fits           fits
+                 -              -
+Days tested match the '_final' run in all modes.
+WARP passes on the tested days of: 6 Xp.W 
+  -> any fit of these models needs no reference dependence.
+
+==================== 10_figure_A3.R  (started 2026-11-24 20:16:14) ====================
+Driver 1 : 39 days
+Driver 2 : 14 days
+Driver 3 : 6 days
+Driver 4 : 40 days
+Driver 5 : 23 days
+Driver 6 : 6 days
+Driver 7 : 24 days
+Driver 8 : 37 days
+Driver 9 : 19 days
+Driver 10 : 45 days
+Driver 11 : 6 days
+Driver 12 : 13 days
+Driver 13 : 10 days
+Driver 14 : 17 days
+Driver 15 : 8 days
+Driver 16 : 70 days
+Driver 17 : 10 days
+Driver 18 : 72 days
+Driver 19 : 33 days
+Driver 20 : 46 days
+Driver 21 : 46 days
+written: /work/output/pics/FigureA3_budget_lines.bmp 
+
+All scripts finished 2026-11-24 20:16:14 
+Log written to:          /work/output/run_all_log.txt
+Session details written: /work/output/sessionInfo.txt
+code de sortie R : 0
+2026-11-24T20:16:14Z
+# ----
+# code de sortie : 0
+# durée (s)      : 4

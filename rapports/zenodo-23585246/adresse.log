@@ -1,0 +1,6 @@
+# commande : ssh sd-92569 grep -rhoE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' ~/work/z23585246/pkg --include=*.md --include=*.txt --include=*.cff --include=*.json --include=LICENSE*
+# début    : 2026-11-06T20:00:38Z
+# ----
+# ----
+# code de sortie : 1
+# durée (s)      : 0

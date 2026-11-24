@@ -1,0 +1,23 @@
+# commande : ssh sd-92569 cd ~/work/z24317267 && sh lance_run.sh
+# début    : 2026-11-24T20:15:58Z
+# ----
+2026-11-24T20:15:58Z
+=== modifications faites au code (diff pkg runA)
+diff -r pkg/code/03_figures_6_9.R runA/code/03_figures_6_9.R
+18c18
+< #  NOTE: the pictures are written with bmp(type = "windows"), so this script
+---
+> #  NOTE: the pictures are written with bmp(type = "cairo"), so this script
+94c94
+<         type = "windows", res = 200)
+---
+>         type = "cairo", res = 200)
+=== Rscript code/00_run_all.R (README : Source de 00_run_all.R)
+Error: No code/ folder in project_root. Check the path at the top of this file:
+  C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE
+Execution halted
+code de sortie R : 1
+2026-11-24T20:15:58Z
+# ----
+# code de sortie : 0
+# durée (s)      : 0

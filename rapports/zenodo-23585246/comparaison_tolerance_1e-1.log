@@ -1,0 +1,38 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && python3 -I compare_tolerance.py pkg/oil-shocks-sovereign-risk-ecuador-1.0.0/output/tables run/output/tables 1e-1
+# début    : 2026-10-28T20:02:05Z
+# ----
+bvar_hyper_deposit_rate.csv CELLULES=33 EXACT=13 TOL=20 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.00348
+bvar_hyper_lending_rate.csv CELLULES=33 EXACT=13 TOL=20 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.00165
+cf_diagnostics.csv CELLULES=1090 EXACT=548 TOL=498 HORS=44 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.235
+cf_orders.csv CELLULES=981 EXACT=441 TOL=474 HORS=66 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.65
+cf_routes_paths.csv CELLULES=31090 EXACT=14015 TOL=15082 HORS=1993 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.87
+cf_routes_windows.csv CELLULES=3370 EXACT=1535 TOL=1608 HORS=227 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.8
+cf_shapley_inference.csv CELLULES=387 EXACT=160 TOL=196 HORS=31 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.16
+cf_stability.csv CELLULES=49 EXACT=33 TOL=15 HORS=1 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.144
+cf_stable_draws.csv CELLULES=370 EXACT=154 TOL=216 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.0605
+common_sample_routes.csv CELLULES=2316 EXACT=1356 TOL=959 HORS=1 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.23
+descriptives.csv CELLULES=60 EXACT=56 TOL=4 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=2.12e-10
+fixed_rate_meta.csv CELLULES=81 EXACT=80 TOL=0 HORS=1 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.25
+fixed_rate_routes.csv CELLULES=2313 EXACT=1033 TOL=1232 HORS=48 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.27
+hist_decomp_episodes.csv CELLULES=539 EXACT=299 TOL=240 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.042
+hist_decomp_timeseries.csv CELLULES=20358 EXACT=10182 TOL=10139 HORS=37 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.52
+instrument_relevance.csv CELLULES=30 EXACT=29 TOL=1 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=3.04e-15
+irf_C0_deposit_rate.csv CELLULES=4152 EXACT=1572 TOL=2578 HORS=2 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.15
+irf_C0_lending_rate.csv CELLULES=4152 EXACT=1572 TOL=2331 HORS=249 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.67
+irf_supply_shocks.csv CELLULES=15327 EXACT=6847 TOL=8220 HORS=260 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.67
+kpss_breaks.csv CELLULES=18 EXACT=16 TOL=2 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=6.05e-09
+lag_selection_deposit_rate.csv CELLULES=209 EXACT=103 TOL=106 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.05e-07
+lag_selection_lending_rate.csv CELLULES=209 EXACT=103 TOL=106 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=9.62e-08
+lp_iv_firststage.csv CELLULES=204 EXACT=154 TOL=50 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=8.81e-08
+lp_iv_irfs.csv CELLULES=5010 EXACT=2010 TOL=3000 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=4.94e-05
+modesty_posterior.csv CELLULES=99 EXACT=43 TOL=56 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.0025
+residual_diagnostics.csv CELLULES=102 EXACT=38 TOL=64 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=7.83e-06
+robustness_meta.csv CELLULES=287 EXACT=285 TOL=0 HORS=2 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.333
+robustness_routes.csv CELLULES=11457 EXACT=5097 TOL=6152 HORS=208 TEXTE_DIFF=0 FORME=0 ecart_rel_max=1.96
+unit_roots.csv CELLULES=81 EXACT=70 TOL=11 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=6.05e-09
+vix_freeze.csv CELLULES=200 EXACT=80 TOL=120 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0.00757
+x13_diagnostics.csv CELLULES=21 EXACT=21 TOL=0 HORS=0 TEXTE_DIFF=0 FORME=0 ecart_rel_max=0
+TOTAL CELLULES=104628 EXACT=47958 TOL=53500 HORS=3170 TEXTE_DIFF=0 FORME=0
+# ----
+# code de sortie : 0
+# durée (s)      : 0

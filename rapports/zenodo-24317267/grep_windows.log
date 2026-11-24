@@ -1,0 +1,48 @@
+# commande : ssh sd-92569 cd work/z24317267/pkg/code && grep -n -i "windows\|C:/\|setwd\|bmp(" *.R
+# début    : 2026-11-24T20:15:35Z
+# ----
+00_run_all.R:45:## Use forward slashes (/), even on Windows.
+00_run_all.R:46:project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+00_run_all.R:128:  setwd(old_wd)
+01_estimation.R:84:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+01_estimation.R:87:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+01_estimation.R:379:setwd(data_dir)
+02_table_A1.R:44:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+02_table_A1.R:47:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+02_table_A1.R:58:setwd(data_dir)
+03_figures_6_9.R:18:#  NOTE: the pictures are written with bmp(type = "windows"), so this script
+03_figures_6_9.R:19:#  runs as written on Windows.
+03_figures_6_9.R:28:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+03_figures_6_9.R:31:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+03_figures_6_9.R:93:    bmp(file = tmp.name, width = 45, height = 15, units = "cm",
+03_figures_6_9.R:94:        type = "windows", res = 200)
+04_figures_A4_A13.R:26:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+04_figures_A4_A13.R:29:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+04_figures_A4_A13.R:87:bmp(file = file.path(SaveFolder, "ProximityNeoclassical.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:94:bmp(file = file.path(SaveFolder, "SeltenMeasuresNeoclassical.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:120:bmp(file = file.path(SaveFolder, "ProximityRefDep.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:127:bmp(file = file.path(SaveFolder, "SeltenMeasuresRefDep.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:161:bmp(file = file.path(SaveFolder, "Neoclassical.v.RefDepProximity.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:168:bmp(file = file.path(SaveFolder, "Neoclassical.v.RefDepSeltenMeasures.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:193:bmp(file = file.path(SaveFolder, "ProximityRefDepModelKinds.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:199:bmp(file = file.path(SaveFolder, "SeltenMeasuresRefDepModelKinds.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:220:bmp(file = file.path(SaveFolder, "ProximityRefDepModelForms.dist.bmp"), width = 700, height = 400)
+04_figures_A4_A13.R:226:bmp(file = file.path(SaveFolder, "SeltenMeasuresRefDepModelForms.dist.bmp"), width = 700, height = 400)
+05_tables_A2_A3.R:24:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+05_tables_A2_A3.R:27:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+06_table_A4_figures_A14_A15.R:43:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+06_table_A4_figures_A14_A15.R:46:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+06_table_A4_figures_A14_A15.R:277:  # Ask for the Windows bitmap device explicitly. R's default depends on
+06_table_A4_figures_A14_A15.R:281:  bmp_type <- if (.Platform$OS.type == "windows") "windows" else "cairo"
+06_table_A4_figures_A14_A15.R:283:  bmp(file = file.path(pics_dir, outfile),
+07_sections_5_5_5_6.R:55:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+07_sections_5_5_5_6.R:58:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+08_table_A5.R:68:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+08_table_A5.R:71:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+09_driver_8.R:49:## data_raw/ and output/. Use forward slashes (/), even on Windows.
+09_driver_8.R:52:if (!exists("project_root")) project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+10_figure_A3.R:21:  project_root <- "C:/Users/lb0041/OneDrive - University of Surrey/RefDep2018/2026/AcceptReports/Final/Replication_QE"
+10_figure_A3.R:88:bmp(file = tmp.name, width = 1200, height = 580)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

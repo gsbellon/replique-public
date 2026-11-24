@@ -1,0 +1,24 @@
+# commande : ssh sd-92569 ls -la work/z23585246/run2 ; uptime ; id
+# début    : 2026-10-29T20:00:22Z
+# ----
+total 64
+drwxrwxr-x 7 replab replab 4096 Oct 27 21:07 .
+drwxrwxr-x 6 replab replab 4096 Oct 28 21:05 ..
+-rw-rw-r-- 1 replab replab  780 Oct 27 21:07 CITATION.cff
+drwxrwxr-x 4 replab replab 4096 Oct 28 21:05 data
+-rw-rw-r-- 1 replab replab  160 Oct 27 21:07 .gitattributes
+-rw-rw-r-- 1 replab replab 1183 Oct 27 21:07 .gitignore
+-rw-rw-r-- 1 replab replab 1105 Oct 27 21:07 LICENSE
+drwxrwxr-x 2 replab replab 4096 Oct 27 21:07 literature
+drwxrwxr-x 5 replab replab 4096 Oct 28 21:05 output
+drwxrwxr-x 4 replab replab 4096 Oct 28 21:05 paper
+-rw-rw-r-- 1 replab replab 2910 Oct 27 21:07 README.md
+-rw-rw-r-- 1 replab replab 7223 Oct 27 21:07 README_REPLICATION.md
+-rw-rw-r-- 1 replab replab 3143 Oct 27 21:07 run_all.sh
+drwxrwxr-x 2 replab replab 4096 Oct 27 21:07 src
+-rw-rw-r-- 1 replab replab 1053 Oct 27 21:07 .zenodo.json
+ 21:00:22 up 13 days,  9:15,  1 user,  load average: 0.14, 0.12, 0.09
+uid=1001(replab) gid=1001(replab) groups=1001(replab),100(users)
+# ----
+# code de sortie : 0
+# durée (s)      : 0

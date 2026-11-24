@@ -1,0 +1,1303 @@
+# commande : ssh sd-92569 cd ~/work/z23585246 && sh lance_build.sh
+# début    : 2026-10-27T20:08:07Z
+# ----
+STEP 1/3: FROM docker.io/library/r-base:latest
+STEP 2/3: RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pandas python3-numpy python3-openpyxl python3-tabulate python3-matplotlib r-cran-urca r-cran-strucchange r-cran-ggplot2 && rm -rf /var/lib/apt/lists/*
+Get:1 http://deb.debian.org/debian sid InRelease [193 kB]
+Get:2 http://deb.debian.org/debian testing InRelease [151 kB]
+Get:3 http://deb.debian.org/debian testing-updates InRelease [45.1 kB]
+Get:4 http://deb.debian.org/debian-security testing-security InRelease [48.0 kB]
+Get:5 http://deb.debian.org/debian sid/main amd64 Packages [10.8 MB]
+Get:6 http://deb.debian.org/debian testing/main amd64 Packages [10.1 MB]
+Fetched 21.3 MB in 2s (12.1 MB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Solving dependencies...
+The following additional packages will be installed:
+  fonts-dejavu-core fonts-dejavu-mono fonts-lyx libabsl20260526 libaom3
+  libavif16 libbrotli1 libdav1d7 libgav1-2 libgcrypt20 libgpg-error0
+  libharfbuzz-subset0 libimagequant0 liblcms2-2 libopenjp2-7 libpython3-stdlib
+  libpython3.14-minimal libpython3.14-stdlib libqhull-r8.0 libraqm0
+  librav1e0.8 libsqlite3-0 libsvtav1enc4 libwebpdemux2 libwebpmux3 libxml2-16
+  libxslt1.1 libyuv0 libzopfli1 media-types netbase python-matplotlib-data
+  python3-attr python3-brotli python3-contourpy python3-cycler
+  python3-dateutil python3-et-xmlfile python3-fonttools python3-kiwisolver
+  python3-lxml python3-lz4 python3-minimal python3-mpmath python3-munkres
+  python3-numpy-dev python3-packaging python3-pandas-lib python3-pil
+  python3-pil.imagetk python3-pyparsing python3-pytz python3-sympy python3-tk
+  python3-ufolib2 python3-uharfbuzz python3-zopfli python3.14
+  python3.14-minimal python3.14-tk r-cran-cli r-cran-cpp11 r-cran-farver
+  r-cran-glue r-cran-gtable r-cran-isoband r-cran-labeling r-cran-lifecycle
+  r-cran-r6 r-cran-rcolorbrewer r-cran-rlang r-cran-s7 r-cran-sandwich
+  r-cran-scales r-cran-vctrs r-cran-viridislite r-cran-withr r-cran-zoo
+  unicode-data
+Suggested packages:
+  rng-tools liblcms2-utils python3-doc python3-venv python-attr-doc
+  python-cycler-doc python-lxml-doc cm-super-minimal dvipng ffmpeg
+  fonts-staypuft ghostscript gir1.2-gtk-3.0 gir1.2-gtk-4.0 inkscape ipython3
+  librsvg2-common python-matplotlib-doc python3-cairocffi python3-gi
+  python3-gi-cairo python3-gobject python3-pyqt6 python3-scipy python3-sip
+  python3-tornado texlive-extra-utils texlive-latex-extra python-mpmath-doc
+  python3-gmpy2 python-numpy-doc python3-dev python3-pytest
+  python-openpyxl-doc python-pandas-doc python3-statsmodels python-pil-doc
+  python-pyparsing-doc python-sympy-doc texlive-fonts-extra blt tix
+  python3.14-venv python3.14-doc binfmt-support
+Recommended packages:
+  libgpg-error-l10n python3-skia-pathops python3-bs4 python3-cssselect
+  python3-html5lib python3-scipy python3-bottleneck python3-numexpr
+  python3-odf python3-tables python3-jinja2 python3-numba python3-olefile
+  isympy-common
+The following NEW packages will be installed:
+  fonts-dejavu-core fonts-dejavu-mono fonts-lyx libabsl20260526 libaom3
+  libavif16 libdav1d7 libgav1-2 libgcrypt20 libgpg-error0 libharfbuzz-subset0
+  libimagequant0 liblcms2-2 libopenjp2-7 libpython3-stdlib
+  libpython3.14-minimal libpython3.14-stdlib libqhull-r8.0 libraqm0
+  librav1e0.8 libsqlite3-0 libsvtav1enc4 libwebpdemux2 libwebpmux3 libxml2-16
+  libxslt1.1 libyuv0 libzopfli1 media-types netbase python-matplotlib-data
+  python3 python3-attr python3-brotli python3-contourpy python3-cycler
+  python3-dateutil python3-et-xmlfile python3-fonttools python3-kiwisolver
+  python3-lxml python3-lz4 python3-matplotlib python3-minimal python3-mpmath
+  python3-munkres python3-numpy python3-numpy-dev python3-openpyxl
+  python3-packaging python3-pandas python3-pandas-lib python3-pil
+  python3-pil.imagetk python3-pyparsing python3-pytz python3-sympy
+  python3-tabulate python3-tk python3-ufolib2 python3-uharfbuzz python3-zopfli
+  python3.14 python3.14-minimal python3.14-tk r-cran-cli r-cran-cpp11
+  r-cran-farver r-cran-ggplot2 r-cran-glue r-cran-gtable r-cran-isoband
+  r-cran-labeling r-cran-lifecycle r-cran-r6 r-cran-rcolorbrewer r-cran-rlang
+  r-cran-s7 r-cran-sandwich r-cran-scales r-cran-strucchange r-cran-urca
+  r-cran-vctrs r-cran-viridislite r-cran-withr r-cran-zoo unicode-data
+The following packages will be upgraded:
+  libbrotli1
+1 upgraded, 87 newly installed, 0 to remove and 14 not upgraded.
+Need to get 101 MB of archives.
+After this operation, 347 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian testing/main amd64 libpython3.14-minimal amd64 3.14.8-1 [902 kB]
+Get:2 http://deb.debian.org/debian testing/main amd64 python3.14-minimal amd64 3.14.8-1 [2,715 kB]
+Get:3 http://deb.debian.org/debian testing/main amd64 python3-minimal amd64 3.14.7-3 [25.3 kB]
+Get:4 http://deb.debian.org/debian sid/main amd64 media-types all 14.0.0 [30.8 kB]
+Get:5 http://deb.debian.org/debian sid/main amd64 netbase all 6.6 [10.3 kB]
+Get:6 http://deb.debian.org/debian sid/main amd64 libsqlite3-0 amd64 3.53.4-2 [974 kB]
+Get:7 http://deb.debian.org/debian testing/main amd64 libpython3.14-stdlib amd64 3.14.8-1 [2,367 kB]
+Get:8 http://deb.debian.org/debian testing/main amd64 python3.14 amd64 3.14.8-1 [874 kB]
+Get:9 http://deb.debian.org/debian testing/main amd64 libpython3-stdlib amd64 3.14.7-3 [8,252 B]
+Get:10 http://deb.debian.org/debian testing/main amd64 python3 amd64 3.14.7-3 [26.0 kB]
+Get:11 http://deb.debian.org/debian sid/main amd64 python3-numpy-dev amd64 1:2.4.6+ds-5+b1 [137 kB]
+Get:12 http://deb.debian.org/debian sid/main amd64 python3-numpy amd64 1:2.4.6+ds-5+b1 [7,252 kB]
+Get:13 http://deb.debian.org/debian sid/main amd64 fonts-dejavu-mono all 2.37-9 [488 kB]
+Get:14 http://deb.debian.org/debian sid/main amd64 fonts-dejavu-core all 2.37-9 [840 kB]
+Get:15 http://deb.debian.org/debian sid/main amd64 fonts-lyx all 2.5.3-2 [190 kB]
+Get:16 http://deb.debian.org/debian sid/main amd64 libabsl20260526 amd64 20260526.0-2+b1 [584 kB]
+Get:17 http://deb.debian.org/debian sid/main amd64 libaom3 amd64 3.14.1-1 [1,923 kB]
+Get:18 http://deb.debian.org/debian sid/main amd64 libdav1d7 amd64 1.5.4-1 [583 kB]
+Get:19 http://deb.debian.org/debian sid/main amd64 libgav1-2 amd64 0.20.0-2+b2 [372 kB]
+Get:20 http://deb.debian.org/debian sid/main amd64 librav1e0.8 amd64 0.8.1-12 [970 kB]
+Get:21 http://deb.debian.org/debian sid/main amd64 libsvtav1enc4 amd64 4.2.0+dfsg-3 [2,492 kB]
+Get:22 http://deb.debian.org/debian sid/main amd64 libyuv0 amd64 0.0.1974.20261008-1 [195 kB]
+Get:23 http://deb.debian.org/debian sid/main amd64 libavif16 amd64 1.4.2-1 [147 kB]
+Get:24 http://deb.debian.org/debian testing/main amd64 libbrotli1 amd64 1.2.0-4+b2 [310 kB]
+Get:25 http://deb.debian.org/debian sid/main amd64 libgpg-error0 amd64 1.61-5 [93.1 kB]
+Get:26 http://deb.debian.org/debian sid/main amd64 libgcrypt20 amd64 1.12.4-2 [936 kB]
+Get:27 http://deb.debian.org/debian sid/main amd64 libharfbuzz-subset0 amd64 12.3.2-2+b2 [574 kB]
+Get:28 http://deb.debian.org/debian sid/main amd64 libimagequant0 amd64 4.4.1-1+b2 [255 kB]
+Get:29 http://deb.debian.org/debian sid/main amd64 liblcms2-2 amd64 2.19.1-1 [164 kB]
+Get:30 http://deb.debian.org/debian sid/main amd64 libopenjp2-7 amd64 2.5.4-1.1 [205 kB]
+Get:31 http://deb.debian.org/debian sid/main amd64 libqhull-r8.0 amd64 2020.2-9 [248 kB]
+Get:32 http://deb.debian.org/debian sid/main amd64 libraqm0 amd64 0.10.5-1 [13.6 kB]
+Get:33 http://deb.debian.org/debian sid/main amd64 libwebpdemux2 amd64 1.6.0-0.1 [114 kB]
+Get:34 http://deb.debian.org/debian sid/main amd64 libwebpmux3 amd64 1.6.0-0.1 [127 kB]
+Get:35 http://deb.debian.org/debian sid/main amd64 libxml2-16 amd64 2.15.4+dfsg-1+b1 [684 kB]
+Get:36 http://deb.debian.org/debian sid/main amd64 libxslt1.1 amd64 1.1.45-0.1 [158 kB]
+Get:37 http://deb.debian.org/debian sid/main amd64 libzopfli1 amd64 1.0.3-3 [106 kB]
+Get:38 http://deb.debian.org/debian sid/main amd64 python-matplotlib-data all 3.10.9+dfsg1-2 [2,734 kB]
+Get:39 http://deb.debian.org/debian sid/main amd64 python3-attr all 26.1.0-1 [72.2 kB]
+Get:40 http://deb.debian.org/debian testing/main amd64 python3-brotli amd64 1.2.0-4+b2 [323 kB]
+Get:41 http://deb.debian.org/debian sid/main amd64 python3-contourpy amd64 1.3.3-2+b1 [228 kB]
+Get:42 http://deb.debian.org/debian sid/main amd64 python3-cycler all 0.12.1-3 [9,112 B]
+Get:43 http://deb.debian.org/debian testing/main amd64 python3-dateutil all 2.9.0-5 [78.7 kB]
+Get:44 http://deb.debian.org/debian sid/main amd64 python3-et-xmlfile all 2.0.0-2 [12.9 kB]
+Get:45 http://deb.debian.org/debian testing/main amd64 python3-lxml amd64 6.1.3-1 [1,527 kB]
+Get:46 http://deb.debian.org/debian sid/main amd64 python3-lz4 amd64 4.4.5+dfsg-1+b2 [26.5 kB]
+Get:47 http://deb.debian.org/debian sid/main amd64 python3-munkres all 1.1.4-4 [10.8 kB]
+Get:48 http://deb.debian.org/debian sid/main amd64 python3-mpmath all 1.4.1-4 [448 kB]
+Get:49 http://deb.debian.org/debian sid/main amd64 python3-sympy all 1.14.0-6 [4,226 kB]
+Get:50 http://deb.debian.org/debian sid/main amd64 python3-ufolib2 all 0.18.1+dfsg1-2 [32.3 kB]
+Get:51 http://deb.debian.org/debian sid/main amd64 python3-uharfbuzz amd64 0.53.3-1+b1 [219 kB]
+Get:52 http://deb.debian.org/debian sid/main amd64 python3-zopfli amd64 0.4.3-2 [10.8 kB]
+Get:53 http://deb.debian.org/debian sid/main amd64 unicode-data all 17.0.0-2 [9,354 kB]
+Get:54 http://deb.debian.org/debian sid/main amd64 python3-fonttools amd64 4.65.0-1 [1,513 kB]
+Get:55 http://deb.debian.org/debian sid/main amd64 python3-kiwisolver amd64 1.5.1-1+b1 [68.9 kB]
+Get:56 http://deb.debian.org/debian testing/main amd64 python3-pil amd64 12.3.0-1+b1 [555 kB]
+Get:57 http://deb.debian.org/debian testing/main amd64 python3.14-tk amd64 3.14.8-1 [108 kB]
+Get:58 http://deb.debian.org/debian testing/main amd64 python3-tk amd64 3.14.7-3 [8,472 B]
+Get:59 http://deb.debian.org/debian testing/main amd64 python3-pil.imagetk amd64 12.3.0-1+b1 [83.6 kB]
+Get:60 http://deb.debian.org/debian testing/main amd64 python3-pyparsing all 3.3.2-2 [165 kB]
+Get:61 http://deb.debian.org/debian sid/main amd64 python3-packaging all 26.2-3 [84.3 kB]
+Get:62 http://deb.debian.org/debian sid/main amd64 python3-matplotlib amd64 3.10.9+dfsg1-2 [22.7 MB]
+Get:63 http://deb.debian.org/debian sid/main amd64 python3-openpyxl all 3.1.5+dfsg-4 [166 kB]
+Get:64 http://deb.debian.org/debian sid/main amd64 python3-pytz all 2026.5-1 [34.5 kB]
+Get:65 http://deb.debian.org/debian sid/main amd64 python3-pandas-lib amd64 2.3.3+dfsg-5 [3,919 kB]
+Get:66 http://deb.debian.org/debian sid/main amd64 python3-pandas all 2.3.3+dfsg-5 [2,929 kB]
+Get:67 http://deb.debian.org/debian sid/main amd64 python3-tabulate all 0.10.0-1 [51.2 kB]
+Get:68 http://deb.debian.org/debian sid/main amd64 r-cran-cli amd64 3.6.6-1 [1,391 kB]
+Get:69 http://deb.debian.org/debian sid/main amd64 r-cran-cpp11 all 0.5.5-1 [236 kB]
+Get:70 http://deb.debian.org/debian sid/main amd64 r-cran-farver amd64 2.1.2-3 [1,414 kB]
+Get:71 http://deb.debian.org/debian sid/main amd64 r-cran-glue amd64 1.8.1-2 [172 kB]
+Get:72 http://deb.debian.org/debian sid/main amd64 r-cran-rlang amd64 1.3.0-1 [1,742 kB]
+Get:73 http://deb.debian.org/debian sid/main amd64 r-cran-lifecycle all 1.0.5+dfsg-1 [120 kB]
+Get:74 http://deb.debian.org/debian sid/main amd64 r-cran-gtable all 0.3.6+dfsg-2 [228 kB]
+Get:75 http://deb.debian.org/debian sid/main amd64 r-cran-isoband amd64 0.3.0-1 [1,644 kB]
+Get:76 http://deb.debian.org/debian sid/main amd64 r-cran-s7 amd64 0.2.2-1 [331 kB]
+Get:77 http://deb.debian.org/debian sid/main amd64 r-cran-labeling all 0.4.3-2 [63.2 kB]
+Get:78 http://deb.debian.org/debian sid/main amd64 r-cran-r6 all 2.6.1-2 [106 kB]
+Get:79 http://deb.debian.org/debian sid/main amd64 r-cran-rcolorbrewer all 1.1-3-2 [54.0 kB]
+Get:80 http://deb.debian.org/debian sid/main amd64 r-cran-viridislite all 0.4.3-1 [1,299 kB]
+Get:81 http://deb.debian.org/debian sid/main amd64 r-cran-scales all 1.4.0-1 [800 kB]
+Get:82 http://deb.debian.org/debian sid/main amd64 r-cran-vctrs amd64 0.7.3-2 [1,983 kB]
+Get:83 http://deb.debian.org/debian sid/main amd64 r-cran-withr all 3.0.3+dfsg-1 [229 kB]
+Get:84 http://deb.debian.org/debian sid/main amd64 r-cran-ggplot2 all 4.0.3+dfsg-1 [4,923 kB]
+Get:85 http://deb.debian.org/debian sid/main amd64 r-cran-zoo amd64 1.9-1-1 [954 kB]
+Get:86 http://deb.debian.org/debian sid/main amd64 r-cran-sandwich all 3.1-3-1 [1,518 kB]
+Get:87 http://deb.debian.org/debian sid/main amd64 r-cran-strucchange amd64 1.6-0-1 [1,167 kB]
+Get:88 http://deb.debian.org/debian sid/main amd64 r-cran-urca amd64 1.3-4-1 [1,052 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+Fetched 101 MB in 2s (59.7 MB/s)
+Selecting previously unselected package libpython3.14-minimal:amd64.
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 19683 files and directories currently installed.)
+Preparing to unpack …/libpython3.14-minimal_3.14.8-1_amd64.deb…
+Unpacking libpython3.14-minimal:amd64 (3.14.8-1)…
+Selecting previously unselected package python3.14-minimal.
+Preparing to unpack …/python3.14-minimal_3.14.8-1_amd64.deb…
+Unpacking python3.14-minimal (3.14.8-1)…
+Setting up libpython3.14-minimal:amd64 (3.14.8-1)…
+Setting up python3.14-minimal (3.14.8-1)…
+Selecting previously unselected package python3-minimal.
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 20030 files and directories currently installed.)
+Preparing to unpack …/0-python3-minimal_3.14.7-3_amd64.deb…
+Unpacking python3-minimal (3.14.7-3)…
+Selecting previously unselected package media-types.
+Preparing to unpack …/1-media-types_14.0.0_all.deb…
+Unpacking media-types (14.0.0)…
+Selecting previously unselected package netbase.
+Preparing to unpack …/2-netbase_6.6_all.deb…
+Unpacking netbase (6.6)…
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack …/3-libsqlite3-0_3.53.4-2_amd64.deb…
+Unpacking libsqlite3-0:amd64 (3.53.4-2)…
+Selecting previously unselected package libpython3.14-stdlib:amd64.
+Preparing to unpack …/4-libpython3.14-stdlib_3.14.8-1_amd64.deb…
+Unpacking libpython3.14-stdlib:amd64 (3.14.8-1)…
+Selecting previously unselected package python3.14.
+Preparing to unpack …/5-python3.14_3.14.8-1_amd64.deb…
+Unpacking python3.14 (3.14.8-1)…
+Selecting previously unselected package libpython3-stdlib:amd64.
+Preparing to unpack …/6-libpython3-stdlib_3.14.7-3_amd64.deb…
+Unpacking libpython3-stdlib:amd64 (3.14.7-3)…
+Setting up python3-minimal (3.14.7-3)…
+Selecting previously unselected package python3.
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 20512 files and directories currently installed.)
+Preparing to unpack …/00-python3_3.14.7-3_amd64.deb…
+Unpacking python3 (3.14.7-3)…
+Selecting previously unselected package python3-numpy-dev:amd64.
+Preparing to unpack …/01-python3-numpy-dev_1%3a2.4.6+ds-5+b1_amd64.deb…
+Unpacking python3-numpy-dev:amd64 (1:2.4.6+ds-5+b1)…
+Selecting previously unselected package python3-numpy.
+Preparing to unpack …/02-python3-numpy_1%3a2.4.6+ds-5+b1_amd64.deb…
+Unpacking python3-numpy (1:2.4.6+ds-5+b1)…
+Selecting previously unselected package fonts-dejavu-mono.
+Preparing to unpack …/03-fonts-dejavu-mono_2.37-9_all.deb…
+Unpacking fonts-dejavu-mono (2.37-9)…
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack …/04-fonts-dejavu-core_2.37-9_all.deb…
+Unpacking fonts-dejavu-core (2.37-9)…
+Selecting previously unselected package fonts-lyx.
+Preparing to unpack …/05-fonts-lyx_2.5.3-2_all.deb…
+Unpacking fonts-lyx (2.5.3-2)…
+Selecting previously unselected package libabsl20260526:amd64.
+Preparing to unpack …/06-libabsl20260526_20260526.0-2+b1_amd64.deb…
+Unpacking libabsl20260526:amd64 (20260526.0-2+b1)…
+Selecting previously unselected package libaom3:amd64.
+Preparing to unpack …/07-libaom3_3.14.1-1_amd64.deb…
+Unpacking libaom3:amd64 (3.14.1-1)…
+Selecting previously unselected package libdav1d7:amd64.
+Preparing to unpack …/08-libdav1d7_1.5.4-1_amd64.deb…
+Unpacking libdav1d7:amd64 (1.5.4-1)…
+Selecting previously unselected package libgav1-2:amd64.
+Preparing to unpack …/09-libgav1-2_0.20.0-2+b2_amd64.deb…
+Unpacking libgav1-2:amd64 (0.20.0-2+b2)…
+Selecting previously unselected package librav1e0.8:amd64.
+Preparing to unpack …/10-librav1e0.8_0.8.1-12_amd64.deb…
+Unpacking librav1e0.8:amd64 (0.8.1-12)…
+Selecting previously unselected package libsvtav1enc4:amd64.
+Preparing to unpack …/11-libsvtav1enc4_4.2.0+dfsg-3_amd64.deb…
+Unpacking libsvtav1enc4:amd64 (4.2.0+dfsg-3)…
+Selecting previously unselected package libyuv0:amd64.
+Preparing to unpack …/12-libyuv0_0.0.1974.20261008-1_amd64.deb…
+Unpacking libyuv0:amd64 (0.0.1974.20261008-1)…
+Selecting previously unselected package libavif16:amd64.
+Preparing to unpack …/13-libavif16_1.4.2-1_amd64.deb…
+Unpacking libavif16:amd64 (1.4.2-1)…
+Preparing to unpack …/14-libbrotli1_1.2.0-4+b2_amd64.deb…
+Unpacking libbrotli1:amd64 (1.2.0-4+b2) over (1.2.0-4+b1)…
+Selecting previously unselected package libgpg-error0:amd64.
+Preparing to unpack …/15-libgpg-error0_1.61-5_amd64.deb…
+Unpacking libgpg-error0:amd64 (1.61-5)…
+Selecting previously unselected package libgcrypt20:amd64.
+Preparing to unpack …/16-libgcrypt20_1.12.4-2_amd64.deb…
+Unpacking libgcrypt20:amd64 (1.12.4-2)…
+Selecting previously unselected package libharfbuzz-subset0:amd64.
+Preparing to unpack …/17-libharfbuzz-subset0_12.3.2-2+b2_amd64.deb…
+Unpacking libharfbuzz-subset0:amd64 (12.3.2-2+b2)…
+Selecting previously unselected package libimagequant0:amd64.
+Preparing to unpack …/18-libimagequant0_4.4.1-1+b2_amd64.deb…
+Unpacking libimagequant0:amd64 (4.4.1-1+b2)…
+Selecting previously unselected package liblcms2-2:amd64.
+Preparing to unpack …/19-liblcms2-2_2.19.1-1_amd64.deb…
+Unpacking liblcms2-2:amd64 (2.19.1-1)…
+Selecting previously unselected package libopenjp2-7:amd64.
+Preparing to unpack …/20-libopenjp2-7_2.5.4-1.1_amd64.deb…
+Unpacking libopenjp2-7:amd64 (2.5.4-1.1)…
+Selecting previously unselected package libqhull-r8.0:amd64.
+Preparing to unpack …/21-libqhull-r8.0_2020.2-9_amd64.deb…
+Unpacking libqhull-r8.0:amd64 (2020.2-9)…
+Selecting previously unselected package libraqm0:amd64.
+Preparing to unpack …/22-libraqm0_0.10.5-1_amd64.deb…
+Unpacking libraqm0:amd64 (0.10.5-1)…
+Selecting previously unselected package libwebpdemux2:amd64.
+Preparing to unpack …/23-libwebpdemux2_1.6.0-0.1_amd64.deb…
+Unpacking libwebpdemux2:amd64 (1.6.0-0.1)…
+Selecting previously unselected package libwebpmux3:amd64.
+Preparing to unpack …/24-libwebpmux3_1.6.0-0.1_amd64.deb…
+Unpacking libwebpmux3:amd64 (1.6.0-0.1)…
+Selecting previously unselected package libxml2-16:amd64.
+Preparing to unpack …/25-libxml2-16_2.15.4+dfsg-1+b1_amd64.deb…
+Unpacking libxml2-16:amd64 (2.15.4+dfsg-1+b1)…
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack …/26-libxslt1.1_1.1.45-0.1_amd64.deb…
+Unpacking libxslt1.1:amd64 (1.1.45-0.1)…
+Selecting previously unselected package libzopfli1.
+Preparing to unpack …/27-libzopfli1_1.0.3-3_amd64.deb…
+Unpacking libzopfli1 (1.0.3-3)…
+Selecting previously unselected package python-matplotlib-data.
+Preparing to unpack …/28-python-matplotlib-data_3.10.9+dfsg1-2_all.deb…
+Unpacking python-matplotlib-data (3.10.9+dfsg1-2)…
+Selecting previously unselected package python3-attr.
+Preparing to unpack …/29-python3-attr_26.1.0-1_all.deb…
+Unpacking python3-attr (26.1.0-1)…
+Selecting previously unselected package python3-brotli.
+Preparing to unpack …/30-python3-brotli_1.2.0-4+b2_amd64.deb…
+Unpacking python3-brotli (1.2.0-4+b2)…
+Selecting previously unselected package python3-contourpy.
+Preparing to unpack …/31-python3-contourpy_1.3.3-2+b1_amd64.deb…
+Unpacking python3-contourpy (1.3.3-2+b1)…
+Selecting previously unselected package python3-cycler.
+Preparing to unpack …/32-python3-cycler_0.12.1-3_all.deb…
+Unpacking python3-cycler (0.12.1-3)…
+Selecting previously unselected package python3-dateutil.
+Preparing to unpack …/33-python3-dateutil_2.9.0-5_all.deb…
+Unpacking python3-dateutil (2.9.0-5)…
+Selecting previously unselected package python3-et-xmlfile.
+Preparing to unpack …/34-python3-et-xmlfile_2.0.0-2_all.deb…
+Unpacking python3-et-xmlfile (2.0.0-2)…
+Selecting previously unselected package python3-lxml:amd64.
+Preparing to unpack …/35-python3-lxml_6.1.3-1_amd64.deb…
+Unpacking python3-lxml:amd64 (6.1.3-1)…
+Selecting previously unselected package python3-lz4.
+Preparing to unpack …/36-python3-lz4_4.4.5+dfsg-1+b2_amd64.deb…
+Unpacking python3-lz4 (4.4.5+dfsg-1+b2)…
+Selecting previously unselected package python3-munkres.
+Preparing to unpack …/37-python3-munkres_1.1.4-4_all.deb…
+Unpacking python3-munkres (1.1.4-4)…
+Selecting previously unselected package python3-mpmath.
+Preparing to unpack …/38-python3-mpmath_1.4.1-4_all.deb…
+Unpacking python3-mpmath (1.4.1-4)…
+Selecting previously unselected package python3-sympy.
+Preparing to unpack …/39-python3-sympy_1.14.0-6_all.deb…
+Unpacking python3-sympy (1.14.0-6)…
+Selecting previously unselected package python3-ufolib2.
+Preparing to unpack …/40-python3-ufolib2_0.18.1+dfsg1-2_all.deb…
+Unpacking python3-ufolib2 (0.18.1+dfsg1-2)…
+Selecting previously unselected package python3-uharfbuzz.
+Preparing to unpack …/41-python3-uharfbuzz_0.53.3-1+b1_amd64.deb…
+Unpacking python3-uharfbuzz (0.53.3-1+b1)…
+Selecting previously unselected package python3-zopfli.
+Preparing to unpack …/42-python3-zopfli_0.4.3-2_amd64.deb…
+Unpacking python3-zopfli (0.4.3-2)…
+Selecting previously unselected package unicode-data.
+Preparing to unpack …/43-unicode-data_17.0.0-2_all.deb…
+Unpacking unicode-data (17.0.0-2)…
+Selecting previously unselected package python3-fonttools.
+Preparing to unpack …/44-python3-fonttools_4.65.0-1_amd64.deb…
+Unpacking python3-fonttools (4.65.0-1)…
+Selecting previously unselected package python3-kiwisolver.
+Preparing to unpack …/45-python3-kiwisolver_1.5.1-1+b1_amd64.deb…
+Unpacking python3-kiwisolver (1.5.1-1+b1)…
+Selecting previously unselected package python3-pil:amd64.
+Preparing to unpack …/46-python3-pil_12.3.0-1+b1_amd64.deb…
+Unpacking python3-pil:amd64 (12.3.0-1+b1)…
+Selecting previously unselected package python3.14-tk.
+Preparing to unpack …/47-python3.14-tk_3.14.8-1_amd64.deb…
+Unpacking python3.14-tk (3.14.8-1)…
+Selecting previously unselected package python3-tk.
+Preparing to unpack …/48-python3-tk_3.14.7-3_amd64.deb…
+Unpacking python3-tk (3.14.7-3)…
+Selecting previously unselected package python3-pil.imagetk:amd64.
+Preparing to unpack …/49-python3-pil.imagetk_12.3.0-1+b1_amd64.deb…
+Unpacking python3-pil.imagetk:amd64 (12.3.0-1+b1)…
+Selecting previously unselected package python3-pyparsing.
+Preparing to unpack …/50-python3-pyparsing_3.3.2-2_all.deb…
+Unpacking python3-pyparsing (3.3.2-2)…
+Selecting previously unselected package python3-packaging.
+Preparing to unpack …/51-python3-packaging_26.2-3_all.deb…
+Unpacking python3-packaging (26.2-3)…
+Selecting previously unselected package python3-matplotlib.
+Preparing to unpack …/52-python3-matplotlib_3.10.9+dfsg1-2_amd64.deb…
+Unpacking python3-matplotlib (3.10.9+dfsg1-2)…
+Selecting previously unselected package python3-openpyxl.
+Preparing to unpack …/53-python3-openpyxl_3.1.5+dfsg-4_all.deb…
+Unpacking python3-openpyxl (3.1.5+dfsg-4)…
+Selecting previously unselected package python3-pytz.
+Preparing to unpack …/54-python3-pytz_2026.5-1_all.deb…
+Unpacking python3-pytz (2026.5-1)…
+Selecting previously unselected package python3-pandas-lib:amd64.
+Preparing to unpack …/55-python3-pandas-lib_2.3.3+dfsg-5_amd64.deb…
+Unpacking python3-pandas-lib:amd64 (2.3.3+dfsg-5)…
+Selecting previously unselected package python3-pandas.
+Preparing to unpack …/56-python3-pandas_2.3.3+dfsg-5_all.deb…
+Unpacking python3-pandas (2.3.3+dfsg-5)…
+Selecting previously unselected package python3-tabulate.
+Preparing to unpack …/57-python3-tabulate_0.10.0-1_all.deb…
+Unpacking python3-tabulate (0.10.0-1)…
+Selecting previously unselected package r-cran-cli.
+Preparing to unpack …/58-r-cran-cli_3.6.6-1_amd64.deb…
+Unpacking r-cran-cli (3.6.6-1)…
+Selecting previously unselected package r-cran-cpp11.
+Preparing to unpack …/59-r-cran-cpp11_0.5.5-1_all.deb…
+Unpacking r-cran-cpp11 (0.5.5-1)…
+Selecting previously unselected package r-cran-farver.
+Preparing to unpack …/60-r-cran-farver_2.1.2-3_amd64.deb…
+Unpacking r-cran-farver (2.1.2-3)…
+Selecting previously unselected package r-cran-glue.
+Preparing to unpack …/61-r-cran-glue_1.8.1-2_amd64.deb…
+Unpacking r-cran-glue (1.8.1-2)…
+Selecting previously unselected package r-cran-rlang.
+Preparing to unpack …/62-r-cran-rlang_1.3.0-1_amd64.deb…
+Unpacking r-cran-rlang (1.3.0-1)…
+Selecting previously unselected package r-cran-lifecycle.
+Preparing to unpack …/63-r-cran-lifecycle_1.0.5+dfsg-1_all.deb…
+Unpacking r-cran-lifecycle (1.0.5+dfsg-1)…
+Selecting previously unselected package r-cran-gtable.
+Preparing to unpack …/64-r-cran-gtable_0.3.6+dfsg-2_all.deb…
+Unpacking r-cran-gtable (0.3.6+dfsg-2)…
+Selecting previously unselected package r-cran-isoband.
+Preparing to unpack …/65-r-cran-isoband_0.3.0-1_amd64.deb…
+Unpacking r-cran-isoband (0.3.0-1)…
+Selecting previously unselected package r-cran-s7.
+Preparing to unpack …/66-r-cran-s7_0.2.2-1_amd64.deb…
+Unpacking r-cran-s7 (0.2.2-1)…
+Selecting previously unselected package r-cran-labeling.
+Preparing to unpack …/67-r-cran-labeling_0.4.3-2_all.deb…
+Unpacking r-cran-labeling (0.4.3-2)…
+Selecting previously unselected package r-cran-r6.
+Preparing to unpack …/68-r-cran-r6_2.6.1-2_all.deb…
+Unpacking r-cran-r6 (2.6.1-2)…
+Selecting previously unselected package r-cran-rcolorbrewer.
+Preparing to unpack …/69-r-cran-rcolorbrewer_1.1-3-2_all.deb…
+Unpacking r-cran-rcolorbrewer (1.1-3-2)…
+Selecting previously unselected package r-cran-viridislite.
+Preparing to unpack …/70-r-cran-viridislite_0.4.3-1_all.deb…
+Unpacking r-cran-viridislite (0.4.3-1)…
+Selecting previously unselected package r-cran-scales.
+Preparing to unpack …/71-r-cran-scales_1.4.0-1_all.deb…
+Unpacking r-cran-scales (1.4.0-1)…
+Selecting previously unselected package r-cran-vctrs.
+Preparing to unpack …/72-r-cran-vctrs_0.7.3-2_amd64.deb…
+Unpacking r-cran-vctrs (0.7.3-2)…
+Selecting previously unselected package r-cran-withr.
+Preparing to unpack …/73-r-cran-withr_3.0.3+dfsg-1_all.deb…
+Unpacking r-cran-withr (3.0.3+dfsg-1)…
+Selecting previously unselected package r-cran-ggplot2.
+Preparing to unpack …/74-r-cran-ggplot2_4.0.3+dfsg-1_all.deb…
+Unpacking r-cran-ggplot2 (4.0.3+dfsg-1)…
+Selecting previously unselected package r-cran-zoo.
+Preparing to unpack …/75-r-cran-zoo_1.9-1-1_amd64.deb…
+Unpacking r-cran-zoo (1.9-1-1)…
+Selecting previously unselected package r-cran-sandwich.
+Preparing to unpack …/76-r-cran-sandwich_3.1-3-1_all.deb…
+Unpacking r-cran-sandwich (3.1-3-1)…
+Selecting previously unselected package r-cran-strucchange.
+Preparing to unpack …/77-r-cran-strucchange_1.6-0-1_amd64.deb…
+Unpacking r-cran-strucchange (1.6-0-1)…
+Selecting previously unselected package r-cran-urca.
+Preparing to unpack …/78-r-cran-urca_1.3-4-1_amd64.deb…
+Unpacking r-cran-urca (1.3-4-1)…
+Setting up media-types (14.0.0)…
+Setting up liblcms2-2:amd64 (2.19.1-1)…
+Setting up libaom3:amd64 (3.14.1-1)…
+Setting up r-cran-rlang (1.3.0-1)…
+Setting up python3.14-tk (3.14.8-1)…
+Setting up libgpg-error0:amd64 (1.61-5)…
+Setting up r-cran-urca (1.3-4-1)…
+Setting up r-cran-withr (3.0.3+dfsg-1)…
+Setting up libxml2-16:amd64 (2.15.4+dfsg-1+b1)…
+Setting up fonts-lyx (2.5.3-2)…
+Setting up libwebpdemux2:amd64 (1.6.0-0.1)…
+Setting up libbrotli1:amd64 (1.2.0-4+b2)…
+Setting up libsqlite3-0:amd64 (3.53.4-2)…
+Setting up libgcrypt20:amd64 (1.12.4-2)…
+Setting up libqhull-r8.0:amd64 (2020.2-9)…
+Setting up r-cran-glue (1.8.1-2)…
+Setting up r-cran-cli (3.6.6-1)…
+Setting up r-cran-lifecycle (1.0.5+dfsg-1)…
+Setting up librav1e0.8:amd64 (0.8.1-12)…
+Setting up unicode-data (17.0.0-2)…
+Setting up libabsl20260526:amd64 (20260526.0-2+b1)…
+Setting up libzopfli1 (1.0.3-3)…
+Setting up r-cran-s7 (0.2.2-1)…
+Setting up r-cran-cpp11 (0.5.5-1)…
+Setting up r-cran-rcolorbrewer (1.1-3-2)…
+Setting up r-cran-isoband (0.3.0-1)…
+Setting up libraqm0:amd64 (0.10.5-1)…
+Setting up libimagequant0:amd64 (4.4.1-1+b2)…
+Setting up fonts-dejavu-mono (2.37-9)…
+Setting up python3-numpy-dev:amd64 (1:2.4.6+ds-5+b1)…
+Setting up r-cran-gtable (0.3.6+dfsg-2)…
+Setting up r-cran-labeling (0.4.3-2)…
+Setting up r-cran-zoo (1.9-1-1)…
+Setting up fonts-dejavu-core (2.37-9)…
+Setting up libsvtav1enc4:amd64 (4.2.0+dfsg-3)…
+Setting up r-cran-farver (2.1.2-3)…
+Setting up libgav1-2:amd64 (0.20.0-2+b2)…
+Setting up libdav1d7:amd64 (1.5.4-1)…
+Setting up r-cran-viridislite (0.4.3-1)…
+Setting up libxslt1.1:amd64 (1.1.45-0.1)…
+Setting up libharfbuzz-subset0:amd64 (12.3.2-2+b2)…
+Setting up libopenjp2-7:amd64 (2.5.4-1.1)…
+Setting up netbase (6.6)…
+Setting up r-cran-r6 (2.6.1-2)…
+Setting up python-matplotlib-data (3.10.9+dfsg1-2)…
+Setting up libwebpmux3:amd64 (1.6.0-0.1)…
+Setting up libyuv0:amd64 (0.0.1974.20261008-1)…
+Setting up r-cran-vctrs (0.7.3-2)…
+Setting up libavif16:amd64 (1.4.2-1)…
+Setting up libpython3.14-stdlib:amd64 (3.14.8-1)…
+Setting up r-cran-sandwich (3.1-3-1)…
+Setting up r-cran-strucchange (1.6-0-1)…
+Setting up r-cran-scales (1.4.0-1)…
+Setting up python3.14 (3.14.8-1)…
+Setting up libpython3-stdlib:amd64 (3.14.7-3)…
+Setting up r-cran-ggplot2 (4.0.3+dfsg-1)…
+Setting up python3-tk (3.14.7-3)…
+Setting up python3 (3.14.7-3)…
+running python rtupdate hooks for python3.14...
+running python post-rtupdate hooks for python3.14...
+Setting up python3-zopfli (0.4.3-2)…
+Setting up python3-pil:amd64 (12.3.0-1+b1)…
+Setting up python3-packaging (26.2-3)…
+Setting up python3-pyparsing (3.3.2-2)…
+Setting up python3-pil.imagetk:amd64 (12.3.0-1+b1)…
+Setting up python3-brotli (1.2.0-4+b2)…
+Setting up python3-cycler (0.12.1-3)…
+Setting up python3-kiwisolver (1.5.1-1+b1)…
+Setting up python3-uharfbuzz (0.53.3-1+b1)…
+Setting up python3-numpy (1:2.4.6+ds-5+b1)…
+Setting up python3-lxml:amd64 (6.1.3-1)…
+Setting up python3-et-xmlfile (2.0.0-2)…
+Setting up python3-munkres (1.1.4-4)…
+Setting up python3-dateutil (2.9.0-5)…
+Setting up python3-contourpy (1.3.3-2+b1)…
+Setting up python3-mpmath (1.4.1-4)…
+Setting up python3-sympy (1.14.0-6)…
+Setting up python3-attr (26.1.0-1)…
+Setting up python3-lz4 (4.4.5+dfsg-1+b2)…
+Setting up python3-pandas-lib:amd64 (2.3.3+dfsg-5)…
+Setting up python3-tabulate (0.10.0-1)…
+Setting up python3-pytz (2026.5-1)…
+Setting up python3-pandas (2.3.3+dfsg-5)…
+Setting up python3-openpyxl (3.1.5+dfsg-4)…
+Setting up python3-fonttools (4.65.0-1)…
+Setting up python3-ufolib2 (0.18.1+dfsg1-2)…
+Setting up python3-matplotlib (3.10.9+dfsg1-2)…
+Processing triggers for libc-bin (2.43-7)…
+Processing triggers for fontconfig (2.17.1-5)…
+--> 2f28212d13f4
+STEP 3/3: RUN Rscript -e 'install.packages(c("seasonal","x13binary"), repos="https://cloud.r-project.org"); stopifnot(requireNamespace("seasonal"), requireNamespace("x13binary"))'
+Installing packages into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/seasonal_1.11.0.tar.gz'
+trying URL 'https://cloud.r-project.org/src/contrib/x13binary_1.1.61.2.tar.gz'
+* installing *source* package ‘x13binary’ ...
+** this is package ‘x13binary’ version ‘1.1.61.2’
+** package ‘x13binary’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using Fortran compiler: 'GNU Fortran (Debian 16.2.0-3) 16.2.0'
+(cd ../tools/x13as_html && FC="x86_64-linux-gnu-gfortran" FFLAGS="-O2" LINKER="x86_64-linux-gnu-gfortran" make -f makefile.gf x13ashtml)
+make[1]: Entering directory '/tmp/RtmpZlT9v3/R.INSTALL207e6a1604/x13binary/tools/x13as_html'
+x86_64-linux-gnu-gfortran -O2  -c -o aaamain.o aaamain.f
+x86_64-linux-gnu-gfortran -O2  -c -o abend.o abend.f
+x86_64-linux-gnu-gfortran -O2  -c -o acf.o acf.f
+x86_64-linux-gnu-gfortran -O2  -c -o acfar.o acfar.f
+x86_64-linux-gnu-gfortran -O2  -c -o acfdgn.o acfdgn.f
+x86_64-linux-gnu-gfortran -O2  -c -o acfhdr.o acfhdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o addadj.o addadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o addate.o addate.f
+x86_64-linux-gnu-gfortran -O2  -c -o addeas.o addeas.f
+x86_64-linux-gnu-gfortran -O2  -c -o addfix.o addfix.f
+x86_64-linux-gnu-gfortran -O2  -c -o addlom.o addlom.f
+x86_64-linux-gnu-gfortran -O2  -c -o addmat.o addmat.f
+x86_64-linux-gnu-gfortran -O2  -c -o addmul.o addmul.f
+x86_64-linux-gnu-gfortran -O2  -c -o addotl.o addotl.f
+x86_64-linux-gnu-gfortran -O2  -c -o addsef.o addsef.f
+x86_64-linux-gnu-gfortran -O2  -c -o addsub.o addsub.f
+x86_64-linux-gnu-gfortran -O2  -c -o addtd.o addtd.f
+x86_64-linux-gnu-gfortran -O2  -c -o addusr.o addusr.f
+x86_64-linux-gnu-gfortran -O2  -c -o adestr.o adestr.f
+x86_64-linux-gnu-gfortran -O2  -c -o adjreg.o adjreg.f
+x86_64-linux-gnu-gfortran -O2  -c -o adjsrs.o adjsrs.f
+x86_64-linux-gnu-gfortran -O2  -c -o adlabr.o adlabr.f
+x86_64-linux-gnu-gfortran -O2  -c -o adotss.o adotss.f
+x86_64-linux-gnu-gfortran -O2  -c -o adpdrg.o adpdrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o adrgef.o adrgef.f
+x86_64-linux-gnu-gfortran -O2  -c -o adrgim.o adrgim.f
+x86_64-linux-gnu-gfortran -O2  -c -o adsncs.o adsncs.f
+x86_64-linux-gnu-gfortran -O2  -c -o adthnk.o adthnk.f
+x86_64-linux-gnu-gfortran -O2  -c -o aggmea.o aggmea.f
+x86_64-linux-gnu-gfortran -O2  -c -o agr.o agr.f
+x86_64-linux-gnu-gfortran -O2  -c -o agr1.o agr1.f
+x86_64-linux-gnu-gfortran -O2  -c -o agr2.o agr2.f
+x86_64-linux-gnu-gfortran -O2  -c -o agr3.o agr3.f
+x86_64-linux-gnu-gfortran -O2  -c -o agr3s.o agr3s.f
+x86_64-linux-gnu-gfortran -O2  -c -o agrxpt.o agrxpt.f
+x86_64-linux-gnu-gfortran -O2  -c -o altundovrtst.o altundovrtst.f
+x86_64-linux-gnu-gfortran -O2  -c -o amdest.o amdest.f
+x86_64-linux-gnu-gfortran -O2  -c -o amdfct.o amdfct.f
+x86_64-linux-gnu-gfortran -O2  -c -o amdid.o amdid.f
+x86_64-linux-gnu-gfortran -O2  -c -o amdid2.o amdid2.f
+x86_64-linux-gnu-gfortran -O2  -c -o amdprt.o amdprt.f
+x86_64-linux-gnu-gfortran -O2  -c -o amidot.o amidot.f
+x86_64-linux-gnu-gfortran -O2  -c -o analts.o analts.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub1.o ansub1.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub10.o ansub10.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub11.o ansub11.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub2.o ansub2.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub3.o ansub3.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub4.o ansub4.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub5.o ansub5.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub7.o ansub7.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub8.o ansub8.f
+x86_64-linux-gnu-gfortran -O2  -c -o ansub9.o ansub9.f
+x86_64-linux-gnu-gfortran -O2  -c -o antilg.o antilg.f
+x86_64-linux-gnu-gfortran -O2  -c -o apply.o apply.f
+x86_64-linux-gnu-gfortran -O2  -c -o ar30rg.o ar30rg.f
+x86_64-linux-gnu-gfortran -O2  -c -o arfit.o arfit.f
+x86_64-linux-gnu-gfortran -O2  -c -o arflt.o arflt.f
+x86_64-linux-gnu-gfortran -O2  -c -o arima.o arima.f
+x86_64-linux-gnu-gfortran -O2  -c -o armacr.o armacr.f
+x86_64-linux-gnu-gfortran -O2  -c -o armafl.o armafl.f
+x86_64-linux-gnu-gfortran -O2  -c -o armats.o armats.f
+x86_64-linux-gnu-gfortran -O2  -c -o arspc.o arspc.f
+x86_64-linux-gnu-gfortran -O2  -c -o autoer.o autoer.f
+x86_64-linux-gnu-gfortran -O2  -c -o automd.o automd.f
+x86_64-linux-gnu-gfortran -O2  -c -o automx.o automx.f
+x86_64-linux-gnu-gfortran -O2  -c -o avedur.o avedur.f
+x86_64-linux-gnu-gfortran -O2  -c -o aver.o aver.f
+x86_64-linux-gnu-gfortran -O2  -c -o averag.o averag.f
+x86_64-linux-gnu-gfortran -O2  -c -o bakusr.o bakusr.f
+x86_64-linux-gnu-gfortran -O2  -c -o bench.o bench.f
+x86_64-linux-gnu-gfortran -O2  -c -o bestmd.o bestmd.f
+x86_64-linux-gnu-gfortran -O2  -c -o bkdfmd.o bkdfmd.f
+x86_64-linux-gnu-gfortran -O2  -c -o bldcov.o bldcov.f
+x86_64-linux-gnu-gfortran -O2  -c -o blddif.o blddif.f
+x86_64-linux-gnu-gfortran -O2  -c -o bstget.o bstget.f
+x86_64-linux-gnu-gfortran -O2  -c -o bstmdl.o bstmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o btrit.o btrit.f
+x86_64-linux-gnu-gfortran -O2  -c -o calcqs.o calcqs.f
+x86_64-linux-gnu-gfortran -O2  -c -o calcqs2.o calcqs2.f
+x86_64-linux-gnu-gfortran -O2  -c -o calcsc.o calcsc.f
+x86_64-linux-gnu-gfortran -O2  -c -o ceilng.o ceilng.f
+x86_64-linux-gnu-gfortran -O2  -c -o change.o change.f
+x86_64-linux-gnu-gfortran -O2  -c -o chisq.o chisq.f
+x86_64-linux-gnu-gfortran -O2  -c -o chitst.o chitst.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkadj.o chkadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkchi.o chkchi.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkcvr.o chkcvr.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkeas.o chkeas.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkmu.o chkmu.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkorv.o chkorv.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkrt1.o chkrt1.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkrt2.o chkrt2.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkrts.o chkrts.f
+x86_64-linux-gnu-gfortran -O2  -c -o chksmd.o chksmd.f
+x86_64-linux-gnu-gfortran -O2  -c -o chktrn.o chktrn.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkuhg.o chkuhg.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkurt.o chkurt.f
+x86_64-linux-gnu-gfortran -O2  -c -o chkzro.o chkzro.f
+x86_64-linux-gnu-gfortran -O2  -c -o chrt.o chrt.f
+x86_64-linux-gnu-gfortran -O2  -c -o chsppf.o chsppf.f
+x86_64-linux-gnu-gfortran -O2  -c -o chusrg.o chusrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o clrotl.o clrotl.f
+x86_64-linux-gnu-gfortran -O2  -c -o clsgrp.o clsgrp.f
+x86_64-linux-gnu-gfortran -O2  -c -o cmpchi.o cmpchi.f
+x86_64-linux-gnu-gfortran -O2  -c -o cmpstr.o cmpstr.f
+x86_64-linux-gnu-gfortran -O2  -c -o cncrnt.o cncrnt.f
+x86_64-linux-gnu-gfortran -O2  -c -o cnvfil.o cnvfil.f
+x86_64-linux-gnu-gfortran -O2  -c -o cnvfmt.o cnvfmt.f
+x86_64-linux-gnu-gfortran -O2  -c -o cnvmdl.o cnvmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o coladd.o coladd.f
+x86_64-linux-gnu-gfortran -O2  -c -o combft.o combft.f
+x86_64-linux-gnu-gfortran -O2  -c -o compb.o compb.f
+x86_64-linux-gnu-gfortran -O2  -c -o compcrodiag.o compcrodiag.f
+x86_64-linux-gnu-gfortran -O2  -c -o compdiag.o compdiag.f
+x86_64-linux-gnu-gfortran -O2  -c -o complagdiag.o complagdiag.f
+x86_64-linux-gnu-gfortran -O2  -c -o compmse.o compmse.f
+x86_64-linux-gnu-gfortran -O2  -c -o compmsealt.o compmsealt.f
+x86_64-linux-gnu-gfortran -O2  -c -o component.o component.f
+x86_64-linux-gnu-gfortran -O2  -c -o comprevs.o comprevs.f
+x86_64-linux-gnu-gfortran -O2  -c -o constant.o constant.f
+x86_64-linux-gnu-gfortran -O2  -c -o copy.o copy.f
+x86_64-linux-gnu-gfortran -O2  -c -o copycl.o copycl.f
+x86_64-linux-gnu-gfortran -O2  -c -o copylg.o copylg.f
+x86_64-linux-gnu-gfortran -O2  -c -o cormtx.o cormtx.f
+x86_64-linux-gnu-gfortran -O2  -c -o cornom.o cornom.f
+x86_64-linux-gnu-gfortran -O2  -c -o corplt.o corplt.f
+x86_64-linux-gnu-gfortran -O2  -c -o covar.o covar.f
+x86_64-linux-gnu-gfortran -O2  -c -o cpyint.o cpyint.f
+x86_64-linux-gnu-gfortran -O2  -c -o cpymat.o cpymat.f
+x86_64-linux-gnu-gfortran -O2  -c -o crosco.o crosco.f
+x86_64-linux-gnu-gfortran -O2  -c -o ctod.o ctod.f
+x86_64-linux-gnu-gfortran -O2  -c -o ctodat.o ctodat.f
+x86_64-linux-gnu-gfortran -O2  -c -o ctoi.o ctoi.f
+x86_64-linux-gnu-gfortran -O2  -c -o cumnor.o cumnor.f
+x86_64-linux-gnu-gfortran -O2  -c -o cvcmma.o cvcmma.f
+x86_64-linux-gnu-gfortran -O2  -c -o cvdttm.o cvdttm.f
+x86_64-linux-gnu-gfortran -O2  -c -o cvrerr.o cvrerr.f
+x86_64-linux-gnu-gfortran -O2  -c -o daxpy.o daxpy.f
+x86_64-linux-gnu-gfortran -O2  -c -o dcopy.o dcopy.f
+x86_64-linux-gnu-gfortran -O2  -c -o ddot.o ddot.f
+x86_64-linux-gnu-gfortran -O2  -c -o decibl.o decibl.f
+x86_64-linux-gnu-gfortran -O2  -c -o delstr.o delstr.f
+x86_64-linux-gnu-gfortran -O2  -c -o deltst.o deltst.f
+x86_64-linux-gnu-gfortran -O2  -c -o desreg.o desreg.f
+x86_64-linux-gnu-gfortran -O2  -c -o devlpl.o devlpl.f
+x86_64-linux-gnu-gfortran -O2  -c -o dfdate.o dfdate.f
+x86_64-linux-gnu-gfortran -O2  -c -o dgefa.o dgefa.f
+x86_64-linux-gnu-gfortran -O2  -c -o dgesl.o dgesl.f
+x86_64-linux-gnu-gfortran -O2  -c -o difflt.o difflt.f
+x86_64-linux-gnu-gfortran -O2  -c -o dinvnr.o dinvnr.f
+x86_64-linux-gnu-gfortran -O2  -c -o divgud.o divgud.f
+x86_64-linux-gnu-gfortran -O2  -c -o divsub.o divsub.f
+x86_64-linux-gnu-gfortran -O2  -c -o dlrgef.o dlrgef.f
+x86_64-linux-gnu-gfortran -O2  -c -o dlrgrw.o dlrgrw.f
+x86_64-linux-gnu-gfortran -O2  -c -o dlusrg.o dlusrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o dot.o dot.f
+x86_64-linux-gnu-gfortran -O2  -c -o dpeq.o dpeq.f
+x86_64-linux-gnu-gfortran -O2  -c -o dpmpar.o dpmpar.f
+x86_64-linux-gnu-gfortran -O2  -c -o dppdi.o dppdi.f
+x86_64-linux-gnu-gfortran -O2  -c -o dppfa.o dppfa.f
+x86_64-linux-gnu-gfortran -O2  -c -o dppsl.o dppsl.f
+x86_64-linux-gnu-gfortran -O2  -c -o dsarma.o dsarma.f
+x86_64-linux-gnu-gfortran -O2  -c -o dscal.o dscal.f
+x86_64-linux-gnu-gfortran -O2  -c -o dsolve.o dsolve.f
+x86_64-linux-gnu-gfortran -O2  -c -o dtoc.o dtoc.f
+x86_64-linux-gnu-gfortran -O2  -c -o easaic.o easaic.f
+x86_64-linux-gnu-gfortran -O2  -c -o easter.o easter.f
+x86_64-linux-gnu-gfortran -O2  -c -o editor.o editor.f
+x86_64-linux-gnu-gfortran -O2  -c -o eltfcn.o eltfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o eltlen.o eltlen.f
+x86_64-linux-gnu-gfortran -O2  -c -o emcomp.o emcomp.f
+x86_64-linux-gnu-gfortran -O2  -c -o ends.o ends.f
+x86_64-linux-gnu-gfortran -O2  -c -o endsf.o endsf.f
+x86_64-linux-gnu-gfortran -O2  -c -o enorm.o enorm.f
+x86_64-linux-gnu-gfortran -O2  -c -o entsch.o entsch.f
+x86_64-linux-gnu-gfortran -O2  -c -o errhdr.o errhdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o estrmu.o estrmu.f
+x86_64-linux-gnu-gfortran -O2  -c -o euclid.o euclid.f
+x86_64-linux-gnu-gfortran -O2  -c -o exctma.o exctma.f
+x86_64-linux-gnu-gfortran -O2  -c -o extend.o extend.f
+x86_64-linux-gnu-gfortran -O2  -c -o extsgnl.o extsgnl.f
+x86_64-linux-gnu-gfortran -O2  -c -o f3cal.o f3cal.f
+x86_64-linux-gnu-gfortran -O2  -c -o f3gen.o f3gen.f
+x86_64-linux-gnu-gfortran -O2  -c -o fclose.o fclose.f
+x86_64-linux-gnu-gfortran -O2  -c -o fcnar.o fcnar.f
+x86_64-linux-gnu-gfortran -O2  -c -o fcstxy.o fcstxy.f
+x86_64-linux-gnu-gfortran -O2  -c -o fdjac2.o fdjac2.f
+x86_64-linux-gnu-gfortran -O2  -c -o fgen.o fgen.f
+x86_64-linux-gnu-gfortran -O2  -c -o fis.o fis.f
+x86_64-linux-gnu-gfortran -O2  -c -o fopen.o fopen.f
+x86_64-linux-gnu-gfortran -O2  -c -o forcst.o forcst.f
+x86_64-linux-gnu-gfortran -O2  -c -o fouger.o fouger.f
+x86_64-linux-gnu-gfortran -O2  -c -o fstop.o fstop.f
+x86_64-linux-gnu-gfortran -O2  -c -o ftest.o ftest.f
+x86_64-linux-gnu-gfortran -O2  -c -o fvalue.o fvalue.f
+x86_64-linux-gnu-gfortran -O2  -c -o fxshfr.o fxshfr.f
+x86_64-linux-gnu-gfortran -O2  -c -o gauss.o gauss.f
+x86_64-linux-gnu-gfortran -O2  -c -o gendff.o gendff.f
+x86_64-linux-gnu-gfortran -O2  -c -o genfoot.o genfoot.f
+x86_64-linux-gnu-gfortran -O2  -c -o genfor.o genfor.f
+x86_64-linux-gnu-gfortran -O2  -c -o genindex.o genindex.f
+x86_64-linux-gnu-gfortran -O2  -c -o genqs.o genqs.f
+x86_64-linux-gnu-gfortran -O2  -c -o genrtt.o genrtt.f
+x86_64-linux-gnu-gfortran -O2  -c -o genskip.o genskip.f
+x86_64-linux-gnu-gfortran -O2  -c -o genssm.o genssm.f
+x86_64-linux-gnu-gfortran -O2  -c -o getadj.o getadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o getchk.o getchk.f
+x86_64-linux-gnu-gfortran -O2  -c -o getchr.o getchr.f
+x86_64-linux-gnu-gfortran -O2  -c -o getcmp.o getcmp.f
+x86_64-linux-gnu-gfortran -O2  -c -o getdat.o getdat.f
+x86_64-linux-gnu-gfortran -O2  -c -o getdbl.o getdbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o getdes.o getdes.f
+x86_64-linux-gnu-gfortran -O2  -c -o getdiag.o getdiag.f
+x86_64-linux-gnu-gfortran -O2  -c -o getfcn.o getfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o getfrc.o getfrc.f
+x86_64-linux-gnu-gfortran -O2  -c -o getgr.o getgr.f
+x86_64-linux-gnu-gfortran -O2  -c -o getid.o getid.f
+x86_64-linux-gnu-gfortran -O2  -c -o getidm.o getidm.f
+x86_64-linux-gnu-gfortran -O2  -c -o getint.o getint.f
+x86_64-linux-gnu-gfortran -O2  -c -o getivc.o getivc.f
+x86_64-linux-gnu-gfortran -O2  -c -o getmdl.o getmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o getmtd.o getmtd.f
+x86_64-linux-gnu-gfortran -O2  -c -o getopr.o getopr.f
+x86_64-linux-gnu-gfortran -O2  -c -o getprt.o getprt.f
+x86_64-linux-gnu-gfortran -O2  -c -o getreg.o getreg.f
+x86_64-linux-gnu-gfortran -O2  -c -o getrev.o getrev.f
+x86_64-linux-gnu-gfortran -O2  -c -o getrevdec.o getrevdec.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsav.o getsav.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsma.o getsma.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsmat.o getsmat.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsrs.o getsrs.f
+x86_64-linux-gnu-gfortran -O2  -c -o getssp.o getssp.f
+x86_64-linux-gnu-gfortran -O2  -c -o getstr.o getstr.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsvec.o getsvec.f
+x86_64-linux-gnu-gfortran -O2  -c -o getsvl.o getsvl.f
+x86_64-linux-gnu-gfortran -O2  -c -o gettpltz.o gettpltz.f
+x86_64-linux-gnu-gfortran -O2  -c -o gettr.o gettr.f
+x86_64-linux-gnu-gfortran -O2  -c -o gettrc.o gettrc.f
+x86_64-linux-gnu-gfortran -O2  -c -o getttl.o getttl.f
+x86_64-linux-gnu-gfortran -O2  -c -o getx11.o getx11.f
+x86_64-linux-gnu-gfortran -O2  -c -o getxop.o getxop.f
+x86_64-linux-gnu-gfortran -O2  -c -o getxtd.o getxtd.f
+x86_64-linux-gnu-gfortran -O2  -c -o glbshk.o glbshk.f
+x86_64-linux-gnu-gfortran -O2  -c -o gnfcrv.o gnfcrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o grzlst.o grzlst.f
+x86_64-linux-gnu-gfortran -O2  -c -o grzmth.o grzmth.f
+x86_64-linux-gnu-gfortran -O2  -c -o grzmyr.o grzmyr.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtarg.o gtarg.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtarma.o gtarma.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtauto.o gtauto.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtautx.o gtautx.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtdcnm.o gtdcnm.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtdcvc.o gtdcvc.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtdpvc.o gtdpvc.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtdtvc.o gtdtvc.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtedit.o gtedit.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtestm.o gtestm.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtfcst.o gtfcst.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtfldt.o gtfldt.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtfrcm.o gtfrcm.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtfree.o gtfree.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtinpt.o gtinpt.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtinvl.o gtinvl.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtmdfl.o gtmdfl.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtmtdt.o gtmtdt.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtmtfl.o gtmtfl.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtnmvc.o gtnmvc.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtotlr.o gtotlr.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtpdrg.o gtpdrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtrgdt.o gtrgdt.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtrgpt.o gtrgpt.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtrgvl.o gtrgvl.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtrvst.o gtrvst.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtseat.o gtseat.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtspec.o gtspec.f
+x86_64-linux-gnu-gfortran -O2  -c -o gttrmo.o gttrmo.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtwacf.o gtwacf.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtx11d.o gtx11d.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtx12s.o gtx12s.f
+x86_64-linux-gnu-gfortran -O2  -c -o gtxreg.o gtxreg.f
+x86_64-linux-gnu-gfortran -O2  -c -o hender.o hender.f
+x86_64-linux-gnu-gfortran -O2  -c -o hinge.o hinge.f
+x86_64-linux-gnu-gfortran -O2  -c -o hist.o hist.f
+x86_64-linux-gnu-gfortran -O2  -c -o histx.o histx.f
+x86_64-linux-gnu-gfortran -O2  -c -o hndend.o hndend.f
+x86_64-linux-gnu-gfortran -O2  -c -o hndtrn.o hndtrn.f
+x86_64-linux-gnu-gfortran -O2  -c -o holday.o holday.f
+x86_64-linux-gnu-gfortran -O2  -c -o holidy.o holidy.f
+x86_64-linux-gnu-gfortran -O2  -c -o hrest.o hrest.f
+x86_64-linux-gnu-gfortran -O2  -c -o htmlfortable.o htmlfortable.f
+x86_64-linux-gnu-gfortran -O2  -c -o htmlout.o htmlout.f
+x86_64-linux-gnu-gfortran -O2  -c -o htmlutil.o htmlutil.f
+x86_64-linux-gnu-gfortran -O2  -c -o idamax.o idamax.f
+x86_64-linux-gnu-gfortran -O2  -c -o iddiff.o iddiff.f
+x86_64-linux-gnu-gfortran -O2  -c -o idmdl.o idmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o idotlr.o idotlr.f
+x86_64-linux-gnu-gfortran -O2  -c -o idpeak.o idpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o inbtwn.o inbtwn.f
+x86_64-linux-gnu-gfortran -O2  -c -o indx.o indx.f
+x86_64-linux-gnu-gfortran -O2  -c -o initdg.o initdg.f
+x86_64-linux-gnu-gfortran -O2  -c -o initst.o initst.f
+x86_64-linux-gnu-gfortran -O2  -c -o inpter.o inpter.f
+x86_64-linux-gnu-gfortran -O2  -c -o insdbl.o insdbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o insint.o insint.f
+x86_64-linux-gnu-gfortran -O2  -c -o inslg.o inslg.f
+x86_64-linux-gnu-gfortran -O2  -c -o insopr.o insopr.f
+x86_64-linux-gnu-gfortran -O2  -c -o insort.o insort.f
+x86_64-linux-gnu-gfortran -O2  -c -o insptr.o insptr.f
+x86_64-linux-gnu-gfortran -O2  -c -o insstr.o insstr.f
+x86_64-linux-gnu-gfortran -O2  -c -o intfmt.o intfmt.f
+x86_64-linux-gnu-gfortran -O2  -c -o intgpg.o intgpg.f
+x86_64-linux-gnu-gfortran -O2  -c -o intinp.o intinp.f
+x86_64-linux-gnu-gfortran -O2  -c -o intlst.o intlst.f
+x86_64-linux-gnu-gfortran -O2  -c -o intrpp.o intrpp.f
+x86_64-linux-gnu-gfortran -O2  -c -o intsrt.o intsrt.f
+x86_64-linux-gnu-gfortran -O2  -c -o invfcn.o invfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o invmat.o invmat.f
+x86_64-linux-gnu-gfortran -O2  -c -o ipmpar.o ipmpar.f
+x86_64-linux-gnu-gfortran -O2  -c -o iscrfn.o iscrfn.f
+x86_64-linux-gnu-gfortran -O2  -c -o isdate.o isdate.f
+x86_64-linux-gnu-gfortran -O2  -c -o isfals.o isfals.f
+x86_64-linux-gnu-gfortran -O2  -c -o isfixd.o isfixd.f
+x86_64-linux-gnu-gfortran -O2  -c -o ispeak.o ispeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o ispos.o ispos.f
+x86_64-linux-gnu-gfortran -O2  -c -o issame.o issame.f
+x86_64-linux-gnu-gfortran -O2  -c -o istrue.o istrue.f
+x86_64-linux-gnu-gfortran -O2  -c -o itoc.o itoc.f
+x86_64-linux-gnu-gfortran -O2  -c -o itrerr.o itrerr.f
+x86_64-linux-gnu-gfortran -O2  -c -o kfcn.o kfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o kwtest.o kwtest.f
+x86_64-linux-gnu-gfortran -O2  -c -o lassol.o lassol.f
+x86_64-linux-gnu-gfortran -O2  -c -o lendp.o lendp.f
+x86_64-linux-gnu-gfortran -O2  -c -o lex.o lex.f
+x86_64-linux-gnu-gfortran -O2  -c -o lgnrmc.o lgnrmc.f
+x86_64-linux-gnu-gfortran -O2  -c -o lkshnk.o lkshnk.f
+x86_64-linux-gnu-gfortran -O2  -c -o lmdif.o lmdif.f
+x86_64-linux-gnu-gfortran -O2  -c -o lmpar.o lmpar.f
+x86_64-linux-gnu-gfortran -O2  -c -o loadxr.o loadxr.f
+x86_64-linux-gnu-gfortran -O2  -c -o locshk.o locshk.f
+x86_64-linux-gnu-gfortran -O2  -c -o logar.o logar.f
+x86_64-linux-gnu-gfortran -O2  -c -o logdet.o logdet.f
+x86_64-linux-gnu-gfortran -O2  -c -o lomaic.o lomaic.f
+x86_64-linux-gnu-gfortran -O2  -c -o lstpth.o lstpth.f
+x86_64-linux-gnu-gfortran -O2  -c -o makadj.o makadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o makotl.o makotl.f
+x86_64-linux-gnu-gfortran -O2  -c -o makttl.o makttl.f
+x86_64-linux-gnu-gfortran -O2  -c -o map.o map.f
+x86_64-linux-gnu-gfortran -O2  -c -o matrix.o matrix.f
+x86_64-linux-gnu-gfortran -O2  -c -o maxidx.o maxidx.f
+x86_64-linux-gnu-gfortran -O2  -c -o maxlag.o maxlag.f
+x86_64-linux-gnu-gfortran -O2  -c -o maxvec.o maxvec.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlchk.o mdlchk.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlfix.o mdlfix.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlinp.o mdlinp.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlint.o mdlint.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlmch.o mdlmch.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdlset.o mdlset.f
+x86_64-linux-gnu-gfortran -O2  -c -o mdssln.o mdssln.f
+x86_64-linux-gnu-gfortran -O2  -c -o meancra.o meancra.f
+x86_64-linux-gnu-gfortran -O2  -c -o medabs.o medabs.f
+x86_64-linux-gnu-gfortran -O2  -c -o mflag.o mflag.f
+x86_64-linux-gnu-gfortran -O2  -c -o minim2.o minim2.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkback.o mkback.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkealb.o mkealb.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkfreq.o mkfreq.f
+x86_64-linux-gnu-gfortran -O2  -c -o mklnlb.o mklnlb.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkmdsn.o mkmdsn.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkmdsx.o mkmdsx.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkmetahtmlfile.o mkmetahtmlfile.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkoprt.o mkoprt.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkotky.o mkotky.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkpeak.o mkpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkshdr.o mkshdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkspky.o mkspky.f
+x86_64-linux-gnu-gfortran -O2  -c -o mksplb.o mksplb.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkssky.o mkssky.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkstlb.o mkstlb.f
+x86_64-linux-gnu-gfortran -O2  -c -o mkspst.o mkspst.f
+x86_64-linux-gnu-gfortran -O2  -c -o mktdlb.o mktdlb.f
+x86_64-linux-gnu-gfortran -O2  -c -o mlist.o mlist.f
+x86_64-linux-gnu-gfortran -O2  -c -o mltpos.o mltpos.f
+x86_64-linux-gnu-gfortran -O2  -c -o month.o month.f
+x86_64-linux-gnu-gfortran -O2  -c -o mstest.o mstest.f
+x86_64-linux-gnu-gfortran -O2  -c -o mulmat.o mulmat.f
+x86_64-linux-gnu-gfortran -O2  -c -o mulqmat.o mulqmat.f
+x86_64-linux-gnu-gfortran -O2  -c -o mulref.o mulref.f
+x86_64-linux-gnu-gfortran -O2  -c -o mulsca.o mulsca.f
+x86_64-linux-gnu-gfortran -O2  -c -o mult.o mult.f
+x86_64-linux-gnu-gfortran -O2  -c -o mult0.o mult0.f
+x86_64-linux-gnu-gfortran -O2  -c -o mult1.o mult1.f
+x86_64-linux-gnu-gfortran -O2  -c -o mult2.o mult2.f
+x86_64-linux-gnu-gfortran -O2  -c -o mxpeak.o mxpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o nblank.o nblank.f
+x86_64-linux-gnu-gfortran -O2  -c -o newest.o newest.f
+x86_64-linux-gnu-gfortran -O2  -c -o nextk.o nextk.f
+x86_64-linux-gnu-gfortran -O2  -c -o nmlmdl.o nmlmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o nofcst.o nofcst.f
+x86_64-linux-gnu-gfortran -O2  -c -o nrmtst.o nrmtst.f
+x86_64-linux-gnu-gfortran -O2  -c -o numaff.o numaff.f
+x86_64-linux-gnu-gfortran -O2  -c -o numfmt.o numfmt.f
+x86_64-linux-gnu-gfortran -O2  -c -o olsreg.o olsreg.f
+x86_64-linux-gnu-gfortran -O2  -c -o opnfil.o opnfil.f
+x86_64-linux-gnu-gfortran -O2  -c -o otsort.o otsort.f
+x86_64-linux-gnu-gfortran -O2  -c -o outchr.o outchr.f
+x86_64-linux-gnu-gfortran -O2  -c -o pacf.o pacf.f
+x86_64-linux-gnu-gfortran -O2  -c -o pass0.o pass0.f
+x86_64-linux-gnu-gfortran -O2  -c -o pass2.o pass2.f
+x86_64-linux-gnu-gfortran -O2  -c -o pctrit.o pctrit.f
+x86_64-linux-gnu-gfortran -O2  -c -o phasegain.o phasegain.f
+x86_64-linux-gnu-gfortran -O2  -c -o polyml.o polyml.f
+x86_64-linux-gnu-gfortran -O2  -c -o polynom.o polynom.f
+x86_64-linux-gnu-gfortran -O2  -c -o ppnd.o ppnd.f
+x86_64-linux-gnu-gfortran -O2  -c -o pracf2.o pracf2.f
+x86_64-linux-gnu-gfortran -O2  -c -o prafce.o prafce.f
+x86_64-linux-gnu-gfortran -O2  -c -o pragr2.o pragr2.f
+x86_64-linux-gnu-gfortran -O2  -c -o prfcrv.o prfcrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o pritd.o pritd.f
+x86_64-linux-gnu-gfortran -O2  -c -o prlkhd.o prlkhd.f
+x86_64-linux-gnu-gfortran -O2  -c -o procflts.o procflts.f
+x86_64-linux-gnu-gfortran -O2  -c -o prothd.o prothd.f
+x86_64-linux-gnu-gfortran -O2  -c -o prprad.o prprad.f
+x86_64-linux-gnu-gfortran -O2  -c -o prrvob.o prrvob.f
+x86_64-linux-gnu-gfortran -O2  -c -o prshd2.o prshd2.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtacf.o prtacf.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtadj.o prtadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtagr.o prtagr.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtamd.o prtamd.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtchi.o prtchi.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtcol.o prtcol.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtd8b.o prtd8b.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtd9a.o prtd9a.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtdtb.o prtdtb.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtdwr.o prtdwr.f
+x86_64-linux-gnu-gfortran -O2  -c -o prterr.o prterr.f
+x86_64-linux-gnu-gfortran -O2  -c -o prterx.o prterx.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtf2.o prtf2.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtf2w.o prtf2w.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtfct.o prtfct.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtft.o prtft.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtitr.o prtitr.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtlog.o prtlog.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtmdl.o prtmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtmsp.o prtmsp.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtmsr.o prtmsr.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtmtx.o prtmtx.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtnfn.o prtnfn.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtopt.o prtopt.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtref.o prtref.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtrev.o prtrev.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtrts.o prtrts.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtrv2.o prtrv2.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtshd.o prtshd.f
+x86_64-linux-gnu-gfortran -O2  -c -o prttbl.o prttbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o prttbl1.o prttbl1.f
+x86_64-linux-gnu-gfortran -O2  -c -o prttd.o prttd.f
+x86_64-linux-gnu-gfortran -O2  -c -o prttrn.o prttrn.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtxrg.o prtxrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o punch.o punch.f
+x86_64-linux-gnu-gfortran -O2  -c -o putbak.o putbak.f
+x86_64-linux-gnu-gfortran -O2  -c -o putrev.o putrev.f
+x86_64-linux-gnu-gfortran -O2  -c -o putstr.o putstr.f
+x86_64-linux-gnu-gfortran -O2  -c -o qcmmnt.o qcmmnt.f
+x86_64-linux-gnu-gfortran -O2  -c -o qcontr.o qcontr.f
+x86_64-linux-gnu-gfortran -O2  -c -o qdoble.o qdoble.f
+x86_64-linux-gnu-gfortran -O2  -c -o qintgr.o qintgr.f
+x86_64-linux-gnu-gfortran -O2  -c -o qmap.o qmap.f
+x86_64-linux-gnu-gfortran -O2  -c -o qmap2.o qmap2.f
+x86_64-linux-gnu-gfortran -O2  -c -o qname.o qname.f
+x86_64-linux-gnu-gfortran -O2  -c -o qquote.o qquote.f
+x86_64-linux-gnu-gfortran -O2  -c -o qrfac.o qrfac.f
+x86_64-linux-gnu-gfortran -O2  -c -o qrsolv.o qrsolv.f
+x86_64-linux-gnu-gfortran -O2  -c -o qsdiff.o qsdiff.f
+x86_64-linux-gnu-gfortran -O2  -c -o qtoken.o qtoken.f
+x86_64-linux-gnu-gfortran -O2  -c -o quad.o quad.f
+x86_64-linux-gnu-gfortran -O2  -c -o quadit.o quadit.f
+x86_64-linux-gnu-gfortran -O2  -c -o quadsd.o quadsd.f
+x86_64-linux-gnu-gfortran -O2  -c -o ratneg.o ratneg.f
+x86_64-linux-gnu-gfortran -O2  -c -o ratpos.o ratpos.f
+x86_64-linux-gnu-gfortran -O2  -c -o rdotlr.o rdotlr.f
+x86_64-linux-gnu-gfortran -O2  -c -o rdotls.o rdotls.f
+x86_64-linux-gnu-gfortran -O2  -c -o rdregm.o rdregm.f
+x86_64-linux-gnu-gfortran -O2  -c -o realit.o realit.f
+x86_64-linux-gnu-gfortran -O2  -c -o regfix.o regfix.f
+x86_64-linux-gnu-gfortran -O2  -c -o reglbl.o reglbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o regvar.o regvar.f
+x86_64-linux-gnu-gfortran -O2  -c -o regx11.o regx11.f
+x86_64-linux-gnu-gfortran -O2  -c -o replac.o replac.f
+x86_64-linux-gnu-gfortran -O2  -c -o replyf.o replyf.f
+x86_64-linux-gnu-gfortran -O2  -c -o resid.o resid.f
+x86_64-linux-gnu-gfortran -O2  -c -o resid2.o resid2.f
+x86_64-linux-gnu-gfortran -O2  -c -o restor.o restor.f
+x86_64-linux-gnu-gfortran -O2  -c -o revchk.o revchk.f
+x86_64-linux-gnu-gfortran -O2  -c -o revdrv.o revdrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o revhdr.o revhdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o revrse.o revrse.f
+x86_64-linux-gnu-gfortran -O2  -c -o rgarma.o rgarma.f
+x86_64-linux-gnu-gfortran -O2  -c -o rgtdhl.o rgtdhl.f
+x86_64-linux-gnu-gfortran -O2  -c -o rho2.o rho2.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmatot.o rmatot.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmfix.o rmfix.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmlnvr.o rmlnvr.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmlpyr.o rmlpyr.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmotrv.o rmotrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmotss.o rmotss.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmpadj.o rmpadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o rmtadj.o rmtadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o rndsa.o rndsa.f
+x86_64-linux-gnu-gfortran -O2  -c -o rngbuf.o rngbuf.f
+x86_64-linux-gnu-gfortran -O2  -c -o roots.o roots.f
+x86_64-linux-gnu-gfortran -O2  -c -o round.o round.f
+x86_64-linux-gnu-gfortran -O2  -c -o rplus.o rplus.f
+x86_64-linux-gnu-gfortran -O2  -c -o rpoly.o rpoly.f
+x86_64-linux-gnu-gfortran -O2  -c -o rv2ss.o rv2ss.f
+x86_64-linux-gnu-gfortran -O2  -c -o rvfixd.o rvfixd.f
+x86_64-linux-gnu-gfortran -O2  -c -o rvrghd.o rvrghd.f
+x86_64-linux-gnu-gfortran -O2  -c -o sautco.o sautco.f
+x86_64-linux-gnu-gfortran -O2  -c -o savacf.o savacf.f
+x86_64-linux-gnu-gfortran -O2  -c -o savchi.o savchi.f
+x86_64-linux-gnu-gfortran -O2  -c -o savd8b.o savd8b.f
+x86_64-linux-gnu-gfortran -O2  -c -o savitr.o savitr.f
+x86_64-linux-gnu-gfortran -O2  -c -o savmdc.o savmdc.f
+x86_64-linux-gnu-gfortran -O2  -c -o savmdl.o savmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o savmtx.o savmtx.f
+x86_64-linux-gnu-gfortran -O2  -c -o savotl.o savotl.f
+x86_64-linux-gnu-gfortran -O2  -c -o savpk.o savpk.f
+x86_64-linux-gnu-gfortran -O2  -c -o savspp.o savspp.f
+x86_64-linux-gnu-gfortran -O2  -c -o savstp.o savstp.f
+x86_64-linux-gnu-gfortran -O2  -c -o savtbl.o savtbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o savwkf.o savwkf.f
+x86_64-linux-gnu-gfortran -O2  -c -o sceast.o sceast.f
+x86_64-linux-gnu-gfortran -O2  -c -o scrmlt.o scrmlt.f
+x86_64-linux-gnu-gfortran -O2  -c -o sdev.o sdev.f
+x86_64-linux-gnu-gfortran -O2  -c -o sdxtrm.o sdxtrm.f
+x86_64-linux-gnu-gfortran -O2  -c -o seatad.o seatad.f
+x86_64-linux-gnu-gfortran -O2  -c -o seatdg.o seatdg.f
+x86_64-linux-gnu-gfortran -O2  -c -o seatfc.o seatfc.f
+x86_64-linux-gnu-gfortran -O2  -c -o seatpr.o seatpr.f
+x86_64-linux-gnu-gfortran -O2  -c -o serates.o serates.f
+x86_64-linux-gnu-gfortran -O2  -c -o setadj.o setadj.f
+x86_64-linux-gnu-gfortran -O2  -c -o setamx.o setamx.f
+x86_64-linux-gnu-gfortran -O2  -c -o setapt.o setapt.f
+x86_64-linux-gnu-gfortran -O2  -c -o setchr.o setchr.f
+x86_64-linux-gnu-gfortran -O2  -c -o setcv.o setcv.f
+x86_64-linux-gnu-gfortran -O2  -c -o setcvl.o setcvl.f
+x86_64-linux-gnu-gfortran -O2  -c -o setdp.o setdp.f
+x86_64-linux-gnu-gfortran -O2  -c -o setint.o setint.f
+x86_64-linux-gnu-gfortran -O2  -c -o setlg.o setlg.f
+x86_64-linux-gnu-gfortran -O2  -c -o setmdl.o setmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o setmv.o setmv.f
+x86_64-linux-gnu-gfortran -O2  -c -o setopr.o setopr.f
+x86_64-linux-gnu-gfortran -O2  -c -o setpt.o setpt.f
+x86_64-linux-gnu-gfortran -O2  -c -o setrvp.o setrvp.f
+x86_64-linux-gnu-gfortran -O2  -c -o setspn.o setspn.f
+x86_64-linux-gnu-gfortran -O2  -c -o setssp.o setssp.f
+x86_64-linux-gnu-gfortran -O2  -c -o setup.o setup.f
+x86_64-linux-gnu-gfortran -O2  -c -o setwrt.o setwrt.f
+x86_64-linux-gnu-gfortran -O2  -c -o setxpt.o setxpt.f
+x86_64-linux-gnu-gfortran -O2  -c -o sfmax.o sfmax.f
+x86_64-linux-gnu-gfortran -O2  -c -o sfmsr.o sfmsr.f
+x86_64-linux-gnu-gfortran -O2  -c -o sftest.o sftest.f
+x86_64-linux-gnu-gfortran -O2  -c -o shlsrt.o shlsrt.f
+x86_64-linux-gnu-gfortran -O2  -c -o shrink.o shrink.f
+x86_64-linux-gnu-gfortran -O2  -c -o si.o si.f
+x86_64-linux-gnu-gfortran -O2  -c -o sicp2.o sicp2.f
+x86_64-linux-gnu-gfortran -O2  -c -o sigex.o sigex.f
+x86_64-linux-gnu-gfortran -O2  -c -o sigsub.o sigsub.f
+x86_64-linux-gnu-gfortran -O2  -c -o simul.o simul.f
+x86_64-linux-gnu-gfortran -O2  -c -o skparg.o skparg.f
+x86_64-linux-gnu-gfortran -O2  -c -o skparm.o skparm.f
+x86_64-linux-gnu-gfortran -O2  -c -o skpfcn.o skpfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o skplst.o skplst.f
+x86_64-linux-gnu-gfortran -O2  -c -o smeadl.o smeadl.f
+x86_64-linux-gnu-gfortran -O2  -c -o smpeak.o smpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o snrasp.o snrasp.f
+x86_64-linux-gnu-gfortran -O2  -c -o spcdrv.o spcdrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o spcrsd.o spcrsd.f
+x86_64-linux-gnu-gfortran -O2  -c -o special.o special.f
+x86_64-linux-gnu-gfortran -O2  -c -o specpeak.o specpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o spectrum.o spectrum.f
+x86_64-linux-gnu-gfortran -O2  -c -o spgrh.o spgrh.f
+x86_64-linux-gnu-gfortran -O2  -c -o spgrh2.o spgrh2.f
+x86_64-linux-gnu-gfortran -O2  -c -o spmpar.o spmpar.f
+x86_64-linux-gnu-gfortran -O2  -c -o ss2rv.o ss2rv.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssap.o ssap.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssfnot.o ssfnot.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssftst.o ssftst.f
+x86_64-linux-gnu-gfortran -O2  -c -o sshist.o sshist.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssmdl.o ssmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssort.o ssort.f
+x86_64-linux-gnu-gfortran -O2  -c -o sspdrv.o sspdrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssphdr.o ssphdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssprep.o ssprep.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssrit.o ssrit.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssrng.o ssrng.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssx11a.o ssx11a.f
+x86_64-linux-gnu-gfortran -O2  -c -o ssxmdl.o ssxmdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o stpitr.o stpitr.f
+x86_64-linux-gnu-gfortran -O2  -c -o strinx.o strinx.f
+x86_64-linux-gnu-gfortran -O2  -c -o strtvl.o strtvl.f
+x86_64-linux-gnu-gfortran -O2  -c -o stvaln.o stvaln.f
+x86_64-linux-gnu-gfortran -O2  -c -o subset.o subset.f
+x86_64-linux-gnu-gfortran -O2  -c -o sumf.o sumf.f
+x86_64-linux-gnu-gfortran -O2  -c -o sumry.o sumry.f
+x86_64-linux-gnu-gfortran -O2  -c -o sumsqr.o sumsqr.f
+x86_64-linux-gnu-gfortran -O2  -c -o svaict.o svaict.f
+x86_64-linux-gnu-gfortran -O2  -c -o svamcm.o svamcm.f
+x86_64-linux-gnu-gfortran -O2  -c -o svchsd.o svchsd.f
+x86_64-linux-gnu-gfortran -O2  -c -o svdttm.o svdttm.f
+x86_64-linux-gnu-gfortran -O2  -c -o svf2f3.o svf2f3.f
+x86_64-linux-gnu-gfortran -O2  -c -o svflt.o svflt.f
+x86_64-linux-gnu-gfortran -O2  -c -o svfltd.o svfltd.f
+x86_64-linux-gnu-gfortran -O2  -c -o svfnrg.o svfnrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o svfreq.o svfreq.f
+x86_64-linux-gnu-gfortran -O2  -c -o svolit.o svolit.f
+x86_64-linux-gnu-gfortran -O2  -c -o svoudg.o svoudg.f
+x86_64-linux-gnu-gfortran -O2  -c -o svpeak.o svpeak.f
+x86_64-linux-gnu-gfortran -O2  -c -o svrgcm.o svrgcm.f
+x86_64-linux-gnu-gfortran -O2  -c -o svrvhd.o svrvhd.f
+x86_64-linux-gnu-gfortran -O2  -c -o svspan.o svspan.f
+x86_64-linux-gnu-gfortran -O2  -c -o table.o table.f
+x86_64-linux-gnu-gfortran -O2  -c -o taper.o taper.f
+x86_64-linux-gnu-gfortran -O2  -c -o tblhdr.o tblhdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o td6var.o td6var.f
+x86_64-linux-gnu-gfortran -O2  -c -o td7var.o td7var.f
+x86_64-linux-gnu-gfortran -O2  -c -o tdaic.o tdaic.f
+x86_64-linux-gnu-gfortran -O2  -c -o tdftest.o tdftest.f
+x86_64-linux-gnu-gfortran -O2  -c -o tdlom.o tdlom.f
+x86_64-linux-gnu-gfortran -O2  -c -o tdset.o tdset.f
+x86_64-linux-gnu-gfortran -O2  -c -o tdxtrm.o tdxtrm.f
+x86_64-linux-gnu-gfortran -O2  -c -o templs.o templs.f
+x86_64-linux-gnu-gfortran -O2  -c -o tfmts.o tfmts.f
+x86_64-linux-gnu-gfortran -O2  -c -o tfmts3.o tfmts3.f
+x86_64-linux-gnu-gfortran -O2  -c -o totals.o totals.f
+x86_64-linux-gnu-gfortran -O2  -c -o transc.o transc.f
+x86_64-linux-gnu-gfortran -O2  -c -o trbias.o trbias.f
+x86_64-linux-gnu-gfortran -O2  -c -o trnaic.o trnaic.f
+x86_64-linux-gnu-gfortran -O2  -c -o trnfcn.o trnfcn.f
+x86_64-linux-gnu-gfortran -O2  -c -o tstdrv.o tstdrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o tstmd1.o tstmd1.f
+x86_64-linux-gnu-gfortran -O2  -c -o tstmd2.o tstmd2.f
+x86_64-linux-gnu-gfortran -O2  -c -o ttest.o ttest.f
+x86_64-linux-gnu-gfortran -O2  -c -o uconv.o uconv.f
+x86_64-linux-gnu-gfortran -O2  -c -o upespm.o upespm.f
+x86_64-linux-gnu-gfortran -O2  -c -o usraic.o usraic.f
+x86_64-linux-gnu-gfortran -O2  -c -o value.o value.f
+x86_64-linux-gnu-gfortran -O2  -c -o varian.o varian.f
+x86_64-linux-gnu-gfortran -O2  -c -o varlog.o varlog.f
+x86_64-linux-gnu-gfortran -O2  -c -o vars.o vars.f
+x86_64-linux-gnu-gfortran -O2  -c -o vsfa.o vsfa.f
+x86_64-linux-gnu-gfortran -O2  -c -o vsfb.o vsfb.f
+x86_64-linux-gnu-gfortran -O2  -c -o vsfc.o vsfc.f
+x86_64-linux-gnu-gfortran -O2  -c -o vtc.o vtc.f
+x86_64-linux-gnu-gfortran -O2  -c -o vtest.o vtest.f
+x86_64-linux-gnu-gfortran -O2  -c -o weight.o weight.f
+x86_64-linux-gnu-gfortran -O2  -c -o whitsp.o whitsp.f
+x86_64-linux-gnu-gfortran -O2  -c -o writln.o writln.f
+x86_64-linux-gnu-gfortran -O2  -c -o wrtdat.o wrtdat.f
+x86_64-linux-gnu-gfortran -O2  -c -o wrtmss.o wrtmss.f
+x86_64-linux-gnu-gfortran -O2  -c -o wrtotl.o wrtotl.f
+x86_64-linux-gnu-gfortran -O2  -c -o wrttb2.o wrttb2.f
+x86_64-linux-gnu-gfortran -O2  -c -o wrttbl.o wrttbl.f
+x86_64-linux-gnu-gfortran -O2  -c -o wtxtrm.o wtxtrm.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11aic.o x11aic.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11ari.o x11ari.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11int.o x11int.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11mdl.o x11mdl.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11plt.o x11plt.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11pt1.o x11pt1.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11pt2.o x11pt2.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11pt3.o x11pt3.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11pt4.o x11pt4.f
+x86_64-linux-gnu-gfortran -O2  -c -o x11ref.o x11ref.f
+x86_64-linux-gnu-gfortran -O2  -c -o x12hdr.o x12hdr.f
+x86_64-linux-gnu-gfortran -O2  -c -o x12run.o x12run.f
+x86_64-linux-gnu-gfortran -O2  -c -o xchng.o xchng.f
+x86_64-linux-gnu-gfortran -O2  -c -o xpand.o xpand.f
+x86_64-linux-gnu-gfortran -O2  -c -o xprmx.o xprmx.f
+x86_64-linux-gnu-gfortran -O2  -c -o xrgdiv.o xrgdiv.f
+x86_64-linux-gnu-gfortran -O2  -c -o xrgdrv.o xrgdrv.f
+x86_64-linux-gnu-gfortran -O2  -c -o xrghol.o xrghol.f
+x86_64-linux-gnu-gfortran -O2  -c -o xrgtrn.o xrgtrn.f
+x86_64-linux-gnu-gfortran -O2  -c -o xrlkhd.o xrlkhd.f
+x86_64-linux-gnu-gfortran -O2  -c -o xtrm.o xtrm.f
+x86_64-linux-gnu-gfortran -O2  -c -o yprmy.o yprmy.f
+x86_64-linux-gnu-gfortran -O2  -c -o yrly.o yrly.f
+x86_64-linux-gnu-gfortran -O2  -c -o rvarma.o rvarma.f
+x86_64-linux-gnu-gfortran -O2  -c -o rvtdrg.o rvtdrg.f
+x86_64-linux-gnu-gfortran -O2  -c -o prtukp.o prtukp.f
+x86_64-linux-gnu-gfortran -O2  -c -o svtukp.o svtukp.f
+x86_64-linux-gnu-gfortran -O2  -c -o savtpk.o savtpk.f
+x86_64-linux-gnu-gfortran -O2  -c -o m2q.o m2q.f
+x86_64-linux-gnu-gfortran -O2  -c -o chqsea.o chqsea.f
+x86_64-linux-gnu-gfortran -O2  -c -o npsa.o npsa.f
+x86_64-linux-gnu-gfortran -O2  -c -o gennpsa.o gennpsa.f
+x86_64-linux-gnu-gfortran -O2  -c -o prarma.o prarma.f
+x86_64-linux-gnu-gfortran -O2  -c -o testodf.o testodf.f
+x86_64-linux-gnu-gfortran -o x13ashtml aaamain.o abend.o acf.o acfar.o acfdgn.o acfhdr.o addadj.o addate.o addeas.o addfix.o addlom.o addmat.o addmul.o addotl.o addsef.o addsub.o addtd.o addusr.o adestr.o adjreg.o adjsrs.o adlabr.o adotss.o adpdrg.o adrgef.o adrgim.o adsncs.o adthnk.o aggmea.o agr.o agr1.o agr2.o agr3.o agr3s.o agrxpt.o altundovrtst.o amdest.o amdfct.o amdid.o amdid2.o amdprt.o amidot.o analts.o ansub1.o ansub10.o ansub11.o ansub2.o ansub3.o ansub4.o ansub5.o ansub7.o ansub8.o ansub9.o antilg.o apply.o ar30rg.o arfit.o arflt.o arima.o armacr.o armafl.o armats.o arspc.o autoer.o automd.o automx.o avedur.o aver.o averag.o bakusr.o bench.o bestmd.o bkdfmd.o bldcov.o blddif.o bstget.o bstmdl.o btrit.o calcqs.o calcqs2.o calcsc.o ceilng.o change.o chisq.o chitst.o chkadj.o chkchi.o chkcvr.o chkeas.o chkmu.o chkorv.o chkrt1.o chkrt2.o chkrts.o chksmd.o chktrn.o chkuhg.o chkurt.o chkzro.o chrt.o chsppf.o chusrg.o clrotl.o clsgrp.o cmpchi.o cmpstr.o cncrnt.o cnvfil.o cnvfmt.o cnvmdl.o coladd.o combft.o compb.o compcrodiag.o compdiag.o complagdiag.o compmse.o compmsealt.o component.o comprevs.o constant.o copy.o copycl.o copylg.o cormtx.o cornom.o corplt.o covar.o cpyint.o cpymat.o crosco.o ctod.o ctodat.o ctoi.o cumnor.o cvcmma.o cvdttm.o cvrerr.o daxpy.o dcopy.o ddot.o decibl.o delstr.o deltst.o desreg.o devlpl.o dfdate.o dgefa.o dgesl.o difflt.o dinvnr.o divgud.o divsub.o dlrgef.o dlrgrw.o dlusrg.o dot.o dpeq.o dpmpar.o dppdi.o dppfa.o dppsl.o dsarma.o dscal.o dsolve.o dtoc.o easaic.o easter.o editor.o eltfcn.o eltlen.o emcomp.o ends.o endsf.o enorm.o entsch.o errhdr.o estrmu.o euclid.o exctma.o extend.o extsgnl.o f3cal.o f3gen.o fclose.o fcnar.o fcstxy.o fdjac2.o fgen.o fis.o fopen.o forcst.o fouger.o fstop.o ftest.o fvalue.o fxshfr.o gauss.o gendff.o genfoot.o genfor.o genindex.o genqs.o genrtt.o genskip.o genssm.o getadj.o getchk.o getchr.o getcmp.o getdat.o getdbl.o getdes.o getdiag.o getfcn.o getfrc.o getgr.o getid.o getidm.o getint.o getivc.o getmdl.o getmtd.o getopr.o getprt.o getreg.o getrev.o getrevdec.o getsav.o getsma.o getsmat.o getsrs.o getssp.o getstr.o getsvec.o getsvl.o gettpltz.o gettr.o gettrc.o getttl.o getx11.o getxop.o getxtd.o glbshk.o gnfcrv.o grzlst.o grzmth.o grzmyr.o gtarg.o gtarma.o gtauto.o gtautx.o gtdcnm.o gtdcvc.o gtdpvc.o gtdtvc.o gtedit.o gtestm.o gtfcst.o gtfldt.o gtfrcm.o gtfree.o gtinpt.o gtinvl.o gtmdfl.o gtmtdt.o gtmtfl.o gtnmvc.o gtotlr.o gtpdrg.o gtrgdt.o gtrgpt.o gtrgvl.o gtrvst.o gtseat.o gtspec.o gttrmo.o gtwacf.o gtx11d.o gtx12s.o gtxreg.o hender.o hinge.o hist.o histx.o hndend.o hndtrn.o holday.o holidy.o hrest.o htmlfortable.o htmlout.o htmlutil.o idamax.o iddiff.o idmdl.o idotlr.o idpeak.o inbtwn.o indx.o initdg.o initst.o inpter.o insdbl.o insint.o inslg.o insopr.o insort.o insptr.o insstr.o intfmt.o intgpg.o intinp.o intlst.o intrpp.o intsrt.o invfcn.o invmat.o ipmpar.o iscrfn.o isdate.o isfals.o isfixd.o ispeak.o ispos.o issame.o istrue.o itoc.o itrerr.o kfcn.o kwtest.o lassol.o lendp.o lex.o lgnrmc.o lkshnk.o lmdif.o lmpar.o loadxr.o locshk.o logar.o logdet.o lomaic.o lstpth.o makadj.o makotl.o makttl.o map.o matrix.o maxidx.o maxlag.o maxvec.o mdlchk.o mdlfix.o mdlinp.o mdlint.o mdlmch.o mdlset.o mdssln.o meancra.o medabs.o mflag.o minim2.o mkback.o mkealb.o mkfreq.o mklnlb.o mkmdsn.o mkmdsx.o mkmetahtmlfile.o mkoprt.o mkotky.o mkpeak.o mkshdr.o mkspky.o mksplb.o mkssky.o mkstlb.o mkspst.o mktdlb.o mlist.o mltpos.o month.o mstest.o mulmat.o mulqmat.o mulref.o mulsca.o mult.o mult0.o mult1.o mult2.o mxpeak.o nblank.o newest.o nextk.o nmlmdl.o nofcst.o nrmtst.o numaff.o numfmt.o olsreg.o opnfil.o otsort.o outchr.o pacf.o pass0.o pass2.o pctrit.o phasegain.o polyml.o polynom.o ppnd.o pracf2.o prafce.o pragr2.o prfcrv.o pritd.o prlkhd.o procflts.o prothd.o prprad.o prrvob.o prshd2.o prtacf.o prtadj.o prtagr.o prtamd.o prtchi.o prtcol.o prtd8b.o prtd9a.o prtdtb.o prtdwr.o prterr.o prterx.o prtf2.o prtf2w.o prtfct.o prtft.o prtitr.o prtlog.o prtmdl.o prtmsp.o prtmsr.o prtmtx.o prtnfn.o prtopt.o prtref.o prtrev.o prtrts.o prtrv2.o prtshd.o prttbl.o prttbl1.o prttd.o prttrn.o prtxrg.o punch.o putbak.o putrev.o putstr.o qcmmnt.o qcontr.o qdoble.o qintgr.o qmap.o qmap2.o qname.o qquote.o qrfac.o qrsolv.o qsdiff.o qtoken.o quad.o quadit.o quadsd.o ratneg.o ratpos.o rdotlr.o rdotls.o rdregm.o realit.o regfix.o reglbl.o regvar.o regx11.o replac.o replyf.o resid.o resid2.o restor.o revchk.o revdrv.o revhdr.o revrse.o rgarma.o rgtdhl.o rho2.o rmatot.o rmfix.o rmlnvr.o rmlpyr.o rmotrv.o rmotss.o rmpadj.o rmtadj.o rndsa.o rngbuf.o roots.o round.o rplus.o rpoly.o rv2ss.o rvfixd.o rvrghd.o sautco.o savacf.o savchi.o savd8b.o savitr.o savmdc.o savmdl.o savmtx.o savotl.o savpk.o savspp.o savstp.o savtbl.o savwkf.o sceast.o scrmlt.o sdev.o sdxtrm.o seatad.o seatdg.o seatfc.o seatpr.o serates.o setadj.o setamx.o setapt.o setchr.o setcv.o setcvl.o setdp.o setint.o setlg.o setmdl.o setmv.o setopr.o setpt.o setrvp.o setspn.o setssp.o setup.o setwrt.o setxpt.o sfmax.o sfmsr.o sftest.o shlsrt.o shrink.o si.o sicp2.o sigex.o sigsub.o simul.o skparg.o skparm.o skpfcn.o skplst.o smeadl.o smpeak.o snrasp.o spcdrv.o spcrsd.o special.o specpeak.o spectrum.o spgrh.o spgrh2.o spmpar.o ss2rv.o ssap.o ssfnot.o ssftst.o sshist.o ssmdl.o ssort.o sspdrv.o ssphdr.o ssprep.o ssrit.o ssrng.o ssx11a.o ssxmdl.o stpitr.o strinx.o strtvl.o stvaln.o subset.o sumf.o sumry.o sumsqr.o svaict.o svamcm.o svchsd.o svdttm.o svf2f3.o svflt.o svfltd.o svfnrg.o svfreq.o svolit.o svoudg.o svpeak.o svrgcm.o svrvhd.o svspan.o table.o taper.o tblhdr.o td6var.o td7var.o tdaic.o tdftest.o tdlom.o tdset.o tdxtrm.o templs.o tfmts.o tfmts3.o totals.o transc.o trbias.o trnaic.o trnfcn.o tstdrv.o tstmd1.o tstmd2.o ttest.o uconv.o upespm.o usraic.o value.o varian.o varlog.o vars.o vsfa.o vsfb.o vsfc.o vtc.o vtest.o weight.o whitsp.o writln.o wrtdat.o wrtmss.o wrtotl.o wrttb2.o wrttbl.o wtxtrm.o x11aic.o x11ari.o x11int.o x11mdl.o x11plt.o x11pt1.o x11pt2.o x11pt3.o x11pt4.o x11ref.o x12hdr.o x12run.o xchng.o xpand.o xprmx.o xrgdiv.o xrgdrv.o xrghol.o xrgtrn.o xrlkhd.o xtrm.o yprmy.o yrly.o rvarma.o rvtdrg.o prtukp.o svtukp.o savtpk.o m2q.o chqsea.o npsa.o gennpsa.o prarma.o testodf.o   
+make[1]: Leaving directory '/tmp/RtmpZlT9v3/R.INSTALL207e6a1604/x13binary/tools/x13as_html'
+mkdir -p ../inst/bin
+cp -f ../tools/x13as_html/x13ashtml ../inst/bin/
+installing via 'install.libs.R' to /usr/local/lib/R/site-library/00LOCK-x13binary/00new/x13binary
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (x13binary)
+* installing *source* package ‘seasonal’ ...
+** this is package ‘seasonal’ version ‘1.11.0’
+** package ‘seasonal’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (seasonal)
+
+The downloaded source packages are in
+	‘/tmp/RtmpDEeGId/downloaded_packages’
+Loading required namespace: seasonal
+COMMIT replab-oilecu
+--> 06bad8fb8d13
+Successfully tagged localhost/replab-oilecu:latest
+06bad8fb8d137e4abe677b85915c5445578a869024cd144812fe1f2dcc97d577
+code de sortie build : 0
+R version 4.6.1 (2026-06-24) 
+seasonal 1.11.0 
+x13binary 1.1.61.2 
+urca 1.3.4 
+strucchange 1.6.0 
+ggplot2 4.0.3 
+mkdir -p failed for path /root/.config/matplotlib: [Errno 30] Read-only file system: '/root/.config'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-59url_ru because there was an issue with the default path (/root/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+3.14.8 (main, Oct  1 2026, 19:55:55) [GCC 16.2.0]
+2.3.3 2.4.6 3.1.5 0.10.0 3.10.9+dfsg1
+REPOSITORY                   TAG         IMAGE ID      CREATED        SIZE
+localhost/replab-oilecu      latest      06bad8fb8d13  2 seconds ago  1.42 GB
+localhost/replab-deamph      latest      9b5c45084ba9  24 hours ago   972 MB
+localhost/replab-dfar-numpy  latest      39357d37a54e  24 hours ago   202 MB
+docker.io/library/r-base     latest      0811f9b7a3d8  6 days ago     935 MB
+docker.io/library/python     3.12-slim   df18428df8a0  3 weeks ago    124 MB
+# ----
+# code de sortie : 0
+# durée (s)      : 115

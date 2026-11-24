@@ -1,0 +1,43 @@
+# commande : ssh sd-92569 podman logs replab-oilecu-run
+# début    : 2026-10-27T20:10:24Z
+# ----
+
+==== 02 Build merged dataset
+CPIAUCSL 2025-10 missing in FRED -> log-linear interpolation = 324.654
+Traceback (most recent call last):
+  File "/work/src/02_build_dataset.py", line 101, in <module>
+    main()
+    ~~~~^^
+  File "/work/src/02_build_dataset.py", line 63, in main
+    fred = pd.DataFrame({sid: load_fred(sid) for sid in ["CPIAUCSL", "VIXCLS", "POILBREUSDM", "MCOILWTICO", "FEDFUNDS"]})
+                              ~~~~~~~~~^^^^^
+  File "/work/src/02_build_dataset.py", line 34, in load_fred
+    s = pd.read_csv(RAW / f"FRED_{sid}.csv", parse_dates=["date"]).set_index("date")[sid]
+        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3/dist-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/FRED_VIXCLS.csv'
+# ----
+# code de sortie : 0
+# durée (s)      : 0
